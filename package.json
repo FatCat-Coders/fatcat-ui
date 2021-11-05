@@ -16,7 +16,7 @@
     "update-packages": "ts-node ./tools/src/update-packages.ts",
     "publish-package": "cp package.json src && cp .npmignore src && cd src && npm publish && rm -rf package.json && rm -rf .npmignore && cd ..",
     "test-package": "cp package.json src && cp .npmignore src && cd src && npm publish --tag=test && rm -rf package.json && rm -rf .npmignore && cd ..",
-    "test-local": "cp package.json src && cp .npmignore src && cd src && npm pack && rm -rf package.json && rm -rf .npmignore",
+    "test-local": "cp package.json src && cp .npmignore src && cd src && npm pack && rm -rf package.json && rm -rf .npmignore"
   },
   "peerDependencies": {
     "react": "^17.0.2",
@@ -33,6 +33,7 @@
     "@typescript-eslint/parser": "^4.28.0",
     "babel-jest": "^27.0.5",
     "babel-loader": "^8.2.2",
+    "csstype": "^3.0.9",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
