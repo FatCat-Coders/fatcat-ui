@@ -1,0 +1,7 @@
+# config files
+.idea
+.eslintrc
+.gitignore
+.stylelintrc
+
+package-lock.json
