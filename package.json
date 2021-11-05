@@ -1,5 +1,5 @@
 {
-  "name": "fatcatcoders-ui",
+  "name": "fatcat-ui-library",
   "author": "Zoran Lazic",
   "version": "0.0.1",
   "license": "UNLICENSED",
@@ -24,9 +24,9 @@
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.5",
-    "@babel/preset-react": "^7.14.5",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
     "@types/node": "^15.12.5",
     "@types/styled-components": "^5.1.10",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
@@ -44,10 +44,8 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-styled-components-a11y": "^0.0.34",
-    "jsdom": "^16.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-test-renderer": "^17.0.2",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.4"
   },
