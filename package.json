@@ -3,7 +3,7 @@
   "author": "Zoran Lazic",
   "version": "0.0.1",
   "license": "UNLICENSED",
-  "description": "A library containing styles and component used by calendly.com marketing projects",
+  "description": "Build system and ui library for the fatcat related work",
   "homepage": "https://github.com/FatCat-Coders/fatcat-ui.git#readme",
   "repository": {
     "type": "git",
