@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 
 // Types
-import { THead } from '../../../types';
+import { THead } from '../../../utils/types';
 
 // Assets @TODO remove this way of loading
 import metaImage from '../../../assets/images/meta1.jpeg';

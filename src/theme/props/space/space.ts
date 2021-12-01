@@ -138,7 +138,8 @@ const SIDES: Record<string, string> = {
 } as const;
 
 type SpacingSides = typeof SIDES;
-type SpacingSideMap = Partial<Record<SpacingSides[keyof SpacingSides], number>>;
+// TODO: fix second part of types
+type SpacingSideMap = Partial<Record<SpacingSides[keyof SpacingSides], number>> | { [x: string]: string | boolean | SideSpacingValue[]; };
 type SpaceParser = (value: SpaceDefinition | SideSpacingValue[]) => SpacingSideMap;
 
 export const parseSpace = memoize<SpaceParser>((value) => {

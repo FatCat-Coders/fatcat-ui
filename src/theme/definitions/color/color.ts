@@ -16,6 +16,7 @@ export const COLOR = {
 	purpleLight: '#755DB9',
 	darkerPurple: '#50145F',
 	darkestPurple: '#470F55',
+	orange: '#FFA500',
 	yellow: '#FFB82D',
 	yellow10: 'rgba(255,184,45, 0.1)',
 	transparent: 'transparent',

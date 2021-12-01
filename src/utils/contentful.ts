@@ -1,10 +1,10 @@
 import { Link } from 'gatsby';
 
 // Types
-import { TContentfulLink, TContentfulOptions, TParsedLink } from '../types';
+import { TContentfulLink, TContentfulOptions, TParsedLink } from './types';
 
 // Constants
-import { CONTENTFUL_OPTIONS } from '../constants';
+import { CONTENTFUL_OPTIONS } from './constants';
 
 function getLinkPrefix(typename: string| undefined): string {
 	if (typename && typename === 'ContentfulBlogPost') {
