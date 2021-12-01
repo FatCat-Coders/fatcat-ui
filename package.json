@@ -1,7 +1,7 @@
 {
   "name": "fatcat-ui-library",
   "author": "Zoran Lazic",
-  "version": "0.0.1-1",
+  "version": "0.0.1-3e",
   "license": "UNLICENSED",
   "description": "Build system and ui library for the fatcat related work",
   "homepage": "https://github.com/FatCat-Coders/fatcat-ui.git#readme",
@@ -15,6 +15,7 @@
   "scripts": {
     "update-packages": "ts-node ./tools/src/update-packages.ts",
     "publish-package": "cp package.json src && cp .npmignore src && cd src && npm publish && rm -rf package.json && rm -rf .npmignore && cd ..",
+    "build": "tsc",
     "test-package": "cp package.json src && cp .npmignore src && cd src && npm publish --tag=test && rm -rf package.json && rm -rf .npmignore && cd ..",
     "test-local": "cp package.json src && cp .npmignore src && cd src && npm pack && rm -rf package.json && rm -rf .npmignore"
   },
@@ -33,7 +34,6 @@
     "@typescript-eslint/parser": "^4.28.0",
     "babel-jest": "^27.0.5",
     "babel-loader": "^8.2.2",
-    "csstype": "^3.0.9",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -44,15 +44,31 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-styled-components-a11y": "^0.0.34",
-    "polished": "^4.1.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.4"
   },
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "csstype": "^3.0.9",
     "fast-memoize": "^2.5.2",
+    "gatsby": "^4.3.0",
+    "gatsby-source-contentful": "^7.1.0",
+    "polished": "^4.1.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "styled-components": "^5.3.0",
     "tslib": "^2.2.0"
-  }
+  },
+  "contributors": [
+    "Branislav Totic <branislav.totic@gmail.com> (https://github.com/branislav-totic)"
+  ],
+  "keywords": [
+    "fatcat",
+    "gatsby",
+    "component",
+    "components",
+    "react-component",
+    "ui"
+  ]
 }

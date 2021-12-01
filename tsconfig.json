@@ -3,7 +3,8 @@
 	"compilerOptions": {
 		"rootDir": ".",
 		"sourceMap": true,
-		"declaration": false,
+		"declaration": true,
+		"outDir": "./lib",
 		"moduleResolution": "node",
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
@@ -13,7 +14,7 @@
 		"importHelpers": true,
 		"target": "es2015",
 		"module": "esnext",
-		"types": [ "jest", "node" ],
+		"types": [ "node" ],
 		"typeRoots": ["node_modules/@types"],
 		"lib": ["es2017", "dom"],
 		"skipLibCheck": true,
@@ -21,5 +22,5 @@
 		"baseUrl": ".",
 		"jsx": "react"
 	},
-	"exclude": ["node_modules", "tmp"],
+	"exclude": ["node_modules", "tmp", "lib"],
 }
