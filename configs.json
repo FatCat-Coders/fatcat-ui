@@ -1,7 +1,0 @@
-{
-	"service_name": "storybook",
-	"aws": {
-		"account_id": "243200153905",
-		"region": "us-east-1"
-	}
-}
