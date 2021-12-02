@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import {
 	background, BackgroundProps,
 	border, BorderProps,
-	height, HeightProps,
+	size, SizeProps,
 	space, SpaceProps,
-	width, WidthProps,
 	position, PositionProps,
 	visibility, VisibilityProps,
 	responsive, ResponsiveProps,
@@ -16,8 +15,7 @@ import {
 import { hover, HoverProps } from '../../../theme/props/hover/hover';
 
 export type WrapperAtomProps =
-	HeightProps
-	& WidthProps
+	SizeProps
 	& SpaceProps
 	& BackgroundProps
 	& BorderProps
@@ -32,8 +30,7 @@ export type WrapperAtomProps =
 export const Wrapper = styled.div<WrapperAtomProps>`
 	width: 100%;
 	${text};
-	${width};
-	${height};
+	${size};
 	${space};
 	${background};
 	${border};

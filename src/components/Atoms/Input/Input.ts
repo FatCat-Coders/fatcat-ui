@@ -3,11 +3,10 @@ import styled, { css } from 'styled-components';
 import {
 	background, BackgroundProps,
 	border, BorderProps,
-	height, HeightProps,
 	responsive, ResponsiveProps,
 	space, SpaceProps,
 	text, TextProps,
-	width, WidthProps,
+	size, SizeProps,
 } from '../../../theme/props';
 import { TEXT_SIZE } from '../../../theme/styles';
 
@@ -28,7 +27,7 @@ const inputCSS = {
 		${space};
         ${border};
 		${responsive};
-		${width};
+		${size};
 		
 		&:hover {
 			border-color: ${props => props.theme.color.white};
@@ -50,17 +49,17 @@ type InputAtomProps = {
     variant?: keyof typeof inputCSS
 }
 
-export const InputField = styled.input<InputAtomProps & SpaceProps & TextProps & BorderProps & ResponsiveProps & WidthProps & BackgroundProps>`
+export const InputField = styled.input<InputAtomProps & SpaceProps & TextProps & BorderProps & ResponsiveProps & SizeProps & BackgroundProps>`
 	${props => props.variant && inputCSS[props.variant]};
     ${props => (props.backgroundImage ? css`background: url(${props.backgroundImage}) scroll no-repeat 94%` : css`background: none; -webkit-background-clip: text`)};
 
 `;
 
-export const TextArea = styled.textarea<InputAtomProps & SpaceProps & TextProps & HeightProps>`
+export const TextArea = styled.textarea<InputAtomProps & SpaceProps & TextProps & SizeProps>`
 	resize: none;
 	width: 100%;
 	${space};
-	${height};
+	${size};
 	${props => props.variant && inputCSS[props.variant]};
 
 	&::placeholder {

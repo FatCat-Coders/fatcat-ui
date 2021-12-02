@@ -4,17 +4,16 @@ import {
 	responsive, ResponsiveProps,
 	space, SpaceProps,
 	border, BorderProps,
-	width, WidthProps,
+	size, SizeProps,
 	background, BackgroundProps,
-	text, TextProps, height, HeightProps,
+	text, TextProps,
 } from '../../../theme/props';
 
-export const Option = styled.option<SpaceProps & ResponsiveProps & BorderProps & WidthProps & BackgroundProps & TextProps & HeightProps>`
+export const Option = styled.option<SpaceProps & ResponsiveProps & BorderProps & SizeProps & BackgroundProps & TextProps>`
     ${space};
     ${responsive};
     ${border};
-    ${width};
+    ${size};
     ${background};
     ${text};
-    ${height};
 `;
