@@ -30,7 +30,7 @@ const linkCSS = {
 	white: css`
 		color: ${props => props.theme.color.white};
 		font-weight: ${props => props.theme.fontWeight.bold};
-		${TEXT_SIZE.paragraph14}
+		${TEXT_SIZE.text14}
         opacity: 80%;
 		&:hover {
 			color: ${props => props.theme.color.yellow};

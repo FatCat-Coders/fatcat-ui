@@ -2,13 +2,11 @@ import { css } from 'styled-components';
 
 export const TEXT_SIZE = {
 	h1: css`
-		font-family: ${props => props.theme.fontFamily.secondary};
 		font-size: ${props => props.theme.fontSize.s54};
 		line-height: ${props => props.theme.lineHeight.s125};
 		font-weight: bold;
 	`,
 	h1Tablet: css`
-		font-family: ${props => props.theme.fontFamily.secondary};
 		font-size: ${props => props.theme.fontSize.s42};
 		line-height: ${props => props.theme.lineHeight.s125};
 	`,
@@ -17,12 +15,13 @@ export const TEXT_SIZE = {
 		line-height: ${props => props.theme.lineHeight.s100};
 	`,
 	h2: css`
-		font-family: ${props => props.theme.fontFamily.secondary};
 		font-size: ${props => props.theme.fontSize.s32};
 		line-height: 1.3;
 	`,
+	h2Mobile: css`
+		font-size: ${props => props.theme.fontSize.s28};
+	`,
 	h3: css`
-		font-family: ${props => props.theme.fontFamily.secondary};
 		font-size: ${props => props.theme.fontSize.s28};
 		line-height: 1.7;
 	`,
@@ -31,7 +30,6 @@ export const TEXT_SIZE = {
 		line-height: ${props => props.theme.lineHeight.s133};
 	`,
 	h4: css`
-		font-family: ${props => props.theme.fontFamily.main};
 		font-size: ${props => props.theme.fontSize.s28};
 		line-height: 1.3;
 	`,
@@ -40,7 +38,6 @@ export const TEXT_SIZE = {
 		line-height: ${props => props.theme.lineHeight.s175};
 	`,
 	h5: css`
-		font-family: ${props => props.theme.fontFamily.main};
 		font-size: ${props => props.theme.fontSize.s24};
 		line-height: 1.3;
 	`,
@@ -49,7 +46,6 @@ export const TEXT_SIZE = {
 		line-height: ${props => props.theme.lineHeight.s125};
 	`,
 	h6: css`
-		font-family: ${props => props.theme.fontFamily.main};
 		font-size: ${props => props.theme.fontSize.s14};
 		line-height: 1.3;
 	`,
@@ -58,30 +54,25 @@ export const TEXT_SIZE = {
 		line-height: ${props => props.theme.lineHeight.s175};
 	`,
 	paragraph: css`
-		font-family: ${props => props.theme.fontFamily.main};
 		font-size: ${props => props.theme.fontSize.s18};
 		line-height: 1.5;
 		font-weight: normal;
 	`,
-	paragraph14: css`
-		font-family: ${props => props.theme.fontFamily.main};
+	paragraphTablet: css`
+		font-size: ${props => props.theme.fontSize.s14};
+		line-height: 1.625;
+	`,
+	text14: css`
 		font-size: ${props => props.theme.fontSize.s14};
 		line-height: 1.5;
 		font-weight: normal;
 	`,
-	paragraphTablet: css`
-		font-family: ${props => props.theme.fontFamily.main};
-		font-size: ${props => props.theme.fontSize.s14};
-		line-height: 1.625;
-	`,
 	button: css`
-		font-family: ${props => props.theme.fontFamily.secondary};
 		font-size: ${props => props.theme.fontSize.s14};
 		line-height: 1;
 		letter-spacing: 2px;
 	`,
 	link: css`
-		font-family: ${props => props.theme.fontFamily.secondary};
 		font-size: ${props => props.theme.fontSize.s14};
 		line-height: 1.3;
 	`,

@@ -30,7 +30,7 @@ const headingStyles = {
 		font-weight: ${props => props.theme.fontWeight.bold};
 		letter-spacing: -0.01em;
 		${MEDIA.mobile} {
-			${TEXT_SIZE.h2};
+			${TEXT_SIZE.h2Mobile};
 		}
 	`,
 	h3: css`
