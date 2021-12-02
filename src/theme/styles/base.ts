@@ -1,11 +1,7 @@
 /* stylelint-disable */
 import { css } from 'styled-components';
 
-import reset from './reset';
-
 export default css`
-	${reset};
-	
 	html {
 		scroll-behavior: smooth;
 		font-size: 100%;
