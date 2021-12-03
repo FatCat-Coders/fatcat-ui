@@ -9,10 +9,10 @@ import {
 } from '../../../theme/props';
 
 export const SectionInnerWrapper = styled.div<BackgroundProps & SpaceProps & { width: SectionWidthDefinition }>`
-	${space};
-	${background};
 	max-width: ${props => props.theme.sectionWidth[props.width]};
 	width: 100%;
+	${space};
+	${background};
 `;
 
 type OuterWrapperProps = {
@@ -22,13 +22,10 @@ type OuterWrapperProps = {
 }
 
 export const SectionOuterWrapper = styled.section<BackgroundProps & OuterWrapperProps & ResponsiveProps & VisibilityProps>`
-	${background};
-	${visibility};
 	display: flex;
 	justify-content: center;
 	${props => props.sticky && 'position: sticky;'}
 	${props => props.overflow && `overflow: ${props.overflow};`}
-
 
 	padding: 0 ${props => props.theme.space.s56};
 
@@ -36,19 +33,20 @@ export const SectionOuterWrapper = styled.section<BackgroundProps & OuterWrapper
 		padding-left: ${props => props.theme.space.s48};
 		padding-right: ${props => props.theme.space.s48};
 	}
-	
 
 	${MEDIA.largeTablet} {
 		padding-left: ${props => props.theme.space.s32};
 		padding-right: ${props => props.theme.space.s32};
 	}
-	
+
 	${MEDIA.mobile} {
 		padding: 0 ${props => props.theme.space.s20};
 	}
-	
+
 	${props => props.edge && 'padding: 0px !important;'};
-	
+
+	${visibility};
+	${background};
 	${responsive};
 `;
 
