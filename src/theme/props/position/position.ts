@@ -9,6 +9,7 @@ export type PositionProps = {
 	left?: Properties['left'];
 	zIndex?: Properties['zIndex'];
 	transform?: Properties['transform']
+	alignSelf?: Properties['alignSelf']
 };
 
 export const position = css<PositionProps>`
@@ -18,5 +19,6 @@ export const position = css<PositionProps>`
 	${props => props.bottom && `bottom: ${props.bottom};`}
 	${props => props.left && `left: ${props.left};`}
 	${props => props.zIndex && `z-index: ${props.zIndex};`}
-	${props => props.transform && `transform: ${props.transform}`}
+	${props => props.transform && `transform: ${props.transform};`}
+	${props => props.alignSelf && `align-self: ${props.alignSelf};`}
 `;
