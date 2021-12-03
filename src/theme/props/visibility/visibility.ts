@@ -6,6 +6,7 @@ import { MEDIA, MediaDefinition } from '../../definitions';
 export type VisibilityProps = {
 	show?: MediaDefinition,
 	hide?: MediaDefinition,
+	visibility?: Properties['visibility']
 	initialDisplay?: Properties['display']
 };
 
@@ -21,4 +22,5 @@ export const visibility = css<VisibilityProps>`
 			display: none;
 		}
 	`}
+	${props => props.visibility && `visibility: ${props.visibility};`}
 `;
