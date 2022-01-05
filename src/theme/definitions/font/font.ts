@@ -5,21 +5,14 @@
 /**
  * Available font families
  */
-export const FONT_FAMILY_EXTEND = {};
-
 export const FONT_FAMILY = {
 	main: 'Circular Std',
 	secondary: 'Circular Std',
-	...FONT_FAMILY_EXTEND,
 } as const;
-
-export type FontFamilyDefinition = keyof typeof FONT_FAMILY;
 
 /**
  * Available Font sizes in Rem
  */
-export const FONT_SIZE_EXTEND = {};
-
 export const FONT_SIZE = {
 	s74: '4.625rem',
 	s54: '3.375rem',
@@ -37,16 +30,11 @@ export const FONT_SIZE = {
 	s16: '1rem',
 	s14: '0.875rem',
 	s12: '0.75rem',
-	...FONT_SIZE_EXTEND,
 } as const;
-
-export type FontSizeDefinition = keyof typeof FONT_SIZE;
 
 /**
  * Available font weights
  */
-export const FONT_WEIGHT_EXTEND = {};
-
 export const FONT_WEIGHT = {
 	black: 900,
 	extraBold: 800,
@@ -55,17 +43,12 @@ export const FONT_WEIGHT = {
 	medium: 500,
 	normal: 400,
 	light: 300,
-	...FONT_WEIGHT_EXTEND,
 } as const;
-
-export type FontWeightDefinition = keyof typeof FONT_WEIGHT;
 
 /**
  * Available line heights
  */
 // snumber represent percentage to add as line height.
-export const LINE_HEIGHT_EXTEND = {};
-
 export const LINE_HEIGHT = {
 	s66: 0.66666666666,
 	s100: 1,
@@ -76,7 +59,4 @@ export const LINE_HEIGHT = {
 	s150: 1.5,
 	s175: 1.71428571429,
 	s200: 2,
-	...LINE_HEIGHT_EXTEND,
 } as const;
-
-export type LineHeightDefinition = keyof typeof LINE_HEIGHT;
