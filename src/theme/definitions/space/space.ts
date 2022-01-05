@@ -1,4 +1,4 @@
-export const SPACE_EXTEND = {};
+import { DefaultTheme } from 'styled-components';
 
 export const SPACE = {
 	s0: '0px',
@@ -31,31 +31,24 @@ export const SPACE = {
 	s200: '200px',
 	s232: '232px',
 	s264: '264px',
-	auto: 'auto',
-	...SPACE_EXTEND,
+	sauto: 'auto',
 } as const;
 
-export type SpaceDefinition = keyof typeof SPACE;
-
-export const SCREEN_RATIO_EXTEND = {};
+export type SpaceDefinition = keyof DefaultTheme['space'];
 
 export const SCREEN_RATIO = {
 	small: 1.8,
 	medium: 1.4,
 	large: 1.2,
-	...SCREEN_RATIO_EXTEND,
 } as const;
 
 export type ScreenRatioDefinition = keyof typeof SCREEN_RATIO;
-
-export const SECTION_WIDTH_EXTEND = {};
 
 export const SECTION_WIDTH = {
 	normal: '1180px',
 	narrow: '1080px',
 	ultra_narrow: '850px',
 	fluid: '100%',
-	...SECTION_WIDTH_EXTEND,
 } as const;
 
 export type SectionWidthDefinition = keyof typeof SECTION_WIDTH;

@@ -1,14 +1,14 @@
 import memoize from 'fast-memoize';
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
 
 // Definitions
-import { SPACE, MEDIA, SpaceDefinition } from '../../definitions';
+import { MEDIA, SpaceDefinition } from '../../definitions';
 
 // Utils
 import { capitalize } from '../../../utils/capitalize';
 
 type SideSpacingType = 'padding' | 'margin';
-export type SideSpacingValue =
+export type SideSpacingTypesValue =
 	| 'l0'
 	| 'l4'
 	| 'l8'
@@ -130,6 +130,8 @@ export type SideSpacingValue =
 	| 'b264'
 	| 'bauto';
 
+type SideSpacingValue = DefaultTheme['sideSpace']
+
 const SIDES: Record<string, string> = {
 	t: 'top',
 	r: 'right',
@@ -140,9 +142,9 @@ const SIDES: Record<string, string> = {
 type SpacingSides = typeof SIDES;
 // TODO: fix second part of types
 type SpacingSideMap = Partial<Record<SpacingSides[keyof SpacingSides], number>> | { [x: string]: string | boolean | SideSpacingValue[]; };
-type SpaceParser = (value: SpaceDefinition | SideSpacingValue[]) => SpacingSideMap;
+type SpaceParser = (value: SpaceDefinition | SideSpacingValue[], SPACE: {[x:string]: string}) => SpacingSideMap;
 
-export const parseSpace = memoize<SpaceParser>((value) => {
+export const parseSpace = memoize<SpaceParser>((value, SPACE) => {
 	const spaces = Array.isArray(value) ? value : value.split(' ');
 	return spaces.reduce((accumulator, value) => {
 		if (value?.length >= 2) {
@@ -152,7 +154,7 @@ export const parseSpace = memoize<SpaceParser>((value) => {
 
 			if (side && space) {
 				// @ts-ignore
-				accumulator[side] = parseInt(size, 10);
+				accumulator[side] = size === 'auto' ? size : parseInt(size, 10);
 			}
 		}
 
@@ -181,8 +183,13 @@ export const createSideSpacingRule = (
 	sideMap: SpacingSideMap,
 	screenRatio = 1
 ) => {
-	// @ts-ignore
-	return Object.keys(sideMap).map(side => `${spacingType}-${side}: ${sideMap[side] / screenRatio}px`).join(';');
+	return Object.keys(sideMap).map((side) => {
+		if (sideMap[side] === 'auto') {
+			return `${spacingType}-${side}: ${sideMap[side]}`;
+		}
+		// @ts-ignore
+		return `${spacingType}-${side}: ${sideMap[side] / screenRatio}px`;
+	}).join(';');
 };
 
 const sideSpacing = (type: SideSpacingType) => css<SpaceProps>`
@@ -192,7 +199,7 @@ const sideSpacing = (type: SideSpacingType) => css<SpaceProps>`
 		}
 
 		// @ts-ignore
-		const sides = parseSpace(props[type]);
+		const sides = parseSpace(props[type], props.theme.space);
 		return css`
 			${createSideSpacingRule(type, sides)};
 			${props.scale && css`
