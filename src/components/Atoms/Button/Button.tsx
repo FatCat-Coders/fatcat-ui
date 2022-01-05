@@ -13,7 +13,7 @@ import {
 	responsive, ResponsiveProps,
 	space, SpaceProps,
 	text, TextProps,
-	width, WidthProps,
+	size, SizeProps,
 } from '../../../theme/props';
 import { FONT_SIZE } from '../../../theme/definitions';
 
@@ -116,7 +116,7 @@ const buttonCSS = {
 
 type ButtonAtomProps = {
     variant?: keyof typeof buttonCSS
-} & TextProps & SpaceProps & ResponsiveProps & WidthProps & BorderProps;
+} & TextProps & SpaceProps & ResponsiveProps & SizeProps & BorderProps;
 
 export const ButtonBase = styled.button<ButtonAtomProps>`
 	${transitionStyle};
@@ -131,7 +131,7 @@ export const ButtonBase = styled.button<ButtonAtomProps>`
     ${text};
     ${space};
     ${responsive};
-	${width};
+	${size};
 	${border};
 `;
 

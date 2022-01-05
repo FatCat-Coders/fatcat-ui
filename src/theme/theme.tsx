@@ -1,55 +1,70 @@
 import React from 'react';
-import 'styled-components';
-import { DefaultTheme, ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { isObjectEmpty, deepmerge } from '../utils/object-helpers';
 
 // Definitions
 import {
-	SECTION_WIDTH,
+	ANIMATIONS,
+	BACKGROUND_COLOR,
+	BUTTON_COLOR,
+	COLOR,
 	FONT_FAMILY,
 	FONT_SIZE,
 	FONT_WEIGHT,
 	LINE_HEIGHT,
-	COLOR,
-	SPACE,
-	SCREEN_RATIO,
 	LINK_COLOR,
-	BUTTON_COLOR,
+	SCREEN_RATIO,
+	SECTION_WIDTH,
+	SPACE,
 	TEXT_COLOR,
-	BACKGROUND_COLOR,
 } from './definitions';
+import { HOVER_BEHAVIORS, RESPONSIVE_BEHAVIORS, TEXT_SIZE } from './styles';
+import { SideSpacingTypesValue } from './props/space/space';
 
-declare module 'styled-components' {
-	export interface DefaultTheme {
-		color: typeof COLOR;
-		backgroundColor: typeof BACKGROUND_COLOR;
-		fontSize: typeof FONT_SIZE;
-		fontWeight: typeof FONT_WEIGHT;
-		lineHeight: typeof LINE_HEIGHT;
-		fontFamily: typeof FONT_FAMILY;
-		sectionWidth: typeof SECTION_WIDTH;
-		space: typeof SPACE;
-		screenRatio: typeof SCREEN_RATIO;
-		linkColor: typeof LINK_COLOR;
-		buttonColor: typeof BUTTON_COLOR;
-		textColor: typeof TEXT_COLOR;
-	}
+export interface FatCatTheme {
+	animation: typeof ANIMATIONS
+	backgroundColor: typeof BACKGROUND_COLOR
+	buttonColor: typeof BUTTON_COLOR
+	color: typeof COLOR
+	fontFamily: typeof FONT_FAMILY
+	fontSize: typeof FONT_SIZE
+	fontWeight: typeof FONT_WEIGHT
+	hover: typeof HOVER_BEHAVIORS
+	lineHeight: typeof LINE_HEIGHT
+	linkColor: typeof LINK_COLOR
+	responsive: typeof RESPONSIVE_BEHAVIORS
+	screenRatio: typeof SCREEN_RATIO
+	sectionWidth: typeof SECTION_WIDTH
+	sideSpace?: SideSpacingTypesValue
+	space: typeof SPACE
+	textColor: typeof TEXT_COLOR
+	textSize: typeof TEXT_SIZE,
 }
 
-const theme: DefaultTheme = {
-	color: COLOR,
+const defaultTheme: FatCatTheme = {
+	animation: ANIMATIONS,
 	backgroundColor: BACKGROUND_COLOR,
+	buttonColor: BUTTON_COLOR,
+	color: COLOR,
+	fontFamily: FONT_FAMILY,
 	fontSize: FONT_SIZE,
 	fontWeight: FONT_WEIGHT,
-	fontFamily: FONT_FAMILY,
+	hover: HOVER_BEHAVIORS,
 	lineHeight: LINE_HEIGHT,
+	linkColor: LINK_COLOR,
+	responsive: RESPONSIVE_BEHAVIORS,
+	screenRatio: SCREEN_RATIO,
 	sectionWidth: SECTION_WIDTH,
 	space: SPACE,
-	screenRatio: SCREEN_RATIO,
-	linkColor: LINK_COLOR,
-	buttonColor: BUTTON_COLOR,
 	textColor: TEXT_COLOR,
+	textSize: TEXT_SIZE,
 };
 
-export const UIThemeProvider: React.FC = ({ children }) => {
-	return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+export const UIThemeProvider: React.FC<{theme: any}> = ({ children, theme }) => {
+	let mergedTheme;
+	if (theme && !isObjectEmpty(theme)) {
+		mergedTheme = deepmerge(defaultTheme, theme);
+	}
+
+	return <ThemeProvider theme={mergedTheme || defaultTheme}>{children}</ThemeProvider>;
 };

@@ -6,13 +6,12 @@ import { MEDIA } from '../../../theme/definitions';
 import {
 	background, BackgroundProps,
 	border, BorderProps,
-	height, HeightProps,
+	size, SizeProps,
 	space, SpaceProps,
-	width, WidthProps,
 	responsive, ResponsiveProps,
 } from '../../../theme/props';
 
-export type GridAtomProps = WidthProps & HeightProps & BackgroundProps & BorderProps & SpaceProps & ResponsiveProps & {
+export type GridAtomProps = SizeProps & BackgroundProps & BorderProps & SpaceProps & ResponsiveProps & {
 	gap?: Properties['gap'],
 	rowGap?: Properties['rowGap'],
 	gridTemplateColumns: Properties['gridTemplateColumns'],
@@ -25,8 +24,7 @@ export const Grid = styled.div<GridAtomProps>`
 	${space};
 	${border};
 	${background};
-	${height};
-	${width};
+	${size};
 	${responsive};
 	${props => props.alignItems && `align-items: ${props.alignItems}`};
 	${props => props.justifyContent && `justify-content: ${props.justifyContent}`};

@@ -4,18 +4,16 @@ import {
 	responsive, ResponsiveProps,
 	space, SpaceProps,
 	border, BorderProps,
-	width, WidthProps,
+	size, SizeProps,
 	background, BackgroundProps,
 	text, TextProps,
-	height, HeightProps,
 } from '../../../theme/props';
 
-export const Select = styled.select<SpaceProps & ResponsiveProps & BorderProps & WidthProps & BackgroundProps & TextProps & HeightProps>`
+export const Select = styled.select<SpaceProps & ResponsiveProps & BorderProps & SizeProps & BackgroundProps & TextProps>`
 	${space};
 	${responsive};
     ${border};
-    ${width};
-	${height};
+    ${size};
     ${background};
     ${text};
     -moz-appearance:none; /* Firefox */

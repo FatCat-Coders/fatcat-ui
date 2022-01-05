@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components';
+
 export const SPACE = {
 	s0: '0px',
 	s4: '4px',
@@ -29,10 +31,10 @@ export const SPACE = {
 	s200: '200px',
 	s232: '232px',
 	s264: '264px',
-	auto: 'auto',
+	sauto: 'auto',
 } as const;
 
-export type SpaceDefinition = keyof typeof SPACE;
+export type SpaceDefinition = keyof DefaultTheme['space'];
 
 export const SCREEN_RATIO = {
 	small: 1.8,

@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { Paragraph } from './Paragraph';
 import {
-	height, responsive, space, text,
+	size, SizeProps,
+	responsive, ResponsiveProps,
+	space, SpaceProps,
+	text, TextProps,
 } from '../../../theme/props';
 import { Heading } from '../Heading/Heading';
 
-export const BlogPreviewParagraph = styled(Paragraph)`
+export const BlogPreviewParagraph = styled(Paragraph)<ResponsiveProps>`
     font-size: 14px;
     line-height: 1.6;
 	display: -webkit-box;
@@ -15,7 +18,7 @@ export const BlogPreviewParagraph = styled(Paragraph)`
     ${responsive}
 `;
 
-export const BlogPreviewTitle = styled(Heading)`
+export const BlogPreviewTitle = styled(Heading)<ResponsiveProps & TextProps & SpaceProps & SizeProps>`
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
@@ -23,5 +26,5 @@ export const BlogPreviewTitle = styled(Heading)`
     ${responsive};
     ${text};
     ${space};
-    ${height};
+    ${size};
 `;

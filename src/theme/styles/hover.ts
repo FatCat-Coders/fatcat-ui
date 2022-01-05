@@ -34,7 +34,7 @@ export const HOVER_BEHAVIORS = {
 	textColorBlack: css`
 		color: ${props => props.theme.color.black};
 	`,
-	unset: css`
+	borderUnset: css`
 		border-bottom: unset;
 	`,
 	zoom: (value: number) => css`

@@ -10,8 +10,6 @@ export const FONT_FAMILY = {
 	secondary: 'Circular Std',
 } as const;
 
-export type FontFamilyDefinition = keyof typeof FONT_FAMILY;
-
 /**
  * Available Font sizes in Rem
  */
@@ -34,8 +32,6 @@ export const FONT_SIZE = {
 	s12: '0.75rem',
 } as const;
 
-export type FontSizeDefinition = keyof typeof FONT_SIZE;
-
 /**
  * Available font weights
  */
@@ -48,8 +44,6 @@ export const FONT_WEIGHT = {
 	normal: 400,
 	light: 300,
 } as const;
-
-export type FontWeightDefinition = keyof typeof FONT_WEIGHT;
 
 /**
  * Available line heights
@@ -66,5 +60,3 @@ export const LINE_HEIGHT = {
 	s175: 1.71428571429,
 	s200: 2,
 } as const;
-
-export type LineHeightDefinition = keyof typeof LINE_HEIGHT;

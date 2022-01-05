@@ -4,23 +4,21 @@ import styled from 'styled-components';
 import {
 	background, BackgroundProps,
 	border, BorderProps,
-	height, HeightProps,
 	responsive, ResponsiveProps,
 	space, SpaceProps,
 	text, TextProps,
 	visibility, VisibilityProps,
-	width, WidthProps,
+	size, SizeProps,
 } from '../../../theme/props';
 import { hover, HoverProps } from '../../../theme/props/hover/hover';
 
-export type ParagraphAtomProps = ResponsiveProps & TextProps & SpaceProps & WidthProps & HeightProps & BackgroundProps & BorderProps & HoverProps & VisibilityProps;
+export type ParagraphAtomProps = ResponsiveProps & TextProps & SpaceProps & SizeProps & BackgroundProps & BorderProps & HoverProps & VisibilityProps;
 
 export const Paragraph = styled.p<ParagraphAtomProps>`
 	letter-spacing: -0.01em;
 	${text};
 	${space};
-	${width};
-	${height};
+	${size};
 	${responsive};
 	${background};
 	${border};

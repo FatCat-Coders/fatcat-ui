@@ -8,10 +8,9 @@ import {
 	space, SpaceProps,
 	text, TextProps,
 	responsive, ResponsiveProps,
-	width, WidthProps,
+	size, SizeProps,
 	visibility, VisibilityProps,
 	position, PositionProps,
-	height, HeightProps,
 } from '../../../theme/props';
 
 const headingStyles = {
@@ -31,7 +30,7 @@ const headingStyles = {
 		font-weight: ${props => props.theme.fontWeight.bold};
 		letter-spacing: -0.01em;
 		${MEDIA.mobile} {
-			${TEXT_SIZE.h2};
+			${TEXT_SIZE.h2Mobile};
 		}
 	`,
 	h3: css`
@@ -72,7 +71,7 @@ type HeadingType = {
 	as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 };
 
-export type HeadingAtomProps = HeadingType & TextProps & SpaceProps & ResponsiveProps & WidthProps & VisibilityProps & PositionProps & HeightProps;
+export type HeadingAtomProps = HeadingType & TextProps & SpaceProps & ResponsiveProps & SizeProps & VisibilityProps & PositionProps;
 
 export const Heading = styled.h1<HeadingAtomProps>`
 	${props =>
@@ -87,10 +86,9 @@ export const Heading = styled.h1<HeadingAtomProps>`
 	${text};
 	${space};
 	${responsive};
-	${width};
+	${size};
 	${visibility};
 	${position};
-	${height};
 `;
 
 Heading.defaultProps = {

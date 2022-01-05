@@ -6,8 +6,7 @@ import { PolymorphicComponent } from '../../../utils/polymorphic-component';
 import {
 	flex, FlexProps,
 	space, SpaceProps,
-	width, WidthProps,
-	height, HeightProps,
+	size, SizeProps,
 	background, BackgroundProps,
 	border, BorderProps,
 	position, PositionProps,
@@ -23,8 +22,7 @@ import React from 'react';
 export type FlexAtomProps =
 	FlexProps
 	& SpaceProps
-	& WidthProps
-	& HeightProps
+	& SizeProps
 	& BackgroundProps
 	& BorderProps
 	& PositionProps
@@ -38,8 +36,7 @@ export const FlexBase = styled.div<FlexAtomProps>`
 	width: 100%;
 	${flex};
 	${space};
-	${width};
-	${height};
+	${size};
 	${background};
 	${border};
 	${position};

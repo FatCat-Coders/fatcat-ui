@@ -1,11 +1,11 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
 
 // Helpers
 import pickObjectProperties from '../../../utils/pick-object-properties';
 
 import { HOVER_BEHAVIORS } from '../../styles/hover';
 
-type HoverTypes = keyof typeof HOVER_BEHAVIORS;
+type HoverTypes = keyof DefaultTheme['hover'];
 
 export type HoverProps = {
 	hover?: (HoverTypes | Partial<Record<HoverTypes, any>>)[]
