@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
 
 // Helpers
 import pickObjectProperties from '../../../utils/pick-object-properties';
@@ -7,7 +7,7 @@ import { MEDIA } from '../../definitions';
 import { RESPONSIVE_BEHAVIORS } from '../../styles/responsive';
 import { SideSpacingValue } from '../space/space';
 
-type ResponsiveTypes = keyof typeof RESPONSIVE_BEHAVIORS;
+type ResponsiveTypes = keyof DefaultTheme['responsive'];
 
 type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<Record<'padding' | 'margin', SideSpacingValue[]>> | Partial<Record<Exclude<ResponsiveTypes, 'padding' | 'margin'>, any>>)[];
 

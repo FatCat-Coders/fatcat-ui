@@ -1,6 +1,7 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
 import { Properties } from 'csstype';
-import { AnimationDefinition, ANIMATIONS } from '../../definitions';
+
+type AnimationDefinition = keyof DefaultTheme['animation']
 
 export type AnimationsProps = {
 	animation?: [AnimationDefinition, Properties['animation']],
@@ -15,8 +16,8 @@ export type AnimationsProps = {
 };
 
 export const animations = css<AnimationsProps>`
-	${props => props.animation && props.animation.length === 2 && `animation: ${ANIMATIONS[props.animation[0]]} ${props.animation[1]};`}
-	${props => props.animationName && `animation-name: ${ANIMATIONS[props.animationName]};`}
+	${props => props.animation && props.animation.length === 2 && `animation: ${props.theme.animation[props.animation[0]]} ${props.animation[1]};`}
+	${props => props.animationName && `animation-name: ${props.theme.animation[props.animationName]};`}
 	${props => props.animationDuration && `animation-duration: ${props.animationDuration};`}
 	${props => props.animationTimingFunction && `animation-timing-function: ${props.animationTimingFunction};`}
 	${props => props.animationDelay && `animation-delay: ${props.animationDelay};`}

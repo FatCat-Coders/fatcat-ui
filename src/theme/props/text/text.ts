@@ -1,26 +1,21 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
 import { rgba } from 'polished';
 import { Properties } from 'csstype';
 
-import {
-	FontWeightDefinition, TextColorDefinition, FontSizeDefinition, LineHeightDefinition,
-} from '../../definitions';
-import { TEXT_SIZE, TextSize } from '../../styles';
-
 export type TextProps = {
-	textAlign?: Properties['textAlign'];
-	textColor?: TextColorDefinition;
-	textSize?: TextSize;
-	fontSize?: FontSizeDefinition,
-	lineHeight?: LineHeightDefinition,
-	fontWeight?: FontWeightDefinition,
-	whiteSpace?: Properties['whiteSpace'];
-	uppercase?: boolean,
-	lowercase?: boolean,
-	ellipsis?: number,
+	textAlign?: Properties['textAlign']
+	textColor?: keyof DefaultTheme['textColor']
+	textSize?: keyof DefaultTheme['textSize']
+	fontSize?: keyof DefaultTheme['fontSize']
+	lineHeight?: keyof DefaultTheme['lineHeight']
+	fontWeight?: keyof DefaultTheme['fontWeight']
+	whiteSpace?: Properties['whiteSpace']
+	uppercase?: boolean
+	lowercase?: boolean
+	ellipsis?: number
 	fontStyle?: Properties['fontStyle']
 	textDecoration?: Properties['textDecoration']
-	letterSpacing?: Properties['letterSpacing'],
+	letterSpacing?: Properties['letterSpacing']
 	textColorOpacity?: number
 };
 
@@ -30,7 +25,7 @@ export const text = css<TextProps>`
 	${props => props.textAlign && `text-align: ${props.textAlign};`}
 	${props => props.textColor && props.theme.textColor[props.textColor]
 			&& `color: ${props.textColorOpacity ? rgba(props.theme.textColor[props.textColor], props.textColorOpacity) : props.theme.textColor[props.textColor]};`}
-	${props => props.textSize && TEXT_SIZE[props.textSize]}
+	${props => props.textSize && props.theme.textSize[props.textSize]}
 	${props => props.fontSize && props.theme.fontSize[props.fontSize] && `font-size: ${props.theme.fontSize[props.fontSize]};`}
 	${props => props.lineHeight && props.theme.lineHeight[props.lineHeight] && `line-height: ${props.theme.lineHeight[props.lineHeight]};`}
 	${props => props.fontWeight && props.theme.fontWeight[props.fontWeight] && `font-weight: ${props.theme.fontWeight[props.fontWeight]};`}

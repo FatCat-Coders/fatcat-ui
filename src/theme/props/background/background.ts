@@ -1,10 +1,9 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
 import { Properties } from 'csstype';
 import { rgba } from 'polished';
-import { BackgroundColorDefinition } from '../../definitions';
 
 export type BackgroundProps = {
-	backgroundColor?: BackgroundColorDefinition,
+	backgroundColor?: keyof DefaultTheme['backgroundColor'],
 	backgroundColorOpacity?: number
 	backgroundImage?: string,
 	backgroundRepeat?: Properties['backgroundRepeat'],
