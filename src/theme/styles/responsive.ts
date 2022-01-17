@@ -1,10 +1,7 @@
 import { css } from 'styled-components';
-import {
-	createSideSpacingRule, parseSpace,
-} from '../props';
 
-import { TEXT_SIZE } from './text';
-import { FONT_SIZE } from '../definitions';
+import { createSideSpacingRule, parseSpace } from '../props';
+import pickObjectProperties from '../../utils/pick-object-properties';
 
 export const RESPONSIVE_BEHAVIORS = {
 	// flex
@@ -118,17 +115,17 @@ export const RESPONSIVE_BEHAVIORS = {
 		padding-bottom: 0;
 	`,
 	padding: value => css`
-		${createSideSpacingRule('padding', parseSpace(value))};
+		${props => createSideSpacingRule('padding', parseSpace(value, props.theme.space))}
 	`,
 	margin: value => css`
-		${createSideSpacingRule('margin', parseSpace(value))};
+		${props => createSideSpacingRule('margin', parseSpace(value, props.theme.space))}
 	`,
 	// text
 	textSize: value => css`
-		${TEXT_SIZE[value]};
+		${props => props.theme.textSize[value]};
 	`,
 	fontSize: value => css`
-		font-size: ${FONT_SIZE[value]};
+		font-size: ${props => props.theme.fontSize[value]};
 	`,
 	noWrap: css`
 		white-space: nowrap;
@@ -193,5 +190,11 @@ export const RESPONSIVE_BEHAVIORS = {
 	// visibility
 	hide: css`
 		visibility: hidden;
+	`,
+	// hover
+	hover: value => css`
+		&:hover {
+			${props => pickObjectProperties(props.theme.hover, value)}
+		}
 	`,
 };

@@ -22,32 +22,32 @@ export type ResponsiveProps = {
 
 export const responsive = css<ResponsiveProps>`
 	${props => props.desktop && css`
-		${MEDIA.desktop} {
+		${props.theme.media.desktop} {
 			${pickObjectProperties(RESPONSIVE_BEHAVIORS, props.desktop)}
 		}
 	`}
 	${props => props.largeTablet && css`
-		${MEDIA.largeTablet} {
+		${props.theme.media.largeTablet} {
 			${pickObjectProperties(RESPONSIVE_BEHAVIORS, props.largeTablet)}
 		}
 	`}
 	${props => props.tablet && css`
-		${MEDIA.tablet} {
+		${props.theme.media.tablet} {
 			${pickObjectProperties(RESPONSIVE_BEHAVIORS, props.tablet)}
 		}
 	`}
 	${props => props.mobile && css`
-		${MEDIA.mobile} {
+		${props.theme.media.mobile} {
 			${pickObjectProperties(RESPONSIVE_BEHAVIORS, props.mobile)}
 		}
 	`}
 	${props => props.largeDesktop && css`
-		${MEDIA.largeDesktop} {
+		${props.theme.media.largeDesktop} {
 			${pickObjectProperties(RESPONSIVE_BEHAVIORS, props.largeDesktop)}
 		}
 	`}
 	${props => props.desktopStandard && css`
-		${MEDIA.desktopStandard} {
+		${props.theme.media.desktopStandard} {
 			${pickObjectProperties(RESPONSIVE_BEHAVIORS, props.desktopStandard)}
 		}
 	`}
