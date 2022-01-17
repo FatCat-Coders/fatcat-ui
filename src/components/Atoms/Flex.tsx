@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-// Types
-import { PolymorphicComponent } from '../../utils/polymorphic-component';
 
 import {
 	background, BackgroundProps,
@@ -17,8 +15,6 @@ import {
 	visibility, VisibilityProps,
 } from '../../theme/props';
 
-import React from 'react';
-
 export type TFlex =
 	BackgroundProps
 	& BorderProps
@@ -32,7 +28,7 @@ export type TFlex =
 	& SpaceProps
 	& VisibilityProps;
 
-export const FlexBase = styled.div<TFlex>`
+export const Flex = styled.div<TFlex>`
 	width: 100%;
 	${background};
 	${border};
@@ -47,14 +43,6 @@ export const FlexBase = styled.div<TFlex>`
 	${hover};
 	${responsive};
 `;
-
-export type FlexComponentProps = Omit<JSX.IntrinsicElements['div'], 'type'> & TFlex;
-export type FlexComponent = PolymorphicComponent<FlexComponentProps>;
-
-export const Flex: FlexComponent = (props) => {
-	const { children, ...flexProps } = props;
-	return <FlexBase {...flexProps}>{children}</FlexBase>;
-};
 
 Flex.defaultProps = {
 	initialDisplay: 'flex',

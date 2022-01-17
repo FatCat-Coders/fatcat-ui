@@ -6,7 +6,7 @@ export const HEADING_STYLE = {
 		font-weight: ${props => props.theme.fontWeight.bold};
 		letter-spacing: -0.01em;
 		${props => props.theme.media.largeTablet} {
-			${props => props.theme.testSize.h1Tablet};
+			${props => props.theme.textSize.h1Tablet};
 		}
 		${props => props.theme.media.mobile} {
 			${props => props.theme.textSize.h1Mobile};
@@ -52,4 +52,4 @@ export const HEADING_STYLE = {
 			${props => props.theme.textSize.h6Mobile};
 		}
 	`,
-} as const;
+};

@@ -17,7 +17,7 @@ import {
 	hover, HoverProps,
 } from '../../theme/props';
 
-type TButton =
+export type TButton =
 	{
 		variant?: keyof DefaultTheme['buttonStyle'],
 	}
@@ -35,7 +35,7 @@ export const ButtonBase = styled.button<TButton>`
     text-align: center;
 	text-transform: uppercase;
 	white-space: nowrap;
-	${props => props.variant && props.theme.buttonStlye[props.variant]};
+	${props => props.variant && props.theme.buttonStyle[props.variant]};
 	${border};
 	${size};
     ${space};

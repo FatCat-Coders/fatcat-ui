@@ -1,6 +1,5 @@
-import styled from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
 
-import { SectionWidthDefinition } from '../../theme/definitions';
 import {
 	background, BackgroundProps,
 	responsive, ResponsiveProps,
@@ -8,9 +7,9 @@ import {
 	visibility, VisibilityProps,
 } from '../../theme/props';
 
-type TSectionInnerWrapper =
+export type TSectionInnerWrapper =
 	{
-		width: SectionWidthDefinition
+		width: keyof DefaultTheme['sectionWidth']
 	}
 	& BackgroundProps
 	& SpaceProps;
@@ -22,7 +21,7 @@ export const SectionInnerWrapper = styled.div<TSectionInnerWrapper>`
 	${space};
 `;
 
-type TSectionOuterWrapper =
+export type TSectionOuterWrapper =
 	{
 		sticky?: boolean,
 		overflow?: string,

@@ -8,7 +8,7 @@
 export const FONT_FAMILY = {
 	main: 'Circular Std',
 	secondary: 'Circular Std',
-} as const;
+};
 
 /**
  * Available Font sizes in Rem
@@ -30,7 +30,7 @@ export const FONT_SIZE = {
 	s16: '1rem',
 	s14: '0.875rem',
 	s12: '0.75rem',
-} as const;
+};
 
 /**
  * Available font weights
@@ -43,7 +43,7 @@ export const FONT_WEIGHT = {
 	medium: 500,
 	normal: 400,
 	light: 300,
-} as const;
+};
 
 /**
  * Available line heights
@@ -59,4 +59,4 @@ export const LINE_HEIGHT = {
 	s150: 1.5,
 	s175: 1.71428571429,
 	s200: 2,
-} as const;
+};

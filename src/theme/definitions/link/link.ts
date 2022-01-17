@@ -23,4 +23,4 @@ export const LINK_STYLE = {
 		color: ${props => props.theme.color.grey};
 		cursor: not-allowed;
 	`,
-} as const;
+};

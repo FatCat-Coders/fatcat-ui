@@ -8,7 +8,7 @@ import {
 	visibility, VisibilityProps,
 } from '../../theme/props';
 
-type TText =
+export type TText =
 	& HoverProps
 	& ResponsiveProps
 	& SpaceProps

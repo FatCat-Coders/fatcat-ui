@@ -15,7 +15,7 @@ const ollistCSS = {
 	`,
 };
 
-type TOlList =
+export type TOlList =
 	{
 		model?: keyof typeof ollistCSS,
 	}

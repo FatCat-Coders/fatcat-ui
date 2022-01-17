@@ -1,7 +1,7 @@
 import React from 'react';
+import { DefaultTheme } from 'styled-components';
 
 // Props & Types
-import { SectionWidthDefinition } from '../../theme/definitions';
 import {
 	BackgroundProps,
 	ResponsiveProps,
@@ -12,12 +12,12 @@ import {
 // Local atoms
 import { SectionInnerWrapper, SectionOuterWrapper } from './Section.atoms';
 
-type TSection =
+export type TSection =
 	{
-		width?: SectionWidthDefinition;
-		sticky?: boolean,
-		overflow?: string,
-		scale?: boolean,
+		width?: keyof DefaultTheme['sectionWidth']
+		sticky?: boolean
+		overflow?: string
+		scale?: boolean
 		edge?: boolean
 	}
 	& BackgroundProps

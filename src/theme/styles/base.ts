@@ -10,7 +10,6 @@ export default css`
 	html, body, * {
 		line-height: 1;
 		font-family: ${props => props.theme.fontFamily.main};
-		color: ${props => props.theme.textColor.primary};
 	}
 
 	/* Change the white to any color ;) */

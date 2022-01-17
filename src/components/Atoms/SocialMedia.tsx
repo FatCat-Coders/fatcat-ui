@@ -8,7 +8,7 @@ import {
 	text, TextProps,
 } from '../../theme/props';
 
-type TSocialMedia =
+export type TSocialMedia =
 	ResponsiveProps
 	& SizeProps
 	& SpaceProps

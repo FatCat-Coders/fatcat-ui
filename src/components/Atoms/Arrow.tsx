@@ -9,7 +9,7 @@ import {
 	text, TextProps,
 } from '../../theme/props';
 
-type TArrow =
+export type TArrow =
 	SpaceProps
 	& TextProps;
 

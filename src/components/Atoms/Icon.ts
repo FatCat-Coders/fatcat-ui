@@ -11,7 +11,7 @@ import {
 	text, TextProps,
 } from '../../theme/props';
 
-type TIcon =
+export type TIcon =
 	& HoverProps
 	& ResponsiveProps
 	& SpaceProps

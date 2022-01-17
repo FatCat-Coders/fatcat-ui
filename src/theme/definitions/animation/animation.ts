@@ -14,6 +14,4 @@ export const ANIMATIONS = {
 	fadeInFlip: animations.fadeInFlip,
 	beamColor: animations.beamColor,
 	rotateMoveXY: animations.rotateMoveXY,
-} as const;
-
-export type AnimationDefinition = keyof typeof ANIMATIONS;
+};

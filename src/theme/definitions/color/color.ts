@@ -20,30 +20,22 @@ export const COLOR = {
 	yellow: '#FFB82D',
 	yellow10: 'rgba(255,184,45, 0.1)',
 	transparent: 'transparent',
-} as const;
-
-export type ColorDefinition = keyof typeof COLOR;
+};
 
 export const LINK_COLOR = {
 	primary: COLOR.yellow,
-} as const;
-
-export type LinkColorDefinition = keyof typeof LINK_COLOR;
+};
 
 export const BUTTON_COLOR = {
 	fcc: COLOR.purple,
-} as const;
-
-export type ButtonColorDefinition = keyof typeof BUTTON_COLOR;
+};
 
 export const TEXT_COLOR = {
 	primary: COLOR.white,
 	secondary: COLOR.darkerGrey,
 	black: COLOR.blackLighter,
 	yellow: COLOR.yellow,
-} as const;
-
-export type TextColorDefinition = keyof typeof TEXT_COLOR;
+};
 
 export const BACKGROUND_COLOR = {
 	transparent: COLOR.transparent,
@@ -56,6 +48,4 @@ export const BACKGROUND_COLOR = {
 	yellow: COLOR.yellow,
 	white: COLOR.white,
 	wistiaOverlay: 'rgba(130, 130, 130, 0.6)',
-} as const;
-
-export type BackgroundColorDefinition = keyof typeof BACKGROUND_COLOR;
+};

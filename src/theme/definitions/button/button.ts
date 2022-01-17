@@ -38,4 +38,4 @@ export const BUTTON_STYLE = {
 			color: ${props => props.theme.color.blackLight};
 		}
 	`,
-} as const;
+};

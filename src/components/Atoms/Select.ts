@@ -10,7 +10,7 @@ import {
 	hover, HoverProps,
 } from '../../theme/props';
 
-type TSelect =
+export type TSelect =
 	BackgroundProps
 	& BorderProps
 	& HoverProps

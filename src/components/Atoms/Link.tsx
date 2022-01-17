@@ -10,7 +10,7 @@ import {
 	text, TextProps,
 } from '../../theme/props';
 
-type Tlink =
+export type Tlink =
 	{
 		variant?: keyof DefaultTheme['linkStyle']
 	}

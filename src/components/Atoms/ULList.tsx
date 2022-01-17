@@ -22,7 +22,7 @@ const ullistCSS = {
     `,
 };
 
-type TULList =
+export type TULList =
 	{
 		model?: keyof typeof ullistCSS
 	}

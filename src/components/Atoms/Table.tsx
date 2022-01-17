@@ -4,7 +4,7 @@ import {
 	text, TextProps,
 } from '../../theme/props';
 
-type TTable =
+export type TTable =
 	{
 		version?: keyof DefaultTheme['tableStyle']
 	}
