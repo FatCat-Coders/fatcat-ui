@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export const HEADING_STYLE = {
+export const TEXT_STYLE = {
 	h1: css`
 		${props => props.theme.textSize.h1};
 		font-weight: ${props => props.theme.fontWeight.bold};
@@ -52,4 +52,6 @@ export const HEADING_STYLE = {
 			${props => props.theme.textSize.h6Mobile};
 		}
 	`,
+	paragraph: css``,
+	text: css``,
 };

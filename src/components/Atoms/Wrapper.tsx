@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import {
+	animation, AnimationProps,
 	background, BackgroundProps,
 	border, BorderProps,
 	hover, HoverProps,
@@ -15,7 +16,8 @@ import {
 } from '../../theme/props';
 
 export type TWrapper =
-	BackgroundProps
+	AnimationProps
+	& BackgroundProps
 	& BorderProps
 	& HoverProps
 	& OpacityProps
@@ -29,6 +31,7 @@ export type TWrapper =
 
 export const Wrapper = styled.div<TWrapper>`
 	width: 100%;
+	${animation}
 	${background};
 	${border};
 	${opacity};
@@ -44,5 +47,5 @@ export const Wrapper = styled.div<TWrapper>`
 `;
 
 Wrapper.defaultProps = {
-	initialDisplay: 'block',
+	$initialDisplay: 'block',
 };

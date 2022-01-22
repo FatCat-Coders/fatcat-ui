@@ -2,9 +2,11 @@ import styled from 'styled-components';
 
 // Props
 import {
+	animation, AnimationProps,
 	background, BackgroundProps,
 	border, BorderProps,
 	hover, HoverProps,
+	position, PositionProps,
 	responsive, ResponsiveProps,
 	size, SizeProps,
 	space, SpaceProps,
@@ -13,9 +15,11 @@ import {
 } from '../../theme/props';
 
 export type TParagraph =
-	BackgroundProps
+	AnimationProps
+	& BackgroundProps
 	& BorderProps
 	& HoverProps
+	& PositionProps
 	& ResponsiveProps
 	& SizeProps
 	& SpaceProps
@@ -24,8 +28,11 @@ export type TParagraph =
 
 export const Paragraph = styled.p<TParagraph>`
 	letter-spacing: -0.01em;
+	${props => props.theme.textStyle.paragraph}
+	${animation};
 	${background};
 	${border};
+	${position};
 	${size};
 	${space};
 	${text};
@@ -35,8 +42,8 @@ export const Paragraph = styled.p<TParagraph>`
 `;
 
 Paragraph.defaultProps = {
-	textSize: 'paragraph',
-	fontWeight: 'normal',
-	textAlign: 'left',
-	textColor: 'primary',
+	$textSize: 'paragraph',
+	$fontWeight: 'normal',
+	$textAlign: 'left',
+	$textColor: 'primary',
 };

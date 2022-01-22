@@ -1,17 +1,31 @@
 import styled, { DefaultTheme } from 'styled-components';
 
 import {
+	animation, AnimationProps,
+	hover, HoverProps,
+	position, PositionProps,
+	responsive, ResponsiveProps,
 	text, TextProps,
+	border, BorderProps,
+	background, BackgroundProps,
+	visibility, VisibilityProps,
 } from '../../theme/props';
 
 export type TTable =
 	{
-		version?: keyof DefaultTheme['tableStyle']
+		$variant?: keyof DefaultTheme['tableStyle']
 	}
-	& TextProps;
+	& AnimationProps
+	& BackgroundProps
+	& BorderProps
+	& HoverProps
+	& PositionProps
+	& ResponsiveProps
+	& TextProps
+	& VisibilityProps;
 
 export const Table = styled.table<TTable>`
-	${props => props.version && props.theme.tableStyle.[props.version]};
+	${props => props.$variant && props.theme.tableStyle.[props.$variant]};
 
     thead th {
 		border-bottom: 5px solid ${props => props.theme.color.white10};
@@ -32,9 +46,16 @@ export const Table = styled.table<TTable>`
 		padding: 20px 20px;
     }
 
+	${animation};
+	${background};
+	${border};
+	${position};
 	${text};
+	${visibility};
+	${hover};
+	${responsive};
 `;
 
 Table.defaultProps = {
-	version: 'pricing',
+	$variant: 'pricing',
 };

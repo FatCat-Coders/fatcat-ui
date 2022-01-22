@@ -1,9 +1,11 @@
 import React from 'react';
 import { DefaultTheme } from 'styled-components';
+import { ResponsiveTypePropCheck } from '../../theme/props/responsive/responsive';
 
 // Props & Types
 import {
 	BackgroundProps,
+	PositionProps,
 	ResponsiveProps,
 	SpaceProps,
 	VisibilityProps,
@@ -14,66 +16,94 @@ import { SectionInnerWrapper, SectionOuterWrapper } from './Section.atoms';
 
 export type TSection =
 	{
-		width?: keyof DefaultTheme['sectionWidth']
-		sticky?: boolean
-		overflow?: string
-		scale?: boolean
-		edge?: boolean
+		as?: 'section' | 'div' | 'header' | 'footer'
+		$edge?: boolean
+		$iDesktop?: ResponsiveTypePropCheck
+		$iDesktopStandard?: ResponsiveTypePropCheck
+		$iLargeDesktop?: ResponsiveTypePropCheck
+		$iLargeTablet?: ResponsiveTypePropCheck
+		$iMobile?: ResponsiveTypePropCheck
+		$iTablet?: ResponsiveTypePropCheck
+		$overflow?: string
+		$scale?: boolean
+		$sticky?: boolean
+		$width?: keyof DefaultTheme['sectionWidth']
 	}
 	& BackgroundProps
+	& PositionProps
 	& ResponsiveProps
 	& SpaceProps
 	& VisibilityProps;
 
 const Section: React.FC<TSection> = (props) => {
 	const {
-		backgroundImage,
-		backgroundPosition,
-		backgroundColor,
-		backgroundSize,
-		backgroundRepeat,
-		backgroundGradient,
-		padding,
-		margin,
-		scale,
+		as,
 		children,
-		width,
-		sticky,
-		overflow,
-		tablet,
-		mobile,
-		largeTablet,
-		largeDesktop,
-		desktop,
-		show,
-		hide,
-		edge,
+		$backgroundColor,
+		$backgroundGradient,
+		$backgroundImage,
+		$backgroundPosition,
+		$backgroundRepeat,
+		$backgroundSize,
+		$desktop,
+		$desktopStandard,
+		$edge,
+		$hide,
+		$iDesktop,
+		$iDesktopStandard,
+		$iLargeDesktop,
+		$iLargeTablet,
+		$iMobile,
+		$iTablet,
+		$largeDesktop,
+		$largeTablet,
+		$margin,
+		$mobile,
+		$overflow,
+		$padding,
+		$position,
+		$scale,
+		$show,
+		$sticky,
+		$tablet,
+		$width,
+		$zIndex,
 	} = props;
 
 	return (
 		<SectionOuterWrapper
-			backgroundImage={backgroundImage}
-			backgroundColor={backgroundColor}
-			backgroundPosition={backgroundPosition}
-			backgroundSize={backgroundSize}
-			backgroundRepeat={backgroundRepeat}
-			backgroundGradient={backgroundGradient}
-			sticky={sticky}
-			overflow={overflow}
-			mobile={mobile}
-			tablet={tablet}
-			largeTablet={largeTablet}
-			desktop={desktop}
-			largeDesktop={largeDesktop}
-			hide={hide}
-			show={show}
-			edge={edge}
+			as={as}
+			$backgroundImage={$backgroundImage}
+			$backgroundColor={$backgroundColor}
+			$backgroundPosition={$backgroundPosition}
+			$backgroundSize={$backgroundSize}
+			$backgroundRepeat={$backgroundRepeat}
+			$backgroundGradient={$backgroundGradient}
+			$position={$position}
+			$sticky={$sticky}
+			$overflow={$overflow}
+			$desktop={$desktop}
+			$desktopStandard={$desktopStandard}
+			$largeDesktop={$largeDesktop}
+			$largeTablet={$largeTablet}
+			$mobile={$mobile}
+			$tablet={$tablet}
+			$hide={$hide}
+			$show={$show}
+			$edge={$edge}
+			$zIndex={$zIndex}
 		>
 			<SectionInnerWrapper
-				padding={padding}
-				margin={margin}
-				scale={scale}
-				width={width}
+				$padding={$padding}
+				$margin={$margin}
+				$scale={$scale}
+				$width={$width}
+				$desktop={$iDesktop}
+				$desktopStandard={$iDesktopStandard}
+				$largeDesktop={$iLargeDesktop}
+				$largeTablet={$iLargeTablet}
+				$mobile={$iMobile}
+				$tablet={$iTablet}
 			>
 				{children}
 			</SectionInnerWrapper>
@@ -82,11 +112,18 @@ const Section: React.FC<TSection> = (props) => {
 };
 
 Section.defaultProps = {
-	width: 'normal',
-	edge: false,
-	scale: false,
-	sticky: false,
-	overflow: null,
+	as: 'section',
+	$width: 'normal',
+	$edge: false,
+	$scale: false,
+	$sticky: false,
+	$overflow: null,
+	$iMobile: null,
+	$iTablet: null,
+	$iLargeTablet: null,
+	$iDesktop: null,
+	$iLargeDesktop: null,
+	$iDesktopStandard: null,
 };
 
 export default Section;

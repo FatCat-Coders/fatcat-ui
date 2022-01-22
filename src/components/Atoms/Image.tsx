@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import {
+	animation, AnimationProps,
 	border, BorderProps,
 	hover, HoverProps,
 	opacity, OpacityProps,
@@ -13,8 +14,9 @@ import {
 
 export type TImage =
 	{
-		inline?: boolean
+		$inline?: boolean
 	}
+	& AnimationProps
 	& BorderProps
 	& HoverProps
 	& OpacityProps
@@ -25,9 +27,10 @@ export type TImage =
 	& VisibilityProps;
 
 export const Image = styled.img<TImage>`
-	display: ${props => (props.inline ? 'inline-block' : 'block')};
+	display: ${props => (props.$inline ? 'inline-block' : 'block')};
 	align-self: center;
 	width: 100%;
+	${animation};
 	${border};
 	${opacity};
 	${position};
@@ -40,5 +43,5 @@ export const Image = styled.img<TImage>`
 `;
 
 Image.defaultProps = {
-	initialDisplay: 'block',
+	$initialDisplay: 'block',
 };

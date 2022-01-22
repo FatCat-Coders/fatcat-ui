@@ -17,5 +17,5 @@ export const BR = styled.br<VisibilityProps>`
 `;
 
 BR.defaultProps = {
-	initialDisplay: 'inline',
+	$initialDisplay: 'inline',
 };

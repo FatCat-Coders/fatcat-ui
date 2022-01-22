@@ -1,4 +1,4 @@
-export * from './animations/animations';
+export * from './animation/animation';
 export * from './background/background';
 export * from './border/border';
 export * from './flex/flex';

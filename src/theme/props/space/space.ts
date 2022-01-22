@@ -2,7 +2,7 @@ import memoize from 'fast-memoize';
 import { css, DefaultTheme } from 'styled-components';
 
 // Definitions
-import { MEDIA, SpaceDefinition } from '../../definitions';
+import { SpaceDefinition } from '../../definitions';
 
 // Utils
 import { capitalize } from '../../../utils/capitalize';
@@ -130,7 +130,7 @@ export type SideSpacingTypesValue =
 	| 'b264'
 	| 'bauto';
 
-type SideSpacingValue = DefaultTheme['sideSpace']
+export type SideSpacingValue = DefaultTheme['sideSpace']
 
 const SIDES: Record<string, string> = {
 	t: 'top',
@@ -163,17 +163,17 @@ export const parseSpace = memoize<SpaceParser>((value, SPACE) => {
 });
 
 export type SpaceProps = {
-	padding?: string | SideSpacingValue[];
-	paddingBottom?: SpaceDefinition;
-	paddingTop?: SpaceDefinition;
-	paddingLeft?: SpaceDefinition;
-	paddingRight?: SpaceDefinition;
-	margin?: string | SideSpacingValue[];
-	marginBottom?: SpaceDefinition;
-	marginTop?: SpaceDefinition;
-	marginLeft?: SpaceDefinition;
-	marginRight?: SpaceDefinition;
-	scale?: boolean;
+	$padding?: string | SideSpacingValue[];
+	$paddingBottom?: SpaceDefinition;
+	$paddingTop?: SpaceDefinition;
+	$paddingLeft?: SpaceDefinition;
+	$paddingRight?: SpaceDefinition;
+	$margin?: string | SideSpacingValue[];
+	$marginBottom?: SpaceDefinition;
+	$marginTop?: SpaceDefinition;
+	$marginLeft?: SpaceDefinition;
+	$marginRight?: SpaceDefinition;
+	$scale?: boolean;
 };
 
 export type TSpaceSide = 'left' | 'right' | 'top' | 'bottom';
@@ -194,24 +194,25 @@ export const createSideSpacingRule = (
 
 const sideSpacing = (type: SideSpacingType) => css<SpaceProps>`
 	${(props) => {
-		if (!props[type]) {
+		const parsedType = `$${type}`;
+		if (!props[parsedType]) {
 			return null;
 		}
 
 		// @ts-ignore
-		const sides = parseSpace(props[type], props.theme.space);
+		const sides = parseSpace(props[parsedType], props.theme.space);
 		return css`
 			${createSideSpacingRule(type, sides)};
-			${props.scale && css`
-				${MEDIA.largeTablet} {
+			${props.$scale && css`
+				${props.theme.media.largeTablet} {
 					${createSideSpacingRule(type, sides, props.theme.screenRatio.large)};
 				}
 
-				${MEDIA.tablet} {
+				${props.theme.media.tablet} {
 					${createSideSpacingRule(type, sides, props.theme.screenRatio.medium)};
 				}
 
-				${MEDIA.mobile} {
+				${props.theme.media.mobile} {
 					${createSideSpacingRule(type, sides, props.theme.screenRatio.small)};
 				}
 			`};
@@ -220,22 +221,22 @@ const sideSpacing = (type: SideSpacingType) => css<SpaceProps>`
 `;
 
 const generateSingleSideSpace = (type: SideSpacingType, side: TSpaceSide) => {
-	const cssProp = `${type}${capitalize(side)}` as keyof SpaceProps;
+	const cssProp = `$${type}${capitalize(side)}` as keyof SpaceProps;
 	return css<SpaceProps>`
 		${(props) => {
 		if (props[cssProp]) {
 			return css`
 					${type}-${side}: ${props.theme.space[props[cssProp] as SpaceDefinition]};
-					${props.scale && css`
-						${MEDIA.largeTablet} {
+					${props.$scale && css`
+						${props.theme.media.largeTablet} {
 							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.large)};
 						}
 
-						${MEDIA.tablet} {
+						${props.theme.media.tablet} {
 							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.large)};
 						}
 
-						${MEDIA.mobile} {
+						${props.theme.media.mobile} {
 							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.large)};
 						}
 					`};

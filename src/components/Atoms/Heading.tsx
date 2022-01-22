@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 // Props
 import {
+	animation, AnimationProps,
 	position, PositionProps,
 	responsive, ResponsiveProps,
 	size, SizeProps,
@@ -14,7 +15,8 @@ import {
 import { HeadingType } from '../../utils/types';
 
 export type THeading =
-	HeadingType
+	AnimationProps
+	& HeadingType
 	& PositionProps
 	& ResponsiveProps
 	& SizeProps
@@ -26,12 +28,13 @@ export const Heading = styled.h1<THeading>`
 	${props =>
 		props.as &&
 		css`
-			${props.theme.headingStyle[props.as]};
+			${props.theme.textStyle[props.as]};
 			* {
-				${props.theme.headingStyle[props.as]};
+				${props.theme.textStyle[props.as]};
 				${responsive};
 			}
 		`};
+	${animation};
 	${position};
 	${size};
 	${space};
@@ -42,7 +45,7 @@ export const Heading = styled.h1<THeading>`
 
 Heading.defaultProps = {
 	as: 'h1',
-	textAlign: 'left',
-	textColor: 'primary',
-	initialDisplay: 'inline',
+	$textAlign: 'left',
+	$textColor: 'primary',
+	$initialDisplay: 'inline',
 };

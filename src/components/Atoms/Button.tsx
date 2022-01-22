@@ -9,38 +9,45 @@ import { transitionStyle } from '../../theme/styles';
 
 // Props
 import {
+	animation, AnimationProps,
 	border, BorderProps,
+	hover, HoverProps,
+	position, PositionProps,
 	responsive, ResponsiveProps,
 	size, SizeProps,
 	space, SpaceProps,
 	text, TextProps,
-	hover, HoverProps,
+	visibility, VisibilityProps,
 } from '../../theme/props';
 
 export type TButton =
 	{
-		variant?: keyof DefaultTheme['buttonStyle'],
+		$variant?: keyof DefaultTheme['buttonStyle'],
 	}
+	& AnimationProps
 	& BorderProps
 	& HoverProps
+	& PositionProps
 	& ResponsiveProps
 	& SizeProps
 	& SpaceProps
-	& TextProps;
+	& TextProps
+	& VisibilityProps;
 
 export const ButtonBase = styled.button<TButton>`
     cursor: pointer;
     display: inline-block;
 	font-weight: bold;
     text-align: center;
-	text-transform: uppercase;
 	white-space: nowrap;
-	${props => props.variant && props.theme.buttonStyle[props.variant]};
+	${props => props.$variant && props.theme.buttonStyle[props.$variant]};
+	${animation};
 	${border};
+	${position};
 	${size};
+	${visibility};
     ${space};
     ${text};
-	${transitionStyle};
 	${hover}
     ${responsive};
 `;
@@ -54,5 +61,5 @@ export const Button: ButtonComponent = (props) => {
 };
 
 Button.defaultProps = {
-	variant: 'base',
+	$variant: 'base',
 };

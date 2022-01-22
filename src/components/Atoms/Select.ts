@@ -1,32 +1,43 @@
 import styled from 'styled-components';
 
 import {
-	responsive, ResponsiveProps,
-	space, SpaceProps,
-	border, BorderProps,
-	size, SizeProps,
+	animation, AnimationProps,
 	background, BackgroundProps,
-	text, TextProps,
+	border, BorderProps,
 	hover, HoverProps,
+	position, PositionProps,
+	responsive, ResponsiveProps,
+	size, SizeProps,
+	space, SpaceProps,
+	text, TextProps,
+	visibility, VisibilityProps,
 } from '../../theme/props';
 
+
+
 export type TSelect =
-	BackgroundProps
+	AnimationProps
+	& BackgroundProps
 	& BorderProps
 	& HoverProps
+	& PositionProps
 	& ResponsiveProps
 	& SizeProps
 	& SpaceProps
-	& TextProps;
+	& TextProps
+	& VisibilityProps;
 
 export const Select = styled.select<TSelect>`
     -moz-appearance:none; /* Firefox */
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;
+	${animation};
+	${position};
 	${space};
+	${visibility};
+    ${background};
     ${border};
     ${size};
-    ${background};
     ${text};
 	${hover};
 	${responsive};

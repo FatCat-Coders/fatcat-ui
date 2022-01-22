@@ -12,16 +12,19 @@ import {
 	FONT_FAMILY,
 	FONT_SIZE,
 	FONT_WEIGHT,
-	HEADING_STYLE,
+	TEXT_STYLE,
+	INPUT_STYLE,
 	LINE_HEIGHT,
 	LINK_COLOR,
 	LINK_STYLE,
 	MEDIA,
+	OLLIST_STYLE,
 	SCREEN_RATIO,
 	SECTION_WIDTH,
 	SPACE,
 	TABLE_STYLE,
 	TEXT_COLOR,
+	ULLIST_STYLE,
 } from './definitions';
 import { HOVER_BEHAVIORS, RESPONSIVE_BEHAVIORS, TEXT_SIZE } from './styles';
 import { SideSpacingTypesValue } from './props/space/space';
@@ -35,7 +38,7 @@ export interface FatCatTheme {
 	fontFamily: typeof FONT_FAMILY
 	fontSize: typeof FONT_SIZE
 	fontWeight: typeof FONT_WEIGHT
-	headingStyle: typeof HEADING_STYLE
+	textStyle: typeof TEXT_STYLE
 	hover: typeof HOVER_BEHAVIORS
 	lineHeight: typeof LINE_HEIGHT
 	linkColor: typeof LINK_COLOR
@@ -49,6 +52,9 @@ export interface FatCatTheme {
 	tableStyle: typeof TABLE_STYLE
 	textColor: typeof TEXT_COLOR
 	textSize: typeof TEXT_SIZE
+	inputStyle: typeof INPUT_STYLE
+	ollistStyle: typeof OLLIST_STYLE,
+	ullistStyle: typeof ULLIST_STYLE,
 }
 
 const defaultTheme: FatCatTheme = {
@@ -60,7 +66,7 @@ const defaultTheme: FatCatTheme = {
 	fontFamily: FONT_FAMILY,
 	fontSize: FONT_SIZE,
 	fontWeight: FONT_WEIGHT,
-	headingStyle: HEADING_STYLE,
+	textStyle: TEXT_STYLE,
 	hover: HOVER_BEHAVIORS,
 	lineHeight: LINE_HEIGHT,
 	linkColor: LINK_COLOR,
@@ -73,6 +79,9 @@ const defaultTheme: FatCatTheme = {
 	tableStyle: TABLE_STYLE,
 	textColor: TEXT_COLOR,
 	textSize: TEXT_SIZE,
+	inputStyle: INPUT_STYLE,
+	ollistStyle: OLLIST_STYLE,
+	ullistStyle: ULLIST_STYLE,
 };
 
 export const UIThemeProvider: React.FC<{ theme: any }> = ({ children, theme }) => {

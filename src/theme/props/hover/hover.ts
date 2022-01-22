@@ -8,14 +8,14 @@ import { HOVER_BEHAVIORS } from '../../styles/hover';
 type HoverTypes = keyof DefaultTheme['hover'];
 
 export type HoverProps = {
-	hover?: (HoverTypes | Partial<Record<HoverTypes, any>>)[]
+	$hover?: (HoverTypes | Partial<Record<HoverTypes, any>>)[]
 };
 
 export const hover = css<HoverProps>`
-	${props => props.hover && css`
+	${props => props.$hover && css`
 		&:hover {
 			cursor: pointer;
-			${pickObjectProperties(HOVER_BEHAVIORS, props.hover)}
+			${pickObjectProperties(HOVER_BEHAVIORS, props.$hover)}
 		}
 	`}
 `;

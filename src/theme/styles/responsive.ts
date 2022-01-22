@@ -82,6 +82,9 @@ export const RESPONSIVE_BEHAVIORS = {
 	backgroundImage: value => css`
 		background-image: url(${value});
 	`,
+	backgroundColor: value => css`
+		background-color: ${value};
+	`,
 	backgroundSize: value => css`
 		background-size: ${value};
 	`,
@@ -120,12 +123,18 @@ export const RESPONSIVE_BEHAVIORS = {
 	margin: value => css`
 		${props => createSideSpacingRule('margin', parseSpace(value, props.theme.space))}
 	`,
+	gap: value => css`
+		gap: ${value};
+	`,
 	// text
 	textSize: value => css`
 		${props => props.theme.textSize[value]};
 	`,
 	fontSize: value => css`
 		font-size: ${props => props.theme.fontSize[value]};
+	`,
+	lineHeight: value => css`
+		line-height: ${props => props.theme.lineHeight[value]};
 	`,
 	noWrap: css`
 		white-space: nowrap;
@@ -175,6 +184,9 @@ export const RESPONSIVE_BEHAVIORS = {
 	fixedPosition: css`
 		position: fixed;
 	`,
+	position: value => css`
+		position: ${value};
+	`,
 	top: value => css`
 		top: ${value};
 	`,
@@ -187,9 +199,21 @@ export const RESPONSIVE_BEHAVIORS = {
 	bottom: value => css`
 		bottom: ${value};
 	`,
+	zIndex: value => css`
+		z-index: ${value};
+	`,
+	transform: value => css`
+		transform: ${value};
+	`,
+	alignSelf: value => css`
+		align-self: ${value};
+	`,
 	// visibility
-	hide: css`
-		visibility: hidden;
+	visibility: value => css`
+		visibility: ${value};
+	`,
+	display: value => css`
+		display: ${value};
 	`,
 	// hover
 	hover: value => css`

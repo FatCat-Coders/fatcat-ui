@@ -1,25 +1,34 @@
 import styled from 'styled-components';
 
 import {
-	responsive, ResponsiveProps,
-	space, SpaceProps,
-	border, BorderProps,
-	size, SizeProps,
+	animation, AnimationProps,
 	background, BackgroundProps,
-	text, TextProps,
+	border, BorderProps,
 	hover, HoverProps,
+	position, PositionProps,
+	responsive, ResponsiveProps,
+	size, SizeProps,
+	space, SpaceProps,
+	text, TextProps,
+	visibility, VisibilityProps,
 } from '../../theme/props';
 
 export type TOption =
-	BackgroundProps
+	AnimationProps
+	& BackgroundProps
 	& BorderProps
 	& HoverProps
+	& PositionProps
 	& ResponsiveProps
 	& SizeProps
 	& SpaceProps
-	& TextProps;
+	& TextProps
+	& VisibilityProps;
 
 export const Option = styled.option<TOption>`
+	${animation};
+	${position};
+	${visibility};
     ${background};
     ${border};
     ${size};

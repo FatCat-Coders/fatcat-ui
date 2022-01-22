@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 
 import {
+	animation, AnimationProps,
 	background, BackgroundProps,
 	border, BorderProps,
 	flex, FlexProps,
@@ -16,7 +17,8 @@ import {
 } from '../../theme/props';
 
 export type TFlex =
-	BackgroundProps
+	AnimationProps
+	& BackgroundProps
 	& BorderProps
 	& FlexProps
 	& HoverProps
@@ -30,6 +32,7 @@ export type TFlex =
 
 export const Flex = styled.div<TFlex>`
 	width: 100%;
+	${animation};
 	${background};
 	${border};
 	${flex};
@@ -45,5 +48,5 @@ export const Flex = styled.div<TFlex>`
 `;
 
 Flex.defaultProps = {
-	initialDisplay: 'flex',
+	$initialDisplay: 'flex',
 };
