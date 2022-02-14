@@ -12,6 +12,7 @@ import {
 	size, SizeProps,
 	space, SpaceProps,
 	text, TextProps,
+	transition, TransitionsProps,
 	visibility, VisibilityProps,
 } from '../../theme/props';
 
@@ -27,6 +28,7 @@ export type TWrapper =
 	& SizeProps
 	& SpaceProps
 	& TextProps
+	& TransitionsProps
 	& VisibilityProps;
 
 export const Wrapper = styled.div<TWrapper>`
@@ -41,6 +43,7 @@ export const Wrapper = styled.div<TWrapper>`
 	${size};
 	${space};
 	${text};
+	${transition}
 	${visibility};
 	${hover};
 	${responsive};

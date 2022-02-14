@@ -42,8 +42,8 @@ export type LinkProps = Omit<JSX.IntrinsicElements['a'], 'type'> & Tlink;
 export type LinkComponent = PolymorphicComponent<LinkProps>;
 
 export const Link: LinkComponent = (props) => {
-	const { children, ...linkProps } = props;
-	return <LinkBase {...linkProps}>{children}</LinkBase>;
+	const { children, to, ...linkProps } = props;
+	return <LinkBase href={to} {...linkProps}>{children}</LinkBase>;
 };
 
 Link.defaultProps = {

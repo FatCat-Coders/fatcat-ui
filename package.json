@@ -1,7 +1,7 @@
 {
   "name": "fatcat-ui-library",
   "author": "Zoran Lazic",
-  "version": "0.0.1-9",
+  "version": "0.0.1-11d",
   "license": "UNLICENSED",
   "description": "Build system and ui library for the fatcat related work",
   "homepage": "https://github.com/FatCat-Coders/fatcat-ui.git#readme",

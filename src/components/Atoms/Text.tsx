@@ -10,6 +10,7 @@ import {
 	size, SizeProps,
 	space, SpaceProps,
 	text, TextProps,
+	transition, TransitionsProps,
 	visibility, VisibilityProps,
 } from '../../theme/props';
 
@@ -23,6 +24,7 @@ export type TText =
 	& SizeProps
 	& SpaceProps
 	& TextProps
+	& TransitionsProps
 	& VisibilityProps;
 
 export const Text = styled.span<TText>`
@@ -34,6 +36,7 @@ export const Text = styled.span<TText>`
 	${size};
 	${space};
 	${text};
+	${transition}
 	${visibility};
 	${hover};
 	${responsive};

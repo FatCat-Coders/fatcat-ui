@@ -38,6 +38,6 @@ export const HOVER_BEHAVIORS = {
 		border-bottom: unset;
 	`,
 	zoom: (value: number) => css`
-		transform: scale(${value})
+		transform: scale(${value});
 	`,
 };

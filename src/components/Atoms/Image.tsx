@@ -9,6 +9,7 @@ import {
 	responsive, ResponsiveProps,
 	size, SizeProps,
 	space, SpaceProps, text,
+	transition, TransitionsProps,
 	visibility, VisibilityProps,
 } from '../../theme/props';
 
@@ -24,6 +25,7 @@ export type TImage =
 	& ResponsiveProps
 	& SizeProps
 	& SpaceProps
+	& TransitionsProps
 	& VisibilityProps;
 
 export const Image = styled.img<TImage>`
@@ -37,6 +39,7 @@ export const Image = styled.img<TImage>`
 	${size};
 	${space};
 	${text};
+	${transition}
 	${visibility};
 	${hover}
 	${responsive};

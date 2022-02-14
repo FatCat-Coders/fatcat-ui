@@ -2,11 +2,11 @@ import { css } from 'styled-components';
 import { Properties } from 'csstype';
 
 export type TransitionsProps = {
-	$transition?: Properties['transition'],
-	$transitionDelay ?: Properties['transitionDelay'],
-	$transitionDuration ?: Properties['transitionDuration'],
-	$transitionProperty ?: Properties['transitionProperty'],
-	$transitionTimingFunction?: Properties['transitionTimingFunction'],
+	$transition?: Properties['transition']
+	$transitionDelay ?: Properties['transitionDelay']
+	$transitionDuration ?: Properties['transitionDuration']
+	$transitionProperty ?: Properties['transitionProperty']
+	$transitionTimingFunction?: Properties['transitionTimingFunction']
 };
 
 export const transition = css<TransitionsProps>`

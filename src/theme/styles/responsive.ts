@@ -1,5 +1,11 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
+import { Properties } from 'csstype';
 
+// Types
+import { SideSpacingValue } from '../props/space/space';
+import { HoverTypes } from '../props/hover/hover';
+
+// helpers
 import { createSideSpacingRule, parseSpace } from '../props';
 import pickObjectProperties from '../../utils/pick-object-properties';
 
@@ -24,6 +30,9 @@ export const RESPONSIVE_BEHAVIORS = {
 	justifyContentFlexStart: css`
 		justify-content: flex-start;
 	`,
+	justifyContentFlexEnd: css`
+		justify-content: flex-end;
+	`,
 	justifyContentCenter: css`
 		justify-content: center;
 	`,
@@ -32,6 +41,9 @@ export const RESPONSIVE_BEHAVIORS = {
 	`,
 	alignItemsStart: css`
 		align-items: flex-start;
+	`,
+	alignItemsEnd: css`
+		align-items: flex-end;
 	`,
 	slideHorizontal: css`
 		display: flex;
@@ -60,39 +72,45 @@ export const RESPONSIVE_BEHAVIORS = {
 	borderNone: css`
 		border: unset;
 	`,
-	setBorderRadius: value => css`
+	setBorderRadius: (value: Properties['borderRadius']) => css`
 		border-radius: ${value};
 	`,
-	setBorderLeft: value => css`
+	setBorder: (value: Properties['border']) => css`
+		border: ${value};
+	`,
+	setBorderLeft: (value: Properties['borderLeft']) => css`
 		border-left: ${value};
 	`,
-	setBorderTop: value => css`
+	setBorderTop: (value: Properties['borderTop']) => css`
 		border-top: ${value};
 	`,
-	setBorderRight: value => css`
+	setBorderRight: (value: Properties['borderRight']) => css`
 		border-right: ${value};
 	`,
-	boxShadow: value => css`
+	setBorderBottom: (value: Properties['borderBottom']) => css`
+		border-bottom: ${value};
+	`,
+	boxShadow: (value: Properties['boxShadow']) => css`
 		box-shadow: ${value};
 	`,
 	// backgrounds
 	unsetBackgroundImage: css`
 		background-image: none;
 	`,
-	backgroundImage: value => css`
+	backgroundImage: (value: string) => value && css`
 		background-image: url(${value});
 	`,
-	backgroundColor: value => css`
-		background-color: ${value};
+	backgroundGradient: (value: string) => css`
+		background: ${value};
 	`,
-	backgroundSize: value => css`
+	backgroundColor: (value: keyof DefaultTheme['color']) => css`
+		background-color: ${props => props.theme.color[value]};;
+	`,
+	backgroundSize: (value: Properties['backgroundSize']) => css`
 		background-size: ${value};
 	`,
-	backgroundPosition: value => css`
+	backgroundPosition: (value: Properties['backgroundPosition']) => css`
 		background-position: ${value};
-	`,
-	reduceBackgroundSize: (value = '50%') => css`
-		background-size: ${value};
 	`,
 	// spacing
 	clearSideSpacing: css`
@@ -117,23 +135,36 @@ export const RESPONSIVE_BEHAVIORS = {
 		margin-bottom: 0;
 		padding-bottom: 0;
 	`,
-	padding: value => css`
-		${props => createSideSpacingRule('padding', parseSpace(value, props.theme.space))}
+	padding: (value: SideSpacingValue[]) => css`
+		${props => createSideSpacingRule('padding', parseSpace(value, props.theme.space))};
 	`,
-	margin: value => css`
-		${props => createSideSpacingRule('margin', parseSpace(value, props.theme.space))}
+	margin: (value: SideSpacingValue[]) => css`
+		${props => createSideSpacingRule('margin', parseSpace(value, props.theme.space))};
 	`,
-	gap: value => css`
+	gap: (value: Properties['gap']) => css`
 		gap: ${value};
 	`,
+	// opacity
+	opacity: (value: Properties['opacity']) => css`
+		opacity: ${value};
+	`,
 	// text
-	textSize: value => css`
+	textColor: (value: keyof DefaultTheme['textColor']) => css`
+		color: ${props => props.theme.textColor[value]};
+	`,
+	textSize: (value: keyof DefaultTheme['textSize']) => css`
 		${props => props.theme.textSize[value]};
 	`,
-	fontSize: value => css`
+	fontSize: (value: keyof DefaultTheme['fontSize']) => css`
 		font-size: ${props => props.theme.fontSize[value]};
 	`,
-	lineHeight: value => css`
+	fontWeight: (value: keyof DefaultTheme['fontWeight']) => css`
+		font-weight: ${props => props.theme.fontWeight[value]};
+	`,
+	letterSpacing: (value: Properties['letterSpacing']) => css`
+		letter-spacing: ${value};
+	`,
+	lineHeight: (value: keyof DefaultTheme['lineHeight']) => css`
 		line-height: ${props => props.theme.lineHeight[value]};
 	`,
 	noWrap: css`
@@ -153,22 +184,22 @@ export const RESPONSIVE_BEHAVIORS = {
 		max-width: 50%;
 		width: 100%;
 	`,
-	maxWidth: value => css`
+	maxWidth: (value: Properties['maxWidth']) => css`
 		max-width: ${value};
 	`,
-	minWidth: value => css`
+	minWidth: (value: Properties['minWidth']) => css`
 		min-width: ${value};
 	`,
-	minHeight: value => css`
+	minHeight: (value: Properties['minHeight']) => css`
 		min-height: ${value};
 	`,
-	maxHeight: value => css`
+	maxHeight: (value: Properties['maxHeight']) => css`
 		max-height: ${value};
 	`,
-	width: value => css`
+	width: (value: Properties['width']) => css`
 		width: ${value};
 	`,
-	height: value => css`
+	height: (value: Properties['height']) => css`
 		height: ${value};
 	`,
 	// positions
@@ -178,45 +209,79 @@ export const RESPONSIVE_BEHAVIORS = {
 	textLeft: css`
 		text-align: left;
 	`,
+	textRight: css`
+		text-align: right;
+	`,
 	unsetPosition: css`
 		position: unset;
 	`,
 	fixedPosition: css`
 		position: fixed;
 	`,
-	position: value => css`
+	position: (value: Properties['position']) => css`
 		position: ${value};
 	`,
-	top: value => css`
+	top: (value: Properties['top']) => css`
 		top: ${value};
 	`,
-	left: value => css`
+	left: (value: Properties['left']) => css`
 		left: ${value};
 	`,
-	right: value => css`
+	right: (value: Properties['right']) => css`
 		right: ${value};
 	`,
-	bottom: value => css`
+	bottom: (value: Properties['bottom']) => css`
 		bottom: ${value};
 	`,
-	zIndex: value => css`
+	inset: (value: Properties['inset']) => css`
+		inset: ${value};
+	`,
+	zIndex: (value: Properties['zIndex']) => css`
 		z-index: ${value};
 	`,
-	transform: value => css`
+	transform: (value: Properties['transform']) => css`
 		transform: ${value};
 	`,
-	alignSelf: value => css`
+	alignSelf: (value: Properties['alignSelf']) => css`
 		align-self: ${value};
 	`,
 	// visibility
-	visibility: value => css`
+	visibility: (value: Properties['visibility']) => css`
 		visibility: ${value};
 	`,
-	display: value => css`
+	display: (value: Properties['display']) => css`
 		display: ${value};
 	`,
+	// animation
+	animation: (value: [keyof DefaultTheme['animation'], Properties['animation']]) => value.length === 2 && css`
+		animation: ${props => props.theme.animation[value[0]]} ${value[1]};
+	`,
+	animationName: (value: keyof DefaultTheme['animation']) => css`
+		animation-name: ${props => props.theme.animation[value]};
+	`,
+	animationDuration: (value: Properties['animationDuration']) => css`
+		animation-duration: ${value};
+	`,
+	animationTimingFunction: (value: Properties['animationTimingFunction']) => css`
+		animation-timing-function: ${value};
+	`,
+	animationDelay: (value: Properties['animationDelay']) => css`
+		animation-delay: ${value};
+	`,
+	animationIterationCount: (value: Properties['animationIterationCount']) => css`
+		animation-iteration-count: ${value};
+	`,
+	animationDirection: (value: Properties['animationDirection']) => css`
+		animation-direction: ${value};
+	`,
+	animationFillMode: (value: Properties['animationFillMode']) => css`
+		animation-fill-mode: ${value};
+	`,
+	animationPlayState: (value: Properties['animationPlayState']) => css`
+		animation-play-state: ${value};
+	`,
 	// hover
-	hover: value => css`
+	hover: (value: (HoverTypes | Partial<Record<HoverTypes, any>>)[]) => css`
 		&:hover {
 			${props => pickObjectProperties(props.theme.hover, value)}
 		}

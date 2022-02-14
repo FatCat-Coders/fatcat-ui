@@ -17,6 +17,7 @@ import {
 	size, SizeProps,
 	space, SpaceProps,
 	text, TextProps,
+	transition, TransitionsProps,
 	visibility, VisibilityProps,
 } from '../../theme/props';
 
@@ -32,6 +33,7 @@ export type TButton =
 	& SizeProps
 	& SpaceProps
 	& TextProps
+	& TransitionsProps
 	& VisibilityProps;
 
 export const ButtonBase = styled.button<TButton>`
@@ -48,6 +50,7 @@ export const ButtonBase = styled.button<TButton>`
 	${visibility};
     ${space};
     ${text};
+	${transition}
 	${hover}
     ${responsive};
 `;

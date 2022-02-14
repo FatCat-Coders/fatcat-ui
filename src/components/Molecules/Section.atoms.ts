@@ -37,6 +37,7 @@ export type TSectionOuterWrapper =
 
 export const SectionOuterWrapper = styled.section<TSectionOuterWrapper>`
 	display: flex;
+	width: 100%;
 	justify-content: center;
 	${props => props.$sticky && 'position: sticky;'}
 	${props => props.$overflow && `overflow: ${props.$overflow};`}

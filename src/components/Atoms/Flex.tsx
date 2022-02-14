@@ -13,6 +13,7 @@ import {
 	responsive, ResponsiveProps,
 	size, SizeProps,
 	space, SpaceProps,
+	transition, TransitionsProps,
 	visibility, VisibilityProps,
 } from '../../theme/props';
 
@@ -28,6 +29,7 @@ export type TFlex =
 	& ResponsiveProps
 	& SizeProps
 	& SpaceProps
+	& TransitionsProps
 	& VisibilityProps;
 
 export const Flex = styled.div<TFlex>`
@@ -42,6 +44,7 @@ export const Flex = styled.div<TFlex>`
 	${position};
 	${size};
 	${space};
+	${transition}
 	${visibility};
 	${hover};
 	${responsive};

@@ -4,8 +4,8 @@ import { Properties } from 'csstype';
 import { MEDIA, MediaDefinition } from '../../definitions';
 
 export type VisibilityProps = {
-	$show?: MediaDefinition,
-	$hide?: MediaDefinition,
+	$show?: MediaDefinition
+	$hide?: MediaDefinition
 	$visibility?: Properties['visibility']
 	$initialDisplay?: Properties['display']
 	$display?: Properties['display']

@@ -2,13 +2,13 @@ import { css } from 'styled-components';
 import { Properties } from 'csstype';
 
 export type BorderProps = {
-	$border?: Properties['border'],
-	$borderTop?: Properties['borderTop'],
-	$borderRight?: Properties['borderRight'],
+	$border?: Properties['border']
+	$borderTop?: Properties['borderTop']
+	$borderRight?: Properties['borderRight']
 	$borderBottom?: Properties['borderBottom']
-	$borderLeft?: Properties['borderLeft'],
-	$borderRadius?: Properties['borderRadius'],
-	$boxShadow?: Properties['boxShadow'],
+	$borderLeft?: Properties['borderLeft']
+	$borderRadius?: Properties['borderRadius']
+	$boxShadow?: Properties['boxShadow']
 };
 
 export const border = css<BorderProps>`

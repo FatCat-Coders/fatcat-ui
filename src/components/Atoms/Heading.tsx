@@ -29,10 +29,6 @@ export const Heading = styled.h1<THeading>`
 		props.as &&
 		css`
 			${props.theme.textStyle[props.as]};
-			* {
-				${props.theme.textStyle[props.as]};
-				${responsive};
-			}
 		`};
 	${animation};
 	${position};

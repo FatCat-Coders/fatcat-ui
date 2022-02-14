@@ -12,6 +12,7 @@ import {
 	space, SpaceProps,
 	text, TextProps,
 	position, PositionProps,
+	transition, TransitionsProps,
 	visibility, VisibilityProps,
 } from '../../theme/props';
 
@@ -23,6 +24,7 @@ export type TIcon =
 	& SizeProps
 	& SpaceProps
 	& TextProps
+	& TransitionsProps
 	& VisibilityProps;
 
 export const Icon = styled(FontAwesomeIcon) <TIcon>`
@@ -34,6 +36,7 @@ export const Icon = styled(FontAwesomeIcon) <TIcon>`
 	${visibility};
     ${space};
     ${text};
+	${transition}
     ${hover};
 	${responsive};
 `;

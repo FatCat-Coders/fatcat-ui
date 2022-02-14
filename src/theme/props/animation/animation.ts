@@ -4,20 +4,20 @@ import { Properties } from 'csstype';
 type AnimationDefinition = keyof DefaultTheme['animation']
 
 export type AnimationProps = {
-	$animation?: [AnimationDefinition, Properties['animation']],
-	$animationName?: AnimationDefinition,
-	$animationDuration?: Properties['animationDuration'],
-	$animationTimingFunction?: Properties['animationTimingFunction'],
-	$animationDelay?: Properties['animationDelay'],
-	$animationIterationCount?: Properties['animationIterationCount'],
-	$animationDirection?: Properties['animationDirection'],
-	$animationFillMode?: Properties['animationFillMode'],
-	$animationPlayState?: Properties['animationPlayState'],
+	$animation?: [AnimationDefinition, Properties['animation']]
+	$animationName?: AnimationDefinition
+	$animationDuration?: Properties['animationDuration']
+	$animationTimingFunction?: Properties['animationTimingFunction']
+	$animationDelay?: Properties['animationDelay']
+	$animationIterationCount?: Properties['animationIterationCount']
+	$animationDirection?: Properties['animationDirection']
+	$animationFillMode?: Properties['animationFillMode']
+	$animationPlayState?: Properties['animationPlayState']
 };
 
 export const animation = css<AnimationProps>`
-	${props => props.$animation && props.$animation.length === 2 && `animation: ${props.theme.animation[props.$animation[0]]} ${props.$animation[1]};`}
-	${props => props.$animationName && `animation-name: ${props.theme.animation[props.$animationName]};`}
+	${props => props.$animation && props.$animation.length === 2 && css`animation: ${props.theme.animation[props.$animation[0]]} ${props.$animation[1]};`}
+	${props => props.$animationName && css`animation-name: ${props.theme.animation[props.$animationName]};`}
 	${props => props.$animationDuration && `animation-duration: ${props.$animationDuration};`}
 	${props => props.$animationTimingFunction && `animation-timing-function: ${props.$animationTimingFunction};`}
 	${props => props.$animationDelay && `animation-delay: ${props.$animationDelay};`}

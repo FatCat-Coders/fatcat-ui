@@ -3,16 +3,16 @@ import { Properties } from 'csstype';
 import { rgba } from 'polished';
 
 export type BackgroundProps = {
-	$backgroundColor?: keyof DefaultTheme['backgroundColor'],
+	$backgroundColor?: keyof DefaultTheme['backgroundColor']
 	$backgroundColorOpacity?: number
-	$backgroundImage?: string,
-	$backgroundRepeat?: Properties['backgroundRepeat'],
-	$backgroundPosition?: Properties['backgroundPosition'],
-	$backgroundSize?: Properties['backgroundSize'],
-	$backgroundGradient?: string,
-	$backgroundBlur?: string,
-	$backgroundAttachment?: Properties['backgroundAttachment'],
-	$backgroundBlendMode?: Properties['backgroundBlendMode'],
+	$backgroundImage?: string
+	$backgroundRepeat?: Properties['backgroundRepeat']
+	$backgroundPosition?: Properties['backgroundPosition']
+	$backgroundSize?: Properties['backgroundSize']
+	$backgroundGradient?: string
+	$backgroundBlur?: string
+	$backgroundAttachment?: Properties['backgroundAttachment']
+	$backgroundBlendMode?: Properties['backgroundBlendMode']
 };
 
 export const background = css<BackgroundProps>`

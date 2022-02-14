@@ -3,7 +3,6 @@ import { css, DefaultTheme } from 'styled-components';
 // Helpers
 import pickObjectProperties from '../../../utils/pick-object-properties';
 
-import { RESPONSIVE_BEHAVIORS } from '../../styles/responsive';
 import { SideSpacingValue } from '../space/space';
 
 type ResponsiveTypes = keyof DefaultTheme['responsive'];
@@ -47,7 +46,7 @@ export const responsive = css<ResponsiveProps>`
 	`}
 	${props => props.$mobile && css`
 		${props.theme.media.mobile} {
-			${pickObjectProperties(RESPONSIVE_BEHAVIORS, props.$mobile)}
+			${pickObjectProperties(props.theme.responsive, props.$mobile)}
 		}
 	`}
 `;
