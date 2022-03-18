@@ -43,7 +43,7 @@ export type LinkComponent = PolymorphicComponent<LinkProps>;
 
 export const Link: LinkComponent = (props) => {
 	const { children, to, ...linkProps } = props;
-	return <LinkBase href={to} {...linkProps}>{children}</LinkBase>;
+	return <LinkBase href={to} to={props.as ? to : undefined} {...linkProps}>{children}</LinkBase>; // eslint-disable-line
 };
 
 Link.defaultProps = {

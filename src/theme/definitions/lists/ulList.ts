@@ -15,7 +15,7 @@ export const ULLIST_STYLE = {
 			${props => props.theme.media.tablet} {
 				top: -6px;
 			}
-			${props => props.bulletColor && `color: ${props.theme.color[props.bulletColor]}`}
+			${props => props.$bulletColor && `color: ${props.theme.color[props.$bulletColor]}`}
 		}
 	`,
 	checked: css`
@@ -46,7 +46,7 @@ export const ULLIST_STYLE = {
 			-o-transform: rotate(45deg);
 			-ms-transform: rotate(45deg);
 			-webkit-transform: rotate(45deg);
-			${props => props.color && `color: ${props.theme.color[props.color]}`}
+			${props => props.$bulletColor && `color: ${props.theme.color[props.$bulletColor]}`}
 		}
 	`,
 };
