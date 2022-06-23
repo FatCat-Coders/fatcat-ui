@@ -3,7 +3,6 @@ export * from './background/background';
 export * from './border/border';
 export * from './flex/flex';
 export * from './hover/hover';
-export * from './opacity/opacity';
 export * from './overflow/overflow';
 export * from './position/position';
 export * from './position/position';

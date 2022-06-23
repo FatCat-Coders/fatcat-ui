@@ -9,6 +9,7 @@ export type VisibilityProps = {
 	$visibility?: Properties['visibility']
 	$initialDisplay?: Properties['display']
 	$display?: Properties['display']
+	$opacity?: Properties['opacity']
 };
 
 export const visibility = css<VisibilityProps>`
@@ -27,4 +28,5 @@ export const visibility = css<VisibilityProps>`
 		}
 	`}
 	${props => props.$visibility && `visibility: ${props.$visibility};`}
+	${props => props.$opacity && `opacity: ${props.$opacity};`}
 `;

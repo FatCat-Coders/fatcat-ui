@@ -4,7 +4,6 @@ import {
 	animation, AnimationProps,
 	border, BorderProps,
 	hover, HoverProps,
-	opacity, OpacityProps,
 	position, PositionProps,
 	responsive, ResponsiveProps,
 	size, SizeProps,
@@ -20,7 +19,6 @@ export type TImage =
 	& AnimationProps
 	& BorderProps
 	& HoverProps
-	& OpacityProps
 	& PositionProps
 	& ResponsiveProps
 	& SizeProps
@@ -34,7 +32,6 @@ export const Image = styled.img<TImage>`
 	width: 100%;
 	${animation};
 	${border};
-	${opacity};
 	${position};
 	${size};
 	${space};

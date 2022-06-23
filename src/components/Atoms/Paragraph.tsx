@@ -27,7 +27,6 @@ export type TParagraph =
 	& VisibilityProps;
 
 export const Paragraph = styled.p<TParagraph>`
-	letter-spacing: -0.01em;
 	${props => props.theme.textStyle.paragraph}
 	${animation};
 	${background};

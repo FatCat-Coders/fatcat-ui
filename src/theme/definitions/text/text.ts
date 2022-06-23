@@ -52,6 +52,8 @@ export const TEXT_STYLE = {
 			${props => props.theme.textSize.h6Mobile};
 		}
 	`,
-	paragraph: css``,
+	paragraph: css`
+		letter-spacing: -0.01em;
+	`,
 	text: css``,
 };

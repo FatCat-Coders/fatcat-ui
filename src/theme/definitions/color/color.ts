@@ -19,6 +19,7 @@ export const COLOR = {
 	orange: '#FFA500',
 	yellow: '#FFB82D',
 	yellow10: 'rgba(255,184,45, 0.1)',
+	green: '#00FF00',
 	transparent: 'transparent',
 };
 
@@ -39,6 +40,7 @@ export const TEXT_COLOR = {
 
 export const BACKGROUND_COLOR = {
 	transparent: COLOR.transparent,
+	grey: COLOR.grey,
 	backgroundUltraDark: COLOR.blackHigh,
 	backgroundDark: COLOR.dark,
 	background: COLOR.blackLow,
@@ -47,5 +49,6 @@ export const BACKGROUND_COLOR = {
 	purple: COLOR.purple,
 	yellow: COLOR.yellow,
 	white: COLOR.white,
+	green: COLOR.green,
 	wistiaOverlay: 'rgba(130, 130, 130, 0.6)',
 };

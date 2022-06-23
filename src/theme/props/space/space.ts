@@ -205,15 +205,15 @@ const sideSpacing = (type: SideSpacingType) => css<SpaceProps>`
 			${createSideSpacingRule(type, sides)};
 			${props.$scale && css`
 				${props.theme.media.largeTablet} {
-					${createSideSpacingRule(type, sides, props.theme.screenRatio.large)};
+					${createSideSpacingRule(type, sides, props.theme.screenRatio.largeTablet)};
 				}
 
 				${props.theme.media.tablet} {
-					${createSideSpacingRule(type, sides, props.theme.screenRatio.medium)};
+					${createSideSpacingRule(type, sides, props.theme.screenRatio.tablet)};
 				}
 
 				${props.theme.media.mobile} {
-					${createSideSpacingRule(type, sides, props.theme.screenRatio.small)};
+					${createSideSpacingRule(type, sides, props.theme.screenRatio.mobile)};
 				}
 			`};
 		`;
@@ -229,15 +229,15 @@ const generateSingleSideSpace = (type: SideSpacingType, side: TSpaceSide) => {
 					${type}-${side}: ${props.theme.space[props[cssProp] as SpaceDefinition]};
 					${props.$scale && css`
 						${props.theme.media.largeTablet} {
-							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.large)};
+							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.largeTablet)};
 						}
 
 						${props.theme.media.tablet} {
-							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.large)};
+							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.tablet)};
 						}
 
 						${props.theme.media.mobile} {
-							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.large)};
+							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.mobile)};
 						}
 					`};
 				`;

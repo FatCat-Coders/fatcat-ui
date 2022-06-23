@@ -12,6 +12,7 @@ import {
 	text, TextProps,
 	position, PositionProps,
 	visibility, VisibilityProps,
+	transition, TransitionsProps,
 } from '../../theme/props';
 
 export type Tlink =
@@ -24,6 +25,7 @@ export type Tlink =
 	& ResponsiveProps
 	& SpaceProps
 	& TextProps
+	& TransitionsProps
 	& VisibilityProps;
 
 export const LinkBase = styled.a<Tlink>`
@@ -34,6 +36,7 @@ export const LinkBase = styled.a<Tlink>`
 	${space};
 	${text};
 	${visibility};
+	${transition}
 	${hover};
 	${responsive};
 `;

@@ -13,8 +13,6 @@ import {
 	visibility, VisibilityProps,
 } from '../../theme/props';
 
-
-
 export type TSelect =
 	AnimationProps
 	& BackgroundProps
@@ -31,6 +29,9 @@ export const Select = styled.select<TSelect>`
     -moz-appearance:none; /* Firefox */
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;
+	&:hover {
+		border-color: ${props => props.theme.color.grey};
+	}
 	${animation};
 	${position};
 	${space};
@@ -41,8 +42,4 @@ export const Select = styled.select<TSelect>`
     ${text};
 	${hover};
 	${responsive};
-
-	&:hover {
-		border-color: ${props => props.theme.color.grey};
-	}
 `;

@@ -40,6 +40,7 @@ const Section: React.FC<TSection> = (props) => {
 		as,
 		children,
 		$backgroundColor,
+		$backgroundColorOpacity,
 		$backgroundGradient,
 		$backgroundImage,
 		$backgroundPosition,
@@ -75,6 +76,7 @@ const Section: React.FC<TSection> = (props) => {
 			as={as}
 			$backgroundImage={$backgroundImage}
 			$backgroundColor={$backgroundColor}
+			$backgroundColorOpacity={$backgroundColorOpacity}
 			$backgroundPosition={$backgroundPosition}
 			$backgroundSize={$backgroundSize}
 			$backgroundRepeat={$backgroundRepeat}

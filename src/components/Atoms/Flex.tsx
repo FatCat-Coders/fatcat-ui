@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-
 import {
 	animation, AnimationProps,
 	background, BackgroundProps,
 	border, BorderProps,
 	flex, FlexProps,
 	hover, HoverProps,
-	opacity, OpacityProps,
 	overflow, OverflowProps,
 	position, PositionProps,
 	responsive, ResponsiveProps,
@@ -23,7 +21,6 @@ export type TFlex =
 	& BorderProps
 	& FlexProps
 	& HoverProps
-	& OpacityProps
 	& OverflowProps
 	& PositionProps
 	& ResponsiveProps
@@ -39,7 +36,6 @@ export const Flex = styled.div<TFlex>`
 	${border};
 	${flex};
 	${hover};
-	${opacity};
 	${overflow};
 	${position};
 	${size};

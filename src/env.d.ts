@@ -5,6 +5,10 @@ declare module '*.svg' {
 	export default src;
 }
 
+declare module '*.md' {
+	const src: string;
+	export default src;
+}
 declare module '*.bmp' {
 	const src: string;
 	export default src;

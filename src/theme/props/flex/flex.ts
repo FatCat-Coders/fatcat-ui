@@ -9,7 +9,6 @@ export type FlexProps = {
 	$flexBasis?: Properties['flexBasis']
 	$wrap?: boolean // Maybe use actual flex-wrap type to be able to set inherit
 	$gap?: Properties['gap']
-	$order?: number
 };
 
 export const flex = css<FlexProps>`
@@ -21,5 +20,4 @@ export const flex = css<FlexProps>`
 	${props => props.$flexBasis && `flex-basis: ${props.$flexBasis}`};
 	${props => props.$wrap && 'flex-wrap: wrap'};
 	${props => props.$gap && `gap: ${props.$gap}`};
-	${props => props.$order && `order: ${props.$order}`};
 `;

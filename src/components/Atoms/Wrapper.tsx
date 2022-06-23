@@ -5,7 +5,6 @@ import {
 	background, BackgroundProps,
 	border, BorderProps,
 	hover, HoverProps,
-	opacity, OpacityProps,
 	overflow, OverflowProps,
 	position, PositionProps,
 	responsive, ResponsiveProps,
@@ -21,7 +20,6 @@ export type TWrapper =
 	& BackgroundProps
 	& BorderProps
 	& HoverProps
-	& OpacityProps
 	& OverflowProps
 	& PositionProps
 	& ResponsiveProps
@@ -36,10 +34,8 @@ export const Wrapper = styled.div<TWrapper>`
 	${animation}
 	${background};
 	${border};
-	${opacity};
 	${overflow};
 	${position};
-	${responsive};
 	${size};
 	${space};
 	${text};

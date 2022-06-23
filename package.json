@@ -1,7 +1,7 @@
 {
   "name": "fatcat-ui-library",
   "author": "Zoran Lazic",
-  "version": "0.0.1-12a",
+  "version": "0.0.2",
   "license": "UNLICENSED",
   "description": "Build system and ui library for the fatcat related work",
   "homepage": "https://github.com/FatCat-Coders/fatcat-ui.git#readme",
@@ -17,7 +17,9 @@
     "publish-package": "cp package.json src && cp .npmignore src && cd src && npm publish && rm -rf package.json && rm -rf .npmignore && cd ..",
     "build": "tsc",
     "test-package": "cp package.json src && cp .npmignore src && cd src && npm publish --tag=test && rm -rf package.json && rm -rf .npmignore && cd ..",
-    "test-local": "cp package.json src && cp .npmignore src && cd src && npm pack && rm -rf package.json && rm -rf .npmignore"
+    "test-local": "cp package.json src && cp .npmignore src && cd src && npm pack && rm -rf package.json && rm -rf .npmignore",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": "^17.0.2",
@@ -28,6 +30,14 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
+    "@storybook/addon-actions": "^6.5.8",
+    "@storybook/addon-essentials": "^6.5.8",
+    "@storybook/addon-interactions": "^6.5.8",
+    "@storybook/addon-links": "^6.5.8",
+    "@storybook/builder-webpack5": "^6.5.8",
+    "@storybook/manager-webpack5": "^6.5.8",
+    "@storybook/react": "^6.5.8",
+    "@storybook/testing-library": "^0.0.11",
     "@types/node": "^15.12.5",
     "@types/styled-components": "^5.1.10",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
@@ -43,6 +53,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-storybook": "^0.5.12",
     "eslint-plugin-styled-components-a11y": "^0.0.34",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.4"

@@ -37,4 +37,5 @@ export const SocialMedia = styled(FontAwesomeIcon) <TSocialMedia>`
 export const SocialShare = styled(SocialMedia)`
 	&:hover {
 		color: ${props => props.theme.color.orange};
+	}
 `;

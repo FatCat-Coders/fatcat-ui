@@ -36,13 +36,12 @@ export const OlList = styled.ol<TOlList>`
 		&:before {
 			content: counter(item) ". ";
 			position: absolute;
-			font-size: ${props => props.theme.fontSize.s18};
+			font-size: 1em;
 			font-weight: 700;
 			text-align: right;
 			display: inline;
 			width: 20px;
 			margin-left: -30px;
-			padding-top: 7px;
 		}
 		font-size: ${props => props.theme.fontSize.s18};
 	}

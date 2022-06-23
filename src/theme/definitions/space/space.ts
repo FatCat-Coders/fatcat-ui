@@ -37,9 +37,9 @@ export const SPACE = {
 export type SpaceDefinition = keyof DefaultTheme['space'];
 
 export const SCREEN_RATIO = {
-	small: 1.8,
-	medium: 1.4,
-	large: 1.2,
+	mobile: 1.8,
+	tablet: 1.4,
+	largeTablet: 1.2,
 };
 
 export const SECTION_WIDTH = {

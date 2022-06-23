@@ -1,0 +1,114 @@
+import { Meta } from '@storybook/addon-docs';
+
+
+<Meta title="Setup/Setup" />
+
+# Setup
+
+Before we start we need to setup our theme inside our project.
+
+```jsx
+import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
+
+<UIThemeProvider>
+	{children}
+</UIThemeProvider>
+```
+
+but if we want to add some custom styling, for example for our text elements,
+we can define our text style and breakpoints for text elements
+
+- first we define size
+
+```jsx
+const TEXT_SIZE = {
+	h1: css`
+		font-size: ${props => props.theme.fontSize.s54};
+		line-height: ${props => props.theme.lineHeight.s125};
+	`,
+	h1LargeTablet: css`
+		font-size: ${props => props.theme.fontSize.s42};
+	`,
+	h1Mobile: css`
+		font-size: ${props => props.theme.fontSize.s30};
+		line-height: ${props => props.theme.lineHeight.s100};
+	`,
+}
+```
+- and then we define our style and breakpoints for given element in our example only for `Heading` component with `as` value `h1`
+
+```jsx
+const const TEXT_STYLE = {
+	h1: css`
+		${props => props.theme.textSize.h1};
+		font-weight: ${props => props.theme.fontWeight.bold};
+
+		${props => props.theme.media.largeTablet} {
+			${props => props.theme.textSize.h1LargeTablet};
+		}
+
+		${props => props.theme.media.mobile} {
+			${props => props.theme.textSize.h1Mobile};
+		}
+	`,
+}
+```
+
+- and then we add our definitions to our theme using same keys for both `TEXT_SIZE` and `TEXT_STYLE` as our theme `UIThemeProvider`
+
+```jsx
+import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
+
+const newTheme = {
+	textSize: TEXT_SIZE,
+	textStyle: TEXT_STYLE,
+}
+
+<UIThemeProvider theme={newTheme}>
+	{children}
+</UIThemeProvider>
+```
+
+- we can also provide types for TS
+
+```jsx
+import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
+
+declare module 'styled-components' {
+	export interface DefaultTheme extends FatCatTheme {
+		textSize: FatCatTheme['textSize'] & typeof TEXT_SIZE
+		textStyle: FatCatTheme['textStyle'] & typeof TEXT_STYLE
+	}
+}
+```
+
+List of all theme properties:
+
+```jsx
+const defaultTheme: FatCatTheme = {
+	animation: ANIMATIONS,
+	backgroundColor: BACKGROUND_COLOR,
+	buttonColor: BUTTON_COLOR,
+	buttonStyle: BUTTON_STYLE,
+	color: COLOR,
+	fontFamily: FONT_FAMILY,
+	fontSize: FONT_SIZE,
+	fontWeight: FONT_WEIGHT,
+	textStyle: TEXT_STYLE,
+	hover: HOVER_BEHAVIORS,
+	lineHeight: LINE_HEIGHT,
+	linkColor: LINK_COLOR,
+	linkStyle: LINK_STYLE,
+	media: MEDIA,
+	responsive: RESPONSIVE_BEHAVIORS,
+	screenRatio: SCREEN_RATIO,
+	sectionWidth: SECTION_WIDTH,
+	space: SPACE,
+	tableStyle: TABLE_STYLE,
+	textColor: TEXT_COLOR,
+	textSize: TEXT_SIZE,
+	inputStyle: INPUT_STYLE,
+	ollistStyle: OLLIST_STYLE,
+	ullistStyle: ULLIST_STYLE,
+};
+```

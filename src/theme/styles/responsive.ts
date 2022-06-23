@@ -65,6 +65,13 @@ export const RESPONSIVE_BEHAVIORS = {
 	rowReverse: css`
 		flex-direction: row-reverse;
 	`,
+	order: (value: Properties['order']) => css`
+		order: ${value};
+	`,
+	// grid
+	gridTemplateColumns: (value: Properties['gridTemplateColumns']) => css`
+		grid-template-columns: ${value};
+	`,
 	// border
 	clearTopBorder: css`
 		border-top: unset;
@@ -147,6 +154,10 @@ export const RESPONSIVE_BEHAVIORS = {
 	// opacity
 	opacity: (value: Properties['opacity']) => css`
 		opacity: ${value};
+	`,
+	// overflow
+	overflow: (value: Properties['overflow']) => css`
+		overflow: ${value};
 	`,
 	// text
 	textColor: (value: keyof DefaultTheme['textColor']) => css`

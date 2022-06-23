@@ -9,6 +9,7 @@ export type TextProps = {
 	$fontSize?: keyof DefaultTheme['fontSize']
 	$lineHeight?: keyof DefaultTheme['lineHeight']
 	$fontWeight?: keyof DefaultTheme['fontWeight']
+	$fontFamily?: keyof DefaultTheme['fontFamily']
 	$whiteSpace?: Properties['whiteSpace']
 	$uppercase?: boolean
 	$lowercase?: boolean
@@ -17,6 +18,7 @@ export type TextProps = {
 	$textDecoration?: Properties['textDecoration']
 	$letterSpacing?: Properties['letterSpacing']
 	$textColorOpacity?: number
+	$textShadow?: Properties['textShadow']
 };
 
 export const text = css<TextProps>`
@@ -29,6 +31,7 @@ export const text = css<TextProps>`
 	${props => props.$fontSize && props.theme.fontSize[props.$fontSize] && `font-size: ${props.theme.fontSize[props.$fontSize]};`}
 	${props => props.$lineHeight && props.theme.lineHeight[props.$lineHeight] && `line-height: ${props.theme.lineHeight[props.$lineHeight]};`}
 	${props => props.$fontWeight && props.theme.fontWeight[props.$fontWeight] && `font-weight: ${props.theme.fontWeight[props.$fontWeight]};`}
+	${props => props.$fontFamily && props.theme.fontFamily[props.$fontFamily] && `font-family: ${props.theme.fontFamily[props.$fontFamily]};`}
 	${props => props.$uppercase && 'text-transform: uppercase;'}
 	${props => props.$lowercase && 'text-transform: lowercase;'}
 	${props => props.$fontStyle && `font-style: ${props.$fontStyle};`}
@@ -39,5 +42,6 @@ export const text = css<TextProps>`
 		display: -webkit-box; // will this work on IE?
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: ${props.$ellipsis};
-	`};
+	`}
+	${props => props.$textShadow && `text-shadow: ${props.$textShadow};`}
 `;
