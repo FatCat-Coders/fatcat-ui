@@ -1,60 +1,41 @@
 ## FatCat UI library
 
-TO BE ADDED
-
 ### Start
 
 1. Install node dependencies:
 
-```$xslt
-npm install
+```$xsl
+npm i fatcat-ui-library 
 ```
 
-### Styled Components
+and then add theme provider for our project
 
-One of the technologies this UI Library relies on is the usage of styled-components as a styling system.
+```jsx
+import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
-```$xslt
-npm install --save styled-components
+<UIThemeProvider>
+	{children}
+</UIThemeProvider>
 ```
+### Usage
 
-To enable the correct usage and server side rendering, styled-components require some configuration.
+```jsx
 
-1. For Gatsby Projects - in gatsby-config.js file add following
+import { Button } from 'fatcat-ui-library/components/Atoms/Button';
 
-```$xslt
-plugins: [
-    {
-        resolve: 'gatsby-plugin-styled-components',
-        options: {
-            displayName: false,
-            ssr: true,
-        },
-    },
-]
+
+<Button
+	$variant="some-variant"
+>
+	Button
+</Button>
 ```
-
-2. For Non-Gatsby Projects - we need to add following to the .babelrc
-
-```$xslt
-plugins: [
-    'styled-components',
-    {
-        displayName: false,
-        ssr: true,
-    },
-]
-```
-
-* `displayName` - enables component names in the classes, which allows easier debugging
-* `ssr` - enables server side rendering
-
 ### Publishing
 
 Publishing is done by using the following command from the project root:
 
 ```$xslt
-npm run publish-package
+npm run publish
 ```
 
 For versioning we followed the semver principle
