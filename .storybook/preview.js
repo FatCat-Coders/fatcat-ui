@@ -14,6 +14,12 @@ export const parameters = {
 			order: ['Setup', 'Element Props', 'Basic Elements'],
 		},
 	},
+	previewTabs: {
+		canvas: {
+			hidden: true,
+		},
+	},
+	viewMode: 'docs',
 }
 
 export const decorators = [

@@ -1,7 +1,9 @@
 {
   "name": "fatcat-ui-library",
-  "author": "Zoran Lazic",
-  "version": "0.2.0",
+  "author": {
+    "name": "Zoran Lazic"
+  },
+  "version": "0.2.4",
   "license": "UNLICENSED",
   "description": "Build system and ui library for the fatcat related work",
   "homepage": "https://github.com/FatCat-Coders/fatcat-ui.git#readme",
@@ -14,15 +16,15 @@
   },
   "scripts": {
     "update-packages": "ts-node ./tools/src/update-packages.ts",
-	"gen-changelog": "npx changeset version",
-    "publish-package": "cp package.json src && cp -R .changeset src && cp .npmignore src && cd src && npx changeset publish && rm -rf package.json && rm -rf .changeset && rm -rf .npmignore && cd ..",
+    "gen-changelog": "npx changeset && npx changeset version",
     "publish-tag": "git push --follow-tags",
-	"publish": "npm run gen-changelog && publish-package && publish-tag",
-	"build": "tsc",
+    "publish": "bash ./publish.sh",
+    "build": "tsc",
     "test-package": "cp package.json src && cp .npmignore src && cd src && npm publish --tag=test && rm -rf package.json && rm -rf .npmignore && cd ..",
     "test-local": "cp package.json src && cp .npmignore src && cd src && npm pack && rm -rf package.json && rm -rf .npmignore",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token"
   },
   "peerDependencies": {
     "react": "^17.0.2",
@@ -48,6 +50,7 @@
     "@typescript-eslint/parser": "^4.28.0",
     "babel-jest": "^27.0.5",
     "babel-loader": "^8.2.2",
+    "chromatic": "^6.7.0",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -76,7 +79,11 @@
     "tslib": "^2.2.0"
   },
   "contributors": [
-    "Branislav Totic <branislav.totic@gmail.com> (https://github.com/branislav-totic)"
+    {
+      "name": "Branislav Totic",
+      "email": "branislav.totic@gmail.com",
+      "url": "https://github.com/branislav-totic"
+    }
   ],
   "keywords": [
     "fatcat",
@@ -85,5 +92,7 @@
     "components",
     "react-component",
     "ui"
-  ]
+  ],
+  "readme": "ERROR: No README data found!",
+  "_id": "fatcat-ui-library@0.2.0"
 }

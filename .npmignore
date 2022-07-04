@@ -3,5 +3,6 @@
 .eslintrc
 .gitignore
 .stylelintrc
+.changeset
 
 package-lock.json

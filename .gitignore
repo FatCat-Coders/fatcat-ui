@@ -51,6 +51,7 @@ jspm_packages/
 *.tgz
 
 # dotenv environment variable files
+.env
 .env.*
 !.env.dist
 

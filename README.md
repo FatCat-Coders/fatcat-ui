@@ -1,6 +1,9 @@
 ## FatCat UI library
 
-### Start
+This is a small component library created by the FatCat development team using styled-components, the full component list can be seen here:
+- [Storybook](https://62becb0e755df7ca358ea2ad-usfegtotep.chromatic.com/)
+
+## Instaling
 
 1. Install node dependencies:
 
@@ -14,10 +17,11 @@ and then add theme provider for our project
 import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
 <UIThemeProvider>
-	{children}
+  {children}
 </UIThemeProvider>
 ```
-### Usage
+## Usage
+To start using the components in your project, follow next steps:
 
 ```jsx
 
@@ -25,12 +29,12 @@ import { Button } from 'fatcat-ui-library/components/Atoms/Button';
 
 
 <Button
-	$variant="some-variant"
+  $variant="some-variant"
 >
-	Button
+  Button
 </Button>
 ```
-### Publishing
+## Publishing
 
 Publishing is done by using the following command from the project root:
 
