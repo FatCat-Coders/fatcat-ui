@@ -1,5 +1,5 @@
 #!/bin/bash
-files=('package.json' 'README.md' '.changeset' '.npmignore' 'CHANGELOG.md' 'publish-package.sh')
+files=('package.json' 'README.md' '.changeset' '.npmignore' 'CHANGELOG.md')
 npm run gen-changelog
 for str in ${files[@]}; do
 	cp -R $str src

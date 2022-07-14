@@ -1,16 +1,22 @@
 # fatcat-ui-library
 
+## 0.3.3
+
+### Patch Changes
+
+- Add more props to props filter list
+
 ## 0.3.2
 
 ### Patch Changes
 
-- fix publish script
+- Fix publish script
 
 ## 0.3.1
 
 ### Patch Changes
 
-- fix publishing error
+- Fix publishing error
 
 ## 0.3.0
 
@@ -28,16 +34,16 @@
 
 ### Patch Changes
 
-- remove changeset file from package
+- Remove changeset file from package
 
 ## 0.2.1
 
 ### Patch Changes
 
-- add README.md
+- Add README.md file
 
 ## 0.2.0
 
 ### Minor Changes
 
-- 832f4ef: First minor release
+- First minor release

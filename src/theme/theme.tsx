@@ -84,11 +84,15 @@ const defaultTheme: FatCatTheme = {
 	ullistStyle: ULLIST_STYLE,
 };
 
-export const UIThemeProvider: React.FC<{ theme: any }> = ({ children, theme }) => {
+export const UIThemeProvider: React.FC<{ theme?: any }> = ({ children, theme }) => {
 	let mergedTheme;
 	if (theme && !isObjectEmpty(theme)) {
 		mergedTheme = deepmerge(defaultTheme, theme);
 	}
 
 	return <ThemeProvider theme={mergedTheme || defaultTheme}>{children}</ThemeProvider>;
+};
+
+UIThemeProvider.defaultProps = {
+	theme: {},
 };
