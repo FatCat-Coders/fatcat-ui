@@ -9,7 +9,7 @@ import readme from './Hover.md';
 export default {
 	title: 'Element Props/Hover',
 	argTypes: {
-		$hover: { control: 'array', description: `List of all hover behaviors: ${formatObjectKeys(HOVER_BEHAVIORS)} ` },
+		hover: { control: 'array', description: `List of all hover behaviors: ${formatObjectKeys(HOVER_BEHAVIORS)} ` },
 	},
 	parameters: {
 		docs: {
@@ -22,10 +22,10 @@ export default {
 
 const Template = ({ children, ...args }) => (
 	<Wrapper
-		$height="100px"
-		$width="100px"
-		$backgroundColor="yellow"
-		$transition="all 0.3s ease"
+		height="100px"
+		width="100px"
+		backgroundColor="yellow"
+		transition="all 0.3s ease"
 		{...args}
 	/>
 );
@@ -35,10 +35,10 @@ export const Hover = Template.bind({});
 Hover.parameters = {
 	controls: {
 		include: [
-			'$hover',
+			'hover',
 		],
 	},
 };
 Hover.args = {
-	$hover: ['backgroundBlackLighter', { zoom: '1.2' }],
+	hover: ['backgroundBlackLighter', { zoom: '1.2' }],
 };

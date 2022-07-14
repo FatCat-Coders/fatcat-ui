@@ -2,36 +2,36 @@ Our Section component that we use as container layout in our project. It's made 
 
 ### Outer:
 - `as`
-- `$backgroundColor`
-- `$backgroundColorOpacity`
-- `$backgroundGradient`
-- `$backgroundImage`
-- `$backgroundPosition`
-- `$backgroundRepeat`
-- `$backgroundSize`
-- `$desktop`
-- `$desktopStandard`
+- `backgroundColor`
+- `backgroundColorOpacity`
+- `backgroundGradient`
+- `backgroundImage`
+- `backgroundPosition`
+- `backgroundRepeat`
+- `backgroundSize`
+- `desktop`
+- `desktopStandard`
 - `$edge`
-- `$hide`
+- `hide`
 - `$iDesktop`
 - `$iDesktopStandard`
 - `$iLargeDesktop`
 - `$iLargeTablet`
 - `$iMobile`
 - `$iTablet`
-- `$largeDesktop`
-- `$largeTablet`
-- `$margin`
-- `$mobile`
-- `$overflow`
-- `$padding`
-- `$position`
-- `$scale`
-- `$show`
+- `largeDesktop`
+- `largeTablet`
+- `margin`
+- `mobile`
+- `overflow`
+- `padding`
+- `position`
+- `scale`
+- `show`
 - `$sticky`
-- `$tablet`
-- `$width`
-- `$zIndex`
+- `tablet`
+- `width`
+- `zIndex`
 
 ### Inner:
 
@@ -98,7 +98,7 @@ and then simply use it in your code with the variaton you already provided in th
 
 ```
 <Button
-	$variant="some-variant"
+	variant="some-variant"
 >
 	Button
 </Button>

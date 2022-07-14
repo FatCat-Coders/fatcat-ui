@@ -163,17 +163,17 @@ export const parseSpace = memoize<SpaceParser>((value, SPACE) => {
 });
 
 export type SpaceProps = {
-	$padding?: string | SideSpacingValue[];
-	$paddingBottom?: SpaceDefinition;
-	$paddingTop?: SpaceDefinition;
-	$paddingLeft?: SpaceDefinition;
-	$paddingRight?: SpaceDefinition;
-	$margin?: string | SideSpacingValue[];
-	$marginBottom?: SpaceDefinition;
-	$marginTop?: SpaceDefinition;
-	$marginLeft?: SpaceDefinition;
-	$marginRight?: SpaceDefinition;
-	$scale?: boolean;
+	padding?: string | SideSpacingValue[];
+	paddingBottom?: SpaceDefinition;
+	paddingTop?: SpaceDefinition;
+	paddingLeft?: SpaceDefinition;
+	paddingRight?: SpaceDefinition;
+	margin?: string | SideSpacingValue[];
+	marginBottom?: SpaceDefinition;
+	marginTop?: SpaceDefinition;
+	marginLeft?: SpaceDefinition;
+	marginRight?: SpaceDefinition;
+	scale?: boolean;
 };
 
 export type TSpaceSide = 'left' | 'right' | 'top' | 'bottom';
@@ -203,7 +203,7 @@ const sideSpacing = (type: SideSpacingType) => css<SpaceProps>`
 		const sides = parseSpace(props[parsedType], props.theme.space);
 		return css`
 			${createSideSpacingRule(type, sides)};
-			${props.$scale && css`
+			${props.scale && css`
 				${props.theme.media.largeTablet} {
 					${createSideSpacingRule(type, sides, props.theme.screenRatio.largeTablet)};
 				}
@@ -227,7 +227,7 @@ const generateSingleSideSpace = (type: SideSpacingType, side: TSpaceSide) => {
 		if (props[cssProp]) {
 			return css`
 					${type}-${side}: ${props.theme.space[props[cssProp] as SpaceDefinition]};
-					${props.$scale && css`
+					${props.scale && css`
 						${props.theme.media.largeTablet} {
 							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.largeTablet)};
 						}

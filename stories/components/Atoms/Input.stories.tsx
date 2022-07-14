@@ -12,7 +12,7 @@ export default {
 	title: 'Basic Elements/Inputs/Input',
 	component: InputOrigin,
 	argTypes: {
-		$variant: {
+		variant: {
 			control: 'radio',
 			options: Object.keys(INPUT_STYLE),
 			description: `List of input variants: ${formatObjectKeys(INPUT_STYLE)}`,
@@ -33,8 +33,8 @@ export default {
 
 const Template: ComponentStory<typeof InputOrigin> = ({ children, ...args }) => (
 	<Flex
-		$backgroundColor="backgroundUltraDark"
-		$padding={['t64', 'b64', 'l24', 'r24']}
+		backgroundColor="backgroundUltraDark"
+		padding={['t64', 'b64', 'l24', 'r24']}
 	>
 		<InputOrigin
 			{...args}
@@ -44,5 +44,5 @@ const Template: ComponentStory<typeof InputOrigin> = ({ children, ...args }) => 
 
 export const Input = Template.bind({});
 
-Input.parameters = { controls: { include: ['$variant'] } };
-Input.args = { $variant: 'base' };
+Input.parameters = { controls: { include: ['variant'] } };
+Input.args = { variant: 'base' };

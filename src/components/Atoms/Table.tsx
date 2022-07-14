@@ -1,4 +1,6 @@
-import styled, { DefaultTheme } from 'styled-components';
+
+import { styled } from '../../utils/styled';
+import { DefaultTheme } from 'styled-components';
 
 import {
 	animation, AnimationProps,
@@ -13,7 +15,7 @@ import {
 
 export type TTable =
 	{
-		$variant?: keyof DefaultTheme['tableStyle']
+		variant?: keyof DefaultTheme['tableStyle']
 	}
 	& AnimationProps
 	& BackgroundProps
@@ -24,7 +26,7 @@ export type TTable =
 	& TextProps
 	& VisibilityProps;
 
-export const Table = styled.table<TTable>`
+export const Table = styled('table')<TTable>`
 	thead th {
 		border-bottom: 5px solid ${props => props.theme.color.white10};
 		:nth-child(1) {
@@ -44,7 +46,7 @@ export const Table = styled.table<TTable>`
 		padding: 20px 20px;
 	}
 
-	${props => props.$variant && props.theme.tableStyle.[props.$variant]};
+	${props => props.variant && props.theme.tableStyle.[props.variant]};
 	${animation};
 	${background};
 	${border};
@@ -56,5 +58,5 @@ export const Table = styled.table<TTable>`
 `;
 
 Table.defaultProps = {
-	$variant: 'pricing',
+	variant: 'pricing',
 };

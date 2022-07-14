@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../../utils/styled';
 
 import {
 	animation, AnimationProps,
@@ -25,7 +25,7 @@ export type TSelect =
 	& TextProps
 	& VisibilityProps;
 
-export const Select = styled.select<TSelect>`
+export const Select = styled('select')<TSelect>`
     -moz-appearance:none; /* Firefox */
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;

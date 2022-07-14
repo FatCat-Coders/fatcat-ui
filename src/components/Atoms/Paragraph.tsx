@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+
+import { styled } from '../../utils/styled';
 
 // Props
 import {
@@ -26,7 +27,7 @@ export type TParagraph =
 	& TextProps
 	& VisibilityProps;
 
-export const Paragraph = styled.p<TParagraph>`
+export const Paragraph = styled('p')<TParagraph>`
 	${props => props.theme.textStyle.paragraph}
 	${animation};
 	${background};
@@ -41,8 +42,8 @@ export const Paragraph = styled.p<TParagraph>`
 `;
 
 Paragraph.defaultProps = {
-	$textSize: 'paragraph',
-	$fontWeight: 'normal',
-	$textAlign: 'left',
-	$textColor: 'primary',
+	textSize: 'paragraph',
+	fontWeight: 'normal',
+	textAlign: 'left',
+	textColor: 'primary',
 };

@@ -17,7 +17,7 @@ export default {
 	title: 'Basic Elements/Section',
 	component: SectionOrigin,
 	argTypes: {
-		$backgroundColor: { control: 'color' },
+		backgroundColor: { control: 'color' },
 	},
 	parameters: {
 		docs: {

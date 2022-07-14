@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { DefaultTheme } from 'styled-components';
+import { styled } from '../../utils/styled';
+import { DefaultTheme } from 'styled-components';
 
 import { PolymorphicComponent } from '../../utils/polymorphic-component';
 
@@ -17,7 +18,7 @@ import {
 
 export type Tlink =
 	{
-		$variant?: keyof DefaultTheme['linkStyle']
+		variant?: keyof DefaultTheme['linkStyle']
 	}
 	& AnimationProps
 	& HoverProps
@@ -28,9 +29,9 @@ export type Tlink =
 	& TransitionsProps
 	& VisibilityProps;
 
-export const LinkBase = styled.a<Tlink>`
+export const LinkBase = styled('a')<Tlink>`
 	cursor: pointer;
-	${props => props.$variant && props.theme.linkStyle[props.$variant]};
+	${props => props.variant && props.theme.linkStyle[props.variant]};
 	${animation};
 	${position};
 	${space};
@@ -50,5 +51,5 @@ export const Link: LinkComponent = (props) => {
 };
 
 Link.defaultProps = {
-	$variant: 'base',
+	variant: 'base',
 };

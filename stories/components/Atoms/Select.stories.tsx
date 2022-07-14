@@ -9,7 +9,7 @@ import readme from './Select.md';
 
 const StyledOption = ({ children, ...props }) => (
 	<Option
-		$padding={['t8', 'b8', 'l16', 'r16']}
+		padding={['t8', 'b8', 'l16', 'r16']}
 		{...props}
 	>
 		{children}
@@ -32,13 +32,13 @@ export default {
 
 const Template: ComponentStory<typeof Option> = ({ children, ...args }) => (
 	<Flex
-		$padding={['t64', 'b64']}
-		$backgroundColor="grey"
-		$justifyContent="center"
+		padding={['t64', 'b64']}
+		backgroundColor="grey"
+		justifyContent="center"
 	>
 		<SelectOrigin
-			$padding={['t8', 'b8', 'l16', 'r16']}
-			$minWidth="200px"
+			padding={['t8', 'b8', 'l16', 'r16']}
+			minWidth="200px"
 			{...args}
 		>
 			<StyledOption>Option 1</StyledOption>

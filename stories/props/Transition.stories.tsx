@@ -8,12 +8,12 @@ import readme from './Transition.md';
 export default {
 	title: 'Element Props/Transition',
 	argTypes: {
-		$transition: { control: 'text', description: 'String with css property', type: 'string' },
-		$transitionDelay: { control: 'text', description: 'String with css property', type: 'string' },
-		$transitionDuration: { control: 'text', description: 'String with css property', type: 'string' },
-		$transitionProperty: { control: 'text', description: 'String with css property', type: 'string' },
-		$transitionTimingFunction: { control: 'text', description: 'String with css property', type: 'string' },
-		$willChange: { control: 'text', description: 'String with css property', type: 'string' },
+		transition: { control: 'text', description: 'String with css property', type: 'string' },
+		transitionDelay: { control: 'text', description: 'String with css property', type: 'string' },
+		transitionDuration: { control: 'text', description: 'String with css property', type: 'string' },
+		transitionProperty: { control: 'text', description: 'String with css property', type: 'string' },
+		transitionTimingFunction: { control: 'text', description: 'String with css property', type: 'string' },
+		willChange: { control: 'text', description: 'String with css property', type: 'string' },
 	},
 	parameters: {
 		docs: {
@@ -26,15 +26,15 @@ export default {
 
 const Template = ({ children, ...args }) => (
 	<Flex
-		$backgroundColor="yellow"
-		$alignItems="center"
-		$justifyContent="center"
-		$width="200px"
-		$height="200px"
-		$hover={['backgroundBlackLighter']}
+		backgroundColor="yellow"
+		alignItems="center"
+		justifyContent="center"
+		width="200px"
+		height="200px"
+		hover={['backgroundBlackLighter']}
 		{...args}
 	>
-		<Text $textColor="primary">Hover me!</Text>
+		<Text textColor="primary">Hover me!</Text>
 	</Flex>
 );
 
@@ -43,15 +43,15 @@ export const Transition = Template.bind({});
 Transition.parameters = {
 	controls: {
 		include: [
-			'$transition',
-			'$transitionDelay',
-			'$transitionDuration',
-			'$transitionProperty',
-			'$transitionTimingFunction',
-			'$willChange',
+			'transition',
+			'transitionDelay',
+			'transitionDuration',
+			'transitionProperty',
+			'transitionTimingFunction',
+			'willChange',
 		],
 	},
 };
 Transition.args = {
-	$transition: 'background-color 300ms ease-in-out',
+	transition: 'background-color 300ms ease-in-out',
 };

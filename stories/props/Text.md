@@ -4,22 +4,22 @@ List of text props, and example.
 
 Mainly all css props for styling text elements in our theme
 
-- `$textAlign`
-- `$textColor`
-- `$textSize`
-- `$fontSize`
-- `$lineHeight`
-- `$fontWeight`
-- `$fontFamily`
-- `$whiteSpace`
-- `$uppercase`
-- `$lowercase`
-- `$ellipsis`
-- `$fontStyle`
-- `$textDecoration`
-- `$letterSpacing`
-- `$textColorOpacity`
-- `$textShadow`
+- `textAlign`
+- `textColor`
+- `textSize`
+- `fontSize`
+- `lineHeight`
+- `fontWeight`
+- `fontFamily`
+- `whiteSpace`
+- `uppercase`
+- `lowercase`
+- `ellipsis`
+- `fontStyle`
+- `textDecoration`
+- `letterSpacing`
+- `textColorOpacity`
+- `textShadow`
 
 We can use theme default setup or we can add some custom style like this:
 
@@ -102,9 +102,9 @@ and then simply use it in your code
 
 ```jsx
 <Paragraph
-	$textColor="black"
-	$textAlign="center"
-	$fontStyle="italic"
+	textColor="black"
+	textAlign="center"
+	fontStyle="italic"
 >
 	Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather.
 	As much mud in the streets as if the waters had but newly retired from the face of the earth.

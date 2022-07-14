@@ -8,12 +8,12 @@ import readme from './Responsive.md';
 export default {
 	title: 'Element Props/Responsive',
 	argTypes: {
-		$mobile: { control: 'array' },
-		$tablet: { control: 'array' },
-		$largeTablet: { control: 'array' },
-		$desktop: { control: 'array' },
-		$largeDesktop: { control: 'array' },
-		$desktopStandard: { control: 'array' },
+		mobile: { control: 'array' },
+		tablet: { control: 'array' },
+		largeTablet: { control: 'array' },
+		desktop: { control: 'array' },
+		largeDesktop: { control: 'array' },
+		desktopStandard: { control: 'array' },
 	},
 	parameters: {
 		docs: {
@@ -26,28 +26,28 @@ export default {
 
 const Template = ({ children, ...args }) => (
 	<Flex
-		$gap="10px"
+		gap="10px"
 		{...args}
 	>
 		<Wrapper
-			$height="100px"
-			$width="100px"
-			$backgroundColor="yellow"
+			height="100px"
+			width="100px"
+			backgroundColor="yellow"
 		/>
 		<Wrapper
-			$height="100px"
-			$width="100px"
-			$backgroundColor="yellow"
+			height="100px"
+			width="100px"
+			backgroundColor="yellow"
 		/>
 		<Wrapper
-			$height="100px"
-			$width="100px"
-			$backgroundColor="yellow"
+			height="100px"
+			width="100px"
+			backgroundColor="yellow"
 		/>
 		<Wrapper
-			$height="100px"
-			$width="100px"
-			$backgroundColor="yellow"
+			height="100px"
+			width="100px"
+			backgroundColor="yellow"
 		/>
 	</Flex>
 );
@@ -57,15 +57,15 @@ export const Responsive = Template.bind({});
 Responsive.parameters = {
 	controls: {
 		include: [
-			'$mobile',
-			'$tablet',
-			'$largeTablet',
-			'$desktop',
-			'$largeDesktop',
-			'$desktopStandard',
+			'mobile',
+			'tablet',
+			'largeTablet',
+			'desktop',
+			'largeDesktop',
+			'desktopStandard',
 		],
 	},
 };
 Responsive.args = {
-	$mobile: ['column', { padding: ['t12', 'r12', 'b12', 'l12'] }],
+	mobile: ['column', { padding: ['t12', 'r12', 'b12', 'l12'] }],
 };

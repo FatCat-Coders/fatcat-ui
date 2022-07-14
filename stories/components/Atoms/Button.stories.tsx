@@ -12,7 +12,7 @@ export default {
 	title: 'Basic Elements/Button',
 	component: ButtonOrigin,
 	argTypes: {
-		$variant: {
+		variant: {
 			control: 'radio',
 			options: Object.keys(BUTTON_STYLE),
 			description: `List of button variants: ${formatObjectKeys(BUTTON_STYLE)}`,
@@ -38,9 +38,9 @@ export default {
 
 const Template: ComponentStory<typeof ButtonOrigin> = ({ children, ...args }) => (
 	<Flex
-		$padding={['t64', 'b64']}
-		$backgroundColor="grey"
-		$justifyContent="center"
+		padding={['t64', 'b64']}
+		backgroundColor="grey"
+		justifyContent="center"
 	>
 		<ButtonOrigin {...args}>
 			{children}
@@ -50,5 +50,5 @@ const Template: ComponentStory<typeof ButtonOrigin> = ({ children, ...args }) =>
 
 export const Button = Template.bind({});
 
-Button.parameters = { controls: { include: ['$variant', 'Content'] } };
-Button.args = { children: 'Button', $variant: 'base' };
+Button.parameters = { controls: { include: ['variant', 'Content'] } };
+Button.args = { children: 'Button', variant: 'base' };

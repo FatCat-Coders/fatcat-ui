@@ -4,5 +4,6 @@
 .gitignore
 .stylelintrc
 .changeset
+publish-package.sh
 
 package-lock.json

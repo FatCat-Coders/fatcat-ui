@@ -13,7 +13,7 @@ Simple Button components that we can use in our project. Props that we can use f
 
 listed in `Element Props` section and additionally:
 
-- `$variant`
+- `variant`
 
 ## 	Styling
 
@@ -77,7 +77,7 @@ and then simply use it in your code with the variaton you already provided in th
 
 ```jsx
 <Button
-	$variant="some-variant"
+	variant="some-variant"
 >
 	Button
 </Button>

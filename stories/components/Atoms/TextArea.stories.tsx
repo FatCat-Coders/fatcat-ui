@@ -12,7 +12,7 @@ export default {
 	title: 'Basic Elements/Inputs/TextArea',
 	component: TextAreaOrigin,
 	argTypes: {
-		$variant: {
+		variant: {
 			control: 'radio',
 			options: Object.keys(INPUT_STYLE),
 			description: `List of input variants: ${formatObjectKeys(INPUT_STYLE)}`,
@@ -34,9 +34,9 @@ export default {
 
 const Template: ComponentStory<typeof TextAreaOrigin> = ({ children, ...args }) => (
 	<Flex
-		$backgroundColor="backgroundUltraDark"
-		$padding={['t64', 'b64', 'l24', 'r24']}
-		$width="90%"
+		backgroundColor="backgroundUltraDark"
+		padding={['t64', 'b64', 'l24', 'r24']}
+		width="90%"
 	>
 		<TextAreaOrigin
 			{...args}
@@ -46,5 +46,5 @@ const Template: ComponentStory<typeof TextAreaOrigin> = ({ children, ...args }) 
 
 export const TextArea = Template.bind({});
 
-TextArea.parameters = { controls: { include: ['$variant', 'rows'] } };
-TextArea.args = { $variant: 'base', rows: '20' };
+TextArea.parameters = { controls: { include: ['variant', 'rows'] } };
+TextArea.args = { variant: 'base', rows: '20' };

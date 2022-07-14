@@ -24,7 +24,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		$textColor: {
+		textColor: {
 			control: 'select',
 			options: Object.keys(TEXT_COLOR),
 			description: 'Just for demo purposes',
@@ -61,11 +61,11 @@ const Template: ComponentStory<typeof HeadingOrigin> = ({ ...args }) => {
 				{`Heading ${args.as}`}
 			</HeadingOrigin>
 			<Flex
-				$direction="column"
-				$gap="4px"
+				direction="column"
+				gap="4px"
 			>
 				<Text>
-					{`Text color: ${TEXT_COLOR[args.$textColor].toLowerCase()}`}
+					{`Text color: ${TEXT_COLOR[args.textColor].toLowerCase()}`}
 				</Text>
 				<Text>
 					{`Font-size: ${style.fontSize}`}
@@ -83,8 +83,8 @@ const Template: ComponentStory<typeof HeadingOrigin> = ({ ...args }) => {
 
 export const Heading = Template.bind({});
 
-Heading.parameters = { controls: { include: ['as', '$textColor'] } };
+Heading.parameters = { controls: { include: ['as', 'textColor'] } };
 Heading.args = {
 	as: 'h1',
-	$textColor: 'black',
+	textColor: 'black',
 };

@@ -12,7 +12,7 @@ export default {
 	title: 'Basic Elements/Link',
 	component: LinkOrigin,
 	argTypes: {
-		$variant: {
+		variant: {
 			control: 'radio',
 			options: Object.keys(LINK_STYLE),
 			description: `List of link variants: ${formatObjectKeys(LINK_STYLE)}`,
@@ -42,7 +42,7 @@ export default {
 
 const Template: ComponentStory<typeof LinkOrigin> = ({ children, ...args }) => (
 	<Flex
-		$padding={['t64', 'b64']}
+		padding={['t64', 'b64']}
 	>
 		<LinkOrigin
 			{...args}
@@ -54,5 +54,5 @@ const Template: ComponentStory<typeof LinkOrigin> = ({ children, ...args }) => (
 
 export const Link = Template.bind({});
 
-Link.parameters = { controls: { include: ['$variant', 'Content', 'to'] } };
-Link.args = { children: 'FatCat Coders', $variant: 'base', to: 'https://fatcatcoders.com' };
+Link.parameters = { controls: { include: ['variant', 'Content', 'to'] } };
+Link.args = { children: 'FatCat Coders', variant: 'base', to: 'https://fatcatcoders.com' };

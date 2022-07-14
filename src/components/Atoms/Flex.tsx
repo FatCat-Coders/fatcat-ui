@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../../utils/styled';
 
 import {
 	animation, AnimationProps,
@@ -29,7 +29,7 @@ export type TFlex =
 	& TransitionsProps
 	& VisibilityProps;
 
-export const Flex = styled.div<TFlex>`
+export const Flex = styled('div')<TFlex>`
 	width: 100%;
 	${animation};
 	${background};
@@ -47,5 +47,5 @@ export const Flex = styled.div<TFlex>`
 `;
 
 Flex.defaultProps = {
-	$initialDisplay: 'flex',
+	initialDisplay: 'flex',
 };

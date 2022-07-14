@@ -10,77 +10,77 @@ import readme from './Space.md';
 export default {
 	title: 'Element Props/Space',
 	argTypes: {
-		$padding: {
+		padding: {
 			control: 'array',
 			description: `List of sizing values values: \`t\`,\`r\`,\`b\`,\`l\` followed by number ${formatSizingObjectKeys(SPACE)}`,
 			table: {
 				type: { summary: null },
 			},
 		},
-		$paddingBottom: {
+		paddingBottom: {
 			control: 'text',
 			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
 			table: {
 				type: { summary: null },
 			},
 		},
-		$paddingTop: {
+		paddingTop: {
 			control: 'text',
 			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
 			table: {
 				type: { summary: null },
 			},
 		},
-		$paddingLeft: {
+		paddingLeft: {
 			control: 'text',
 			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
 			table: {
 				type: { summary: null },
 			},
 		},
-		$paddingRight: {
+		paddingRight: {
 			control: 'text',
 			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
 			table: {
 				type: { summary: null },
 			},
 		},
-		$margin: {
+		margin: {
 			control: 'array',
 			description: `List of sizing values values: \`t\`,\`r\`,\`b\`,\`l\` followed by number ${formatSizingObjectKeys(SPACE)}`,
 			table: {
 				type: { summary: null },
 			},
 		},
-		$marginBottom: {
+		marginBottom: {
 			control: 'text',
 			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
 			table: {
 				type: { summary: null },
 			},
 		},
-		$marginTop: {
+		marginTop: {
 			control: 'text',
 			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
 			table: {
 				type: { summary: null },
 			},
 		},
-		$marginLeft: {
+		marginLeft: {
 			control: 'text',
 			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
 			table: {
 				type: { summary: null },
 			},
 		},
-		$marginRight: {
+		marginRight: {
 			control: 'text',
 			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
 			table: {
 				type: { summary: null },
 			},
 		},
-		$scale: {
+		scale: {
 			control: 'boolean',
 			description: 'Apply breakpoint scale on the size props',
 			table: {
@@ -100,21 +100,21 @@ export default {
 
 const Template = ({ children, ...args }) => (
 	<Wrapper
-		$border="1px solid black"
-		$width="fit-content"
-		$backgroundColor="green"
-		$backgroundColorOpacity={0.3}
+		border="1px solid black"
+		width="fit-content"
+		backgroundColor="green"
+		backgroundColorOpacity={0.3}
 	>
 		<Wrapper
-			$height="300px"
-			$width="300px"
-			$backgroundColor="yellow"
-			$backgroundColorOpacity={0.7}
+			height="300px"
+			width="300px"
+			backgroundColor="yellow"
+			backgroundColorOpacity={0.7}
 			{...args}
 		>
 			<Wrapper
-				$backgroundColor="purple"
-				$height="100%"
+				backgroundColor="purple"
+				height="100%"
 			/>
 		</Wrapper>
 	</Wrapper>
@@ -125,24 +125,24 @@ export const Space = Template.bind({});
 Space.parameters = {
 	controls: {
 		include: [
-			'$padding',
-			'$paddingBottom',
-			'$paddingTop',
-			'$paddingLeft',
-			'$paddingRight',
-			'$margin',
-			'$marginBottom',
-			'$marginTop',
-			'$marginLeft',
-			'$marginRight',
-			'$scale',
+			'padding',
+			'paddingBottom',
+			'paddingTop',
+			'paddingLeft',
+			'paddingRight',
+			'margin',
+			'marginBottom',
+			'marginTop',
+			'marginLeft',
+			'marginRight',
+			'scale',
 		],
 	},
 };
 Space.args = {
-	$padding: ['t64', 'r64', 'b64', 'l64'],
-	$marginTop: 's24',
-	$marginRight: 's24',
-	$marginBottom: 's24',
-	$marginLeft: 's24',
+	padding: ['t64', 'r64', 'b64', 'l64'],
+	marginTop: 's24',
+	marginRight: 's24',
+	marginBottom: 's24',
+	marginLeft: 's24',
 };

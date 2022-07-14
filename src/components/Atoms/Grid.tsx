@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../../utils/styled';
 import { Properties } from 'csstype';
 
 import { MEDIA } from '../../theme/definitions';
@@ -17,12 +17,12 @@ import {
 
 export type TGrid =
 	{
-		$gap?: Properties['gap'],
-		$rowGap?: Properties['rowGap'],
-		$gridTemplateColumns: Properties['gridTemplateColumns'],
-		$alignItems?: Properties['alignItems'],
-		$justifyContent?: Properties['justifyContent'],
-		$justifyItems?: Properties['justifyItems'],
+		gap?: Properties['gap'],
+		rowGap?: Properties['rowGap'],
+		gridTemplateColumns: Properties['gridTemplateColumns'],
+		alignItems?: Properties['alignItems'],
+		justifyContent?: Properties['justifyContent'],
+		justifyItems?: Properties['justifyItems'],
 	}
 	& AnimationProps
 	& BackgroundProps
@@ -34,15 +34,15 @@ export type TGrid =
 	& SpaceProps
 	& VisibilityProps;
 
-export const Grid = styled.div<TGrid>`
+export const Grid = styled('div')<TGrid>`
 	display: grid;
 	width: 100%;
-	${props => props.$alignItems && `align-items: ${props.$alignItems}`};
-	${props => props.$justifyContent && `justify-content: ${props.$justifyContent}`};
-	${props => props.$justifyItems && `justify-items: ${props.$justifyItems}`};
-	${props => props.$gridTemplateColumns && `grid-template-columns: ${props.$gridTemplateColumns}`};
-	gap: ${props => props.$gap || '16px'};
-	${props => props.$rowGap && `row-gap: ${props.$rowGap}`};
+	${props => props.alignItems && `align-items: ${props.alignItems}`};
+	${props => props.justifyContent && `justify-content: ${props.justifyContent}`};
+	${props => props.justifyItems && `justify-items: ${props.justifyItems}`};
+	${props => props.gridTemplateColumns && `grid-template-columns: ${props.gridTemplateColumns}`};
+	gap: ${props => props.gap || '16px'};
+	${props => props.rowGap && `row-gap: ${props.rowGap}`};
 
 	${animation};
 	${background};
@@ -57,11 +57,11 @@ export const Grid = styled.div<TGrid>`
 	${MEDIA.ie} {
 		display: flex;
 		flex-wrap: wrap;
-		margin-right: -${props => props.$gap || '16px'};
-		margin-bottom: -${props => props.$gap || '16px'};
+		margin-right: -${props => props.gap || '16px'};
+		margin-bottom: -${props => props.gap || '16px'};
 		> * {
-			margin-right: ${props => props.$gap || '16px'};
-			margin-bottom: ${props => props.$gap || '16px'};
+			margin-right: ${props => props.gap || '16px'};
+			margin-bottom: ${props => props.gap || '16px'};
 		}
 	}
 `;

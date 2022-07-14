@@ -12,7 +12,7 @@ Simple Link component. Props that we can use for this component are:
 
 listed in `Element Props` section and additionally:
 
-- `$variant`
+- `variant`
 
 ## 	Styling
 
@@ -72,7 +72,7 @@ and then simply use it in your code.
 
 ```jsx
 <Flex
-	$padding={['t64', 'b64']}
+	padding={['t64', 'b64']}
 >
 	<Link
 		to="https://fatcatcoders.com"

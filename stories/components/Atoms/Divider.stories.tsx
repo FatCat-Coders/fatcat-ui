@@ -12,7 +12,7 @@ export default {
 	title: 'Basic Elements/DottedDivider',
 	component: Divider,
 	argTypes: {
-		$color: {
+		color: {
 			control: 'select',
 			options: Object.keys(COLOR),
 			description: `List of colors: ${formatObjectKeys(COLOR)}`,
@@ -34,7 +34,7 @@ export default {
 
 const Template: ComponentStory<typeof Divider> = ({ children, ...args }) => (
 	<Flex
-		$padding={['t64', 'b64']}
+		padding={['t64', 'b64']}
 	>
 		<Divider {...args} />
 	</Flex>
@@ -42,5 +42,5 @@ const Template: ComponentStory<typeof Divider> = ({ children, ...args }) => (
 
 export const DottedDivider = Template.bind({});
 
-DottedDivider.parameters = { controls: { include: ['$color'] } };
-DottedDivider.args = { $color: 'purple' };
+DottedDivider.parameters = { controls: { include: ['color'] } };
+DottedDivider.args = { color: 'purple' };

@@ -6,14 +6,14 @@ CSS allows animation of HTML elements without using JavaScript or Flash, and ani
 
 Property that adds to the component are:
 
-- `$animation`
-- `$animationName`
-- `$animationDuration`
-- `$animationTimingFunction`
-- `$animationDelay`
-- `$animationIterationCount`
-- `$animationFillMode`
-- `$animationPlayState`
+- `animation`
+- `animationName`
+- `animationDuration`
+- `animationTimingFunction`
+- `animationDelay`
+- `animationIterationCount`
+- `animationFillMode`
+- `animationPlayState`
 
 We can use animation already defined in our therm or we can add new ones for better reusability, and this is how:
 
@@ -63,14 +63,14 @@ declare module 'styled-components' {
 
 ## Usage 
 
-For our example we adding `fadeInRight25` animation to animate element from right to left with opacity change from 0 to 1. We will use shorthand `$animation` prop by passing two items to array collection, first with animation name from our defined animation list in theme, and second one with all additional props for animation:
+For our example we adding `fadeInRight25` animation to animate element from right to left with opacity change from 0 to 1. We will use shorthand `animation` prop by passing two items to array collection, first with animation name from our defined animation list in theme, and second one with all additional props for animation:
 
 ```jsx
 <Wrapper
-	$animation={['fadeInRight25', '2s linear 2s infinite']}
-	$width="200px"
-	$height="200px"
-	$backgroundColor="yellow"
+	animation={['fadeInRight25', '2s linear 2s infinite']}
+	width="200px"
+	height="200px"
+	backgroundColor="yellow"
 />
 ```
 

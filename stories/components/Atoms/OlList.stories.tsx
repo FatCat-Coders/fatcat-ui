@@ -14,7 +14,7 @@ export default {
 	title: 'Basic Elements/Lists/OlList',
 	component: OlListOrigin,
 	argTypes: {
-		$variant: {
+		variant: {
 			control: 'radio',
 			options: Object.keys(OLLIST_STYLE),
 			description: `List of input variants: ${formatObjectKeys(OLLIST_STYLE)}`,
@@ -35,8 +35,8 @@ export default {
 
 const Template: ComponentStory<typeof OlListOrigin> = ({ ...args }) => (
 	<Wrapper
-		$backgroundColor="backgroundUltraDark"
-		$padding={['t64', 'b64', 'l24', 'r24']}
+		backgroundColor="backgroundUltraDark"
+		padding={['t64', 'b64', 'l24', 'r24']}
 	>
 		<OlListOrigin {...args}>
 			<Text as="li">item 1</Text>
@@ -50,5 +50,5 @@ const Template: ComponentStory<typeof OlListOrigin> = ({ ...args }) => (
 
 export const OlList = Template.bind({});
 
-OlList.parameters = { controls: { include: ['$variant'] } };
-OlList.args = { $variant: 'base' };
+OlList.parameters = { controls: { include: ['variant'] } };
+OlList.args = { variant: 'base' };

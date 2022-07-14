@@ -1,4 +1,6 @@
-import styled, { DefaultTheme } from 'styled-components';
+
+import { styled } from '../../utils/styled';
+import { DefaultTheme } from 'styled-components';
 
 // themes
 import {
@@ -13,7 +15,7 @@ import {
 
 export type TOlList =
 	{
-		$variant?: keyof DefaultTheme['ollistStyle']
+		variant?: keyof DefaultTheme['ollistStyle']
 	}
 	& AnimationProps
 	& HoverProps
@@ -23,7 +25,7 @@ export type TOlList =
 	& TextProps
 	& VisibilityProps;
 
-export const OlList = styled.ol<TOlList>`
+export const OlList = styled('ol')<TOlList>`
 	list-style: none;
 	counter-reset: item;
 	position: relative;
@@ -46,7 +48,7 @@ export const OlList = styled.ol<TOlList>`
 		font-size: ${props => props.theme.fontSize.s18};
 	}
 
-	${props => props.$variant && props.theme.ollistStyle[props.$variant]};
+	${props => props.variant && props.theme.ollistStyle[props.variant]};
 	${animation};
 	${position};
 	${space};
@@ -57,5 +59,5 @@ export const OlList = styled.ol<TOlList>`
 `;
 
 OlList.defaultProps = {
-	$variant: 'base',
+	variant: 'base',
 };

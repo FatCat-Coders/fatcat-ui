@@ -12,13 +12,13 @@ export default {
 	title: 'Basic Elements/Image',
 	component: ImageOrigin,
 	argTypes: {
-		$width: {
+		width: {
 			control: 'text',
 			table: {
 				type: { summary: null },
 			},
 		},
-		$height: {
+		height: {
 			control: 'text',
 			table: {
 				type: { summary: null },
@@ -36,7 +36,7 @@ export default {
 
 const Template: ComponentStory<typeof ImageOrigin> = ({ children, ...args }) => (
 	<Flex
-		$padding={['t64', 'b64']}
+		padding={['t64', 'b64']}
 	>
 		<ImageOrigin
 			{...args}
@@ -48,5 +48,5 @@ const Template: ComponentStory<typeof ImageOrigin> = ({ children, ...args }) => 
 
 export const Image = Template.bind({});
 
-Image.parameters = { controls: { include: ['$width', '$height'] } };
-Image.args = { $width: '300px', $height: 'auto' };
+Image.parameters = { controls: { include: ['width', 'height'] } };
+Image.args = { width: '300px', height: 'auto' };

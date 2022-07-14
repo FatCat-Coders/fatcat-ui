@@ -8,12 +8,12 @@ import readme from './Size.md';
 export default {
 	title: 'Element Props/Size',
 	argTypes: {
-		$width: { control: 'text', description: 'String with css property', type: 'string' },
-		$maxWidth: { control: 'text', description: 'String with css property', type: 'string' },
-		$minWidth: { control: 'text', description: 'String with css property', type: 'string' },
-		$height: { control: 'text', description: 'String with css property', type: 'string' },
-		$maxHeight: { control: 'text', description: 'String with css property', type: 'string' },
-		$minHeight: { control: 'text', description: 'String with css property', type: 'string' },
+		width: { control: 'text', description: 'String with css property', type: 'string' },
+		maxWidth: { control: 'text', description: 'String with css property', type: 'string' },
+		minWidth: { control: 'text', description: 'String with css property', type: 'string' },
+		height: { control: 'text', description: 'String with css property', type: 'string' },
+		maxHeight: { control: 'text', description: 'String with css property', type: 'string' },
+		minHeight: { control: 'text', description: 'String with css property', type: 'string' },
 	},
 	parameters: {
 		docs: {
@@ -26,25 +26,25 @@ export default {
 
 const Template = ({ children, ...args }) => (
 	<Wrapper
-		$position="relative"
-		$backgroundColor="yellow"
+		position="relative"
+		backgroundColor="yellow"
 		{...args}
 	>
 		<Text
-			$position="absolute"
-			$top="-20px"
-			$left="50%"
-			$transform="translateX(-50%)"
+			position="absolute"
+			top="-20px"
+			left="50%"
+			transform="translateX(-50%)"
 		>
-			{args.$width}
+			{args.width}
 		</Text>
 		<Text
-			$position="absolute"
-			$top="50%"
-			$right="-30px"
-			$transform="translateY(-50%) rotate(90deg)"
+			position="absolute"
+			top="50%"
+			right="-30px"
+			transform="translateY(-50%) rotate(90deg)"
 		>
-			{args.$height}
+			{args.height}
 		</Text>
 	</Wrapper>
 );
@@ -54,16 +54,16 @@ export const Size = Template.bind({});
 Size.parameters = {
 	controls: {
 		include: [
-			'$width',
-			'$maxWidth',
-			'$minWidth',
-			'$height',
-			'$maxHeight',
-			'$minHeight',
+			'width',
+			'maxWidth',
+			'minWidth',
+			'height',
+			'maxHeight',
+			'minHeight',
 		],
 	},
 };
 Size.args = {
-	$width: '100px',
-	$height: '100px',
+	width: '100px',
+	height: '100px',
 };

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../../utils/styled';
 
 import {
 	animation, AnimationProps,
@@ -27,7 +27,7 @@ export type TText =
 	& TransitionsProps
 	& VisibilityProps;
 
-export const Text = styled.span<TText>`
+export const Text = styled('span')<TText>`
 	${props => props.theme.textStyle.text}
 	${animation};
 	${background};

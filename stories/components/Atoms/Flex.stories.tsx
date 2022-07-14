@@ -17,7 +17,7 @@ export default {
 			description: '(Demo purposes only) Add children elelements to the grid ',
 			type: 'string',
 		},
-		$gap: {
+		gap: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -25,7 +25,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		$wrap: {
+		wrap: {
 			control: 'boolean',
 			description: 'String with css property',
 			type: 'boolean',
@@ -50,11 +50,11 @@ const Template: ComponentStory<typeof FlexOrigin> = ({ children, items, ...args 
 			const randomWidth = widths[Math.floor(Math.random() * widths.length)];
 			return (
 				<FlexOrigin
-					$height="100px"
-					$width={randomWidth}
-					$backgroundColor="yellow"
-					$alignItems="center"
-					$justifyContent="center"
+					height="100px"
+					width={randomWidth}
+					backgroundColor="yellow"
+					alignItems="center"
+					justifyContent="center"
 				>
 					{randomWidth}
 				</FlexOrigin>
@@ -69,14 +69,14 @@ Flex.parameters = {
 	controls: {
 		include: [
 			'items',
-			'$gap',
-			'$wrap',
+			'gap',
+			'wrap',
 		],
 	},
 };
 
 Flex.args = {
 	items: '4',
-	$gap: '8px 16px',
-	$wrap: true,
+	gap: '8px 16px',
+	wrap: true,
 };

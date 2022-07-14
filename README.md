@@ -1,7 +1,7 @@
 ## FatCat UI library
 
 This is a small component library created by the FatCat development team using styled-components, the full component list can be seen here:
-- [Storybook](https://62becb0e755df7ca358ea2ad-usfegtotep.chromatic.com/)
+- [Storybook](https://master--62becb0e755df7ca358ea2ad.chromatic.com/)
 
 ## Instaling
 
@@ -29,7 +29,7 @@ import { Button } from 'fatcat-ui-library/components/Atoms/Button';
 
 
 <Button
-  $variant="some-variant"
+  variant="some-variant"
 >
   Button
 </Button>

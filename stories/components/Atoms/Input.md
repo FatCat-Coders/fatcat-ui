@@ -12,7 +12,7 @@ The Input tag specifies an input field where the user can enter data. Props that
 
 listed in `Element Props` section and additionally:
 
-- `$variant`
+- `variant`
 
 ## 	Styling
 
@@ -93,8 +93,8 @@ and then simply use it in your code.
 
 ```jsx
 <Flex
-	$backgroundColor="backgroundUltraDark"
-	$padding={['t64', 'b64', 'l24', 'r24']}
+	backgroundColor="backgroundUltraDark"
+	padding={['t64', 'b64', 'l24', 'r24']}
 >
 	<InputOrigin />
 </Flex>

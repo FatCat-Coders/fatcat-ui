@@ -10,8 +10,8 @@ An unordered list starts with the ULList tag. Each list item starts with the <li
 
 listed in `Element Props` section and additionally:
 
-- `$variant`
-- `$bulletColor`
+- `variant`
+- `bulletColor`
 
 ## Styling
 
@@ -35,7 +35,7 @@ const const ULLIST_STYLE = {
 			${props => props.theme.media.tablet} {
 				top: -6px;
 			}
-			${props => props.$bulletColor && `color: ${props.theme.color[props.$bulletColor]}`}
+			${props => props.bulletColor && `color: ${props.theme.color[props.bulletColor]}`}
 		}
 	`
 }
@@ -79,10 +79,10 @@ and then simply use it in your code.
 
 ```jsx
 <ULList>
-	<Text as="li" $fontSize="s24">item 1</Text>
-	<Text as="li" $fontSize="s24">item 2</Text>
-	<Text as="li" $fontSize="s24">item 3</Text>
-	<Text as="li" $fontSize="s24">item 4</Text>
+	<Text as="li" fontSize="s24">item 1</Text>
+	<Text as="li" fontSize="s24">item 2</Text>
+	<Text as="li" fontSize="s24">item 3</Text>
+	<Text as="li" fontSize="s24">item 4</Text>
 </ULList>
 ```
 

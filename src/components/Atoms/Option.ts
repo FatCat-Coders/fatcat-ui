@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../../utils/styled';
 
 import {
 	animation, AnimationProps,
@@ -25,7 +25,7 @@ export type TOption =
 	& TextProps
 	& VisibilityProps;
 
-export const Option = styled.option<TOption>`
+export const Option = styled('option')<TOption>`
 	${animation};
 	${position};
 	${visibility};

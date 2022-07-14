@@ -1,4 +1,5 @@
-import styled, { css, DefaultTheme } from 'styled-components';
+import { styled } from '../../utils/styled';
+import { css, DefaultTheme } from 'styled-components';
 
 import {
 	BackgroundProps,
@@ -15,7 +16,7 @@ import {
 
 export type TInput =
 	{
-		$variant?: keyof DefaultTheme['inputStyle']
+		variant?: keyof DefaultTheme['inputStyle']
 	}
 	& AnimationProps
 	& BorderProps
@@ -27,8 +28,8 @@ export type TInput =
 	& TextProps
 	& VisibilityProps;
 
-export const InputField = styled.input<TInput & BackgroundProps>`
-	${props => props.$variant && props.theme.inputStyle[props.$variant]};
+export const InputField = styled('input')<TInput & BackgroundProps>`
+	${props => props.variant && props.theme.inputStyle[props.variant]};
 
 	${animation};
 	${border};
@@ -39,9 +40,9 @@ export const InputField = styled.input<TInput & BackgroundProps>`
 	${visibility};
 	${hover};
 	${responsive};
-	${props => (props.$backgroundImage
+	${props => (props.backgroundImage
 		? css`
-			background: url(${props.$backgroundImage}) scroll no-repeat 94%;`
+			background: url(${props.backgroundImage}) scroll no-repeat 94%;`
 		: css`
 			background: none;
 			-webkit-background-clip: text;
@@ -50,7 +51,7 @@ export const InputField = styled.input<TInput & BackgroundProps>`
 
 export type TTextArea = TInput;
 
-export const TextArea = styled.textarea<TTextArea>`
+export const TextArea = styled('textarea')<TTextArea>`
 	resize: none;
 	width: 100%;
 	&::placeholder {
@@ -59,7 +60,7 @@ export const TextArea = styled.textarea<TTextArea>`
 		text-transform: uppercase;
 	}
 
-	${props => props.$variant && props.theme.inputStyle[props.$variant]};
+	${props => props.variant && props.theme.inputStyle[props.variant]};
 	${animation};
 	${border};
 	${position};
@@ -72,9 +73,9 @@ export const TextArea = styled.textarea<TTextArea>`
 `;
 
 InputField.defaultProps = {
-	$variant: 'base',
+	variant: 'base',
 };
 
 TextArea.defaultProps = {
-	$variant: 'base',
+	variant: 'base',
 };

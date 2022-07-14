@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../../utils/styled';
 
 import {
 	animation, AnimationProps,
@@ -29,7 +29,7 @@ export type TWrapper =
 	& TransitionsProps
 	& VisibilityProps;
 
-export const Wrapper = styled.div<TWrapper>`
+export const Wrapper = styled('div')<TWrapper>`
 	width: 100%;
 	${animation}
 	${background};
@@ -46,5 +46,5 @@ export const Wrapper = styled.div<TWrapper>`
 `;
 
 Wrapper.defaultProps = {
-	$initialDisplay: 'block',
+	initialDisplay: 'block',
 };

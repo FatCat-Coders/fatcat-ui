@@ -1,11 +1,9 @@
 import React from 'react';
-import styled, { DefaultTheme } from 'styled-components';
+import { styled } from '../../utils/styled';
+import { DefaultTheme } from 'styled-components';
 
 // Type definitions
 import { PolymorphicComponent } from '../../utils/polymorphic-component';
-
-// Css definitions
-import { transitionStyle } from '../../theme/styles';
 
 // Props
 import {
@@ -23,7 +21,7 @@ import {
 
 export type TButton =
 	{
-		$variant?: keyof DefaultTheme['buttonStyle'],
+		variant?: keyof DefaultTheme['buttonStyle'],
 	}
 	& AnimationProps
 	& BorderProps
@@ -36,13 +34,13 @@ export type TButton =
 	& TransitionsProps
 	& VisibilityProps;
 
-export const ButtonBase = styled.button<TButton>`
+export const ButtonBase = styled('button')<TButton>`
     cursor: pointer;
     display: inline-block;
 	font-weight: bold;
     text-align: center;
 	white-space: nowrap;
-	${props => props.$variant && props.theme.buttonStyle[props.$variant]};
+	${props => props.variant && props.theme.buttonStyle[props.variant]};
 	${animation};
 	${border};
 	${position};
@@ -64,5 +62,5 @@ export const Button: ButtonComponent = (props) => {
 };
 
 Button.defaultProps = {
-	$variant: 'base',
+	variant: 'base',
 };

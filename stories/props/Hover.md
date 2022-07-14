@@ -2,7 +2,7 @@ List of animation props, and example.
 
 ## 	Definition
 
-The `$hover` selector is used to select elements when you mouse over them.
+The `hover` selector is used to select elements when you mouse over them.
 
 We can use hover definition already defined in our therm or we can add new ones for better reusability, and this is how:
 
@@ -46,15 +46,15 @@ declare module 'styled-components' {
 
 ## Usage 
 
-Here is usage of our defined hover effects, we also added `$transition` for smoother behavior
+Here is usage of our defined hover effects, we also added `transition` for smoother behavior
 
 ```jsx
 <Wrapper
-		$height="100px"
-		$width="100px"
-		$backgroundColor="yellow"
-		$transition="all 0.3s ease"
-		$hover={ ['backgroundBlackLighter', { zoom: '1.2' }] }
+		height="100px"
+		width="100px"
+		backgroundColor="yellow"
+		transition="all 0.3s ease"
+		hover={ ['backgroundBlackLighter', { zoom: '1.2' }] }
 	/>
 ```
 

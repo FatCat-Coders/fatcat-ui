@@ -29,8 +29,8 @@ and then simply use it in your code with dynamic elements.
 
 ```jsx
 <Flex
-	$gap="8px 16px"
-	$wrap
+	gap="8px 16px"
+	wrap
 >
 	<div style={{ width: '200px'}} />
 	<div style={{ width: '100px'}} />

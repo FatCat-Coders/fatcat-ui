@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import { styled } from '../../utils/styled';
+import { css } from 'styled-components';
 
 // Props
 import {
@@ -24,7 +25,7 @@ export type THeading =
 	& TextProps
 	& VisibilityProps;
 
-export const Heading = styled.h1<THeading>`
+export const Heading = styled('h1')<THeading>`
 	${props =>
 		props.as &&
 		css`
@@ -41,7 +42,7 @@ export const Heading = styled.h1<THeading>`
 
 Heading.defaultProps = {
 	as: 'h1',
-	$textAlign: 'left',
-	$textColor: 'primary',
-	$initialDisplay: 'inline',
+	textAlign: 'left',
+	textColor: 'primary',
+	initialDisplay: 'inline',
 };

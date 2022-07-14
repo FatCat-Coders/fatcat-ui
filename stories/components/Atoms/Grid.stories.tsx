@@ -18,7 +18,7 @@ export default {
 			description: '(Demo purposes only) Add children elelements to the grid ',
 			type: 'string',
 		},
-		$alignItems: {
+		alignItems: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -26,7 +26,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		$justifyContent: {
+		justifyContent: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -34,7 +34,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		$justifyItems: {
+		justifyItems: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -42,7 +42,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		$gridTemplateColumns: {
+		gridTemplateColumns: {
 			control: 'text',
 			description: 'String with css property',
 			type: { name: 'string', required: true },
@@ -50,8 +50,8 @@ export default {
 				type: { summary: null },
 			},
 		},
-		$gap: {
-			name: '$gap (default: 16px)',
+		gap: {
+			name: 'gap (default: 16px)',
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -75,11 +75,11 @@ const Template: ComponentStory<typeof GridOrigin> = ({ children, items, ...args 
 			const randomWidth = widths[Math.floor(Math.random() * widths.length)];
 			return (
 				<Flex
-					$height="100px"
-					$width={randomWidth}
-					$backgroundColor="yellow"
-					$alignItems="center"
-					$justifyContent="center"
+					height="100px"
+					width={randomWidth}
+					backgroundColor="yellow"
+					alignItems="center"
+					justifyContent="center"
 				>
 					{randomWidth}
 				</Flex>
@@ -94,16 +94,16 @@ Grid.parameters = {
 	controls: {
 		include: [
 			'items',
-			'$alignItems',
-			'$justifyContent',
-			'$justifyItems',
-			'$gridTemplateColumns',
-			'$gap (default: 16px)',
+			'alignItems',
+			'justifyContent',
+			'justifyItems',
+			'gridTemplateColumns',
+			'gap (default: 16px)',
 		],
 	},
 };
 
 Grid.args = {
 	items: '4',
-	$gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+	gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
 };

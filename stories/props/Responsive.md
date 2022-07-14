@@ -4,12 +4,12 @@ List of responsive props, and example.
 
 List of breakpoints to apply CSS style if a certain condition is true. List of breakpoints:
 
-- `$mobile`
-- `$tablet`
-- `$largeTablet`
-- `$desktop`
-- `$largeDesktop`
-- `$desktopStandard`
+- `mobile`
+- `tablet`
+- `largeTablet`
+- `desktop`
+- `largeDesktop`
+- `desktopStandard`
 
 ## Usage
 
@@ -60,32 +60,32 @@ declare module 'styled-components' {
 }
 ```
 
-And this is how we can apply `flex-direction: column;` on flex element and also add `padding: 12px;` on `$mobile` breakpoint
+And this is how we can apply `flex-direction: column;` on flex element and also add `padding: 12px;` on `mobile` breakpoint
 
 ```jsx
 <Flex
-	$gap="10px"
-	$mobile={['column', { padding: ['t12', 'r12', 'b12', 'l12'] }]}
+	gap="10px"
+	mobile={['column', { padding: ['t12', 'r12', 'b12', 'l12'] }]}
 >
 	<Wrapper
-		$height="100px"
-		$width="100px"
-		$backgroundColor="yellow"
+		height="100px"
+		width="100px"
+		backgroundColor="yellow"
 	/>
 	<Wrapper
-		$height="100px"
-		$width="100px"
-		$backgroundColor="yellow"
+		height="100px"
+		width="100px"
+		backgroundColor="yellow"
 	/>
 	<Wrapper
-		$height="100px"
-		$width="100px"
-		$backgroundColor="yellow"
+		height="100px"
+		width="100px"
+		backgroundColor="yellow"
 	/>
 	<Wrapper
-		$height="100px"
-		$width="100px"
-		$backgroundColor="yellow"
+		height="100px"
+		width="100px"
+		backgroundColor="yellow"
 	/>
 </Flex>
 ```

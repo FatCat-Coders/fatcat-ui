@@ -30,11 +30,11 @@ and then simply use it in your code.
 
 ```jsx
 <Flex
-	$padding={['t64', 'b64']}
+	padding={['t64', 'b64']}
 >
 	<Image
 		$witdh="300px"
-		$height="auto"
+		height="auto"
 		src={img}
 		alt=""
 	/>

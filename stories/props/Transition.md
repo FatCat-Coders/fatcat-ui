@@ -6,22 +6,22 @@ CSS transitions allows you to change property values smoothly, over a given dura
 
 Property that adds to the component are:
 
-- `$transition`
-- `$transitionDelay`
-- `$transitionDuration`
-- `$transitionProperty`
-- `$transitionTimingFunction`
-- `$willChange`
+- `transition`
+- `transitionDelay`
+- `transitionDuration`
+- `transitionProperty`
+- `transitionTimingFunction`
+- `willChange`
 
 ## Usage 
 
 ```jsx
 <Wrapper
-	$transition="background-color 300ms ease-in-out"
-	$width="200px"
-	$height="200px"
-	$backgroundColor="yellow"
-	$hover={['backgroundBlackLighter']}
+	transition="background-color 300ms ease-in-out"
+	width="200px"
+	height="200px"
+	backgroundColor="yellow"
+	hover={['backgroundBlackLighter']}
 />
 ```
 

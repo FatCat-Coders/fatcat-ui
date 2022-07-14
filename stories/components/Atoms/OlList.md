@@ -10,7 +10,7 @@ An ordered list starts with the OlList tag. Each list item starts with the <li> 
 
 listed in `Element Props` section and additionally:
 
-- `$variant`
+- `variant`
 
 ## Styling
 

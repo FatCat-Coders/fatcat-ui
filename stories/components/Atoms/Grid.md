@@ -13,11 +13,11 @@ A simple Grid component that we can use for our layouts. Props that we can use f
 
 listed in `Element Props` section and additionally:
 
-- `$alignItems`
-- `$justifyContent`
-- `$justifyItems`
-- `$gridTemplateColumns`
-- `$gap`
+- `alignItems`
+- `justifyContent`
+- `justifyItems`
+- `gridTemplateColumns`
+- `gap`
 
 ## Usage 
 
@@ -33,7 +33,7 @@ and then simply use it in your code with dynamic elements.
 
 ```jsx
 <Grid
-	$gridTemplateColumns="repeat(auto-fill, minmax(300px, 1fr))"
+	gridTemplateColumns="repeat(auto-fill, minmax(300px, 1fr))"
 >
 	<div style={{ width: '200px'}} />
 	<div style={{ width: '100px'}} />

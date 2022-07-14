@@ -1,4 +1,5 @@
-import styled, { DefaultTheme, css } from 'styled-components';
+import { styled } from '../../utils/styled';
+import { DefaultTheme, css } from 'styled-components';
 
 import {
 	background, BackgroundProps,
@@ -10,14 +11,14 @@ import {
 
 export type TSectionInnerWrapper =
 	{
-		$width: keyof DefaultTheme['sectionWidth']
+		width: keyof DefaultTheme['sectionWidth']
 	}
 	& BackgroundProps
 	& ResponsiveProps
 	& SpaceProps;
 
-export const SectionInnerWrapper = styled.div<TSectionInnerWrapper>`
-	max-width: ${props => props.theme.sectionWidth[props.$width]};
+export const SectionInnerWrapper = styled('div')<TSectionInnerWrapper>`
+	max-width: ${props => props.theme.sectionWidth[props.width]};
 	width: 100%;
 	${background};
 	${space};
@@ -26,21 +27,21 @@ export const SectionInnerWrapper = styled.div<TSectionInnerWrapper>`
 
 export type TSectionOuterWrapper =
 	{
-		$sticky?: boolean,
-		$overflow?: string,
-		$edge?: boolean
+		sticky?: boolean,
+		overflow?: string,
+		edge?: boolean
 	}
 	& BackgroundProps
 	& PositionProps
 	& ResponsiveProps
 	& VisibilityProps;
 
-export const SectionOuterWrapper = styled.section<TSectionOuterWrapper>`
+export const SectionOuterWrapper = styled('section')<TSectionOuterWrapper>`
 	display: flex;
 	width: 100%;
 	justify-content: center;
-	${props => props.$sticky && 'position: sticky;'}
-	${props => props.$overflow && `overflow: ${props.$overflow};`}
+	${props => props.sticky && 'position: sticky;'}
+	${props => props.overflow && `overflow: ${props.overflow};`}
 
 	${props => (props.theme.sectionLayout ? props.theme.sectionLayout
 		: css`
@@ -56,7 +57,7 @@ export const SectionOuterWrapper = styled.section<TSectionOuterWrapper>`
 				}
 		`)}
 
-	${props => props.$edge && 'padding: 0px !important;'};
+	${props => props.edge && 'padding: 0px !important;'};
 
 	${position}
 	${background};
@@ -65,6 +66,6 @@ export const SectionOuterWrapper = styled.section<TSectionOuterWrapper>`
 `;
 
 SectionOuterWrapper.defaultProps = {
-	$initialDisplay: 'flex',
-	$edge: false,
+	initialDisplay: 'flex',
+	edge: false,
 };

@@ -20,52 +20,52 @@ import readme from './Text.md';
 export default {
 	title: 'Element Props/Text',
 	argTypes: {
-		$textAlign: { control: 'text', description: 'String with css property', type: 'string' },
-		$textColor: {
+		textAlign: { control: 'text', description: 'String with css property', type: 'string' },
+		textColor: {
 			control: 'select',
 			options: Object.keys(TEXT_COLOR),
 			description: `List of text colors: ${formatObjectKeys(TEXT_COLOR)}`,
 			type: 'string',
 		},
-		$textSize: {
+		textSize: {
 			control: 'select',
 			options: Object.keys(TEXT_SIZE),
 			description: `List of text sizes: ${formatObjectKeys(TEXT_SIZE)}`,
 			type: 'string',
 		},
-		$fontSize: {
+		fontSize: {
 			control: 'select',
 			options: Object.keys(FONT_SIZE),
 			description: `List of font sizes: ${formatObjectKeys(FONT_SIZE)}`,
 			type: 'string',
 		},
-		$lineHeight: {
+		lineHeight: {
 			control: 'select',
 			options: Object.keys(LINE_HEIGHT),
 			description: `List of line height: ${formatObjectKeys(LINE_HEIGHT)}`,
 			type: 'string',
 		},
-		$fontWeight: {
+		fontWeight: {
 			control: 'select',
 			options: Object.keys(FONT_WEIGHT),
 			description: `List of font weight: ${formatObjectKeys(FONT_WEIGHT)}`,
 			type: 'string',
 		},
-		$fontFamily: {
+		fontFamily: {
 			control: 'select',
 			options: Object.keys(FONT_FAMILY),
 			description: `List of font family: ${formatObjectKeys(FONT_FAMILY)}`,
 			type: 'string',
 		},
-		$whiteSpace: { control: 'text', description: 'String with css property', type: 'string' },
-		$uppercase: { control: 'boolean', description: 'Use uppercase', type: 'boolean' },
-		$lowercase: { control: 'boolean', description: 'Use lowercase', type: 'boolean' },
-		$ellipsis: { control: 'number', description: 'Rows numbers for clumping', type: 'number' },
-		$fontStyle: { control: 'text', description: 'String with css property', type: 'string' },
-		$textDecoration: { control: 'text', description: 'String with css property', type: 'string' },
-		$letterSpacing: { control: 'text', description: 'String with css property', type: 'string' },
-		$textColorOpacity: { control: 'number', description: 'The number in RGBA opacity', type: 'number' },
-		$textShadow: { control: 'text', description: 'String with css property', type: 'string' },
+		whiteSpace: { control: 'text', description: 'String with css property', type: 'string' },
+		uppercase: { control: 'boolean', description: 'Use uppercase', type: 'boolean' },
+		lowercase: { control: 'boolean', description: 'Use lowercase', type: 'boolean' },
+		ellipsis: { control: 'number', description: 'Rows numbers for clumping', type: 'number' },
+		fontStyle: { control: 'text', description: 'String with css property', type: 'string' },
+		textDecoration: { control: 'text', description: 'String with css property', type: 'string' },
+		letterSpacing: { control: 'text', description: 'String with css property', type: 'string' },
+		textColorOpacity: { control: 'number', description: 'The number in RGBA opacity', type: 'number' },
+		textShadow: { control: 'text', description: 'String with css property', type: 'string' },
 	},
 	parameters: {
 		docs: {
@@ -90,28 +90,28 @@ export const Text = Template.bind({});
 Text.parameters = {
 	controls: {
 		include: [
-			'$textAlign',
-			'$textColor',
-			'$textSize',
-			'$fontSize',
-			'$lineHeight',
-			'$fontWeight',
-			'$fontFamily',
-			'$whiteSpace',
-			'$uppercase',
-			'$lowercase',
-			'$ellipsis',
-			'$fontStyle',
-			'$textDecoration',
-			'$letterSpacing',
-			'$textColorOpacity',
-			'$textShadow',
+			'textAlign',
+			'textColor',
+			'textSize',
+			'fontSize',
+			'lineHeight',
+			'fontWeight',
+			'fontFamily',
+			'whiteSpace',
+			'uppercase',
+			'lowercase',
+			'ellipsis',
+			'fontStyle',
+			'textDecoration',
+			'letterSpacing',
+			'textColorOpacity',
+			'textShadow',
 		],
 	},
 };
 
 Text.args = {
-	$textColor: 'black',
-	$textAlign: 'center',
-	$fontStyle: 'italic',
+	textColor: 'black',
+	textAlign: 'center',
+	fontStyle: 'italic',
 };

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../../utils/styled';
 
 import {
 	animation, AnimationProps,
@@ -14,7 +14,7 @@ import {
 
 export type TImage =
 	{
-		$inline?: boolean
+		inline?: boolean
 	}
 	& AnimationProps
 	& BorderProps
@@ -26,8 +26,8 @@ export type TImage =
 	& TransitionsProps
 	& VisibilityProps;
 
-export const Image = styled.img<TImage>`
-	display: ${props => (props.$inline ? 'inline-block' : 'block')};
+export const Image = styled('img')<TImage>`
+	display: ${props => (props.inline ? 'inline-block' : 'block')};
 	align-self: center;
 	width: 100%;
 	${animation};
@@ -43,5 +43,5 @@ export const Image = styled.img<TImage>`
 `;
 
 Image.defaultProps = {
-	$initialDisplay: 'block',
+	initialDisplay: 'block',
 };

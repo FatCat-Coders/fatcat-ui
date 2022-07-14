@@ -28,13 +28,13 @@ and then simply use it in your code like this
 
 ```jsx
 <Select
-	$padding={['t8', 'b8', 'l16', 'r16']}
-	$minWidth="200px"
+	padding={['t8', 'b8', 'l16', 'r16']}
+	minWidth="200px"
 >
-	<Option $padding={['t8', 'b8', 'l16', 'r16']}>Option 1</Option>
-	<Option $padding={['t8', 'b8', 'l16', 'r16']}>Option 2</Option>
-	<Option $padding={['t8', 'b8', 'l16', 'r16']}>Option 3</Option>
-	<Option $padding={['t8', 'b8', 'l16', 'r16']}>Option 4</Option>
+	<Option padding={['t8', 'b8', 'l16', 'r16']}>Option 1</Option>
+	<Option padding={['t8', 'b8', 'l16', 'r16']}>Option 2</Option>
+	<Option padding={['t8', 'b8', 'l16', 'r16']}>Option 3</Option>
+	<Option padding={['t8', 'b8', 'l16', 'r16']}>Option 4</Option>
 </Select>
 ```
 

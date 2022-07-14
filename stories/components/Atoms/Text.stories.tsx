@@ -11,7 +11,7 @@ export default {
 	title: 'Basic Elements/Text',
 	component: TextOrigin,
 	argTypes: {
-		$textColor: {
+		textColor: {
 			control: 'select',
 			options: Object.keys(TEXT_COLOR),
 			description: 'Just for demo purposes',
@@ -41,7 +41,7 @@ const Template: ComponentStory<typeof TextOrigin> = ({ ...args }) => (
 
 export const Text = Template.bind({});
 
-Text.parameters = { controls: { include: ['$textColor'] } };
+Text.parameters = { controls: { include: ['textColor'] } };
 Text.args = {
-	$textColor: 'black',
+	textColor: 'black',
 };

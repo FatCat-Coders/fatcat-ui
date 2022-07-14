@@ -10,43 +10,43 @@ type ResponsiveTypes = keyof DefaultTheme['responsive'];
 export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<Record<'padding' | 'margin', SideSpacingValue[]>> | Partial<Record<Exclude<ResponsiveTypes, 'padding' | 'margin'>, any>>)[];
 
 export type ResponsiveProps = {
-	$mobile?: ResponsiveTypePropCheck
-	$tablet?: ResponsiveTypePropCheck
-	$largeTablet?: ResponsiveTypePropCheck
-	$desktop?: ResponsiveTypePropCheck
-	$largeDesktop?: ResponsiveTypePropCheck
-	$desktopStandard?: ResponsiveTypePropCheck
+	mobile?: ResponsiveTypePropCheck
+	tablet?: ResponsiveTypePropCheck
+	largeTablet?: ResponsiveTypePropCheck
+	desktop?: ResponsiveTypePropCheck
+	largeDesktop?: ResponsiveTypePropCheck
+	desktopStandard?: ResponsiveTypePropCheck
 };
 
 export const responsive = css<ResponsiveProps>`
-	${props => props.$largeDesktop && css`
+	${props => props.largeDesktop && css`
 		${props.theme.media.largeDesktop} {
-			${pickObjectProperties(props.theme.responsive, props.$largeDesktop)}
+			${pickObjectProperties(props.theme.responsive, props.largeDesktop)}
 		}
 	`}
-	${props => props.$desktopStandard && css`
+	${props => props.desktopStandard && css`
 		${props.theme.media.desktopStandard} {
-			${pickObjectProperties(props.theme.responsive, props.$desktopStandard)}
+			${pickObjectProperties(props.theme.responsive, props.desktopStandard)}
 		}
 	`}
-	${props => props.$desktop && css`
+	${props => props.desktop && css`
 		${props.theme.media.desktop} {
-			${pickObjectProperties(props.theme.responsive, props.$desktop)}
+			${pickObjectProperties(props.theme.responsive, props.desktop)}
 		}
 	`}
-	${props => props.$largeTablet && css`
+	${props => props.largeTablet && css`
 		${props.theme.media.largeTablet} {
-			${pickObjectProperties(props.theme.responsive, props.$largeTablet)}
+			${pickObjectProperties(props.theme.responsive, props.largeTablet)}
 		}
 	`}
-	${props => props.$tablet && css`
+	${props => props.tablet && css`
 		${props.theme.media.tablet} {
-			${pickObjectProperties(props.theme.responsive, props.$tablet)}
+			${pickObjectProperties(props.theme.responsive, props.tablet)}
 		}
 	`}
-	${props => props.$mobile && css`
+	${props => props.mobile && css`
 		${props.theme.media.mobile} {
-			${pickObjectProperties(props.theme.responsive, props.$mobile)}
+			${pickObjectProperties(props.theme.responsive, props.mobile)}
 		}
 	`}
 `;

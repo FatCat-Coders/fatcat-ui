@@ -4,17 +4,17 @@ List of text props, and example.
 
 The CSS margin and padding properties are used to create space around elements and this is list of them:
 
-- `$padding`
-- `$paddingBottom`
-- `$paddingTop`
-- `$paddingLeft`
-- `$paddingRight`
-- `$margin`
-- `$marginBottom`
-- `$marginTop`
-- `$marginLeft`
-- `$marginRight`
-- `$scale`
+- `padding`
+- `paddingBottom`
+- `paddingTop`
+- `paddingLeft`
+- `paddingRight`
+- `margin`
+- `marginBottom`
+- `marginTop`
+- `marginLeft`
+- `marginRight`
+- `scale`
 
 We can use theme default setup or we can add some custom spacing like this:
 
@@ -74,8 +74,8 @@ declare module 'styled-components' {
 
 ## Usage 
 We have 2 diffrent sizing props:
-- shorthanded (`$padding`, `$margin`)
-- single sided (`$paddingTop`, `$paddingLeft`, etc.)
+- shorthanded (`padding`, `margin`)
+- single sided (`paddingTop`, `paddingLeft`, etc.)
 
 Shorthand props accept array of string with prefix:
 - `t` for top
@@ -87,7 +87,7 @@ follow with size, for example, `top: 24px` and `bottom: 64px`:
 
 ```jsx
 <Wrapper
-	$padding={['t24', 'b64']}
+	padding={['t24', 'b64']}
 />
 ```
 
@@ -95,12 +95,12 @@ Single sided props accept string value with prefix `s` for example:
 
 ```jsx
 <Wrapper
-	$paddingLeft="s24"
-	$paddingRight="s24"
+	paddingLeft="s24"
+	paddingRight="s24"
 />
 ```
 
-Let's now talk about `$scale` prop. Scale prop accepts the boolean value for applying the rule in which all sizes of that element are multiplied with values from `SCREEN_RATIO` depending on breakpoint
+Let's now talk about `scale` prop. Scale prop accepts the boolean value for applying the rule in which all sizes of that element are multiplied with values from `SCREEN_RATIO` depending on breakpoint
 
 ```jsx
 const SCREEN_RATIO = {
@@ -111,29 +111,29 @@ const SCREEN_RATIO = {
 ```
 We can change `SCREEN_RATIO` by passing new values to `theme.screenRatio` in our `UIThemeProvider`.
 
-This is example how we can use shorthanded `$padding` or single sided `$magin` on our element
+This is example how we can use shorthanded `padding` or single sided `$magin` on our element
 
 ```jsx
 <Wrapper
-	$border="1px solid black"
-	$width="fit-content"
-	$backgroundColor="green"
-	$backgroundColorOpacity={0.3}
+	border="1px solid black"
+	width="fit-content"
+	backgroundColor="green"
+	backgroundColorOpacity={0.3}
 >
 	<Wrapper
-		$height="300px"
-		$width="300px"
-		$backgroundColor="yellow"
-		$backgroundColorOpacity={0.7}
-		$padding={['t64', 'r64', 'b64', 'l64']}
-		$marginTop="s24"
-		$marginRight="s24"
-		$marginBottom="s24"
-		$marginLeft="s24"
+		height="300px"
+		width="300px"
+		backgroundColor="yellow"
+		backgroundColorOpacity={0.7}
+		padding={['t64', 'r64', 'b64', 'l64']}
+		marginTop="s24"
+		marginRight="s24"
+		marginBottom="s24"
+		marginLeft="s24"
 	>
 		<Wrapper
-			$backgroundColor="purple"
-			$height="100%"
+			backgroundColor="purple"
+			height="100%"
 		/>
 	</Wrapper>
 </Wrapper>

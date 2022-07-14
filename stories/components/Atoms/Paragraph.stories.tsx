@@ -11,7 +11,7 @@ export default {
 	title: 'Basic Elements/Paragraph',
 	component: ParagraphOrigin,
 	argTypes: {
-		$textColor: {
+		textColor: {
 			control: 'select',
 			options: Object.keys(TEXT_COLOR),
 			description: 'Just for demo purposes',
@@ -41,7 +41,7 @@ const Template: ComponentStory<typeof ParagraphOrigin> = ({ ...args }) => (
 
 export const Paragraph = Template.bind({});
 
-Paragraph.parameters = { controls: { include: ['$textColor'] } };
+Paragraph.parameters = { controls: { include: ['textColor'] } };
 Paragraph.args = {
-	$textColor: 'black',
+	textColor: 'black',
 };
