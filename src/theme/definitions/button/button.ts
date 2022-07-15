@@ -1,41 +1,70 @@
 import { css } from 'styled-components';
+import { BUTTON_COLOR } from '../color/color';
 
-export const BUTTON_STYLE = {
-	base: css`
-		color: ${props => props.theme.color.white};
-		background: ${props => props.theme.color.purple};
-		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s20};
-		${props => props.theme.textSize.button};
+export const BUTTON_SIZE = {
+	large: css`
+		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s40};
+	`,
+	medium: css`
+		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s24};
+	`,
+	small: css`
+		padding: ${props => props.theme.space.s8} ${props => props.theme.space.s24};
+	`,
+	nav: css`
+		padding: ${props => props.theme.space.s4} ${props => props.theme.space.s16};
+	`,
+};
+
+const buttonBase = css<{size: keyof typeof BUTTON_SIZE}>`
+	${props => props.size && BUTTON_SIZE[props.size]};
+	border-radius: 4px;
+`;
+
+export const BUTTON_VARIANT = {
+	primary: css<{color: typeof BUTTON_COLOR }>`
+		border: none;
+		color: ${props => props.theme.buttonColor[props.color].text};
+		background: ${props => props.theme.buttonColor[props.color].default};
+		${buttonBase};
 		&:hover {
-			background: ${props => props.theme.color.darkerPurple};
+			background: ${props => props.theme.buttonColor[props.color].hover};
 		}
 		&:disabled {
-			background: ${props => props.theme.color.darkerGrey};
+			cursor: not-allowed;
+			background: ${props => props.theme.buttonColor[props.color].disabled};
+			color: ${props => props.theme.color.darkerGrey};
 		}
 	`,
-	white: css`
-		color: ${props => props.theme.color.darkerPurple};
-		background: ${props => props.theme.color.white};
-		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s20};
-		${props => props.theme.textSize.button};
-		border: 1px solid ${props => props.theme.color.white};
+	secondary: css<{color: typeof BUTTON_COLOR }>`
+		color: ${props => props.theme.buttonColor[props.color].text};
+		background: ${props => props.theme.color.transparent};
+		border: 1px solid ${props => props.theme.buttonColor[props.color].default};
+		${buttonBase};
 		&:hover {
-			background: ${props => props.theme.color.purple};
 			color: ${props => props.theme.color.white};
+			background: ${props => props.theme.buttonColor[props.color].hover};
+			border-color: ${props => props.theme.buttonColor[props.color].hover};
 		}
 		&:disabled {
-			background: ${props => props.theme.color.darkerGrey};
+			cursor: not-allowed;
+			border: none;
+			background: ${props => props.theme.buttonColor[props.color].disabled};
+			color: ${props => props.theme.color.darkerGrey};
 		}
 	`,
-	outline: css`
-		color: ${props => props.theme.color.white};
-		background: transparent;
-		border: 1px solid ${props => props.theme.color.white};
-		${props => props.theme.textSize.button};
-		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s20};
+	ghost: css<{color: typeof BUTTON_COLOR }>`
+		border: none;
+		color: ${props => props.theme.buttonColor[props.color].text};
+		background: ${props => props.theme.buttonColor[props.color].default};
+		${buttonBase};
 		&:hover {
-			background: ${props => props.theme.color.white};
-			color: ${props => props.theme.color.blackLight};
+			background: ${props => props.theme.buttonColor[props.color].hover};
+		}
+		&:disabled {
+			cursor: not-allowed;
+			background: ${props => props.theme.buttonColor[props.color].disabled};
+			color: ${props => props.theme.color.darkerGrey};
 		}
 	`,
 };

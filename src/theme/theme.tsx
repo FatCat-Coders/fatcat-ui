@@ -7,7 +7,8 @@ import {
 	ANIMATIONS,
 	BACKGROUND_COLOR,
 	BUTTON_COLOR,
-	BUTTON_STYLE,
+	BUTTON_SIZE,
+	BUTTON_VARIANT,
 	COLOR,
 	FONT_FAMILY,
 	FONT_SIZE,
@@ -33,7 +34,8 @@ export interface FatCatTheme {
 	animation: typeof ANIMATIONS
 	backgroundColor: typeof BACKGROUND_COLOR
 	buttonColor: typeof BUTTON_COLOR
-	buttonStyle: typeof BUTTON_STYLE
+	buttonSize: typeof BUTTON_SIZE
+	buttonVariant: typeof BUTTON_VARIANT
 	color: typeof COLOR
 	fontFamily: typeof FONT_FAMILY
 	fontSize: typeof FONT_SIZE
@@ -61,7 +63,8 @@ const defaultTheme: FatCatTheme = {
 	animation: ANIMATIONS,
 	backgroundColor: BACKGROUND_COLOR,
 	buttonColor: BUTTON_COLOR,
-	buttonStyle: BUTTON_STYLE,
+	buttonSize: BUTTON_SIZE,
+	buttonVariant: BUTTON_VARIANT,
 	color: COLOR,
 	fontFamily: FONT_FAMILY,
 	fontSize: FONT_SIZE,

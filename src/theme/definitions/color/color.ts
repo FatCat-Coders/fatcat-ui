@@ -1,4 +1,5 @@
 export const COLOR = {
+	primary: '#3D7FEB',
 	black: '#000000',
 	dark: '#0A0A0A',
 	blackHigh: '#030303',
@@ -28,7 +29,24 @@ export const LINK_COLOR = {
 };
 
 export const BUTTON_COLOR = {
-	fcc: COLOR.purple,
+	primary: {
+		default: `${COLOR.primary}E6`,
+		text: COLOR.white,
+		hover: COLOR.primary,
+		disabled: COLOR.grey,
+	},
+	secondary: {
+		default: COLOR.primary,
+		text: COLOR.black,
+		hover: COLOR.primary,
+		disabled: COLOR.grey,
+	},
+	ghost: {
+		default: COLOR.transparent,
+		text: COLOR.black,
+		hover: COLOR.yellow10,
+		disabled: COLOR.grey,
+	},
 };
 
 export const TEXT_COLOR = {

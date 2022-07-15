@@ -21,7 +21,9 @@ import {
 
 export type TButton =
 	{
-		variant?: keyof DefaultTheme['buttonStyle'],
+		color?: keyof DefaultTheme['buttonColor']
+		size?: keyof DefaultTheme['buttonSize']
+		variant?: keyof DefaultTheme['buttonVariant']
 	}
 	& AnimationProps
 	& BorderProps
@@ -40,7 +42,7 @@ export const ButtonBase = styled('button')<TButton>`
 	font-weight: bold;
     text-align: center;
 	white-space: nowrap;
-	${props => props.variant && props.theme.buttonStyle[props.variant]};
+	${props => props.variant && props.theme.buttonVariant[props.variant]};
 	${animation};
 	${border};
 	${position};
@@ -62,5 +64,7 @@ export const Button: ButtonComponent = (props) => {
 };
 
 Button.defaultProps = {
-	variant: 'base',
+	color: 'primary',
+	size: 'large',
+	variant: 'primary',
 };
