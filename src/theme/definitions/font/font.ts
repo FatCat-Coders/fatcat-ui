@@ -23,6 +23,7 @@ export const FONT_SIZE = {
 	s37: '2.3125rem',
 	s32: '2rem',
 	s30: '1.875rem',
+	s34: '2.125rem',
 	s28: '1.75rem',
 	s24: '1.5rem',
 	s20: '1.25rem',
