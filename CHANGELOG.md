@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 0.3.4
+
+### Patch Changes
+
+- Fix side space generation
+
 ## 0.3.3
 
 ### Patch Changes
