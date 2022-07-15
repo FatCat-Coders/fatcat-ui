@@ -120,6 +120,8 @@ export const UIprops: string[] = [
 	'gridTemplateColumns',
 	'justifyItems',
 	'inline',
+	'edge',
+	'sticky',
 ];
 
 export const styled = (ele: any) => styl(ele).withConfig({

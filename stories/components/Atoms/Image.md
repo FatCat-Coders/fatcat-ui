@@ -33,7 +33,7 @@ and then simply use it in your code.
 	padding={['t64', 'b64']}
 >
 	<Image
-		$witdh="300px"
+		width="300px"
 		height="auto"
 		src={img}
 		alt=""

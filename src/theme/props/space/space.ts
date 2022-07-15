@@ -194,7 +194,7 @@ export const createSideSpacingRule = (
 
 const sideSpacing = (type: SideSpacingType) => css<SpaceProps>`
 	${(props) => {
-		const parsedType = `$${type}`;
+		const parsedType = `${type}`;
 		if (!props[parsedType]) {
 			return null;
 		}
@@ -221,7 +221,7 @@ const sideSpacing = (type: SideSpacingType) => css<SpaceProps>`
 `;
 
 const generateSingleSideSpace = (type: SideSpacingType, side: TSpaceSide) => {
-	const cssProp = `$${type}${capitalize(side)}` as keyof SpaceProps;
+	const cssProp = `${type}${capitalize(side)}` as keyof SpaceProps;
 	return css<SpaceProps>`
 		${(props) => {
 		if (props[cssProp]) {
