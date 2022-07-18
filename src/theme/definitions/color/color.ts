@@ -1,4 +1,6 @@
 export const COLOR = {
+	primary: '#3D7FEB',
+	primaryLight: '#3D7FEBE6',
 	black: '#000000',
 	dark: '#0A0A0A',
 	blackHigh: '#030303',
@@ -21,6 +23,8 @@ export const COLOR = {
 	yellow10: 'rgba(255,184,45, 0.1)',
 	green: '#00FF00',
 	transparent: 'transparent',
+	disabled: '#E0E2EC',
+	disabledDark: '#A0A3AF',
 };
 
 export const LINK_COLOR = {
@@ -28,7 +32,32 @@ export const LINK_COLOR = {
 };
 
 export const BUTTON_COLOR = {
-	fcc: COLOR.purple,
+	disabled: {
+		default: COLOR.disabled,
+		text: COLOR.disabledDark,
+	},
+	primary: {
+		default: COLOR.primaryLight,
+		text: COLOR.white,
+		hover: COLOR.primary,
+		hoverText: COLOR.white,
+	},
+	secondary: {
+		default: COLOR.primary,
+		text: COLOR.primary,
+		hover: COLOR.primary,
+		hoverText: COLOR.white,
+	},
+	ghost: {
+		default: COLOR.transparent,
+		text: COLOR.black,
+		hover: COLOR.yellow10,
+		hoverText: COLOR.white,
+	},
+	underline: {
+		default: COLOR.primary,
+		text: COLOR.primary,
+	},
 };
 
 export const TEXT_COLOR = {
