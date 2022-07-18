@@ -6,15 +6,15 @@ export const TEXT_SIZE = {
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 	h1Tablet: css`
-		font-size: ${props => props.theme.fontSize.s42};
+		font-size: ${props => props.theme.fontSize.s32};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 	h1Mobile: css`
-		font-size: ${props => props.theme.fontSize.s34};
+		font-size: ${props => props.theme.fontSize.s32};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 	h2: css`
-		font-size: ${props => props.theme.fontSize.s34};
+		font-size: ${props => props.theme.fontSize.s32};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 	h2Mobile: css`
@@ -34,7 +34,7 @@ export const TEXT_SIZE = {
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 	h4Mobile: css`
-		font-size: ${props => props.theme.fontSize.s18};
+		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 	h5: css`
@@ -57,8 +57,12 @@ export const TEXT_SIZE = {
 		font-size: ${props => props.theme.fontSize.s24};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
+	paragraph16: css`
+		font-size: ${props => props.theme.fontSize.s16};
+		line-height: ${props => props.theme.lineHeight.s150};
+	`,
 	paragraphTablet: css`
-		font-size: ${props => props.theme.fontSize.s18};
+		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 	text14: css`
@@ -71,11 +75,6 @@ export const TEXT_SIZE = {
 		font-weight: ${props => props.theme.fontWeight.semiBold};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
-	button16: css`
-	font-size: ${props => props.theme.fontSize.s16};
-	font-weight: ${props => props.theme.fontWeight.semiBold};
-	line-height: ${props => props.theme.lineHeight.s150};
-`,
 	link: css`
 		font-size: ${props => props.theme.fontSize.s14};
 		line-height: ${props => props.theme.lineHeight.s150};
