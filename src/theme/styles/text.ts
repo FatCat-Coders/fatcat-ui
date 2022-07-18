@@ -59,21 +59,26 @@ export const TEXT_SIZE = {
 	`,
 	paragraphTablet: css`
 		font-size: ${props => props.theme.fontSize.s18};
-		line-height: ${props => props.theme.lineHeight.s127};
+		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 	text14: css`
 		font-size: ${props => props.theme.fontSize.s14};
-		line-height: 1.5;
+		line-height: ${props => props.theme.lineHeight.s150};
 		font-weight: normal;
 	`,
 	button: css`
-		font-size: ${props => props.theme.fontSize.s14};
-		line-height: 1;
-		letter-spacing: 2px;
+		font-size: ${props => props.theme.fontSize.s18};
+		font-weight: ${props => props.theme.fontWeight.semiBold};
+		line-height: ${props => props.theme.lineHeight.s150};
 	`,
+	button16: css`
+	font-size: ${props => props.theme.fontSize.s16};
+	font-weight: ${props => props.theme.fontWeight.semiBold};
+	line-height: ${props => props.theme.lineHeight.s150};
+`,
 	link: css`
 		font-size: ${props => props.theme.fontSize.s14};
-		line-height: 1.3;
+		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 };
 
