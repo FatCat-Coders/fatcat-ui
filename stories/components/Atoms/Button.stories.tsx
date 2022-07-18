@@ -12,6 +12,9 @@ import { Flex } from '../../../src/components/Atoms/Flex';
 
 import readme from './Button.md';
 
+const color = { ...BUTTON_COLOR };
+delete color.disabled;
+
 export default {
 	title: 'Basic Elements/Button',
 	component: ButtonOrigin,
@@ -24,10 +27,11 @@ export default {
 		},
 		color: {
 			control: 'radio',
-			options: Object.keys(BUTTON_COLOR),
-			description: `List of button colors: ${formatObjectKeys(BUTTON_COLOR)}`,
+			options: Object.keys(color),
+			description: `List of button colors: ${formatObjectKeys(color)}`,
 			table: {
 				type: { summary: null },
+				defaultValue: { summary: 'Same value as variant' },
 			},
 		},
 		size: {
@@ -73,7 +77,6 @@ export const Button = Template.bind({});
 Button.parameters = { controls: { include: ['variant', 'Content', 'color', 'disabled', 'size'] } };
 Button.args = {
 	children: 'Button',
-	color: 'primary',
 	disabled: false,
 	size: 'large',
 	variant: 'primary',

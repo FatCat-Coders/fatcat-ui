@@ -18,11 +18,12 @@ export const BUTTON_SIZE = {
 
 const buttonBase = css<{size: keyof typeof BUTTON_SIZE}>`
 	${props => props.size && BUTTON_SIZE[props.size]};
+	${props => props.theme.textStyle.button};
 	border-radius: 4px;
 `;
 
 export const BUTTON_VARIANT = {
-	primary: css<{color: typeof BUTTON_COLOR }>`
+	primary: css<{ color: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
 		border: none;
 		color: ${props => props.theme.buttonColor[props.color].text};
 		background: ${props => props.theme.buttonColor[props.color].default};
@@ -32,11 +33,11 @@ export const BUTTON_VARIANT = {
 		}
 		&:disabled {
 			cursor: not-allowed;
-			background: ${props => props.theme.buttonColor[props.color].disabled};
-			color: ${props => props.theme.color.darkerGrey};
+			background: ${props => props.theme.buttonColor.disabled.default};
+			color: ${props => props.theme.buttonColor.disabled.text};
 		}
 	`,
-	secondary: css<{color: typeof BUTTON_COLOR }>`
+	secondary: css<{ color: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
 		color: ${props => props.theme.buttonColor[props.color].text};
 		background: ${props => props.theme.color.transparent};
 		border: 1px solid ${props => props.theme.buttonColor[props.color].default};
@@ -48,12 +49,12 @@ export const BUTTON_VARIANT = {
 		}
 		&:disabled {
 			cursor: not-allowed;
-			border: none;
-			background: ${props => props.theme.buttonColor[props.color].disabled};
-			color: ${props => props.theme.color.darkerGrey};
+			background: ${props => props.theme.buttonColor.disabled.default};
+			border-color: ${props => props.theme.buttonColor.disabled.text};
+			color: ${props => props.theme.buttonColor.disabled.text};
 		}
 	`,
-	ghost: css<{color: typeof BUTTON_COLOR }>`
+	ghost: css<{ color: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
 		border: none;
 		color: ${props => props.theme.buttonColor[props.color].text};
 		background: ${props => props.theme.buttonColor[props.color].default};
@@ -63,8 +64,40 @@ export const BUTTON_VARIANT = {
 		}
 		&:disabled {
 			cursor: not-allowed;
-			background: ${props => props.theme.buttonColor[props.color].disabled};
-			color: ${props => props.theme.color.darkerGrey};
+			background: ${props => props.theme.buttonColor.disabled.default};
+			color: ${props => props.theme.buttonColor.disabled.text};
+		}
+	`,
+	underline: css<{ color: typeof BUTTON_COLOR }>`
+		border: none;
+		color: ${props => props.theme.buttonColor[props.color].text};
+		background: ${props => props.theme.color.transparent};
+		position: relative;
+		padding: 0;
+		${props => props.theme.textStyle.button};
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 1px;
+			background-color: ${props => props.theme.buttonColor[props.color].default};
+		}
+		&:hover {
+			&::before {
+				width: 100%;
+			}
+		}
+		&:disabled {
+			cursor: not-allowed;
+			background: ${props => props.theme.buttonColor.disabled.default};
+			color: ${props => props.theme.buttonColor.disabled.text};
+			&::before {
+				width: 100%;
+				background-color: ${props => props.theme.buttonColor.disabled.text};
+			}
 		}
 	`,
 };

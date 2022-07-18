@@ -55,5 +55,8 @@ export const TEXT_STYLE = {
 	paragraph: css`
 		letter-spacing: -0.01em;
 	`,
+	button: css`
+		${props => props.theme.textSize.button};
+	`,
 	text: css``,
 };

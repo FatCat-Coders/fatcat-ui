@@ -68,9 +68,8 @@ export const TEXT_SIZE = {
 		font-weight: normal;
 	`,
 	button: css`
-		font-size: ${props => props.theme.fontSize.s14};
-		line-height: 1;
-		letter-spacing: 2px;
+		font-size: ${props => props.theme.fontSize.s16};
+		line-height: 1.5;
 	`,
 	link: css`
 		font-size: ${props => props.theme.fontSize.s14};

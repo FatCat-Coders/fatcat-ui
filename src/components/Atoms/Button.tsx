@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '../../utils/styled';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, useTheme } from 'styled-components';
 
 // Type definitions
 import { PolymorphicComponent } from '../../utils/polymorphic-component';
@@ -21,7 +21,7 @@ import {
 
 export type TButton =
 	{
-		color?: keyof DefaultTheme['buttonColor']
+		color?: keyof DefaultTheme['buttonColor'] | undefined
 		size?: keyof DefaultTheme['buttonSize']
 		variant?: keyof DefaultTheme['buttonVariant']
 	}
@@ -60,11 +60,13 @@ export type ButtonComponent = PolymorphicComponent<ButtonProps>;
 
 export const Button: ButtonComponent = (props) => {
 	const { children, ...linkProps } = props;
-	return <ButtonBase {...linkProps}>{children}</ButtonBase>;
+	const theme = useTheme();
+	const color = (!linkProps.color && theme.buttonColor[linkProps.variant]) ? linkProps.variant : 'primary';
+	return <ButtonBase {...linkProps} color={color}>{children}</ButtonBase>;
 };
 
 Button.defaultProps = {
-	color: 'primary',
+	color: undefined,
 	size: 'large',
 	variant: 'primary',
 };
