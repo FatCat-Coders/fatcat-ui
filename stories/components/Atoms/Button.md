@@ -43,12 +43,17 @@ const BUTTON_VARIANT = {
 
 ```jsx
 export const BUTTON_COLOR = {
-	
+	// we can style disabled global style for buttons
+	disabled: {
+		default: 'green',
+		text:'dark',
+	}
+	//or we can pass new color schema for buttons
 	green: {
 		default: 'green',
 		text:'dark',
 		hover: 'greenLight',
-		disabled: 'grey',
+		hoverText: 'grey',
 	},
 };
 ```
