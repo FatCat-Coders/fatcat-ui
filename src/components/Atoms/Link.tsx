@@ -18,7 +18,8 @@ import {
 
 export type Tlink =
 	{
-		variant?: keyof DefaultTheme['linkStyle']
+		disabled?: boolean;
+		variant?: keyof DefaultTheme['linkStyle'];
 	}
 	& AnimationProps
 	& HoverProps

@@ -25,7 +25,7 @@ export const COLOR = {
 };
 
 export const LINK_COLOR = {
-	primary: COLOR.yellow,
+	primary: COLOR.primary,
 };
 
 export const BUTTON_COLOR = {
