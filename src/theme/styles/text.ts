@@ -62,14 +62,10 @@ export const TEXT_SIZE = {
 		font-size: ${props => props.theme.fontSize.s14};
 		line-height: 1.625;
 	`,
-	text14: css`
-		font-size: ${props => props.theme.fontSize.s14};
-		line-height: 1.5;
-		font-weight: normal;
-	`,
 	button: css`
 		font-size: ${props => props.theme.fontSize.s16};
-		line-height: 1.5;
+		line-height: ${props => props.theme.lineHeight.s150};
+		font-weight: ${props => props.theme.fontWeight.semiBold};
 	`,
 	link: css`
 		font-size: ${props => props.theme.fontSize.s14};
