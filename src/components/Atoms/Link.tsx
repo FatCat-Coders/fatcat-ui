@@ -1,6 +1,5 @@
 import React from 'react';
-import { styled } from '../../utils/styled';
-import { DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
 
 import { PolymorphicComponent } from '../../utils/polymorphic-component';
 
@@ -19,6 +18,7 @@ import {
 export type Tlink =
 	{
 		disabled?: boolean;
+		withArrow?: boolean;
 		variant?: keyof DefaultTheme['linkStyle'];
 	}
 	& AnimationProps
@@ -43,14 +43,34 @@ export const LinkBase = styled('a')<Tlink>`
 	${responsive};
 `;
 
+const Arrow = styled.i`
+	border-style: solid;
+	border-color: inherit;
+	border-width: 0 calc(1em * 0.1) calc(1em * 0.1) 0;
+	display: inline-block;
+	width: calc(1em/4);
+	height: calc(1em/4);
+	transform: rotate(-45deg) translateY(-33%);
+	margin-left: 10px;
+`;
+
 export type LinkProps = Omit<JSX.IntrinsicElements['a'], 'type'> & Tlink;
 export type LinkComponent = PolymorphicComponent<LinkProps>;
 
 export const Link: LinkComponent = (props) => {
-	const { children, to, ...linkProps } = props;
-	return <LinkBase href={to} to={props.as ? to : undefined} {...linkProps}>{children}</LinkBase>; // eslint-disable-line
+	const {
+		children, to, withArrow, ...linkProps
+	} = props;
+	return (
+		<LinkBase href={to} to={props.as ? to : undefined} {...linkProps}>
+			{children}
+			{withArrow && <Arrow />}
+		</LinkBase>
+	);
 };
 
 Link.defaultProps = {
 	variant: 'base',
+	disabled: false,
+	withArrow: false,
 };
