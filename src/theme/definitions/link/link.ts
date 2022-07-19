@@ -1,8 +1,9 @@
 import { css } from 'styled-components';
 
-const BASE = css<{ disabled: boolean }>`
+const BASE = css<{ disabled?: boolean }>`
 	color: ${props => props.theme.color.grey};
 	width: fit-content;
+	text-decoration: none;
 	&:hover {
 		color: ${props => props.theme.color.primary};
 	}
