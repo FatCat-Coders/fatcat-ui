@@ -57,5 +57,8 @@ export const TEXT_STYLE = {
 	paragraph: css`
 		
 	`,
+	button: css`
+		${props => props.theme.textSize.button};
+	`,
 	text: css``,
 };

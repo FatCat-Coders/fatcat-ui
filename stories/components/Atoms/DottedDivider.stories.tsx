@@ -9,7 +9,7 @@ import { formatObjectKeys } from '../../helpers';
 import readme from './Divider.md';
 
 export default {
-	title: 'Basic Elements/DottedDivider',
+	title: 'Basic Elements/Divider',
 	component: Divider,
 	argTypes: {
 		color: {

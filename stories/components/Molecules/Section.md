@@ -43,7 +43,7 @@ For better reusability, we define our style in the theme provider and then we us
 - first we add some styles
 
 ```
-const BUTTON_STYLE = {
+const BUTTON_VARIANT = {
 	base: {
 		/** we can take color form theme*/
 		background-color: ${props => props.theme.color.yellow};
@@ -64,7 +64,7 @@ const BUTTON_STYLE = {
 import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
 const newTheme = {
-	buttonStyle: BUTTON_STYLE,
+	buttonVariant: BUTTON_VARIANT,
 }
 
 <UIThemeProvider theme={newTheme}>
@@ -79,7 +79,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
-		buttonStyle: FatCatTheme['buttonStyle'] & typeof BUTTON_STYLE
+		buttonVariant: FatCatTheme['buttonVariant'] & typeof BUTTON_VARIANT
 	}
 }
 ```

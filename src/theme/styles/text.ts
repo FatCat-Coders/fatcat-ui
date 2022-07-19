@@ -70,11 +70,6 @@ export const TEXT_SIZE = {
 		line-height: ${props => props.theme.lineHeight.s150};
 		font-weight: normal;
 	`,
-	button: css`
-		font-size: ${props => props.theme.fontSize.s18};
-		font-weight: ${props => props.theme.fontWeight.semiBold};
-		line-height: ${props => props.theme.lineHeight.s150};
-	`,
 	link: css`
 		font-size: ${props => props.theme.fontSize.s14};
 		line-height: ${props => props.theme.lineHeight.s150};

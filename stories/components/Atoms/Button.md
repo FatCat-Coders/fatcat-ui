@@ -14,16 +14,17 @@ Simple Button components that we can use in our project. Props that we can use f
 listed in `Element Props` section and additionally:
 
 - `variant`
+- `size`
 
 ## 	Styling
 
-For better reusability, we define our style in the theme provider and then we use defined variaton as such. For example if we want to add a new `red` button variation and override `base` variation we can do something like this:
+For better reusability, we define our style in the theme provider and then we use defined variaton as such. For example if we want to add a new `red` button variation and override `primary` variation we can do something like this:
 
-- first we add some styles
+- first we add some new variaton
 
 ```jsx
-const BUTTON_STYLE = {
-	base: css`
+const BUTTON_VARIANT = {
+	primary: css`
 		/** we can take color from theme */
 		background-color: ${props => props.theme.color.yellow};
 		min-width: 140px;
@@ -37,13 +38,48 @@ const BUTTON_STYLE = {
 	`,
 }
 ```
-- and then add that style to theme
+
+- then some new colors
+
+```jsx
+export const BUTTON_COLOR = {
+	// we can style disabled global style for buttons
+	disabled: {
+		default: 'green',
+		text:'dark',
+	}
+	//or we can pass new color schema for buttons
+	green: {
+		default: 'green',
+		text:'dark',
+		hover: 'greenLight',
+		hoverText: 'grey',
+	},
+};
+```
+
+- or we can change diffrent sizes
+
+```jsx
+export const BUTTON_SIZE = {
+	large: css`
+		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s40};
+	`,
+	medium: css`
+		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s24};
+	`,
+};
+```
+
+- and then add that definations to theme
 
 ```jsx
 import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
 const newTheme = {
-	buttonStyle: BUTTON_STYLE,
+	buttonColor: BUTTON_COLOR,
+	buttonSize: BUTTON_SIZE,
+	buttonVariant: BUTTON_VARIANT,
 }
 
 <UIThemeProvider theme={newTheme}>
@@ -58,7 +94,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
-		buttonStyle: FatCatTheme['buttonStyle'] & typeof BUTTON_STYLE
+		buttonVariant: FatCatTheme['buttonVariant'] & typeof BUTTON_VARIANT
 	}
 }
 ```
@@ -78,6 +114,8 @@ and then simply use it in your code with the variaton you already provided in th
 ```jsx
 <Button
 	variant="some-variant"
+	color="some-color"
+	size="some-size"
 >
 	Button
 </Button>
