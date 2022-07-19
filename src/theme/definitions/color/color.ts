@@ -61,7 +61,7 @@ export const BUTTON_COLOR = {
 };
 
 export const TEXT_COLOR = {
-	primary: COLOR.white,
+	primary: COLOR.primary,
 	secondary: COLOR.darkerGrey,
 	black: COLOR.blackLighter,
 	yellow: COLOR.yellow,
