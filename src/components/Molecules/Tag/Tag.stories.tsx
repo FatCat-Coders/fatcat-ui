@@ -64,6 +64,7 @@ export default {
 const Template: ComponentStory<typeof TagOrigin> = args => (
 	<Wrapper>
 		<TagOrigin tagName="Defaults" />
+		<TagOrigin tagName="Defaults with close button" onClose={tagname => tagname} />
 		<TagOrigin {...args} />
 	</Wrapper>
 );
