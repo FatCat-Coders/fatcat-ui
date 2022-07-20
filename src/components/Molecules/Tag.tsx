@@ -18,7 +18,6 @@ export const TagWrapper = styled.div<TTagWrapper>`
 	text-align: center;
 	margin-right: 12px;
 	& > p {
-		font-size: inherit;
 		margin: 0;
 		line-height: 1;
 		white-space: nowrap;
