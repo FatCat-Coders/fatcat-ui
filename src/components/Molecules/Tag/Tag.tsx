@@ -16,7 +16,6 @@ export const Tag = (props: TTagProps) => {
 		background,
 		textColor,
 	} = props;
-        console.log("🚀 ~ file: Tag.tsx ~ line 19 ~ Tag ~ tagName", tagName)
 
 	const handleClick = () => {
 		if (onClick) {
