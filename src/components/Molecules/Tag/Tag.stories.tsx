@@ -20,21 +20,24 @@ export default {
 			},
 		},
 		onClose: {
-			description: 'Function is called on click of close button',
+			description: 'Function is called on click of close button with tag name as argument',
 			type: 'function',
+            defaultValue: undefined,
 			table: {
 				type: { summary: null },
 			},
 		},
 		onClick: {
-			description: 'Function is called on click of tag',
+			description: 'Function is called on click of tag with tag name as argument',
 			type: 'function',
+            defaultValue: undefined,
 			table: {
 				type: { summary: null },
 			},
 		},
 		background: {
 			control: 'select',
+            defaultValue: 'lightGrey',
 			options: Object.keys(COLOR),
 			description: 'Background color of tag',
 			type: { name: 'string' },
@@ -44,6 +47,7 @@ export default {
 		},
 		textColor: {
 			control: 'select',
+            defaultValue: 'primary',
 			options: Object.keys(TEXT_COLOR),
 			description: 'Text color of tag',
 			type: { name: 'string' },
