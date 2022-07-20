@@ -1,6 +1,6 @@
 import React from 'react';
 import { TagWrapper, TTagWrapper } from './Tag.atoms';
-import { Text } from '../../Atoms/Text/Text.stories';
+import { Text } from '../../Atoms/Text';
 
 export type TTag = {
 	tagName: string;
