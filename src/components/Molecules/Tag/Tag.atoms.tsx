@@ -7,7 +7,7 @@ export type TTagWrapper = {
 };
 
 export const TagWrapper = styled('div')<TTagWrapper>`
-	display: flex;
+	display: inline-flex;
 	flex-wrap: nowrap;
 	align-items: center;
 	color: ${props => props.theme.color[props.textColor]};
