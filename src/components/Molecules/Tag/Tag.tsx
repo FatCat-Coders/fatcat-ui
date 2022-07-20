@@ -2,13 +2,13 @@ import React from 'react';
 import { TagWrapper, TTagWrapper } from './Tag.atoms';
 import { Text } from '../../Atoms/Text/Text.stories';
 
-export type TTagProps = {
+export type TTag = {
 	tagName: string;
 	onClose?: (tagName: string) => void;
 	onClick?: (tagName: string) => void;
 } & TTagWrapper;
 
-export const Tag = (props: TTagProps) => {
+const Tag:React.FC<TTag> = (props) => {
 	const {
 		tagName,
 		onClose,
@@ -55,3 +55,5 @@ Tag.defaultProps = {
 	onClose: undefined,
 	onClick: undefined,
 };
+
+export default Tag;
