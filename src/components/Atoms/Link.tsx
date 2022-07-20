@@ -19,6 +19,7 @@ export type Tlink =
 	{
 		disabled?: boolean;
 		withArrow?: boolean;
+		arrowColor?: keyof DefaultTheme['color'];
 		variant?: keyof DefaultTheme['linkStyle'];
 	}
 	& AnimationProps
@@ -43,9 +44,9 @@ export const LinkBase = styled('a')<Tlink>`
 	${responsive};
 `;
 
-const Arrow = styled.i`
+const Arrow = styled.i<{arrowColor?:keyof DefaultTheme['color']}>`
 	border-style: solid;
-	border-color: inherit;
+	border-color: ${props => (props.arrowColor ? props.theme.color[props.arrowColor] : 'inherit')};
 	border-width: 0 calc(1em * 0.1) calc(1em * 0.1) 0;
 	display: inline-block;
 	width: calc(1em/4);
@@ -59,12 +60,12 @@ export type LinkComponent = PolymorphicComponent<LinkProps>;
 
 export const Link: LinkComponent = (props) => {
 	const {
-		children, to, withArrow, ...linkProps
+		children, to, withArrow, arrowColor, ...linkProps
 	} = props;
 	return (
 		<LinkBase href={to} to={props.as ? to : undefined} {...linkProps}>
 			{children}
-			{withArrow && <Arrow />}
+			{withArrow && <Arrow arrowColor={arrowColor} />}
 		</LinkBase>
 	);
 };
@@ -73,4 +74,5 @@ Link.defaultProps = {
 	variant: 'base',
 	disabled: false,
 	withArrow: false,
+	arrowColor: undefined,
 };
