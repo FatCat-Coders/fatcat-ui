@@ -55,7 +55,12 @@ export const TEXT_STYLE = {
 		}
 	`,
 	paragraph: css`
+		${props => props.theme.textSize.paragraph};
+		font-weight: ${props => props.theme.fontWeight.regular};
 		
+		${props => props.theme.media.mobile} {
+			${props => props.theme.textSize.paragraphMobile};
+		}
 	`,
 	button: css`
 		${props => props.theme.textSize.button};
