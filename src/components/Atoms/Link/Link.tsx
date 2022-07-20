@@ -48,12 +48,12 @@ export const LinkBase = styled('a')<TLink>`
 const Arrow = styled('i')<{arrowColor?:keyof DefaultTheme['color']}>`
 	border-style: solid;
 	border-color: ${props => (props.arrowColor ? props.theme.color[props.arrowColor] : 'inherit')};
-	border-width: 0 calc(1em * 0.1) calc(1em * 0.1) 0;
+	border-width: 0 calc(1em * 0.09) calc(1em * 0.09) 0;
 	display: inline-block;
-	width: calc(1em/4);
-	height: calc(1em/4);
+	width: calc(1em/3);
+	height: calc(1em/3);
 	transform: rotate(-45deg) translateY(-33%);
-	margin-left: 10px;
+	margin-left: 0.6em;
 `;
 
 export type LinkProps = Omit<JSX.IntrinsicElements['a'], 'type'> & Tlink;
