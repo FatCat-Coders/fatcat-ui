@@ -17,6 +17,7 @@ export const COLOR = {
 	grey: '#BEBEBE',
 	greyLight: '#67727B',
 	darkerGrey: '#6B6B6B',
+	lightGrey: '#F5F5F5',
 	purple: '#5E1A6F',
 	purpleLight: '#755DB9',
 	darkerPurple: '#50145F',

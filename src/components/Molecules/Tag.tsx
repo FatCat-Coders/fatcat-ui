@@ -1,17 +1,24 @@
+import { Properties } from 'csstype';
 import React from 'react';
 import styled from 'styled-components';
 
-export const TagWrapper = styled.div`
+type TTagWrapper = {
+	background?: Properties['background'];
+	textColor?: Properties['color'];
+};
+
+export const TagWrapper = styled.div<TTagWrapper>`
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
-	color: ${props => props.theme.textColor.secondary};
-	background-color: #f5f5f5;
+	color: ${props => props.textColor || props.theme.textColor.secondary};
+	background-color:${props=> props.background || props.theme.color.lightGrey};
 	padding: ${props => props.theme.space.s8} ${props => props.theme.space.s10};
 	width: auto;
 	text-align: center;
 	margin-right: 12px;
 	& > p {
+		font-size: inherit;
 		margin: 0;
 		line-height: 1;
 		white-space: nowrap;
@@ -19,8 +26,8 @@ export const TagWrapper = styled.div`
 	}
 
 	& > button {
-		display:inline-flex;
-		align-items:center;
+		display: inline-flex;
+		align-items: center;
 		cursor: pointer;
 		border: none;
 		padding: 0;
@@ -32,11 +39,17 @@ export const TagWrapper = styled.div`
 export type TTagProps = {
 	tagName: string;
 	onClose?: () => void;
-};
+} & TTagWrapper;
+
 export const Tag = (props: TTagProps) => {
-	const { tagName, onClose } = props;
+	const {
+		tagName,
+		onClose,
+		background,
+		textColor,
+	} = props;
 	return (
-		<TagWrapper>
+		<TagWrapper background={background} textColor={textColor}>
 			<p>{tagName}</p>
 			{onClose && (
 				<button
@@ -65,4 +78,6 @@ export const Tag = (props: TTagProps) => {
 
 Tag.defaultProps = {
 	onClose: undefined,
+	background: undefined,
+	textColor: undefined,
 };
