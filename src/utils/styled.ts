@@ -14,6 +14,7 @@ export const UIprops: string[] = [
 	'animationFillMode',
 	'animationPlayState',
 	// background props
+	'background',
 	'backgroundColor',
 	'backgroundColorOpacity',
 	'backgroundImage',
