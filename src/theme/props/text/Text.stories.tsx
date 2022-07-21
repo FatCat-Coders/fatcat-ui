@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Paragraph } from '../../src/components/Atoms/Paragraph';
-import { formatObjectKeys } from '../helpers';
+import { Paragraph } from '../../../components/Atoms/Paragraph';
+import { formatObjectKeys } from '../../../../stories/helpers';
 
 import {
 	TEXT_COLOR,
@@ -9,11 +9,11 @@ import {
 	FONT_SIZE,
 	FONT_WEIGHT,
 	FONT_FAMILY,
-} from '../../src/theme/definitions';
+} from '../../../theme/definitions';
 
 import {
 	TEXT_SIZE,
-} from '../../src/theme/styles';
+} from '../../../theme/styles';
 
 import readme from './Text.md';
 

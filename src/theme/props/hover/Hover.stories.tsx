@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { formatObjectKeys } from '../helpers';
-import { Wrapper } from '../../src/components/Atoms/Wrapper';
-import { HOVER_BEHAVIORS } from '../../src/theme/styles/hover';
+import { formatObjectKeys } from '../../../../stories/helpers';
+import { Wrapper } from '../../../components/Atoms/Wrapper';
+import { HOVER_BEHAVIORS } from '../../../theme/styles/hover';
 
 import readme from './Hover.md';
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Wrapper } from '../../src/components/Atoms/Wrapper';
+import { Wrapper } from '../../../components/Atoms/Wrapper';
 
-import { formatObjectKeys, formatSizingObjectKeys } from '../helpers';
-import { SPACE } from '../../src/theme/definitions';
+import { formatObjectKeys, formatSizingObjectKeys } from '../../../../stories/helpers';
+import { SPACE } from '../../../theme/definitions';
 
 import readme from './Space.md';
 

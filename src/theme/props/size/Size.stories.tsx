@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Wrapper } from '../../src/components/Atoms/Wrapper';
-import { Text } from '../../src/components/Atoms/Text';
+import { Wrapper } from '../../../components/Atoms/Wrapper';
+import { Text } from '../../../components/Atoms/Text';
 
 import readme from './Size.md';
 

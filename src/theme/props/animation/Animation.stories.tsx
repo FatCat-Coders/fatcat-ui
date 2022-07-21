@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Wrapper } from '../../src/components/Atoms/Wrapper';
-import { ANIMATIONS } from '../../src/theme/definitions';
+import { Wrapper } from '../../../components/Atoms/Wrapper';
+import { ANIMATIONS } from '../../../theme/definitions';
 
-import { formatObjectKeys } from '../helpers';
+import { formatObjectKeys } from '../../../../stories/helpers';
 
 import readme from './Animation.md';
 
