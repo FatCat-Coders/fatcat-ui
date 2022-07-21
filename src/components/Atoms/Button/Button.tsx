@@ -61,7 +61,7 @@ export type ButtonComponent = PolymorphicComponent<ButtonProps>;
 export const Button: ButtonComponent = (props) => {
 	const { children, ...linkProps } = props;
 	const theme = useTheme();
-	const color = (!linkProps.color && theme.buttonColor[linkProps.variant]) ? linkProps.variant : 'primary';
+	const color = (!linkProps.color && theme.buttonColor[linkProps.variant]) ? linkProps.variant : linkProps.color;
 	return <ButtonBase {...linkProps} color={color}>{children}</ButtonBase>;
 };
 

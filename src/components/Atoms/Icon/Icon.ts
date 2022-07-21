@@ -1,7 +1,8 @@
-import { styled } from '../../utils/styled';
+import { styled } from '../../../utils/styled';
+import { DefaultTheme } from 'styled-components';
 
-// Font Awesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// React-icons
+import { AiFillStar } from '@react-icons/all-files/ai/AiFillStar';
 
 // Theme
 import {
@@ -10,32 +11,31 @@ import {
 	responsive, ResponsiveProps,
 	size, SizeProps,
 	space, SpaceProps,
-	text, TextProps,
 	position, PositionProps,
 	transition, TransitionsProps,
 	visibility, VisibilityProps,
-} from '../../theme/props';
+} from '../../../theme/props';
 
 export type TIcon =
-	AnimationProps
+	{
+		svgColor?: keyof DefaultTheme['color']
+	}
+	& AnimationProps
 	& HoverProps
 	& PositionProps
 	& ResponsiveProps
 	& SizeProps
 	& SpaceProps
-	& TextProps
 	& TransitionsProps
 	& VisibilityProps;
 
-export const Icon = styled(FontAwesomeIcon) <TIcon>`
-	width: 16px;
-	height: 16px;
+export const Icon = styled(AiFillStar) <TIcon>`
+	${props => props.svgColor && `color: ${props.theme.color[props.svgColor]};`}
 	${animation};
 	${position};
 	${size};
 	${visibility};
     ${space};
-    ${text};
 	${transition}
     ${hover};
 	${responsive};

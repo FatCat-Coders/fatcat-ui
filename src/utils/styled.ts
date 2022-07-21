@@ -122,6 +122,7 @@ export const UIprops: string[] = [
 	'inline',
 	'edge',
 	'sticky',
+	'svgColor',
 ];
 
 export const styled = (ele: any) => styl(ele).withConfig({

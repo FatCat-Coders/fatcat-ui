@@ -57,7 +57,6 @@ export const BUTTON_VARIANT = {
 	ghost: css<{ color: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
 		border: none;
 		color: ${props => props.theme.buttonColor[props.color].text};
-		background: ${props => props.theme.buttonColor[props.color].default};
 		${buttonBase};
 		&:hover {
 			background: ${props => props.theme.buttonColor[props.color].hover};

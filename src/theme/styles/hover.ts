@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
 
 export const HOVER_BEHAVIORS = {
 	scaleUp: css`
@@ -24,6 +24,9 @@ export const HOVER_BEHAVIORS = {
 	`,
 	opacity95: css`
 		opacity: 95%;
+	`,
+	color: (value: keyof DefaultTheme['color']) => css`
+		color: ${props => props.theme.color[value]};
 	`,
 	backgroundBlackLighter: css`
 		background-color: ${props => props.theme.color.blackLighter};
