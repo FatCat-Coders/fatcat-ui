@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Wrapper } from '../../src/components/Atoms/Wrapper';
-import { Flex } from '../../src/components/Atoms/Flex';
+import { Wrapper } from '../../../components/Atoms/Wrapper';
+import { Flex } from '../../../components/Atoms/Flex';
 
 import readme from './Background.md';
-import colors from '../assets/colors.svg';
+import colors from '../../../../stories/assets/colors.svg';
 
-import { formatObjectKeys } from '../helpers';
-import { BACKGROUND_COLOR } from '../../src/theme/definitions';
+import { formatObjectKeys } from '../../../../stories/helpers';
+import { BACKGROUND_COLOR } from '../../../theme/definitions';
 
 export default {
 	title: 'Element Props/Background',

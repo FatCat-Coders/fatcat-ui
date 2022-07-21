@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Wrapper } from '../../src/components/Atoms/Wrapper';
-import { Flex } from '../../src/components/Atoms/Flex';
-import { Text } from '../../src/components/Atoms/Text';
+import { Wrapper } from '../../../components/Atoms/Wrapper';
+import { Flex } from '../../../components/Atoms/Flex';
+import { Text } from '../../../components/Atoms/Text';
 
 import readme from './Overflow.md';
 

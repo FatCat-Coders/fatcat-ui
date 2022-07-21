@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Wrapper } from '../../src/components/Atoms/Wrapper';
+import { Wrapper } from '../../../components/Atoms/Wrapper';
 
 import readme from './Position.md';
 

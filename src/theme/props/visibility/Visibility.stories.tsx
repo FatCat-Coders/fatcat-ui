@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { formatObjectKeys } from '../helpers';
-import { MEDIA } from '../../src/theme/definitions';
+import { formatObjectKeys } from '../../../../stories/helpers';
+import { MEDIA } from '../../../theme/definitions';
 
-import { Wrapper } from '../../src/components/Atoms/Wrapper';
+import { Wrapper } from '../../../components/Atoms/Wrapper';
 
 import readme from './Visibility.md';
 

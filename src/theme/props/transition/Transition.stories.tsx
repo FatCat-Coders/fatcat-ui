@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Flex } from '../../src/components/Atoms/Flex';
-import { Text } from '../../src/components/Atoms/Text';
+import { Flex } from '../../../components/Atoms/Flex';
+import { Text } from '../../../components/Atoms/Text';
 
 import readme from './Transition.md';
 

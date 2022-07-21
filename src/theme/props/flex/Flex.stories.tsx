@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Wrapper } from '../../src/components/Atoms/Wrapper';
-import { Flex as FlexOrigin } from '../../src/components/Atoms/Flex';
+import { Wrapper } from '../../../components/Atoms/Wrapper';
+import { Flex as FlexOrigin } from '../../../components/Atoms/Flex';
 
 import readme from './Flex.md';
 
