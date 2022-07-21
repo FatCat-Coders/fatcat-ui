@@ -3,10 +3,10 @@ import { css, DefaultTheme } from 'styled-components';
 // Helpers
 import pickObjectProperties from '../../../utils/pick-object-properties';
 
-export type HoverTypes = keyof DefaultTheme['hover'];
+export type HoverTypes = (keyof DefaultTheme['hover'] | Partial<Record<keyof DefaultTheme['hover'], any>>)[];
 
 export type HoverProps = {
-	hover?: (HoverTypes | Partial<Record<HoverTypes, any>>)[]
+	hover?: HoverTypes
 };
 
 export const hover = css<HoverProps>`

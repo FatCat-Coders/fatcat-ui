@@ -9,7 +9,7 @@ import { INPUT_STYLE } from '../../../theme/definitions';
 import readme from './TextArea.md';
 
 export default {
-	title: 'Basic Elements/Inputs/TextArea',
+	title: 'Basic Elements/Inputs',
 	component: TextAreaOrigin,
 	argTypes: {
 		variant: {

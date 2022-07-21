@@ -9,7 +9,7 @@ import { INPUT_STYLE } from '../../../theme/definitions';
 import readme from './Input.md';
 
 export default {
-	title: 'Basic Elements/Inputs/Input',
+	title: 'Basic Elements/Inputs',
 	component: InputOrigin,
 	argTypes: {
 		variant: {

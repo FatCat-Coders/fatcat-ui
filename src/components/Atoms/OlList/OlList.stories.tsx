@@ -11,7 +11,7 @@ import { OLLIST_STYLE } from '../../../theme/definitions';
 import readme from './OlList.md';
 
 export default {
-	title: 'Basic Elements/Lists/OlList',
+	title: 'Basic Elements/Lists',
 	component: OlListOrigin,
 	argTypes: {
 		variant: {
