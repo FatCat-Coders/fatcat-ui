@@ -1,15 +1,15 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Grid as GridOrigin } from './Grid';
-import { Flex } from '../Flex';
+import { Grid as GridOrigin } from '../../../components/Atoms/Grid';
+import { Flex } from '../../../components/Atoms/Flex';
 
 import readme from './Grid.md';
 
 const widths = ['200px', '250px', '300px'];
 
 export default {
-	title: 'Basic Elements/Grid',
+	title: 'Element Props/Grid',
 	component: GridOrigin,
 	argTypes: {
 		items: {
@@ -59,7 +59,6 @@ export default {
 				type: { summary: null },
 			},
 		},
-
 		rowGap: {
 			control: 'text',
 			description: 'String with css property',

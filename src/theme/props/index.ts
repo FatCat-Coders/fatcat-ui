@@ -2,6 +2,7 @@ export * from './animation/animation';
 export * from './background/background';
 export * from './border/border';
 export * from './flex/flex';
+export * from './grid/grid';
 export * from './hover/hover';
 export * from './overflow/overflow';
 export * from './position/position';
