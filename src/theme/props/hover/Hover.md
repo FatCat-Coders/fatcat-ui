@@ -10,8 +10,8 @@ We can use hover definition already defined in our therm or we can add new ones 
 
 ```jsx
 const HOVER_BEHAVIORS = {
-	backgroundBlackLighter: css`
-		background-color: ${props => props.theme.color.blackLighter};
+	backgroundColorHex: (value: string) => css`
+		background-color: ${value};
 	`,
 	zoom: (value: number) => css`
 		transform: scale(${value});
@@ -54,7 +54,7 @@ Here is usage of our defined hover effects, we also added `transition` for smoot
 		width="100px"
 		backgroundColor="yellow"
 		transition="all 0.3s ease"
-		hover={ ['backgroundBlackLighter', { zoom: '1.2' }] }
+		hover={ [{ backgroundColorHex: '#1D1D1E', zoom: '1.2' }] }
 	/>
 ```
 

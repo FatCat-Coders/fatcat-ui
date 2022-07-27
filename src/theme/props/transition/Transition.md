@@ -21,7 +21,7 @@ Property that adds to the component are:
 	width="200px"
 	height="200px"
 	backgroundColor="yellow"
-	hover={['backgroundBlackLighter']}
+	hover={[{ backgroundColorHex: '#1D1D1E' }]}
 />
 ```
 

@@ -20,7 +20,7 @@ export type TSection =
 		children: React.ReactNode
 		edge?: boolean
 		iDesktop?: ResponsiveTypePropCheck
-		iDesktopStandard?: ResponsiveTypePropCheck
+		iStandardDesktop?: ResponsiveTypePropCheck
 		iLargeDesktop?: ResponsiveTypePropCheck
 		iLargeTablet?: ResponsiveTypePropCheck
 		iMobile?: ResponsiveTypePropCheck
@@ -48,11 +48,11 @@ const Section: React.FC<TSection> = (props) => {
 		backgroundRepeat,
 		backgroundSize,
 		desktop,
-		desktopStandard,
+		standardDesktop,
 		edge,
 		hide,
 		iDesktop,
-		iDesktopStandard,
+		iStandardDesktop,
 		iLargeDesktop,
 		iLargeTablet,
 		iMobile,
@@ -86,7 +86,7 @@ const Section: React.FC<TSection> = (props) => {
 			sticky={sticky}
 			overflow={overflow}
 			desktop={desktop}
-			desktopStandard={desktopStandard}
+			standardDesktop={standardDesktop}
 			largeDesktop={largeDesktop}
 			largeTablet={largeTablet}
 			mobile={mobile}
@@ -102,7 +102,7 @@ const Section: React.FC<TSection> = (props) => {
 				scale={scale}
 				width={width}
 				desktop={iDesktop}
-				desktopStandard={iDesktopStandard}
+				standardDesktop={iStandardDesktop}
 				largeDesktop={iLargeDesktop}
 				largeTablet={iLargeTablet}
 				mobile={iMobile}
@@ -126,7 +126,7 @@ Section.defaultProps = {
 	iLargeTablet: null,
 	iDesktop: null,
 	iLargeDesktop: null,
-	iDesktopStandard: null,
+	iStandardDesktop: null,
 };
 
 export default Section;

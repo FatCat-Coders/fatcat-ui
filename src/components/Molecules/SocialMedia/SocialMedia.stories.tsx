@@ -67,5 +67,5 @@ SocialMedia.args = {
 		linkedin: 'https://www.linkedin.com/',
 	},
 	color: 'primary',
-	hover: [{ color: 'yellow' }, { zoom: '1.2' }],
+	hover: [{ textColor: 'yellow', zoom: '1.2' }],
 };

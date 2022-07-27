@@ -3,18 +3,22 @@ import React from 'react';
 // Atoms
 import { GlobalStyle } from 'fatcat-ui-library/components/Atoms';
 
-// // Fonts
+// Fonts
 import '../assets/fonts/silka/stylesheet.css';
 
 // Themes
 import { UIThemeProvider, FatCatTheme } from 'fatcat-ui-library/theme/theme';
 
 const color = {
-	test: '#123456',
-} as const;
+	newBlue: '#123456',
+};
+const space = {
+	s10: '10px',
+};
 
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
+		useMobileFirst: FatCatTheme['useMobileFirst']
 		animation: FatCatTheme['animation']
 		backgroundColor: FatCatTheme['backgroundColor']
 		buttonColor: FatCatTheme['buttonColor']
@@ -30,12 +34,12 @@ declare module 'styled-components' {
 		linkColor: FatCatTheme['linkColor']
 		linkStyle: FatCatTheme['linkStyle']
 		media: FatCatTheme['media']
+		mediaMobile: FatCatTheme['mediaMobile']
 		responsive: FatCatTheme['responsive']
 		screenRatio: FatCatTheme['screenRatio']
 		sectionWidth: FatCatTheme['sectionWidth']
 		sideSpace: FatCatTheme['sideSpace'] | 't10'
-		space: FatCatTheme['space']
-		// space: FatCatTheme['space'] | typeof { s10: '10px' }
+		space: FatCatTheme['space'] | typeof space
 		tableStyle: FatCatTheme['tableStyle']
 		textColor: FatCatTheme['textColor'] & typeof color
 		textSize: FatCatTheme['textSize']
@@ -45,10 +49,9 @@ declare module 'styled-components' {
 	}
 }
 
-const Index: React.FC = (props) => {
-	const { children } = props;
+const Index: React.FC<{children: React.ReactNode}> = ({ children }) => {
 	return (
-		<UIThemeProvider theme={{ textColor: { test: '#123456' }, space: { s10: '10px' } }}>
+		<UIThemeProvider theme={{ textColor: color, space }}>
 			<GlobalStyle />
 			{children}
 		</UIThemeProvider>

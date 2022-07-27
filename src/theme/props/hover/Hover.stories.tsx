@@ -40,5 +40,5 @@ Hover.parameters = {
 	},
 };
 Hover.args = {
-	hover: ['backgroundBlackLighter', { zoom: '1.2' }],
+	hover: [{ backgroundColorHex: '#1D1D1E', zoom: '1.2' }],
 };
