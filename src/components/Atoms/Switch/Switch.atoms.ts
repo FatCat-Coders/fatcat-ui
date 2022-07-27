@@ -7,7 +7,7 @@ export type TSwitchStyle = {
 	useSameBackgroundColor?: boolean
 }
 
-export const Switch = styled.span`
+export const SwitchButton = styled.span`
 	display: inline-block;
 	width: 16px;
 	height: 16px;
@@ -19,6 +19,7 @@ export const Switch = styled.span`
 
 export const SwitchWrapper = styled.span<TSwitchStyle>`
 	cursor: pointer;
+	/* position: relative; */
 	display: flex;
 	border: 2px solid transparent;
 	background-color: ${props => (props.backgroundColor ? props.theme.color[props.backgroundColor] : props.theme.color.primary)};
@@ -26,7 +27,7 @@ export const SwitchWrapper = styled.span<TSwitchStyle>`
 	height: 20px;
 	border-radius: 36px;
 	${({ checked }) => checked && css`
-		${Switch} {
+		${SwitchButton} {
 			transform: translateX(100%);
 		}
 	`}
@@ -44,6 +45,16 @@ export const SwitchInput = styled.input`
 	position: absolute;
 	width: 0;
 	height: 0;
+	/* &:focus ~ ${SwitchWrapper}::after {
+		content: '';
+		position: absolute;
+		pointer-events: none;
+		top: -3px;
+		left: -3px;
+		width: calc(100% + 6px);
+		height: calc(100% + 6px);
+		border: 1px solid red;
+	} */
 `;
 
 export const SwitchContainer = styled.label<{ css?: CSSProp }>`

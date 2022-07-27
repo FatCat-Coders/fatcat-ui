@@ -3,13 +3,13 @@ import { DefaultTheme, CSSProp } from 'styled-components';
 
 // Atoms
 import {
-	Switch,
+	SwitchButton,
 	SwitchContainer,
 	SwitchWrapper,
 	SwitchInput,
 } from './Switch.atoms';
 
-export type TToggle = {
+export type TSwitch = {
 	backgroundColor?: keyof DefaultTheme['color']
 	disabled?: boolean
 	id?: string
@@ -22,7 +22,7 @@ export type TToggle = {
 	css?: CSSProp
 }
 
-const Toggle = forwardRef<HTMLInputElement, PropsWithChildren<TToggle>>((props, ref) => {
+const Switch = forwardRef<HTMLInputElement, PropsWithChildren<TSwitch>>((props, ref) => {
 	const {
 		backgroundColor,
 		disabled,
@@ -38,6 +38,7 @@ const Toggle = forwardRef<HTMLInputElement, PropsWithChildren<TToggle>>((props, 
 	} = props;
 	return (
 		<SwitchContainer css={css}>
+			{beforeText}
 			<SwitchInput
 				id={id}
 				ref={ref}
@@ -48,14 +49,13 @@ const Toggle = forwardRef<HTMLInputElement, PropsWithChildren<TToggle>>((props, 
 				type="checkbox"
 				{...rest}
 			/>
-			{beforeText}
 			<SwitchWrapper
 				checked={value}
 				useSameBackgroundColor={useSameBackgroundColor}
 				backgroundColor={backgroundColor}
 				disabled={disabled}
 			>
-				<Switch />
+				<SwitchButton />
 			</SwitchWrapper>
 			{afterText}
 		</SwitchContainer>
@@ -63,7 +63,7 @@ const Toggle = forwardRef<HTMLInputElement, PropsWithChildren<TToggle>>((props, 
 	);
 });
 
-Toggle.defaultProps = {
+Switch.defaultProps = {
 	backgroundColor: null,
 	disabled: false,
 	id: undefined,
@@ -74,4 +74,4 @@ Toggle.defaultProps = {
 	css: null,
 };
 
-export default Toggle;
+export default Switch;

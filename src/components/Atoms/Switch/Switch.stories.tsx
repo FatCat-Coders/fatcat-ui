@@ -24,6 +24,9 @@ export default {
 		css: {
 			control: 'text',
 			description: 'Additional custom CSS style',
+			table: {
+				type: { summary: null },
+			},
 		},
 		disabled: {
 			control: 'boolean',
