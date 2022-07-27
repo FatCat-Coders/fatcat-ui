@@ -104,7 +104,6 @@ export const UIThemeProvider: React.FC<UIThemeProviderI> = ({ children, theme })
 	}
 	const newTheme = mergedTheme || defaultTheme;
 	if (newTheme.useMobileFirst) {
-		console.log(newTheme.mediaMobile);
 		newTheme.media = newTheme.mediaMobile;
 	}
 	return <ThemeProvider theme={newTheme}>{children}</ThemeProvider>;
