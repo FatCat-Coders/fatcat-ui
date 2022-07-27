@@ -3,6 +3,7 @@ A simple Grid component that we can use for our layouts. Props that we can use f
 - `Animation`
 - `Background`
 - `Border`
+- `Grid`
 - `Hover`
 - `Position`
 - `Responsive`
@@ -12,12 +13,6 @@ A simple Grid component that we can use for our layouts. Props that we can use f
 - `Visibility`
 
 listed in `Element Props` section and additionally:
-
-- `alignItems`
-- `justifyContent`
-- `justifyItems`
-- `gridTemplateColumns`
-- `gap`
 
 ## Usage 
 
