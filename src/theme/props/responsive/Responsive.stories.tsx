@@ -13,7 +13,9 @@ export default {
 		largeTablet: { control: 'array' },
 		desktop: { control: 'array' },
 		largeDesktop: { control: 'array' },
-		desktopStandard: { control: 'array' },
+		standardDesktop: { control: 'array' },
+		wideDesktop: { control: 'array' },
+		noHover: { control: 'array' },
 	},
 	parameters: {
 		docs: {
@@ -62,10 +64,12 @@ Responsive.parameters = {
 			'largeTablet',
 			'desktop',
 			'largeDesktop',
-			'desktopStandard',
+			'standardDesktop',
+			'wideDesktop',
+			'noHover',
 		],
 	},
 };
 Responsive.args = {
-	mobile: ['column', { padding: ['t12', 'r12', 'b12', 'l12'] }],
+	tablet: ['column', { padding: ['t12', 'r12', 'b12', 'l12'] }],
 };

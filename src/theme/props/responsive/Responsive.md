@@ -9,7 +9,7 @@ List of breakpoints to apply CSS style if a certain condition is true. List of b
 - `largeTablet`
 - `desktop`
 - `largeDesktop`
-- `desktopStandard`
+- `standardDesktop`
 
 ## Usage
 
@@ -29,7 +29,7 @@ const RESPONSIVE_BEHAVIORS = {
 		max-width: 100%;
 		flex-basis: auto;
 	`,
-	setBorder: (value: Properties['border']) => css`
+	border: (value: Properties['border']) => css`
 		border: ${value};
 	`,
 }

@@ -31,7 +31,7 @@ const Template = ({ children, ...args }) => (
 		justifyContent="center"
 		width="200px"
 		height="200px"
-		hover={['backgroundBlackLighter']}
+		hover={[{ backgroundColorHex: '#1D1D1E' }]}
 		{...args}
 	>
 		<Text textColor="primary">Hover me!</Text>

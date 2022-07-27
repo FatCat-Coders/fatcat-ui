@@ -1,9 +1,13 @@
-import { css, DefaultTheme } from 'styled-components';
+import { css, DefaultTheme, CSSProp } from 'styled-components';
 
 // Helpers
 import pickObjectProperties from '../../../utils/pick-object-properties';
 
-export type HoverTypes = (keyof DefaultTheme['hover'] | Partial<Record<keyof DefaultTheme['hover'], any>>)[];
+type THoverObj = {
+	[key: keyof DefaultTheme['hover']]: (args: string | number) => CSSProp | CSSProp
+}
+
+export type HoverTypes = (keyof DefaultTheme['hover'] | Partial<THoverObj>)[];
 
 export type HoverProps = {
 	hover?: HoverTypes
@@ -12,7 +16,6 @@ export type HoverProps = {
 export const hover = css<HoverProps>`
 	${props => props.hover && css`
 		&:hover {
-			cursor: pointer;
 			${pickObjectProperties(props.theme.hover, props.hover)}
 		}
 	`}

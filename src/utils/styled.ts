@@ -63,7 +63,7 @@ export const UIprops: string[] = [
 	'largeTablet',
 	'desktop',
 	'largeDesktop',
-	'desktopStandard',
+	'standardDesktop',
 	// size props
 	'width',
 	'maxWidth',
