@@ -18,7 +18,10 @@ import {
 
 export type TLink =
 	{
-		variant?: keyof DefaultTheme['linkStyle']
+		disabled?: boolean;
+		withArrow?: boolean;
+		arrowColor?: keyof DefaultTheme['color'];
+		variant?: keyof DefaultTheme['linkStyle'];
 	}
 	& AnimationProps
 	& HoverProps
@@ -42,14 +45,35 @@ export const LinkBase = styled('a')<TLink>`
 	${responsive};
 `;
 
-export type LinkProps = Omit<JSX.IntrinsicElements['a'], 'type'> & TLink;
+const Arrow = styled('i')<{arrowColor?:keyof DefaultTheme['color']}>`
+	border-style: solid;
+	border-color: ${props => (props.arrowColor ? props.theme.color[props.arrowColor] : 'inherit')};
+	border-width: 0 calc(1em * 0.09) calc(1em * 0.09) 0;
+	display: inline-block;
+	width: calc(1em/3);
+	height: calc(1em/3);
+	transform: rotate(-45deg) translateY(-33%);
+	margin-left: 0.6em;
+`;
+
+export type LinkProps = Omit<JSX.IntrinsicElements['a'], 'type'> & Tlink;
 export type LinkComponent = PolymorphicComponent<LinkProps>;
 
 export const Link: LinkComponent = (props) => {
-	const { children, to, ...linkProps } = props;
-	return <LinkBase href={to} to={props.as ? to : undefined} {...linkProps}>{children}</LinkBase>; // eslint-disable-line
+	const {
+		children, to, withArrow, arrowColor, ...linkProps
+	} = props;
+	return (
+		<LinkBase href={to} to={props.as ? to : undefined} {...linkProps}>
+			{children}
+			{withArrow && <Arrow arrowColor={arrowColor} />}
+		</LinkBase>
+	);
 };
 
 Link.defaultProps = {
 	variant: 'base',
+	disabled: false,
+	withArrow: false,
+	arrowColor: undefined,
 };
