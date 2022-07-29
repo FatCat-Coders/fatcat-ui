@@ -65,6 +65,7 @@ export const CheckboxInput = styled.input`
 
 export const CheckboxContainer = styled.label<{ css?: CSSProp, disabled?: boolean }>`
 	cursor: pointer;
+	height: fit-content;
 	display: flex;
 	align-items: center;
 	gap: 8px;

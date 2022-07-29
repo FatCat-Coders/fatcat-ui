@@ -59,6 +59,7 @@ export const SwitchInput = styled.input`
 
 export const SwitchContainer = styled.label<{ css?: CSSProp }>`
 	display: flex;
+	height: fit-content;
 	align-items: center;
 	gap: 8px;
 	${props => props.css}

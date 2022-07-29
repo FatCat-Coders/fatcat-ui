@@ -302,6 +302,9 @@ export const RESPONSIVE_BEHAVIORS = {
 	transform: (value: Properties['transform']) => css`
 		transform: ${value};
 	`,
+	transformOrigin: (value: Properties['transformOrigin']) => css`
+		transform-origin: ${value};
+	`,
 	alignSelf: (value: Properties['alignSelf']) => css`
 		align-self: ${value};
 	`,

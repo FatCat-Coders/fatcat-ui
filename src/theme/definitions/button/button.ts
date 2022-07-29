@@ -19,6 +19,7 @@ export const BUTTON_SIZE = {
 const buttonBase = css<{size: keyof typeof BUTTON_SIZE}>`
 	${props => props.size && BUTTON_SIZE[props.size]};
 	${props => props.theme.textStyle.button};
+	height: fit-content;
 	border-radius: 4px;
 `;
 
