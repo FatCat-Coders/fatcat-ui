@@ -1,48 +1,12 @@
 import { styled } from '../../utils/styled';
 
-import {
-	animation, AnimationProps,
-	background, BackgroundProps,
-	border, BorderProps,
-	hover, HoverProps,
-	overflow, OverflowProps,
-	position, PositionProps,
-	responsive, ResponsiveProps,
-	size, SizeProps,
-	space, SpaceProps,
-	text, TextProps,
-	transition, TransitionsProps,
-	visibility, VisibilityProps,
-} from '../../theme/props';
+import { generalProps, GeneralProps } from '../../theme/props';
 
-export type TWrapper =
-	AnimationProps
-	& BackgroundProps
-	& BorderProps
-	& HoverProps
-	& OverflowProps
-	& PositionProps
-	& ResponsiveProps
-	& SizeProps
-	& SpaceProps
-	& TextProps
-	& TransitionsProps
-	& VisibilityProps;
+export type TWrapper = GeneralProps;
 
-export const Wrapper = styled('div')<TWrapper>`
+export const Wrapper = styled('div') <TWrapper>`
 	width: 100%;
-	${animation}
-	${background};
-	${border};
-	${overflow};
-	${position};
-	${size};
-	${space};
-	${text};
-	${transition}
-	${visibility};
-	${hover};
-	${responsive};
+	${generalProps}
 `;
 
 Wrapper.defaultProps = {

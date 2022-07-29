@@ -5,38 +5,13 @@ import { DefaultTheme } from 'styled-components';
 import { AiFillStar } from '@react-icons/all-files/ai/AiFillStar';
 
 // Theme
-import {
-	animation, AnimationProps,
-	hover, HoverProps,
-	responsive, ResponsiveProps,
-	size, SizeProps,
-	space, SpaceProps,
-	position, PositionProps,
-	transition, TransitionsProps,
-	visibility, VisibilityProps,
-} from '../../../theme/props';
+import { generalProps, GeneralProps } from '../../../theme/props';
 
-export type TIcon =
-	{
-		svgColor?: keyof DefaultTheme['color']
-	}
-	& AnimationProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& SizeProps
-	& SpaceProps
-	& TransitionsProps
-	& VisibilityProps;
+export type TIcon = {
+	svgColor?: keyof DefaultTheme['color']
+} & GeneralProps;
 
 export const Icon = styled(AiFillStar) <TIcon>`
 	${props => props.svgColor && `color: ${props.theme.color[props.svgColor]};`}
-	${animation};
-	${position};
-	${size};
-	${visibility};
-    ${space};
-	${transition}
-    ${hover};
-	${responsive};
+	${generalProps};
 `;

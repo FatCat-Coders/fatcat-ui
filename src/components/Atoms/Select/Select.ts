@@ -1,45 +1,13 @@
 import { styled } from '../../../utils/styled';
 
-import {
-	animation, AnimationProps,
-	background, BackgroundProps,
-	border, BorderProps,
-	hover, HoverProps,
-	position, PositionProps,
-	responsive, ResponsiveProps,
-	size, SizeProps,
-	space, SpaceProps,
-	text, TextProps,
-	visibility, VisibilityProps,
-} from '../../../theme/props';
+import { generalProps, GeneralProps } from '../../../theme/props';
 
-export type TSelect =
-	AnimationProps
-	& BackgroundProps
-	& BorderProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& SizeProps
-	& SpaceProps
-	& TextProps
-	& VisibilityProps;
+export type TSelect = GeneralProps;
 
-export const Select = styled('select')<TSelect>`
-    -moz-appearance:none; /* Firefox */
-    -webkit-appearance:none; /* Safari and Chrome */
+export const Select = styled('select') <TSelect>`
     appearance:none;
 	&:hover {
 		border-color: ${props => props.theme.color.grey};
 	}
-	${animation};
-	${position};
-	${space};
-	${visibility};
-    ${background};
-    ${border};
-    ${size};
-    ${text};
-	${hover};
-	${responsive};
+	${generalProps};
 `;

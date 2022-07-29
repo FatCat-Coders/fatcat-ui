@@ -1,45 +1,16 @@
 import { styled } from '../../../utils/styled';
 
-import {
-	animation, AnimationProps,
-	border, BorderProps,
-	hover, HoverProps,
-	position, PositionProps,
-	responsive, ResponsiveProps,
-	size, SizeProps,
-	space, SpaceProps, text,
-	transition, TransitionsProps,
-	visibility, VisibilityProps,
-} from '../../../theme/props';
+import { generalProps, GeneralProps } from '../../../theme/props';
 
-export type TImage =
-	{
-		inline?: boolean
-	}
-	& AnimationProps
-	& BorderProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& SizeProps
-	& SpaceProps
-	& TransitionsProps
-	& VisibilityProps;
+export type TImage = {
+	inline?: boolean
+} & GeneralProps;
 
-export const Image = styled('img')<TImage>`
+export const Image = styled('img') <TImage>`
 	display: ${props => (props.inline ? 'inline-block' : 'block')};
 	align-self: center;
 	width: 100%;
-	${animation};
-	${border};
-	${position};
-	${size};
-	${space};
-	${text};
-	${transition}
-	${visibility};
-	${hover}
-	${responsive};
+	${generalProps};
 `;
 
 Image.defaultProps = {

@@ -6,53 +6,22 @@ import { DefaultTheme, useTheme } from 'styled-components';
 import { PolymorphicComponent } from '../../../utils/polymorphic-component';
 
 // Props
-import {
-	animation, AnimationProps,
-	border, BorderProps,
-	hover, HoverProps,
-	position, PositionProps,
-	responsive, ResponsiveProps,
-	size, SizeProps,
-	space, SpaceProps,
-	text, TextProps,
-	transition, TransitionsProps,
-	visibility, VisibilityProps,
-} from '../../../theme/props';
+import { generalProps, GeneralProps } from '../../../theme/props';
 
-export type TButton =
-	{
-		color?: keyof DefaultTheme['buttonColor'] | undefined
-		size?: keyof DefaultTheme['buttonSize']
-		variant?: keyof DefaultTheme['buttonVariant']
-	}
-	& AnimationProps
-	& BorderProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& SizeProps
-	& SpaceProps
-	& TextProps
-	& TransitionsProps
-	& VisibilityProps;
+export type TButton = {
+	color?: keyof DefaultTheme['buttonColor'] | undefined
+	size?: keyof DefaultTheme['buttonSize']
+	variant?: keyof DefaultTheme['buttonVariant']
+} & GeneralProps;
 
-export const ButtonBase = styled('button')<TButton>`
+export const ButtonBase = styled('button') <TButton>`
     cursor: pointer;
     display: inline-block;
 	font-weight: bold;
     text-align: center;
 	white-space: nowrap;
 	${props => props.variant && props.theme.buttonVariant[props.variant]};
-	${animation};
-	${border};
-	${position};
-	${size};
-	${visibility};
-    ${space};
-    ${text};
-	${transition}
-	${hover}
-    ${responsive};
+	${generalProps};
 `;
 
 export type ButtonProps = Omit<JSX.IntrinsicElements['button'], 'type'> & TButton;

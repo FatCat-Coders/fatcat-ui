@@ -1,31 +1,11 @@
 import { styled } from '../../../utils/styled';
 import { DefaultTheme } from 'styled-components';
 
-import {
-	animation, AnimationProps,
-	border, BorderProps,
-	hover, HoverProps,
-	position, PositionProps,
-	responsive, ResponsiveProps,
-	size, SizeProps,
-	space, SpaceProps,
-	text, TextProps,
-	visibility, VisibilityProps,
-} from '../../../theme/props';
+import { generalProps, GeneralProps } from '../../../theme/props';
 
-export type TTextArea =
-	{
-		variant?: keyof DefaultTheme['inputStyle']
-	}
-	& AnimationProps
-	& BorderProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& SizeProps
-	& SpaceProps
-	& TextProps
-	& VisibilityProps;
+export type TTextArea = {
+	variant?: keyof DefaultTheme['inputStyle']
+} & GeneralProps;
 
 export const TextArea = styled('textarea') <TTextArea>`
 	resize: none;
@@ -37,15 +17,7 @@ export const TextArea = styled('textarea') <TTextArea>`
 	}
 
 	${props => props.variant && props.theme.inputStyle[props.variant]};
-	${animation};
-	${border};
-	${position};
-	${size};
-	${space};
-	${text};
-	${visibility};
-	${hover};
-	${responsive};
+	${generalProps};
 `;
 
 TextArea.defaultProps = {
