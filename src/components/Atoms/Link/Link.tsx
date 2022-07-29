@@ -5,41 +5,16 @@ import { DefaultTheme } from 'styled-components';
 import { PolymorphicComponent } from '../../../utils/polymorphic-component';
 
 // Theme
-import {
-	animation, AnimationProps,
-	hover, HoverProps,
-	responsive, ResponsiveProps,
-	space, SpaceProps,
-	text, TextProps,
-	position, PositionProps,
-	visibility, VisibilityProps,
-	transition, TransitionsProps,
-} from '../../../theme/props';
+import { generalProps, GeneralProps } from '../../../theme/props';
 
-export type TLink =
-	{
-		variant?: keyof DefaultTheme['linkStyle']
-	}
-	& AnimationProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& SpaceProps
-	& TextProps
-	& TransitionsProps
-	& VisibilityProps;
+export type TLink = {
+	variant?: keyof DefaultTheme['linkStyle']
+} & GeneralProps;
 
-export const LinkBase = styled('a')<TLink>`
+export const LinkBase = styled('a') <TLink>`
 	cursor: pointer;
 	${props => props.variant && props.theme.linkStyle[props.variant]};
-	${animation};
-	${position};
-	${space};
-	${text};
-	${visibility};
-	${transition}
-	${hover};
-	${responsive};
+	${generalProps};
 `;
 
 export type LinkProps = Omit<JSX.IntrinsicElements['a'], 'type'> & TLink;

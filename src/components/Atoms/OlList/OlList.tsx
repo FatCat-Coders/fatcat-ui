@@ -2,29 +2,13 @@ import { styled } from '../../../utils/styled';
 import { DefaultTheme } from 'styled-components';
 
 // themes
-import {
-	animation, AnimationProps,
-	hover, HoverProps,
-	position, PositionProps,
-	responsive, ResponsiveProps,
-	space, SpaceProps,
-	text, TextProps,
-	visibility, VisibilityProps,
-} from '../../../theme/props';
+import { generalProps, GeneralProps } from '../../../theme/props';
 
-export type TOlList =
-	{
-		variant?: keyof DefaultTheme['ollistStyle']
-	}
-	& AnimationProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& SpaceProps
-	& TextProps
-	& VisibilityProps;
+export type TOlList = {
+	variant?: keyof DefaultTheme['ollistStyle']
+} & GeneralProps;
 
-export const OlList = styled('ol')<TOlList>`
+export const OlList = styled('ol') <TOlList>`
 	list-style: none;
 	counter-reset: item;
 	position: relative;
@@ -48,13 +32,7 @@ export const OlList = styled('ol')<TOlList>`
 	}
 
 	${props => props.variant && props.theme.ollistStyle[props.variant]};
-	${animation};
-	${position};
-	${space};
-	${text};
-	${visibility};
-	${hover};
-	${responsive};
+	${generalProps};
 `;
 
 OlList.defaultProps = {

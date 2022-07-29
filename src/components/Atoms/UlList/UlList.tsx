@@ -1,30 +1,14 @@
 import { styled } from '../../../utils/styled';
 import { DefaultTheme } from 'styled-components';
 
-import {
-	animation, AnimationProps,
-	hover, HoverProps,
-	position, PositionProps,
-	responsive, ResponsiveProps,
-	space, SpaceProps,
-	text, TextProps,
-	visibility, VisibilityProps,
-} from '../../../theme/props';
+import { generalProps, GeneralProps } from '../../../theme/props';
 
-export type TUlList =
-	{
-		variant?: keyof DefaultTheme['ullistStyle']
-		bulletColor?: keyof DefaultTheme['color']
-	}
-	& AnimationProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& SpaceProps
-	& TextProps
-	& VisibilityProps;
+export type TUlList = {
+	variant?: keyof DefaultTheme['ullistStyle']
+	bulletColor?: keyof DefaultTheme['color']
+} & GeneralProps;
 
-export const UlList = styled('ul')<TUlList>`
+export const UlList = styled('ul') <TUlList>`
 	list-style: none;
 	padding-left: ${props => props.theme.space.s24};
 
@@ -33,13 +17,7 @@ export const UlList = styled('ul')<TUlList>`
 	}
 
 	${props => props.variant && props.theme.ullistStyle[props.variant]};
-	${animation};
-	${position};
-	${space};
-	${text};
-	${visibility};
-	${hover};
-	${responsive};
+	${generalProps};
 `;
 
 UlList.defaultProps = {
