@@ -9,6 +9,6 @@ publish-package.sh
 package-lock.json
 
 # storybook files
-./**/*.stories.@(js|jsx|ts|tsx|mdx)
+./**/*.stories.*
 ./components/**/*.md
 ./props/**/*.md

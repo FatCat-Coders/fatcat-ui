@@ -1,7 +1,6 @@
 import { default as styl } from 'styled-components'; // eslint-disable-line
 
-// before adding new props to UI-components, check this prop list
-// https://github.dev/styled-components/styled-components/tree/main/packages/styled-components
+// before adding new props to UI-components, add prop to this list aswell
 export const UIprops: string[] = [
 	// animation props
 	'animation',
@@ -15,6 +14,7 @@ export const UIprops: string[] = [
 	'animationPlayState',
 	// background props
 	'backgroundColor',
+	'backgroundColorHex',
 	'backgroundColorOpacity',
 	'backgroundImage',
 	'backgroundRepeat',
@@ -40,6 +40,16 @@ export const UIprops: string[] = [
 	'flexBasis',
 	'wrap',
 	'gap',
+	// grid props
+	'rowGap',
+	'grid',
+	'gridTemplateAreas',
+	'gridTemplateColumns',
+	'gridTemplateRows',
+	'gridAutoColumns',
+	'gridAutoFlow',
+	'gridAutoRows',
+	'justifyItems',
 	// hover props
 	'hover',
 	// overflow props
@@ -55,15 +65,18 @@ export const UIprops: string[] = [
 	'inset',
 	'zIndex',
 	'transform',
+	'transformOrigin',
 	'alignSelf',
 	'order',
 	// responsive props
-	'mobile',
-	'tablet',
-	'largeTablet',
-	'desktop',
+	'wideDesktop',
 	'largeDesktop',
 	'standardDesktop',
+	'desktop',
+	'largeTablet',
+	'tablet',
+	'mobile',
+	'noHover',
 	// size props
 	'width',
 	'maxWidth',
@@ -114,11 +127,13 @@ export const UIprops: string[] = [
 	'initialDisplay',
 	'display',
 	'opacity',
+	// customCss props
+	'css',
 	// components props
+	'color',
+	'size',
 	'variant',
 	'rowGap',
-	'gridTemplateColumns',
-	'justifyItems',
 	'inline',
 	'edge',
 	'sticky',
