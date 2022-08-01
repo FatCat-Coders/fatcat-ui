@@ -1,9 +1,7 @@
 <br />
 
-## Input
-The Input tag specifies an input field where the user can enter data.
-This is our custom styled input component already labeled with label.
-Props that we can use for this component are:
+## Input Field
+The Input tag specifies an input field where the user can enter data. Props that we can use for this component are:
 
 - `Animation`
 - `Background`
@@ -96,7 +94,7 @@ First we simply start with importing component:
 
 ```jsx
 
-import { Input } from 'fatcat-ui-library/components/Atoms/Input';
+import { InputField } from 'fatcat-ui-library/components/Atoms/InputField';
 
 ```
 
@@ -107,7 +105,7 @@ and then simply use it in your code.
 	backgroundColor="backgroundUltraDark"
 	padding={['t64', 'b64', 'l24', 'r24']}
 >
-	<Input
+	<InputField
 		onChange={(e) => { setValue(e.target.value); }}
 		value={value}
 	/>

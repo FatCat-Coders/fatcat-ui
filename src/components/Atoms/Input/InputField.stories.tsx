@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Input as InputOrigin } from './Input';
+import { InputField as InputFieldOrigin } from './InputField';
 import { Flex } from '../Flex';
 import { formatObjectKeys } from '../../../../stories/helpers';
 import { INPUT_STYLE } from '../../../theme/definitions';
 
-import readme from './Input.md';
+import readme from './InputField.md';
 
 export default {
 	title: 'Basic Elements/Inputs',
-	component: InputOrigin,
+	component: InputFieldOrigin,
 	argTypes: {
 		variant: {
 			control: 'select',
@@ -43,10 +43,6 @@ export default {
 			description: 'Input value',
 			control: 'text',
 		},
-		errorMsg: {
-			description: 'Error message',
-			control: 'text',
-		},
 	},
 	parameters: {
 		docs: {
@@ -55,11 +51,10 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof InputOrigin>;
+} as ComponentMeta<typeof InputFieldOrigin>;
 
-const Template: ComponentStory<typeof InputOrigin> = (props) => {
+const Template: ComponentStory<typeof InputFieldOrigin> = (props) => {
 	const [value, setValue] = useState(props.value); // eslint-disable-line
-	const [value1, setValue1] = useState('Wrong input!');
 	return (
 		<Flex
 			padding={['t64', 'b64', 'l24', 'r24']}
@@ -71,17 +66,10 @@ const Template: ComponentStory<typeof InputOrigin> = (props) => {
 				}}
 				style={{ width: '100%' }}
 			>
-				<InputOrigin
+				<InputFieldOrigin
 					{...props}
 					onChange={(e) => { setValue(e.target.value); }}
 					value={value}
-				/>
-				<InputOrigin
-					value={value1}
-					onChange={(e) => { setValue1(e.target.value); }}
-					required
-					errorMsg="Custom error message!"
-					placeholder="Custom placeholder"
 				/>
 				<button
 					type="submit"
@@ -94,21 +82,20 @@ const Template: ComponentStory<typeof InputOrigin> = (props) => {
 	);
 };
 
-export const Input = Template.bind({});
+export const InputField = Template.bind({});
 
-Input.parameters = {
+InputField.parameters = {
 	controls: {
 		include: [
 			'variant',
 			'placeholder',
-			'errorMsg',
 			'value',
 			'required',
 			'onChange',
 		],
 	},
 };
-Input.args = {
+InputField.args = {
 	required: true,
 	variant: 'base',
 	placeholder: 'Placeholder',
