@@ -1,7 +1,7 @@
 <br />
 
-## Input Field
-The Input tag specifies an input field where the user can enter data. Props that we can use for this component are:
+## Text Area Field
+The TextArea tag defines a multi-line text input control. Props that we can use for this component are:
 
 - `Animation`
 - `Background`
@@ -21,7 +21,7 @@ listed in `Element Props` section and additionally:
 
 - `variant`
 
-we can also use all html input attributes for this component such as: `placholder`, `type`, etc.
+we can also use all html input attributes for this component such as: `placholder`, `type`, `rows` etc.
 
 ## 	Styling
 
@@ -31,7 +31,7 @@ For better reusability, we define our style in the theme provider and then we us
 
 ```jsx
 /**
- * Also applied to the textarea element
+ * Also applied to the input element
  */
 const INPUT_STYLE = {
 	base: css`
@@ -97,7 +97,7 @@ First we simply start with importing component:
 
 ```jsx
 
-import { InputField } from 'fatcat-ui-library/components/Atoms/InputField';
+import { TextAreaField } from 'fatcat-ui-library/components/Atoms/TextAreaField';
 
 ```
 
@@ -108,9 +108,10 @@ and then simply use it in your code.
 	backgroundColor="backgroundUltraDark"
 	padding={['t64', 'b64', 'l24', 'r24']}
 >
-	<InputField
+	<TextAreaField 
 		onChange={(e) => { setValue(e.target.value); }}
 		value={value}
+		rows={10}
 	/>
 </Flex>
 ```
