@@ -6,7 +6,7 @@
  * Available font families
  */
 export const FONT_FAMILY = {
-	main: 'Circular Std',
+	main: 'Outfit',
 	secondary: 'Circular Std',
 };
 
