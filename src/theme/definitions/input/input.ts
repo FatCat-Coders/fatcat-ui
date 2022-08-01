@@ -11,6 +11,9 @@ export type TINPUT_STYLE = {
 	 */
 }
 
+/**
+ * Also applied to the textarea element
+ */
 export const INPUT_STYLE = {
 	base: css<TINPUT_STYLE>`
 		width: 100%;
@@ -31,15 +34,13 @@ export const INPUT_STYLE = {
 		}
 
 		${props => props.customInput && css`
-			position: relative;
 			padding-bottom: ${props.theme.space.s12};
 
 			& ~ label {
 				position: absolute;
-				top: calc(50% - 10px);
+				top: 18px;
 				left: 17px;
 				width: calc(100% - 34px);
-				transform: translateY(-50%);
 				color: ${props.theme.color.grey};
 				font-size: ${props.theme.fontSize.s16};
 				z-index: 10;
@@ -49,12 +50,13 @@ export const INPUT_STYLE = {
 			@supports (not (-ms-ime-align:auto)) {
 				&:focus ~ label,
 				&:not(:placeholder-shown) ~ label {
+					transform-origin: left center;
 					color: ${props.theme.color.primary};
 					font-size: 70%;
 					z-index: 2;
-					top: 15%;
-					transform-origin: left center;
+					top: 6px;
 					transition: all 0.3s ease-in-out;
+					will-change: top, transform-origin;
 				}
 			}
 

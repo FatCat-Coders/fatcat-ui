@@ -32,6 +32,9 @@ For better reusability, we define our style in the theme provider and then we us
 - first we add some styles
 
 ```jsx
+/**
+ * Also applied to the textarea element
+ */
 const INPUT_STYLE = {
 	base: css`
 		appearance: none;

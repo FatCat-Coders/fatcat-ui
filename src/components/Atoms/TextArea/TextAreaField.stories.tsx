@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { TextArea as TextAreaOrigin } from './TextArea';
+import { TextAreaField as TextAreaFieldOrigin } from './TextAreaField';
 import { Flex } from '../Flex';
 import { formatObjectKeys } from '../../../../stories/helpers';
 import { INPUT_STYLE } from '../../../theme/definitions';
 
-import readme from './TextArea.md';
+import readme from './TextAreaField.md';
 
 export default {
 	title: 'Basic Elements/Inputs',
-	component: TextAreaOrigin,
+	component: TextAreaFieldOrigin,
 	argTypes: {
 		variant: {
 			control: 'select',
@@ -22,7 +22,7 @@ export default {
 			},
 		},
 		onChange: {
-			description: 'Function to call when the TextArea is changed',
+			description: 'Function to call when the TextAreaField is changed',
 			table: {
 				type: { summary: null },
 			},
@@ -30,7 +30,7 @@ export default {
 		rows: { control: 'text', description: 'String with number of rows', type: 'string' },
 		required: {
 			control: 'boolean',
-			description: 'Makes the TextArea required',
+			description: 'Makes the TextAreaField required',
 			table: {
 				type: { summary: null },
 				defaultValue: { summary: 'false' },
@@ -41,11 +41,7 @@ export default {
 			control: 'text',
 		},
 		value: {
-			description: 'TextArea value',
-			control: 'text',
-		},
-		errorMsg: {
-			description: 'Error message',
+			description: 'TextAreaField value',
 			control: 'text',
 		},
 	},
@@ -56,11 +52,10 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof TextAreaOrigin>;
+} as ComponentMeta<typeof TextAreaFieldOrigin>;
 
-const Template: ComponentStory<typeof TextAreaOrigin> = (props) => {
+const Template: ComponentStory<typeof TextAreaFieldOrigin> = (props) => {
 	const [value, setValue] = useState(props.value); // eslint-disable-line
-	const [value1, setValue1] = useState('Wrong input!');
 	return (
 		<Flex
 			padding={['t64', 'b64', 'l24', 'r24']}
@@ -72,18 +67,10 @@ const Template: ComponentStory<typeof TextAreaOrigin> = (props) => {
 				}}
 				style={{ width: '100%' }}
 			>
-				<TextAreaOrigin
+				<TextAreaFieldOrigin
 					{...props}
 					onChange={(e) => { setValue(e.target.value); }}
 					value={value}
-				/>
-				<TextAreaOrigin
-					value={value1}
-					onChange={(e) => { setValue1(e.target.value); }}
-					required
-					rows={20}
-					errorMsg="Custom error message!"
-					placeholder="Custom placeholder"
 				/>
 				<button
 					type="submit"
@@ -96,22 +83,21 @@ const Template: ComponentStory<typeof TextAreaOrigin> = (props) => {
 	);
 };
 
-export const TextArea = Template.bind({});
+export const TextAreaField = Template.bind({});
 
-TextArea.parameters = {
+TextAreaField.parameters = {
 	controls: {
 		include: [
 			'variant',
 			'placeholder',
 			'rows',
-			'errorMsg',
 			'value',
 			'required',
 			'onChange',
 		],
 	},
 };
-TextArea.args = {
+TextAreaField.args = {
 	required: true,
 	variant: 'base',
 	rows: 20,
