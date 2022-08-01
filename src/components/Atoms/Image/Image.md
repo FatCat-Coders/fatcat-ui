@@ -1,13 +1,15 @@
 Simple Image component. Props that we can use for this component are:
 
 - `Animation`
+- `Background`
 - `Border`
+- `CustomCss`
 - `Hover`
+- `Overflow`
 - `Position`
 - `Responsive`
 - `Size`
 - `Space`
-- `Text`
 - `Transitions`
 - `Visibility`
 
@@ -22,7 +24,7 @@ First we simply start with importing component:
 import { Image } from 'fatcat-ui-library/components/Atoms/Image';
 
 // Asset import
-import img from '../../assets/canteen.jpeg';
+import img from '../../assets/images/canteen.jpeg';
 
 ```
 

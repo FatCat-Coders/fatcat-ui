@@ -1,5 +1,5 @@
 import React, { useState, useId } from 'react';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, CSSProp } from 'styled-components';
 
 import { Paragraph } from '../../Atoms/Paragraph';
 
@@ -18,6 +18,7 @@ export type TAccordion = {
 	content: string | React.ReactElement
 	contentColor?: keyof DefaultTheme['textColor']
 	useArrow?: boolean
+	css?: CSSProp
 }
 
 const Accordion: React.FC<TAccordion> = (props) => {
@@ -28,11 +29,12 @@ const Accordion: React.FC<TAccordion> = (props) => {
 		content,
 		contentColor,
 		useArrow,
+		css,
 	} = props;
 	const id = useId();
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<AccoridionWrapper>
+		<AccoridionWrapper css={css}>
 			<AccoridionTitle as={titleAs} textColor={titleColor}>
 				<button
 					id={`accordion-title-${id}`}
@@ -71,6 +73,7 @@ Accordion.defaultProps = {
 	useArrow: false,
 	titleColor: 'primary',
 	contentColor: 'primary',
+	css: null,
 };
 
 export default Accordion;

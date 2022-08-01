@@ -100,4 +100,5 @@ export const BUTTON_VARIANT = {
 			}
 		}
 	`,
+	noStyle: css``,
 };

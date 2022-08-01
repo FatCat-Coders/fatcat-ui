@@ -127,10 +127,11 @@ export default {
 
 const Template: ComponentStory<typeof GridOrigin> = ({ children, items, ...args }) => (
 	<GridOrigin {...args}>
-		{[...Array(parseInt(items, 10))].map(() => {
+		{[...Array(parseInt(items, 10))].map((i, index) => {
 			const randomWidth = widths[Math.floor(Math.random() * widths.length)];
 			return (
 				<Flex
+					key={index} // eslint-disable-line
 					height="100px"
 					width={randomWidth}
 					backgroundColor="yellow"

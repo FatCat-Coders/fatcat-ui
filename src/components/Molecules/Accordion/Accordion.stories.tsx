@@ -69,6 +69,13 @@ export default {
 				type: { summary: null },
 			},
 		},
+		css: {
+			control: 'text',
+			description: 'Additional custom CSS style',
+			table: {
+				type: { summary: null },
+			},
+		},
 	},
 	parameters: {
 		docs: {
@@ -92,7 +99,7 @@ const Template: ComponentStory<typeof AccordionOrigin> = args => (
 
 export const Accordion = Template.bind({});
 
-Accordion.parameters = { controls: { include: ['title', 'content', 'titleAs', 'titleColor', 'useArrow', 'contentColor'] } };
+Accordion.parameters = { controls: { include: ['title', 'content', 'titleAs', 'titleColor', 'useArrow', 'contentColor', 'css'] } };
 
 Accordion.args = {
 	titleAs: 'h2',

@@ -73,9 +73,9 @@ export default {
 				type: { summary: null },
 			},
 		},
-		customCss: {
+		css: {
 			control: 'text',
-			description: 'Custom CSS passed to parent component and applied to the childrens inside',
+			description: 'Additional custom CSS style',
 			table: {
 				type: { summary: null },
 			},
@@ -120,7 +120,7 @@ CookieBanner.parameters = {
 			'cookieName',
 			'cookieText',
 			'cookieTextColor',
-			'customCss',
+			'css',
 			'declineHoverColor',
 			'useCookieIcon',
 		],
@@ -133,7 +133,7 @@ CookieBanner.args = {
 	cookieName: 'cookie-consent',
 	cookieText: 'This website uses cookies to enhance the user experience.',
 	cookieTextColor: 'primary',
-	customCss: '',
+	css: '',
 	declineHoverColor: 'greyLight',
 	useCookieIcon: true,
 };
