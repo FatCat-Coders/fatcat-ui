@@ -3,26 +3,6 @@ import { TCookieStyle } from './CookieBanner';
 import { darken } from 'polished';
 
 export const CookieStyles = createGlobalStyle<TCookieStyle>`
-
-	.CookieConsent--container {
-		bottom: 0;
-		display: flex;
-		top: unset !important;
-		height: unset !important;
-		background-color: ${props => props.theme.color[props.backgroundColor]} !important;
-		padding: ${props => `0 ${props.theme.space.s40}`};
-
-		${props => props.theme.media.largeTablet} {
-			padding-left: ${props => props.theme.space.s32};
-			padding-right: ${props => props.theme.space.s32};
-		}
-
-		${props => props.theme.media.mobile} {
-			padding-left: ${props => props.theme.space.s20};
-			padding-right: ${props => props.theme.space.s20};
-		}
-	}
-
 	.CookieConsent--wrapper {
 		position: unset !important;
 		background: transparent !important;
@@ -84,6 +64,8 @@ export const CookieStyles = createGlobalStyle<TCookieStyle>`
 	.CookieConsent--decline-button {
 		background-color: transparent !important;
 		margin: 0 !important;
+		display: flex;
+		align-items: center;
 
 		&:hover {
 			svg {
@@ -97,5 +79,25 @@ export const CookieStyles = createGlobalStyle<TCookieStyle>`
 			right: 0;
 		}
 	}
-	${props => props.customCss}
+
+	.CookieConsent--container {
+		bottom: 0;
+		display: flex;
+		top: unset !important;
+		height: unset !important;
+		background-color: ${props => props.theme.color[props.backgroundColor]} !important;
+		padding: ${props => `0 ${props.theme.space.s40}`};
+
+		${props => props.theme.media.largeTablet} {
+			padding-left: ${props => props.theme.space.s32};
+			padding-right: ${props => props.theme.space.s32};
+		}
+
+		${props => props.theme.media.mobile} {
+			padding-left: ${props => props.theme.space.s20};
+			padding-right: ${props => props.theme.space.s20};
+		}
+
+		${props => props.css}
+	}
 `;

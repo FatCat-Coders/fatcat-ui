@@ -157,11 +157,8 @@ Checkbox.parameters = {
 Checkbox.args = {
 	afterText: 'Checkbox',
 	backgroundColor: 'primary',
-	css: undefined,
 	disabled: false,
-	id: undefined,
 	isIndeterminate: false,
-	onChange: undefined,
 	required: false,
 	size: 'medium',
 	value: false,
