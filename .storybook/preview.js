@@ -1,6 +1,7 @@
 import React from 'react';
 import { UIThemeProvider } from '../src/theme/theme';
 import GlobalStyle from '../src/components/Atoms/GlobalStyle';
+import '../stories/assets/fonts/stylesheet.css'
 
 export const parameters = {
 	actions: { argTypesRegex: "^on[A-Z].*" },

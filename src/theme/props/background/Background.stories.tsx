@@ -4,7 +4,7 @@ import { Wrapper } from '../../../components/Atoms/Wrapper';
 import { Flex } from '../../../components/Atoms/Flex';
 
 import readme from './Background.md';
-import colors from '../../../../stories/assets/colors.svg';
+import colors from '../../../../stories/assets/images/colors.svg';
 
 import { formatObjectKeys } from '../../../../stories/helpers';
 import { BACKGROUND_COLOR } from '../../../theme/definitions';
