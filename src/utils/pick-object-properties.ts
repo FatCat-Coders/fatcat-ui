@@ -1,11 +1,21 @@
-// @TODO Add typechecks
+import { CSSProp } from 'styled-components';
 
-export default function pickObjectProperties(object: Record<string, any>, values) {
-	return values.map(value => {
-		if (typeof value !== 'string') {
-			return object[Object.keys(value)[0]](Object.values(value)[0]);
+export type TProps = {
+	[key: string]: (args: unknown) => CSSProp | CSSProp
+}
+
+export default function pickObjectProperties(object: TProps, values) {
+	return values.reduce((acc, current) => {
+		if (typeof current !== 'string') {
+			Object.entries(current).forEach((entry) => {
+				const [key, value] = entry;
+				if (object[key]) {
+					acc.push(object[key](value));
+				}
+			});
+		} else {
+			acc.push(object[current]);
 		}
-
-		return object[value];
-	});
+		return acc;
+	}, []);
 }

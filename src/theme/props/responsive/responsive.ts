@@ -1,52 +1,35 @@
-import { css, DefaultTheme } from 'styled-components';
+import { css, DefaultTheme, CSSProp } from 'styled-components';
 
 // Helpers
 import pickObjectProperties from '../../../utils/pick-object-properties';
 
-import { SideSpacingValue } from '../space/space';
-
 type ResponsiveTypes = keyof DefaultTheme['responsive'];
 
-export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<Record<'padding' | 'margin', SideSpacingValue[]>> | Partial<Record<Exclude<ResponsiveTypes, 'padding' | 'margin'>, any>>)[];
+type TResponsiveObj = {
+	[key: ResponsiveTypes]: (args: string | number) => CSSProp | CSSProp
+}
+export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<TResponsiveObj>)[];
 
 export type ResponsiveProps = {
-	mobile?: ResponsiveTypePropCheck
-	tablet?: ResponsiveTypePropCheck
-	largeTablet?: ResponsiveTypePropCheck
-	desktop?: ResponsiveTypePropCheck
+	wideDesktop?: ResponsiveTypePropCheck
 	largeDesktop?: ResponsiveTypePropCheck
-	desktopStandard?: ResponsiveTypePropCheck
+	standardDesktop?: ResponsiveTypePropCheck
+	desktop?: ResponsiveTypePropCheck
+	largeTablet?: ResponsiveTypePropCheck
+	tablet?: ResponsiveTypePropCheck
+	mobile?: ResponsiveTypePropCheck
+	noHover?: ResponsiveTypePropCheck
 };
 
 export const responsive = css<ResponsiveProps>`
-	${props => props.largeDesktop && css`
-		${props.theme.media.largeDesktop} {
-			${pickObjectProperties(props.theme.responsive, props.largeDesktop)}
+	${props => Object.keys(props.theme.media).reduce((acc, key) => {
+		if (props[key]) {
+			acc.push(css`
+				${props.theme.media[key]} {
+					${pickObjectProperties(props.theme.responsive, props[key])}
+				}
+			`);
 		}
-	`}
-	${props => props.desktopStandard && css`
-		${props.theme.media.desktopStandard} {
-			${pickObjectProperties(props.theme.responsive, props.desktopStandard)}
-		}
-	`}
-	${props => props.desktop && css`
-		${props.theme.media.desktop} {
-			${pickObjectProperties(props.theme.responsive, props.desktop)}
-		}
-	`}
-	${props => props.largeTablet && css`
-		${props.theme.media.largeTablet} {
-			${pickObjectProperties(props.theme.responsive, props.largeTablet)}
-		}
-	`}
-	${props => props.tablet && css`
-		${props.theme.media.tablet} {
-			${pickObjectProperties(props.theme.responsive, props.tablet)}
-		}
-	`}
-	${props => props.mobile && css`
-		${props.theme.media.mobile} {
-			${pickObjectProperties(props.theme.responsive, props.mobile)}
-		}
-	`}
+		return acc;
+	}, [])}
 `;

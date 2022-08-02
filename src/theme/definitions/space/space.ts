@@ -2,10 +2,15 @@ import { DefaultTheme } from 'styled-components';
 
 export const SPACE = {
 	s0: '0px',
+	s2: '2px',
 	s4: '4px',
+	s6: '6px',
 	s8: '8px',
+	s10: '10px',
 	s12: '12px',
+	s14: '14px',
 	s16: '16px',
+	s18: '18px',
 	s20: '20px',
 	s24: '24px',
 	s28: '28px',
