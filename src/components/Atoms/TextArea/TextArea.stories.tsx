@@ -27,7 +27,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		rows: { control: 'text', description: 'String with number of rows', type: 'string' },
+		rows: { control: 'number', description: 'Number of rows' },
 		required: {
 			control: 'boolean',
 			description: 'Makes the TextArea required',
@@ -39,14 +39,23 @@ export default {
 		placeholder: {
 			description: 'Placeholder text',
 			control: 'text',
+			table: {
+				type: { summary: null },
+			},
 		},
 		value: {
 			description: 'TextArea value',
 			control: 'text',
+			table: {
+				type: { summary: null },
+			},
 		},
 		errorMsg: {
 			description: 'Error message',
 			control: 'text',
+			table: {
+				type: { summary: null },
+			},
 		},
 	},
 	parameters: {
@@ -68,7 +77,7 @@ const Template: ComponentStory<typeof TextAreaOrigin> = (props) => {
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
-					console.log('submitd!');
+					console.log('submitd!'); // eslint-disable-line
 				}}
 				style={{ width: '100%' }}
 			>

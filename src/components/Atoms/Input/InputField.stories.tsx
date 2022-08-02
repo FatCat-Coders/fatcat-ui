@@ -38,10 +38,16 @@ export default {
 		placeholder: {
 			description: 'Placeholder text',
 			control: 'text',
+			table: {
+				type: { summary: null },
+			},
 		},
 		value: {
 			description: 'Input value',
 			control: 'text',
+			table: {
+				type: { summary: null },
+			},
 		},
 	},
 	parameters: {
@@ -62,7 +68,7 @@ const Template: ComponentStory<typeof InputFieldOrigin> = (props) => {
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
-					console.log('submitd!');
+					console.log('submitd!'); // eslint-disable-line
 				}}
 				style={{ width: '100%' }}
 			>
