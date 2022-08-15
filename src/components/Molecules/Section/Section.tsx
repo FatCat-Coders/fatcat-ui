@@ -9,6 +9,7 @@ import {
 	ResponsiveProps,
 	SpaceProps,
 	VisibilityProps,
+	CustomCssProps,
 } from '../../../theme/props';
 
 // Local atoms
@@ -34,13 +35,15 @@ export type TSection =
 	& PositionProps
 	& ResponsiveProps
 	& SpaceProps
-	& VisibilityProps;
+	& VisibilityProps
+	& CustomCssProps;
 
 const Section: React.FC<TSection> = (props) => {
 	const {
 		as,
 		children,
 		backgroundColor,
+		backgroundColorHex,
 		backgroundColorOpacity,
 		backgroundGradient,
 		backgroundImage,
@@ -70,6 +73,7 @@ const Section: React.FC<TSection> = (props) => {
 		tablet,
 		width,
 		zIndex,
+		css,
 	} = props;
 
 	return (
@@ -77,6 +81,7 @@ const Section: React.FC<TSection> = (props) => {
 			as={as}
 			backgroundImage={backgroundImage}
 			backgroundColor={backgroundColor}
+			backgroundColorHex={backgroundColorHex}
 			backgroundColorOpacity={backgroundColorOpacity}
 			backgroundPosition={backgroundPosition}
 			backgroundSize={backgroundSize}
@@ -95,6 +100,7 @@ const Section: React.FC<TSection> = (props) => {
 			show={show}
 			edge={edge}
 			zIndex={zIndex}
+			css={css}
 		>
 			<SectionInnerWrapper
 				padding={padding}
