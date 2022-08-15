@@ -5,10 +5,10 @@ import { generalProps, GeneralProps } from '../../../theme/props';
 export type TWrapper = GeneralProps;
 
 export const Wrapper = styled('div') <TWrapper>`
-	width: 100%;
 	${generalProps}
 `;
 
 Wrapper.defaultProps = {
+	width: '100%',
 	initialDisplay: 'block',
 };

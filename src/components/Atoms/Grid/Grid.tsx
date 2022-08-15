@@ -8,7 +8,10 @@ import {
 export type TGrid = GridProps & GeneralProps;
 
 export const Grid = styled('div') <TGrid>`
-	width: 100%;
 	${grid}
 	${generalProps};
 `;
+
+Grid.defaultProps = {
+	width: '100%',
+};
