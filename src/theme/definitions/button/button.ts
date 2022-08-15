@@ -24,13 +24,13 @@ const buttonBase = css<{size: keyof typeof BUTTON_SIZE}>`
 `;
 
 export const BUTTON_VARIANT = {
-	primary: css<{ color: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
+	primary: css<{ buttonColor: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
 		border: none;
-		color: ${props => props.theme.buttonColor[props.color].text};
-		background: ${props => props.theme.buttonColor[props.color].default};
+		color: ${props => props.theme.buttonColor[props.buttonColor].text};
+		background: ${props => props.theme.buttonColor[props.buttonColor].default};
 		${buttonBase};
 		&:hover {
-			background: ${props => props.theme.buttonColor[props.color].hover};
+			background: ${props => props.theme.buttonColor[props.buttonColor].hover};
 		}
 		&:disabled {
 			cursor: not-allowed;
@@ -38,15 +38,15 @@ export const BUTTON_VARIANT = {
 			color: ${props => props.theme.buttonColor.disabled.text};
 		}
 	`,
-	secondary: css<{ color: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
-		color: ${props => props.theme.buttonColor[props.color].text};
+	secondary: css<{ buttonColor: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
+		color: ${props => props.theme.buttonColor[props.buttonColor].text};
 		background: ${props => props.theme.color.transparent};
-		border: 1px solid ${props => props.theme.buttonColor[props.color].default};
+		border: 1px solid ${props => props.theme.buttonColor[props.buttonColor].default};
 		${buttonBase};
 		&:hover {
 			color: ${props => props.theme.color.white};
-			background: ${props => props.theme.buttonColor[props.color].hover};
-			border-color: ${props => props.theme.buttonColor[props.color].hover};
+			background: ${props => props.theme.buttonColor[props.buttonColor].hover};
+			border-color: ${props => props.theme.buttonColor[props.buttonColor].hover};
 		}
 		&:disabled {
 			cursor: not-allowed;
@@ -55,12 +55,12 @@ export const BUTTON_VARIANT = {
 			color: ${props => props.theme.buttonColor.disabled.text};
 		}
 	`,
-	ghost: css<{ color: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
+	ghost: css<{ buttonColor: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
 		border: none;
-		color: ${props => props.theme.buttonColor[props.color].text};
+		color: ${props => props.theme.buttonColor[props.buttonColor].text};
 		${buttonBase};
 		&:hover {
-			background: ${props => props.theme.buttonColor[props.color].hover};
+			background: ${props => props.theme.buttonColor[props.buttonColor].hover};
 		}
 		&:disabled {
 			cursor: not-allowed;
@@ -68,9 +68,9 @@ export const BUTTON_VARIANT = {
 			color: ${props => props.theme.buttonColor.disabled.text};
 		}
 	`,
-	underline: css<{ color: typeof BUTTON_COLOR }>`
+	underline: css<{ buttonColor: typeof BUTTON_COLOR }>`
 		border: none;
-		color: ${props => props.theme.buttonColor[props.color].text};
+		color: ${props => props.theme.buttonColor[props.buttonColor].text};
 		background: ${props => props.theme.color.transparent};
 		position: relative;
 		padding: 0;
@@ -83,7 +83,7 @@ export const BUTTON_VARIANT = {
 			left: 0;
 			width: 0;
 			height: 1px;
-			background-color: ${props => props.theme.buttonColor[props.color].default};
+			background-color: ${props => props.theme.buttonColor[props.buttonColor].default};
 		}
 		&:hover {
 			&::before {
