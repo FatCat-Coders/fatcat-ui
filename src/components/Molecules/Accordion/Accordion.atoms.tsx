@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Wrapper } from '../../Atoms/Wrapper';
 import { Heading } from '../../Atoms/Heading';
 
-export const AccoridionTitle = styled(Heading)`
+export const AccordionTitle = styled(Heading)`
 	&:hover,
 	&:hover * {
 		cursor: pointer;
@@ -41,11 +41,11 @@ export const Plus = styled.span<{ isOpen: boolean }>`
 	}
 `;
 
-export const AccoridionWrapper = styled(Wrapper)`
+export const AccordionWrapper = styled(Wrapper)`
 	overflow: hidden;
 	border-bottom: 1px solid ${props => props.theme.color.grey};
 `;
 
-export const AccoridionContent = styled(Wrapper) <{ isOpen: boolean }>`
+export const AccordionContent = styled(Wrapper) <{ isOpen: boolean }>`
 	height: ${props => (props.isOpen ? 'auto' : 0)};
 `;

@@ -4,9 +4,9 @@ import { DefaultTheme, CSSProp } from 'styled-components';
 import { Paragraph } from '../../Atoms/Paragraph';
 
 import {
-	AccoridionContent,
-	AccoridionTitle,
-	AccoridionWrapper,
+	AccordionContent,
+	AccordionTitle,
+	AccordionWrapper,
 	Plus,
 	Arrow,
 } from './Accordion.atoms';
@@ -34,8 +34,8 @@ const Accordion: React.FC<TAccordion> = (props) => {
 	const id = useId();
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<AccoridionWrapper css={css}>
-			<AccoridionTitle as={titleAs} textColor={titleColor}>
+		<AccordionWrapper css={css}>
+			<AccordionTitle as={titleAs} textColor={titleColor}>
 				<button
 					id={`accordion-title-${id}`}
 					aria-controls={`accordion-content-${id}`}
@@ -54,8 +54,8 @@ const Accordion: React.FC<TAccordion> = (props) => {
 						</Arrow>
 					) : <Plus isOpen={isOpen} />}
 				</button>
-			</AccoridionTitle>
-			<AccoridionContent
+			</AccordionTitle>
+			<AccordionContent
 				id={`accordion-content-${id}`}
 				aria-labelledby={`accordion-title-${id}`}
 				isOpen={isOpen}
@@ -63,8 +63,8 @@ const Accordion: React.FC<TAccordion> = (props) => {
 				<Paragraph padding={['t16', 'r8', 'b16', 'l8']} textColor={contentColor}>
 					{content}
 				</Paragraph>
-			</AccoridionContent>
-		</AccoridionWrapper>
+			</AccordionContent>
+		</AccordionWrapper>
 	);
 };
 
