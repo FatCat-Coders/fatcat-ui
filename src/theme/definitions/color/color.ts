@@ -1,4 +1,8 @@
+import { darken } from 'polished';
+
 export const COLOR = {
+	primary: '#3D7FEB',
+	primaryLight: '#3D7FEBE6',
 	black: '#000000',
 	dark: '#0A0A0A',
 	blackHigh: '#030303',
@@ -11,6 +15,7 @@ export const COLOR = {
 	white50: 'rgba(255, 255, 255, 0.5)',
 	darkestGray: '#121212',
 	grey: '#BEBEBE',
+	greyLight: '#67727B',
 	darkerGrey: '#6B6B6B',
 	purple: '#5E1A6F',
 	purpleLight: '#755DB9',
@@ -21,6 +26,9 @@ export const COLOR = {
 	yellow10: 'rgba(255,184,45, 0.1)',
 	green: '#00FF00',
 	transparent: 'transparent',
+	disabled: '#E0E2EC',
+	disabledDark: '#A0A3AF',
+	warrning: '#DE3131',
 };
 
 export const LINK_COLOR = {
@@ -28,17 +36,51 @@ export const LINK_COLOR = {
 };
 
 export const BUTTON_COLOR = {
-	fcc: COLOR.purple,
+	disabled: {
+		default: COLOR.disabled,
+		text: COLOR.disabledDark,
+	},
+	primary: {
+		default: COLOR.primaryLight,
+		text: COLOR.white,
+		hover: COLOR.primary,
+		hoverText: COLOR.white,
+	},
+	secondary: {
+		default: COLOR.primary,
+		text: COLOR.primary,
+		hover: COLOR.primary,
+		hoverText: COLOR.white,
+	},
+	ghost: {
+		default: COLOR.transparent,
+		text: COLOR.black,
+		hover: COLOR.yellow10,
+		hoverText: COLOR.white,
+	},
+	white: {
+		default: COLOR.white,
+		text: COLOR.primary,
+		hover: darken(0.1, COLOR.white),
+		hoverText: COLOR.white,
+	},
+	underline: {
+		default: COLOR.primary,
+		text: COLOR.primary,
+	},
 };
 
 export const TEXT_COLOR = {
-	primary: COLOR.white,
+	primary: COLOR.primary,
 	secondary: COLOR.darkerGrey,
 	black: COLOR.blackLighter,
 	yellow: COLOR.yellow,
+	white: COLOR.white,
+	warrning: COLOR.warrning,
 };
 
 export const BACKGROUND_COLOR = {
+	primary: COLOR.primary,
 	transparent: COLOR.transparent,
 	grey: COLOR.grey,
 	backgroundUltraDark: COLOR.blackHigh,

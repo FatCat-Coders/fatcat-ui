@@ -6,7 +6,7 @@
  * Available font families
  */
 export const FONT_FAMILY = {
-	main: 'Circular Std',
+	main: 'Outfit',
 	secondary: 'Circular Std',
 };
 
@@ -20,7 +20,7 @@ export const FONT_SIZE = {
 	s64: '4rem',
 	s48: '3rem',
 	s42: '2.625rem',
-	s37: '2.3125rem',
+	s34: '2.125rem',
 	s32: '2rem',
 	s30: '1.875rem',
 	s28: '1.75rem',

@@ -1,32 +1,13 @@
-
 import { styled } from '../../utils/styled';
 import { DefaultTheme } from 'styled-components';
 
-import {
-	animation, AnimationProps,
-	hover, HoverProps,
-	position, PositionProps,
-	responsive, ResponsiveProps,
-	text, TextProps,
-	border, BorderProps,
-	background, BackgroundProps,
-	visibility, VisibilityProps,
-} from '../../theme/props';
+import { generalProps, GeneralProps } from '../../theme/props';
 
-export type TTable =
-	{
-		variant?: keyof DefaultTheme['tableStyle']
-	}
-	& AnimationProps
-	& BackgroundProps
-	& BorderProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& TextProps
-	& VisibilityProps;
+export type TTable = {
+	variant?: keyof DefaultTheme['tableStyle']
+} & GeneralProps;
 
-export const Table = styled('table')<TTable>`
+export const Table = styled('table') <TTable>`
 	thead th {
 		border-bottom: 5px solid ${props => props.theme.color.white10};
 		:nth-child(1) {
@@ -46,15 +27,8 @@ export const Table = styled('table')<TTable>`
 		padding: 20px 20px;
 	}
 
-	${props => props.variant && props.theme.tableStyle.[props.variant]};
-	${animation};
-	${background};
-	${border};
-	${position};
-	${text};
-	${visibility};
-	${hover};
-	${responsive};
+	${props => props.variant && props.theme.tableStyle[props.variant]};
+	${generalProps};
 `;
 
 Table.defaultProps = {
