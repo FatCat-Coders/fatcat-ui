@@ -8,11 +8,11 @@ import {
 export type TFlex = FlexProps & GeneralProps;
 
 export const Flex = styled('div') <TFlex>`
-	width: 100%;
 	${flex};
 	${generalProps};
 `;
 
 Flex.defaultProps = {
+	width: '100%',
 	initialDisplay: 'flex',
 };

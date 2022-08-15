@@ -25,7 +25,7 @@ export default {
 			description: 'Text inside the button (Just for demo purposes)',
 			type: 'string',
 		},
-		color: {
+		buttonColor: {
 			control: 'radio',
 			options: Object.keys(color),
 			description: `List of button colors: ${formatObjectKeys(color)}`,
@@ -74,7 +74,7 @@ const Template: ComponentStory<typeof ButtonOrigin> = ({ children, ...args }) =>
 
 export const Button = Template.bind({});
 
-Button.parameters = { controls: { include: ['variant', 'Content', 'color', 'disabled', 'size'] } };
+Button.parameters = { controls: { include: ['variant', 'Content', 'buttonColor', 'disabled', 'size'] } };
 Button.args = {
 	children: 'Button',
 	disabled: false,

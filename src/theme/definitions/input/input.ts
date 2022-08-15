@@ -21,7 +21,7 @@ export const INPUT_STYLE = {
 		outline: 0;
 		border-radius: 4px;
 		border: 1px solid ${props => props.theme.color.grey200};
-		padding: ${props => props.theme.space.s16};
+		padding: ${props => props.theme.space.s14} ${props => props.theme.space.s16};
 		color: ${props => props.theme.textColor.black100};
 		background: ${props => props.theme.textColor.white};
 		font-size: ${props => props.theme.fontSize.s16};
@@ -34,6 +34,7 @@ export const INPUT_STYLE = {
 		}
 
 		${props => props.customInput && css`
+			padding-top: ${props.theme.space.s16};
 			padding-bottom: ${props.theme.space.s12};
 
 			& ~ label {

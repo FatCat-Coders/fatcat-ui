@@ -7,6 +7,7 @@ import {
 	space, SpaceProps,
 	visibility, VisibilityProps,
 	position, PositionProps,
+	customCss, CustomCssProps,
 } from '../../../theme/props';
 
 export type TSectionInnerWrapper =
@@ -27,14 +28,15 @@ export const SectionInnerWrapper = styled('div')<TSectionInnerWrapper>`
 
 export type TSectionOuterWrapper =
 	{
-		sticky?: boolean,
-		overflow?: string,
+		sticky?: boolean
+		overflow?: string
 		edge?: boolean
 	}
 	& BackgroundProps
 	& PositionProps
 	& ResponsiveProps
-	& VisibilityProps;
+	& VisibilityProps
+	& CustomCssProps;
 
 export const SectionOuterWrapper = styled('section')<TSectionOuterWrapper>`
 	display: flex;
@@ -63,6 +65,7 @@ export const SectionOuterWrapper = styled('section')<TSectionOuterWrapper>`
 	${background};
 	${visibility};
 	${responsive};
+	${customCss}
 `;
 
 SectionOuterWrapper.defaultProps = {

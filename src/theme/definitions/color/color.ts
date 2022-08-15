@@ -1,3 +1,5 @@
+import { darken } from 'polished';
+
 export const COLOR = {
 	primary: '#3D7FEB',
 	primaryLight: '#3D7FEBE6',
@@ -56,6 +58,12 @@ export const BUTTON_COLOR = {
 		hover: COLOR.yellow10,
 		hoverText: COLOR.white,
 	},
+	white: {
+		default: COLOR.white,
+		text: COLOR.primary,
+		hover: darken(0.1, COLOR.white),
+		hoverText: COLOR.white,
+	},
 	underline: {
 		default: COLOR.primary,
 		text: COLOR.primary,
@@ -67,10 +75,12 @@ export const TEXT_COLOR = {
 	secondary: COLOR.darkerGrey,
 	black: COLOR.blackLighter,
 	yellow: COLOR.yellow,
+	white: COLOR.white,
 	warrning: COLOR.warrning,
 };
 
 export const BACKGROUND_COLOR = {
+	primary: COLOR.primary,
 	transparent: COLOR.transparent,
 	grey: COLOR.grey,
 	backgroundUltraDark: COLOR.blackHigh,

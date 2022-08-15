@@ -9,7 +9,7 @@ import { PolymorphicComponent } from '../../../utils/polymorphic-component';
 import { generalProps, GeneralProps } from '../../../theme/props';
 
 export type TButton = {
-	color?: keyof DefaultTheme['buttonColor'] | undefined
+	buttonColor?: keyof DefaultTheme['buttonColor'] | undefined
 	size?: keyof DefaultTheme['buttonSize']
 	variant?: keyof DefaultTheme['buttonVariant']
 } & GeneralProps;
@@ -30,12 +30,12 @@ export type ButtonComponent = PolymorphicComponent<ButtonProps>;
 export const Button: ButtonComponent = (props) => {
 	const { children, ...linkProps } = props;
 	const theme = useTheme();
-	const color = (!linkProps.color && theme.buttonColor[linkProps.variant]) ? linkProps.variant : linkProps.color;
-	return <ButtonBase {...linkProps} color={color}>{children}</ButtonBase>;
+	const color = (!linkProps.buttonColor && theme.buttonColor[linkProps.variant]) ? linkProps.variant : linkProps.buttonColor;
+	return <ButtonBase {...linkProps} buttonColor={color}>{children}</ButtonBase>;
 };
 
 Button.defaultProps = {
-	color: undefined,
+	buttonColor: undefined,
 	size: 'large',
 	variant: 'primary',
 };

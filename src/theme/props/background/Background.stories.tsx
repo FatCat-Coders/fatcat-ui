@@ -18,8 +18,9 @@ export default {
 			description: `List of colors: ${formatObjectKeys(BACKGROUND_COLOR)}`,
 			type: 'string',
 		},
+		backgroundColorHex: { control: 'color', description: 'String with css property', type: 'string' },
 		backgroundColorOpacity: { control: 'number', description: 'The number for RGBA opacity applied on background-color', type: 'number' },
-		backgroundImage: { control: 'text', description: 'Imported image in file', type: 'string' },
+		backgroundImage: { control: 'file', description: 'Imported image in file', type: 'string' },
 		backgroundRepeat: { control: 'text', description: 'String with css property', type: 'string' },
 		backgroundPosition: { control: 'text', description: 'String with css property', type: 'string' },
 		backgroundSize: { control: 'text', description: 'String with css property', type: 'string' },
@@ -73,4 +74,5 @@ Background.parameters = {
 };
 Background.args = {
 	backgroundColor: 'yellow',
+	backgroundSize: 'cover',
 };
