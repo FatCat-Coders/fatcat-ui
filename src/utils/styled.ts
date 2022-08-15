@@ -22,6 +22,7 @@ export const UIprops: string[] = [
 	'opacity',
 	'color',
 	'size',
+	'profile',
 ];
 
 export const styled = (ele: any) => styl(ele).withConfig({
