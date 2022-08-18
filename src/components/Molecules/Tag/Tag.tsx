@@ -1,5 +1,5 @@
 import React from 'react';
-import { DefaultTheme, useTheme, css } from 'styled-components';
+import { DefaultTheme, useTheme } from 'styled-components';
 
 import { Text } from '../../Atoms/Text';
 import { Button } from '../../Atoms/Button';
@@ -63,11 +63,6 @@ const Tag: React.FC<TTag> = (props) => {
 					alignItems="center"
 					hover={['pointer']}
 					marginLeft="s8"
-					css={css`
-						:focus {
-							border: 1px solid black;
-						}
-					`}
 				>
 					<svg
 						width="16"

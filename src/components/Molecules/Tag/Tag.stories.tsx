@@ -97,8 +97,8 @@ const showMsg = msg => toast(msg, {
 	position: toast.POSITION.TOP_CENTER,
 });
 
-const onClose = (name: string) => { showMsg(`🦄 ${name} is closed`); };
-const onClick = (name: string) => { showMsg(`🦄 ${name} is clicked`); };
+const onClose = (name: string) => { showMsg(`🦄 "${name}" is closed`); };
+const onClick = (name: string) => { showMsg(`🦄 "${name}" is clicked`); };
 
 const Template: ComponentStory<typeof TagOrigin> = args => (
 	<Wrapper>
