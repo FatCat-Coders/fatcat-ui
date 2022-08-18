@@ -1,43 +1,80 @@
 import React from 'react';
-import { TagWrapper, TTagWrapper } from './Tag.atoms';
+import { DefaultTheme, useTheme, css } from 'styled-components';
+
 import { Text } from '../../Atoms/Text';
+import { Button } from '../../Atoms/Button';
+
+import { TagWrapper, TTagWrapper, tagVariant } from './Tag.atoms';
 
 export type TTag = {
-	tagName: string;
-	onClose?: (tagName: string) => void;
-	onClick?: (tagName: string) => void;
+	name: string
+	content: string | React.ReactElement
+	onClose?: (name: string) => void
+	onClick?: (name: string) => void
+	buttonColor?: keyof DefaultTheme['color']
+	variant?: keyof typeof tagVariant
 } & TTagWrapper;
 
-const Tag:React.FC<TTag> = (props) => {
+const Tag: React.FC<TTag> = (props) => {
+	const theme = useTheme();
 	const {
-		tagName,
+		name,
+		content,
 		onClose,
 		onClick,
-		background,
-		textColor,
+		buttonColor,
+		variant,
+		...rest
 	} = props;
 
 	const handleClick = () => {
 		if (onClick) {
-			onClick(tagName);
+			onClick(name);
 		}
 	};
 
 	return (
-		<TagWrapper background={background} textColor={textColor}>
-			<Text onClick={handleClick}>{tagName}</Text>
+		<TagWrapper
+			as="span"
+			display="inline-flex"
+			alignItems="center"
+			width="auto"
+			textAlign="center"
+			marginRight="s12"
+			padding={['t8', 'r10', 'b8', 'l10']}
+			variant={variant}
+			{...rest}
+		>
+			<Text
+				onClick={handleClick}
+				textAlign="center"
+				whiteSpace="nowrap"
+				lineHeight="s100"
+			>
+				{content}
+			</Text>
 			{onClose && (
-				<button
+				<Button
 					type="button"
 					aria-roledescription="button"
-					onClick={() => onClose(tagName)}
+					onClick={() => onClose(name)}
+					variant="noStyle"
+					display="inline-flex"
+					alignItems="center"
+					hover={['pointer']}
+					marginLeft="s8"
+					css={css`
+						:focus {
+							border: 1px solid black;
+						}
+					`}
 				>
 					<svg
 						width="16"
 						height="16"
 						viewBox="0 0 16 16"
 						xmlns="http://www.w3.org/2000/svg"
-						fill="#B8BBC5"
+						fill={theme.color[buttonColor]}
 					>
 						<path
 							d="m8.5 7.097 2.806-2.806a.992.992 0 1 1 1.403 1.403L9.903 8.5l2.806 2.806a.992.992 0 1 1-1.403
@@ -45,7 +82,7 @@ const Tag:React.FC<TTag> = (props) => {
 							4.29L8.5 7.097Z"
 						/>
 					</svg>
-				</button>
+				</Button>
 			)}
 		</TagWrapper>
 	);
@@ -54,6 +91,8 @@ const Tag:React.FC<TTag> = (props) => {
 Tag.defaultProps = {
 	onClose: undefined,
 	onClick: undefined,
+	buttonColor: 'grey',
+	variant: 'base',
 };
 
 export default Tag;

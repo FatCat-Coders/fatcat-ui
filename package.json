@@ -73,6 +73,7 @@
     "react-cookie-consent": "^7.5.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-toastify": "^9.0.8",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },

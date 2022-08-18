@@ -1,19 +1,30 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ToastContainer, toast } from 'react-toastify';
+
 import { Wrapper } from '../../Atoms/Wrapper';
 
 import TagOrigin from './Tag';
 
 import readme from './Tag.md';
-import { COLOR, TEXT_COLOR } from '../../../theme/definitions/color/color';
+import { BACKGROUND_COLOR, TEXT_COLOR, COLOR } from '../../../theme/definitions/color/color';
+import { tagVariant } from './Tag.atoms';
 
 export default {
 	title: 'Building Elements/Tag',
 	component: TagOrigin,
 	argTypes: {
-		tagName: {
+		name: {
 			control: 'text',
 			description: 'Name of the tag',
+			type: 'string',
+			table: {
+				type: { summary: null },
+			},
+		},
+		content: {
+			control: 'text',
+			description: '`String` or `RecatComponent` to show inside of tag',
 			type: 'string',
 			table: {
 				type: { summary: null },
@@ -22,7 +33,6 @@ export default {
 		onClose: {
 			description: 'Function is called on click of close button with tag name as argument',
 			type: 'function',
-            defaultValue: undefined,
 			table: {
 				type: { summary: null },
 			},
@@ -30,16 +40,24 @@ export default {
 		onClick: {
 			description: 'Function is called on click of tag with tag name as argument',
 			type: 'function',
-            defaultValue: undefined,
 			table: {
 				type: { summary: null },
 			},
 		},
-		background: {
+		backgroundColor: {
 			control: 'select',
-            defaultValue: 'lightGrey',
-			options: Object.keys(COLOR),
+			options: Object.keys(BACKGROUND_COLOR),
 			description: 'Background color of tag',
+			type: { name: 'string' },
+			table: {
+				type: { summary: null },
+			},
+		},
+		buttonColor: {
+			control: 'select',
+			defaultValue: 'primary',
+			options: Object.keys(COLOR),
+			description: 'Close button color',
 			type: { name: 'string' },
 			table: {
 				type: { summary: null },
@@ -47,8 +65,18 @@ export default {
 		},
 		textColor: {
 			control: 'select',
-            defaultValue: 'primary',
+			defaultValue: 'primary',
 			options: Object.keys(TEXT_COLOR),
+			description: 'Text color of tag',
+			type: { name: 'string' },
+			table: {
+				type: { summary: null },
+			},
+		},
+		variant: {
+			control: 'select',
+			defaultValue: 'primary',
+			options: Object.keys(tagVariant),
 			description: 'Text color of tag',
 			type: { name: 'string' },
 			table: {
@@ -65,25 +93,46 @@ export default {
 	},
 } as ComponentMeta<typeof TagOrigin>;
 
+const showMsg = msg => toast(msg, {
+	position: toast.POSITION.TOP_CENTER,
+});
+
+const onClose = (name: string) => { showMsg(`🦄 ${name} is closed`); };
+const onClick = (name: string) => { showMsg(`🦄 ${name} is clicked`); };
+
 const Template: ComponentStory<typeof TagOrigin> = args => (
 	<Wrapper>
-		<TagOrigin tagName="Defaults" />
-		<TagOrigin tagName="Defaults with close button" onClose={tagname => tagname} />
+		<TagOrigin onClick={onClick} name="first_tag" content="Default" />
+		<TagOrigin onClick={onClick} name="second_tag" content="Defaults with close button" onClose={onClose} />
 		<TagOrigin {...args} />
+		<ToastContainer />
 	</Wrapper>
 );
 
 export const Tag = Template.bind({});
 
-const onClose = (tagName:string) => tagName;
-const onClick = (tagName:string) => tagName;
+Tag.parameters = {
+	controls: {
+		include: [
+			'name',
+			'content',
+			'onClick',
+			'onClose',
+			'backgroundColor',
+			'textColor',
+			'buttonColor',
+			'variant',
+		],
+	},
+};
 
 Tag.args = {
-	tagName: 'Javascript',
+	name: 'third_tag',
+	content: 'Javascript',
 	onClick,
 	onClose,
-	background: 'lightGrey',
+	// backgroundColor: 'lightGrey',
 	textColor: 'primary',
-} as ComponentStory<typeof TagOrigin>['args'];
-
-Tag.parameters = { controls: { include: ['tagName', 'onClick', 'onClose', 'background', 'textColor'] } };
+	variant: 'base',
+	buttonColor: 'grey',
+};

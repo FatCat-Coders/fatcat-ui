@@ -1,40 +1,31 @@
-import { styled } from '../../../utils/styled';
-import { DefaultTheme } from 'styled-components';
+import { css } from 'styled-components';
+import { styled as styl } from '../../../utils/styled';
+
+import {
+	flex, FlexProps,
+	generalProps, GeneralProps,
+} from '../../../theme/props';
 
 export type TTagWrapper = {
-	background?: keyof DefaultTheme['color'];
-	textColor?: keyof DefaultTheme['textColor'];
+	variant?: keyof typeof tagVariant
+} & FlexProps & GeneralProps;
+
+export const tagVariant = {
+	base: css`
+		background-color: ${props => props.theme.backgroundColor.lightGrey};
+	`,
+	pill: css`
+		background-color: ${props => props.theme.backgroundColor.lightGrey};
+		border-radius: 50px;
+	`,
+	borderPill: css`
+		border-radius: 50px;
+		border: 1px solid ${props => props.theme.color.black};
+	`,
 };
 
-export const TagWrapper = styled('div')<TTagWrapper>`
-	display: inline-flex;
-	flex-wrap: nowrap;
-	align-items: center;
-	color: ${props => props.theme.color[props.textColor]};
-	background:${props => props.background || props.theme.color.lightGrey};
-	padding: ${props => props.theme.space.s8} ${props => props.theme.space.s10};
-	width: auto;
-	text-align: center;
-	margin-right: ${props => props.theme.space.s12};
-	& > span {
-		margin: 0;
-		line-height: 1;
-		white-space: nowrap;
-		text-align: center;
-	}
-
-	& > button {
-		display: inline-flex;
-		align-items: center;
-		cursor: pointer;
-		border: none;
-		padding: 0;
-		margin-left: ${props => props.theme.space.s8};
-		background-color: inherit;
-	}
+export const TagWrapper = styl('div') <TTagWrapper>`
+	${props => props.variant && tagVariant[props.variant]};
+	${flex};
+	${generalProps};
 `;
-
-TagWrapper.defaultProps = {
-	background: 'lightGrey',
-	textColor: 'secondary',
-};

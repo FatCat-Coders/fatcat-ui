@@ -84,6 +84,7 @@ export const BACKGROUND_COLOR = {
 	primary: COLOR.primary,
 	transparent: COLOR.transparent,
 	grey: COLOR.grey,
+	lightGrey: COLOR.lightGrey,
 	backgroundUltraDark: COLOR.blackHigh,
 	backgroundDark: COLOR.dark,
 	background: COLOR.blackLow,
