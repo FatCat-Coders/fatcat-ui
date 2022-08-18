@@ -131,7 +131,6 @@ Tag.args = {
 	content: 'Javascript',
 	onClick,
 	onClose,
-	// backgroundColor: 'lightGrey',
 	textColor: 'primary',
 	variant: 'base',
 	buttonColor: 'grey',
