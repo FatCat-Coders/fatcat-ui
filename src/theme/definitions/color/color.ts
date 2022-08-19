@@ -33,7 +33,10 @@ export const COLOR = {
 };
 
 export const LINK_COLOR = {
-	primary: COLOR.yellow,
+	primary: {
+		default: COLOR.primary,
+		hover: darken(0.1, COLOR.primary),
+	},
 };
 
 export const BUTTON_COLOR = {

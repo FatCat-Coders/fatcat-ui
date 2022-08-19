@@ -7,6 +7,7 @@ import { formatObjectKeys } from '../../../../stories/helpers';
 import { LINK_STYLE } from '../../../theme/definitions';
 
 import readme from './Link.md';
+import { COLOR } from '../../../theme/definitions/color/color';
 
 export default {
 	title: 'Basic Elements/Link',
@@ -29,6 +30,28 @@ export default {
 		to: {
 			control: 'text',
 			description: 'The `to` or `href` attribute specifies the link\'s destination.',
+		},
+		withArrow: {
+			control: 'boolean',
+			description: 'When present, it specifies that the link should have an arrow.',
+			table: {
+				type: { summary: null },
+			},
+		},
+		disabled: {
+			control: 'boolean',
+			description: 'When link is disabled.',
+			table: {
+				type: { summary: null },
+			},
+		},
+		arrowColor: {
+			control: 'select',
+			options: Object.keys(COLOR),
+			description: 'The color of the arrow',
+			table: {
+				type: { summary: null },
+			},
 		},
 	},
 	parameters: {
@@ -54,5 +77,22 @@ const Template: ComponentStory<typeof LinkOrigin> = ({ children, ...args }) => (
 
 export const Link = Template.bind({});
 
-Link.parameters = { controls: { include: ['variant', 'Content', 'to'] } };
-Link.args = { children: 'FatCat Coders', variant: 'base', to: 'https://fatcatcoders.com' };
+Link.parameters = {
+	controls: {
+		include: [
+			'Content',
+			'arrowColor',
+			'to',
+			'variant',
+			'withArrow',
+			'disabled',
+		],
+	},
+};
+Link.args = {
+	children: 'FatCat Coders',
+	withArrow: false,
+	variant: 'base',
+	to: 'https://fatcatcoders.com',
+	disabled: false,
+};
