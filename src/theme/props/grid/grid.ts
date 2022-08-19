@@ -17,7 +17,6 @@ export type GridProps = {
 };
 
 export const grid = css<Partial<GridProps>>`
-	display: grid;
 	${props => props.alignItems && `align-items: ${props.alignItems}`};
 	${props => props.justifyContent && `justify-content: ${props.justifyContent}`};
 	${props => props.justifyItems && `justify-items: ${props.justifyItems}`};

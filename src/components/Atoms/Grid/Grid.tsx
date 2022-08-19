@@ -14,4 +14,6 @@ export const Grid = styled('div') <TGrid>`
 
 Grid.defaultProps = {
 	width: '100%',
+	display: 'grid',
+	initalDisplay: 'grid',
 };
