@@ -14,5 +14,6 @@ export const Flex = styled('div') <TFlex>`
 
 Flex.defaultProps = {
 	width: '100%',
+	display: 'flex',
 	initialDisplay: 'flex',
 };

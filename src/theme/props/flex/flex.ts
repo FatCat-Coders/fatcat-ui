@@ -13,7 +13,6 @@ export type FlexProps = {
 };
 
 export const flex = css<FlexProps>`
-	display: flex;
 	${props => props.flex && `flex: ${props.flex}`};
 	${props => props.direction && `flex-direction: ${props.direction}`};
 	${props => props.alignItems && `align-items: ${props.alignItems}`};
