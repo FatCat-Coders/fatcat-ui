@@ -25,16 +25,18 @@ const buttonBase = css<{size: keyof typeof BUTTON_SIZE}>`
 
 export const BUTTON_VARIANT = {
 	primary: css<{ buttonColor: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
-		border: none;
+		border: 1px solid ${props => props.theme.buttonColor[props.buttonColor].default};
 		color: ${props => props.theme.buttonColor[props.buttonColor].text};
 		background: ${props => props.theme.buttonColor[props.buttonColor].default};
 		${buttonBase};
 		&:hover {
 			background: ${props => props.theme.buttonColor[props.buttonColor].hover};
+			border-color: ${props => props.theme.buttonColor[props.buttonColor].hover};
 		}
 		&:disabled {
 			cursor: not-allowed;
 			background: ${props => props.theme.buttonColor.disabled.default};
+			border-color: ${props => props.theme.buttonColor.disabled.default};
 			color: ${props => props.theme.buttonColor.disabled.text};
 		}
 	`,
@@ -56,20 +58,22 @@ export const BUTTON_VARIANT = {
 		}
 	`,
 	ghost: css<{ buttonColor: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
-		border: none;
+		border: 1px solid ${props => props.theme.color.transparent};
 		color: ${props => props.theme.buttonColor[props.buttonColor].text};
 		${buttonBase};
 		&:hover {
 			background: ${props => props.theme.buttonColor[props.buttonColor].hover};
+			border-color: ${props => props.theme.buttonColor[props.buttonColor].hover};
 		}
 		&:disabled {
 			cursor: not-allowed;
 			background: ${props => props.theme.buttonColor.disabled.default};
+			border-color: ${props => props.theme.buttonColor.disabled.default};
 			color: ${props => props.theme.buttonColor.disabled.text};
 		}
 	`,
 	underline: css<{ buttonColor: typeof BUTTON_COLOR }>`
-		border: none;
+		border: 1px solid ${props => props.theme.color.transparent};
 		color: ${props => props.theme.buttonColor[props.buttonColor].text};
 		background: ${props => props.theme.color.transparent};
 		position: relative;
@@ -93,6 +97,7 @@ export const BUTTON_VARIANT = {
 		&:disabled {
 			cursor: not-allowed;
 			background: ${props => props.theme.buttonColor.disabled.default};
+			border-color: ${props => props.theme.buttonColor.disabled.default};
 			color: ${props => props.theme.buttonColor.disabled.text};
 			&::before {
 				width: 100%;
