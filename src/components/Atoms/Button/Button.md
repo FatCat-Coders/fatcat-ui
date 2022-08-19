@@ -114,7 +114,7 @@ and then simply use it in your code with the variaton you already provided in th
 ```jsx
 <Button
 	variant="some-variant"
-	color="some-color"
+	buttonColor="some-color"
 	size="some-size"
 >
 	Button

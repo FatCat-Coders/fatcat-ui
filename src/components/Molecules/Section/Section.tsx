@@ -9,6 +9,7 @@ import {
 	ResponsiveProps,
 	SpaceProps,
 	VisibilityProps,
+	CustomCssProps,
 } from '../../../theme/props';
 
 // Local atoms
@@ -20,7 +21,7 @@ export type TSection =
 		children: React.ReactNode
 		edge?: boolean
 		iDesktop?: ResponsiveTypePropCheck
-		iDesktopStandard?: ResponsiveTypePropCheck
+		iStandardDesktop?: ResponsiveTypePropCheck
 		iLargeDesktop?: ResponsiveTypePropCheck
 		iLargeTablet?: ResponsiveTypePropCheck
 		iMobile?: ResponsiveTypePropCheck
@@ -34,13 +35,15 @@ export type TSection =
 	& PositionProps
 	& ResponsiveProps
 	& SpaceProps
-	& VisibilityProps;
+	& VisibilityProps
+	& CustomCssProps;
 
 const Section: React.FC<TSection> = (props) => {
 	const {
 		as,
 		children,
 		backgroundColor,
+		backgroundColorHex,
 		backgroundColorOpacity,
 		backgroundGradient,
 		backgroundImage,
@@ -48,11 +51,11 @@ const Section: React.FC<TSection> = (props) => {
 		backgroundRepeat,
 		backgroundSize,
 		desktop,
-		desktopStandard,
+		standardDesktop,
 		edge,
 		hide,
 		iDesktop,
-		iDesktopStandard,
+		iStandardDesktop,
 		iLargeDesktop,
 		iLargeTablet,
 		iMobile,
@@ -70,6 +73,7 @@ const Section: React.FC<TSection> = (props) => {
 		tablet,
 		width,
 		zIndex,
+		css,
 	} = props;
 
 	return (
@@ -77,6 +81,7 @@ const Section: React.FC<TSection> = (props) => {
 			as={as}
 			backgroundImage={backgroundImage}
 			backgroundColor={backgroundColor}
+			backgroundColorHex={backgroundColorHex}
 			backgroundColorOpacity={backgroundColorOpacity}
 			backgroundPosition={backgroundPosition}
 			backgroundSize={backgroundSize}
@@ -86,7 +91,7 @@ const Section: React.FC<TSection> = (props) => {
 			sticky={sticky}
 			overflow={overflow}
 			desktop={desktop}
-			desktopStandard={desktopStandard}
+			standardDesktop={standardDesktop}
 			largeDesktop={largeDesktop}
 			largeTablet={largeTablet}
 			mobile={mobile}
@@ -95,6 +100,7 @@ const Section: React.FC<TSection> = (props) => {
 			show={show}
 			edge={edge}
 			zIndex={zIndex}
+			css={css}
 		>
 			<SectionInnerWrapper
 				padding={padding}
@@ -102,7 +108,7 @@ const Section: React.FC<TSection> = (props) => {
 				scale={scale}
 				width={width}
 				desktop={iDesktop}
-				desktopStandard={iDesktopStandard}
+				standardDesktop={iStandardDesktop}
 				largeDesktop={iLargeDesktop}
 				largeTablet={iLargeTablet}
 				mobile={iMobile}
@@ -126,7 +132,7 @@ Section.defaultProps = {
 	iLargeTablet: null,
 	iDesktop: null,
 	iLargeDesktop: null,
-	iDesktopStandard: null,
+	iStandardDesktop: null,
 };
 
 export default Section;

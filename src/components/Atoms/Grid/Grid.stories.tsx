@@ -59,6 +59,63 @@ export default {
 				type: { summary: null },
 			},
 		},
+
+		rowGap: {
+			control: 'text',
+			description: 'String with css property',
+			type: 'string',
+			table: {
+				type: { summary: null },
+			},
+		},
+		grid: {
+			control: 'text',
+			description: 'String with css property',
+			type: 'string',
+			table: {
+				type: { summary: null },
+			},
+		},
+		gridTemplateAreas: {
+			control: 'text',
+			description: 'String with css property',
+			type: 'string',
+			table: {
+				type: { summary: null },
+			},
+		},
+		gridTemplateRows: {
+			control: 'text',
+			description: 'String with css property',
+			type: 'string',
+			table: {
+				type: { summary: null },
+			},
+		},
+		gridAutoColumns: {
+			control: 'text',
+			description: 'String with css property',
+			type: 'string',
+			table: {
+				type: { summary: null },
+			},
+		},
+		gridAutoFlow: {
+			control: 'text',
+			description: 'String with css property',
+			type: 'string',
+			table: {
+				type: { summary: null },
+			},
+		},
+		gridAutoRows: {
+			control: 'text',
+			description: 'String with css property',
+			type: 'string',
+			table: {
+				type: { summary: null },
+			},
+		},
 	},
 	parameters: {
 		docs: {
@@ -71,10 +128,11 @@ export default {
 
 const Template: ComponentStory<typeof GridOrigin> = ({ children, items, ...args }) => (
 	<GridOrigin {...args}>
-		{[...Array(parseInt(items, 10))].map(() => {
+		{[...Array(parseInt(items, 10))].map((i, index) => {
 			const randomWidth = widths[Math.floor(Math.random() * widths.length)];
 			return (
 				<Flex
+					key={index} // eslint-disable-line
 					height="100px"
 					width={randomWidth}
 					backgroundColor="yellow"
@@ -99,6 +157,13 @@ Grid.parameters = {
 			'justifyItems',
 			'gridTemplateColumns',
 			'gap (default: 16px)',
+			'rowGap',
+			'grid',
+			'gridTemplateAreas',
+			'gridTemplateRows',
+			'gridAutoColumns',
+			'gridAutoFlow',
+			'gridAutoRows',
 		],
 	},
 };

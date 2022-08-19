@@ -11,7 +11,7 @@ import { ULLIST_STYLE, COLOR } from '../../../theme/definitions';
 import readme from './UlList.md';
 
 export default {
-	title: 'Basic Elements/Lists/UlList',
+	title: 'Basic Elements/Lists',
 	component: UlListOrigin,
 	argTypes: {
 		variant: {
@@ -53,7 +53,7 @@ const Template: ComponentStory<typeof UlListOrigin> = ({ ...args }) => (
 
 );
 
-export const ULList = Template.bind({});
+export const UlList = Template.bind({});
 
-ULList.parameters = { controls: { include: ['variant', 'bulletColor'] } };
-ULList.args = { variant: 'base' };
+UlList.parameters = { controls: { include: ['variant', 'bulletColor'] } };
+UlList.args = { variant: 'base' };

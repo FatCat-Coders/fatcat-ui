@@ -26,11 +26,13 @@ import {
 	TABLE_STYLE,
 	TEXT_COLOR,
 	ULLIST_STYLE,
+	MEDIA_MOBILE,
 } from './definitions';
 import { HOVER_BEHAVIORS, RESPONSIVE_BEHAVIORS, TEXT_SIZE } from './styles';
 import { SideSpacingTypesValue } from './props/space/space';
 
 export interface FatCatTheme {
+	useMobileFirst: boolean
 	animation: typeof ANIMATIONS
 	backgroundColor: typeof BACKGROUND_COLOR
 	buttonColor: typeof BUTTON_COLOR
@@ -45,7 +47,8 @@ export interface FatCatTheme {
 	lineHeight: typeof LINE_HEIGHT
 	linkColor: typeof LINK_COLOR
 	linkStyle: typeof LINK_STYLE
-	media: typeof MEDIA,
+	media: typeof MEDIA
+	mediaMobile: typeof MEDIA_MOBILE
 	responsive: typeof RESPONSIVE_BEHAVIORS
 	screenRatio: typeof SCREEN_RATIO
 	sectionWidth: typeof SECTION_WIDTH
@@ -60,6 +63,7 @@ export interface FatCatTheme {
 }
 
 const defaultTheme: FatCatTheme = {
+	useMobileFirst: false,
 	animation: ANIMATIONS,
 	backgroundColor: BACKGROUND_COLOR,
 	buttonColor: BUTTON_COLOR,
@@ -75,6 +79,7 @@ const defaultTheme: FatCatTheme = {
 	linkColor: LINK_COLOR,
 	linkStyle: LINK_STYLE,
 	media: MEDIA,
+	mediaMobile: MEDIA_MOBILE,
 	responsive: RESPONSIVE_BEHAVIORS,
 	screenRatio: SCREEN_RATIO,
 	sectionWidth: SECTION_WIDTH,
@@ -88,7 +93,7 @@ const defaultTheme: FatCatTheme = {
 };
 
 interface UIThemeProviderI {
-	theme?: any
+	theme?: Partial<FatCatTheme>
 	children: React.ReactNode
 }
 
@@ -97,8 +102,12 @@ export const UIThemeProvider: React.FC<UIThemeProviderI> = ({ children, theme })
 	if (theme && !isObjectEmpty(theme)) {
 		mergedTheme = deepmerge(defaultTheme, theme);
 	}
-
-	return <ThemeProvider theme={mergedTheme || defaultTheme}>{children}</ThemeProvider>;
+	const newTheme = mergedTheme || defaultTheme;
+	// TODO: maybe change locgic for this breakpoint change
+	if (newTheme.useMobileFirst) {
+		newTheme.media = newTheme.mediaMobile;
+	}
+	return <ThemeProvider theme={newTheme}>{children}</ThemeProvider>;
 };
 
 UIThemeProvider.defaultProps = {

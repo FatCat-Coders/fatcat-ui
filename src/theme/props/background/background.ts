@@ -4,6 +4,7 @@ import { rgba } from 'polished';
 
 export type BackgroundProps = {
 	backgroundColor?: keyof DefaultTheme['backgroundColor']
+	backgroundColorHex?: Properties['backgroundColor']
 	backgroundColorOpacity?: number
 	backgroundImage?: string
 	backgroundRepeat?: Properties['backgroundRepeat']
@@ -19,6 +20,7 @@ export const background = css<BackgroundProps>`
 	${props => props.backgroundColor && props.theme.backgroundColor[props.backgroundColor] && `background-color: ${props.backgroundColorOpacity
 		? rgba(props.theme.backgroundColor[props.backgroundColor], props.backgroundColorOpacity)
 		: props.theme.backgroundColor[props.backgroundColor]};`}
+	${props => props.backgroundColorHex && `background-color: ${props.backgroundColorHex};`}
 	${props => props.backgroundImage && `background-image: url(${props.backgroundImage});`}
 	${props => props.backgroundPosition && `background-position: ${props.backgroundPosition}`};
 	${props => props.backgroundSize && `background-size: ${props.backgroundSize}`};

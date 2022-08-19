@@ -1,18 +1,29 @@
-The Input tag specifies an input field where the user can enter data. Props that we can use for this component are:
+<br />
+
+## Input
+The Input tag specifies an input field where the user can enter data.
+This is our custom styled input component already labeled with label.
+Props that we can use for this component are:
 
 - `Animation`
+- `Background`
 - `Border`
+- `CustomCss`
 - `Hover`
+- `Overflow`
 - `Position`
 - `Responsive`
 - `Size`
 - `Space`
 - `Text`
+- `Transitions`
 - `Visibility`
 
 listed in `Element Props` section and additionally:
 
 - `variant`
+
+we can also use all html input attributes for this component such as: `placholder`, `type`, etc.
 
 ## 	Styling
 
@@ -21,6 +32,9 @@ For better reusability, we define our style in the theme provider and then we us
 - first we add some styles
 
 ```jsx
+/**
+ * Also applied to the textarea element
+ */
 const INPUT_STYLE = {
 	base: css`
 		appearance: none;
@@ -96,7 +110,10 @@ and then simply use it in your code.
 	backgroundColor="backgroundUltraDark"
 	padding={['t64', 'b64', 'l24', 'r24']}
 >
-	<InputOrigin />
+	<Input
+		onChange={(e) => { setValue(e.target.value); }}
+		value={value}
+	/>
 </Flex>
 ```
 

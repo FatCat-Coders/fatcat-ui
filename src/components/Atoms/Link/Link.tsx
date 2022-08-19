@@ -5,44 +5,20 @@ import { DefaultTheme } from 'styled-components';
 import { PolymorphicComponent } from '../../../utils/polymorphic-component';
 
 // Theme
-import {
-	animation, AnimationProps,
-	hover, HoverProps,
-	responsive, ResponsiveProps,
-	space, SpaceProps,
-	text, TextProps,
-	position, PositionProps,
-	visibility, VisibilityProps,
-	transition, TransitionsProps,
-} from '../../../theme/props';
+import { generalProps, GeneralProps } from '../../../theme/props';
 
 export type TLink =
 	{
-		disabled?: boolean;
-		withArrow?: boolean;
-		arrowColor?: keyof DefaultTheme['color'];
-		variant?: keyof DefaultTheme['linkStyle'];
-	}
-	& AnimationProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& SpaceProps
-	& TextProps
-	& TransitionsProps
-	& VisibilityProps;
+		disabled?: boolean
+		withArrow?: boolean
+		arrowColor?: keyof DefaultTheme['color']
+		variant?: keyof DefaultTheme['linkStyle']
+	} & GeneralProps;
 
-export const LinkBase = styled('a')<TLink>`
+export const LinkBase = styled('a') <TLink>`
 	cursor: pointer;
 	${props => props.variant && props.theme.linkStyle[props.variant]};
-	${animation};
-	${position};
-	${space};
-	${text};
-	${visibility};
-	${transition}
-	${hover};
-	${responsive};
+	${generalProps};
 `;
 
 const Arrow = styled('i')<{arrowColor?:keyof DefaultTheme['color']}>`
@@ -56,7 +32,7 @@ const Arrow = styled('i')<{arrowColor?:keyof DefaultTheme['color']}>`
 	margin-left: 0.6em;
 `;
 
-export type LinkProps = Omit<JSX.IntrinsicElements['a'], 'type'> & Tlink;
+export type LinkProps = Omit<JSX.IntrinsicElements['a'], 'type'> & TLink;
 export type LinkComponent = PolymorphicComponent<LinkProps>;
 
 export const Link: LinkComponent = (props) => {
@@ -64,6 +40,7 @@ export const Link: LinkComponent = (props) => {
 		children, to, withArrow, arrowColor, ...linkProps
 	} = props;
 	return (
+		// eslint-disable-next-line
 		<LinkBase href={to} to={props.as ? to : undefined} {...linkProps}>
 			{children}
 			{withArrow && <Arrow arrowColor={arrowColor} />}

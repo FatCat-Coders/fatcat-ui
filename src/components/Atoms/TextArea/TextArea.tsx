@@ -1,53 +1,58 @@
-import { styled } from '../../../utils/styled';
-import { DefaultTheme } from 'styled-components';
-
-import {
-	animation, AnimationProps,
-	border, BorderProps,
-	hover, HoverProps,
-	position, PositionProps,
-	responsive, ResponsiveProps,
-	size, SizeProps,
-	space, SpaceProps,
-	text, TextProps,
-	visibility, VisibilityProps,
-} from '../../../theme/props';
+import React, { useId } from 'react';
+import { Wrapper } from '../Wrapper';
+import { Text } from '../Text';
+import { TextAreaField, TTextAreaField } from './TextAreaField';
+import { Label } from '../Label';
 
 export type TTextArea =
 	{
-		variant?: keyof DefaultTheme['inputStyle']
+		id?: string
+		placeholder?: string
+		errorMsg?: string
 	}
-	& AnimationProps
-	& BorderProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& SizeProps
-	& SpaceProps
-	& TextProps
-	& VisibilityProps;
+	& TTextAreaField
+	& React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-export const TextArea = styled('textarea') <TTextArea>`
-	resize: none;
-	width: 100%;
-	&::placeholder {
-		color: ${props => props.theme.color.white};
-        opacity: 50%;
-		text-transform: uppercase;
-	}
-
-	${props => props.variant && props.theme.inputStyle[props.variant]};
-	${animation};
-	${border};
-	${position};
-	${size};
-	${space};
-	${text};
-	${visibility};
-	${hover};
-	${responsive};
-`;
+export const TextArea: React.FC<TTextArea> = (props) => {
+	const {
+		id,
+		placeholder,
+		errorMsg,
+		...restProps
+	} = props;
+	const generatedId = useId();
+	const inputId = id || generatedId;
+	return (
+		<Wrapper
+			position="relative"
+		>
+			<TextAreaField
+				{...restProps}
+				id={inputId}
+				placeholder=" "
+				errorMsg={errorMsg}
+				customInput
+			/>
+			<Label htmlFor={inputId}>{placeholder}</Label>
+			{errorMsg && (
+				<Text
+					display="block"
+					textColor="warrning"
+					position="absolute"
+					bottom="0px"
+					lineHeight="s100"
+					fontSize="s12"
+					css="padding: 4px 13px;"
+				>
+					{errorMsg}
+				</Text>
+			)}
+		</Wrapper>
+	);
+};
 
 TextArea.defaultProps = {
-	variant: 'base',
+	id: null,
+	placeholder: null,
+	errorMsg: null,
 };

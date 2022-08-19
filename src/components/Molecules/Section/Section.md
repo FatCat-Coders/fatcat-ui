@@ -10,11 +10,11 @@ Our Section component that we use as container layout in our project. It's made 
 - `backgroundRepeat`
 - `backgroundSize`
 - `desktop`
-- `desktopStandard`
+- `standardDesktop`
 - `$edge`
 - `hide`
 - `iDesktop`
-- `iDesktopStandard`
+- `iStandardDesktop`
 - `iLargeDesktop`
 - `iLargeTablet`
 - `iMobile`

@@ -51,7 +51,7 @@ export default css`
 		border-collapse: collapse;
 		border-spacing: 0;
 	}
-	
+
 	html {
 		box-sizing: border-box;
 	}
@@ -79,22 +79,22 @@ export default css`
 		-moz-appearance:    none;
 		appearance:         none;
 	}
-	
+
 	*, *:before, *:after {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-rendering: optimizeLegibility;
 		user-select: none;
 	}
-	
+
 	p, h1, h2, h3, h4, h5, h6, blockquote, pre, ul, ol, li, table, tr, th, td, input, textarea, span, code, .selectable {
 		user-select: text;
 	}
-	
+
 	*:focus {
 	    outline: none;
 	}
-	textarea:focus, input:focus{
+	textarea:focus, input:focus {
 	    outline: none;
 	}
 `;

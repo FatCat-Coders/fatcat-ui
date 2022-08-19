@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Image as ImageOrigin } from './Image';
 import { Flex } from '../Flex';
 
-import img from '../../../../stories/assets/canteen.jpeg';
+import img from '../../../../stories/assets/images/canteen.jpeg';
 
 import readme from './Image.md';
 
