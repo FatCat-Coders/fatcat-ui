@@ -12,6 +12,7 @@ export type TLink =
 		disabled?: boolean
 		withArrow?: boolean
 		arrowColor?: keyof DefaultTheme['color']
+		linkColor?: keyof DefaultTheme['linkColor'] | undefined
 		variant?: keyof DefaultTheme['linkStyle']
 	} & GeneralProps;
 
@@ -50,6 +51,7 @@ export const Link: LinkComponent = (props) => {
 
 Link.defaultProps = {
 	variant: 'base',
+	linkColor: 'primary',
 	disabled: false,
 	withArrow: false,
 	arrowColor: undefined,

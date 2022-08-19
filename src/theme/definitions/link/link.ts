@@ -1,28 +1,26 @@
 import { css } from 'styled-components';
+import { LINK_COLOR } from '../color/color';
 
-const BASE = css<{ disabled?: boolean }>`
-	color: ${props => props.theme.color.grey};
+const BASE = css<{ disabled?: boolean, linkColor?: typeof LINK_COLOR }>`
+	color: ${props => props.theme.linkColor[props.linkColor].default};
 	width: fit-content;
-	text-decoration: none;
 	&:hover {
-		color: ${props => props.theme.color.primary};
+		color: ${props => props.theme.linkColor[props.linkColor].hover};
 	}
-	${props =>
-		props.disabled &&
-		css`
-			cursor: not-allowed;
-			pointer-events: none;
-			color: ${props => props.theme.color.darkerGrey};
-		`}
+	${props => props.disabled && css`
+		cursor: not-allowed;
+		pointer-events: none;
+		color: ${props => props.theme.color.darkerGrey};
+	`}
 `;
 
 export const LINK_STYLE = {
 	base: css`
+		text-decoration: none;
 		${BASE}
 	`,
 	underline: css`
-		${BASE}
-		color: -webkit-link;
 		text-decoration: underline;
+		${BASE}
 	`,
 };

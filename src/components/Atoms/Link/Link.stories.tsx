@@ -38,6 +38,13 @@ export default {
 				type: { summary: null },
 			},
 		},
+		disabled: {
+			control: 'boolean',
+			description: 'When link is disabled.',
+			table: {
+				type: { summary: null },
+			},
+		},
 		arrowColor: {
 			control: 'select',
 			options: Object.keys(COLOR),
@@ -61,7 +68,6 @@ const Template: ComponentStory<typeof LinkOrigin> = ({ children, ...args }) => (
 		padding={['t64', 'b64']}
 	>
 		<LinkOrigin
-			fontSize="s64"
 			{...args}
 		>
 			{children}
@@ -71,5 +77,22 @@ const Template: ComponentStory<typeof LinkOrigin> = ({ children, ...args }) => (
 
 export const Link = Template.bind({});
 
-Link.parameters = { controls: { include: ['variant', 'Content', 'to', 'withArrow', 'arrowColor'] } };
-Link.args = { children: 'FatCat Coders', variant: 'base', to: 'https://fatcatcoders.com' };
+Link.parameters = {
+	controls: {
+		include: [
+			'Content',
+			'arrowColor',
+			'to',
+			'variant',
+			'withArrow',
+			'disabled',
+		],
+	},
+};
+Link.args = {
+	children: 'FatCat Coders',
+	withArrow: false,
+	variant: 'base',
+	to: 'https://fatcatcoders.com',
+	disabled: false,
+};
