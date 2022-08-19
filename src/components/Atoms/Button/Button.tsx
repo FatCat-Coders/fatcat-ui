@@ -28,10 +28,10 @@ export type ButtonProps = Omit<JSX.IntrinsicElements['button'], 'type'> & TButto
 export type ButtonComponent = PolymorphicComponent<ButtonProps>;
 
 export const Button: ButtonComponent = (props) => {
-	const { children, ...linkProps } = props;
+	const { children, buttonColor, ...buttonProps } = props;
 	const theme = useTheme();
-	const color = (!linkProps.buttonColor && theme.buttonColor[linkProps.variant]) ? linkProps.variant : linkProps.buttonColor;
-	return <ButtonBase {...linkProps} buttonColor={color}>{children}</ButtonBase>;
+	const color = (!buttonColor && theme.buttonColor[buttonProps.variant]) ? buttonProps.variant : buttonColor;
+	return <ButtonBase {...buttonProps} buttonColor={color}>{children}</ButtonBase>;
 };
 
 Button.defaultProps = {
