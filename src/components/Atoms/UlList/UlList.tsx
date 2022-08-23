@@ -11,9 +11,8 @@ export type TUlList = {
 export const UlList = styled('ul') <TUlList>`
 	list-style: none;
 	padding-left: ${props => props.theme.space.s24};
-
 	> li {
-		position: relative;
+		display: flex;
 	}
 
 	${props => props.variant && props.theme.ullistStyle[props.variant]};
@@ -23,4 +22,5 @@ export const UlList = styled('ul') <TUlList>`
 UlList.defaultProps = {
 	variant: 'base',
 	bulletColor: 'black',
+	textColor: 'primary',
 };

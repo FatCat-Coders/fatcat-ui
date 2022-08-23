@@ -6,7 +6,7 @@ import { Text } from '../Text';
 import { Wrapper } from '../Wrapper';
 
 import { formatObjectKeys } from '../../../../stories/helpers';
-import { OLLIST_STYLE } from '../../../theme/definitions';
+import { OLLIST_STYLE, COLOR } from '../../../theme/definitions';
 
 import readme from './OlList.md';
 
@@ -23,6 +23,12 @@ export default {
 				defaultValue: { summary: 'base' },
 			},
 		},
+		bulletColor: {
+			control: 'select',
+			options: Object.keys(COLOR),
+			description: `List of colors: ${formatObjectKeys(COLOR)}`,
+			type: 'string',
+		},
 	},
 	parameters: {
 		docs: {
@@ -35,7 +41,6 @@ export default {
 
 const Template: ComponentStory<typeof OlListOrigin> = ({ ...args }) => (
 	<Wrapper
-		backgroundColor="backgroundUltraDark"
 		padding={['t64', 'b64', 'l24', 'r24']}
 	>
 		<OlListOrigin {...args}>
@@ -50,5 +55,16 @@ const Template: ComponentStory<typeof OlListOrigin> = ({ ...args }) => (
 
 export const OlList = Template.bind({});
 
-OlList.parameters = { controls: { include: ['variant'] } };
-OlList.args = { variant: 'base' };
+OlList.parameters = {
+	controls: {
+		include: [
+			'variant',
+			'bulletColor',
+		],
+	},
+};
+
+OlList.args = {
+	variant: 'base',
+	bulletColor: 'black',
+};

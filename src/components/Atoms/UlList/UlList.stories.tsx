@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { UlList as UlListOrigin } from './UlList';
 import { Text } from '../Text';
+import { Heading } from '../Heading';
 import { Wrapper } from '../Wrapper';
 
 import { formatObjectKeys } from '../../../../stories/helpers';
@@ -43,11 +44,12 @@ const Template: ComponentStory<typeof UlListOrigin> = ({ ...args }) => (
 	<Wrapper
 		padding={['t64', 'b64', 'l24', 'r24']}
 	>
+		<Heading as="h5" marginBottom="s12">Unordered list:</Heading>
 		<UlListOrigin {...args}>
-			<Text as="li" fontSize="s24">item 1</Text>
-			<Text as="li" fontSize="s24">item 2</Text>
-			<Text as="li" fontSize="s24">item 3</Text>
-			<Text as="li" fontSize="s24">item 4</Text>
+			<Text as="li">item 1</Text>
+			<Text as="li">item 2</Text>
+			<Text as="li">item 3</Text>
+			<Text as="li">item 4</Text>
 		</UlListOrigin>
 	</Wrapper>
 
@@ -55,5 +57,16 @@ const Template: ComponentStory<typeof UlListOrigin> = ({ ...args }) => (
 
 export const UlList = Template.bind({});
 
-UlList.parameters = { controls: { include: ['variant', 'bulletColor'] } };
-UlList.args = { variant: 'base' };
+UlList.parameters = {
+	controls: {
+		include: [
+			'variant',
+			'bulletColor',
+		],
+	},
+};
+
+UlList.args = {
+	variant: 'base',
+	bulletColor: 'black',
+};

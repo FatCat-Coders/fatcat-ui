@@ -6,29 +6,25 @@ import { generalProps, GeneralProps } from '../../../theme/props';
 
 export type TOlList = {
 	variant?: keyof DefaultTheme['ollistStyle']
+	bulletColor?: keyof DefaultTheme['color']
 } & GeneralProps;
 
 export const OlList = styled('ol') <TOlList>`
 	list-style: none;
 	counter-reset: item;
-	position: relative;
-	border-radius: 40px;
-	padding-left: 24px;
+	padding-left: ${props => props.theme.space.s24};
 
 	> li {
+		display: flex;
 		counter-increment: item;
-		position: relative;
 		&:before {
+			display: inline-block;
 			content: counter(item) ". ";
-			position: absolute;
 			font-size: 1em;
-			font-weight: 700;
-			text-align: right;
-			display: inline;
-			width: 20px;
-			margin-left: -30px;
+			width: 1em;
+			margin-right: clamp(4px, 0.35em, 0.35em);
+			${props => props.bulletColor && `color: ${props.theme.color[props.bulletColor]}`};
 		}
-		font-size: ${props => props.theme.fontSize.s18};
 	}
 
 	${props => props.variant && props.theme.ollistStyle[props.variant]};
@@ -37,4 +33,6 @@ export const OlList = styled('ol') <TOlList>`
 
 OlList.defaultProps = {
 	variant: 'base',
+	textColor: 'primary',
+	bulletColor: 'black',
 };
