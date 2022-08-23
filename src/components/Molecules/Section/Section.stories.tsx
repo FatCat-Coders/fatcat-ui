@@ -1,23 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Wrapper } from '../../Atoms/Wrapper';
 
 import { default as SectionOrigin } from './Section'; // eslint-disable-line
 
-import readme from './Section.md';
+import { SECTION_WIDTH } from '../../../theme/definitions';
+import { formatObjectKeys } from '../../../../stories/helpers';
 
-const SectionWrapper = styled(Wrapper)`
-	section {
-		width: auto;
-	}
-`;
+import readme from './Section.md';
 
 export default {
 	title: 'Basic Elements/Section',
 	component: SectionOrigin,
 	argTypes: {
-		backgroundColor: { control: 'color' },
+		width: {
+			control: 'select',
+			options: Object.keys(SECTION_WIDTH),
+			description: `List of section widths: ${formatObjectKeys(SECTION_WIDTH)}`,
+			table: {
+				type: { summary: null },
+			},
+		},
 	},
 	parameters: {
 		docs: {
@@ -29,15 +31,23 @@ export default {
 } as ComponentMeta<typeof Section>;
 
 const Template: ComponentStory<typeof SectionOrigin> = ({ children, ...args }) => (
-	<SectionWrapper>
-		<SectionOrigin {...args}>
-			{children}
-		</SectionOrigin>
-	</SectionWrapper>
+	<SectionOrigin {...args}>
+		{children}
+	</SectionOrigin>
 );
 
 export const Section = Template.bind({});
 
+Section.parameters = {
+	controls: {
+		include: [
+			'children',
+			'width',
+		],
+	},
+};
+
 Section.args = {
 	children: 'SectionOrigin',
+	width: 'normal',
 };
