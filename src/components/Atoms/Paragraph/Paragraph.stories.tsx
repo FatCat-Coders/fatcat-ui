@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Paragraph as ParagraphOrigin } from './Paragraph';
 
-import { TEXT_COLOR } from '../../../theme/definitions';
+import { TEXT_COLOR, TEXT_STYLE } from '../../../theme/definitions';
 
 import readme from './Paragraph.md';
 
@@ -15,6 +15,15 @@ export default {
 			control: 'select',
 			options: Object.keys(TEXT_COLOR),
 			description: 'Just for demo purposes',
+			type: { name: 'string' },
+			table: {
+				type: { summary: null },
+			},
+		},
+		size: {
+			control: 'select',
+			options: Object.keys(TEXT_STYLE.paragraph),
+			description: 'Different sizes of paragraph defined in our textStyle',
 			type: { name: 'string' },
 			table: {
 				type: { summary: null },
@@ -41,7 +50,16 @@ const Template: ComponentStory<typeof ParagraphOrigin> = ({ ...args }) => (
 
 export const Paragraph = Template.bind({});
 
-Paragraph.parameters = { controls: { include: ['textColor'] } };
+Paragraph.parameters = {
+	controls: {
+		include: [
+			'textColor',
+			'size',
+		],
+	},
+};
+
 Paragraph.args = {
 	textColor: 'black',
+	size: 'large',
 };
