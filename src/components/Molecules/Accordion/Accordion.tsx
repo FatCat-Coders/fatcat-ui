@@ -16,6 +16,7 @@ export type TAccordion = {
 	title: string | React.ReactElement
 	titleColor?: keyof DefaultTheme['textColor']
 	content: string | React.ReactElement
+	contentSize?: 'small' | 'large'
 	contentColor?: keyof DefaultTheme['textColor']
 	useArrow?: boolean
 	css?: CSSProp
@@ -27,6 +28,7 @@ const Accordion: React.FC<TAccordion> = (props) => {
 		title,
 		titleColor,
 		content,
+		contentSize,
 		contentColor,
 		useArrow,
 		css,
@@ -60,7 +62,11 @@ const Accordion: React.FC<TAccordion> = (props) => {
 				aria-labelledby={`accordion-title-${id}`}
 				isOpen={isOpen}
 			>
-				<Paragraph padding={['t16', 'r8', 'b16', 'l8']} textColor={contentColor}>
+				<Paragraph
+					padding={['t16', 'r8', 'b16', 'l8']}
+					textColor={contentColor}
+					size={contentSize}
+				>
 					{content}
 				</Paragraph>
 			</AccordionContent>
@@ -73,6 +79,7 @@ Accordion.defaultProps = {
 	useArrow: false,
 	titleColor: 'primary',
 	contentColor: 'primary',
+	contentSize: 'large',
 	css: null,
 };
 

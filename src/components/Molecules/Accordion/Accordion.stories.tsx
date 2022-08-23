@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Wrapper } from '../../Atoms/Wrapper';
 
-import { TEXT_COLOR } from '../../../theme/definitions';
+import { TEXT_COLOR, TEXT_STYLE } from '../../../theme/definitions';
 import { default as AccordionOrigin } from './Accordion'; // eslint-disable-line
 
 import readme from './Accordion.md';
@@ -48,6 +48,15 @@ export default {
 			control: 'text',
 			description: 'Content inside the accordion',
 			type: 'string',
+			table: {
+				type: { summary: null },
+			},
+		},
+		contentSize: {
+			control: 'select',
+			options: Object.keys(TEXT_STYLE.paragraph),
+			description: 'Content paragraph size',
+			type: { name: 'string' },
 			table: {
 				type: { summary: null },
 			},
@@ -99,13 +108,27 @@ const Template: ComponentStory<typeof AccordionOrigin> = args => (
 
 export const Accordion = Template.bind({});
 
-Accordion.parameters = { controls: { include: ['title', 'content', 'titleAs', 'titleColor', 'useArrow', 'contentColor', 'css'] } };
+Accordion.parameters = {
+	controls: {
+		include: [
+			'content',
+			'contentColor',
+			'contentSize',
+			'css',
+			'title',
+			'titleAs',
+			'titleColor',
+			'useArrow',
+		],
+	},
+};
 
 Accordion.args = {
 	titleAs: 'h2',
 	title: 'Accordion title',
 	titleColor: 'primary',
 	content: loremText,
+	contentSize: 'large',
 	useArrow: false,
 	contentColor: 'primary',
 };
