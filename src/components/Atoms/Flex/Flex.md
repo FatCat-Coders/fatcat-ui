@@ -3,6 +3,7 @@ A simple Flex component that we can use for our layouts. Props that we can use f
 - `Animation`
 - `Background`
 - `Border`
+- `CustomCss`
 - `Flex`
 - `Hover`
 - `Overflow`
@@ -10,6 +11,7 @@ A simple Flex component that we can use for our layouts. Props that we can use f
 - `Responsive`
 - `Size`
 - `Space`
+- `Text`
 - `Transitions`
 - `Visibility`
 

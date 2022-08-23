@@ -10,6 +10,7 @@ Simple Image component. Props that we can use for this component are:
 - `Responsive`
 - `Size`
 - `Space`
+- `Text`
 - `Transitions`
 - `Visibility`
 

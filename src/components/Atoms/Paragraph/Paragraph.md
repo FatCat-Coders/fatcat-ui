@@ -3,15 +3,20 @@ A paragraph always starts on a new line, and is usually a block of text. Props t
 - `Animation`
 - `Background`
 - `Border`
+- `CustomCss`
+- `Hover`
+- `Overflow`
 - `Position`
-- `Visibility`
+- `Responsive`
 - `Size`
 - `Space`
 - `Text`
-- `Hover`
-- `Responsive`
+- `Transitions`
+- `Visibility`
 
-listed in `Element Props` section.
+listed in `Element Props` section and additionally:
+
+- `size` -- key for selecting diffrent paragraph predefined sizes in our theme
 
 
 ## 	Styling
@@ -23,15 +28,16 @@ For better reusability, we define our style and size in the theme provider and t
 ```jsx
 const TEXT_SIZE = {
 	paragraph: css`
-		font-size: ${props => props.theme.fontSize.s54};
-		line-height: ${props => props.theme.lineHeight.s125};
+		font-size: ${props => props.theme.fontSize.s24};
+		line-height: ${props => props.theme.lineHeight.s150};
 	`,
-	paragraphLargeTablet: css`
-		font-size: ${props => props.theme.fontSize.s42};
+	paragraph16: css`
+		font-size: ${props => props.theme.fontSize.s16};
+		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 	paragraphMobile: css`
-		font-size: ${props => props.theme.fontSize.s30};
-		line-height: ${props => props.theme.lineHeight.s100};
+		font-size: ${props => props.theme.fontSize.s16};
+		line-height: ${props => props.theme.lineHeight.s150};
 	`,
 }
 ```
@@ -40,12 +46,29 @@ const TEXT_SIZE = {
 ```jsx
 const const TEXT_STYLE = {
 	paragraph: css`
-		${props => props.theme.textSize.paragraph};
-		font-weight: ${props => props.theme.fontWeight.bold};
+		s: css`
+			${props => props.theme.textSize.paragraph16};
+			font-weight: ${props => props.theme.fontWeight.regular};
+		`,
+		l: css`
+			${props => props.theme.textSize.paragraph};
+			font-weight: ${props => props.theme.fontWeight.regular};
 
-		${props => props.theme.media.largeTablet} {
-			${props => props.theme.textSize.paragraphLargeTablet};
-		}
+			${props => props.theme.media.mobile} {
+				${props => props.theme.textSize.paragraphMobile};
+			}
+		`,
+	`,
+}
+```
+
+or in case of one paragraph variaton, simply go with this:
+
+```jsx
+const const TEXT_STYLE = {
+	paragraph: css`
+		${props => props.theme.textSize.paragraph};
+		font-weight: ${props => props.theme.fontWeight.regular};
 
 		${props => props.theme.media.mobile} {
 			${props => props.theme.textSize.paragraphMobile};

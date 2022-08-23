@@ -1,11 +1,17 @@
 Simple Heading components that we can use for layout. Props that we can use for this component are:
 
 - `Animation`
+- `Background`
+- `Border`
+- `CustomCss`
+- `Hover`
+- `Overflow`
 - `Position`
 - `Responsive`
 - `Size`
 - `Space`
 - `Text`
+- `Transitions`
 - `Visibility`
 
 listed in `Element Props` section and additionally:

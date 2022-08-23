@@ -1,8 +1,11 @@
 Simple Button components that we can use in our project. Props that we can use for this component are:
 
 - `Animation`
+- `Background`
 - `Border`
+- `CustomCss`
 - `Hover`
+- `Overflow`
 - `Position`
 - `Responsive`
 - `Size`

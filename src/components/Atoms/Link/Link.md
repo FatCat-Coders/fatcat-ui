@@ -1,14 +1,18 @@
 Simple Link component. Props that we can use for this component are:
 
 - `Animation`
-- `Position`
-- `Space`
+- `Background`
 - `Border`
-- `Text`
-- `Visibility`
+- `CustomCss`
 - `Hover`
-- `Transitions`
+- `Overflow`
+- `Position`
 - `Responsive`
+- `Size`
+- `Space`
+- `Text`
+- `Transitions`
+- `Visibility`
 
 listed in `Element Props` section and additionally:
 

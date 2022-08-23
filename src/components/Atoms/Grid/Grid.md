@@ -3,12 +3,15 @@ A simple Grid component that we can use for our layouts. Props that we can use f
 - `Animation`
 - `Background`
 - `Border`
+- `CustomCss`
 - `Grid`
 - `Hover`
+- `Overflow`
 - `Position`
 - `Responsive`
 - `Size`
 - `Space`
+- `Text`
 - `Transitions`
 - `Visibility`
 

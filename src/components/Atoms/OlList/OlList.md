@@ -1,16 +1,23 @@
 An ordered list starts with the OlList tag. Each list item starts with the <li> tag. Props that we can use for this component are:
 
 - `Animation`
+- `Background`
+- `Border`
+- `CustomCss`
 - `Hover`
+- `Overflow`
 - `Position`
 - `Responsive`
+- `Size`
 - `Space`
 - `Text`
+- `Transitions`
 - `Visibility`
 
 listed in `Element Props` section and additionally:
 
 - `variant`
+- `bulletColor`
 
 ## Styling
 
@@ -21,7 +28,14 @@ For better reusability, we define our style in the theme provider and then we us
 ```jsx
 const const OLLIST_STYLE = {
 	base: css`
-		color: ${props => props.theme.color.white};
+		li::before {
+			content: counter(item) ". ";
+		}
+	`,
+	alphabet: css`
+		li::before {
+			content: counter(item, lower-alpha) ". ";
+		}
 	`,
 }
 ```
@@ -63,7 +77,7 @@ import { OlList } from 'fatcat-ui-library/components/Atoms/OlList';
 and then simply use it in your code.
 
 ```jsx
-<OlList {...args}>
+<OlList bulletColor="black">
 	<Text as="li">item 1</Text>
 	<Text as="li">item 2</Text>
 	<Text as="li">item 3</Text>

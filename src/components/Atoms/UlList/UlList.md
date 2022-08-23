@@ -1,11 +1,17 @@
 An unordered list starts with the ULList tag. Each list item starts with the <li> tag. Props that we can use for this component are:
 
 - `Animation`
+- `Background`
+- `Border`
+- `CustomCss`
 - `Hover`
+- `Overflow`
 - `Position`
 - `Responsive`
+- `Size`
 - `Space`
 - `Text`
+- `Transitions`
 - `Visibility`
 
 listed in `Element Props` section and additionally:
@@ -24,18 +30,10 @@ const const ULLIST_STYLE = {
 	base: css`
 		li::before {
 			content: "•";
-			position: absolute;
-			display: block;
-			height: 10px;
-			width: 10px;
-			left: -24px;
-			top: 1px;
-			font-size:24px;
-
-			${props => props.theme.media.tablet} {
-				top: -6px;
-			}
-			${props => props.bulletColor && `color: ${props.theme.color[props.bulletColor]}`}
+			font-weight: bold;
+			display: inline-block;
+			width: 1em;
+			${props => props.bulletColor && `color: ${props.theme.color[props.bulletColor]};`}
 		}
 	`
 }
@@ -78,7 +76,7 @@ import { UlList } from 'fatcat-ui-library/components/Atoms/UlList';
 and then simply use it in your code.
 
 ```jsx
-<UlList>
+<UlList  bulletColor="black">
 	<Text as="li" fontSize="s24">item 1</Text>
 	<Text as="li" fontSize="s24">item 2</Text>
 	<Text as="li" fontSize="s24">item 3</Text>
