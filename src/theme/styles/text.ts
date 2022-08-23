@@ -61,7 +61,7 @@ export const TEXT_SIZE = {
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
-	paragraphTablet: css`
+	paragraphMobile: css`
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
