@@ -121,4 +121,5 @@ Input.args = {
 	required: true,
 	variant: 'base',
 	placeholder: 'Placeholder',
+	value: '',
 };

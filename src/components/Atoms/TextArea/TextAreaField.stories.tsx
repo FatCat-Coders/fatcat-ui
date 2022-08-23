@@ -108,4 +108,5 @@ TextAreaField.args = {
 	variant: 'base',
 	rows: 20,
 	placeholder: 'Placeholder',
+	value: '',
 };
