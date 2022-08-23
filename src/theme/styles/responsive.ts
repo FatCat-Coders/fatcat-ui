@@ -122,6 +122,15 @@ export const RESPONSIVE_BEHAVIORS = {
 	border: (value: Properties['border']) => css`
 		border: ${value};
 	`,
+	borderWidth: (value: Properties['borderWidth']) => css`
+		border-width: ${value};
+	`,
+	borderStyle: (value: Properties['borderStyle']) => css`
+		border-style: ${value};
+	`,
+	borderColor: (value: Properties['borderColor']) => css`
+		border-color: ${value};
+	`,
 	borderLeft: (value: Properties['borderLeft']) => css`
 		border-left: ${value};
 	`,
@@ -211,6 +220,12 @@ export const RESPONSIVE_BEHAVIORS = {
 	`,
 	textSize: (value: keyof DefaultTheme['textSize']) => css`
 		${props => props.theme.textSize[value]};
+	`,
+	textAlign: (value: Properties['textAlign']) => css`
+		text-align: ${value};
+	`,
+	textShadow: (value: Properties['textShadow']) => css`
+		text-shadow: ${value};
 	`,
 	fontSize: (value: keyof DefaultTheme['fontSize']) => css`
 		font-size: ${props => props.theme.fontSize[value]};
@@ -349,6 +364,7 @@ export const RESPONSIVE_BEHAVIORS = {
 			${props => pickObjectProperties(props.theme.hover, value)}
 		}
 	`,
+	// IMPORTANT: leave this props on bottom of the list
 	css: (value: CSSProp) => css`
 		${value}
 	`,
