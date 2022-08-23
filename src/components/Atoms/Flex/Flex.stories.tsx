@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Flex as FlexOrigin } from './Flex';
+import { Center } from '../Center';
 
 import readme from './Flex.md';
 
@@ -49,16 +50,14 @@ const Template: ComponentStory<typeof FlexOrigin> = ({ children, items, ...args 
 		{[...Array(parseInt(items, 10))].map((i, index) => {
 			const randomWidth = widths[Math.floor(Math.random() * widths.length)];
 			return (
-				<FlexOrigin
+				<Center
 					key={index} // eslint-disable-line
 					height="100px"
 					width={randomWidth}
 					backgroundColor="yellow"
-					alignItems="center"
-					justifyContent="center"
 				>
 					{randomWidth}
-				</FlexOrigin>
+				</Center>
 			);
 		})}
 	</FlexOrigin>

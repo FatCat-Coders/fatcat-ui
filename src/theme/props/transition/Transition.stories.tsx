@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Flex } from '../../../components/Atoms/Flex';
+import { Center } from '../../../components/Atoms/Center';
 import { Text } from '../../../components/Atoms/Text';
 
 import readme from './Transition.md';
@@ -25,17 +25,15 @@ export default {
 };
 
 const Template = ({ children, ...args }) => (
-	<Flex
+	<Center
 		backgroundColor="yellow"
-		alignItems="center"
-		justifyContent="center"
 		width="200px"
 		height="200px"
 		hover={[{ backgroundColorHex: '#1D1D1E' }]}
 		{...args}
 	>
 		<Text textColor="primary">Hover me!</Text>
-	</Flex>
+	</Center>
 );
 
 export const Transition = Template.bind({});

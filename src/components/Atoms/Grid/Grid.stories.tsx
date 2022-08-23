@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Grid as GridOrigin } from './Grid';
-import { Flex } from '../Flex';
+import { Center } from '../Center';
 
 import readme from './Grid.md';
 
@@ -131,16 +131,14 @@ const Template: ComponentStory<typeof GridOrigin> = ({ children, items, ...args 
 		{[...Array(parseInt(items, 10))].map((i, index) => {
 			const randomWidth = widths[Math.floor(Math.random() * widths.length)];
 			return (
-				<Flex
+				<Center
 					key={index} // eslint-disable-line
 					height="100px"
 					width={randomWidth}
 					backgroundColor="yellow"
-					alignItems="center"
-					justifyContent="center"
 				>
 					{randomWidth}
-				</Flex>
+				</Center>
 			);
 		})}
 	</GridOrigin>
