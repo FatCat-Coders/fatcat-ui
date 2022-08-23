@@ -7,10 +7,12 @@ import {
 	SwitchContainer,
 	SwitchWrapper,
 	SwitchInput,
+	SwitchText,
 } from './Switch.atoms';
 
 export type TSwitch = {
 	backgroundColor?: keyof DefaultTheme['color']
+	textColor?: keyof DefaultTheme['textColor']
 	disabled?: boolean
 	id?: string
 	onChange: (e: boolean) => void
@@ -34,11 +36,12 @@ const Switch = forwardRef<HTMLInputElement, PropsWithChildren<TSwitch>>((props, 
 		beforeText,
 		afterText,
 		css,
+		textColor,
 		...rest
 	} = props;
 	return (
 		<SwitchContainer css={css}>
-			{beforeText}
+			{beforeText && (<SwitchText selected={!value} textColor={textColor}>{beforeText}</SwitchText>)}
 			<SwitchInput
 				id={id}
 				ref={ref}
@@ -57,7 +60,7 @@ const Switch = forwardRef<HTMLInputElement, PropsWithChildren<TSwitch>>((props, 
 			>
 				<SwitchButton />
 			</SwitchWrapper>
-			{afterText}
+			{afterText && (<SwitchText selected={!!value} textColor={textColor}>{afterText}</SwitchText>)}
 		</SwitchContainer>
 
 	);
@@ -65,6 +68,7 @@ const Switch = forwardRef<HTMLInputElement, PropsWithChildren<TSwitch>>((props, 
 
 Switch.defaultProps = {
 	backgroundColor: null,
+	textColor: 'primary',
 	disabled: false,
 	id: undefined,
 	required: false,

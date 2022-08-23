@@ -1,4 +1,5 @@
 import styled, { css, DefaultTheme, CSSProp } from 'styled-components';
+import { lighten } from 'polished';
 
 export type TSwitchStyle = {
 	checked: boolean
@@ -63,4 +64,9 @@ export const SwitchContainer = styled.label<{ css?: CSSProp }>`
 	align-items: center;
 	gap: 8px;
 	${props => props.css}
+`;
+
+export const SwitchText = styled.span<{ selected: boolean, textColor: keyof DefaultTheme['textColor']}>`
+	color: ${({ selected, textColor, theme }) => (selected ? theme.textColor[textColor] : lighten(0.2, theme.textColor[textColor]))};
+	transition: color 0.2s ease-in-out;
 `;
