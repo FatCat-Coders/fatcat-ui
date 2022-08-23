@@ -1,6 +1,8 @@
 import React from 'react';
 import { UIThemeProvider } from '../src/theme/theme';
 import GlobalStyle from '../src/components/Atoms/GlobalStyle';
+import { ToastContainer } from 'react-toastify';
+
 import '../stories/assets/fonts/stylesheet.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -30,6 +32,7 @@ export const decorators = [
 		<UIThemeProvider>
 			<GlobalStyle />
 			<Story />
+			<ToastContainer />
 		</UIThemeProvider>
 	),
 ];

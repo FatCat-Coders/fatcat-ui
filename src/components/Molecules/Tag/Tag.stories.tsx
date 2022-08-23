@@ -1,14 +1,14 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ToastContainer, toast } from 'react-toastify';
+import { showToastMsg } from '../../../../stories/helpers';
 
 import { Wrapper } from '../../Atoms/Wrapper';
+import { tagVariant } from './Tag.atoms';
+import { BACKGROUND_COLOR, TEXT_COLOR, COLOR } from '../../../theme/definitions/color/color';
 
 import TagOrigin from './Tag';
 
 import readme from './Tag.md';
-import { BACKGROUND_COLOR, TEXT_COLOR, COLOR } from '../../../theme/definitions/color/color';
-import { tagVariant } from './Tag.atoms';
 
 export default {
 	title: 'Building Elements/Tag',
@@ -93,19 +93,14 @@ export default {
 	},
 } as ComponentMeta<typeof TagOrigin>;
 
-const showMsg = msg => toast(msg, {
-	position: toast.POSITION.TOP_CENTER,
-});
-
-const onClose = (name: string) => { showMsg(`🦄 "${name}" is closed`); };
-const onClick = (name: string) => { showMsg(`🦄 "${name}" is clicked`); };
+const onClose = (name: string) => { showToastMsg(`🦄 "${name}" is closed`); };
+const onClick = (name: string) => { showToastMsg(`🦄 "${name}" is clicked`); };
 
 const Template: ComponentStory<typeof TagOrigin> = args => (
 	<Wrapper>
 		<TagOrigin onClick={onClick} name="first_tag" content="Default" />
 		<TagOrigin onClick={onClick} name="second_tag" content="Defaults with close button" onClose={onClose} />
 		<TagOrigin {...args} />
-		<ToastContainer />
 	</Wrapper>
 );
 

@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { TextAreaField as TextAreaFieldOrigin } from './TextAreaField';
 import { Flex } from '../Flex';
-import { formatObjectKeys } from '../../../../stories/helpers';
+import { formatObjectKeys, showToastMsg } from '../../../../stories/helpers';
 import { INPUT_STYLE } from '../../../theme/definitions';
 
 import readme from './TextAreaField.md';
@@ -69,7 +69,7 @@ const Template: ComponentStory<typeof TextAreaFieldOrigin> = (props) => {
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
-					console.log('submitd!'); // eslint-disable-line
+					showToastMsg('🦄 Form submitd!');
 				}}
 				style={{ width: '100%' }}
 			>

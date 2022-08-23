@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Input as InputOrigin } from './Input';
 import { Flex } from '../Flex';
-import { formatObjectKeys } from '../../../../stories/helpers';
+import { formatObjectKeys, showToastMsg } from '../../../../stories/helpers';
 import { INPUT_STYLE } from '../../../theme/definitions';
 
 import readme from './Input.md';
@@ -76,7 +76,7 @@ const Template: ComponentStory<typeof InputOrigin> = (props) => {
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
-					console.log('submitd!'); // eslint-disable-line
+					showToastMsg('🦄 Form submitd!');
 				}}
 				style={{ width: '100%' }}
 			>
