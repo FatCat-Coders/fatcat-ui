@@ -22,11 +22,11 @@ export type TAvatar = {
 }
 
 export const sizes = {
-	xs: '32px',
+	xsmall: '32px',
 	small: '64px',
 	medium: '100px',
 	large: '150px',
-	xl: '200px',
+	xlarge: '200px',
 };
 
 const Avatar: React.FC<TAvatar> = (props) => {

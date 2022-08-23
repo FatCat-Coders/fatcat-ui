@@ -129,5 +129,5 @@ Avatar.args = {
 	profileAlt: 'profile alt',
 	title: 'Steva the Cat',
 	subtitle: 'Office cat',
-	size: 'xl',
+	size: 'xlarge',
 };
