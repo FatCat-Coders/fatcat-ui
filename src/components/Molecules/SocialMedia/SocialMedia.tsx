@@ -1,6 +1,6 @@
 import React from 'react';
 import { Properties } from 'csstype';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, CSSProp } from 'styled-components';
 
 import { HoverTypes } from '../../../theme/props';
 
@@ -28,6 +28,7 @@ export type TSocialMedia = {
 	hover?: HoverTypes
 	width?: Properties['width']
 	gap?: Properties['gap']
+	css?: CSSProp
 }
 
 const SocialMedia: React.FC<TSocialMedia> = (props) => {
@@ -37,6 +38,7 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 		hover,
 		gap,
 		width,
+		css,
 	} = props;
 	return (
 		<Flex
@@ -44,6 +46,7 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 			height="fit-content"
 			gap={gap}
 			alignItems="center"
+			css={css}
 		>
 			{Object.entries(socials).map((obj) => {
 				const [key, value] = obj;
@@ -72,6 +75,7 @@ SocialMedia.defaultProps = {
 	hover: null,
 	width: null,
 	gap: '10px',
+	css: null,
 };
 
 export default SocialMedia;

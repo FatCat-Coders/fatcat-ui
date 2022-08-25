@@ -5,6 +5,9 @@ export const HOVER_BEHAVIORS = {
 	scaleUp: css`
 		transform: scale(1.2);
 	`,
+	pointer: css`
+		cursor: pointer;
+	`,
 	underline: css`
 		text-decoration: underline;
 	`,

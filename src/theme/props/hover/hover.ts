@@ -4,7 +4,7 @@ import { css, DefaultTheme, CSSProp } from 'styled-components';
 import pickObjectProperties from '../../../utils/pick-object-properties';
 
 type THoverObj = {
-	[key: keyof DefaultTheme['hover']]: (args: string | number) => CSSProp | CSSProp
+	[key: keyof DefaultTheme['hover']]: ((args: string | number) => CSSProp) | CSSProp
 }
 
 export type HoverTypes = (keyof DefaultTheme['hover'] | Partial<THoverObj>)[];
