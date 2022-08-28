@@ -18,8 +18,6 @@ export const ButtonBase = styled('button') <TButton>`
     cursor: pointer;
     display: inline-block;
 	font-weight: bold;
-    text-align: center;
-	white-space: nowrap;
 	${props => props.variant && props.theme.buttonVariant[props.variant]};
 	${generalProps};
 `;
@@ -37,5 +35,7 @@ export const Button: ButtonComponent = (props) => {
 Button.defaultProps = {
 	buttonColor: undefined,
 	size: 'large',
+	textAlign: 'center',
 	variant: 'primary',
+	whiteSpace: 'nowrap',
 };

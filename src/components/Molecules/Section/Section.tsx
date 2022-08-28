@@ -45,6 +45,7 @@ const Section: React.FC<TSection> = (props) => {
 		<SectionOuterWrapper
 			as={as}
 			edge={edge}
+			sticky={sticky}
 			{...restProps}
 		>
 			<SectionInnerWrapper

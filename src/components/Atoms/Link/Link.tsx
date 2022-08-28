@@ -25,10 +25,10 @@ export const LinkBase = styled('a') <TLink>`
 const Arrow = styled('i')<{arrowColor?:keyof DefaultTheme['color']}>`
 	border-style: solid;
 	border-color: ${props => (props.arrowColor ? props.theme.color[props.arrowColor] : 'inherit')};
-	border-width: 0 calc(1em * 0.09) calc(1em * 0.09) 0;
+	border-width: 0 0.09em 0.09em 0;
 	display: inline-block;
-	width: calc(1em/3);
-	height: calc(1em/3);
+	width: 0.33em;
+	height: 0.33em;
 	transform: rotate(-45deg) translateY(-33%);
 	margin-left: 0.6em;
 `;

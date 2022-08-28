@@ -53,6 +53,8 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 				return (
 					<a
 						key={key}
+						aria-label={key}
+						title={key}
 						href={value}
 						target="_blank"
 						rel="noreferrer"
