@@ -11,6 +11,7 @@ import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 
 // Atoms
 import { Flex } from '../../Atoms/Flex';
+import { Link } from '../../Atoms/Link';
 import { Icon } from '../../Atoms/Icon';
 
 export type SOCIAL_MEDIA = 'facebook' | 'instagram' | 'linkedin' | 'twitter';
@@ -51,13 +52,16 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 			{Object.entries(socials).map((obj) => {
 				const [key, value] = obj;
 				return (
-					<a
+					<Link
 						key={key}
 						aria-label={key}
 						title={key}
 						href={value}
 						target="_blank"
 						rel="noreferrer"
+						variant="noStyle"
+						display="inline-flex"
+						padding={['t4', 'r4', 'l4', 'b4']}
 					>
 						<Icon
 							as={mappedSocial[key]}
@@ -66,7 +70,7 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 							width={width}
 							height="auto"
 						/>
-					</a>
+					</Link>
 				);
 			})}
 		</Flex>
@@ -76,7 +80,7 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 SocialMedia.defaultProps = {
 	hover: null,
 	width: null,
-	gap: '10px',
+	gap: '4px',
 	css: null,
 };
 

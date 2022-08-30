@@ -17,6 +17,6 @@ export default css`
 	input:-webkit-autofill:hover,
 	input:-webkit-autofill:focus,
 	input:-webkit-autofill:active  {
-	    -webkit-box-shadow: 0 0 0 40px white inset !important;
+	    -webkit-box-shadow: 0 0 0 1000px white inset !important;
 	}
 `;
