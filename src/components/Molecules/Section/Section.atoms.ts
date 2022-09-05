@@ -1,5 +1,5 @@
-import { styled } from '../../../utils/styled';
-import { DefaultTheme, css } from 'styled-components';
+import styled, { DefaultTheme, css } from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
 
 import {
 	background, BackgroundProps,
@@ -17,7 +17,9 @@ export type TSectionInnerWrapper =
 	& SpaceProps
 	& ResponsiveProps;
 
-export const SectionInnerWrapper = styled('div') <TSectionInnerWrapper>`
+export const SectionInnerWrapper = styled.div.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TSectionInnerWrapper>`
 	max-width: ${props => props.theme.sectionWidth[props.width]};
 	width: 100%;
 	${space};
@@ -44,7 +46,9 @@ export type TSectionOuterWrapper =
 	& PositionProps
 	& CustomCssProps;
 
-export const SectionOuterWrapper = styled('section') <TSectionOuterWrapper>`
+export const SectionOuterWrapper = styled.section.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TSectionOuterWrapper>`
 	width: 100%;
 	justify-content: center;
 	${props => props.sticky && 'position: sticky;'}

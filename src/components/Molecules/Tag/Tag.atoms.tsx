@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
-import { styled as styl } from '../../../utils/styled';
+import styled, { css } from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
 
 import {
 	flex, FlexProps,
@@ -24,7 +24,9 @@ export const tagVariant = {
 	`,
 };
 
-export const TagWrapper = styl('div') <TTagWrapper>`
+export const TagWrapper = styled.div.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TTagWrapper>`
 	${props => props.variant && tagVariant[props.variant]};
 	${flex};
 	${generalProps};

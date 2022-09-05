@@ -1,5 +1,5 @@
-import { styled } from '../../../utils/styled';
-import { DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
 
 import { generalProps, GeneralProps } from '../../../theme/props';
 
@@ -7,7 +7,9 @@ export type TTextAreaField = {
 	variant?: keyof DefaultTheme['inputStyle']
 } & GeneralProps;
 
-export const TextAreaField = styled('textarea') <TTextAreaField>`
+export const TextAreaField = styled.textarea.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TTextAreaField>`
 	resize: none;
 	${props => props.variant && props.theme.inputStyle[props.variant]};
 	${generalProps};

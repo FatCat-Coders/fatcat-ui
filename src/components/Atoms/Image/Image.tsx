@@ -1,10 +1,13 @@
-import { styled } from '../../../utils/styled';
+import styled from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
 
 import { generalProps, GeneralProps } from '../../../theme/props';
 
 export type TImage = GeneralProps;
 
-export const Image = styled('img') <TImage>`
+export const Image = styled.img.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TImage>`
 	${generalProps};
 `;
 

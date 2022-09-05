@@ -1,5 +1,5 @@
-import { styled } from '../../../utils/styled';
-import { DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
 
 import { generalProps, GeneralProps } from '../../../theme/props';
 
@@ -8,7 +8,9 @@ export type TUlList = {
 	bulletColor?: keyof DefaultTheme['color']
 } & GeneralProps;
 
-export const UlList = styled('ul') <TUlList>`
+export const UlList = styled.ul.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TUlList>`
 	list-style: none;
 	padding-left: ${props => props.theme.space.s24};
 	> li {

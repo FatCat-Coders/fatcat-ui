@@ -1,5 +1,5 @@
-import { styled } from '../../../utils/styled';
-import { DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
 
 // themes
 import { generalProps, GeneralProps } from '../../../theme/props';
@@ -9,7 +9,9 @@ export type TOlList = {
 	bulletColor?: keyof DefaultTheme['color']
 } & GeneralProps;
 
-export const OlList = styled('ol') <TOlList>`
+export const OlList = styled.ol.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TOlList>`
 	list-style: none;
 	counter-reset: item;
 	padding-left: ${props => props.theme.space.s24};

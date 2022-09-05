@@ -1,6 +1,6 @@
 import React from 'react';
-import { styled } from '../../../utils/styled';
-import { DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
 
 import { PolymorphicComponent } from '../../../utils/polymorphic-component';
 
@@ -16,13 +16,15 @@ export type TLink =
 		variant?: keyof DefaultTheme['linkStyle']
 	} & GeneralProps;
 
-export const LinkBase = styled('a') <TLink>`
+export const LinkBase = styled.a.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TLink>`
 	cursor: pointer;
 	${props => props.variant && props.theme.linkStyle[props.variant]};
 	${generalProps};
 `;
 
-const Arrow = styled('i')<{arrowColor?:keyof DefaultTheme['color']}>`
+const Arrow = styled.i<{arrowColor?:keyof DefaultTheme['color']}>`
 	border-style: solid;
 	border-color: ${props => (props.arrowColor ? props.theme.color[props.arrowColor] : 'inherit')};
 	border-width: 0 0.09em 0.09em 0;

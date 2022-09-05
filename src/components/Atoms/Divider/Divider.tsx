@@ -1,7 +1,9 @@
-import { styled } from '../../../utils/styled';
+import styled from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
+
 import { visibility, VisibilityProps } from '../../../theme/props';
 
-export const DottedDivider = styled('hr')<{ color?: string }>`
+export const DottedDivider = styled.hr<{ color?: string }>`
 	border: none;
 	width: 100%;
 	height: 2px;
@@ -13,7 +15,7 @@ export const DottedDivider = styled('hr')<{ color?: string }>`
 	background-repeat: repeat-x;
 `;
 
-export const DashedDivider = styled('hr')<{ color?: string }>`
+export const DashedDivider = styled.hr<{ color?: string }>`
 	border: none;
 	width: 100%;
 	height: 2px;
@@ -25,7 +27,9 @@ export const DashedDivider = styled('hr')<{ color?: string }>`
 	background-repeat: repeat-x;
 `;
 
-export const BR = styled('br')<VisibilityProps>`
+export const BR = styled.br.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+})<VisibilityProps>`
 	${visibility};
 `;
 

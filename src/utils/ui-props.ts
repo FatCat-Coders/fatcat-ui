@@ -1,5 +1,3 @@
-import { default as styl } from 'styled-components'; // eslint-disable-line
-
 // before adding new props to UI-components, check list if it's included here:
 // https://github.dev/styled-components/styled-components/tree/main/packages/styled-components
 export const UIprops: string[] = [
@@ -24,7 +22,3 @@ export const UIprops: string[] = [
 	'size',
 	'profile',
 ];
-
-export const styled = (ele: any) => styl(ele).withConfig({
-	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
-});

@@ -1,5 +1,5 @@
-import { styled } from '../../../utils/styled';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
 
 // Props
 import { generalProps, GeneralProps } from '../../../theme/props';
@@ -9,7 +9,9 @@ import { HeadingType } from '../../../utils/types';
 
 export type THeading = HeadingType & GeneralProps;
 
-export const Heading = styled('h1') <THeading>`
+export const Heading = styled.h1.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <THeading>`
 	${props =>
 		props.as &&
 		css`

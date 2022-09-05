@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, CSSProp } from 'styled-components';
 import { isObjectEmpty, deepmerge } from '../utils/object-helpers';
 
 // Definitions
@@ -60,6 +60,7 @@ export interface FatCatTheme {
 	inputStyle: typeof INPUT_STYLE
 	ollistStyle: typeof OLLIST_STYLE,
 	ullistStyle: typeof ULLIST_STYLE,
+	sectionLayout: CSSProp,
 }
 
 const defaultTheme: FatCatTheme = {
@@ -90,6 +91,7 @@ const defaultTheme: FatCatTheme = {
 	inputStyle: INPUT_STYLE,
 	ollistStyle: OLLIST_STYLE,
 	ullistStyle: ULLIST_STYLE,
+	sectionLayout: null,
 };
 
 interface UIThemeProviderI {

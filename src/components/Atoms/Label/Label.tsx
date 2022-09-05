@@ -1,8 +1,12 @@
+import styled from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
+
 import { generalProps, GeneralProps } from '../../../theme/props';
-import { styled } from '../../../utils/styled';
 
 export type TLabel = GeneralProps;
 
-export const Label = styled('label') <TLabel>`
+export const Label = styled.label.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TLabel>`
 	${generalProps};
 `;

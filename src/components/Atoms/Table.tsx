@@ -1,5 +1,5 @@
-import { styled } from '../../utils/styled';
-import { DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
+import { UIprops } from '../../utils/ui-props';
 
 import { generalProps, GeneralProps } from '../../theme/props';
 
@@ -7,7 +7,9 @@ export type TTable = {
 	variant?: keyof DefaultTheme['tableStyle']
 } & GeneralProps;
 
-export const Table = styled('table') <TTable>`
+export const Table = styled.table.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TTable>`
 	thead th {
 		border-bottom: 5px solid ${props => props.theme.color.white10};
 		:nth-child(1) {

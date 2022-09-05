@@ -1,4 +1,5 @@
 import React from 'react';
+import { CSSProp } from 'styled-components';
 
 // Atoms
 import { GlobalStyle } from 'fatcat-ui-library/components/Atoms';
@@ -46,6 +47,7 @@ declare module 'styled-components' {
 		inputStyle: FatCatTheme['inputStyle']
 		ollistStyle: FatCatTheme['ollistStyle']
 		ullistStyle: FatCatTheme['ullistStyle']
+		sectionLayout: CSSProp
 	}
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { styled } from '../../../utils/styled';
-import { DefaultTheme, useTheme } from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
+import styled, { DefaultTheme, useTheme } from 'styled-components';
 
 // Type definitions
 import { PolymorphicComponent } from '../../../utils/polymorphic-component';
@@ -14,7 +14,9 @@ export type TButton = {
 	variant?: keyof DefaultTheme['buttonVariant']
 } & GeneralProps;
 
-export const ButtonBase = styled('button') <TButton>`
+export const ButtonBase = styled('button').withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+})<TButton>`
     cursor: pointer;
     display: inline-block;
 	font-weight: bold;

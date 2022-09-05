@@ -1,4 +1,5 @@
-import { styled } from '../../../utils/styled';
+import styled from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
 
 import {
 	flex, FlexProps,
@@ -7,7 +8,9 @@ import {
 
 export type TFlex = FlexProps & GeneralProps;
 
-export const Flex = styled('div') <TFlex>`
+export const Flex = styled.div.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TFlex>`
 	${flex};
 	${generalProps};
 `;

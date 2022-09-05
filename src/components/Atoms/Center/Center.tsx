@@ -1,4 +1,5 @@
-import { styled } from '../../../utils/styled';
+import styled from 'styled-components';
+import { UIprops } from '../../../utils/ui-props';
 
 import {
 	flex, FlexProps,
@@ -7,7 +8,9 @@ import {
 
 export type TCenter = FlexProps & GeneralProps;
 
-export const Center = styled('div') <TCenter>`
+export const Center = styled.div.withConfig({
+	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TCenter>`
 	${flex};
 	${generalProps};
 `;
