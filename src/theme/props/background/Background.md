@@ -7,6 +7,7 @@ CSS properties that we use for background HTML element.
 Property that adds to the component are:
 
 - `backgroundColor`<span style="color: red">*</span>
+- `backgroundColorHex`
 - `backgroundColorOpacity`
 - `backgroundImage`
 - `backgroundRepeat`
@@ -16,6 +17,8 @@ Property that adds to the component are:
 - `backgroundBlur`
 - `backgroundAttachment`
 - `backgroundBlendMode`
+- `backdropFilter`
+- `filter`
 
 *`backgroundColor` can use only colors from `backgroundColor` defined in theme
 

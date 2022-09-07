@@ -32,6 +32,7 @@ export default {
 		initialDisplay: { control: 'text', description: 'String with css property', type: 'string' },
 		display: { control: 'text', description: 'String with css property', type: 'string' },
 		opacity: { control: 'text', description: 'String with css property', type: 'string' },
+		pointerEvents: { control: 'text', description: 'String with css property', type: 'string' },
 	},
 	parameters: {
 		docs: {
@@ -56,12 +57,13 @@ export const Visibility = Template.bind({});
 Visibility.parameters = {
 	controls: {
 		include: [
-			'show',
-			'hide',
-			'visibility',
-			'initialDisplay',
 			'display',
+			'hide',
+			'initialDisplay',
 			'opacity',
+			'pointerEvents',
+			'show',
+			'visibility',
 		],
 	},
 };

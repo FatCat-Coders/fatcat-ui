@@ -18,6 +18,8 @@ export default {
 		transformOrigin: { control: 'text', description: 'String with css property', type: 'string' },
 		alignSelf: { control: 'text', description: 'String with css property', type: 'string' },
 		order: { control: 'number', description: 'Number of an item (only inside flex)', type: 'number' },
+		perspectiveOrigin: { control: 'text', description: 'String with css property', type: 'string' },
+		perspective: { control: 'number', description: 'Number of an item (only inside flex)', type: 'number' },
 	},
 	parameters: {
 		docs: {
@@ -51,17 +53,19 @@ export const Position = Template.bind({});
 Position.parameters = {
 	controls: {
 		include: [
-			'position',
-			'top',
-			'right',
+			'alignSelf',
 			'bottom',
-			'left',
 			'inset',
-			'zIndex',
+			'left',
+			'order',
+			'perspective',
+			'perspectiveOrigin',
+			'position',
+			'right',
+			'top',
 			'transform',
 			'transformOrigin',
-			'alignSelf',
-			'order',
+			'zIndex',
 		],
 	},
 };

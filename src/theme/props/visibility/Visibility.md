@@ -10,6 +10,7 @@ The visibility property specifies whether or not an element is visible.
 - `initialDisplay`
 - `display`
 - `opacity`
+- `pointerEvents`
 
 ## Usage 
 

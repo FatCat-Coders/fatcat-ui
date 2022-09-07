@@ -13,12 +13,15 @@ export type TextProps = {
 	whiteSpace?: Properties['whiteSpace']
 	uppercase?: boolean
 	lowercase?: boolean
+	capitalize?: boolean
 	ellipsis?: number
 	fontStyle?: Properties['fontStyle']
 	textDecoration?: Properties['textDecoration']
 	letterSpacing?: Properties['letterSpacing']
 	textColorOpacity?: number
 	textShadow?: Properties['textShadow']
+	textDirection?: Properties['direction']
+	unicodeBidi?: Properties['unicodeBidi']
 };
 
 export const text = css<TextProps>`
@@ -34,8 +37,11 @@ export const text = css<TextProps>`
 	${props => props.fontFamily && props.theme.fontFamily[props.fontFamily] && `font-family: ${props.theme.fontFamily[props.fontFamily]};`}
 	${props => props.uppercase && 'text-transform: uppercase;'}
 	${props => props.lowercase && 'text-transform: lowercase;'}
+	${props => props.capitalize && 'text-transform: capitalize;'}
 	${props => props.fontStyle && `font-style: ${props.fontStyle};`}
 	${props => props.textDecoration && `text-decoration: ${props.textDecoration};`}
+	${props => props.textDirection && `direction: ${props.textDirection};`}
+	${props => props.unicodeBidi && `unicode-bidi: ${props.unicodeBidi};`}
 	${props => props.ellipsis && css`
 		overflow: hidden;
 		text-overflow: ellipsis;

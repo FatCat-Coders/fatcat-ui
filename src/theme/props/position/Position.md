@@ -5,16 +5,18 @@ List of positon props, and example.
 CSS properties that we use for background HTML element.
 Property that adds to the component are:
 
-- `position`
-- `top`
-- `right`
-- `bottom`
-- `left`
-- `inset`
-- `zIndex`
-- `transform`
 - `alignSelf`
+- `bottom`
+- `inset`
+- `left`
 - `order`
+- `perspectiveOrigin`
+- `perspective`
+- `position`
+- `right`
+- `top`
+- `transform`
+- `zIndex`
 
 
 ## Usage 

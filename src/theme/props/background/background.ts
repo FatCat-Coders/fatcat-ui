@@ -14,6 +14,8 @@ export type BackgroundProps = {
 	backgroundBlur?: string
 	backgroundAttachment?: Properties['backgroundAttachment']
 	backgroundBlendMode?: Properties['backgroundBlendMode']
+	backdropFilter?: Properties['backdropFilter']
+	filter?: Properties['filter']
 };
 
 export const background = css<BackgroundProps>`
@@ -29,4 +31,6 @@ export const background = css<BackgroundProps>`
 	${props => props.backgroundBlur && `backdrop-filter: blur(${props.backgroundBlur})`};
 	${props => props.backgroundAttachment && `background-attachment: ${props.backgroundAttachment}`};
 	${props => props.backgroundBlendMode && `background-blend-mode: ${props.backgroundBlendMode}`};
+	${props => props.backdropFilter && `backdrop-filter: ${props.backdropFilter}`};
+	${props => props.filter && `filter: ${props.filter}`};
 `;

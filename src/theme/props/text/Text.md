@@ -4,22 +4,25 @@ List of text props, and example.
 
 Mainly all css props for styling text elements in our theme
 
-- `textAlign`
-- `textColor`
-- `textSize`
-- `fontSize`
-- `lineHeight`
-- `fontWeight`
-- `fontFamily`
-- `whiteSpace`
-- `uppercase`
-- `lowercase`
+- `capitalize`
 - `ellipsis`
+- `fontFamily`
+- `fontSize`
 - `fontStyle`
-- `textDecoration`
+- `fontWeight`
 - `letterSpacing`
+- `lineHeight`
+- `lowercase`
+- `textAlign`
 - `textColorOpacity`
+- `textColor`
+- `textDecoration`
+- `textDirection`
 - `textShadow`
+- `textSize`
+- `unicodeBidi`
+- `uppercase`
+- `whiteSpace`
 
 We can use theme default setup or we can add some custom style like this:
 
