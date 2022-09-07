@@ -11,3 +11,7 @@ export const Text = styled.span.withConfig({
 	${props => props.theme.textStyle.text}
 	${generalProps};
 `;
+
+Text.defaultProps = {
+	initalDisplay: 'inline',
+};

@@ -57,4 +57,5 @@ Link.defaultProps = {
 	disabled: false,
 	withArrow: false,
 	arrowColor: undefined,
+	initialDisplay: 'inline',
 };

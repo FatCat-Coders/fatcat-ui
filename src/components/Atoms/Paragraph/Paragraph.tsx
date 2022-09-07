@@ -20,4 +20,5 @@ Paragraph.defaultProps = {
 	textAlign: 'left',
 	textColor: 'primary',
 	size: 'large',
+	initalDisplay: 'block',
 };

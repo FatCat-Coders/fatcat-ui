@@ -37,4 +37,5 @@ OlList.defaultProps = {
 	variant: 'base',
 	textColor: 'primary',
 	bulletColor: 'black',
+	initalDisplay: 'block',
 };

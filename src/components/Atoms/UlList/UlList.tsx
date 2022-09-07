@@ -25,4 +25,5 @@ UlList.defaultProps = {
 	variant: 'base',
 	bulletColor: 'black',
 	textColor: 'primary',
+	initialDisplay: 'block',
 };

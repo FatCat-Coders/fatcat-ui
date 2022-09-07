@@ -16,7 +16,7 @@ export type TButton = {
 
 export const ButtonBase = styled('button').withConfig({
 	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
-})<TButton>`
+}) <TButton>`
     cursor: pointer;
     display: inline-block;
 	font-weight: bold;
@@ -36,6 +36,7 @@ export const Button: ButtonComponent = (props) => {
 
 Button.defaultProps = {
 	buttonColor: undefined,
+	initialDisplay: 'inline-block',
 	size: 'large',
 	textAlign: 'center',
 	variant: 'primary',
