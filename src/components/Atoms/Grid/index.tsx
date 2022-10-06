@@ -1,1 +1,1 @@
-export { Grid, TGrid } from './Grid';
+export { Grid, type TGrid } from './Grid';

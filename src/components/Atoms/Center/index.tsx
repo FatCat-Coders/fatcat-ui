@@ -1,1 +1,1 @@
-export { Center, TCenter } from './Center';
+export { Center, type TCenter } from './Center';

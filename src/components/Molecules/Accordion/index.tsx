@@ -1,1 +1,1 @@
-export { default, TAccordion } from './Accordion';
+export { default, type TAccordion } from './Accordion';

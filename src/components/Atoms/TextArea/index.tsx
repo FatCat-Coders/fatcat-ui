@@ -1,2 +1,2 @@
-export { TextArea, TTextArea } from './TextArea';
-export { TextAreaField, TTextAreaField } from './TextAreaField';
+export { TextArea, type TTextArea } from './TextArea';
+export { TextAreaField, type TTextAreaField } from './TextAreaField';

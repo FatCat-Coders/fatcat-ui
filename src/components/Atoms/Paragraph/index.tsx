@@ -1,1 +1,1 @@
-export { Paragraph, TParagraph } from './Paragraph';
+export { Paragraph, type TParagraph } from './Paragraph';

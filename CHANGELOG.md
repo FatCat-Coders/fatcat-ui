@@ -1,5 +1,17 @@
 # fatcat-ui-library
 
+## 1.0.1
+
+### Patch Changes
+
+- Fix typing export
+
+## 1.0.0
+
+### Major Changes
+
+- First major release of fatcat ui
+
 ## 0.3.4
 
 ### Patch Changes

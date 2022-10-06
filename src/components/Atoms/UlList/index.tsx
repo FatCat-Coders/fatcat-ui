@@ -1,1 +1,1 @@
-export { UlList, TUlList } from './UlList';
+export { UlList, type TUlList } from './UlList';

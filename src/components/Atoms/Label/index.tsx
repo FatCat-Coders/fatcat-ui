@@ -1,1 +1,1 @@
-export { Label, TLabel } from './Label';
+export { Label, type TLabel } from './Label';

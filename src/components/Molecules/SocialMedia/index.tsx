@@ -1,1 +1,1 @@
-export { default, TSocialMedia } from './SocialMedia';
+export { default, type TSocialMedia } from './SocialMedia';

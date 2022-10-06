@@ -1,1 +1,1 @@
-export { Text, TText } from './Text';
+export { Text, type TText } from './Text';

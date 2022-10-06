@@ -1,1 +1,1 @@
-export { Wrapper, TWrapper } from './Wrapper';
+export { Wrapper, type TWrapper } from './Wrapper';

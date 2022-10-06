@@ -1,1 +1,1 @@
-export { default, TCheckbox } from './Checkbox';
+export { default, type TCheckbox } from './Checkbox';

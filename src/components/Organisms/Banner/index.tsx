@@ -1,1 +1,1 @@
-export { default, TBanner } from './Banner';
+export { default, type TBanner } from './Banner';

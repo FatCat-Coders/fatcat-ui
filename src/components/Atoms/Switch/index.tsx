@@ -1,1 +1,1 @@
-export { default, TSwitch } from './Switch';
+export { default, type TSwitch } from './Switch';

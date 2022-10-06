@@ -1,1 +1,1 @@
-export { OlList, TOlList } from './OlList';
+export { OlList, type TOlList } from './OlList';

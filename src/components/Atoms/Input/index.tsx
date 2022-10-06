@@ -1,2 +1,2 @@
-export { InputField, TInputField } from './InputField';
-export { Input, TInput } from './Input';
+export { InputField, type TInputField } from './InputField';
+export { Input, type TInput } from './Input';

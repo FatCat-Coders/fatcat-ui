@@ -1,1 +1,1 @@
-export { Link, TLink } from './Link';
+export { Link, type TLink } from './Link';

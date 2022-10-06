@@ -1,1 +1,1 @@
-export { Image, TImage } from './Image';
+export { Image, type TImage } from './Image';

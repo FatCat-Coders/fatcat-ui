@@ -1,1 +1,1 @@
-export { Flex, TFlex } from './Flex';
+export { Flex, type TFlex } from './Flex';
