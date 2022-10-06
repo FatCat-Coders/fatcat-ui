@@ -7,8 +7,10 @@ export type FlexProps = {
 	alignItems?: Properties['alignItems']
 	justifyContent?: Properties['justifyContent']
 	flexBasis?: Properties['flexBasis']
+	flexGrow?: Properties['flexGrow']
+	flexShrink?: Properties['flexShrink']
 	flexWrap?: Properties['flexWrap']
-	wrap?: boolean // Maybe use actual flex-wrap type to be able to set inherit
+	wrap?: boolean
 	gap?: Properties['gap']
 };
 
@@ -18,6 +20,8 @@ export const flex = css<FlexProps>`
 	${props => props.alignItems && `align-items: ${props.alignItems}`};
 	${props => props.justifyContent && `justify-content: ${props.justifyContent}`};
 	${props => props.flexBasis && `flex-basis: ${props.flexBasis}`};
+	${props => props.flexGrow && `flex-grow: ${props.flexGrow}`};
+	${props => props.flexShrink && `flex-shrink: ${props.flexShrink}`};
 	${props => props.flexWrap && `flex-wrap: ${props.flexWrap}`};
 	${props => props.wrap && 'flex-wrap: wrap'};
 	${props => props.gap && `gap: ${props.gap}`};

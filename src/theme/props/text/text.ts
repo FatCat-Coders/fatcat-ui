@@ -14,6 +14,7 @@ export type TextProps = {
 	uppercase?: boolean
 	lowercase?: boolean
 	capitalize?: boolean
+	textTransform?: Properties['textTransform']
 	ellipsis?: number
 	fontStyle?: Properties['fontStyle']
 	textDecoration?: Properties['textDecoration']
@@ -38,6 +39,7 @@ export const text = css<TextProps>`
 	${props => props.uppercase && 'text-transform: uppercase;'}
 	${props => props.lowercase && 'text-transform: lowercase;'}
 	${props => props.capitalize && 'text-transform: capitalize;'}
+	${props => props.textTransform && `text-transform: ${props.textTransform};`}
 	${props => props.fontStyle && `font-style: ${props.fontStyle};`}
 	${props => props.textDecoration && `text-decoration: ${props.textDecoration};`}
 	${props => props.textDirection && `direction: ${props.textDirection};`}
