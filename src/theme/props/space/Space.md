@@ -9,11 +9,15 @@ The CSS margin and padding properties are used to create space around elements a
 - `paddingTop`
 - `paddingLeft`
 - `paddingRight`
+- `paddingX`
+- `paddingY`
 - `margin`
 - `marginBottom`
 - `marginTop`
 - `marginLeft`
 - `marginRight`
+- `marginX`
+- `marginY`
 - `scale`
 
 We can use theme default setup or we can add some custom spacing like this:
@@ -126,6 +130,7 @@ This is example how we can use shorthanded `padding` or single sided `$magin` on
 		backgroundColor="yellow"
 		backgroundColorOpacity={0.7}
 		padding={['t64', 'r64', 'b64', 'l64']}
+		// padding="s64" we can use it like this if we want same side sizes
 		marginTop="s24"
 		marginRight="s24"
 		marginBottom="s24"

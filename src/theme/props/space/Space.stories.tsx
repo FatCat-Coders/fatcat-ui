@@ -12,7 +12,7 @@ export default {
 	argTypes: {
 		padding: {
 			control: 'array',
-			description: `List of sizing values values: \`t\`,\`r\`,\`b\`,\`l\` followed by number ${formatSizingObjectKeys(SPACE)}`,
+			description: `List of sizing values values: \`t\`,\`r\`,\`b\`,\`l\` followed by number ${formatSizingObjectKeys(SPACE)} or single sizing value`,
 			table: {
 				type: { summary: null },
 			},
@@ -45,9 +45,23 @@ export default {
 				type: { summary: null },
 			},
 		},
+		paddingX: {
+			control: 'text',
+			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
+			table: {
+				type: { summary: null },
+			},
+		},
+		paddingY: {
+			control: 'text',
+			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
+			table: {
+				type: { summary: null },
+			},
+		},
 		margin: {
 			control: 'array',
-			description: `List of sizing values values: \`t\`,\`r\`,\`b\`,\`l\` followed by number ${formatSizingObjectKeys(SPACE)}`,
+			description: `List of sizing values values: \`t\`,\`r\`,\`b\`,\`l\` followed by number ${formatSizingObjectKeys(SPACE)} or single sizing value`,
 			table: {
 				type: { summary: null },
 			},
@@ -74,6 +88,20 @@ export default {
 			},
 		},
 		marginRight: {
+			control: 'text',
+			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
+			table: {
+				type: { summary: null },
+			},
+		},
+		marginX: {
+			control: 'text',
+			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
+			table: {
+				type: { summary: null },
+			},
+		},
+		marginY: {
 			control: 'text',
 			description: `List of sizing values: ${formatObjectKeys(SPACE)}`,
 			table: {
@@ -130,11 +158,15 @@ Space.parameters = {
 			'paddingTop',
 			'paddingLeft',
 			'paddingRight',
+			'paddingX',
+			'paddingY',
 			'margin',
 			'marginBottom',
 			'marginTop',
 			'marginLeft',
 			'marginRight',
+			'marginX',
+			'marginY',
 			'scale',
 		],
 	},

@@ -32,17 +32,17 @@ export type SideSpacingTypesValue =
 	| 'l72' | 'r72' | 't72' | 'b72'
 	| 'l80' | 'r80' | 't80' | 'b80'
 	| 'l96' | 'r96' | 't96' | 'b96'
-	| 'l104' | 'r104' 	| 't104' | 'b104'
-	| 'l112' | 'r112' 	| 't112' | 'b112'
-	| 'l120' | 'r120' 	| 't120' | 'b120'
-	| 'l136' | 'r136' 	| 't136' | 'b136'
-	| 'l152' | 'r152' 	| 't152' | 'b152'
-	| 'l168' | 'r168' 	| 't168' | 'b168'
-	| 'l184' | 'r184' 	| 't184' | 'b184'
-	| 'l200' | 'r200' 	| 't200' | 'b200'
-	| 'l232' | 'r232' 	| 't232' | 'b232'
-	| 'l264' | 'r264' 	| 't264' | 'b264'
-	| 'lauto'| 'rauto'	| 'tauto'| 'bauto';
+	| 'l104' | 'r104' | 't104' | 'b104'
+	| 'l112' | 'r112' | 't112' | 'b112'
+	| 'l120' | 'r120' | 't120' | 'b120'
+	| 'l136' | 'r136' | 't136' | 'b136'
+	| 'l152' | 'r152' | 't152' | 'b152'
+	| 'l168' | 'r168' | 't168' | 'b168'
+	| 'l184' | 'r184' | 't184' | 'b184'
+	| 'l200' | 'r200' | 't200' | 'b200'
+	| 'l232' | 'r232' | 't232' | 'b232'
+	| 'l264' | 'r264' | 't264' | 'b264'
+	| 'lauto' | 'rauto' | 'tauto' | 'bauto';
 
 export type SideSpacingValue = DefaultTheme['sideSpace']
 
@@ -54,24 +54,25 @@ const SIDES: Record<string, string> = {
 } as const;
 
 type SpacingSides = typeof SIDES;
-// TODO: fix second part of types
-type SpacingSideMap = Partial<Record<SpacingSides[keyof SpacingSides], number>> | { [x: string]: string | boolean | SideSpacingValue[]; };
-type SpaceParser = (value: SpaceDefinition | SideSpacingValue[], SPACE: {[x:string]: string}) => SpacingSideMap;
+type SpacingSideMap = Partial<Record<SpacingSides[keyof SpacingSides], number>> | { [x: string]: (string | boolean | SideSpacingValue[]); };
+type SpaceParser = (value: SpaceDefinition | SideSpacingValue[], SPACE: { [x: string]: string }) => SpacingSideMap;
 
 export const parseSpace = memoize<SpaceParser>((value, SPACE) => {
-	const spaces = Array.isArray(value) ? value : value.split(' ');
+	const spaces = Array.isArray(value) ? value : String(value).split(' ');
 	return spaces.reduce((accumulator, value) => {
 		if (value?.length >= 2) {
 			const side = SIDES[value.charAt(0)];
-			// @ts-ignore
 			const size = SPACE[`s${value.slice(1)}`];
 
 			if (side && space) {
-				// @ts-ignore
 				accumulator[side] = size === 'auto' ? size : parseInt(size, 10);
 			}
+			if (value.charAt(0) === 's' && spaces.length < 2) {
+				Object.values(SIDES).forEach((item) => {
+					accumulator[item] = parseInt(size, 10);
+				});
+			}
 		}
-
 		return accumulator;
 	}, {});
 });
@@ -82,11 +83,15 @@ export type SpaceProps = {
 	paddingTop?: SpaceDefinition;
 	paddingLeft?: SpaceDefinition;
 	paddingRight?: SpaceDefinition;
+	paddingX?: SpaceDefinition;
+	paddingY?: SpaceDefinition;
 	margin?: string | SideSpacingValue[];
 	marginBottom?: SpaceDefinition;
 	marginTop?: SpaceDefinition;
 	marginLeft?: SpaceDefinition;
 	marginRight?: SpaceDefinition;
+	marginX?: SpaceDefinition;
+	marginY?: SpaceDefinition;
 	scale?: boolean;
 };
 
@@ -101,36 +106,32 @@ export const createSideSpacingRule = (
 		if (sideMap[side] === 'auto') {
 			return `${spacingType}-${side}: ${sideMap[side]}`;
 		}
-		// @ts-ignore
-		return `${spacingType}-${side}: ${sideMap[side] / screenRatio}px`;
+		return `${spacingType}-${side}: ${(sideMap[side] as number) / screenRatio}px`;
 	}).join(';');
 };
 
 const sideSpacing = (type: SideSpacingType) => css<SpaceProps>`
 	${(props) => {
-		const parsedType = `${type}`;
-		if (!props[parsedType]) {
-			return null;
+		if (props[type]) {
+			const sides = parseSpace(props[type], props.theme.space);
+			return css`
+				${createSideSpacingRule(type, sides)};
+				${props.scale && css`
+					${props.theme.media.largeTablet} {
+						${createSideSpacingRule(type, sides, props.theme.screenRatio.largeTablet)};
+					}
+
+					${props.theme.media.tablet} {
+						${createSideSpacingRule(type, sides, props.theme.screenRatio.tablet)};
+					}
+
+					${props.theme.media.mobile} {
+						${createSideSpacingRule(type, sides, props.theme.screenRatio.mobile)};
+					}
+				`};
+			`;
 		}
-
-		// @ts-ignore
-		const sides = parseSpace(props[parsedType], props.theme.space);
-		return css`
-			${createSideSpacingRule(type, sides)};
-			${props.scale && css`
-				${props.theme.media.largeTablet} {
-					${createSideSpacingRule(type, sides, props.theme.screenRatio.largeTablet)};
-				}
-
-				${props.theme.media.tablet} {
-					${createSideSpacingRule(type, sides, props.theme.screenRatio.tablet)};
-				}
-
-				${props.theme.media.mobile} {
-					${createSideSpacingRule(type, sides, props.theme.screenRatio.mobile)};
-				}
-			`};
-		`;
+		return null;
 	}};
 `;
 
@@ -140,23 +141,59 @@ const generateSingleSideSpace = (type: SideSpacingType, side: TSpaceSide) => {
 		${(props) => {
 		if (props[cssProp]) {
 			return css`
-					${type}-${side}: ${props.theme.space[props[cssProp] as SpaceDefinition]};
-					${props.scale && css`
-						${props.theme.media.largeTablet} {
-							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.largeTablet)};
-						}
+			${type}-${side}: ${props.theme.space[props[cssProp] as SpaceDefinition]};
+			${props.scale && css`
+				${props.theme.media.largeTablet} {
+					${createSideSpacingRule(type, { [side]: props[cssProp] } as SpacingSideMap, props.theme.screenRatio.largeTablet)};
+				}
 
-						${props.theme.media.tablet} {
-							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.tablet)};
-						}
+				${props.theme.media.tablet} {
+					${createSideSpacingRule(type, { [side]: props[cssProp] } as SpacingSideMap, props.theme.screenRatio.tablet)};
+				}
 
-						${props.theme.media.mobile} {
-							${createSideSpacingRule(type, { [side]: props[cssProp] }, props.theme.screenRatio.mobile)};
-						}
-					`};
-				`;
+				${props.theme.media.mobile} {
+					${createSideSpacingRule(type, { [side]: props[cssProp] } as SpacingSideMap, props.theme.screenRatio.mobile)};
+				}
+			`};
+		`;
 		}
+		return null;
+	}}
+	`;
+};
 
+const AXIS_SIDES: Record<string, Array<string>> = {
+	x: ['left', 'right'],
+	y: ['top', 'bottom'],
+};
+
+const generateAxisSpace = (type: SideSpacingType, side: keyof typeof AXIS_SIDES) => {
+	const cssProp = `${type}${capitalize(side)}` as keyof SpaceProps;
+	const axis = AXIS_SIDES[side];
+	return css<SpaceProps>`
+	${(props) => {
+		if (props[cssProp]) {
+			return css`
+			${type}-${axis[0]}: ${props.theme.space[props[cssProp] as SpaceDefinition]};
+			${type}-${axis[1]}: ${props.theme.space[props[cssProp] as SpaceDefinition]};
+			${props.scale && css`
+				${props.theme.media.largeTablet} {
+					${createSideSpacingRule(type, { [axis[0]]: props[cssProp] } as SpacingSideMap, props.theme.screenRatio.largeTablet)};
+					${createSideSpacingRule(type, { [axis[1]]: props[cssProp] } as SpacingSideMap, props.theme.screenRatio.largeTablet)};
+				}
+
+				${props.theme.media.tablet} {
+					${createSideSpacingRule(type, { [axis[0]]: props[cssProp] } as SpacingSideMap, props.theme.screenRatio.tablet)};
+					${createSideSpacingRule(type, { [axis[1]]: props[cssProp] } as SpacingSideMap, props.theme.screenRatio.tablet)};
+				}
+
+				${props.theme.media.mobile} {
+					${createSideSpacingRule(type, { [axis[0]]: props[cssProp] } as SpacingSideMap, props.theme.screenRatio.mobile)};
+					${createSideSpacingRule(type, { [axis[1]]: props[cssProp] } as SpacingSideMap, props.theme.screenRatio.mobile)};
+				}
+			`};
+		`;
+		}
 		return null;
 	}}
 	`;
@@ -165,6 +202,10 @@ const generateSingleSideSpace = (type: SideSpacingType, side: TSpaceSide) => {
 export const space = css<SpaceProps>`
 	${sideSpacing('padding')};
 	${sideSpacing('margin')};
+	${generateAxisSpace('padding', 'x')}
+	${generateAxisSpace('padding', 'y')}
+	${generateAxisSpace('margin', 'x')}
+	${generateAxisSpace('margin', 'y')}
 	${generateSingleSideSpace('padding', 'left')};
 	${generateSingleSideSpace('padding', 'right')};
 	${generateSingleSideSpace('padding', 'top')};
