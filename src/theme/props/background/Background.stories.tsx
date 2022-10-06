@@ -16,6 +16,7 @@ export default {
 		backgroundAttachment: { control: 'text', description: 'String with css property', type: 'string' },
 		backgroundBlendMode: { control: 'text', description: 'String with css property', type: 'string' },
 		backgroundBlur: { control: 'text', description: 'String with css property', type: 'string' },
+		background: { control: 'text', description: 'String with css property or name of background color from theme', type: 'string' },
 		backgroundColor: {
 			control: 'select',
 			options: Object.keys(BACKGROUND_COLOR),
@@ -29,7 +30,7 @@ export default {
 		backgroundPosition: { control: 'text', description: 'String with css property', type: 'string' },
 		backgroundRepeat: { control: 'text', description: 'String with css property', type: 'string' },
 		backgroundSize: { control: 'text', description: 'String with css property', type: 'string' },
-		filterilter: { control: 'text', description: 'String with css property', type: 'string' },
+		filter: { control: 'text', description: 'String with css property', type: 'string' },
 	},
 	parameters: {
 		docs: {

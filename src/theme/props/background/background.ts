@@ -3,6 +3,7 @@ import { Properties } from 'csstype';
 import { rgba } from 'polished';
 
 export type BackgroundProps = {
+	background?: keyof DefaultTheme['backgroundColor'] | Properties['background']
 	backgroundColor?: keyof DefaultTheme['backgroundColor']
 	backgroundColorHex?: Properties['backgroundColor']
 	backgroundColorOpacity?: number
@@ -19,6 +20,7 @@ export type BackgroundProps = {
 };
 
 export const background = css<BackgroundProps>`
+	${props => props.background && `background: ${props.theme.backgroundColor[props.background] ? props.theme.backgroundColor[props.background] : props.background};`}
 	${props => props.backgroundColor && props.theme.backgroundColor[props.backgroundColor] && `background-color: ${props.backgroundColorOpacity
 		? rgba(props.theme.backgroundColor[props.backgroundColor], props.backgroundColorOpacity)
 		: props.theme.backgroundColor[props.backgroundColor]};`}
