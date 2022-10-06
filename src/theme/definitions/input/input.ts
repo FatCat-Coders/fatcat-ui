@@ -49,6 +49,10 @@ export const INPUT_STYLE = {
 			}
 
 			@supports (not (-ms-ime-align:auto)) {
+				&:-webkit-autofill ~ label,
+				&:-webkit-autofill:hover ~ label,
+				&:-webkit-autofill:focus ~ label,
+				&:-webkit-autofill:active ~ label,
 				&:focus ~ label,
 				&:not(:placeholder-shown) ~ label {
 					transform-origin: left center;
