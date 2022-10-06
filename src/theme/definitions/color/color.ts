@@ -1,8 +1,8 @@
 import { darken } from 'polished';
 
 export const COLOR = {
-	primary: '#3D7FEB',
-	primaryLight: '#3D7FEBE6',
+	primary: '#232737',
+	primaryLight: '#232737E6',
 	black: '#000000',
 	dark: '#0A0A0A',
 	blackHigh: '#030303',
