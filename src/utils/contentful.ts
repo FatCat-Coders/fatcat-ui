@@ -6,7 +6,7 @@ import { TContentfulLink, TContentfulOptions, TParsedLink } from './types';
 // Constants
 import { CONTENTFUL_OPTIONS } from './constants';
 
-function getLinkPrefix(typename: string| undefined): string {
+function getLinkPrefix(typename: string | undefined): string {
 	if (typename && typename === 'ContentfulBlogPost') {
 		return 'blog/';
 	}
@@ -32,14 +32,15 @@ export function parseContentfulLink(link: TContentfulLink): TParsedLink {
  * @param options
  */
 export function parseContentfulOptions(options: TContentfulOptions[]) {
-	const result: any = {
+	const result: { [x: string]: Array<string> | boolean | string } = {
 		[CONTENTFUL_OPTIONS.PADDING]: [],
 		[CONTENTFUL_OPTIONS.MARGIN]: [],
+
+		[CONTENTFUL_OPTIONS.LARGE_TABLET]: [],
 		[CONTENTFUL_OPTIONS.TABLET]: [],
 		[CONTENTFUL_OPTIONS.MOBILE]: [],
 		[CONTENTFUL_OPTIONS.DESKTOP]: [],
 
-		[CONTENTFUL_OPTIONS.SCALE]: true,
 		[CONTENTFUL_OPTIONS.OVERFLOW]: false,
 	};
 
@@ -50,17 +51,14 @@ export function parseContentfulOptions(options: TContentfulOptions[]) {
 	options.forEach((option) => {
 		switch (option.key) {
 			case CONTENTFUL_OPTIONS.MARGIN:
+			case CONTENTFUL_OPTIONS.LARGE_TABLET:
 			case CONTENTFUL_OPTIONS.TABLET:
 			case CONTENTFUL_OPTIONS.MOBILE:
 			case CONTENTFUL_OPTIONS.DESKTOP:
 			case CONTENTFUL_OPTIONS.PADDING: {
-				if (result[option.key].indexOf(option.value) === -1) {
-					result[option.key].push(option.value);
+				if ((result[option.key] as Array<string>).indexOf(option.value) === -1) {
+					(result[option.key] as Array<string>).push(option.value);
 				}
-				break;
-			}
-			case CONTENTFUL_OPTIONS.SCALE: {
-				result[option.key] = option.value === 'true';
 				break;
 			}
 			case CONTENTFUL_OPTIONS.OVERFLOW: {
