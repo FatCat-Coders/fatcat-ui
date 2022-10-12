@@ -15,7 +15,7 @@ export type TButton = {
 } & GeneralProps;
 
 export const ButtonBase = styled('button').withConfig({
-	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
 }) <TButton>`
     cursor: pointer;
     display: inline-block;

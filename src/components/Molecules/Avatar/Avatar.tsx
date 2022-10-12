@@ -41,7 +41,7 @@ const Avatar: React.FC<TAvatar> = (props) => {
 		textColor,
 		css,
 	} = props;
-	const sizeValue = sizes[size] || size;
+	const sizeValue = sizes[size as string] || size;
 	return (
 		<Flex
 			width="fit-content"
@@ -84,12 +84,12 @@ const Avatar: React.FC<TAvatar> = (props) => {
 
 Avatar.defaultProps = {
 	imageAlt: '',
-	profile: null,
+	profile: undefined,
 	profileAlt: '',
-	title: null,
-	subtitle: null,
+	title: undefined,
+	subtitle: undefined,
 	size: 'medium',
-	css: null,
+	css: undefined,
 	textColor: 'primary',
 };
 

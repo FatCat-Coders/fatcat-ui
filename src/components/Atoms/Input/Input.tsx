@@ -52,7 +52,7 @@ export const Input: React.FC<TInput> = (props) => {
 };
 
 Input.defaultProps = {
-	id: null,
-	placeholder: null,
-	errorMsg: null,
+	id: undefined,
+	placeholder: undefined,
+	errorMsg: undefined,
 };

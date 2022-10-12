@@ -55,7 +55,7 @@ const SIDES: Record<string, string> = {
 
 type SpacingSides = typeof SIDES;
 type SpacingSideMap = Partial<Record<SpacingSides[keyof SpacingSides], number>> | { [x: string]: (string | boolean | SideSpacingValue[]); };
-type SpaceParser = (value: SpaceDefinition | SideSpacingValue[], SPACE: { [x: string]: string }) => SpacingSideMap;
+type SpaceParser = (value: SpaceDefinition | [SpaceDefinition] | SideSpacingValue[], SPACE: { [x: string]: string }) => SpacingSideMap;
 
 export const parseSpace = memoize<SpaceParser>((value, SPACE) => {
 	const spaces = Array.isArray(value) ? value : String(value).split(' ');
@@ -78,14 +78,14 @@ export const parseSpace = memoize<SpaceParser>((value, SPACE) => {
 });
 
 export type SpaceProps = {
-	padding?: string | SideSpacingValue[];
+	padding?: SpaceDefinition | [SpaceDefinition] | SideSpacingValue[];
 	paddingBottom?: SpaceDefinition;
 	paddingTop?: SpaceDefinition;
 	paddingLeft?: SpaceDefinition;
 	paddingRight?: SpaceDefinition;
 	paddingX?: SpaceDefinition;
 	paddingY?: SpaceDefinition;
-	margin?: string | SideSpacingValue[];
+	margin?: SpaceDefinition | [SpaceDefinition] | SideSpacingValue[];
 	marginBottom?: SpaceDefinition;
 	marginTop?: SpaceDefinition;
 	marginLeft?: SpaceDefinition;

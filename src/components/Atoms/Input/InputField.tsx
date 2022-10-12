@@ -8,7 +8,7 @@ export type TInputField = {
 } & GeneralProps;
 
 export const InputField = styled.input.withConfig({
-	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
 }) <TInputField>`
 	${props => props.variant && props.theme.inputStyle[props.variant]};
 	${generalProps};

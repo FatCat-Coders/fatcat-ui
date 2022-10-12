@@ -6,12 +6,12 @@ import { generalProps, GeneralProps } from '../../../theme/props';
 export type TText = GeneralProps;
 
 export const Text = styled.span.withConfig({
-	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
 }) <TText>`
 	${props => props.theme.textStyle.text}
 	${generalProps};
 `;
 
 Text.defaultProps = {
-	initalDisplay: 'inline',
+	initialDisplay: 'inline',
 };

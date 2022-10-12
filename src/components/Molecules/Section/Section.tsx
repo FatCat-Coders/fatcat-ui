@@ -8,6 +8,7 @@ import {
 	SpaceProps,
 	VisibilityProps,
 	PositionProps,
+	OverflowProps,
 	CustomCssProps,
 } from '../../../theme/props';
 
@@ -24,11 +25,12 @@ export type TSection =
 		width?: keyof DefaultTheme['sectionWidth']
 	}
 	& BackgroundProps
+	& CustomCssProps
+	& OverflowProps
+	& PositionProps
 	& ResponsiveProps
 	& SpaceProps
-	& VisibilityProps
-	& PositionProps
-	& CustomCssProps;
+	& VisibilityProps;
 
 const Section: React.FC<TSection> = (props) => {
 	const {

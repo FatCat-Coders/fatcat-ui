@@ -22,7 +22,7 @@ const starPop = keyframes`
 	}
 `;
 
-export const RatingItem = styled(Flex)`
+export const RatingItem = styled(Flex)<{pop: boolean}>`
 	align-items: center;
 	${props => props.pop && css`
 		transition: all 0.1s ease-in-out;

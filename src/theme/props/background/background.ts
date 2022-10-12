@@ -3,7 +3,7 @@ import { Properties } from 'csstype';
 import { rgba } from 'polished';
 
 export type BackgroundProps = {
-	background?: keyof DefaultTheme['backgroundColor'] | Properties['background']
+	background?: keyof DefaultTheme['backgroundColor'] | string
 	backgroundColor?: keyof DefaultTheme['backgroundColor']
 	backgroundColorHex?: Properties['backgroundColor']
 	backgroundColorOpacity?: number

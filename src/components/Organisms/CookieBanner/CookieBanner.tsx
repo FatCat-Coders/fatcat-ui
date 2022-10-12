@@ -110,7 +110,7 @@ CookieBanner.defaultProps = {
 	cookieTextColor: 'primary',
 	declineHoverColor: 'greyLight',
 	useCookieIcon: true,
-	css: null,
+	css: undefined,
 };
 
 export default CookieBanner;

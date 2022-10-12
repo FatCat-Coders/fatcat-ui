@@ -9,7 +9,7 @@ import {
 export type TGrid = GridProps & GeneralProps;
 
 export const Grid = styled.div.withConfig({
-	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
 }) <TGrid>`
 	${grid}
 	${generalProps};
@@ -18,5 +18,5 @@ export const Grid = styled.div.withConfig({
 Grid.defaultProps = {
 	width: '100%',
 	display: 'grid',
-	initalDisplay: 'grid',
+	initialDisplay: 'grid',
 };

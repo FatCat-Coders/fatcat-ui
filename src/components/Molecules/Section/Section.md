@@ -3,9 +3,11 @@ Our Section component that we use as container layout in our project. It's made 
 ### Outer:
 - `as` -- one of html elements `section` | `div` | `header` | `footer` default value is section
 - `Background`
-- `Visibility`
-- `Overflow`
 - `CustomCss`
+- `Overflow`
+- `Position`
+- `Responsive` - all except `padding` and `margin` related props
+- `Visibility`
 - `edge` -- spread section to edges, removing paddings default value is false
 - `sticky` -- change section to positon - sticky default value is false
 
@@ -14,6 +16,8 @@ Our Section component that we use as container layout in our project. It's made 
 - `width` -- one of key defined in theme `sectionWidth` default value is normal
 - `scale` -- scale paddings inside inner element on beakpoints default value is false
 ## Usage 
+
+	& ResponsiveProps
 
 First we simply start with importing component:
 

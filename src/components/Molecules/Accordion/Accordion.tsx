@@ -47,7 +47,14 @@ const Accordion: React.FC<TAccordion> = (props) => {
 				>
 					{title}
 					{useArrow ? (
-						<Arrow isOpen={isOpen} xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="#767986" focusable="false">
+						<Arrow
+							isOpen={isOpen}
+							xmlns="http://www.w3.org/2000/svg"
+							width="9" height="6"
+							viewBox="0 0 9 6"
+							fill="#767986"
+							focusable="false"
+						>
 							<path
 								d="M7.97267 0.431484C8.20411 0.188471 8.57935 0.188471 8.81079 0.431484C9.04224 0.674497 9.04224 1.0685 8.81079
 								 1.31151L5.25494 5.04516C5.03058 5.28074 4.66932 5.28898 4.43542 5.06385L0.879566 1.64135C0.63829 1.40912
@@ -80,7 +87,7 @@ Accordion.defaultProps = {
 	titleColor: 'primary',
 	contentColor: 'primary',
 	contentSize: 'large',
-	css: null,
+	css: undefined,
 };
 
 export default Accordion;

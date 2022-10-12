@@ -119,13 +119,13 @@ const Ratings: React.FC<TRatings> = (props) => {
 Ratings.defaultProps = {
 	rating: null,
 	maxRating: 5,
-	getRating: null,
+	getRating: undefined,
 	size: '24px',
 	gap: '8px',
 	backgroundColor: 'white',
 	starColor: 'yellow',
 	starBorder: 'grey',
-	css: null,
+	css: undefined,
 };
 
 export default Ratings;

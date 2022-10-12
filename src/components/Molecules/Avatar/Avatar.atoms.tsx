@@ -19,7 +19,7 @@ export const AvatarWrapper = styled(Wrapper) <{ profile?: boolean, size?: string
 	`};
 `;
 
-export const AvatarProfile = styled(Wrapper) <{ isOpen: boolean }>`
+export const AvatarProfile = styled(Wrapper)`
 	border-radius: 50%;
 	overflow: hidden;
 	position: absolute;

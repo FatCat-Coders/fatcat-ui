@@ -6,7 +6,7 @@ import { generalProps, GeneralProps } from '../../../theme/props';
 export type TLabel = GeneralProps;
 
 export const Label = styled.label.withConfig({
-	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
 }) <TLabel>`
 	${generalProps};
 `;

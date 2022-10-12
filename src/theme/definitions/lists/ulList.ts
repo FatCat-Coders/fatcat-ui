@@ -39,4 +39,5 @@ export const ULLIST_STYLE = {
 			${props => props.bulletColor && `color: ${props.theme.color[props.bulletColor]};`}
 		}
 	`,
+	noStyle: css``,
 };

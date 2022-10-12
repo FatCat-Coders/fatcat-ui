@@ -16,4 +16,5 @@ export const OLLIST_STYLE = {
 			content: counter(item, upper-alpha) ". ";
 		}
 	`,
+	noStyle: css``,
 };

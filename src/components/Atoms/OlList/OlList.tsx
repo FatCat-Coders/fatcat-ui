@@ -1,4 +1,4 @@
-import styled, { DefaultTheme } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import { UIprops } from '../../../utils/ui-props';
 
 // themes
@@ -10,24 +10,26 @@ export type TOlList = {
 } & GeneralProps;
 
 export const OlList = styled.ol.withConfig({
-	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
 }) <TOlList>`
-	list-style: none;
-	counter-reset: item;
-	padding-left: ${props => props.theme.space.s24};
+	${props => props.variant !== 'noStyle' && css`
+		list-style: none;
+		counter-reset: item;
+		padding-left: ${props => props.theme.space.s24};
 
-	> li {
-		display: flex;
-		counter-increment: item;
-		&:before {
-			display: inline-block;
-			content: counter(item) ". ";
-			font-size: 1em;
-			width: 1em;
-			margin-right: clamp(4px, 0.35em, 0.35em);
-			${props => props.bulletColor && `color: ${props.theme.color[props.bulletColor]}`};
+		> li {
+			display: flex;
+			counter-increment: item;
+			&:before {
+				display: inline-block;
+				content: counter(item) ". ";
+				font-size: 1em;
+				width: 1em;
+				margin-right: clamp(4px, 0.35em, 0.35em);
+				${props => props.bulletColor && `color: ${props.theme.color[props.bulletColor]}`};
+			}
 		}
-	}
+	`};
 
 	${props => props.variant && props.theme.ollistStyle[props.variant]};
 	${generalProps};
@@ -37,5 +39,5 @@ OlList.defaultProps = {
 	variant: 'base',
 	textColor: 'primary',
 	bulletColor: 'black',
-	initalDisplay: 'block',
+	initialDisplay: 'block',
 };

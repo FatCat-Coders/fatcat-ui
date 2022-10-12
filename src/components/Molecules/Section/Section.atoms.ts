@@ -17,21 +17,36 @@ export type TSectionInnerWrapper =
 	& SpaceProps
 	& ResponsiveProps;
 
+const splitedProps = [
+	'padding',
+	'paddingTop',
+	'paddingRight',
+	'paddingLeft',
+	'paddingBottom',
+	'paddingY',
+	'paddingX',
+	'margin',
+	'margin',
+	'marginTop',
+	'marginRight',
+	'marginLeft',
+	'marginBottom',
+	'marginY',
+	'marginX',
+	'clearSideSpacing',
+	'clearLeftSideSpacing',
+	'clearRightSideSpacing',
+	'clearTopSideSpacing',
+	'clearBottomSideSpacing',
+];
+
 export const SectionInnerWrapper = styled.div.withConfig({
-	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
 }) <TSectionInnerWrapper>`
 	max-width: ${props => props.theme.sectionWidth[props.width]};
 	width: 100%;
 	${space};
-	${responsiveWithProps([
-		'padding',
-		'margin',
-		'clearSideSpacing',
-		'clearLeftSideSpacing',
-		'clearRightSideSpacing',
-		'clearTopSideSpacing',
-		'clearBottomSideSpacing',
-	])};
+	${responsiveWithProps(splitedProps)};
 `;
 
 export type TSectionOuterWrapper =
@@ -47,7 +62,7 @@ export type TSectionOuterWrapper =
 	& CustomCssProps;
 
 export const SectionOuterWrapper = styled.section.withConfig({
-	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
 }) <TSectionOuterWrapper>`
 	width: 100%;
 	justify-content: center;
@@ -73,15 +88,7 @@ export const SectionOuterWrapper = styled.section.withConfig({
 	${background};
 	${position};
 	${visibility};
-	${responsiveWithProps([
-		'padding',
-		'margin',
-		'clearSideSpacing',
-		'clearLeftSideSpacing',
-		'clearRightSideSpacing',
-		'clearTopSideSpacing',
-		'clearBottomSideSpacing',
-	], true)};
+	${responsiveWithProps(splitedProps, true)};
 	${customCss};
 `;
 

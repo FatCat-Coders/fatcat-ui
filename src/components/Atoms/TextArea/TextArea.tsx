@@ -52,7 +52,7 @@ export const TextArea: React.FC<TTextArea> = (props) => {
 };
 
 TextArea.defaultProps = {
-	id: null,
-	placeholder: null,
-	errorMsg: null,
+	id: undefined,
+	placeholder: undefined,
+	errorMsg: undefined,
 };

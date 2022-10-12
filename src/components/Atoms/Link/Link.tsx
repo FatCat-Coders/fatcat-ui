@@ -17,7 +17,7 @@ export type TLink =
 	} & GeneralProps;
 
 export const LinkBase = styled.a.withConfig({
-	shouldForwardProp: (prop: string, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
 }) <TLink>`
 	cursor: pointer;
 	${props => props.variant && props.theme.linkStyle[props.variant]};

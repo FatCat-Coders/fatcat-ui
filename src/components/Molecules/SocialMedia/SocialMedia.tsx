@@ -25,7 +25,7 @@ export const mappedSocial = {
 
 export type TSocialMedia = {
 	socials: { [ key in SOCIAL_MEDIA ]: string }
-	color: keyof DefaultTheme['color']
+	color?: keyof DefaultTheme['color']
 	hover?: HoverTypes
 	width?: Properties['width']
 	gap?: Properties['gap']
@@ -50,7 +50,7 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 			css={css}
 		>
 			{Object.entries(socials).map((obj) => {
-				const [key, value] = obj;
+				const [key, value] = obj as [SOCIAL_MEDIA, string];
 				return (
 					<Link
 						key={key}
@@ -78,10 +78,11 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 };
 
 SocialMedia.defaultProps = {
-	hover: null,
-	width: null,
+	color: undefined,
+	hover: undefined,
+	width: undefined,
 	gap: '4px',
-	css: null,
+	css: undefined,
 };
 
 export default SocialMedia;
