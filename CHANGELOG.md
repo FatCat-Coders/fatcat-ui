@@ -1,5 +1,17 @@
 # fatcat-ui-library
 
+## 1.0.3
+
+### Patch Changes
+
+- Add Text and Link default lineHeight
+
+## 1.0.2
+
+### Patch Changes
+
+- Fix Typings and remove constants for Contentful
+
 ## 1.0.1
 
 ### Patch Changes

@@ -72,5 +72,10 @@ export const TEXT_STYLE = {
 		${props => props.theme.textSize.button};
 		font-weight: ${props => props.theme.fontWeight.semiBold};
 	`,
-	text: css``,
+	text: css`
+		${props => props.theme.textSize.text};
+	`,
+	link: css`
+		${props => props.theme.textSize.link};
+	`,
 };
