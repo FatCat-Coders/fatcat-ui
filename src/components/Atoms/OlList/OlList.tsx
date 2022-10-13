@@ -10,7 +10,7 @@ export type TOlList = {
 } & GeneralProps;
 
 export const OlList = styled.ol.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TOlList>`
 	${props => props.variant !== 'noStyle' && css`
 		list-style: none;

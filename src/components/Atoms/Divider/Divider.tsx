@@ -28,8 +28,8 @@ export const DashedDivider = styled.hr<{ color?: string }>`
 `;
 
 export const BR = styled.br.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
-})<VisibilityProps>`
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <VisibilityProps>`
 	${visibility};
 `;
 

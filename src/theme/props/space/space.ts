@@ -83,15 +83,15 @@ export type SpaceProps = {
 	paddingTop?: SpaceDefinition;
 	paddingLeft?: SpaceDefinition;
 	paddingRight?: SpaceDefinition;
-	paddingX?: SpaceDefinition;
-	paddingY?: SpaceDefinition;
+	paddingX?: SpaceDefinition | [SpaceDefinition];
+	paddingY?: SpaceDefinition | [SpaceDefinition];
 	margin?: SpaceDefinition | [SpaceDefinition] | SideSpacingValue[];
 	marginBottom?: SpaceDefinition;
 	marginTop?: SpaceDefinition;
 	marginLeft?: SpaceDefinition;
 	marginRight?: SpaceDefinition;
-	marginX?: SpaceDefinition;
-	marginY?: SpaceDefinition;
+	marginX?: SpaceDefinition | [SpaceDefinition];
+	marginY?: SpaceDefinition | [SpaceDefinition];
 	scale?: boolean;
 };
 

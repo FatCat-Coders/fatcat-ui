@@ -12,7 +12,7 @@ export type TIcon = {
 } & GeneralProps;
 
 export const Icon = styled(AiFillStar).withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TIcon>`
 	${props => props.svgColor && `color: ${props.theme.color[props.svgColor]};`}
 	${generalProps};

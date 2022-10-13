@@ -41,7 +41,7 @@ const splitedProps = [
 ];
 
 export const SectionInnerWrapper = styled.div.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TSectionInnerWrapper>`
 	max-width: ${props => props.theme.sectionWidth[props.width]};
 	width: 100%;
@@ -62,7 +62,7 @@ export type TSectionOuterWrapper =
 	& CustomCssProps;
 
 export const SectionOuterWrapper = styled.section.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TSectionOuterWrapper>`
 	width: 100%;
 	justify-content: center;

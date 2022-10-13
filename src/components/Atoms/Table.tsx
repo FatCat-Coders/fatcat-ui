@@ -8,7 +8,7 @@ export type TTable = {
 } & GeneralProps;
 
 export const Table = styled.table.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TTable>`
 	thead th {
 		border-bottom: 5px solid ${props => props.theme.color.white10};

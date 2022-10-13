@@ -7,7 +7,7 @@ export type TOption =
 	& GeneralProps;
 
 export const Option = styled.option.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TOption>`
 	${generalProps};
 `;

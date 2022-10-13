@@ -9,7 +9,7 @@ import {
 export type TCenter = FlexProps & GeneralProps;
 
 export const Center = styled.div.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TCenter>`
 	${flex};
 	${generalProps};

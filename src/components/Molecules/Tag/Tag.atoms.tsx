@@ -25,7 +25,7 @@ export const tagVariant = {
 };
 
 export const TagWrapper = styled.div.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TTagWrapper>`
 	${props => props.variant && tagVariant[props.variant]};
 	${flex};

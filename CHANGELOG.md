@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.0.4
+
+### Patch Changes
+
+- Reverse typing for all components due bugs were typing is not passed correctly
+
 ## 1.0.3
 
 ### Patch Changes

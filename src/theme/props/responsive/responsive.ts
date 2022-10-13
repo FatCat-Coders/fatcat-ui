@@ -8,7 +8,7 @@ import pickObjectProperties from '../../../utils/pick-object-properties';
 type ResponsiveTypes = keyof DefaultTheme['responsive'];
 
 type TResponsiveObj = {
-	[key: ResponsiveTypes]: ((args: string | number | SideSpacingValue[]) => CSSProp) | CSSProp;
+	[key in ResponsiveTypes]: ((args: string | number | SideSpacingValue[]) => CSSProp) | CSSProp;
 }
 export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<TResponsiveObj>)[];
 
@@ -25,20 +25,20 @@ export type ResponsiveProps = {
 
 export const responsive = css<ResponsiveProps>`
 	${props => Object.keys(props.theme.media).reduce((acc, key) => {
-		if (props[key]) {
+		if (props[key as keyof ResponsiveProps]) {
 			acc.push(css`
-					${props.theme.media[key]} {
-						${pickObjectProperties(props.theme.responsive, props[key])}
+					${props.theme.media[key as keyof ResponsiveProps]} {
+						${pickObjectProperties(props.theme.responsive as any, props[key as keyof ResponsiveProps])}
 					}
 				`);
 		}
 		return acc;
-	}, [])}
+	}, [] as CSSProp[])}
 `;
 
 export const responsiveWithProps = (includedKeys: ResponsiveTypes[], excluded = false) => css<ResponsiveProps>`
 	${(props) => {
-		let newProps = {};
+		let newProps = {} as {[k in ResponsiveTypes]: any};
 		if (!excluded) {
 			includedKeys.forEach((key) => {
 				newProps[key] = props.theme.responsive[key];
@@ -51,14 +51,14 @@ export const responsiveWithProps = (includedKeys: ResponsiveTypes[], excluded = 
 		}
 
 		return Object.keys(props.theme.media).reduce((acc, key) => {
-			if (props[key]) {
+			if (props[key as keyof ResponsiveProps]) {
 				acc.push(css`
-				${props.theme.media[key]} {
-					${pickObjectProperties(newProps, props[key])}
+				${props.theme.media[key as keyof ResponsiveProps]} {
+					${pickObjectProperties(newProps, props[key as keyof ResponsiveProps])}
 				}
 			`);
 			}
 			return acc;
-		}, []);
+		}, [] as CSSProp[]);
 	}}
 `;

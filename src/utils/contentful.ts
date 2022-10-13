@@ -32,7 +32,7 @@ export function parseContentfulLink(link: TContentfulLink): TParsedLink {
  * @param options
  */
 export function parseContentfulOptions(options: TContentfulOptions[]) {
-	const result: { [x: string]: Array<string> | boolean | string } = {
+	const result: any = {
 		[CONTENTFUL_OPTIONS.PADDING]: [],
 		[CONTENTFUL_OPTIONS.MARGIN]: [],
 
@@ -56,8 +56,8 @@ export function parseContentfulOptions(options: TContentfulOptions[]) {
 			case CONTENTFUL_OPTIONS.MOBILE:
 			case CONTENTFUL_OPTIONS.DESKTOP:
 			case CONTENTFUL_OPTIONS.PADDING: {
-				if ((result[option.key] as Array<string>).indexOf(option.value) === -1) {
-					(result[option.key] as Array<string>).push(option.value);
+				if ((result[option.key]).indexOf(option.value) === -1) {
+					(result[option.key]).push(option.value);
 				}
 				break;
 			}

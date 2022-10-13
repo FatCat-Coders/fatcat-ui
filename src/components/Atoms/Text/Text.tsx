@@ -6,7 +6,7 @@ import { generalProps, GeneralProps } from '../../../theme/props';
 export type TText = GeneralProps;
 
 export const Text = styled.span.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TText>`
 	${props => props.theme.textStyle.text}
 	${generalProps};

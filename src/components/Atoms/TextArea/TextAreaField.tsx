@@ -8,7 +8,7 @@ export type TTextAreaField = {
 } & GeneralProps;
 
 export const TextAreaField = styled.textarea.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TTextAreaField>`
 	resize: none;
 	${props => props.variant && props.theme.inputStyle[props.variant]};

@@ -6,7 +6,7 @@ import { generalProps, GeneralProps } from '../../../theme/props';
 export type TImage = GeneralProps;
 
 export const Image = styled.img.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TImage>`
 	${generalProps};
 `;

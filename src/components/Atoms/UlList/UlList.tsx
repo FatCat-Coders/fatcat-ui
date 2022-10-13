@@ -9,7 +9,7 @@ export type TUlList = {
 } & GeneralProps;
 
 export const UlList = styled.ul.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TUlList>`
 	${props => props.variant !== 'noStyle' && css`
 		list-style: none;

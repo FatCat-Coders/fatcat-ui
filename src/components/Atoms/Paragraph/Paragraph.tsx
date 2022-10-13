@@ -11,7 +11,7 @@ export type TParagraph = {
 } & GeneralProps;
 
 export const Paragraph = styled.p.withConfig({
-	shouldForwardProp: (prop: string | number, defaultValidatorFn) => !UIprops.includes(String(prop)) && defaultValidatorFn(prop),
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TParagraph>`
 	${({ theme, size }) => (theme.textStyle.paragraph[size as TParagraphSize] ? theme.textStyle.paragraph[size as TParagraphSize] : theme.textStyle.paragraph)}
 	${generalProps};

@@ -17,7 +17,6 @@ const BASE = css<{ disabled?: boolean, linkColor?: typeof LINK_COLOR }>`
 
 export const LINK_STYLE = {
 	base: css`
-		text-decoration: none;
 		${BASE}
 	`,
 	underline: css`
