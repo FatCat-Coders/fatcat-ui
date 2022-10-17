@@ -8,8 +8,8 @@ The CSS overflow property controls what happens to content that is too big to fi
 
 ```jsx
 <Wrapper
-	height="100px"
-	width="100px"
+	h="100px"
+	w="100px"
 	padding={['t12', 'r12', 'b12', 'l12']}
 	backgroundColor="yellow"
 	overflow="hidden"

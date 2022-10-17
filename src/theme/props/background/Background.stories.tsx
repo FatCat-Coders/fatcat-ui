@@ -44,13 +44,13 @@ export default {
 const Template = ({ children, ...args }) => (
 	<Flex gap="20px">
 		<Wrapper
-			height="100px"
-			width="100px"
+			h="100px"
+			w="100px"
 			{...args}
 		/>
 		<Wrapper
-			height="100px"
-			width="100px"
+			h="100px"
+			w="100px"
 			{...args}
 			backgroundImage={colors}
 		/>

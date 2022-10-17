@@ -22,8 +22,8 @@ export default {
 
 const Template = ({ children, ...args }) => (
 	<Wrapper
-		height="100px"
-		width="100px"
+		h="100px"
+		w="100px"
 		backgroundColor="yellow"
 		transition="all 0.3s ease"
 		{...args}

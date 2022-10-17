@@ -8,12 +8,12 @@ import readme from './Size.md';
 export default {
 	title: 'Element Props/Size',
 	argTypes: {
-		width: { control: 'text', description: 'String with css property', type: 'string' },
-		maxWidth: { control: 'text', description: 'String with css property', type: 'string' },
-		minWidth: { control: 'text', description: 'String with css property', type: 'string' },
-		height: { control: 'text', description: 'String with css property', type: 'string' },
-		maxHeight: { control: 'text', description: 'String with css property', type: 'string' },
-		minHeight: { control: 'text', description: 'String with css property', type: 'string' },
+		w: { control: 'text', description: 'String with css property', type: 'string' },
+		maxW: { control: 'text', description: 'String with css property', type: 'string' },
+		minW: { control: 'text', description: 'String with css property', type: 'string' },
+		h: { control: 'text', description: 'String with css property', type: 'string' },
+		maxH: { control: 'text', description: 'String with css property', type: 'string' },
+		minH: { control: 'text', description: 'String with css property', type: 'string' },
 	},
 	parameters: {
 		docs: {
@@ -36,7 +36,7 @@ const Template = ({ children, ...args }) => (
 			left="50%"
 			transform="translateX(-50%)"
 		>
-			{args.width}
+			{args.w}
 		</Text>
 		<Text
 			position="absolute"
@@ -44,7 +44,7 @@ const Template = ({ children, ...args }) => (
 			right="-30px"
 			transform="translateY(-50%) rotate(90deg)"
 		>
-			{args.height}
+			{args.h}
 		</Text>
 	</Wrapper>
 );
@@ -54,16 +54,16 @@ export const Size = Template.bind({});
 Size.parameters = {
 	controls: {
 		include: [
-			'width',
-			'maxWidth',
-			'minWidth',
-			'height',
-			'maxHeight',
-			'minHeight',
+			'w',
+			'maxW',
+			'minW',
+			'h',
+			'maxH',
+			'minH',
 		],
 	},
 };
 Size.args = {
-	width: '100px',
-	height: '100px',
+	w: '100px',
+	h: '100px',
 };

@@ -38,7 +38,7 @@ const Tag: React.FC<TTag> = (props) => {
 			as="span"
 			display="inline-flex"
 			alignItems="center"
-			width="auto"
+			w="auto"
 			textAlign="center"
 			marginRight="s12"
 			padding={['t8', 'r10', 'b8', 'l10']}

@@ -12,6 +12,6 @@ export const Wrapper = styled.div.withConfig({
 `;
 
 Wrapper.defaultProps = {
-	width: '100%',
+	w: '100%',
 	initialDisplay: 'block',
 };

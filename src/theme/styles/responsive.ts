@@ -363,32 +363,32 @@ export const RESPONSIVE_BEHAVIORS = {
 		unicode-bidi: ${value};
 	`,
 	// width and heights
-	autoWidth: css`
+	autoW: css`
 		width: auto;
 	`,
-	autoHeight: css`
+	autoH: css`
 		height: auto;
 	`,
 	split: css`
 		max-width: 50%;
 		width: 100%;
 	`,
-	maxWidth: (value: Properties['maxWidth']) => css`
+	maxW: (value: Properties['maxWidth']) => css`
 		max-width: ${value};
 	`,
-	minWidth: (value: Properties['minWidth']) => css`
+	minW: (value: Properties['minWidth']) => css`
 		min-width: ${value};
 	`,
-	minHeight: (value: Properties['minHeight']) => css`
+	minH: (value: Properties['minHeight']) => css`
 		min-height: ${value};
 	`,
-	maxHeight: (value: Properties['maxHeight']) => css`
+	maxH: (value: Properties['maxHeight']) => css`
 		max-height: ${value};
 	`,
-	width: (value: Properties['width']) => css`
+	w: (value: Properties['width']) => css`
 		width: ${value};
 	`,
-	height: (value: Properties['height']) => css`
+	h: (value: Properties['height']) => css`
 		height: ${value};
 	`,
 	// positions

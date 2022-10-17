@@ -68,8 +68,8 @@ For our example we adding `fadeInRight25` animation to animate element from righ
 ```jsx
 <Wrapper
 	animation={['fadeInRight25', '2s linear 2s infinite']}
-	width="200px"
-	height="200px"
+	w="200px"
+	h="200px"
 	backgroundColor="yellow"
 />
 ```

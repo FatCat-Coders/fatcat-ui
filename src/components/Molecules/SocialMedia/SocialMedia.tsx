@@ -52,8 +52,8 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 	const icons = square ? mappedSocialSquare : mappedSocial;
 	return (
 		<Flex
-			maxWidth="fit-content"
-			height="fit-content"
+			maxW="fit-content"
+			h="fit-content"
 			gap={gap}
 			alignItems="center"
 			css={css}
@@ -77,8 +77,8 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 								as={icons[key]}
 								svgColor={color}
 								hover={hover}
-								width={size}
-								height="auto"
+								w={size}
+								h="auto"
 							/>
 						</React.Suspense>
 					</Link>

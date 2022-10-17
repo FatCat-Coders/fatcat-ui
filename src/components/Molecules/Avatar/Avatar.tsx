@@ -44,10 +44,10 @@ const Avatar: React.FC<TAvatar> = (props) => {
 	const sizeValue = sizes[size as string] || size;
 	return (
 		<Flex
-			width="fit-content"
+			w="fit-content"
 			direction="column"
 			alignItems="center"
-			minWidth={profile ? `calc(${sizeValue} + (${sizeValue} * 0.2))` : undefined}
+			minW={profile ? `calc(${sizeValue} + (${sizeValue} * 0.2))` : undefined}
 			css={css}
 		>
 			<AvatarWrapper profile={!!profile} size={sizeValue}>

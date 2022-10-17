@@ -53,8 +53,8 @@ const Ratings: React.FC<TRatings> = (props) => {
 
 	return (
 		<Center
-			maxWidth="fit-content"
-			height="fit-content"
+			maxW="fit-content"
+			h="fit-content"
 			gap={gap}
 			backgroundColor={backgroundColor}
 			onMouseLeave={!rating ? handleLeave : undefined}
@@ -87,8 +87,8 @@ const Ratings: React.FC<TRatings> = (props) => {
 							viewBox="0 0 130 130"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
-							width={size}
-							height={size}
+							w={size}
+							h={size}
 							position="relative"
 							zIndex={1}
 						>

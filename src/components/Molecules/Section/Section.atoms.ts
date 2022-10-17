@@ -12,7 +12,7 @@ import {
 
 export type TSectionInnerWrapper =
 	{
-		width: keyof DefaultTheme['sectionWidth']
+		w: keyof DefaultTheme['sectionWidth']
 	}
 	& SpaceProps
 	& ResponsiveProps;
@@ -43,7 +43,7 @@ const splitedProps = [
 export const SectionInnerWrapper = styled.div.withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TSectionInnerWrapper>`
-	max-width: ${props => props.theme.sectionWidth[props.width]};
+	max-width: ${props => props.theme.sectionWidth[props.w]};
 	width: 100%;
 	${space};
 	${responsiveWithProps(splitedProps)};

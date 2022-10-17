@@ -1,5 +1,17 @@
 # fatcat-ui-library
 
+## 1.1.0
+
+### Minor Changes
+
+- Change naming (width, height, etc) to shorthand
+
+## 1.0.5
+
+### Patch Changes
+
+- Add square rendering of social icons
+
 ## 1.0.4
 
 ### Patch Changes

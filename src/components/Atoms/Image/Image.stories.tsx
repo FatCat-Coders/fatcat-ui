@@ -12,13 +12,13 @@ export default {
 	title: 'Basic Elements/Image',
 	component: ImageOrigin,
 	argTypes: {
-		width: {
+		w: {
 			control: 'text',
 			table: {
 				type: { summary: null },
 			},
 		},
-		height: {
+		h: {
 			control: 'text',
 			table: {
 				type: { summary: null },
@@ -48,5 +48,5 @@ const Template: ComponentStory<typeof ImageOrigin> = ({ children, ...args }) => 
 
 export const Image = Template.bind({});
 
-Image.parameters = { controls: { include: ['width', 'height'] } };
-Image.args = { width: '300px', height: 'auto' };
+Image.parameters = { controls: { include: ['w', 'h'] } };
+Image.args = { w: '300px', h: 'auto' };

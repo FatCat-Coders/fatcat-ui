@@ -32,14 +32,14 @@ export default {
 
 const Template = ({ children, ...args }) => (
 	<Wrapper
-		height="200px"
-		width="200px"
+		h="200px"
+		w="200px"
 		backgroundColor="yellow"
 		{...args}
 	>
 		<Wrapper
-			height="100px"
-			width="100px"
+			h="100px"
+			w="100px"
 			backgroundColor="backgroundLight"
 			position="absolute"
 			top="25%"

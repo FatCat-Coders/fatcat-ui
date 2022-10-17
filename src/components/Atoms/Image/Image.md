@@ -36,8 +36,8 @@ and then simply use it in your code.
 	padding={['t64', 'b64']}
 >
 	<Image
-		width="300px"
-		height="auto"
+		w="300px"
+		h="auto"
 		src={img}
 		alt=""
 	/>

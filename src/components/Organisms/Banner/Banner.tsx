@@ -68,9 +68,9 @@ const Banner: React.FC<TBanner> = (props) => {
 				]}
 			>
 				<Flex
-					width="50%"
+					w="50%"
 					tablet={[
-						{ width: '100%' },
+						{ w: '100%' },
 					]}
 				>
 					<Paragraph

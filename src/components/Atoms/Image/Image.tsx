@@ -12,7 +12,7 @@ export const Image = styled.img.withConfig({
 `;
 
 Image.defaultProps = {
-	width: '100%',
+	w: '100%',
 	alignSelf: 'center',
 	display: 'block',
 	initialDisplay: 'block',

@@ -13,7 +13,7 @@ Our Section component that we use as container layout in our project. It's made 
 
 ### Inner:
 - `Space`
-- `width` -- one of key defined in theme `sectionWidth` default value is normal
+- `w` -- one of key defined in theme `sectionWidth` default value is normal
 - `scale` -- scale paddings inside inner element on beakpoints default value is false
 ## Usage 
 

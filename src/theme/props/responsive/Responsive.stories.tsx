@@ -32,23 +32,23 @@ const Template = ({ children, ...args }) => (
 		{...args}
 	>
 		<Wrapper
-			height="100px"
-			width="100px"
+			h="100px"
+			w="100px"
 			backgroundColor="yellow"
 		/>
 		<Wrapper
-			height="100px"
-			width="100px"
+			h="100px"
+			w="100px"
 			backgroundColor="yellow"
 		/>
 		<Wrapper
-			height="100px"
-			width="100px"
+			h="100px"
+			w="100px"
 			backgroundColor="yellow"
 		/>
 		<Wrapper
-			height="100px"
-			width="100px"
+			h="100px"
+			w="100px"
 			backgroundColor="yellow"
 		/>
 	</Flex>

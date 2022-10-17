@@ -68,23 +68,23 @@ And this is how we can apply `flex-direction: column;` on flex element and also 
 	mobile={['column', { padding: ['t12', 'r12', 'b12', 'l12'] }]}
 >
 	<Wrapper
-		height="100px"
-		width="100px"
+		h="100px"
+		w="100px"
 		backgroundColor="yellow"
 	/>
 	<Wrapper
-		height="100px"
-		width="100px"
+		h="100px"
+		w="100px"
 		backgroundColor="yellow"
 	/>
 	<Wrapper
-		height="100px"
-		width="100px"
+		h="100px"
+		w="100px"
 		backgroundColor="yellow"
 	/>
 	<Wrapper
-		height="100px"
-		width="100px"
+		h="100px"
+		w="100px"
 		backgroundColor="yellow"
 	/>
 </Flex>

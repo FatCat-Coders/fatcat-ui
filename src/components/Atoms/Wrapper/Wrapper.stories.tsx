@@ -17,7 +17,7 @@ export default {
 			description: '(Demo purposes only) Add children elelements to the grid ',
 			type: 'string',
 		},
-		width: {
+		w: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -25,7 +25,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		minWidth: {
+		minW: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -33,7 +33,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		maxWidth: {
+		maxW: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -41,7 +41,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		height: {
+		h: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -49,7 +49,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		minHeight: {
+		minH: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -57,7 +57,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		maxHeight: {
+		maxH: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -82,11 +82,9 @@ const Template: ComponentStory<typeof WrapperOrigin> = ({ children, items, ...ar
 			return (
 				<WrapperOrigin
 					key={index} // eslint-disable-line
-					height="100px"
-					width={randomWidth}
+					h="100px"
+					w={randomWidth}
 					backgroundColorHex={index % 2 === 0 ? 'orange' : 'green'}
-					alignItems="center"
-					justifyContent="center"
 				>
 					{randomWidth}
 				</WrapperOrigin>
@@ -101,12 +99,12 @@ Wrapper.parameters = {
 	controls: {
 		include: [
 			'items',
-			'width',
-			'minWidth',
-			'maxWidth',
-			'height',
-			'minHeight',
-			'maxHeight',
+			'w',
+			'minW',
+			'maxW',
+			'h',
+			'minH',
+			'maxH',
 		],
 	},
 };

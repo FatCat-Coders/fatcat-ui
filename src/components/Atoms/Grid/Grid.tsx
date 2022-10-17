@@ -16,7 +16,7 @@ export const Grid = styled.div.withConfig({
 `;
 
 Grid.defaultProps = {
-	width: '100%',
+	w: '100%',
 	display: 'grid',
 	initialDisplay: 'grid',
 };

@@ -16,7 +16,7 @@ export const Flex = styled.div.withConfig({
 `;
 
 Flex.defaultProps = {
-	width: '100%',
+	w: '100%',
 	display: 'flex',
 	initialDisplay: 'flex',
 };

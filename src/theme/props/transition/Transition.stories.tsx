@@ -27,8 +27,8 @@ export default {
 const Template = ({ children, ...args }) => (
 	<Center
 		backgroundColor="yellow"
-		width="200px"
-		height="200px"
+		w="200px"
+		h="200px"
 		hover={[{ backgroundColorHex: '#1D1D1E' }]}
 		{...args}
 	>

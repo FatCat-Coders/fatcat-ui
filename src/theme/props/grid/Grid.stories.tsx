@@ -132,8 +132,8 @@ const Template: ComponentStory<typeof GridOrigin> = ({ children, items, ...args 
 			return (
 				<Flex
 					key={index} // eslint-disable-line
-					height="100px"
-					width={randomWidth}
+					h="100px"
+					w={randomWidth}
 					backgroundColor="yellow"
 					alignItems="center"
 					justifyContent="center"

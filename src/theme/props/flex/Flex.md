@@ -23,18 +23,18 @@ Property that adds to the component are:
 	alignItems="center"
 >
 	<Wrapper
-		height="100px"
-		width="100px"
+		h="100px"
+		w="100px"
 		backgroundColor="yellow"
 	/>
 	<Wrapper
-		height="100px"
-		width="400px"
+		h="100px"
+		w="400px"
 		backgroundColor="yellow"
 	/>
 	<Wrapper
-		height="100px"
-		width="200px"
+		h="100px"
+		w="200px"
 		backgroundColor="yellow"
 	/>
 </Flex>

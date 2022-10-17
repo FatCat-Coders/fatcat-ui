@@ -12,7 +12,7 @@ export default {
 	title: 'Basic Elements/Section',
 	component: SectionOrigin,
 	argTypes: {
-		width: {
+		w: {
 			control: 'select',
 			options: Object.keys(SECTION_WIDTH),
 			description: `List of section widths: ${formatObjectKeys(SECTION_WIDTH)}`,
@@ -42,12 +42,12 @@ Section.parameters = {
 	controls: {
 		include: [
 			'children',
-			'width',
+			'w',
 		],
 	},
 };
 
 Section.args = {
 	children: 'SectionOrigin',
-	width: 'normal',
+	w: 'normal',
 };

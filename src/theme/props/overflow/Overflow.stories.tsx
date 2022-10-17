@@ -26,11 +26,11 @@ const Template = ({ children, ...args }) => (
 	<Flex
 		gap="40px"
 	>
-		<Flex gap="20px" direction="column" width="fit-content">
+		<Flex gap="20px" direction="column" w="fit-content">
 			<Text fontWeight="bold">{args.overflow ? args.overflow : 'Try it yourself!'}</Text>
 			<Wrapper
-				height="100px"
-				width="100px"
+				h="100px"
+				w="100px"
 				padding={['t12', 'r12', 'b12', 'l12']}
 				backgroundColor="yellow"
 				{...args}
@@ -39,11 +39,11 @@ const Template = ({ children, ...args }) => (
 				As much mud in the streets as if the waters had but newly retired from the face of the earth.
 			</Wrapper>
 		</Flex>
-		<Flex gap="20px" direction="column" width="fit-content">
+		<Flex gap="20px" direction="column" w="fit-content">
 			<Text fontWeight="bold">hidden</Text>
 			<Wrapper
-				height="100px"
-				width="100px"
+				h="100px"
+				w="100px"
 				padding={['t12', 'r12', 'b12', 'l12']}
 				backgroundColor="yellow"
 				overflow="hidden"
@@ -52,11 +52,11 @@ const Template = ({ children, ...args }) => (
 				As much mud in the streets as if the waters had but newly retired from the face of the earth.
 			</Wrapper>
 		</Flex>
-		<Flex gap="20px" direction="column" width="fit-content">
+		<Flex gap="20px" direction="column" w="fit-content">
 			<Text fontWeight="bold">visible</Text>
 			<Wrapper
-				height="100px"
-				width="100px"
+				h="100px"
+				w="100px"
 				padding={['t12', 'r12', 'b12', 'l12']}
 				backgroundColor="yellow"
 				overflow="visible"

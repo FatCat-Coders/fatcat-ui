@@ -129,20 +129,20 @@ export default {
 const Template = ({ children, ...args }) => (
 	<Wrapper
 		border="1px solid black"
-		width="fit-content"
+		w="fit-content"
 		backgroundColor="green"
 		backgroundColorOpacity={0.3}
 	>
 		<Wrapper
-			height="300px"
-			width="300px"
+			h="300px"
+			w="300px"
 			backgroundColor="yellow"
 			backgroundColorOpacity={0.7}
 			{...args}
 		>
 			<Wrapper
 				backgroundColor="purple"
-				height="100%"
+				h="100%"
 			/>
 		</Wrapper>
 	</Wrapper>

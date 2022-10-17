@@ -23,14 +23,14 @@ Property that adds to the component are:
 
 ```jsx
 <Wrapper
-	height="200px"
-	width="200px"
+	h="200px"
+	w="200px"
 	backgroundColor="yellow"
 	position="relative"
 >
 	<Wrapper
-		height="100px"
-		width="100px"
+		h="100px"
+		w="100px"
 		backgroundColor="backgroundLight"
 		position="absolute"
 		top="25%"

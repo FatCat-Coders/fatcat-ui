@@ -18,8 +18,8 @@ Property that adds to the component are:
 ```jsx
 <Wrapper
 	transition="background-color 300ms ease-in-out"
-	width="200px"
-	height="200px"
+	w="200px"
+	h="200px"
 	backgroundColor="yellow"
 	hover={[{ backgroundColorHex: '#1D1D1E' }]}
 />

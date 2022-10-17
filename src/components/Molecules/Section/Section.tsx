@@ -22,7 +22,7 @@ export type TSection =
 		edge?: boolean
 		scale?: boolean
 		sticky?: boolean
-		width?: keyof DefaultTheme['sectionWidth']
+		w?: keyof DefaultTheme['sectionWidth']
 	}
 	& BackgroundProps
 	& CustomCssProps
@@ -39,7 +39,7 @@ const Section: React.FC<TSection> = (props) => {
 		edge,
 		scale,
 		sticky,
-		width,
+		w,
 		...restProps
 	} = props;
 
@@ -52,7 +52,7 @@ const Section: React.FC<TSection> = (props) => {
 		>
 			<SectionInnerWrapper
 				scale={scale}
-				width={width}
+				w={w}
 				{...restProps}
 			>
 				{children}
@@ -63,7 +63,7 @@ const Section: React.FC<TSection> = (props) => {
 
 Section.defaultProps = {
 	as: 'section',
-	width: 'normal',
+	w: 'normal',
 	edge: false,
 	scale: false,
 	sticky: false,

@@ -6,8 +6,6 @@ export const UIprops: string[] = [
 	'overflow',
 	'transform',
 	'order',
-	'width',
-	'height',
 	'scale',
 	'fontSize',
 	'fontWeight',

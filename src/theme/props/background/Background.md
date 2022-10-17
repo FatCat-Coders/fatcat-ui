@@ -26,8 +26,8 @@ Property that adds to the component are:
 
 ```jsx
 <Wrapper
-	height="100px"
-	width="100px"
+	h="100px"
+	w="100px"
 	backgroundColor="yellow"
 />
 ```

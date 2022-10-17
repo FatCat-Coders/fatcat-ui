@@ -16,7 +16,7 @@ export const Center = styled.div.withConfig({
 `;
 
 Center.defaultProps = {
-	width: '100%',
+	w: '100%',
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'center',

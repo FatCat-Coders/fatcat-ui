@@ -18,8 +18,8 @@ One important note to follow is that if we use `show` prop, we also need to pass
 
 ```jsx
 <Wrapper
-	height="100px"
-	width="100px"
+	h="100px"
+	w="100px"
 	backgroundColor="yellow"
 	opacity="0.5"
 	hide="mobile"

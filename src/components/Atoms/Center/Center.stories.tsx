@@ -17,7 +17,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		width: {
+		w: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -25,7 +25,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		height: {
+		h: {
 			control: 'text',
 			description: 'String with css property',
 			type: 'string',
@@ -65,15 +65,15 @@ Center.parameters = {
 		include: [
 			'gap',
 			'wrap',
-			'width',
-			'height',
+			'w',
+			'h',
 		],
 	},
 };
 
 Center.args = {
 	gap: '8px 16px',
-	height: '200px',
-	width: '100%',
+	h: '200px',
+	w: '100%',
 	wrap: true,
 };
