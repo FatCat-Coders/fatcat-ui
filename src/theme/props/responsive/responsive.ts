@@ -5,7 +5,7 @@ import { SideSpacingValue } from '../space/space';
 // Helpers
 import pickObjectProperties from '../../../utils/pick-object-properties';
 
-type ResponsiveTypes = keyof DefaultTheme['responsive'];
+export type ResponsiveTypes = keyof DefaultTheme['responsive'];
 
 type TResponsiveObj = {
 	[key in ResponsiveTypes]: ((args: string | number | SideSpacingValue[]) => CSSProp) | CSSProp;

@@ -60,7 +60,7 @@ export interface FatCatTheme {
 	inputStyle: typeof INPUT_STYLE
 	ollistStyle: typeof OLLIST_STYLE,
 	ullistStyle: typeof ULLIST_STYLE,
-	sectionLayout: CSSProp,
+	sectionLayout?: CSSProp,
 }
 
 const defaultTheme: FatCatTheme = {
@@ -91,7 +91,7 @@ const defaultTheme: FatCatTheme = {
 	inputStyle: INPUT_STYLE,
 	ollistStyle: OLLIST_STYLE,
 	ullistStyle: ULLIST_STYLE,
-	sectionLayout: null,
+	sectionLayout: undefined,
 };
 
 interface UIThemeProviderI {

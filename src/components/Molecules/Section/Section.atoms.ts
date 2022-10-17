@@ -3,7 +3,7 @@ import { UIprops } from '../../../utils/ui-props';
 
 import {
 	background, BackgroundProps,
-	responsiveWithProps, ResponsiveProps,
+	responsiveWithProps, ResponsiveProps, type ResponsiveTypes,
 	space, SpaceProps,
 	visibility, VisibilityProps,
 	position, PositionProps,
@@ -38,7 +38,7 @@ const splitedProps = [
 	'clearRightSideSpacing',
 	'clearTopSideSpacing',
 	'clearBottomSideSpacing',
-];
+] as ResponsiveTypes[];
 
 export const SectionInnerWrapper = styled.div.withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
