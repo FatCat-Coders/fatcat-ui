@@ -30,6 +30,23 @@ export default {
 				type: { summary: null },
 			},
 		},
+		square: {
+			control: 'boolean',
+			description: 'Should use squared icons',
+			type: 'boolean',
+			table: {
+				type: { summary: null },
+				defaultValue: { summary: 'true' },
+			},
+		},
+		size: {
+			control: 'text',
+			description: 'Width of icons',
+			table: {
+				type: { summary: null },
+				defaultValue: { summary: '16px' },
+			},
+		},
 		gap: {
 			control: 'text',
 			description: 'Gap between icons',
@@ -57,7 +74,7 @@ const Template: ComponentStory<typeof SocialMediaOrigin> = args => (
 
 export const SocialMedia = Template.bind({});
 
-SocialMedia.parameters = { controls: { include: ['socials', 'color', 'hover', 'gap'] } };
+SocialMedia.parameters = { controls: { include: ['socials', 'color', 'hover', 'gap', 'square', 'size'] } };
 
 SocialMedia.args = {
 	socials: {
@@ -65,7 +82,10 @@ SocialMedia.args = {
 		twitter: 'https://twitter.com/',
 		instagram: 'https://www.instagram.com/',
 		linkedin: 'https://www.linkedin.com/',
+		google: 'https://www.google.com/',
+		github: 'https://www.github.com/',
 	},
 	color: 'primary',
+	square: true,
 	hover: [{ textColor: 'yellow', zoom: '1.2' }],
 };

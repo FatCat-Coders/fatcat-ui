@@ -4,11 +4,6 @@ import { DefaultTheme, CSSProp } from 'styled-components';
 
 import { HoverTypes } from '../../../theme/props';
 
-import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF';
-import { FaInstagram } from '@react-icons/all-files/fa/FaInstagram';
-import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
-import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
-
 // Atoms
 import { Flex } from '../../Atoms/Flex';
 import { Link } from '../../Atoms/Link';
@@ -17,17 +12,29 @@ import { Icon } from '../../Atoms/Icon';
 export type SOCIAL_MEDIA = 'facebook' | 'instagram' | 'linkedin' | 'twitter';
 
 export const mappedSocial = {
-	facebook: FaFacebookF,
-	twitter: FaTwitter,
-	instagram: FaInstagram,
-	linkedin: FaLinkedinIn,
+	facebook: React.lazy(() => import('@react-icons/all-files/fa/FaFacebookF').then(module => ({ default: module.FaFacebookF }))),
+	twitter: React.lazy(() => import('@react-icons/all-files/fa/FaTwitter').then(module => ({ default: module.FaTwitter }))),
+	instagram: React.lazy(() => import('@react-icons/all-files/fa/FaInstagram').then(module => ({ default: module.FaInstagram }))),
+	linkedin: React.lazy(() => import('@react-icons/all-files/fa/FaLinkedinIn').then(module => ({ default: module.FaLinkedinIn }))),
+	google: React.lazy(() => import('@react-icons/all-files/fa/FaGooglePlusG').then(module => ({ default: module.FaGooglePlusG }))),
+	github: React.lazy(() => import('@react-icons/all-files/fa/FaGithub').then(module => ({ default: module.FaGithub }))),
+};
+
+export const mappedSocialSquare = {
+	facebook: React.lazy(() => import('@react-icons/all-files/fa/FaFacebookSquare').then(module => ({ default: module.FaFacebookSquare }))),
+	twitter: React.lazy(() => import('@react-icons/all-files/fa/FaTwitterSquare').then(module => ({ default: module.FaTwitterSquare }))),
+	instagram: React.lazy(() => import('@react-icons/all-files/fa/FaInstagramSquare').then(module => ({ default: module.FaInstagramSquare }))),
+	linkedin: React.lazy(() => import('@react-icons/all-files/fa/FaLinkedin').then(module => ({ default: module.FaLinkedin }))),
+	google: React.lazy(() => import('@react-icons/all-files/fa/FaGooglePlusSquare').then(module => ({ default: module.FaGooglePlusSquare }))),
+	github: React.lazy(() => import('@react-icons/all-files/fa/FaGithubSquare').then(module => ({ default: module.FaGithubSquare }))),
 };
 
 export type TSocialMedia = {
-	socials: { [ key in SOCIAL_MEDIA ]: string }
+	socials: { [key in SOCIAL_MEDIA]: string }
 	color?: keyof DefaultTheme['color']
 	hover?: HoverTypes
-	width?: Properties['width']
+	square?: boolean
+	size?: Properties['width']
 	gap?: Properties['gap']
 	css?: CSSProp
 }
@@ -38,9 +45,11 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 		color,
 		hover,
 		gap,
-		width,
+		size,
+		square,
 		css,
 	} = props;
+	const icons = square ? mappedSocialSquare : mappedSocial;
 	return (
 		<Flex
 			maxWidth="fit-content"
@@ -63,13 +72,15 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 						display="inline-flex"
 						padding={['t4', 'r4', 'l4', 'b4']}
 					>
-						<Icon
-							as={mappedSocial[key]}
-							svgColor={color}
-							hover={hover}
-							width={width}
-							height="auto"
-						/>
+						<React.Suspense fallback={(<span style={{ height: size || '16px' }} />)}>
+							<Icon
+								as={icons[key]}
+								svgColor={color}
+								hover={hover}
+								width={size}
+								height="auto"
+							/>
+						</React.Suspense>
 					</Link>
 				);
 			})}
@@ -80,7 +91,8 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 SocialMedia.defaultProps = {
 	color: undefined,
 	hover: undefined,
-	width: undefined,
+	size: undefined,
+	square: true,
 	gap: '4px',
 	css: undefined,
 };
