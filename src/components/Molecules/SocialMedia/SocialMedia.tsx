@@ -9,7 +9,7 @@ import { Flex } from '../../Atoms/Flex';
 import { Link } from '../../Atoms/Link';
 import { Icon } from '../../Atoms/Icon';
 
-export type SOCIAL_MEDIA = 'facebook' | 'instagram' | 'linkedin' | 'twitter';
+export type SOCIAL_MEDIA = 'facebook' | 'instagram' | 'linkedin' | 'twitter' | 'google' | 'github';
 
 export const mappedSocial = {
 	facebook: React.lazy(() => import('@react-icons/all-files/fa/FaFacebookF').then(module => ({ default: module.FaFacebookF }))),

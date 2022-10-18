@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.1
+
+### Patch Changes
+
+- Fix for single side space scaling
+
 ## 1.1.0
 
 ### Minor Changes

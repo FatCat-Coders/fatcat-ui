@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { LINK_COLOR } from '../color/color';
 
 const BASE = css<{ disabled?: boolean, linkColor?: typeof LINK_COLOR }>`
-	${props => props.theme.textStyle.button};
+	${props => props.theme.textStyle.link};
 	color: ${props => props.theme.linkColor[props.linkColor].default};
 	width: fit-content;
 	&:hover {

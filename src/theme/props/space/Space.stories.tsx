@@ -177,4 +177,5 @@ Space.args = {
 	marginRight: 's24',
 	marginBottom: 's24',
 	marginLeft: 's24',
+	scale: false,
 };
