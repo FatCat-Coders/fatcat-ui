@@ -1,5 +1,17 @@
 # fatcat-ui-library
 
+## 1.1.4
+
+### Patch Changes
+
+- Export base link style variable from theme
+
+## 1.1.3
+
+### Patch Changes
+
+- Revert color default defination
+
 ## 1.1.2
 
 ### Patch Changes
