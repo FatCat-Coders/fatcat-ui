@@ -31,7 +31,7 @@ const TEXT_SIZE = {
 		font-size: ${props => props.theme.fontSize.s24};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
-	paragraph16: css`
+	paragraphSmall: css`
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
@@ -44,15 +44,15 @@ const TEXT_SIZE = {
 - and then we define our style and breakpoints for given element
 
 ```jsx
-const const TEXT_STYLE = {
+const const TEXT_VARIANT = {
 	paragraph: css`
 		s: css`
-			${props => props.theme.textSize.paragraph16};
-			font-weight: ${props => props.theme.fontWeight.regular};
+			${props => props.theme.textSize.paragraphSmall};
+			font-weight: ${props => props.theme.fontWeight.normal};
 		`,
 		l: css`
 			${props => props.theme.textSize.paragraph};
-			font-weight: ${props => props.theme.fontWeight.regular};
+			font-weight: ${props => props.theme.fontWeight.normal};
 
 			${props => props.theme.media.mobile} {
 				${props => props.theme.textSize.paragraphMobile};
@@ -65,10 +65,10 @@ const const TEXT_STYLE = {
 or in case of one paragraph variaton, simply go with this:
 
 ```jsx
-const const TEXT_STYLE = {
+const const TEXT_VARIANT = {
 	paragraph: css`
 		${props => props.theme.textSize.paragraph};
-		font-weight: ${props => props.theme.fontWeight.regular};
+		font-weight: ${props => props.theme.fontWeight.normal};
 
 		${props => props.theme.media.mobile} {
 			${props => props.theme.textSize.paragraphMobile};
@@ -84,7 +84,7 @@ import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
 const newTheme = {
 	textSize: TEXT_SIZE,
-	textStyle: TEXT_STYLE,
+	textVariant: TEXT_VARIANT,
 }
 
 <UIThemeProvider theme={newTheme}>
@@ -100,7 +100,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
 		textSize: FatCatTheme['textSize'] & typeof TEXT_SIZE
-		textStyle: FatCatTheme['textStyle'] & typeof TEXT_STYLE
+		textVariant: FatCatTheme['textVariant'] & typeof TEXT_VARIANT
 	}
 }
 ```

@@ -36,7 +36,7 @@ For better reusability, we define our style in the theme provider and then we us
 /**
  * Also applied to the input element
  */
-const INPUT_STYLE = {
+const INPUT_VARIANT = {
 	base: css`
 		appearance: none;
 		border: 1px solid ${props => props.theme.color.white};
@@ -73,7 +73,7 @@ const INPUT_STYLE = {
 import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
 const newTheme = {
-	inputStyle: INPUT_STYLE,
+	inputVariant: INPUT_VARIANT,
 }
 
 <UIThemeProvider theme={newTheme}>
@@ -88,7 +88,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
-		inputStyle: FatCatTheme['inputStyle'] & typeof INPUT_STYLE
+		inputVariant: FatCatTheme['inputVariant'] & typeof INPUT_VARIANT
 	}
 }
 ```

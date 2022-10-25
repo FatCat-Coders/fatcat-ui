@@ -13,14 +13,14 @@ export type TLink =
 		withArrow?: boolean
 		arrowColor?: keyof DefaultTheme['color']
 		linkColor?: keyof DefaultTheme['linkColor'] | undefined
-		variant?: keyof DefaultTheme['linkStyle']
+		variant?: keyof DefaultTheme['linkVariant']
 	} & GeneralProps;
 
 export const LinkBase = styled.a.withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TLink>`
 	cursor: pointer;
-	${props => props.variant && props.theme.linkStyle[props.variant]};
+	${props => props.variant && props.theme.linkVariant[props.variant]};
 	${generalProps};
 `;
 

@@ -26,7 +26,7 @@ For better reusability, we define our style in the theme provider and then we us
 -   first we define style
 
 ```jsx
-const const ULLIST_STYLE = {
+const const ULLIST_VARIANT = {
 	base: css`
 		li::before {
 			content: "•";
@@ -45,7 +45,7 @@ const const ULLIST_STYLE = {
 import { UIThemeProvider } from "fatcat-ui-library/theme/theme";
 
 const newTheme = {
-	ullistStyle: ULLIST_STYLE,
+	ullistVariant: ULLIST_VARIANT,
 };
 
 <UIThemeProvider theme={newTheme}>{children}</UIThemeProvider>;
@@ -58,7 +58,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
-		ullistStyle: FatCatTheme['ullistStyle'] & typeof ULLIST_STYLE,
+		ullistVariant: FatCatTheme['ullistVariant'] & typeof ULLIST_VARIANT,
 	}
 }
 ```

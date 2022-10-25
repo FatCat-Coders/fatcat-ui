@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export type TINPUT_STYLE = {
+export type TINPUT_VARIANT = {
 	customInput?: boolean
 	/**
 	 * customInput: style applyed only for our custom input component
@@ -14,8 +14,8 @@ export type TINPUT_STYLE = {
 /**
  * Also applied to the textarea element
  */
-export const INPUT_STYLE = {
-	base: css<TINPUT_STYLE>`
+export const INPUT_VARIANT = {
+	base: css<TINPUT_VARIANT>`
 		width: 100%;
 		appearance: none;
 		outline: 0;

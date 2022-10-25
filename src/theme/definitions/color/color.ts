@@ -1,4 +1,5 @@
 import { darken } from 'polished';
+import { css } from 'styled-components';
 
 export const COLOR = {
 	primary: '#232737',
@@ -34,68 +35,68 @@ export const COLOR = {
 
 export const LINK_COLOR = {
 	primary: {
-		default: COLOR.primary,
-		hover: darken(0.1, COLOR.primary),
+		default: css`${props => props.theme.color.primary}`,
+		hover: css`${props => darken(0.1, props.theme.color.primary)}`,
 	},
 };
 
 export const BUTTON_COLOR = {
 	disabled: {
-		default: COLOR.disabled,
-		text: COLOR.disabledDark,
+		default: css`${props => props.theme.color.disabled}`,
+		text: css`${props => props.theme.color.disabledDark}`,
 	},
 	primary: {
-		default: COLOR.primaryLight,
-		text: COLOR.white,
-		hover: COLOR.primary,
-		hoverText: COLOR.white,
+		default: css`${props => props.theme.color.primaryLight}`,
+		text: css`${props => props.theme.color.white}`,
+		hover: css`${props => props.theme.color.primary}`,
+		hoverText: css`${props => props.theme.color.white}`,
 	},
 	secondary: {
-		default: COLOR.primary,
-		text: COLOR.primary,
-		hover: COLOR.primary,
-		hoverText: COLOR.white,
+		default: css`${props => props.theme.color.primary}`,
+		text: css`${props => props.theme.color.primary}`,
+		hover: css`${props => props.theme.color.primary}`,
+		hoverText: css`${props => props.theme.color.white}`,
 	},
 	ghost: {
-		default: COLOR.transparent,
-		text: COLOR.black,
-		hover: COLOR.yellow10,
-		hoverText: COLOR.white,
+		default: css`${props => props.theme.color.transparent}`,
+		text: css`${props => props.theme.color.black}`,
+		hover: css`${props => props.theme.color.yellow10}`,
+		hoverText: css`${props => props.theme.color.white}`,
 	},
 	white: {
-		default: COLOR.white,
-		text: COLOR.primary,
-		hover: darken(0.1, COLOR.white),
-		hoverText: COLOR.white,
+		default: css`${props => props.theme.color.white}`,
+		text: css`${props => props.theme.color.primary}`,
+		hover: css`${props => darken(0.1, props.theme.color.white)}`,
+		hoverText: css`${props => props.theme.color.white}`,
 	},
 	underline: {
-		default: COLOR.primary,
-		text: COLOR.primary,
+		default: css`${props => props.theme.color.primary}`,
+		text: css`${props => props.theme.color.primary}`,
 	},
 };
 
 export const TEXT_COLOR = {
-	primary: COLOR.primary,
-	secondary: COLOR.darkerGrey,
-	black: COLOR.blackLighter,
-	yellow: COLOR.yellow,
-	white: COLOR.white,
-	warrning: COLOR.warrning,
+	primary: css`${props => props.theme.color.primary}`,
+	secondary: css`${props => props.theme.color.darkerGrey}`,
+	black: css`${props => props.theme.color.blackLighter}`,
+	yellow: css`${props => props.theme.color.yellow}`,
+	white: css`${props => props.theme.color.white}`,
+	warrning: css`${props => props.theme.color.warrning}`,
 };
 
 export const BACKGROUND_COLOR = {
-	primary: COLOR.primary,
-	transparent: COLOR.transparent,
-	grey: COLOR.grey,
-	lightGrey: COLOR.lightGrey,
-	backgroundUltraDark: COLOR.blackHigh,
-	backgroundDark: COLOR.dark,
-	background: COLOR.blackLow,
-	backgroundLight: COLOR.blackLight,
-	backgroundLighter: COLOR.blackLighter,
-	purple: COLOR.purple,
-	yellow: COLOR.yellow,
-	white: COLOR.white,
-	green: COLOR.green,
+	primary: css`${props => props.theme.color.primary}`,
+	transparent: css`${props => props.theme.color.transparent}`,
+	grey: css`${props => props.theme.color.grey}`,
+	lightGrey: css`${props => props.theme.color.lightGrey}`,
+	backgroundUltraDark: css`${props => props.theme.color.blackHigh}`,
+	backgroundDark: css`${props => props.theme.color.dark}`,
+	background: css`${props => props.theme.color.blackLow}`,
+	backgroundLight: css`${props => props.theme.color.blackLight}`,
+	backgroundLighter: css`${props => props.theme.color.blackLighter}`,
+	purple: css`${props => props.theme.color.purple}`,
+	yellow: css`${props => props.theme.color.yellow}`,
+	white: css`${props => props.theme.color.white}`,
+	green: css`${props => props.theme.color.green}`,
 	wistiaOverlay: 'rgba(130, 130, 130, 0.6)',
 };

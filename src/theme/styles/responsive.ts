@@ -5,6 +5,8 @@ import { Properties } from 'csstype';
 import { SideSpacingValue } from '../props/space/space';
 import { HoverTypes } from '../props/hover/hover';
 
+import { SpaceDefinition } from '../definitions';
+
 // helpers
 import { createSideSpacingRule, parseSpace } from '../props';
 import pickObjectProperties from '../../utils/pick-object-properties';
@@ -228,46 +230,46 @@ export const RESPONSIVE_BEHAVIORS = {
 	padding: (value: SideSpacingValue[]) => css`
 		${props => createSideSpacingRule('padding', parseSpace(value, props.theme.space))};
 	`,
-	paddingTop: (value: SideSpacingValue) => css`
+	paddingTop: (value: SpaceDefinition) => css`
 		padding-top: ${props => props.theme.space[value]};
 	`,
-	paddingRight: (value: SideSpacingValue) => css`
+	paddingRight: (value: SpaceDefinition) => css`
 		padding-right: ${props => props.theme.space[value]};
 	`,
-	paddingBottom: (value: SideSpacingValue) => css`
+	paddingBottom: (value: SpaceDefinition) => css`
 		padding-bottom: ${props => props.theme.space[value]};
 	`,
-	paddingLeft: (value: SideSpacingValue) => css`
+	paddingLeft: (value: SpaceDefinition) => css`
 		padding-left: ${props => props.theme.space[value]};
 	`,
-	paddingX: (value: SideSpacingValue) => css`
+	paddingX: (value: SpaceDefinition) => css`
 		padding-left: ${props => props.theme.space[value]};
 		padding-right: ${props => props.theme.space[value]};
 	`,
-	paddingY: (value: SideSpacingValue) => css`
+	paddingY: (value: SpaceDefinition) => css`
 		padding-top: ${props => props.theme.space[value]};
 		padding-bottom: ${props => props.theme.space[value]};
 	`,
 	margin: (value: SideSpacingValue[]) => css`
 		${props => createSideSpacingRule('margin', parseSpace(value, props.theme.space))};
 	`,
-	marginTop: (value: SideSpacingValue) => css`
+	marginTop: (value: SpaceDefinition) => css`
 		margin-top: ${props => props.theme.space[value]};
 	`,
-	marginRight: (value: SideSpacingValue) => css`
+	marginRight: (value: SpaceDefinition) => css`
 		margin-right: ${props => props.theme.space[value]};
 	`,
-	marginBottom: (value: SideSpacingValue) => css`
+	marginBottom: (value: SpaceDefinition) => css`
 		margin-bottom: ${props => props.theme.space[value]};
 	`,
-	marginLeft: (value: SideSpacingValue) => css`
+	marginLeft: (value: SpaceDefinition) => css`
 		margin-left: ${props => props.theme.space[value]};
 	`,
-	marginX: (value: SideSpacingValue) => css`
+	marginX: (value: SpaceDefinition) => css`
 		margin-left: ${props => props.theme.space[value]};
 		margin-right: ${props => props.theme.space[value]};
 	`,
-	marginY: (value: SideSpacingValue) => css`
+	marginY: (value: SpaceDefinition) => css`
 		margin-top: ${props => props.theme.space[value]};
 		margin-bottom: ${props => props.theme.space[value]};
 	`,

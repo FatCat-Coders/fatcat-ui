@@ -26,7 +26,7 @@ For better reusability, we define our style in the theme provider and then we us
 -   first we define style
 
 ```jsx
-const const OLLIST_STYLE = {
+const const OLLIST_VARIANT = {
 	base: css`
 		li::before {
 			content: counter(item) ". ";
@@ -46,7 +46,7 @@ const const OLLIST_STYLE = {
 import { UIThemeProvider } from "fatcat-ui-library/theme/theme";
 
 const newTheme = {
-	ollistStyle: OLLIST_STYLE,
+	ollistVariant: OLLIST_VARIANT,
 };
 
 <UIThemeProvider theme={newTheme}>{children}</UIThemeProvider>;
@@ -59,7 +59,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
-		ollistStyle: FatCatTheme['ollistStyle'] & typeof OLLIST_STYLE,
+		ollistVariant: FatCatTheme['ollistVariant'] & typeof OLLIST_VARIANT,
 	}
 }
 ```

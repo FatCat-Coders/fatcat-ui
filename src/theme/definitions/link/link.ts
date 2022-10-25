@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { LINK_COLOR } from '../color/color';
 
 const BASE = css<{ disabled?: boolean, linkColor?: typeof LINK_COLOR }>`
-	${props => props.theme.textStyle.link};
+	${props => props.theme.textVariant.link};
 	color: ${props => props.theme.linkColor[props.linkColor].default};
 	width: fit-content;
 	&:hover {
@@ -15,7 +15,7 @@ const BASE = css<{ disabled?: boolean, linkColor?: typeof LINK_COLOR }>`
 	`}
 `;
 
-export const LINK_STYLE = {
+export const LINK_VARIANT = {
 	base: css`
 		${BASE}
 	`,

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { CSSProp } from 'styled-components';
 import { UIprops } from '../../../utils/ui-props';
 
 // Props
@@ -13,7 +13,7 @@ export type TParagraph = {
 export const Paragraph = styled.p.withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TParagraph>`
-	${({ theme, size }) => (theme.textStyle.paragraph[size as TParagraphSize] ? theme.textStyle.paragraph[size as TParagraphSize] : theme.textStyle.paragraph)}
+	${({ theme, size }) => ((size && theme.textVariant.paragraph[size]) ? theme.textVariant.paragraph[size] : theme.textVariant.paragraph as CSSProp)}
 	${generalProps};
 `;
 

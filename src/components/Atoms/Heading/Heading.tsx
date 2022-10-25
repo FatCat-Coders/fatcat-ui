@@ -15,7 +15,7 @@ export const Heading = styled.h1.withConfig({
 	${props =>
 		props.as &&
 		css`
-			${props.theme.textStyle[props.as]};
+			${props.theme.textVariant[props.as]};
 		`};
 	${generalProps};
 `;

@@ -39,7 +39,7 @@ const TEXT_SIZE = {
 - and then we define our style and breakpoints for given element
 
 ```jsx
-const const TEXT_STYLE = {
+const const TEXT_VARIANT = {
 	text: css`
 		${props => props.theme.textSize.text};
 		font-weight: ${props => props.theme.fontWeight.bold};
@@ -62,7 +62,7 @@ import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
 const newTheme = {
 	textSize: TEXT_SIZE,
-	textStyle: TEXT_STYLE,
+	textVariant: TEXT_VARIANT,
 }
 
 <UIThemeProvider theme={newTheme}>
@@ -78,7 +78,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
 		textSize: FatCatTheme['textSize'] & typeof TEXT_SIZE
-		textStyle: FatCatTheme['textStyle'] & typeof TEXT_STYLE
+		textVariant: FatCatTheme['textVariant'] & typeof TEXT_VARIANT
 	}
 }
 ```

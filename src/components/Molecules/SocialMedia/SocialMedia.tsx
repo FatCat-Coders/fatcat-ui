@@ -30,7 +30,7 @@ export const mappedSocialSquare = {
 };
 
 export type TSocialMedia = {
-	socials: { [key in SOCIAL_MEDIA]: string }
+	socials: { [key in SOCIAL_MEDIA]?: string }
 	color?: keyof DefaultTheme['color']
 	hover?: HoverTypes
 	square?: boolean

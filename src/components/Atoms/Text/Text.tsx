@@ -8,7 +8,7 @@ export type TText = GeneralProps;
 export const Text = styled.span.withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TText>`
-	${props => props.theme.textStyle.text}
+	${props => props.theme.textVariant.text}
 	${generalProps};
 `;
 

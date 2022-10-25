@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.2
+
+### Patch Changes
+
+- Naming variant props, default color fix and typing fix
+
 ## 1.1.1
 
 ### Patch Changes

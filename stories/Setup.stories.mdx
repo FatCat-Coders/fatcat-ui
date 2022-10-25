@@ -29,7 +29,7 @@ const TEXT_SIZE = {
 	h1LargeTablet: css`
 		font-size: ${props => props.theme.fontSize.s42};
 	`,
-	h1Mobile: css`
+	h1Tablet: css`
 		font-size: ${props => props.theme.fontSize.s30};
 		line-height: ${props => props.theme.lineHeight.s100};
 	`,
@@ -38,7 +38,7 @@ const TEXT_SIZE = {
 - and then we define our style and breakpoints for given element in our example only for `Heading` component with `as` value `h1`
 
 ```jsx
-const const TEXT_STYLE = {
+const const TEXT_VARIANT = {
 	h1: css`
 		${props => props.theme.textSize.h1};
 		font-weight: ${props => props.theme.fontWeight.bold};
@@ -47,21 +47,21 @@ const const TEXT_STYLE = {
 			${props => props.theme.textSize.h1LargeTablet};
 		}
 
-		${props => props.theme.media.mobile} {
-			${props => props.theme.textSize.h1Mobile};
+		${props => props.theme.media.tablet} {
+			${props => props.theme.textSize.h1Tablet};
 		}
 	`,
 }
 ```
 
-- and then we add our definitions to our theme using same keys for both `TEXT_SIZE` and `TEXT_STYLE` as our theme `UIThemeProvider`
+- and then we add our definitions to our theme using same keys for both `TEXT_SIZE` and `TEXT_VARIANT` as our theme `UIThemeProvider`
 
 ```jsx
 import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
 const newTheme = {
 	textSize: TEXT_SIZE,
-	textStyle: TEXT_STYLE,
+	textVariant: TEXT_VARIANT,
 }
 
 <UIThemeProvider theme={newTheme}>
@@ -77,7 +77,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
 		textSize: FatCatTheme['textSize'] & typeof TEXT_SIZE
-		textStyle: FatCatTheme['textStyle'] & typeof TEXT_STYLE
+		textVariant: FatCatTheme['textVariant'] & typeof TEXT_VARIANT
 	}
 }
 ```
@@ -95,21 +95,21 @@ const defaultTheme: FatCatTheme = {
 	fontFamily: FONT_FAMILY,
 	fontSize: FONT_SIZE,
 	fontWeight: FONT_WEIGHT,
-	textStyle: TEXT_STYLE,
+	textVariant: TEXT_VARIANT,
 	hover: HOVER_BEHAVIORS,
 	lineHeight: LINE_HEIGHT,
 	linkColor: LINK_COLOR,
-	linkStyle: LINK_STYLE,
+	linkVariant: LINK_VARIANT,
 	media: MEDIA,
 	responsive: RESPONSIVE_BEHAVIORS,
 	screenRatio: SCREEN_RATIO,
 	sectionWidth: SECTION_WIDTH,
 	space: SPACE,
-	tableStyle: TABLE_STYLE,
+	tableVariant: TABLE_VARIANT,
 	textColor: TEXT_COLOR,
 	textSize: TEXT_SIZE,
-	inputStyle: INPUT_STYLE,
-	ollistStyle: OLLIST_STYLE,
-	ullistStyle: ULLIST_STYLE,
+	inputVariant: INPUT_VARIANT,
+	ollistVariant: OLLIST_VARIANT,
+	ullistVariant: ULLIST_VARIANT,
 };
 ```

@@ -5,7 +5,7 @@ import { UIprops } from '../../../utils/ui-props';
 import { generalProps, GeneralProps } from '../../../theme/props';
 
 export type TOlList = {
-	variant?: keyof DefaultTheme['ollistStyle']
+	variant?: keyof DefaultTheme['ollistVariant']
 	bulletColor?: keyof DefaultTheme['color']
 } & GeneralProps;
 
@@ -31,7 +31,7 @@ export const OlList = styled.ol.withConfig({
 		}
 	`};
 
-	${props => props.variant && props.theme.ollistStyle[props.variant]};
+	${props => props.variant && props.theme.ollistVariant[props.variant]};
 	${generalProps};
 `;
 

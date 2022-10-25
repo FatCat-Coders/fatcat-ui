@@ -4,7 +4,7 @@ import { UIprops } from '../../../utils/ui-props';
 import { generalProps, GeneralProps } from '../../../theme/props';
 
 export type TUlList = {
-	variant?: keyof DefaultTheme['ullistStyle']
+	variant?: keyof DefaultTheme['ullistVariant']
 	bulletColor?: keyof DefaultTheme['color']
 } & GeneralProps;
 
@@ -19,7 +19,7 @@ export const UlList = styled.ul.withConfig({
 		}
 	`};
 
-	${props => props.variant && props.theme.ullistStyle[props.variant]};
+	${props => props.variant && props.theme.ullistVariant[props.variant]};
 	${generalProps};
 `;
 

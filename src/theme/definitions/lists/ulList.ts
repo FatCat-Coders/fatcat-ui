@@ -1,6 +1,6 @@
 import { css, DefaultTheme } from 'styled-components';
 
-export const ULLIST_STYLE = {
+export const ULLIST_VARIANT = {
 	base: css<{ bulletColor?: keyof DefaultTheme['color'] }>`
 		li::before {
 			content: "•";

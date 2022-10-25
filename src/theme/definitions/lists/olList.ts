@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export const OLLIST_STYLE = {
+export const OLLIST_VARIANT = {
 	base: css`
 		li::before {
 			content: counter(item) ". ";

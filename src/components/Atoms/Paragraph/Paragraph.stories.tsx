@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Paragraph as ParagraphOrigin } from './Paragraph';
 
-import { TEXT_COLOR, TEXT_STYLE } from '../../../theme/definitions';
+import { TEXT_COLOR, TEXT_VARIANT } from '../../../theme/definitions';
 
 import readme from './Paragraph.md';
 
@@ -22,8 +22,8 @@ export default {
 		},
 		size: {
 			control: 'select',
-			options: Object.keys(TEXT_STYLE.paragraph),
-			description: 'Different sizes of paragraph defined in our textStyle',
+			options: Object.keys(TEXT_VARIANT.paragraph),
+			description: 'Different sizes of paragraph defined in our textVariant',
 			type: { name: 'string' },
 			table: {
 				type: { summary: null },

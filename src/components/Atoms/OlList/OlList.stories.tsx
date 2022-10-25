@@ -6,7 +6,7 @@ import { Text } from '../Text';
 import { Wrapper } from '../Wrapper';
 
 import { formatObjectKeys } from '../../../../stories/helpers';
-import { OLLIST_STYLE, COLOR } from '../../../theme/definitions';
+import { OLLIST_VARIANT, COLOR } from '../../../theme/definitions';
 
 import readme from './OlList.md';
 
@@ -16,8 +16,8 @@ export default {
 	argTypes: {
 		variant: {
 			control: 'radio',
-			options: Object.keys(OLLIST_STYLE),
-			description: `List of input variants: ${formatObjectKeys(OLLIST_STYLE)}`,
+			options: Object.keys(OLLIST_VARIANT),
+			description: `List of input variants: ${formatObjectKeys(OLLIST_VARIANT)}`,
 			table: {
 				type: { summary: null },
 				defaultValue: { summary: 'base' },

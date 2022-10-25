@@ -13,19 +13,19 @@ import {
 	FONT_FAMILY,
 	FONT_SIZE,
 	FONT_WEIGHT,
-	TEXT_STYLE,
-	INPUT_STYLE,
+	TEXT_VARIANT,
+	INPUT_VARIANT,
 	LINE_HEIGHT,
 	LINK_COLOR,
-	LINK_STYLE,
+	LINK_VARIANT,
 	MEDIA,
-	OLLIST_STYLE,
+	OLLIST_VARIANT,
 	SCREEN_RATIO,
 	SECTION_WIDTH,
 	SPACE,
-	TABLE_STYLE,
+	TABLE_VARIANT,
 	TEXT_COLOR,
-	ULLIST_STYLE,
+	ULLIST_VARIANT,
 	MEDIA_MOBILE,
 } from './definitions';
 import { HOVER_BEHAVIORS, RESPONSIVE_BEHAVIORS, TEXT_SIZE } from './styles';
@@ -42,11 +42,11 @@ export interface FatCatTheme {
 	fontFamily: typeof FONT_FAMILY
 	fontSize: typeof FONT_SIZE
 	fontWeight: typeof FONT_WEIGHT
-	textStyle: typeof TEXT_STYLE
+	textVariant: typeof TEXT_VARIANT
 	hover: typeof HOVER_BEHAVIORS
 	lineHeight: typeof LINE_HEIGHT
 	linkColor: typeof LINK_COLOR
-	linkStyle: typeof LINK_STYLE
+	linkVariant: typeof LINK_VARIANT
 	media: typeof MEDIA
 	mediaMobile: typeof MEDIA_MOBILE
 	responsive: typeof RESPONSIVE_BEHAVIORS
@@ -54,12 +54,12 @@ export interface FatCatTheme {
 	sectionWidth: typeof SECTION_WIDTH
 	sideSpace?: SideSpacingTypesValue
 	space: typeof SPACE
-	tableStyle: typeof TABLE_STYLE
+	tableVariant: typeof TABLE_VARIANT
 	textColor: typeof TEXT_COLOR
 	textSize: typeof TEXT_SIZE
-	inputStyle: typeof INPUT_STYLE
-	ollistStyle: typeof OLLIST_STYLE,
-	ullistStyle: typeof ULLIST_STYLE,
+	inputVariant: typeof INPUT_VARIANT
+	ollistVariant: typeof OLLIST_VARIANT,
+	ullistVariant: typeof ULLIST_VARIANT,
 	sectionLayout?: CSSProp,
 }
 
@@ -74,28 +74,28 @@ const defaultTheme: FatCatTheme = {
 	fontFamily: FONT_FAMILY,
 	fontSize: FONT_SIZE,
 	fontWeight: FONT_WEIGHT,
-	textStyle: TEXT_STYLE,
+	textVariant: TEXT_VARIANT,
 	hover: HOVER_BEHAVIORS,
 	lineHeight: LINE_HEIGHT,
 	linkColor: LINK_COLOR,
-	linkStyle: LINK_STYLE,
+	linkVariant: LINK_VARIANT,
 	media: MEDIA,
 	mediaMobile: MEDIA_MOBILE,
 	responsive: RESPONSIVE_BEHAVIORS,
 	screenRatio: SCREEN_RATIO,
 	sectionWidth: SECTION_WIDTH,
 	space: SPACE,
-	tableStyle: TABLE_STYLE,
+	tableVariant: TABLE_VARIANT,
 	textColor: TEXT_COLOR,
 	textSize: TEXT_SIZE,
-	inputStyle: INPUT_STYLE,
-	ollistStyle: OLLIST_STYLE,
-	ullistStyle: ULLIST_STYLE,
+	inputVariant: INPUT_VARIANT,
+	ollistVariant: OLLIST_VARIANT,
+	ullistVariant: ULLIST_VARIANT,
 	sectionLayout: undefined,
 };
 
 interface UIThemeProviderI {
-	theme?: Partial<FatCatTheme>
+	theme?: any
 	children: React.ReactNode
 }
 
@@ -113,5 +113,5 @@ export const UIThemeProvider: React.FC<UIThemeProviderI> = ({ children, theme })
 };
 
 UIThemeProvider.defaultProps = {
-	theme: {},
+	theme: undefined,
 };

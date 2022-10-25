@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Link as LinkOrigin } from './Link';
 import { Flex } from '../Flex';
 import { formatObjectKeys } from '../../../../stories/helpers';
-import { LINK_STYLE } from '../../../theme/definitions';
+import { LINK_VARIANT } from '../../../theme/definitions';
 
 import readme from './Link.md';
 import { COLOR } from '../../../theme/definitions/color/color';
@@ -15,8 +15,8 @@ export default {
 	argTypes: {
 		variant: {
 			control: 'radio',
-			options: Object.keys(LINK_STYLE),
-			description: `List of link variants: ${formatObjectKeys(LINK_STYLE)}`,
+			options: Object.keys(LINK_VARIANT),
+			description: `List of link variants: ${formatObjectKeys(LINK_VARIANT)}`,
 			table: {
 				type: { summary: null },
 			},

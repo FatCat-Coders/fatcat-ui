@@ -4,7 +4,7 @@ import { UIprops } from '../../utils/ui-props';
 import { generalProps, GeneralProps } from '../../theme/props';
 
 export type TTable = {
-	variant?: keyof DefaultTheme['tableStyle']
+	variant?: keyof DefaultTheme['tableVariant']
 } & GeneralProps;
 
 export const Table = styled.table.withConfig({
@@ -29,7 +29,7 @@ export const Table = styled.table.withConfig({
 		padding: 20px 20px;
 	}
 
-	${props => props.variant && props.theme.tableStyle[props.variant]};
+	${props => props.variant && props.theme.tableVariant[props.variant]};
 	${generalProps};
 `;
 

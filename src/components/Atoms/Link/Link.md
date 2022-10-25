@@ -25,7 +25,7 @@ For better reusability, we define our style in the theme provider and then we us
 - first we add some styles
 
 ```jsx
-const LINK_STYLE = {
+const LINK_VARIANT = {
 	underline: css`
 		color: -webkit-link;
 		text-decoration: underline;
@@ -42,7 +42,7 @@ const LINK_STYLE = {
 import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
 const newTheme = {
-	linkStyle: LINK_STYLE,
+	linkVariant: LINK_VARIANT,
 }
 
 <UIThemeProvider theme={newTheme}>
@@ -57,7 +57,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
-		linkStyle: FatCatTheme['linkStyle'] & typeof LINK_STYLE
+		linkVariant: FatCatTheme['linkVariant'] & typeof LINK_VARIANT
 	}
 }
 ```

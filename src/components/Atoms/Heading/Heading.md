@@ -34,7 +34,7 @@ const TEXT_SIZE = {
 	h1LargeTablet: css`
 		font-size: ${props => props.theme.fontSize.s42};
 	`,
-	h1Mobile: css`
+	h1Tablet: css`
 		font-size: ${props => props.theme.fontSize.s30};
 		line-height: ${props => props.theme.lineHeight.s100};
 	`,
@@ -43,7 +43,7 @@ const TEXT_SIZE = {
 - and then we define our style and breakpoints for given element
 
 ```jsx
-const const TEXT_STYLE = {
+const const TEXT_VARIANT = {
 	h1: css`
 		${props => props.theme.textSize.h1};
 		font-weight: ${props => props.theme.fontWeight.bold};
@@ -52,8 +52,8 @@ const const TEXT_STYLE = {
 			${props => props.theme.textSize.h1LargeTablet};
 		}
 
-		${props => props.theme.media.mobile} {
-			${props => props.theme.textSize.h1Mobile};
+		${props => props.theme.media.tablet} {
+			${props => props.theme.textSize.h1Tablet};
 		}
 	`,
 }
@@ -66,7 +66,7 @@ import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
 const newTheme = {
 	textSize: TEXT_SIZE,
-	textStyle: TEXT_STYLE,
+	textVariant: TEXT_VARIANT,
 }
 
 <UIThemeProvider theme={newTheme}>
@@ -82,7 +82,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
 		textSize: FatCatTheme['textSize'] & typeof TEXT_SIZE
-		textStyle: FatCatTheme['textStyle'] & typeof TEXT_STYLE
+		textVariant: FatCatTheme['textVariant'] & typeof TEXT_VARIANT
 	}
 }
 ```

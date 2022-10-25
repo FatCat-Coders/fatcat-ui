@@ -7,7 +7,7 @@ export const MEDIA = {
 	tablet: '@media screen and (max-width: 768px)',
 	mobile: '@media screen and (max-width: 480px)',
 	noHover: '@media (hover: none)',
-} as const;
+};
 
 export type MediaDefinition = keyof typeof MEDIA;
 
@@ -20,4 +20,4 @@ export const MEDIA_MOBILE = {
 	tablet: '@media screen and (min-width: 481px)',
 	mobile: '@media screen and (max-width: 480px)',
 	noHover: '@media (hover: none)',
-} as const;
+};

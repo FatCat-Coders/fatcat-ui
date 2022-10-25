@@ -7,7 +7,7 @@ import { Heading } from '../Heading';
 import { Wrapper } from '../Wrapper';
 
 import { formatObjectKeys } from '../../../../stories/helpers';
-import { ULLIST_STYLE, COLOR } from '../../../theme/definitions';
+import { ULLIST_VARIANT, COLOR } from '../../../theme/definitions';
 
 import readme from './UlList.md';
 
@@ -17,8 +17,8 @@ export default {
 	argTypes: {
 		variant: {
 			control: 'radio',
-			options: Object.keys(ULLIST_STYLE),
-			description: `List of input variants: ${formatObjectKeys(ULLIST_STYLE)}`,
+			options: Object.keys(ULLIST_VARIANT),
+			description: `List of input variants: ${formatObjectKeys(ULLIST_VARIANT)}`,
 			table: {
 				type: { summary: null },
 				defaultValue: { summary: 'base' },

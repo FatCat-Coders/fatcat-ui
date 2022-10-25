@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { TextAreaField as TextAreaFieldOrigin } from './TextAreaField';
 import { Flex } from '../Flex';
 import { formatObjectKeys, showToastMsg } from '../../../../stories/helpers';
-import { INPUT_STYLE } from '../../../theme/definitions';
+import { INPUT_VARIANT } from '../../../theme/definitions';
 
 import readme from './TextAreaField.md';
 
@@ -14,8 +14,8 @@ export default {
 	argTypes: {
 		variant: {
 			control: 'select',
-			options: Object.keys(INPUT_STYLE),
-			description: `List of input variants: ${formatObjectKeys(INPUT_STYLE)}`,
+			options: Object.keys(INPUT_VARIANT),
+			description: `List of input variants: ${formatObjectKeys(INPUT_VARIANT)}`,
 			table: {
 				type: { summary: null },
 				defaultValue: { summary: 'base' },

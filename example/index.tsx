@@ -29,11 +29,11 @@ declare module 'styled-components' {
 		fontFamily: FatCatTheme['fontFamily']
 		fontSize: FatCatTheme['fontSize']
 		fontWeight: FatCatTheme['fontWeight']
-		textStyle: FatCatTheme['textStyle']
+		textVariant: FatCatTheme['textVariant']
 		hover: FatCatTheme['hover']
 		lineHeight: FatCatTheme['lineHeight']
 		linkColor: FatCatTheme['linkColor']
-		linkStyle: FatCatTheme['linkStyle']
+		linkVariant: FatCatTheme['linkVariant']
 		media: FatCatTheme['media']
 		mediaMobile: FatCatTheme['mediaMobile']
 		responsive: FatCatTheme['responsive']
@@ -41,12 +41,12 @@ declare module 'styled-components' {
 		sectionWidth: FatCatTheme['sectionWidth']
 		sideSpace: FatCatTheme['sideSpace'] | 't10'
 		space: FatCatTheme['space'] | typeof space
-		tableStyle: FatCatTheme['tableStyle']
+		tableVariant: FatCatTheme['tableVariant']
 		textColor: FatCatTheme['textColor'] & typeof color
 		textSize: FatCatTheme['textSize']
-		inputStyle: FatCatTheme['inputStyle']
-		ollistStyle: FatCatTheme['ollistStyle']
-		ullistStyle: FatCatTheme['ullistStyle']
+		inputVariant: FatCatTheme['inputVariant']
+		ollistVariant: FatCatTheme['ollistVariant']
+		ullistVariant: FatCatTheme['ullistVariant']
 		sectionLayout: CSSProp
 	}
 }

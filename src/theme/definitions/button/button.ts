@@ -18,7 +18,7 @@ export const BUTTON_SIZE = {
 
 const buttonBase = css<{size: keyof typeof BUTTON_SIZE}>`
 	${props => props.size && BUTTON_SIZE[props.size]};
-	${props => props.theme.textStyle.button};
+	${props => props.theme.textVariant.button};
 	height: fit-content;
 	border-radius: 4px;
 `;
@@ -78,7 +78,7 @@ export const BUTTON_VARIANT = {
 		background: ${props => props.theme.color.transparent};
 		position: relative;
 		padding: 0;
-		${props => props.theme.textStyle.button};
+		${props => props.theme.textVariant.button};
 
 		&::before {
 			content: '';
