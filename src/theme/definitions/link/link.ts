@@ -1,7 +1,6 @@
-import { css } from 'styled-components';
-import { LINK_COLOR } from '../color/color';
+import { css, DefaultTheme } from 'styled-components';
 
-const BASE = css<{ disabled?: boolean, linkColor?: typeof LINK_COLOR }>`
+export const LINK_BASE = css<{ disabled?: boolean, linkColor: keyof DefaultTheme['linkColor'] }>`
 	${props => props.theme.textVariant.link};
 	color: ${props => props.theme.linkColor[props.linkColor].default};
 	width: fit-content;
@@ -17,10 +16,11 @@ const BASE = css<{ disabled?: boolean, linkColor?: typeof LINK_COLOR }>`
 
 export const LINK_VARIANT = {
 	base: css`
-		${BASE}
+		${LINK_BASE}
 	`,
 	underline: css`
 		text-decoration: underline;
-		${BASE}
+		${LINK_BASE}
 	`,
+	noStyle: css``,
 };
