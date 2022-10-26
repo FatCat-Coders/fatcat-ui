@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.5
+
+### Patch Changes
+
+- Change breakpoints in text elements for font-size
+
 ## 1.1.4
 
 ### Patch Changes

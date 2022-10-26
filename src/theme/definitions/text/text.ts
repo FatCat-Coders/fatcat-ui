@@ -5,41 +5,49 @@ export const TEXT_VARIANT = {
 		${props => props.theme.textSize.h1};
 		font-weight: ${props => props.theme.fontWeight.bold};
 
-		${props => props.theme.media.mobile} {
-			${props => props.theme.textSize.h1Mobile};
+		${props => props.theme.media.tablet} {
+			${props => props.theme.textSize.h1Tablet};
 		}
 	`,
 	h2: css`
 		${props => props.theme.textSize.h2};
-		font-weight: ${props => props.theme.fontWeight.semiBold};
+		font-weight: ${props => props.theme.fontWeight.bold};
 
-		${props => props.theme.media.mobile} {
-			${props => props.theme.textSize.h2Mobile};
+		${props => props.theme.media.tablet} {
+			${props => props.theme.textSize.h2Tablet};
 		}
 	`,
 	h3: css`
 		${props => props.theme.textSize.h3};
 		font-weight: ${props => props.theme.fontWeight.semiBold};
 
-		${props => props.theme.media.mobile} {
-			${props => props.theme.textSize.bold};
+		${props => props.theme.media.tablet} {
+			${props => props.theme.textSize.h3Tablet};
 		}
 	`,
 	h4: css`
 		${props => props.theme.textSize.h4};
 		font-weight: ${props => props.theme.fontWeight.semiBold};
 
-		${props => props.theme.media.mobile} {
-			${props => props.theme.textSize.h4Mobile};
+		${props => props.theme.media.tablet} {
+			${props => props.theme.textSize.h4Tablet};
 		}
 	`,
 	h5: css`
 		${props => props.theme.textSize.h5};
 		font-weight: ${props => props.theme.fontWeight.semiBold};
+
+		${props => props.theme.textSize.h5Tablet && props.theme.media.tablet} {
+			${props => props.theme.textSize.h5Tablet};
+		}
 	`,
 	h6: css`
 		${props => props.theme.textSize.h6};
 		font-weight: ${props => props.theme.fontWeight.semiBold};
+
+		${props => props.theme.textSize.h6Tablet && props.theme.media.tablet} {
+			${props => props.theme.textSize.h6Tablet};
+		}
 	`,
 	paragraph: {
 		small: css`
@@ -48,8 +56,8 @@ export const TEXT_VARIANT = {
 		large: css`
 			${props => props.theme.textSize.paragraph};
 
-			${props => props.theme.media.mobile} {
-				${props => props.theme.textSize.paragraphMobile};
+			${props => props.theme.media.tablet} {
+				${props => props.theme.textSize.paragraphTablet};
 			}
 		`,
 	},

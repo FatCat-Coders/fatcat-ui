@@ -5,7 +5,7 @@ export const TEXT_SIZE = {
 		font-size: ${props => props.theme.fontSize.s48};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
-	h1Mobile: css`
+	h1Tablet: css`
 		font-size: ${props => props.theme.fontSize.s32};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
@@ -13,7 +13,7 @@ export const TEXT_SIZE = {
 		font-size: ${props => props.theme.fontSize.s32};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
-	h2Mobile: css`
+	h2Tablet: css`
 		font-size: ${props => props.theme.fontSize.s24};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
@@ -21,7 +21,7 @@ export const TEXT_SIZE = {
 		font-size: ${props => props.theme.fontSize.s24};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
-	h3Mobile: css`
+	h3Tablet: css`
 		font-size: ${props => props.theme.fontSize.s20};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
@@ -29,7 +29,7 @@ export const TEXT_SIZE = {
 		font-size: ${props => props.theme.fontSize.s20};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
-	h4Mobile: css`
+	h4Tablet: css`
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
@@ -49,7 +49,7 @@ export const TEXT_SIZE = {
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
-	paragraphMobile: css`
+	paragraphTablet: css`
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,

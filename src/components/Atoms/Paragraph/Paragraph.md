@@ -35,7 +35,7 @@ const TEXT_SIZE = {
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
-	paragraphMobile: css`
+	paragraphTablet: css`
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 	`,
@@ -54,8 +54,8 @@ const const TEXT_VARIANT = {
 			${props => props.theme.textSize.paragraph};
 			font-weight: ${props => props.theme.fontWeight.normal};
 
-			${props => props.theme.media.mobile} {
-				${props => props.theme.textSize.paragraphMobile};
+			${props => props.theme.media.tablet} {
+				${props => props.theme.textSize.paragraphTablet};
 			}
 		`,
 	`,
@@ -70,8 +70,8 @@ const const TEXT_VARIANT = {
 		${props => props.theme.textSize.paragraph};
 		font-weight: ${props => props.theme.fontWeight.normal};
 
-		${props => props.theme.media.mobile} {
-			${props => props.theme.textSize.paragraphMobile};
+		${props => props.theme.media.tablet} {
+			${props => props.theme.textSize.paragraphTablet};
 		}
 	`,
 }
