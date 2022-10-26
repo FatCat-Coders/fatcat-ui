@@ -349,7 +349,7 @@
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-max-props-per-line": 1,
+    "react/jsx-max-props-per-line": ["error", { "maximum": 3 }],
     "react/jsx-props-no-spreading": "off",
     "react/jsx-first-prop-new-line": [
       "error",

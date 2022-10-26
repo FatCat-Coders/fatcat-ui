@@ -7,8 +7,9 @@ export default css`
 		font-size: 100%;
 	}
 
-	html, body, * {
+	html, body {
 		line-height: 1;
+		color: ${props => props.theme.color.primary};
 		font-family: ${props => props.theme.fontFamily.main};
 	}
 
@@ -17,6 +18,6 @@ export default css`
 	input:-webkit-autofill:hover,
 	input:-webkit-autofill:focus,
 	input:-webkit-autofill:active  {
-	    -webkit-box-shadow: 0 0 0 40px white inset !important;
+	    -webkit-box-shadow: 0 0 0 1000px white inset !important;
 	}
 `;

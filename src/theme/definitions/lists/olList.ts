@@ -1,10 +1,20 @@
 import { css } from 'styled-components';
 
-export const OLLIST_STYLE = {
+export const OLLIST_VARIANT = {
 	base: css`
-		color: ${props => props.theme.color.white};
+		li::before {
+			content: counter(item) ". ";
+		}
 	`,
-	red: css`
-		color: ${props => props.theme.color.purple};
+	alphabet: css`
+		li::before {
+			content: counter(item, lower-alpha) ". ";
+		}
 	`,
+	alphabetUpper: css`
+		li::before {
+			content: counter(item, upper-alpha) ". ";
+		}
+	`,
+	noStyle: css``,
 };

@@ -1,5 +1,10 @@
 import React from 'react';
 import { UIThemeProvider } from '../src/theme/theme';
+import GlobalStyle from '../src/components/Atoms/GlobalStyle';
+import { ToastContainer } from 'react-toastify';
+
+import '../stories/assets/fonts/stylesheet.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const parameters = {
 	actions: { argTypesRegex: "^on[A-Z].*" },
@@ -25,7 +30,9 @@ export const parameters = {
 export const decorators = [
 	(Story) => (
 		<UIThemeProvider>
+			<GlobalStyle />
 			<Story />
+			<ToastContainer />
 		</UIThemeProvider>
 	),
 ];

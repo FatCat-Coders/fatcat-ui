@@ -1,32 +1,15 @@
+import styled, { DefaultTheme } from 'styled-components';
+import { UIprops } from '../../utils/ui-props';
 
-import { styled } from '../../utils/styled';
-import { DefaultTheme } from 'styled-components';
+import { generalProps, GeneralProps } from '../../theme/props';
 
-import {
-	animation, AnimationProps,
-	hover, HoverProps,
-	position, PositionProps,
-	responsive, ResponsiveProps,
-	text, TextProps,
-	border, BorderProps,
-	background, BackgroundProps,
-	visibility, VisibilityProps,
-} from '../../theme/props';
+export type TTable = {
+	variant?: keyof DefaultTheme['tableVariant']
+} & GeneralProps;
 
-export type TTable =
-	{
-		variant?: keyof DefaultTheme['tableStyle']
-	}
-	& AnimationProps
-	& BackgroundProps
-	& BorderProps
-	& HoverProps
-	& PositionProps
-	& ResponsiveProps
-	& TextProps
-	& VisibilityProps;
-
-export const Table = styled('table')<TTable>`
+export const Table = styled.table.withConfig({
+	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
+}) <TTable>`
 	thead th {
 		border-bottom: 5px solid ${props => props.theme.color.white10};
 		:nth-child(1) {
@@ -46,15 +29,8 @@ export const Table = styled('table')<TTable>`
 		padding: 20px 20px;
 	}
 
-	${props => props.variant && props.theme.tableStyle.[props.variant]};
-	${animation};
-	${background};
-	${border};
-	${position};
-	${text};
-	${visibility};
-	${hover};
-	${responsive};
+	${props => props.variant && props.theme.tableVariant[props.variant]};
+	${generalProps};
 `;
 
 Table.defaultProps = {

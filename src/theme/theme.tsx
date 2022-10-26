@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, CSSProp } from 'styled-components';
 import { isObjectEmpty, deepmerge } from '../utils/object-helpers';
 
 // Definitions
@@ -7,81 +7,91 @@ import {
 	ANIMATIONS,
 	BACKGROUND_COLOR,
 	BUTTON_COLOR,
-	BUTTON_STYLE,
+	BUTTON_SIZE,
+	BUTTON_VARIANT,
 	COLOR,
 	FONT_FAMILY,
 	FONT_SIZE,
 	FONT_WEIGHT,
-	TEXT_STYLE,
-	INPUT_STYLE,
+	TEXT_VARIANT,
+	INPUT_VARIANT,
 	LINE_HEIGHT,
 	LINK_COLOR,
-	LINK_STYLE,
+	LINK_VARIANT,
 	MEDIA,
-	OLLIST_STYLE,
+	OLLIST_VARIANT,
 	SCREEN_RATIO,
 	SECTION_WIDTH,
 	SPACE,
-	TABLE_STYLE,
+	TABLE_VARIANT,
 	TEXT_COLOR,
-	ULLIST_STYLE,
+	ULLIST_VARIANT,
+	MEDIA_MOBILE,
 } from './definitions';
 import { HOVER_BEHAVIORS, RESPONSIVE_BEHAVIORS, TEXT_SIZE } from './styles';
 import { SideSpacingTypesValue } from './props/space/space';
 
 export interface FatCatTheme {
+	useMobileFirst: boolean
 	animation: typeof ANIMATIONS
 	backgroundColor: typeof BACKGROUND_COLOR
 	buttonColor: typeof BUTTON_COLOR
-	buttonStyle: typeof BUTTON_STYLE
+	buttonSize: typeof BUTTON_SIZE
+	buttonVariant: typeof BUTTON_VARIANT
 	color: typeof COLOR
 	fontFamily: typeof FONT_FAMILY
 	fontSize: typeof FONT_SIZE
 	fontWeight: typeof FONT_WEIGHT
-	textStyle: typeof TEXT_STYLE
+	textVariant: typeof TEXT_VARIANT
 	hover: typeof HOVER_BEHAVIORS
 	lineHeight: typeof LINE_HEIGHT
 	linkColor: typeof LINK_COLOR
-	linkStyle: typeof LINK_STYLE
-	media: typeof MEDIA,
+	linkVariant: typeof LINK_VARIANT
+	media: typeof MEDIA
+	mediaMobile: typeof MEDIA_MOBILE
 	responsive: typeof RESPONSIVE_BEHAVIORS
 	screenRatio: typeof SCREEN_RATIO
 	sectionWidth: typeof SECTION_WIDTH
 	sideSpace?: SideSpacingTypesValue
 	space: typeof SPACE
-	tableStyle: typeof TABLE_STYLE
+	tableVariant: typeof TABLE_VARIANT
 	textColor: typeof TEXT_COLOR
 	textSize: typeof TEXT_SIZE
-	inputStyle: typeof INPUT_STYLE
-	ollistStyle: typeof OLLIST_STYLE,
-	ullistStyle: typeof ULLIST_STYLE,
+	inputVariant: typeof INPUT_VARIANT
+	ollistVariant: typeof OLLIST_VARIANT,
+	ullistVariant: typeof ULLIST_VARIANT,
+	sectionLayout?: CSSProp,
 }
 
 const defaultTheme: FatCatTheme = {
+	useMobileFirst: false,
 	animation: ANIMATIONS,
 	backgroundColor: BACKGROUND_COLOR,
 	buttonColor: BUTTON_COLOR,
-	buttonStyle: BUTTON_STYLE,
+	buttonSize: BUTTON_SIZE,
+	buttonVariant: BUTTON_VARIANT,
 	color: COLOR,
 	fontFamily: FONT_FAMILY,
 	fontSize: FONT_SIZE,
 	fontWeight: FONT_WEIGHT,
-	textStyle: TEXT_STYLE,
+	textVariant: TEXT_VARIANT,
 	hover: HOVER_BEHAVIORS,
 	lineHeight: LINE_HEIGHT,
 	linkColor: LINK_COLOR,
-	linkStyle: LINK_STYLE,
+	linkVariant: LINK_VARIANT,
 	media: MEDIA,
+	mediaMobile: MEDIA_MOBILE,
 	responsive: RESPONSIVE_BEHAVIORS,
 	screenRatio: SCREEN_RATIO,
 	sectionWidth: SECTION_WIDTH,
 	space: SPACE,
-	tableStyle: TABLE_STYLE,
+	tableVariant: TABLE_VARIANT,
 	textColor: TEXT_COLOR,
 	textSize: TEXT_SIZE,
-	inputStyle: INPUT_STYLE,
-	ollistStyle: OLLIST_STYLE,
-	ullistStyle: ULLIST_STYLE,
+	inputVariant: INPUT_VARIANT,
+	ollistVariant: OLLIST_VARIANT,
+	ullistVariant: ULLIST_VARIANT,
+	sectionLayout: undefined,
 };
 
 interface UIThemeProviderI {
@@ -94,10 +104,14 @@ export const UIThemeProvider: React.FC<UIThemeProviderI> = ({ children, theme })
 	if (theme && !isObjectEmpty(theme)) {
 		mergedTheme = deepmerge(defaultTheme, theme);
 	}
-
-	return <ThemeProvider theme={mergedTheme || defaultTheme}>{children}</ThemeProvider>;
+	const newTheme = mergedTheme || defaultTheme;
+	// TODO: maybe change locgic for this breakpoint change
+	if (newTheme.useMobileFirst) {
+		newTheme.media = newTheme.mediaMobile;
+	}
+	return <ThemeProvider theme={newTheme}>{children}</ThemeProvider>;
 };
 
 UIThemeProvider.defaultProps = {
-	theme: {},
+	theme: undefined,
 };

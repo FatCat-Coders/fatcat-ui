@@ -1,15 +1,27 @@
-import { css, DefaultTheme } from 'styled-components';
+import { css, DefaultTheme, CSSProp } from 'styled-components';
 import { Properties } from 'csstype';
 
 // Types
 import { SideSpacingValue } from '../props/space/space';
 import { HoverTypes } from '../props/hover/hover';
 
+import { SpaceDefinition } from '../definitions';
+
 // helpers
 import { createSideSpacingRule, parseSpace } from '../props';
 import pickObjectProperties from '../../utils/pick-object-properties';
 
 export const RESPONSIVE_BEHAVIORS = {
+	// cursor
+	pointer: css`
+		cursor: pointer;
+	`,
+	resetCursor: css`
+		cursor: auto;
+	`,
+	cursor: (value: Properties['cursor']) => css`
+		cursor: ${value};
+	`,
 	// flex
 	fluid: css`
 		width: 100%;
@@ -21,8 +33,18 @@ export const RESPONSIVE_BEHAVIORS = {
 		justify-content: center;
 		align-items: center;
 	`,
-	flexWrap: css`
+	wrap: css`
 		flex-wrap: wrap;
+	`,
+	flexWrap: (value: Properties['flexWrap']) => css`
+		flex-wrap: ${value};
+	`,
+	justifyContent: (value: Properties['justifyContent']) => css`
+		justify-content: ${value};
+	`,
+
+	justifyItems: (value: Properties['justifyItems']) => css`
+		justify-items: ${value};
 	`,
 	spaceBetween: css`
 		justify-content: space-between;
@@ -35,6 +57,9 @@ export const RESPONSIVE_BEHAVIORS = {
 	`,
 	justifyContentCenter: css`
 		justify-content: center;
+	`,
+	alignItems: (value: Properties['alignItems']) => css`
+		align-items: ${value};
 	`,
 	alignItemsCenter: css`
 		align-items: center;
@@ -50,8 +75,20 @@ export const RESPONSIVE_BEHAVIORS = {
 		justify-content: flex-start;
 		overflow-x: scroll;
 	`,
+	flex: (value: Properties['flex']) => css`
+		flex: ${value};
+	`,
 	clearFlex: css`
 		flex: none;
+	`,
+	flexBasis: (value: Properties['flexBasis']) => css`
+		flex-basis: ${value};
+	`,
+	flexGrow: (value: Properties['flexGrow']) => css`
+		flex-grow: ${value};
+	`,
+	flexShrink: (value: Properties['flexShrink']) => css`
+		flex-shrink: ${value};
 	`,
 	row: css`
 		flex-direction: row;
@@ -69,32 +106,56 @@ export const RESPONSIVE_BEHAVIORS = {
 		order: ${value};
 	`,
 	// grid
+	grid: (value: Properties['grid']) => css`
+		grid: ${value};
+	`,
+	gridAutoColumns: (value: Properties['gridAutoColumns']) => css`
+		grid-auto-columns: ${value};
+	`,
+	gridAutoFlow: (value: Properties['gridAutoFlow']) => css`
+		grid-auto-flow: ${value};
+	`,
+	gridAutoRows: (value: Properties['gridAutoRows']) => css`
+		grid-auto-rows: ${value};
+	`,
+	gridTemplateAreas: (value: Properties['gridTemplateAreas']) => css`
+		grid-template-areas: ${value};
+	`,
 	gridTemplateColumns: (value: Properties['gridTemplateColumns']) => css`
 		grid-template-columns: ${value};
 	`,
-	// border
-	clearTopBorder: css`
-		border-top: unset;
+	gridTemplateRows: (value: Properties['gridTemplateRows']) => css`
+		grid-template-rows: ${value};
 	`,
+	// border
 	borderNone: css`
 		border: unset;
 	`,
-	setBorderRadius: (value: Properties['borderRadius']) => css`
+	borderRadius: (value: Properties['borderRadius']) => css`
 		border-radius: ${value};
 	`,
-	setBorder: (value: Properties['border']) => css`
+	border: (value: Properties['border']) => css`
 		border: ${value};
 	`,
-	setBorderLeft: (value: Properties['borderLeft']) => css`
+	borderWidth: (value: Properties['borderWidth']) => css`
+		border-width: ${value};
+	`,
+	borderStyle: (value: Properties['borderStyle']) => css`
+		border-style: ${value};
+	`,
+	borderColor: (value: Properties['borderColor']) => css`
+		border-color: ${value};
+	`,
+	borderLeft: (value: Properties['borderLeft']) => css`
 		border-left: ${value};
 	`,
-	setBorderTop: (value: Properties['borderTop']) => css`
+	borderTop: (value: Properties['borderTop']) => css`
 		border-top: ${value};
 	`,
-	setBorderRight: (value: Properties['borderRight']) => css`
+	borderRight: (value: Properties['borderRight']) => css`
 		border-right: ${value};
 	`,
-	setBorderBottom: (value: Properties['borderBottom']) => css`
+	borderBottom: (value: Properties['borderBottom']) => css`
 		border-bottom: ${value};
 	`,
 	boxShadow: (value: Properties['boxShadow']) => css`
@@ -104,20 +165,44 @@ export const RESPONSIVE_BEHAVIORS = {
 	unsetBackgroundImage: css`
 		background-image: none;
 	`,
+	background: (value: Properties['background']) => css`
+		background: ${props => (props.theme.backgroundColor[value] ? props.theme.backgroundColor[value] : value)};
+	`,
 	backgroundImage: (value: string) => value && css`
-		background-image: url(${value});
+		background-image: ${['none', 'initial', 'inherit'].includes(value) ? value : `url(${value})`};
 	`,
 	backgroundGradient: (value: string) => css`
 		background: ${value};
 	`,
-	backgroundColor: (value: keyof DefaultTheme['color']) => css`
-		background-color: ${props => props.theme.color[value]};;
+	backgroundColor: (value: keyof DefaultTheme['backgroundColor']) => css`
+		background-color: ${props => props.theme.color[value]};
+	`,
+	backgroundColorHex: (value: Properties['backgroundColor']) => css`
+		background-color: ${value};
 	`,
 	backgroundSize: (value: Properties['backgroundSize']) => css`
 		background-size: ${value};
 	`,
 	backgroundPosition: (value: Properties['backgroundPosition']) => css`
 		background-position: ${value};
+	`,
+	backgroundRepeat: (value: Properties['backgroundRepeat']) => css`
+		background-repeat: ${value};
+	`,
+	backgroundAttachment: (value: Properties['backgroundAttachment']) => css`
+		background-attachment: ${value};
+	`,
+	backgroundBlur: (value: number) => css`
+		backdrop-filter: blur(${value});
+	`,
+	backdropFilter: (value: Properties['backdropFilter']) => css`
+		backdrop-filter: ${value};
+	`,
+	backgroundBlendMode: (value: Properties['backgroundBlendMode']) => css`
+		background-blend-mode: ${value};
+	`,
+	filter: (value: Properties['filter']) => css`
+		filter: ${value};
 	`,
 	// spacing
 	clearSideSpacing: css`
@@ -145,8 +230,48 @@ export const RESPONSIVE_BEHAVIORS = {
 	padding: (value: SideSpacingValue[]) => css`
 		${props => createSideSpacingRule('padding', parseSpace(value, props.theme.space))};
 	`,
+	paddingTop: (value: SpaceDefinition) => css`
+		padding-top: ${props => props.theme.space[value]};
+	`,
+	paddingRight: (value: SpaceDefinition) => css`
+		padding-right: ${props => props.theme.space[value]};
+	`,
+	paddingBottom: (value: SpaceDefinition) => css`
+		padding-bottom: ${props => props.theme.space[value]};
+	`,
+	paddingLeft: (value: SpaceDefinition) => css`
+		padding-left: ${props => props.theme.space[value]};
+	`,
+	paddingX: (value: SpaceDefinition) => css`
+		padding-left: ${props => props.theme.space[value]};
+		padding-right: ${props => props.theme.space[value]};
+	`,
+	paddingY: (value: SpaceDefinition) => css`
+		padding-top: ${props => props.theme.space[value]};
+		padding-bottom: ${props => props.theme.space[value]};
+	`,
 	margin: (value: SideSpacingValue[]) => css`
 		${props => createSideSpacingRule('margin', parseSpace(value, props.theme.space))};
+	`,
+	marginTop: (value: SpaceDefinition) => css`
+		margin-top: ${props => props.theme.space[value]};
+	`,
+	marginRight: (value: SpaceDefinition) => css`
+		margin-right: ${props => props.theme.space[value]};
+	`,
+	marginBottom: (value: SpaceDefinition) => css`
+		margin-bottom: ${props => props.theme.space[value]};
+	`,
+	marginLeft: (value: SpaceDefinition) => css`
+		margin-left: ${props => props.theme.space[value]};
+	`,
+	marginX: (value: SpaceDefinition) => css`
+		margin-left: ${props => props.theme.space[value]};
+		margin-right: ${props => props.theme.space[value]};
+	`,
+	marginY: (value: SpaceDefinition) => css`
+		margin-top: ${props => props.theme.space[value]};
+		margin-bottom: ${props => props.theme.space[value]};
 	`,
 	gap: (value: Properties['gap']) => css`
 		gap: ${value};
@@ -155,16 +280,55 @@ export const RESPONSIVE_BEHAVIORS = {
 	opacity: (value: Properties['opacity']) => css`
 		opacity: ${value};
 	`,
+	pointerEvents: (value: Properties['pointerEvents']) => css`
+		pointer-events: ${value};
+	`,
 	// overflow
 	overflow: (value: Properties['overflow']) => css`
 		overflow: ${value};
+	`,
+	overflowY: (value: Properties['overflowY']) => css`
+		overflow-y: ${value};
+	`,
+	overflowX: (value: Properties['overflowX']) => css`
+		overflow-x: ${value};
 	`,
 	// text
 	textColor: (value: keyof DefaultTheme['textColor']) => css`
 		color: ${props => props.theme.textColor[value]};
 	`,
+	textColorHex: (value: string) => css`
+		background-color: ${value};
+	`,
 	textSize: (value: keyof DefaultTheme['textSize']) => css`
 		${props => props.theme.textSize[value]};
+	`,
+	textAlign: (value: Properties['textAlign']) => css`
+		text-align: ${value};
+	`,
+	textShadow: (value: Properties['textShadow']) => css`
+		text-shadow: ${value};
+	`,
+	textDirection: (value: Properties['direction']) => css`
+		direction: ${value};
+	`,
+	textDecoration: (value: Properties['textDecoration']) => css`
+		text-decoration: ${value};
+	`,
+	textTransform: (value: Properties['textTransform']) => css`
+		text-transform: ${value};
+	`,
+	uppercase: css`
+		text-transform: uppercase;
+	`,
+	lowercase: css`
+		text-transform: lowercase;
+	`,
+	capitalize: css`
+		text-transform: capitalize;
+	`,
+	fontFamily: (value: keyof DefaultTheme['fontFamily']) => css`
+		font-family: ${props => props.theme.fontFamily[value]};
 	`,
 	fontSize: (value: keyof DefaultTheme['fontSize']) => css`
 		font-size: ${props => props.theme.fontSize[value]};
@@ -172,45 +336,61 @@ export const RESPONSIVE_BEHAVIORS = {
 	fontWeight: (value: keyof DefaultTheme['fontWeight']) => css`
 		font-weight: ${props => props.theme.fontWeight[value]};
 	`,
+	fontStyle: (value: Properties['fontStyle']) => css`
+		font-style: ${value};
+	`,
 	letterSpacing: (value: Properties['letterSpacing']) => css`
 		letter-spacing: ${value};
 	`,
 	lineHeight: (value: keyof DefaultTheme['lineHeight']) => css`
 		line-height: ${props => props.theme.lineHeight[value]};
 	`,
-	noWrap: css`
+	whiteSpace: (value: Properties['whiteSpace']) => css`
+		white-space: ${value};
+	`,
+	textNoWrap: css`
 		white-space: nowrap;
 	`,
-	preWrap: css`
+	textPreWrap: css`
 		white-space: pre-wrap;
 	`,
+	ellipsis: (value: number) => css`
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box; // will this work on IE?
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: ${value};
+	`,
+	unicodeBidi: (value: Properties['unicodeBidi']) => css`
+		unicode-bidi: ${value};
+	`,
 	// width and heights
-	autoWidth: css`
+	autoW: css`
 		width: auto;
 	`,
-	autoHeight: css`
+	autoH: css`
 		height: auto;
 	`,
 	split: css`
 		max-width: 50%;
 		width: 100%;
 	`,
-	maxWidth: (value: Properties['maxWidth']) => css`
+	maxW: (value: Properties['maxWidth']) => css`
 		max-width: ${value};
 	`,
-	minWidth: (value: Properties['minWidth']) => css`
+	minW: (value: Properties['minWidth']) => css`
 		min-width: ${value};
 	`,
-	minHeight: (value: Properties['minHeight']) => css`
+	minH: (value: Properties['minHeight']) => css`
 		min-height: ${value};
 	`,
-	maxHeight: (value: Properties['maxHeight']) => css`
+	maxH: (value: Properties['maxHeight']) => css`
 		max-height: ${value};
 	`,
-	width: (value: Properties['width']) => css`
+	w: (value: Properties['width']) => css`
 		width: ${value};
 	`,
-	height: (value: Properties['height']) => css`
+	h: (value: Properties['height']) => css`
 		height: ${value};
 	`,
 	// positions
@@ -253,8 +433,17 @@ export const RESPONSIVE_BEHAVIORS = {
 	transform: (value: Properties['transform']) => css`
 		transform: ${value};
 	`,
+	transformOrigin: (value: Properties['transformOrigin']) => css`
+		transform-origin: ${value};
+	`,
 	alignSelf: (value: Properties['alignSelf']) => css`
 		align-self: ${value};
+	`,
+	perspective: (value: Properties['perspective']) => css`
+		perspective: ${value};
+	`,
+	perspectiveOrigin: (value: Properties['perspectiveOrigin']) => css`
+		perspective-origin: ${value};
 	`,
 	// visibility
 	visibility: (value: Properties['visibility']) => css`
@@ -291,10 +480,33 @@ export const RESPONSIVE_BEHAVIORS = {
 	animationPlayState: (value: Properties['animationPlayState']) => css`
 		animation-play-state: ${value};
 	`,
+	// transition
+	transition: (value: Properties['transition']) => css`
+		transition: ${value};
+	`,
+	transitionDelay: (value: Properties['transitionDelay']) => css`
+		transition-delay: ${value};
+	`,
+	transitionDuration: (value: Properties['transitionDuration']) => css`
+		transition-duration: ${value};
+	`,
+	transitionProperty: (value: Properties['transitionProperty']) => css`
+		transition-property: ${value};
+	`,
+	transitionTimingFunction: (value: Properties['transitionTimingFunction']) => css`
+		transition-timing-function: ${value};
+	`,
+	willChange: (value: Properties['willChange']) => css`
+		will-change: ${value};
+	`,
 	// hover
-	hover: (value: (HoverTypes | Partial<Record<HoverTypes, any>>)[]) => css`
+	hover: (value: HoverTypes) => css`
 		&:hover {
 			${props => pickObjectProperties(props.theme.hover, value)}
 		}
+	`,
+	// IMPORTANT: leave this props on bottom of the list
+	css: (value: CSSProp) => css`
+		${value}
 	`,
 };

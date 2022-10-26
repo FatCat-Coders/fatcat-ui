@@ -10,6 +10,7 @@ export type VisibilityProps = {
 	initialDisplay?: Properties['display']
 	display?: Properties['display']
 	opacity?: Properties['opacity']
+	pointerEvents?: Properties['pointerEvents']
 };
 
 export const visibility = css<VisibilityProps>`
@@ -29,4 +30,5 @@ export const visibility = css<VisibilityProps>`
 	`}
 	${props => props.visibility && `visibility: ${props.visibility};`}
 	${props => props.opacity && `opacity: ${props.opacity};`}
+	${props => props.pointerEvents && `pointer-events: ${props.pointerEvents};`}
 `;

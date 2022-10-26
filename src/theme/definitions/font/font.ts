@@ -4,9 +4,10 @@
 
 /**
  * Available font families
+ * Overwrite main key with your font family
  */
 export const FONT_FAMILY = {
-	main: 'Circular Std',
+	main: 'Outfit',
 	secondary: 'Circular Std',
 };
 
@@ -15,12 +16,12 @@ export const FONT_FAMILY = {
  */
 export const FONT_SIZE = {
 	s74: '4.625rem',
-	s54: '3.375rem',
-	s56: '3.5rem',
 	s64: '4rem',
+	s56: '3.5rem',
+	s54: '3.375rem',
 	s48: '3rem',
 	s42: '2.625rem',
-	s37: '2.3125rem',
+	s34: '2.125rem',
 	s32: '2rem',
 	s30: '1.875rem',
 	s28: '1.75rem',
@@ -50,13 +51,14 @@ export const FONT_WEIGHT = {
  */
 // snumber represent percentage to add as line height.
 export const LINE_HEIGHT = {
-	s66: 0.66666666666,
+	s66: 0.66,
 	s100: 1,
 	s112: 1.125,
 	s120: 1.2,
 	s125: 1.25,
-	s133: 1.33333333333,
+	s133: 1.33,
 	s150: 1.5,
-	s175: 1.71428571429,
+	s166: 1.66,
+	s175: 1.75,
 	s200: 2,
 };

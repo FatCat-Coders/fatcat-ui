@@ -1,26 +1,26 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
 
-export const LINK_STYLE = {
+export const LINK_BASE = css<{ disabled?: boolean, linkColor: keyof DefaultTheme['linkColor'] }>`
+	${props => props.theme.textVariant.link};
+	color: ${props => props.theme.linkColor[props.linkColor].default};
+	width: fit-content;
+	&:hover {
+		color: ${props => props.theme.linkColor[props.linkColor].hover};
+	}
+	${props => props.disabled && css`
+		cursor: not-allowed;
+		pointer-events: none;
+		color: ${props => props.theme.color.darkerGrey};
+	`}
+`;
+
+export const LINK_VARIANT = {
 	base: css`
-		color: ${props => props.theme.color.yellow};
-		font-weight: ${props => props.theme.fontWeight.bold};
-		${props => props.theme.textSize.link}
-		letter-spacing: 2px;
-		width: fit-content;
-		padding-bottom: 2px;
-		border-bottom: 1px solid transparent;
-		&:hover {
-			padding-bottom: 2px;
-			border-bottom: 1px solid ${props => props.theme.color.yellow};
-			width: fit-content;
-		}
+		${LINK_BASE}
 	`,
 	underline: css`
-		color: -webkit-link;
 		text-decoration: underline;
+		${LINK_BASE}
 	`,
-	disabled: css`
-		color: ${props => props.theme.color.grey};
-		cursor: not-allowed;
-	`,
+	noStyle: css``,
 };
