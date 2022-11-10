@@ -18,7 +18,7 @@ export type TAvatar = {
 	subtitle?: string
 	size?: string
 	css?: CSSProp
-	textColor?: keyof DefaultTheme['color']
+	textColor?: keyof DefaultTheme['textColor']
 }
 
 export const sizes = {
@@ -41,7 +41,7 @@ const Avatar: React.FC<TAvatar> = (props) => {
 		textColor,
 		css,
 	} = props;
-	const sizeValue = sizes[size as string] || size;
+	const sizeValue = sizes[size as keyof typeof sizes] || size;
 	return (
 		<Flex
 			w="fit-content"
