@@ -15,6 +15,7 @@ export const COLOR = {
 	white50: 'rgba(255, 255, 255, 0.5)',
 	darkestGray: '#121212',
 	grey: '#BEBEBE',
+	grey200: '#DDDDDD',
 	greyLight: '#67727B',
 	darkerGrey: '#6B6B6B',
 	lightGrey: '#F5F5F5',
