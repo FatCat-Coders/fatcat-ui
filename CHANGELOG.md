@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.6
+
+### Patch Changes
+
+- Small types fix and adding missing color
+
 ## 1.1.5
 
 ### Patch Changes
