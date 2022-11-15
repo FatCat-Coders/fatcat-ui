@@ -18,7 +18,7 @@ export const INPUT_VARIANT = {
 	base: css<TINPUT_VARIANT>`
 		width: 100%;
 		appearance: none;
-		outline: 0;
+		outline: none;
 		border-radius: 4px;
 		border: 1px solid ${props => props.theme.color.grey200};
 		padding: ${props => props.theme.space.s14} ${props => props.theme.space.s16};

@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.7
+
+### Patch Changes
+
+- Add checkbox before text and gap prop
+
 ## 1.1.6
 
 ### Patch Changes
