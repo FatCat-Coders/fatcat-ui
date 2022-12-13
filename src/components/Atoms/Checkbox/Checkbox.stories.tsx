@@ -120,8 +120,6 @@ const Template: ComponentStory<typeof CheckboxOrigin> = (props) => {
 				aria-label="Checkbox"
 				onChange={() => setValue(value => !value)}
 				value={value}
-				beforeText="hello world"
-				gap="20px"
 			/>
 			<CheckboxOrigin
 				{...props}
