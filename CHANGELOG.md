@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.9
+
+### Patch Changes
+
+- Fix button size defination through theme
+
 ## 1.1.8
 
 ### Patch Changes

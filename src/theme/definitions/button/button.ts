@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
 import { BUTTON_COLOR } from '../color/color';
 
 export const BUTTON_SIZE = {
@@ -16,15 +16,15 @@ export const BUTTON_SIZE = {
 	`,
 };
 
-const buttonBase = css<{size: keyof typeof BUTTON_SIZE}>`
-	${props => props.size && BUTTON_SIZE[props.size]};
+const buttonBase = css<{size: keyof DefaultTheme['buttonSize']}>`
+	${props => props.size && props.theme.buttonSize[props.size]};
 	${props => props.theme.textVariant.button};
 	height: fit-content;
 	border-radius: 4px;
 `;
 
 export const BUTTON_VARIANT = {
-	primary: css<{ buttonColor: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
+	primary: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
 		border: 1px solid ${props => props.theme.buttonColor[props.buttonColor].default};
 		color: ${props => props.theme.buttonColor[props.buttonColor].text};
 		background: ${props => props.theme.buttonColor[props.buttonColor].default};
@@ -40,7 +40,7 @@ export const BUTTON_VARIANT = {
 			color: ${props => props.theme.buttonColor.disabled.text};
 		}
 	`,
-	secondary: css<{ buttonColor: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
+	secondary: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
 		color: ${props => props.theme.buttonColor[props.buttonColor].text};
 		background: ${props => props.theme.color.transparent};
 		border: 1px solid ${props => props.theme.buttonColor[props.buttonColor].default};
@@ -57,7 +57,7 @@ export const BUTTON_VARIANT = {
 			color: ${props => props.theme.buttonColor.disabled.text};
 		}
 	`,
-	ghost: css<{ buttonColor: typeof BUTTON_COLOR, size: keyof typeof BUTTON_SIZE }>`
+	ghost: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
 		border: 1px solid ${props => props.theme.color.transparent};
 		color: ${props => props.theme.buttonColor[props.buttonColor].text};
 		${buttonBase};
@@ -72,7 +72,7 @@ export const BUTTON_VARIANT = {
 			color: ${props => props.theme.buttonColor.disabled.text};
 		}
 	`,
-	underline: css<{ buttonColor: typeof BUTTON_COLOR }>`
+	underline: css<{ buttonColor: keyof DefaultTheme['buttonColor'] }>`
 		border: 1px solid ${props => props.theme.color.transparent};
 		color: ${props => props.theme.buttonColor[props.buttonColor].text};
 		background: ${props => props.theme.color.transparent};
