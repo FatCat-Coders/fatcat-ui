@@ -7,7 +7,7 @@ import { formatObjectKeys } from '../../../../stories/helpers';
 import { LINK_VARIANT } from '../../../theme/definitions';
 
 import readme from './Link.md';
-import { COLOR } from '../../../theme/definitions/color/color';
+import { COLOR, LINK_COLOR } from '../../../theme/definitions/color/color';
 
 export default {
 	title: 'Basic Elements/Link',
@@ -53,6 +53,14 @@ export default {
 				type: { summary: null },
 			},
 		},
+		linkColor: {
+			control: 'select',
+			options: Object.keys(LINK_COLOR),
+			description: 'The link color variant',
+			table: {
+				type: { summary: null },
+			},
+		},
 	},
 	parameters: {
 		docs: {
@@ -83,6 +91,7 @@ Link.parameters = {
 			'Content',
 			'arrowColor',
 			'to',
+			'linkColor',
 			'variant',
 			'withArrow',
 			'disabled',

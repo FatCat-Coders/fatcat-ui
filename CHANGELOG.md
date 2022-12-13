@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.10
+
+### Patch Changes
+
+- Fix default link color for selected variant
+
 ## 1.1.9
 
 ### Patch Changes

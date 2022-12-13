@@ -38,6 +38,10 @@ export const LINK_COLOR = {
 		default: COLOR.primary,
 		hover: darken(0.1, COLOR.primary),
 	},
+	underline: {
+		default: 'blue',
+		hover: 'green',
+	},
 };
 
 export const BUTTON_COLOR = {

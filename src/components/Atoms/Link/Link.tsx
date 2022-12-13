@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme, useTheme } from 'styled-components';
 import { UIprops } from '../../../utils/ui-props';
 
 import { PolymorphicComponent } from '../../../utils/polymorphic-component';
@@ -40,11 +40,13 @@ export type LinkComponent = PolymorphicComponent<LinkProps>;
 
 export const Link: LinkComponent = (props) => {
 	const {
-		children, to, withArrow, arrowColor, ...linkProps
+		children, to, withArrow, linkColor, arrowColor, customArrow, ...linkProps
 	} = props;
+	const theme = useTheme();
+	const color = (!linkColor && theme.linkColor[linkProps.variant]) ? linkProps.variant : linkColor;
 	return (
 		// eslint-disable-next-line
-		<LinkBase href={to} to={props.as ? to : undefined} {...linkProps}>
+		<LinkBase href={to} to={props.as ? to : undefined} linkColor={color} {...linkProps}>
 			{children}
 			{withArrow && <Arrow arrowColor={arrowColor} />}
 		</LinkBase>
@@ -52,8 +54,8 @@ export const Link: LinkComponent = (props) => {
 };
 
 Link.defaultProps = {
-	variant: 'base',
-	linkColor: 'primary',
+	variant: 'primary',
+	linkColor: undefined,
 	disabled: false,
 	withArrow: false,
 	arrowColor: undefined,

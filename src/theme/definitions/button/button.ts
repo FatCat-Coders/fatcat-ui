@@ -1,5 +1,4 @@
 import { css, DefaultTheme } from 'styled-components';
-import { BUTTON_COLOR } from '../color/color';
 
 export const BUTTON_SIZE = {
 	large: css`

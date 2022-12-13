@@ -15,7 +15,7 @@ export const LINK_BASE = css<{ disabled?: boolean, linkColor: keyof DefaultTheme
 `;
 
 export const LINK_VARIANT = {
-	base: css`
+	primary: css`
 		${LINK_BASE}
 	`,
 	underline: css`
