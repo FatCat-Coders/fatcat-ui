@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.8
+
+### Patch Changes
+
+- Fix paragraph default font weight setup
+
 ## 1.1.7
 
 ### Patch Changes
