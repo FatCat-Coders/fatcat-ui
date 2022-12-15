@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.11
+
+### Patch Changes
+
+- Adding youtube icon to social component
+
 ## 1.1.10
 
 ### Patch Changes
