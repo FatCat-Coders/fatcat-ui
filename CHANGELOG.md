@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.12
+
+### Patch Changes
+
+- Fix color change on hover props
+
 ## 1.1.11
 
 ### Patch Changes
