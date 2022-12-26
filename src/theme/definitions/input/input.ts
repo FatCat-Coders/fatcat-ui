@@ -66,9 +66,9 @@ export const INPUT_VARIANT = {
 			}
 
 			${props.errorMsg && css`
-				border-color: ${props.theme.color.warrning} !important;
+				border-color: ${props.theme.color.warning} !important;
 				& ~ label {
-					color: ${props.theme.color.warrning} !important;
+					color: ${props.theme.color.warning} !important;
 				}
 			`}
 		`};

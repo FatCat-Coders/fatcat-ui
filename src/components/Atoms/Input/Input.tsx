@@ -37,7 +37,7 @@ export const Input: React.FC<TInput> = (props) => {
 			{errorMsg && (
 				<Text
 					display="block"
-					textColor="warrning"
+					textColor="warning"
 					position="absolute"
 					bottom="0px"
 					lineHeight="s100"

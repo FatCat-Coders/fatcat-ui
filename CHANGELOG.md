@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.13
+
+### Patch Changes
+
+- Mistyping fix for color naming
+
 ## 1.1.12
 
 ### Patch Changes
