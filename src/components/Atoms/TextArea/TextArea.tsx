@@ -13,7 +13,7 @@ export type TTextArea =
 	& TTextAreaField
 	& React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-export const TextArea: React.FC<TTextArea> = (props) => {
+export const TextArea = React.forwardRef<HTMLTextAreaElement, TTextArea>((props, ref) => {
 	const {
 		id,
 		placeholder,
@@ -28,6 +28,7 @@ export const TextArea: React.FC<TTextArea> = (props) => {
 		>
 			<TextAreaField
 				{...restProps}
+				ref={ref}
 				id={inputId}
 				placeholder=" "
 				errorMsg={errorMsg}
@@ -49,7 +50,7 @@ export const TextArea: React.FC<TTextArea> = (props) => {
 			)}
 		</Wrapper>
 	);
-};
+});
 
 TextArea.defaultProps = {
 	id: undefined,

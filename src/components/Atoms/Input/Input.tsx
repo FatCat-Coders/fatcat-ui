@@ -13,7 +13,7 @@ export type TInput =
 	& TInputField
 	& React.InputHTMLAttributes<HTMLInputElement>;
 
-export const Input: React.FC<TInput> = (props) => {
+export const Input = React.forwardRef<HTMLInputElement, TInput>((props, ref) => {
 	const {
 		id,
 		placeholder,
@@ -28,14 +28,17 @@ export const Input: React.FC<TInput> = (props) => {
 		>
 			<InputField
 				{...restProps}
+				ref={ref}
 				id={inputId}
 				placeholder=" "
 				errorMsg={errorMsg}
+				aria-invalid={errorMsg ? 'true' : 'false'}
 				customInput
 			/>
 			<Label htmlFor={inputId}>{placeholder}</Label>
 			{errorMsg && (
 				<Text
+					role="alert"
 					display="block"
 					textColor="warning"
 					position="absolute"
@@ -49,7 +52,7 @@ export const Input: React.FC<TInput> = (props) => {
 			)}
 		</Wrapper>
 	);
-};
+});
 
 Input.defaultProps = {
 	id: undefined,

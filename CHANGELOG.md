@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.1.14
+
+### Patch Changes
+
+- Add fowardref to input and textarea component
+
 ## 1.1.13
 
 ### Patch Changes
