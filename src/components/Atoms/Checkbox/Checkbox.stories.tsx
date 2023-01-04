@@ -22,7 +22,7 @@ export default {
 				defaultValue: { summary: 'primary' },
 			},
 		},
-		css: {
+		styled: {
 			control: 'text',
 			description: 'Additional custom CSS style',
 			table: {
@@ -155,7 +155,7 @@ Checkbox.parameters = {
 			'afterText',
 			'backgroundColor',
 			'beforeText',
-			'css',
+			'styled',
 			'disabled',
 			'gap',
 			'icon',

@@ -98,6 +98,6 @@ export const CookieStyles = createGlobalStyle<TCookieStyle>`
 			padding-right: ${props => props.theme.space.s20};
 		}
 
-		${props => props.css}
+		${props => props.styled}
 	}
 `;

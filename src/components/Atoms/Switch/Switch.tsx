@@ -21,7 +21,7 @@ export type TSwitch = {
 	value: boolean
 	beforeText?: string | React.ReactNode
 	afterText?: string | React.ReactNode
-	css?: CSSProp
+	styled?: CSSProp
 }
 
 const Switch = forwardRef<HTMLInputElement, PropsWithChildren<TSwitch>>((props, ref) => {
@@ -35,12 +35,12 @@ const Switch = forwardRef<HTMLInputElement, PropsWithChildren<TSwitch>>((props, 
 		value,
 		beforeText,
 		afterText,
-		css,
+		styled,
 		textColor,
 		...rest
 	} = props;
 	return (
-		<SwitchContainer css={css}>
+		<SwitchContainer styled={styled}>
 			{beforeText && (<SwitchText selected={!value} textColor={textColor}>{beforeText}</SwitchText>)}
 			<SwitchInput
 				id={id}
@@ -75,7 +75,7 @@ Switch.defaultProps = {
 	useSameBackgroundColor: false,
 	beforeText: null,
 	afterText: null,
-	css: undefined,
+	styled: undefined,
 };
 
 export default Switch;

@@ -17,7 +17,7 @@ export type TAvatar = {
 	title?: string
 	subtitle?: string
 	size?: string
-	css?: CSSProp
+	styled?: CSSProp
 	textColor?: keyof DefaultTheme['textColor']
 }
 
@@ -39,7 +39,7 @@ const Avatar: React.FC<TAvatar> = (props) => {
 		subtitle,
 		size,
 		textColor,
-		css,
+		styled,
 	} = props;
 	const sizeValue = sizes[size as keyof typeof sizes] || size;
 	return (
@@ -48,7 +48,7 @@ const Avatar: React.FC<TAvatar> = (props) => {
 			direction="column"
 			alignItems="center"
 			minW={profile ? `calc(${sizeValue} + (${sizeValue} * 0.2))` : undefined}
-			css={css}
+			styled={styled}
 		>
 			<AvatarWrapper profile={!!profile} size={sizeValue}>
 				{typeof image === 'string' && <img src={image} alt={imageAlt} />}
@@ -89,7 +89,7 @@ Avatar.defaultProps = {
 	title: undefined,
 	subtitle: undefined,
 	size: 'medium',
-	css: undefined,
+	styled: undefined,
 	textColor: 'primary',
 };
 

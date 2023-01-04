@@ -1,9 +1,9 @@
 import { css, CSSProp } from 'styled-components';
 
 export type CustomCssProps = {
-	css?: CSSProp
+	styled?: CSSProp
 };
 
 export const customCss = css<CustomCssProps>`
-	${props => props.css}
+	${props => props.styled}
 `;

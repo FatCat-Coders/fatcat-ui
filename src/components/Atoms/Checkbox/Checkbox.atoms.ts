@@ -64,7 +64,7 @@ export const CheckboxInput = styled.input`
 	} */
 `;
 
-export const CheckboxContainer = styled.label<{ css?: CSSProp, disabled?: boolean, gap?: Properties['gap'] }>`
+export const CheckboxContainer = styled.label<{ styled?: CSSProp, disabled?: boolean, gap?: Properties['gap'] }>`
 	cursor: pointer;
 	height: fit-content;
 	display: flex;
@@ -77,5 +77,5 @@ export const CheckboxContainer = styled.label<{ css?: CSSProp, disabled?: boolea
 			opacity: 0.5;
 		}
 	`}
-	${props => props.css}
+	${props => props.styled}
 `;

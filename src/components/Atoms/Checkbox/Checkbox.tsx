@@ -19,7 +19,7 @@ export type TCheckbox = {
 	value: boolean
 	afterText?: string | React.ReactNode
 	beforeText?: string | React.ReactNode
-	css?: CSSProp
+	styled?: CSSProp
 	isIndeterminate?: boolean
 	size?: 'small' | 'medium' | 'large'
 	icon?: React.ReactNode
@@ -31,7 +31,7 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<TCheckbox>>((pro
 		afterText,
 		backgroundColor,
 		beforeText,
-		css,
+		styled,
 		disabled,
 		gap,
 		icon,
@@ -45,7 +45,7 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<TCheckbox>>((pro
 	} = props;
 	return (
 		<CheckboxContainer
-			css={css}
+			styled={styled}
 			gap={gap}
 			disabled={disabled}
 		>
@@ -101,7 +101,7 @@ Checkbox.defaultProps = {
 	required: false,
 	afterText: null,
 	beforeText: null,
-	css: undefined,
+	styled: undefined,
 	size: 'medium',
 	isIndeterminate: false,
 	icon: null,

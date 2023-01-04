@@ -73,7 +73,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		css: {
+		styled: {
 			control: 'text',
 			description: 'Additional custom CSS style',
 			table: {
@@ -120,7 +120,7 @@ CookieBanner.parameters = {
 			'cookieName',
 			'cookieText',
 			'cookieTextColor',
-			'css',
+			'styled',
 			'declineHoverColor',
 			'useCookieIcon',
 		],
@@ -133,7 +133,7 @@ CookieBanner.args = {
 	cookieName: 'cookie-consent',
 	cookieText: 'This website uses cookies to enhance the user experience.',
 	cookieTextColor: 'primary',
-	css: '',
+	styled: '',
 	declineHoverColor: 'greyLight',
 	useCookieIcon: true,
 };

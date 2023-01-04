@@ -38,7 +38,7 @@ export type TSocialMedia = {
 	square?: boolean
 	size?: Properties['width']
 	gap?: Properties['gap']
-	css?: CSSProp
+	styled?: CSSProp
 }
 
 const SocialMedia: React.FC<TSocialMedia> = (props) => {
@@ -49,7 +49,7 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 		gap,
 		size,
 		square,
-		css,
+		styled,
 	} = props;
 	const icons = square ? mappedSocialSquare : mappedSocial;
 	return (
@@ -58,7 +58,7 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 			h="fit-content"
 			gap={gap}
 			alignItems="center"
-			css={css}
+			styled={styled}
 		>
 			{Object.entries(socials).map((obj) => {
 				const [key, value] = obj as [SOCIAL_MEDIA, string];
@@ -96,7 +96,7 @@ SocialMedia.defaultProps = {
 	size: undefined,
 	square: true,
 	gap: '4px',
-	css: undefined,
+	styled: undefined,
 };
 
 export default SocialMedia;

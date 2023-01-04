@@ -7,7 +7,7 @@ export default css`
 		font-size: 100%;
 	}
 
-	html, body {
+	* {
 		line-height: 1;
 		color: ${props => props.theme.color.primary};
 		font-family: ${props => props.theme.fontFamily.main};

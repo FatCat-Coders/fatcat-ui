@@ -9,7 +9,7 @@ export type TCookieStyle = {
 	buttonColor?: keyof DefaultTheme['color']
 	declineHoverColor?: keyof DefaultTheme['color']
 	cookieTextColor?: keyof DefaultTheme['textColor']
-	css?: CSSProp
+	styled?: CSSProp
 }
 
 export type TCookieBanner = {
@@ -29,7 +29,7 @@ const CookieBanner: React.FC<TCookieBanner> = (props) => {
 		cookieTextColor,
 		declineHoverColor,
 		useCookieIcon,
-		css,
+		styled,
 	} = props;
 	return (
 		<>
@@ -38,7 +38,7 @@ const CookieBanner: React.FC<TCookieBanner> = (props) => {
 				buttonColor={buttonColor}
 				declineHoverColor={declineHoverColor}
 				cookieTextColor={cookieTextColor}
-				css={css}
+				styled={styled}
 			/>
 			<CookieConsent
 				location="bottom"
@@ -122,7 +122,7 @@ CookieBanner.defaultProps = {
 	cookieTextColor: 'primary',
 	declineHoverColor: 'greyLight',
 	useCookieIcon: true,
-	css: undefined,
+	styled: undefined,
 };
 
 export default CookieBanner;

@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.2.0
+
+### Minor Changes
+
+- Renaming css prop to syled
+
 ## 1.1.14
 
 ### Patch Changes
