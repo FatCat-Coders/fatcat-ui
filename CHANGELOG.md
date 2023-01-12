@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.2.2
+
+### Patch Changes
+
+- Remove rendering styled props from elements
+
 ## 1.2.1
 
 ### Patch Changes

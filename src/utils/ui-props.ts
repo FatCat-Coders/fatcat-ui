@@ -19,4 +19,5 @@ export const UIprops: string[] = [
 	'color',
 	'size',
 	'profile',
+	'styled',
 ];
