@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.2.3
+
+### Patch Changes
+
+- Fix typing for media added in theme
+
 ## 1.2.2
 
 ### Patch Changes
