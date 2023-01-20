@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.2.4
+
+### Patch Changes
+
+- Link contentful href prio change and adding aria-label
+
 ## 1.2.3
 
 ### Patch Changes
