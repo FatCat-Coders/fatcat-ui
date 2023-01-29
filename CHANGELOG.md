@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.2.5
+
+### Patch Changes
+
+- Checkbox props and typing fix
+
 ## 1.2.4
 
 ### Patch Changes

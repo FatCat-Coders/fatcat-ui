@@ -7,9 +7,9 @@ import { Properties } from 'csstype';
 import { darken } from 'polished';
 
 export type TCheckboxStyle = {
-	checked: boolean
+	checked?: boolean
 	backgroundColor?: keyof DefaultTheme['color']
-	size?: 'small' | 'medium' | 'large'
+	size: 'small' | 'medium' | 'large'
 }
 
 export const sizing = {

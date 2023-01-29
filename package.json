@@ -3,7 +3,7 @@
   "author": {
     "name": "Zoran Lazic"
   },
-  "version": "1.2.4",
+  "version": "1.2.5",
   "license": "UNLICENSED",
   "description": "Build system and ui library for the fatcat related work",
   "homepage": "https://github.com/FatCat-Coders/fatcat-ui.git#readme",
