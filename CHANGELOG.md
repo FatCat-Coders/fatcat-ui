@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.3.0
+
+### Minor Changes
+
+- Update gatsby and storybook to new version
+
 ## 1.2.5
 
 ### Patch Changes
