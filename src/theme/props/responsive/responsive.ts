@@ -12,16 +12,7 @@ type TResponsiveObj = {
 }
 export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<TResponsiveObj>)[];
 
-export type ResponsiveProps = {
-	wideDesktop?: ResponsiveTypePropCheck
-	largeDesktop?: ResponsiveTypePropCheck
-	standardDesktop?: ResponsiveTypePropCheck
-	desktop?: ResponsiveTypePropCheck
-	largeTablet?: ResponsiveTypePropCheck
-	tablet?: ResponsiveTypePropCheck
-	mobile?: ResponsiveTypePropCheck
-	noHover?: ResponsiveTypePropCheck
-};
+export type ResponsiveProps = {[key in (keyof DefaultTheme['media'] | keyof DefaultTheme['mediaMobile'])]?: ResponsiveTypePropCheck};
 
 export const responsive = css<ResponsiveProps>`
 	${props => Object.keys(props.theme.media).reduce((acc, key) => {

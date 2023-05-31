@@ -9,7 +9,7 @@ import { Flex } from '../../Atoms/Flex';
 import { Link } from '../../Atoms/Link';
 import { Icon } from '../../Atoms/Icon';
 
-export type SOCIAL_MEDIA = 'facebook' | 'instagram' | 'linkedin' | 'twitter' | 'google' | 'github';
+export type SOCIAL_MEDIA = 'facebook' | 'instagram' | 'linkedin' | 'twitter' | 'google' | 'github' | 'youtube';
 
 export const mappedSocial = {
 	facebook: React.lazy(() => import('@react-icons/all-files/fa/FaFacebookF').then(module => ({ default: module.FaFacebookF }))),
@@ -18,6 +18,7 @@ export const mappedSocial = {
 	linkedin: React.lazy(() => import('@react-icons/all-files/fa/FaLinkedinIn').then(module => ({ default: module.FaLinkedinIn }))),
 	google: React.lazy(() => import('@react-icons/all-files/fa/FaGooglePlusG').then(module => ({ default: module.FaGooglePlusG }))),
 	github: React.lazy(() => import('@react-icons/all-files/fa/FaGithub').then(module => ({ default: module.FaGithub }))),
+	youtube: React.lazy(() => import('@react-icons/all-files/fa/FaYoutube').then(module => ({ default: module.FaYoutube }))),
 };
 
 export const mappedSocialSquare = {
@@ -27,6 +28,7 @@ export const mappedSocialSquare = {
 	linkedin: React.lazy(() => import('@react-icons/all-files/fa/FaLinkedin').then(module => ({ default: module.FaLinkedin }))),
 	google: React.lazy(() => import('@react-icons/all-files/fa/FaGooglePlusSquare').then(module => ({ default: module.FaGooglePlusSquare }))),
 	github: React.lazy(() => import('@react-icons/all-files/fa/FaGithubSquare').then(module => ({ default: module.FaGithubSquare }))),
+	youtube: React.lazy(() => import('@react-icons/all-files/fa/FaYoutubeSquare').then(module => ({ default: module.FaYoutubeSquare }))),
 };
 
 export type TSocialMedia = {
@@ -36,7 +38,7 @@ export type TSocialMedia = {
 	square?: boolean
 	size?: Properties['width']
 	gap?: Properties['gap']
-	css?: CSSProp
+	styled?: CSSProp
 }
 
 const SocialMedia: React.FC<TSocialMedia> = (props) => {
@@ -47,7 +49,7 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 		gap,
 		size,
 		square,
-		css,
+		styled,
 	} = props;
 	const icons = square ? mappedSocialSquare : mappedSocial;
 	return (
@@ -56,7 +58,7 @@ const SocialMedia: React.FC<TSocialMedia> = (props) => {
 			h="fit-content"
 			gap={gap}
 			alignItems="center"
-			css={css}
+			styled={styled}
 		>
 			{Object.entries(socials).map((obj) => {
 				const [key, value] = obj as [SOCIAL_MEDIA, string];
@@ -94,7 +96,7 @@ SocialMedia.defaultProps = {
 	size: undefined,
 	square: true,
 	gap: '4px',
-	css: undefined,
+	styled: undefined,
 };
 
 export default SocialMedia;

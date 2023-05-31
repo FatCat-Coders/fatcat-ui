@@ -78,7 +78,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		css: {
+		styled: {
 			control: 'text',
 			description: 'Additional custom CSS style',
 			table: {
@@ -114,7 +114,7 @@ Accordion.parameters = {
 			'content',
 			'contentColor',
 			'contentSize',
-			'css',
+			'styled',
 			'title',
 			'titleAs',
 			'titleColor',

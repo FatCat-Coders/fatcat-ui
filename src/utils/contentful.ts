@@ -20,8 +20,9 @@ function getLinkPrefix(typename: string | undefined): string {
 export function parseContentfulLink(link: TContentfulLink): TParsedLink {
 	return {
 		// eslint-disable-next-line no-underscore-dangle
-		to: link.url || link.asset?.file.url || (link.page?.slug ? `/${getLinkPrefix(link.page?.__typename)}${link.page?.slug}/` : '#'),
+		to: link.url || (link.page?.slug ? `/${getLinkPrefix(link.page?.__typename)}${link.page?.slug}/` : '#') || link.asset?.file.url || '',
 		title: link.title,
+		'aria-label': link.title,
 		as: !link.page?.slug ? 'a' : Link,
 		target: link.openInNewTab ? '_blank' : '_self',
 	};

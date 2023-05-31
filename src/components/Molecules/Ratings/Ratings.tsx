@@ -15,7 +15,7 @@ export type TRatings = {
 	starColor?: DefaultTheme['backgroundColor']
 	starBorder?: DefaultTheme['color']
 	size?: string
-	css?: CSSProp
+	styled?: CSSProp
 }
 
 const Ratings: React.FC<TRatings> = (props) => {
@@ -28,7 +28,7 @@ const Ratings: React.FC<TRatings> = (props) => {
 		starColor,
 		starBorder,
 		size,
-		css,
+		styled,
 	} = props;
 	const theme = useTheme();
 	const [value, setValue] = useState(rating || 0);
@@ -58,7 +58,7 @@ const Ratings: React.FC<TRatings> = (props) => {
 			gap={gap}
 			backgroundColor={backgroundColor}
 			onMouseLeave={!rating ? handleLeave : undefined}
-			css={css}
+			styled={styled}
 		>
 			{[...Array(maxRating).keys()].map((i, index) => {
 				// fill up stars color with a determined rating
@@ -125,7 +125,7 @@ Ratings.defaultProps = {
 	backgroundColor: 'white',
 	starColor: 'yellow',
 	starBorder: 'grey',
-	css: undefined,
+	styled: undefined,
 };
 
 export default Ratings;

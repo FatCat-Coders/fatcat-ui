@@ -15,6 +15,7 @@ export const COLOR = {
 	white50: 'rgba(255, 255, 255, 0.5)',
 	darkestGray: '#121212',
 	grey: '#BEBEBE',
+	grey200: '#DDDDDD',
 	greyLight: '#67727B',
 	darkerGrey: '#6B6B6B',
 	lightGrey: '#F5F5F5',
@@ -29,7 +30,7 @@ export const COLOR = {
 	transparent: 'transparent',
 	disabled: '#E0E2EC',
 	disabledDark: '#A0A3AF',
-	warrning: '#DE3131',
+	warning: '#DE3131',
 };
 
 export const LINK_COLOR = {
@@ -80,7 +81,7 @@ export const TEXT_COLOR = {
 	black: COLOR.blackLighter,
 	yellow: COLOR.yellow,
 	white: COLOR.white,
-	warrning: COLOR.warrning,
+	warning: COLOR.warning,
 };
 
 export const BACKGROUND_COLOR = {

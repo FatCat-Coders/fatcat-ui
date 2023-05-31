@@ -77,7 +77,7 @@ export default {
 				type: { summary: null },
 			},
 		},
-		css: {
+		styled: {
 			control: 'text',
 			description: 'Additional custom CSS style',
 			table: {
@@ -117,7 +117,7 @@ Avatar.parameters = {
 			'subtitle',
 			'textColor',
 			'size',
-			'css',
+			'styled',
 		],
 	},
 };

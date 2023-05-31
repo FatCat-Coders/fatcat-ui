@@ -3,12 +3,13 @@ import styled, {
 	DefaultTheme,
 	CSSProp,
 } from 'styled-components';
+import { Properties } from 'csstype';
 import { darken } from 'polished';
 
 export type TCheckboxStyle = {
-	checked: boolean
+	checked?: boolean
 	backgroundColor?: keyof DefaultTheme['color']
-	size?: 'small' | 'medium' | 'large'
+	size: 'small' | 'medium' | 'large'
 }
 
 export const sizing = {
@@ -63,17 +64,18 @@ export const CheckboxInput = styled.input`
 	} */
 `;
 
-export const CheckboxContainer = styled.label<{ css?: CSSProp, disabled?: boolean }>`
+export const CheckboxContainer = styled.label<{ styled?: CSSProp, disabled?: boolean, gap?: Properties['gap'] }>`
 	cursor: pointer;
 	height: fit-content;
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	${props => props.gap && `gap: ${props.gap}`};
 	${({ disabled }) => disabled && css`
 		cursor: not-allowed;
+		pointer-events: none;
 		${CheckboxWrapper} {
 			opacity: 0.5;
 		}
 	`}
-	${props => props.css}
+	${props => props.styled}
 `;

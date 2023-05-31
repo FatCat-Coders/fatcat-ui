@@ -30,7 +30,7 @@ export default {
 				defaultValue: { summary: 'primary' },
 			},
 		},
-		css: {
+		styled: {
 			control: 'text',
 			description: 'Additional custom CSS style',
 			table: {
@@ -114,7 +114,7 @@ Switch.parameters = {
 			'afterText',
 			'backgroundColor',
 			'beforeText',
-			'css',
+			'styled',
 			'disabled',
 			'id',
 			'onChange',
@@ -131,7 +131,7 @@ Switch.args = {
 	backgroundColor: 'primary',
 	textColor: 'primary',
 	beforeText: 'off',
-	css: undefined,
+	styled: undefined,
 	disabled: false,
 	id: undefined,
 	onChange: undefined,

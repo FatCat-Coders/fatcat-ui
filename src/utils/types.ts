@@ -73,6 +73,7 @@ export type TParsedLink = {
 	title: string
 	icon?: string
 	as: React.ElementType | HTMLElementTagNameMap
+	'aria-label': string
 	target: '_self' | '_blank'
 }
 

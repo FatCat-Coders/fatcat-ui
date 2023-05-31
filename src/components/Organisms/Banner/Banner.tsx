@@ -23,7 +23,7 @@ export type TBanner = {
 	backgroundSize?: Properties['backgroundSize']
 	textColor?: keyof DefaultTheme['textColor']
 	scale?: boolean
-	css?: CSSProp
+	styled?: CSSProp
 	padding?: SpaceProps['padding']
 }
 
@@ -43,7 +43,7 @@ const Banner: React.FC<TBanner> = (props) => {
 		scale,
 		textColor,
 		padding,
-		css,
+		styled,
 	} = props;
 
 	return (
@@ -57,7 +57,7 @@ const Banner: React.FC<TBanner> = (props) => {
 			backgroundSize={backgroundSize}
 			scale={scale}
 			padding={padding}
-			css={css}
+			styled={styled}
 		>
 			<Flex
 				justifyContent="space-between"
@@ -101,7 +101,7 @@ Banner.defaultProps = {
 	scale: true,
 	textColor: 'white',
 	padding: ['t80', 'b80'],
-	css: undefined,
+	styled: undefined,
 	buttonColor: 'white',
 };
 

@@ -52,9 +52,11 @@ export const TEXT_VARIANT = {
 	paragraph: {
 		small: css`
 			${props => props.theme.textSize.paragraphSmall};
+			font-weight: ${props => props.theme.fontWeight.normal};
 		`,
 		large: css`
 			${props => props.theme.textSize.paragraph};
+			font-weight: ${props => props.theme.fontWeight.normal};
 
 			${props => props.theme.media.tablet} {
 				${props => props.theme.textSize.paragraphTablet};

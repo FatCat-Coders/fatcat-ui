@@ -18,7 +18,6 @@ export const Paragraph = styled.p.withConfig({
 `;
 
 Paragraph.defaultProps = {
-	fontWeight: 'normal',
 	textAlign: 'left',
 	textColor: 'primary',
 	size: 'large',

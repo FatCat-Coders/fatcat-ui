@@ -26,10 +26,10 @@ export const HOVER_BEHAVIORS = {
 	opacity: (value: Properties['opacity']) => css`
 		opacity: ${value};
 	`,
-	textColor: (value: keyof DefaultTheme['color']) => css`
-		color: ${props => props.theme.color[value]};
+	textColor: (value: keyof DefaultTheme['textColor']) => css`
+		color: ${props => props.theme.textColor[value]};
 	`,
-	textColorHex: (value: Properties['color']) => css`
+	textColorHex: (value: string) => css`
 		color: ${value};
 	`,
 	backgroundColor: (value: keyof DefaultTheme['backgroundColor']) => css`

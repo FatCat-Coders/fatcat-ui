@@ -19,7 +19,7 @@ export type TAccordion = {
 	contentSize?: 'small' | 'large'
 	contentColor?: keyof DefaultTheme['textColor']
 	useArrow?: boolean
-	css?: CSSProp
+	styled?: CSSProp
 }
 
 const Accordion: React.FC<TAccordion> = (props) => {
@@ -31,12 +31,12 @@ const Accordion: React.FC<TAccordion> = (props) => {
 		contentSize,
 		contentColor,
 		useArrow,
-		css,
+		styled,
 	} = props;
 	const id = useId();
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<AccordionWrapper css={css}>
+		<AccordionWrapper styled={styled}>
 			<AccordionTitle as={titleAs} textColor={titleColor}>
 				<button
 					id={`accordion-title-${id}`}
@@ -87,7 +87,7 @@ Accordion.defaultProps = {
 	titleColor: 'primary',
 	contentColor: 'primary',
 	contentSize: 'large',
-	css: undefined,
+	styled: undefined,
 };
 
 export default Accordion;

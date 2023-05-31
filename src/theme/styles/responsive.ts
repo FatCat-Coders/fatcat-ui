@@ -506,7 +506,7 @@ export const RESPONSIVE_BEHAVIORS = {
 		}
 	`,
 	// IMPORTANT: leave this props on bottom of the list
-	css: (value: CSSProp) => css`
+	styled: (value: CSSProp) => css`
 		${value}
 	`,
 };

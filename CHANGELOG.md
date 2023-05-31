@@ -1,5 +1,101 @@
 # fatcat-ui-library
 
+## 1.3.0
+
+### Minor Changes
+
+- Update gatsby and storybook to new version
+
+## 1.2.5
+
+### Patch Changes
+
+- Checkbox props and typing fix
+
+## 1.2.4
+
+### Patch Changes
+
+- Link contentful href prio change and adding aria-label
+
+## 1.2.3
+
+### Patch Changes
+
+- Fix typing for media added in theme
+
+## 1.2.2
+
+### Patch Changes
+
+- Remove rendering styled props from elements
+
+## 1.2.1
+
+### Patch Changes
+
+- Revert global base styling
+
+## 1.2.0
+
+### Minor Changes
+
+- Renaming css prop to syled
+
+## 1.1.14
+
+### Patch Changes
+
+- Add fowardref to input and textarea component
+
+## 1.1.13
+
+### Patch Changes
+
+- Mistyping fix for color naming
+
+## 1.1.12
+
+### Patch Changes
+
+- Fix color change on hover props
+
+## 1.1.11
+
+### Patch Changes
+
+- Adding youtube icon to social component
+
+## 1.1.10
+
+### Patch Changes
+
+- Fix default link color for selected variant
+
+## 1.1.9
+
+### Patch Changes
+
+- Fix button size defination through theme
+
+## 1.1.8
+
+### Patch Changes
+
+- Fix paragraph default font weight setup
+
+## 1.1.7
+
+### Patch Changes
+
+- Add checkbox before text and gap prop
+
+## 1.1.6
+
+### Patch Changes
+
+- Small types fix and adding missing color
+
 ## 1.1.5
 
 ### Patch Changes

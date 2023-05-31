@@ -99,7 +99,12 @@ const onClick = (name: string) => { showToastMsg(`🦄 "${name}" is clicked`); }
 const Template: ComponentStory<typeof TagOrigin> = args => (
 	<Wrapper>
 		<TagOrigin onClick={onClick} name="first_tag" content="Default" />
-		<TagOrigin onClick={onClick} name="second_tag" content="Defaults with close button" onClose={onClose} />
+		<TagOrigin
+			onClick={onClick}
+			name="second_tag"
+			content="Defaults with close button"
+			onClose={onClose}
+		/>
 		<TagOrigin {...args} />
 	</Wrapper>
 );

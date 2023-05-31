@@ -15,22 +15,22 @@ export const FONT_FAMILY = {
  * Available Font sizes in Rem
  */
 export const FONT_SIZE = {
-	s74: '4.625rem',
-	s64: '4rem',
-	s56: '3.5rem',
-	s54: '3.375rem',
-	s48: '3rem',
-	s42: '2.625rem',
-	s34: '2.125rem',
-	s32: '2rem',
-	s30: '1.875rem',
-	s28: '1.75rem',
-	s24: '1.5rem',
-	s20: '1.25rem',
-	s18: '1.125rem',
-	s16: '1rem',
-	s14: '0.875rem',
 	s12: '0.75rem',
+	s14: '0.875rem',
+	s16: '1rem',
+	s18: '1.125rem',
+	s20: '1.25rem',
+	s24: '1.5rem',
+	s28: '1.75rem',
+	s30: '1.875rem',
+	s32: '2rem',
+	s34: '2.125rem',
+	s42: '2.625rem',
+	s48: '3rem',
+	s54: '3.375rem',
+	s56: '3.5rem',
+	s64: '4rem',
+	s74: '4.625rem',
 };
 
 /**

@@ -58,12 +58,12 @@ export const SwitchInput = styled.input`
 	} */
 `;
 
-export const SwitchContainer = styled.label<{ css?: CSSProp }>`
+export const SwitchContainer = styled.label<{ styled?: CSSProp }>`
 	display: flex;
 	height: fit-content;
 	align-items: center;
 	gap: 8px;
-	${props => props.css}
+	${props => props.styled}
 `;
 
 export const SwitchText = styled.span<{ selected: boolean, textColor: keyof DefaultTheme['textColor']}>`
