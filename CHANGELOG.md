@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.3.1
+
+### Patch Changes
+
+- Ratings component now reacts to changes in rating prop
+
 ## 1.3.0
 
 ### Minor Changes

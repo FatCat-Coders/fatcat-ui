@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Properties } from 'csstype';
 import { useTheme, DefaultTheme, CSSProp } from 'styled-components';
 
@@ -33,6 +33,10 @@ const Ratings: React.FC<TRatings> = (props) => {
 	const theme = useTheme();
 	const [value, setValue] = useState(rating || 0);
 	const [hoverValue, setHoverValue] = useState(0);
+
+	useEffect(() => {
+		setValue(rating || 0);
+	}, [rating]);
 
 	const handleLeave = () => {
 		setHoverValue(0);
