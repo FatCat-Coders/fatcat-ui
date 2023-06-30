@@ -103,6 +103,12 @@ export const UIThemeProvider: React.FC<UIThemeProviderI> = ({ children, theme })
 	let mergedTheme;
 	if (theme && !isObjectEmpty(theme)) {
 		mergedTheme = deepmerge(defaultTheme, theme);
+		if (theme.media && !isObjectEmpty(theme.media)) {
+			mergedTheme.media = theme.media;
+		}
+		if (theme.mediaMobile && !isObjectEmpty(theme.mediaMobile)) {
+			mergedTheme.mediaMobile = theme.mediaMobile;
+		}
 	}
 	const newTheme = mergedTheme || defaultTheme;
 	// TODO: maybe change locgic for this breakpoint change
