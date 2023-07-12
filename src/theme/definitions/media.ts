@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components';
+
 export const MEDIA = {
 	wideDesktop: '@media screen and (min-width: 1921px)',
 	largeDesktop: '@media screen and (max-width: 1920px)',
@@ -9,7 +11,7 @@ export const MEDIA = {
 	noHover: '@media (hover: none)',
 };
 
-export type MediaDefinition = keyof typeof MEDIA;
+export type MediaDefinition = keyof DefaultTheme['media'];
 
 export const MEDIA_MOBILE = {
 	wideDesktop: '@media screen and (min-width: 1921px)',
@@ -21,3 +23,5 @@ export const MEDIA_MOBILE = {
 	mobile: '@media screen and (max-width: 480px)',
 	noHover: '@media (hover: none)',
 };
+
+export type MediaMobileDefinition = keyof DefaultTheme['mediaMobile'];

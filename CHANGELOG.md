@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 1.3.3
+
+### Patch Changes
+
+- Fix typing for media
+
 ## 1.3.2
 
 ### Patch Changes
