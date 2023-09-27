@@ -1,5 +1,3 @@
-import { Link } from 'gatsby';
-
 // Types
 import { TContentfulLink, TContentfulOptions, TParsedLink } from './types';
 
@@ -17,13 +15,13 @@ function getLinkPrefix(typename: string | undefined): string {
  * A function to parse contentful response
  * @param link
  */
-export function parseContentfulLink(link: TContentfulLink): TParsedLink {
+export function parseContentfulLink(link: TContentfulLink, linkComponent: any): TParsedLink {
 	return {
 		// eslint-disable-next-line no-underscore-dangle
 		to: link.url || (link.page?.slug ? `/${getLinkPrefix(link.page?.__typename)}${link.page?.slug}/` : '#') || link.asset?.file.url || '',
 		title: link.title,
 		'aria-label': link.title,
-		as: !link.page?.slug ? 'a' : Link,
+		as: !link.page?.slug ? 'a' : linkComponent || 'a',
 		target: link.openInNewTab ? '_blank' : '_self',
 	};
 }

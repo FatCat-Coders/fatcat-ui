@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 2.0.0
+
+### Major Changes
+
+- Removing Gatsby dependecies
+
 ## 1.3.3
 
 ### Patch Changes
