@@ -1,5 +1,11 @@
 # fatcat-ui-library
 
+## 2.1.0
+
+### Minor Changes
+
+- Changed to distribution compiled code
+
 ## 2.0.0
 
 ### Major Changes

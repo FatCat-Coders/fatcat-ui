@@ -3,7 +3,7 @@
   "author": {
     "name": "Zoran Lazic"
   },
-  "version": "2.0.1",
+  "version": "2.1.0",
   "license": "UNLICENSED",
   "description": "Build system and ui library for the fatcat related work",
   "homepage": "https://github.com/FatCat-Coders/fatcat-ui.git#readme",
@@ -19,7 +19,7 @@
     "gen-changelog": "npx changeset && npx changeset version",
     "publish-tag": "git push --follow-tags",
     "publish": "bash ./publish-package.sh",
-    "build": "npm run build:transpile && npm run build:declarations",
+    "build": "rm -rf dist && npm run build:transpile && npm run build:declarations",
     "build:transpile": "node build.js",
     "build:declarations": "tsc --emitDeclarationOnly --outDir dist",
     "test-package": "cp package.json src && cp .npmignore src && cd src && npm publish --tag=test && rm -rf package.json && rm -rf .npmignore && cd ..",

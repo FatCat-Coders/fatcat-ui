@@ -20,12 +20,12 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
 	return arrayOfFiles;
 }
 
-
 const srcDirPath = path.join(__dirname, 'src');
 const data = getAllFiles(srcDirPath)
 	.filter(file => !file.endsWith('.md'))
 	.filter(file => !file.endsWith('.stories.tsx'))
-	.filter(file => !file.endsWith('.d.ts'));
+	.filter(file => !file.endsWith('.d.ts'))
+	.filter(file => !file.endsWith('.DS_Store'));
 
 esbuild.build({
 	entryPoints: data,
