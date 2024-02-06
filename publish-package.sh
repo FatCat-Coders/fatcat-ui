@@ -1,13 +1,10 @@
 #!/bin/bash
 files=('package.json' 'README.md' '.changeset' '.npmignore' 'CHANGELOG.md')
+npm run build
 npm run gen-changelog
 for str in ${files[@]}; do
-	cp -R $str src
+	cp -R $str dist
 done
-cd src
+cd dist
 npx changeset publish
-for str in ${files[@]}; do
-  	rm -rf $str
-done
-cd ..
 npm run publish-tag
