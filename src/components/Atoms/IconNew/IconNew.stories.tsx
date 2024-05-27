@@ -1,12 +1,11 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { IconNew as IconOrigin } from './IconNew';
 import { COLOR } from '../../../theme/definitions';
 
 import readme from './IconNew.md';
 
-export default {
+const meta:Meta<typeof IconOrigin> = {
 	title: 'Basic Elements/IconNew',
 	component: IconOrigin,
 	argTypes: {
@@ -27,18 +26,17 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof IconOrigin>;
+};
 
-// eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof IconOrigin> = ({ ...args }) => (
-	<IconOrigin {...args} />
-);
+export default meta;
 
-export const IconNew = Template.bind({});
+type Story= StoryObj<typeof IconOrigin>
 
-IconNew.parameters = { controls: { include: ['name', 'size', 'color'] } };
-IconNew.args = {
-	name: 'HelpCircle',
-	size: 18,
-	color: 'primary',
+export const IconNew: Story = {
+	args: {
+		name: 'HelpCircle',
+		size: '18',
+		color: 'primary',
+	},
+	parameters: { controls: { include: ['name', 'size', 'color'] } },
 };
