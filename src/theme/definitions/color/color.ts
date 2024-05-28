@@ -1,4 +1,4 @@
-import { darken } from 'polished';
+import { darken, opacify } from 'polished';
 
 export const COLOR = {
 	primary: '#232737',
@@ -31,6 +31,29 @@ export const COLOR = {
 	disabled: '#E0E2EC',
 	disabledDark: '#A0A3AF',
 	warning: '#DE3131',
+	primary50: '#F9FAFF',
+	primary100: '#EBECFE',
+	primary200: '#D8D9FE',
+	primary300: '#B0B3FC',
+	primary400: '#898DFB',
+	primary500: '#757AFA',
+	primary600: '#5C62F9',
+	primary700: '#4E54F9',
+	primary800: '#3A40F8',
+	primary900: '#262DF7',
+	cream: '#F9F6F3',
+	neutrals50: '#FFFFFF',
+	neutrals100: '#F2F3F5',
+	neutrals200: '#E6E6EA',
+	neutrals300: '#CCCED5',
+	neutrals400: '#999CAB',
+	neutrals500: '#676B81',
+	neutrals600: '#343957',
+	neutrals700: '#2E324D',
+	neutrals800: '#01082D',
+	successDark: '#067647',
+	successMedium: '#079455',
+	successLight: '#ECFDF3',
 };
 
 export const LINK_COLOR = {
@@ -41,37 +64,271 @@ export const LINK_COLOR = {
 };
 
 export const BUTTON_COLOR = {
-	disabled: {
-		default: COLOR.disabled,
-		text: COLOR.disabledDark,
-	},
+	// disabled: {
+	// 	default: COLOR.disabled,
+	// 	text: COLOR.disabledDark,
+	// },
+	// primary: {
+	// 	default: COLOR.primaryLight,
+	// 	text: COLOR.white,
+	// 	hover: COLOR.primary,
+	// 	hoverText: COLOR.white,
+	// },
+	// secondary: {
+	// 	default: COLOR.primary,
+	// 	text: COLOR.primary,
+	// 	hover: COLOR.primary,
+	// 	hoverText: COLOR.white,
+	// },
+	// ghost: {
+	// 	default: COLOR.transparent,
+	// 	text: COLOR.black,
+	// 	hover: COLOR.yellow10,
+	// 	hoverText: COLOR.white,
+	// },
+	// white: {
+	// 	default: COLOR.white,
+	// 	text: COLOR.primary,
+	// 	hover: darken(0.1, COLOR.white),
+	// 	hoverText: COLOR.white,
+	// },
+	// underline: {
+	// 	default: COLOR.primary,
+	// 	text: COLOR.primary,
+	// },
 	primary: {
-		default: COLOR.primaryLight,
-		text: COLOR.white,
-		hover: COLOR.primary,
-		hoverText: COLOR.white,
+		default: {
+			background: COLOR.primary600,
+			text: COLOR.white,
+		},
+		hover: {
+			background: COLOR.primary700,
+			text: COLOR.white,
+		},
+		pressed: {
+			background: COLOR.primary800,
+			text: COLOR.white,
+		},
+		focus: {
+			background: COLOR.primary700,
+			text: COLOR.white,
+			shadowColor: opacify(0.32, COLOR.primary600),
+		},
 	},
 	secondary: {
-		default: COLOR.primary,
-		text: COLOR.primary,
-		hover: COLOR.primary,
-		hoverText: COLOR.white,
+		default: {
+			background: COLOR.neutrals100,
+			text: COLOR.neutrals600,
+		},
+		hover: {
+			background: COLOR.cream,
+			text: COLOR.neutrals600,
+		},
+		pressed: {
+			background: COLOR.cream,
+			text: COLOR.neutrals600,
+		},
+		focus: {
+			background: COLOR.cream,
+			text: COLOR.neutrals600,
+			shadowColor: opacify(0.32, COLOR.primary600),
+		},
+	},
+	secondaryInvert: {
+		default: {
+			background: COLOR.neutrals600,
+			text: COLOR.white,
+		},
+		hover: {
+			background: COLOR.neutrals700,
+			text: COLOR.white,
+		},
+		pressed: {
+			background: opacify(0.88, COLOR.neutrals700),
+			text: COLOR.white,
+		},
+		focus: {
+			background: COLOR.neutrals600,
+			text: COLOR.white,
+			shadowColor: opacify(0.32, COLOR.white),
+		},
 	},
 	ghost: {
-		default: COLOR.transparent,
-		text: COLOR.black,
-		hover: COLOR.yellow10,
-		hoverText: COLOR.white,
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.primary600,
+		},
+		hover: {
+			background: COLOR.primary50,
+			text: COLOR.primary700,
+		},
+		pressed: {
+			background: COLOR.primary100,
+			text: COLOR.primary800,
+		},
+		focus: {
+			background: COLOR.cream,
+			text: COLOR.primary700,
+			shadowColor: opacify(0.32, COLOR.primary600),
+		},
 	},
-	white: {
-		default: COLOR.white,
-		text: COLOR.primary,
-		hover: darken(0.1, COLOR.white),
-		hoverText: COLOR.white,
+	ghostInvert: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals100,
+		},
+		hover: {
+			background: opacify(0.06, COLOR.white),
+			text: COLOR.neutrals50,
+		},
+		pressed: {
+			background: opacify(0.08, COLOR.white),
+			text: COLOR.neutrals50,
+		},
+		focus: {
+			background: opacify(0.06, COLOR.white),
+			text: COLOR.neutrals50,
+			shadowColor: opacify(0.56, COLOR.white),
+		},
 	},
-	underline: {
-		default: COLOR.primary,
-		text: COLOR.primary,
+	outline: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.primary700,
+		},
+		hover: {
+			background: COLOR.primary50,
+			text: COLOR.primary700,
+		},
+		pressed: {
+			background: COLOR.primary100,
+			text: COLOR.primary800,
+		},
+		focus: {
+			background: opacify(0.04, COLOR.white),
+			text: COLOR.primary700,
+			shadowColor: opacify(0.32, COLOR.primary600),
+		},
+	},
+	outlineInvert: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals100,
+		},
+		hover: {
+			background: opacify(0.04, COLOR.white),
+			text: COLOR.neutrals50,
+		},
+		pressed: {
+			background: opacify(0.06, COLOR.white),
+			text: COLOR.neutrals50,
+		},
+		focus: {
+			background: opacify(0.04, COLOR.white),
+			text: COLOR.neutrals50,
+			shadowColor: opacify(0.32, COLOR.white),
+		},
+	},
+	textLink: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.primary600,
+		},
+		hover: {
+			background: COLOR.transparent,
+			text: COLOR.primary700,
+		},
+		pressed: {
+			background: COLOR.transparent,
+			text: COLOR.primary800,
+		},
+		focus: {
+			background: COLOR.transparent,
+			text: COLOR.primary700,
+			shadowColor: opacify(0.32, COLOR.primary600),
+		},
+	},
+	textLinkInvert: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals50,
+		},
+		hover: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals100,
+		},
+		pressed: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals200,
+		},
+		focus: {
+			background: opacify(0.02, COLOR.white),
+			text: COLOR.neutrals200,
+			shadowColor: opacify(0.32, COLOR.white),
+		},
+	},
+	navLink: { // todo mobile is a bit different
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals500,
+		},
+		hover: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals600,
+			underLineColor: COLOR.primary600,
+		},
+		pressed: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals700,
+			underLineColor: COLOR.primary700,
+		},
+		focus: {
+			background: COLOR.neutrals600,
+			text: COLOR.primary700,
+			// shadowColor: opacify(0.32, COLOR.primary600),
+			underLineColor: COLOR.primary600,
+		},
+	},
+	navLinkInvert: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals100,
+		},
+		hover: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals50,
+			underLineColor: COLOR.primary600,
+		},
+		pressed: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals300,
+			underLineColor: COLOR.primary700,
+		},
+		focus: {
+			background: opacify(0.02, COLOR.white),
+			text: COLOR.neutrals50,
+			// shadowColor: opacify(0.32, COLOR.white),
+			underLineColor: COLOR.primary600,
+		},
+	},
+	success: {
+		default: {
+			background: COLOR.successMedium,
+			text: COLOR.successDark,
+		},
+		hover: {
+			background: COLOR.successLight,
+			text: COLOR.successDark,
+		},
+		pressed: {
+			background: COLOR.successLight,
+			text: COLOR.successDark,
+		},
+		focus: {
+			background: COLOR.successLight,
+			text: COLOR.successDark,
+			// shadowColor: opacify(0.32, COLOR.white),
+		},
 	},
 };
 

@@ -13,7 +13,7 @@ import { Flex } from '../Flex';
 import readme from './Button.md';
 
 const color = { ...BUTTON_COLOR };
-delete color.disabled;
+// delete color.disabled;
 
 export default {
 	title: 'Basic Elements/Button',
