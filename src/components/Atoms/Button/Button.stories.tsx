@@ -1,5 +1,4 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { formatObjectKeys } from '../../../../stories/helpers';
 import {
 	BUTTON_COLOR,
@@ -8,14 +7,12 @@ import {
 } from '../../../theme/definitions';
 
 import { Button as ButtonOrigin } from './Button';
-import { Flex } from '../Flex';
 
 import readme from './Button.md';
 
 const color = { ...BUTTON_COLOR };
-// delete color.disabled;
 
-export default {
+const meta: Meta<typeof ButtonOrigin> = {
 	title: 'Basic Elements/Button',
 	component: ButtonOrigin,
 	argTypes: {
@@ -59,25 +56,18 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof ButtonOrigin>;
+};
 
-const Template: ComponentStory<typeof ButtonOrigin> = ({ children, ...args }) => (
-	<Flex
-		padding={['t64', 'b64']}
-		justifyContent="center"
-	>
-		<ButtonOrigin {...args}>
-			{children}
-		</ButtonOrigin>
-	</Flex>
-);
+export default meta;
+type Story = StoryObj<typeof ButtonOrigin>;
 
-export const Button = Template.bind({});
-
-Button.parameters = { controls: { include: ['variant', 'Content', 'buttonColor', 'disabled', 'size'] } };
-Button.args = {
-	children: 'Button',
-	disabled: false,
-	size: 'large',
-	variant: 'primary',
+export const Button:Story = {
+	controls:
+		{ include: ['variant', 'Content', 'buttonColor', 'disabled', 'size'] },
+	args: {
+		children: 'Button',
+		disabled: false,
+		size: 'large',
+		variant: 'primary',
+	},
 };

@@ -1,26 +1,58 @@
 import { css, DefaultTheme } from 'styled-components';
 import { focusStyle } from '../../../utils/focusStyle';
 
+const ui1Medium = css`
+	// todo update sizes to UI 1/Medium-600
+	//styleName: UI 1/Medium-600;
+	font-family: Satoshi Variable;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: left;
+`;
+
+const ui2Medium = css`
+	// todo update sizes to UI 2/Medium-600
+	//styleName: UI 1/Medium-600;
+	font-family: Satoshi Variable;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: left;
+`;
+const ui3Medium = css`
+	// todo update sizes to UI 3/Medium-600
+	//styleName: UI 3/Medium-600;
+	font-family: Satoshi Variable;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: left;
+`;
+
 export const BUTTON_SIZE = {
 	extraLarge: css`
 		height: 56px;
 		border-radius: 8px;
-		${props => props.theme.textSize.h1};// todo update sizes to UI 1/Medium-600
+		${ui1Medium}
 	`,
 	large: css`
 		height: 44px;
 		border-radius: 6px;
-		${props => props.theme.textSize.h1};// todo update sizes to UI 2/Medium-600
+		${ui2Medium}
 	`,
 	medium: css`
 		height: 40px;
 		border-radius: 6px;
-		${props => props.theme.textSize.h1};// todo update sizes to UI 2/Medium-600
+		${ui2Medium}
 	`,
 	small: css`
 		height: 36px;
 		border-radius: 6px;
-		${props => props.theme.textSize.h1};// todo update sizes to UI 3/Medium-600
+		${ui3Medium}
 	`,
 	nav: css`
 		height: 40px;
@@ -35,122 +67,82 @@ export const BUTTON_SIZE = {
 
 const underlineHeight = '2px';
 
-const buttonBase = css<{size: keyof DefaultTheme['buttonSize']}>`
-	${props => props.theme.textVariant.button};
+const buttonBase1 = css<{size: keyof DefaultTheme['buttonSize']}>`
+	${props => props.theme.textVariant.button};// todo cemu sluzi
     ${props => props.size && props.theme.buttonSize[props.size]};
-    height: fit-content;
+	padding-left: 20px;
+	padding-right: 20px;
     border-radius: 6px;
-
-	transition:
-            background 200ms ease-out,
-            border-color 200ms ease-out,
-            color 200ms ease-out;
-
-    /* &:focus-visible {
-        box-shadow: 0 0 0 4px #5c62f952;
-
-        &:before {
-            display: none;
-        }
-    } */
 `;
 
-// const buttonBase = ({ size, theme }: { size: keyof DefaultTheme['buttonSize'], theme: DefaultTheme }) => css`
-//     ${theme.textVariant.button};
-//     ${size && theme.buttonSize[size]};
-//     height: fit-content;
-//     border-radius: 6px;
-// `;
+const buttonBase = ({ size, theme, buttonColor }: { size: keyof DefaultTheme['buttonSize'], theme: DefaultTheme, buttonColor: keyof DefaultTheme['buttonColor'], }) => css`
+ 	${buttonBase1}
+	background: ${props => props.theme.buttonColor[buttonColor].default.background};
+	color: ${props => props.theme.buttonColor[buttonColor].default.text};
+	&:hover:enabled {
+            background: ${props => props.theme.buttonColor[buttonColor].hover.text};
+            color: ${props => props.theme.buttonColor[buttonColor].hover.background};
+    }
+	&:active:enabled {
+		background: ${props => props.theme.buttonColor[buttonColor].pressed.background};
+		color: ${props => props.theme.buttonColor[buttonColor].pressed.text};
+	}
+	&:focus-visible {
+		background: ${props => props.theme.buttonColor[buttonColor].focus.background};
+		color: ${props => props.theme.buttonColor[buttonColor].focus.text};
+		box-shadow: 0 0 0 4px ${props => props.theme.buttonColor[buttonColor].focus.shadowColor};
+
+		&:before {
+			display: none;
+		}
+	}
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.3;
+	}
+`;
 
 export const BUTTON_VARIANT = {
 	primary: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
-		border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].default};
-		color: ${props => props.theme.buttonColor[props.buttonColor].text};
-		background: ${props => props.theme.buttonColor[props.buttonColor].default};
-		${buttonBase};
-		/* ${props => buttonBase(props)}; */
-        &:hover:enabled {
-            background: ${props => props.theme.buttonColor[props.buttonColor].hover};
-            border-color: ${props => props.theme.buttonColor[props.buttonColor].hover};
-            color: ${props => props.theme.buttonColor[props.buttonColor].hoverText};
-        }
-        &:active:enabled {
-            background: ${props => props.theme.color.bluePurple};
-            border-color: ${props => props.theme.buttonColor[props.buttonColor].active};
-			color: ${props => props.theme.buttonColor[props.buttonColor].text};
-        }
-        &:disabled {
-            cursor: not-allowed;
-            opacity: 0.3;
-        }
+		${props => buttonBase(props)};
 	`,
 	secondary: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`  
-		color: ${props => props.theme.buttonColor[props.buttonColor].text};
-        background: ${props => props.theme.color.gray5};
-        border: 2px solid ${props => props.theme.color.gray5};
-        ${buttonBase};
-        &:hover {
-            color: ${props => props.theme.buttonColor[props.buttonColor].hoverText};
-            background: ${props => props.theme.buttonColor[props.buttonColor].hover};
-            border-color: ${props => props.theme.buttonColor[props.buttonColor].hover};
-        }
-        &:active {
-            background: ${props => props.theme.color.gray5};
-            border-color: ${props => props.theme.color.gray10};
-            color: ${props => props.theme.textColor.gray80};
-        }
-        &:disabled {
-            cursor: not-allowed;
-            background: ${props => props.theme.buttonColor.disabled.default};
-            border-color: ${props => props.theme.buttonColor.disabled.text};
-            color: ${props => props.theme.buttonColor.disabled.text};
-        }
+		${props => buttonBase(props)};
 	`,
 	ghost: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
-		border: 1px solid ${props => props.theme.color.transparent};
-        color: ${props => props.theme.buttonColor[props.buttonColor].text};
-        ${buttonBase};
-        &:hover {
-            background: ${props => props.theme.buttonColor[props.buttonColor].hover};
-            border-color: ${props => props.theme.buttonColor[props.buttonColor].hover};
-            color: ${props => props.theme.buttonColor[props.buttonColor].hoverText};
-        }
-        &:active {
-            background: ${props => props.theme.color.lightPurple40};
-            color: ${props => props.theme.buttonColor[props.buttonColor].hoverText};
-        }
-        &:disabled {
-            cursor: not-allowed;
-            color: ${props => props.theme.buttonColor.disabled.text};
-        }
+		${props => buttonBase(props)};
 	`,
 	outline: css<{
 		buttonColor: keyof DefaultTheme['buttonColor'];
 		size: keyof DefaultTheme['buttonSize'];
 	}>`
-		border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].default};
-		color: ${props => props.theme.buttonColor[props.buttonColor].text};
-		${buttonBase};
+		${props => buttonBase(props)};
+		border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].default.text};
+		&:hover:enabled {
+			//todo da li ce ovo pregaziti bg i text ili samo dodati
+			border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].hover.text};
+		}
+		&:active:enabled {
+			border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].pressed.text};
+		}
+		&:focus-visible {
+			border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].focus.text};
+		}
 	`,
 	feedback: css<{
         buttonColor: keyof DefaultTheme['buttonColor'];
         size: keyof DefaultTheme['buttonSize'];
     }>`
-        border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].default};
-        color: ${props => props.theme.buttonColor[props.buttonColor].text};
-        background: ${props => props.theme.buttonColor[props.buttonColor].hover};
-        ${buttonBase};
-        &:disabled {
-            cursor: not-allowed;
-        }
+		${props => buttonBase(props)};//todo proveriti kako izgleda
     `,
 	textLink: css<{
         buttonColor: keyof DefaultTheme['buttonColor'];
         size: keyof DefaultTheme['buttonSize'];
     }>`
+	//todo
         border: none;
         color: ${props => props.theme.buttonColor[props.buttonColor].text};
-        ${buttonBase};
+		${props => buttonBase(props)};
         font-weight: 600;
         ${focusStyle}
         padding: 0px;
@@ -191,6 +183,7 @@ export const BUTTON_VARIANT = {
         buttonColor: keyof DefaultTheme['buttonColor'];
         size: keyof DefaultTheme['buttonSize'];
     }>`
+	//todo
         border: none;
         color: ${props => props.theme.buttonColor[props.buttonColor].text};
         ${buttonBase};

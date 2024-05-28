@@ -27,6 +27,7 @@ export const ButtonBase = styled('button').withConfig({
 export type ButtonProps = Omit<JSX.IntrinsicElements['button'], 'type'> & TButton;
 export type ButtonComponent = PolymorphicComponent<ButtonProps>;
 
+// eslint-disable-next-line react/function-component-definition
 export const Button: ButtonComponent = (props) => {
 	const { children, buttonColor, ...buttonProps } = props;
 	const theme = useTheme();

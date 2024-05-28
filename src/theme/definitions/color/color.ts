@@ -64,38 +64,6 @@ export const LINK_COLOR = {
 };
 
 export const BUTTON_COLOR = {
-	// disabled: {
-	// 	default: COLOR.disabled,
-	// 	text: COLOR.disabledDark,
-	// },
-	// primary: {
-	// 	default: COLOR.primaryLight,
-	// 	text: COLOR.white,
-	// 	hover: COLOR.primary,
-	// 	hoverText: COLOR.white,
-	// },
-	// secondary: {
-	// 	default: COLOR.primary,
-	// 	text: COLOR.primary,
-	// 	hover: COLOR.primary,
-	// 	hoverText: COLOR.white,
-	// },
-	// ghost: {
-	// 	default: COLOR.transparent,
-	// 	text: COLOR.black,
-	// 	hover: COLOR.yellow10,
-	// 	hoverText: COLOR.white,
-	// },
-	// white: {
-	// 	default: COLOR.white,
-	// 	text: COLOR.primary,
-	// 	hover: darken(0.1, COLOR.white),
-	// 	hoverText: COLOR.white,
-	// },
-	// underline: {
-	// 	default: COLOR.primary,
-	// 	text: COLOR.primary,
-	// },
 	primary: {
 		default: {
 			background: COLOR.primary600,
@@ -285,7 +253,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: COLOR.neutrals600,
 			text: COLOR.primary700,
-			// shadowColor: opacify(0.32, COLOR.primary600),
+			shadowColor: COLOR.transparent,
 			underLineColor: COLOR.primary600,
 		},
 	},
@@ -307,7 +275,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: opacify(0.02, COLOR.white),
 			text: COLOR.neutrals50,
-			// shadowColor: opacify(0.32, COLOR.white),
+			shadowColor: COLOR.transparent,
 			underLineColor: COLOR.primary600,
 		},
 	},
@@ -327,7 +295,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: COLOR.successLight,
 			text: COLOR.successDark,
-			// shadowColor: opacify(0.32, COLOR.white),
+			shadowColor: COLOR.transparent,
 		},
 	},
 };
