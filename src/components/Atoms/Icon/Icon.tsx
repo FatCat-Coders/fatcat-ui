@@ -10,11 +10,11 @@ export type TIconContainerProps = {
     color?: keyof DefaultTheme['color'];
 };
 
-export type TIconNew = {
+export type TIcon = {
     name: keyof typeof icons;
 } & TIconContainerProps;
 
-const calculateStrokeWidth = (size: TIconNew['size']) => {
+const calculateStrokeWidth = (size: TIcon['size']) => {
 	switch (size) {
 		case '24': return '1.7';
 		case '28':
@@ -37,7 +37,7 @@ const IconContainer = styled.svg.attrs<TIconContainerProps>(props => ({
   `;
 
 // eslint-disable-next-line react/function-component-definition
-export const IconNew: React.FC<TIconNew> = ({
+export const Icon: React.FC<TIcon> = ({
 	name, size = '18', color = 'primary',
 }) => {
 	const SvgIcon = icons[name];
