@@ -251,8 +251,8 @@ export const BUTTON_COLOR = {
 			underLineColor: COLOR.primary700,
 		},
 		focus: {
-			background: COLOR.neutrals600,
-			text: COLOR.primary700,
+			background: COLOR.transparent,
+			text: COLOR.neutrals600,
 			shadowColor: COLOR.transparent,
 			underLineColor: COLOR.primary600,
 		},

@@ -4,6 +4,7 @@ import styled, { DefaultTheme } from 'styled-components';
 
 // React-icons
 import * as icons from './icons';
+import { PolymorphicComponent } from 'src/utils/polymorphic-component';
 
 export type TIconContainerProps = {
     size?: '18' | '20' | '24' | '28' | '32';
@@ -12,6 +13,7 @@ export type TIconContainerProps = {
 
 export type TIcon = {
     name: keyof typeof icons;
+	id?: string;
 } & TIconContainerProps;
 
 const calculateStrokeWidth = (size: TIcon['size']) => {
@@ -38,7 +40,7 @@ const IconContainer = styled.svg.attrs<TIconContainerProps>(props => ({
 
 // eslint-disable-next-line react/function-component-definition
 export const Icon: React.FC<TIcon> = ({
-	name, size = '18', color = 'primary',
+	name, size = '18', color = 'primary', id,
 }) => {
 	const SvgIcon = icons[name];
 
@@ -50,6 +52,7 @@ export const Icon: React.FC<TIcon> = ({
 		<IconContainer
 			size={size}
 			color={color as string}
+			id={id}
 		>
 			<SvgIcon />
 		</IconContainer>

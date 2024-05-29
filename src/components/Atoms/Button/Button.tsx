@@ -8,11 +8,47 @@ import { PolymorphicComponent } from '../../../utils/polymorphic-component';
 // Props
 import { generalProps, GeneralProps } from '../../../theme/props';
 
+// Components
+import { Flex } from '../Flex';
+import { Icon } from '../Icon';
+import * as icons from '../Icon/icons';
+import { Wrapper } from '../Wrapper';
+
 export type TButton = {
 	buttonColor?: keyof DefaultTheme['buttonColor'] | undefined
 	size?: keyof DefaultTheme['buttonSize']
 	variant?: keyof DefaultTheme['buttonVariant']
+	trailingIcon?: keyof typeof icons;
+	leadingIcon?: keyof typeof icons;
 } & GeneralProps;
+
+const calculateIconSize = (size: TButton['size']) => {
+	switch (size) {
+		case 'extraLarge': return '24';
+		case 'large': return '24';
+		case 'medium': return '20';
+		case 'small': return '20';
+		case 'textLink': return '20';
+		case 'textLinkSmall': return '20';
+		default: return '20';
+	}
+};
+
+const calculatePaddingX = (variant: TButton['variant']) => {
+	switch (variant) {
+		case 'navLink': return 's2';
+		case 'textLink': return 's0';
+		default: return 's4';
+	}
+};
+
+const calculatePaddingBottom = (variant: TButton['variant']) => {
+	switch (variant) {
+		case 'navLink': return 's0';
+		case 'textLink': return 's0';
+		default: return 's2';
+	}
+};
 
 export const ButtonBase = styled('button').withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
@@ -29,17 +65,43 @@ export type ButtonComponent = PolymorphicComponent<ButtonProps>;
 
 // eslint-disable-next-line react/function-component-definition
 export const Button: ButtonComponent = (props) => {
-	const { children, buttonColor, ...buttonProps } = props;
+	const {
+		children, trailingIcon, leadingIcon, buttonColor = 'primary', variant = 'primary', size = 'large', textAlign = 'center', ...buttonProps
+	} = props;
 	const theme = useTheme();
 	const color = (!buttonColor && theme.buttonColor[buttonProps.variant]) ? buttonProps.variant : buttonColor;
-	return <ButtonBase {...buttonProps} buttonColor={color}>{children}</ButtonBase>;
-};
+	const isTextLink = variant === 'textLink';
 
-Button.defaultProps = {
-	buttonColor: undefined,
-	initialDisplay: 'inline-block',
-	size: 'large',
-	textAlign: 'center',
-	variant: 'primary',
-	whiteSpace: 'nowrap',
+	return (
+		<ButtonBase
+			{...{
+				size, variant, textAlign, ...buttonProps,
+			}} buttonColor={color}
+		>
+			<Flex gap={isTextLink ? '6px' : '4px'} alignItems="center" h="100%">
+				{leadingIcon && !isTextLink && (
+					<Flex>
+						<Icon name={leadingIcon} size={calculateIconSize(buttonProps.size)} color={JSON.stringify(color)} />
+					</Flex>
+				)}
+				<Wrapper paddingX={calculatePaddingX(variant)} paddingBottom={calculatePaddingBottom(variant)}>
+					{children}
+				</Wrapper>
+				{trailingIcon && (
+					isTextLink ? (
+						<Flex w="24px" flexShrink="0">
+							<Icon
+								id="text-link-trailing-icon" name={trailingIcon} size="20"
+								color={JSON.stringify(color)}
+							/>
+						</Flex>
+					) : (
+						<Flex>
+							<Icon name={trailingIcon} size={calculateIconSize(buttonProps.size)} color={JSON.stringify(color)} />
+						</Flex>
+					)
+				)}
+			</Flex>
+		</ButtonBase>
+	);
 };

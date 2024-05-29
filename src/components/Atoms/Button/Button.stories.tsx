@@ -7,6 +7,7 @@ import {
 } from '../../../theme/definitions';
 
 import { Button as ButtonOrigin } from './Button';
+import * as icons from '../Icon/icons';
 
 import readme from './Button.md';
 
@@ -48,6 +49,18 @@ const meta: Meta<typeof ButtonOrigin> = {
 			},
 		},
 		disabled: { control: 'boolean', description: 'When present, it specifies that the button should be disabled.' },
+		leadingIcon: {
+			control: 'select',
+			options: Object.keys(icons),
+			description: 'When present, it specifies that the button leading icon.',
+			type: 'string',
+		},
+		trailingIcon: {
+			control: 'select',
+			options: Object.keys(icons),
+			description: 'When present, it specifies that the button trailing icon.',
+			type: 'string',
+		},
 	},
 	parameters: {
 		docs: {
@@ -63,11 +76,10 @@ type Story = StoryObj<typeof ButtonOrigin>;
 
 export const Button:Story = {
 	controls:
-		{ include: ['variant', 'Content', 'buttonColor', 'disabled', 'size'] },
+		{ include: ['variant', 'Content', 'buttonColor', 'disabled', 'size', 'leadingIcon', 'trailingIcon'] },
 	args: {
-		children: 'Button',
-		disabled: false,
 		size: 'large',
 		variant: 'primary',
+		children: 'Button',
 	},
 };
