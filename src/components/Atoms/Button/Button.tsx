@@ -13,6 +13,7 @@ import { Flex } from '../Flex';
 import { Icon } from '../Icon';
 import * as icons from '../Icon/icons';
 import { Wrapper } from '../Wrapper';
+import { calculateIconSize, calculatePaddingX, calculatePaddingBottom } from './helper';
 
 export type TButton = {
 	buttonColor?: keyof DefaultTheme['buttonColor'] | undefined
