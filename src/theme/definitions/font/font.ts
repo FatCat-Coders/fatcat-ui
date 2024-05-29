@@ -6,9 +6,11 @@
  * Available font families
  * Overwrite main key with your font family
  */
+// todo check if fonts work
 export const FONT_FAMILY = {
-	main: 'Outfit',
-	secondary: 'Circular Std',
+	main: 'var(--Satoshi)',
+	secondary: 'var(--Satoshi)',
+	code: 'Consolas, Monaco, "Andale Mono", monospace',
 };
 
 /**
@@ -16,7 +18,9 @@ export const FONT_FAMILY = {
  */
 export const FONT_SIZE = {
 	s12: '0.75rem',
+	s13: '0,8125rem',
 	s14: '0.875rem',
+	s15: '0,9375rem',
 	s16: '1rem',
 	s18: '1.125rem',
 	s20: '1.25rem',
@@ -37,13 +41,9 @@ export const FONT_SIZE = {
  * Available font weights
  */
 export const FONT_WEIGHT = {
-	black: 900,
-	extraBold: 800,
-	bold: 700,
-	semiBold: 600,
-	medium: 500,
-	normal: 400,
-	light: 300,
+	regular: 400,
+	medium: 600,
+	bold: 720,
 };
 
 /**

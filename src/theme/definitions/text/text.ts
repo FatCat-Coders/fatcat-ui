@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 
+// todo: this should be deleted
 export const TEXT_VARIANT = {
 	h1: css`
 		${props => props.theme.textSize.h1};
