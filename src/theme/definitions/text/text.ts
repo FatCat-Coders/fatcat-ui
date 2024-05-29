@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-const base = `css
+const base = css`
 	${props => props.theme.textSize.text1};
 	${props => props.theme.media.tablet} {
 		${props => props.theme.textSize.text2};
