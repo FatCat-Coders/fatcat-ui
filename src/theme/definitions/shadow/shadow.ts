@@ -8,3 +8,11 @@ export const SHADOW = {
 	'3xl': '0px 32px 64px -12px #10182824',
 	primaryBtnMobile: '0px 10px 22px 0px #00000014, 0px 39px 39px 0px #00000012, 0px 88px 53px 0px #0000000A, 0px 157px 63px 0px #00000003, 0px 246px 69px 0px #00000000',
 };
+
+export const DROP_SHADOW = `
+	drop-shadow(0px 2.2px 5.5px rgba(0, 0, 0, 0.02))
+	drop-shadow(0px 11px 11px rgba(0, 0, 0, 0.02))
+	drop-shadow(0px 24.2px 14.3px rgba(0, 0, 0, 0.01))
+	drop-shadow(0px 42.9px 17.6px rgba(0, 0, 0, 0.00))
+	drop-shadow(0px 67.1px 18.7px rgba(0, 0, 0, 0.00))
+`;
