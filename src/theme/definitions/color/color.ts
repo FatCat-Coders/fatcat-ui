@@ -80,7 +80,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: COLOR.primary700,
 			text: COLOR.white,
-			shadowColor: opacify(0.32, COLOR.primary600),
+			ringColor: opacify(0.32, COLOR.primary600),
 		},
 	},
 	secondary: {
@@ -99,7 +99,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: COLOR.cream,
 			text: COLOR.neutrals600,
-			shadowColor: opacify(0.32, COLOR.primary600),
+			ringColor: opacify(0.32, COLOR.primary600),
 		},
 	},
 	secondaryInvert: {
@@ -118,7 +118,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: COLOR.neutrals600,
 			text: COLOR.white,
-			shadowColor: opacify(0.32, COLOR.white),
+			ringColor: opacify(0.32, COLOR.white),
 		},
 	},
 	ghost: {
@@ -137,7 +137,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: COLOR.cream,
 			text: COLOR.primary700,
-			shadowColor: opacify(0.32, COLOR.primary600),
+			ringColor: opacify(0.32, COLOR.primary600),
 		},
 	},
 	ghostInvert: {
@@ -156,7 +156,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: opacify(0.06, COLOR.white),
 			text: COLOR.neutrals50,
-			shadowColor: opacify(0.56, COLOR.white),
+			ringColor: opacify(0.56, COLOR.white),
 		},
 	},
 	outline: {
@@ -175,7 +175,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: opacify(0.04, COLOR.white),
 			text: COLOR.primary700,
-			shadowColor: opacify(0.32, COLOR.primary600),
+			ringColor: opacify(0.32, COLOR.primary600),
 		},
 	},
 	outlineInvert: {
@@ -194,7 +194,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: opacify(0.04, COLOR.white),
 			text: COLOR.neutrals50,
-			shadowColor: opacify(0.32, COLOR.white),
+			ringColor: opacify(0.32, COLOR.white),
 		},
 	},
 	textLink: {
@@ -213,7 +213,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: COLOR.transparent,
 			text: COLOR.primary700,
-			shadowColor: opacify(0.32, COLOR.primary600),
+			ringColor: opacify(0.32, COLOR.primary600),
 		},
 	},
 	textLinkInvert: {
@@ -232,7 +232,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: opacify(0.02, COLOR.white),
 			text: COLOR.neutrals200,
-			shadowColor: opacify(0.32, COLOR.white),
+			ringColor: opacify(0.32, COLOR.white),
 		},
 	},
 	navLink: { // todo mobile is a bit different
@@ -253,7 +253,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: COLOR.transparent,
 			text: COLOR.neutrals600,
-			shadowColor: COLOR.transparent,
+			ringColor: COLOR.transparent,
 			underLineColor: COLOR.primary600,
 		},
 	},
@@ -275,7 +275,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: opacify(0.02, COLOR.white),
 			text: COLOR.neutrals50,
-			shadowColor: COLOR.transparent,
+			ringColor: COLOR.transparent,
 			underLineColor: COLOR.primary600,
 		},
 	},
@@ -295,7 +295,7 @@ export const BUTTON_COLOR = {
 		focus: {
 			background: COLOR.successLight,
 			text: COLOR.successDark,
-			shadowColor: COLOR.transparent,
+			ringColor: COLOR.transparent,
 		},
 	},
 };

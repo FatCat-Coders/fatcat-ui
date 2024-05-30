@@ -86,7 +86,7 @@ const buttonBase = ({ size, theme, buttonColor }: { size: keyof DefaultTheme['bu
 	&:focus-visible {
 		background: ${props => props.theme.buttonColor[buttonColor].focus.background};
 		color: ${props => props.theme.buttonColor[buttonColor].focus.text};
-		box-shadow: 0 0 0 4px ${props => props.theme.buttonColor[buttonColor].focus.shadowColor};
+		box-shadow: 0 0 0 4px ${props => props.theme.buttonColor[buttonColor].focus.ringColor};
 
 		&:before {
 			display: none;
