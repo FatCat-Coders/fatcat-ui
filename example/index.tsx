@@ -50,6 +50,7 @@ declare module 'styled-components' {
 		borderRadius: FatCatTheme['borderRadius']
 		shadow: FatCatTheme['shadow']
 		dropShadow: FatCatTheme['dropShadow']
+		focusShadow: FatCatTheme['focusShadow']
 		sectionLayout: CSSProp
 	}
 }

@@ -31,6 +31,7 @@ export const COLOR = {
 	disabled: '#E0E2EC',
 	disabledDark: '#A0A3AF',
 	warning: '#DE3131',
+	primary600: '#5C62F9',
 };
 
 export const LINK_COLOR = {

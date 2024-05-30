@@ -30,6 +30,7 @@ import {
 	BORDER_RADIUS,
 	SHADOW,
 	DROP_SHADOW,
+	FOCUS_SHADOW,
 } from './definitions';
 import { HOVER_BEHAVIORS, RESPONSIVE_BEHAVIORS, TEXT_SIZE } from './styles';
 import { SideSpacingTypesValue } from './props/space/space';
@@ -66,6 +67,7 @@ export interface FatCatTheme {
 	borderRadius: typeof BORDER_RADIUS,
 	shadow: typeof SHADOW,
 	dropShadow: typeof DROP_SHADOW,
+	focusShadow: typeof FOCUS_SHADOW,
 	sectionLayout?: CSSProp,
 }
 
@@ -101,6 +103,7 @@ const defaultTheme: FatCatTheme = {
 	borderRadius: BORDER_RADIUS,
 	shadow: SHADOW,
 	dropShadow: DROP_SHADOW,
+	focusShadow: FOCUS_SHADOW,
 };
 
 interface UIThemeProviderI {
