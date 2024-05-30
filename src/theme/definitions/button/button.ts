@@ -1,5 +1,4 @@
 import { css, DefaultTheme } from 'styled-components';
-import { focusStyle } from '../../../utils/focusStyle';
 
 // todo update sizes to UI 1,2,3/Medium-600 in textSize file (task: theme)
 const ui1Medium = css`
@@ -135,7 +134,6 @@ export const BUTTON_VARIANT = {
         size: keyof DefaultTheme['buttonSize'];
     }>`
 		${props => buttonBase(props)}; 
-        ${focusStyle}
         padding: 0px;
 		padding-left: 2px;
 		padding-right: 2px;
