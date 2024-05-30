@@ -11,3 +11,4 @@ export * from './media';
 export * from './space/space';
 export * from './table/table';
 export * from './borderRadius/borderRadius';
+export * from './shadow/shadow';

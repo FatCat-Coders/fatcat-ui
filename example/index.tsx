@@ -48,6 +48,7 @@ declare module 'styled-components' {
 		ollistVariant: FatCatTheme['ollistVariant']
 		ullistVariant: FatCatTheme['ullistVariant']
 		borderRadius: FatCatTheme['borderRadius']
+		shadow: FatCatTheme['shadow']
 		sectionLayout: CSSProp
 	}
 }

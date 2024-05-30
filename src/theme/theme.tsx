@@ -28,6 +28,7 @@ import {
 	ULLIST_VARIANT,
 	MEDIA_MOBILE,
 	BORDER_RADIUS,
+	SHADOW,
 } from './definitions';
 import { HOVER_BEHAVIORS, RESPONSIVE_BEHAVIORS, TEXT_SIZE } from './styles';
 import { SideSpacingTypesValue } from './props/space/space';
@@ -62,6 +63,7 @@ export interface FatCatTheme {
 	ollistVariant: typeof OLLIST_VARIANT,
 	ullistVariant: typeof ULLIST_VARIANT,
 	borderRadius: typeof BORDER_RADIUS,
+	shadow: typeof SHADOW,
 	sectionLayout?: CSSProp,
 }
 
@@ -95,6 +97,7 @@ const defaultTheme: FatCatTheme = {
 	ullistVariant: ULLIST_VARIANT,
 	sectionLayout: undefined,
 	borderRadius: BORDER_RADIUS,
+	shadow: SHADOW,
 };
 
 interface UIThemeProviderI {
