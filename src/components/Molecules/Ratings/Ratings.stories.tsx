@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Flex } from '../../Atoms/Flex';
 
-import { COLOR, BACKGROUND_COLOR } from '../../../theme/definitions';
+import { COLOR, BACKGROUND_COLOR, GAP } from '../../../theme/definitions';
 import { default as RatingsOrigin } from './Ratings'; // eslint-disable-line
 
 import { showToastMsg } from '../../../../stories/helpers';
@@ -79,7 +79,8 @@ export default {
 			},
 		},
 		gap: {
-			control: 'text',
+			control: 'select',
+			options: Object.keys(GAP),
 			description: 'Gap between icons',
 			table: {
 				type: { summary: null },

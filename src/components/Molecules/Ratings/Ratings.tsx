@@ -5,12 +5,13 @@ import { useTheme, DefaultTheme, CSSProp } from 'styled-components';
 // Atoms
 import { Center } from '../../Atoms/Center';
 import { RatingItem, Star } from './Ratings.atoms';
+import { GapDefinition } from 'src/theme/definitions/gap/gap';
 
 export type TRatings = {
 	rating?: number | null
 	getRating?: (value: number) => void
 	maxRating?: number
-	gap?: Properties['gap']
+	gap?: GapDefinition
 	backgroundColor?: DefaultTheme['backgroundColor']
 	starColor?: DefaultTheme['backgroundColor']
 	starBorder?: DefaultTheme['color']
@@ -125,7 +126,7 @@ Ratings.defaultProps = {
 	maxRating: 5,
 	getRating: undefined,
 	size: '24px',
-	gap: '8px',
+	gap: 'g8',
 	backgroundColor: 'white',
 	starColor: 'yellow',
 	starBorder: 'grey',

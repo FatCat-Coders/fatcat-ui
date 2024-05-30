@@ -4,6 +4,7 @@ import { Wrapper } from '../../../components/Atoms/Wrapper';
 import { Flex as FlexOrigin } from '../../../components/Atoms/Flex';
 
 import readme from './Flex.md';
+import { GAP } from '../../../theme/definitions/gap/gap';
 
 export default {
 	title: 'Element Props/Flex',
@@ -15,7 +16,12 @@ export default {
 		flexBasis: { control: 'text', description: 'String with css property', type: 'string' },
 		flexWrap: { control: 'text', description: 'String with css property', type: 'string' },
 		wrap: { control: 'boolean', description: 'Boolean value', type: { name: 'boolean' } },
-		gap: { control: 'text', description: 'String with css property', type: 'string' },
+		gap: {
+			control: 'select',
+			options: Object.keys(GAP),
+			description: 'String with css property',
+			type: 'string',
+		},
 	},
 	parameters: {
 		docs: {
@@ -26,25 +32,27 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<FlexOrigin {...args}>
-		<Wrapper
-			h="100px"
-			w="100px"
-			backgroundColor="yellow"
-		/>
-		<Wrapper
-			h="100px"
-			w="400px"
-			backgroundColor="yellow"
-		/>
-		<Wrapper
-			h="100px"
-			w="200px"
-			backgroundColor="yellow"
-		/>
-	</FlexOrigin>
-);
+function Template({ children, ...args }) {
+	return (
+		<FlexOrigin {...args}>
+			<Wrapper
+				h="100px"
+				w="100px"
+				backgroundColor="yellow"
+			/>
+			<Wrapper
+				h="100px"
+				w="400px"
+				backgroundColor="yellow"
+			/>
+			<Wrapper
+				h="100px"
+				w="200px"
+				backgroundColor="yellow"
+			/>
+		</FlexOrigin>
+	);
+}
 
 export const Flex = Template.bind({});
 
@@ -64,6 +72,6 @@ Flex.parameters = {
 };
 Flex.args = {
 	direction: 'column',
-	gap: '20px',
+	gap: 'g20',
 	alignItems: 'center',
 };

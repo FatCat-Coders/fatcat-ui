@@ -5,7 +5,7 @@ import { Properties } from 'csstype';
 import { SideSpacingValue } from '../props/space/space';
 import { HoverTypes } from '../props/hover/hover';
 
-import { SpaceDefinition } from '../definitions';
+import { GapDefinition, SpaceDefinition } from '../definitions';
 
 // helpers
 import { createSideSpacingRule, parseSpace } from '../props';
@@ -273,8 +273,8 @@ export const RESPONSIVE_BEHAVIORS = {
 		margin-top: ${props => props.theme.space[value]};
 		margin-bottom: ${props => props.theme.space[value]};
 	`,
-	gap: (value: Properties['gap']) => css`
-		gap: ${value};
+	gap: (value: GapDefinition) => css`
+		gap: ${props => props.theme.gap[value]};
 	`,
 	// opacity
 	opacity: (value: Properties['opacity']) => css`

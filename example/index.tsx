@@ -47,6 +47,8 @@ declare module 'styled-components' {
 		inputVariant: FatCatTheme['inputVariant']
 		ollistVariant: FatCatTheme['ollistVariant']
 		ullistVariant: FatCatTheme['ullistVariant']
+		borderRadius: FatCatTheme['borderRadius']
+		gap: FatCatTheme['gap']
 		sectionLayout: CSSProp
 	}
 }

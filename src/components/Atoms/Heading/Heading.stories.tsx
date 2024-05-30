@@ -43,6 +43,7 @@ export default {
 	},
 } as ComponentMeta<typeof HeadingOrigin>;
 
+// eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof HeadingOrigin> = ({ ...args }) => {
 	const el = useRef(null);
 	const [style, setStyle] = useState({

@@ -27,6 +27,7 @@ import {
 	TEXT_COLOR,
 	ULLIST_VARIANT,
 	MEDIA_MOBILE,
+	GAP,
 } from './definitions';
 import { HOVER_BEHAVIORS, RESPONSIVE_BEHAVIORS, TEXT_SIZE } from './styles';
 import { SideSpacingTypesValue } from './props/space/space';
@@ -60,6 +61,7 @@ export interface FatCatTheme {
 	inputVariant: typeof INPUT_VARIANT
 	ollistVariant: typeof OLLIST_VARIANT,
 	ullistVariant: typeof ULLIST_VARIANT,
+	gap: typeof GAP,
 	sectionLayout?: CSSProp,
 }
 
@@ -92,6 +94,7 @@ const defaultTheme: FatCatTheme = {
 	ollistVariant: OLLIST_VARIANT,
 	ullistVariant: ULLIST_VARIANT,
 	sectionLayout: undefined,
+	gap: GAP,
 };
 
 interface UIThemeProviderI {

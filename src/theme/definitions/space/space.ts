@@ -2,6 +2,8 @@ import { DefaultTheme } from 'styled-components';
 
 export const SPACE = {
 	s0: '0px',
+	's0.5': '2px',
+	s1: '2px',
 	s2: '2px',
 	s4: '4px',
 	s6: '6px',

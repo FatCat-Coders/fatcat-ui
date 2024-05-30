@@ -3,8 +3,8 @@ import styled, {
 	DefaultTheme,
 	CSSProp,
 } from 'styled-components';
-import { Properties } from 'csstype';
 import { darken } from 'polished';
+import { GapDefinition } from 'src/theme/definitions/gap/gap';
 
 export type TCheckboxStyle = {
 	checked?: boolean
@@ -64,12 +64,14 @@ export const CheckboxInput = styled.input`
 	} */
 `;
 
-export const CheckboxContainer = styled.label<{ styled?: CSSProp, disabled?: boolean, gap?: Properties['gap'] }>`
+export const CheckboxContainer = styled.label<{ styled?: CSSProp, disabled?: boolean, gap?: GapDefinition}>`
 	cursor: pointer;
 	height: fit-content;
 	display: flex;
 	align-items: center;
-	${props => props.gap && `gap: ${props.gap}`};
+	${({ gap }) => gap && css`
+		gap: ${props => props.theme.gap[gap]};
+	`}
 	${({ disabled }) => disabled && css`
 		cursor: not-allowed;
 		pointer-events: none;
