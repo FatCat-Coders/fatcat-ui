@@ -76,6 +76,7 @@
     "react-cookie-consent": "^8.0.1",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-loader-spinner": "^6.1.6",
     "styled-components": "^5.3.11",
     "tslib": "^2.5.0"
   },

@@ -61,6 +61,14 @@ const meta: Meta<typeof ButtonOrigin> = {
 			description: 'When present, it specifies that the button trailing icon.',
 			type: 'string',
 		},
+		isLoading: {
+			control: 'radio',
+			options: [true, false],
+			description: 'Is it loading',
+			table: {
+				type: { summary: null },
+			},
+		},
 	},
 	parameters: {
 		docs: {
