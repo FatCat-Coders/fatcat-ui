@@ -19,7 +19,7 @@ export default {
 			description: `List of background colors: ${formatObjectKeys(COLOR)}`,
 			table: {
 				type: { summary: null },
-				defaultValue: { summary: 'primary' },
+				defaultValue: { summary: 'primary600' },
 			},
 		},
 		styled: {
