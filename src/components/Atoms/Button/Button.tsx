@@ -67,18 +67,12 @@ export const Button: ButtonComponent = (props) => {
 				{children}
 			</Wrapper>
 			{trailingIcon && (
-				isTextLink ? (
-					<Flex w="24px" flexShrink="0">
-						<Icon
-							 name={trailingIcon} size="20"
-							color={JSON.stringify(color)}
-						/>
-					</Flex>
-				) : (
-					<Flex>
-						<Icon name={trailingIcon} size={calculateIconSize(buttonProps.size)} color={JSON.stringify(color)} />
-					</Flex>
-				)
+				<Flex w={isTextLink ? '24px' : 'fit-content'} flexShrink="0">
+					<Icon
+						name={trailingIcon} size={isTextLink ? '20' : calculateIconSize(buttonProps.size)}
+						color={JSON.stringify(color)}
+					/>
+				</Flex>
 			)}
 		</ButtonBase>
 	);
