@@ -120,10 +120,10 @@ Ratings.parameters = {
 };
 
 Ratings.args = {
-	backgroundColor: 'white',
+	backgroundColor: 'neutrals50',
 	maxRating: 5,
 	rating: 1.4,
 	size: '24px',
-	starBorder: 'grey',
-	starColor: 'yellow',
+	starBorder: 'neutrals700',
+	starColor: 'yellow700',
 };

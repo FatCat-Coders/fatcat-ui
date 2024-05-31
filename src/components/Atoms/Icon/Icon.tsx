@@ -38,7 +38,7 @@ const IconContainer = styled.svg.attrs<TIconContainerProps>(props => ({
 
 // eslint-disable-next-line react/function-component-definition
 export const Icon: React.FC<TIcon> = ({
-	name, size = '18', color = 'primary',
+	name, size = '18', color = 'primary600',
 }) => {
 	const SvgIcon = icons[name];
 

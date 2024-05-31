@@ -36,7 +36,7 @@ export const Icon: Story = {
 	args: {
 		name: 'HelpCircle',
 		size: '18',
-		color: 'primary',
+		color: 'primary600',
 	},
 	parameters: { controls: { include: ['name', 'size', 'color'] } },
 };

@@ -35,7 +35,7 @@ function Template({ children, ...args }) {
 		<Wrapper
 			h="200px"
 			w="200px"
-			backgroundColor="primary"
+			backgroundColor="primary600"
 			{...args}
 		>
 			<Wrapper

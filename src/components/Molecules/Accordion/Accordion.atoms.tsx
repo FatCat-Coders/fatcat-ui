@@ -43,7 +43,7 @@ export const Plus = styled.span<{ isOpen: boolean }>`
 
 export const AccordionWrapper = styled(Wrapper)`
 	overflow: hidden;
-	border-bottom: 1px solid ${props => props.theme.color.grey};
+	border-bottom: 1px solid ${props => props.theme.color.neutrals500};
 `;
 
 export const AccordionContent = styled(Wrapper) <{ isOpen: boolean }>`

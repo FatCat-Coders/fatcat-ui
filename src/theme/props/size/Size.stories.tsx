@@ -28,7 +28,7 @@ function Template({ children, ...args }) {
 	return (
 		<Wrapper
 			position="relative"
-			backgroundColor="primary"
+			backgroundColor="primary600"
 			{...args}
 		>
 			<Text

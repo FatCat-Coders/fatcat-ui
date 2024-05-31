@@ -81,6 +81,6 @@ Background.parameters = {
 	},
 };
 Background.args = {
-	backgroundColor: 'primary',
+	backgroundColor: 'primary600',
 	backgroundSize: 'cover',
 };

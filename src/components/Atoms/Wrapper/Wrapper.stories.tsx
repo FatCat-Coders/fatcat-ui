@@ -84,7 +84,7 @@ const Template: ComponentStory<typeof WrapperOrigin> = ({ children, items, ...ar
 					key={index} // eslint-disable-line
 					h="100px"
 					w={randomWidth}
-					backgroundColorHex={index % 2 === 0 ? 'primary' : 'neutrals800'}
+					backgroundColorHex={index % 2 === 0 ? 'primary600' : 'neutrals800'}
 				>
 					{randomWidth}
 				</WrapperOrigin>

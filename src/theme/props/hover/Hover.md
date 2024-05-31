@@ -52,7 +52,7 @@ Here is usage of our defined hover effects, we also added `transition` for smoot
 <Wrapper
 		h="100px"
 		w="100px"
-		backgroundColor="primary"
+		backgroundColor="primary600"
 		transition="all 0.3s ease"
 		hover={ [{ backgroundColorHex: '#1D1D1E', zoom: '1.2' }] }
 	/>

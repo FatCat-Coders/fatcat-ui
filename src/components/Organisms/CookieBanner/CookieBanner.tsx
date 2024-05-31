@@ -120,7 +120,7 @@ CookieBanner.defaultProps = {
 	backgroundColor: 'neutrals800',
 	buttonColor: 'primary',
 	cookieTextColor: 'neutrals800',
-	declineHoverColor: 'greyLight',
+	declineHoverColor: 'neutrals100',
 	useCookieIcon: true,
 	styled: undefined,
 };

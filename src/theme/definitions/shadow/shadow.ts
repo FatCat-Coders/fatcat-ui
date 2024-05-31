@@ -22,5 +22,5 @@ export const DROP_SHADOW = {
 export const FOCUS_SHADOW = {
 	'focus-1': `0px 0px 0px 2px ${transparentize(0.32, COLOR.primary600)}`,
 	'focus-2': `0px 0px 0px 4px ${transparentize(0.32, COLOR.primary600)}`,
-	'focus-2-inverted': `0px 0px 0px 4px ${transparentize(0.56, COLOR.white)}`,
+	'focus-2-inverted': `0px 0px 0px 4px ${transparentize(0.56, COLOR.neutrals50)}`,
 };

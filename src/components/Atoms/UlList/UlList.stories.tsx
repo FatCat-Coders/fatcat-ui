@@ -68,5 +68,5 @@ UlList.parameters = {
 
 UlList.args = {
 	variant: 'base',
-	bulletColor: 'black',
+	bulletColor: 'neutrals800',
 };

@@ -33,7 +33,7 @@ function Template({ children, ...args }) {
 					h="100px"
 					w="100px"
 					padding={['t12', 'r12', 'b12', 'l12']}
-					backgroundColor="primary"
+					backgroundColor="primary600"
 					{...args}
 				>
 					Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.
@@ -46,7 +46,7 @@ function Template({ children, ...args }) {
 					h="100px"
 					w="100px"
 					padding={['t12', 'r12', 'b12', 'l12']}
-					backgroundColor="primary"
+					backgroundColor="primary600"
 					overflow="hidden"
 				>
 					Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.
@@ -59,7 +59,7 @@ function Template({ children, ...args }) {
 					h="100px"
 					w="100px"
 					padding={['t12', 'r12', 'b12', 'l12']}
-					backgroundColor="primary"
+					backgroundColor="primary600"
 					overflow="visible"
 				>
 					Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.

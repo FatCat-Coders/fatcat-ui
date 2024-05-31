@@ -20,17 +20,17 @@ export const INPUT_VARIANT = {
 		appearance: none;
 		outline: none;
 		border-radius: 4px;
-		border: 1px solid ${props => props.theme.color.grey200};
+		border: 1px solid ${props => props.theme.color.neutrals200};
 		padding: ${props => props.theme.space.s1} ${props => props.theme.space.s4};
 		color: ${props => props.theme.textColor.neutrals800};
-		background: ${props => props.theme.textColor.white};
+		background: ${props => props.theme.textColor.neutrals50};
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
 		margin-bottom: ${props => props.theme.space.s5};
 
 		&:hover,
 		&:focus {
-			border-color: ${props => props.theme.color.primary};
+			border-color: ${props => props.theme.color.primary600};
 		}
 
 		${props => props.customInput && css`
@@ -42,7 +42,7 @@ export const INPUT_VARIANT = {
 				top: 18px;
 				left: 17px;
 				width: calc(100% - 34px);
-				color: ${props.theme.color.grey};
+				color: ${props.theme.color.neutrals500};
 				font-size: ${props.theme.fontSize.s16};
 				z-index: 10;
 				pointer-events: none;
@@ -56,7 +56,7 @@ export const INPUT_VARIANT = {
 				&:focus ~ label,
 				&:not(:placeholder-shown) ~ label {
 					transform-origin: left center;
-					color: ${props.theme.color.primary};
+					color: ${props.theme.color.primary600};
 					font-size: 70%;
 					z-index: 2;
 					top: 6px;
@@ -66,9 +66,9 @@ export const INPUT_VARIANT = {
 			}
 
 			${props.errorMsg && css`
-				border-color: ${props.theme.color.warning} !important;
+				border-color: ${props.theme.color.warningMedium} !important;
 				& ~ label {
-					color: ${props.theme.color.warning} !important;
+					color: ${props.theme.color.warningMedium} !important;
 				}
 			`}
 		`};

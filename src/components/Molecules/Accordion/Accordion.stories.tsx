@@ -126,9 +126,9 @@ Accordion.parameters = {
 Accordion.args = {
 	titleAs: 'h2',
 	title: 'Accordion title',
-	titleColor: 'primary',
+	titleColor: 'primary600',
 	content: loremText,
 	contentSize: 'large',
 	useArrow: false,
-	contentColor: 'primary',
+	contentColor: 'primary600',
 };

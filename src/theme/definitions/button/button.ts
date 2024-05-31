@@ -45,7 +45,7 @@ export const BUTTON_VARIANT = {
 		border: 1px solid ${props => props.theme.buttonColor[props.buttonColor].default};
 		${buttonBase};
 		&:hover {
-			color: ${props => props.theme.color.white};
+			color: ${props => props.theme.color.neutrals50};
 			background: ${props => props.theme.buttonColor[props.buttonColor].hover};
 			border-color: ${props => props.theme.buttonColor[props.buttonColor].hover};
 		}

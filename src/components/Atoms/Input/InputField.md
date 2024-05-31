@@ -36,7 +36,7 @@ For better reusability, we define our style in the theme provider and then we us
 const INPUT_VARIANT = {
 	base: css`
 		appearance: none;
-		border: 1px solid ${props => props.theme.color.white};
+		border: 1px solid ${props => props.theme.color.neutrals50};
         padding: 21px;
         color: ${props => props.theme.textColor.neutrals800};
 		opacity: 50%;
@@ -48,15 +48,15 @@ const INPUT_VARIANT = {
 		${props => props.theme.textSize.button};
 
 		&:hover {
-			border-color: ${props => props.theme.color.white};
+			border-color: ${props => props.theme.color.neutrals50};
             opacity: 100%;
 		}
 
 		&:focus {
-			border-color: ${props => props.theme.color.yellow};
+			border-color: ${props => props.theme.color.yellow700};
 		}
 		&::placeholder {
-			color: ${props => props.theme.color.white};
+			color: ${props => props.theme.color.neutrals50};
 			opacity: 50%;
 			text-transform: uppercase;
 		}
@@ -105,7 +105,7 @@ and then simply use it in your code.
 
 ```jsx
 <Flex
-	backgroundColor="primary"
+	backgroundColor="primary600"
 	padding={['t64', 'b64', 'l24', 'r24']}
 >
 	<InputField

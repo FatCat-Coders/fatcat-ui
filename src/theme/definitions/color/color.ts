@@ -1,37 +1,7 @@
 import { darken } from 'polished';
 
 export const COLOR = {
-	primary: '#232737',
-	primaryLight: '#232737E6',
-	black: '#000000',
-	dark: '#0A0A0A',
-	blackHigh: '#030303',
-	blackLow: '#121212',
-	blackLight: '#171717',
-	blackLighter: '#1D1D1E',
-	white: '#FFFFFF',
-	white10: 'rgba(255, 255, 255, 0.1)',
-	white20: 'rgba(255, 255, 255, 0.2)',
-	white50: 'rgba(255, 255, 255, 0.5)',
-	darkestGray: '#121212',
-	grey: '#BEBEBE',
-	grey200: '#DDDDDD',
-	greyLight: '#67727B',
-	darkerGrey: '#6B6B6B',
-	lightGrey: '#F5F5F5',
-	purple: '#5E1A6F',
-	purpleLight: '#755DB9',
-	darkerPurple: '#50145F',
-	darkestPurple: '#470F55',
-	orange: '#FFA500',
-	yellow: '#FFB82D',
-	yellow10: 'rgba(255,184,45, 0.1)',
-	green: '#00FF00',
 	transparent: 'transparent',
-	disabled: '#E0E2EC',
-	disabledDark: '#A0A3AF',
-	warning: '#DE3131',
-	///
 	// brand/primary
 	primary50: '#F9FAFF',
 	primary100: '#EBECFE',
@@ -42,7 +12,7 @@ export const COLOR = {
 	primary600: '#5C62F9', // base
 	primary700: '#4E54F9',
 	primary800: '#3A40F8',
-	ywllow900: '#262DF7',
+	primary900: '#262DF7',
 	// brand/secondary
 	// yellow
 	yellow50: '#FFFBEB',
@@ -111,32 +81,32 @@ export const COLOR = {
 
 export const BUTTON_COLOR = {
 	disabled: {
-		default: COLOR.disabled,
-		text: COLOR.disabledDark,
+		default: COLOR.primary50,
+		text: COLOR.primary500,
 	},
 	primary: {
-		default: COLOR.primaryLight,
-		text: COLOR.white,
+		default: COLOR.primary200,
+		text: COLOR.neutrals50,
 		hover: COLOR.primary,
-		hoverText: COLOR.white,
+		hoverText: COLOR.neutrals50,
 	},
 	secondary: {
 		default: COLOR.primary,
 		text: COLOR.primary,
 		hover: COLOR.primary,
-		hoverText: COLOR.white,
+		hoverText: COLOR.neutrals50,
 	},
 	ghost: {
 		default: COLOR.transparent,
-		text: COLOR.black,
-		hover: COLOR.yellow10,
-		hoverText: COLOR.white,
+		text: COLOR.neutrals800,
+		hover: COLOR.yellow100,
+		hoverText: COLOR.neutrals50,
 	},
 	white: {
-		default: COLOR.white,
+		default: COLOR.neutrals50,
 		text: COLOR.primary,
-		hover: darken(0.1, COLOR.white),
-		hoverText: COLOR.white,
+		hover: darken(0.1, COLOR.neutrals50),
+		hoverText: COLOR.neutrals50,
 	},
 	underline: {
 		default: COLOR.primary,

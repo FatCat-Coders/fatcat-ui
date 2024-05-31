@@ -131,18 +131,18 @@ function Template({ children, ...args }) {
 		<Wrapper
 			border="1px solid black"
 			w="fit-content"
-			backgroundColor="green"
+			backgroundColor="mint700"
 			backgroundColorOpacity={0.3}
 		>
 			<Wrapper
 				h="300px"
 				w="300px"
-				backgroundColor="primary"
+				backgroundColor="primary600"
 				backgroundColorOpacity={0.7}
 				{...args}
 			>
 				<Wrapper
-					backgroundColor="purple"
+					backgroundColor="primary900"
 					h="100%"
 				/>
 			</Wrapper>

@@ -134,6 +134,6 @@ CookieBanner.args = {
 	cookieText: 'This website uses cookies to enhance the user experience.',
 	cookieTextColor: 'neutrals800',
 	styled: '',
-	declineHoverColor: 'greyLight',
+	declineHoverColor: 'neutrals100',
 	useCookieIcon: true,
 };

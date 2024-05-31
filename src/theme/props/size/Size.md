@@ -17,7 +17,7 @@ Property that adds to the component are:
 
 ```jsx
 <Wrapper
-	backgroundColor="primary"
+	backgroundColor="primary600"
 	w="100px"
 	h="100px"
 />

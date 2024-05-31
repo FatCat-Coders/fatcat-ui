@@ -55,7 +55,7 @@ export default {
 		},
 		buttonColor: {
 			control: 'select',
-			defaultValue: 'primary',
+			defaultValue: 'primary600',
 			options: Object.keys(COLOR),
 			description: 'Close button color',
 			type: { name: 'string' },
@@ -65,7 +65,7 @@ export default {
 		},
 		textColor: {
 			control: 'select',
-			defaultValue: 'primary',
+			defaultValue: 'primary600',
 			options: Object.keys(COLOR),
 			description: 'Text color of tag',
 			type: { name: 'string' },
@@ -75,7 +75,7 @@ export default {
 		},
 		variant: {
 			control: 'select',
-			defaultValue: 'primary',
+			defaultValue: 'primary600',
 			options: Object.keys(tagVariant),
 			description: 'Text color of tag',
 			type: { name: 'string' },
@@ -133,5 +133,5 @@ Tag.args = {
 	onClose,
 	textColor: 'neutrals800',
 	variant: 'base',
-	buttonColor: 'grey',
+	buttonColor: 'white',
 };

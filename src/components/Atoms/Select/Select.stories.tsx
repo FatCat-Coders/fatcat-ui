@@ -35,7 +35,7 @@ export default {
 const Template: ComponentStory<typeof Option> = ({ children, ...args }) => (
 	<Flex
 		padding={['t64', 'b64']}
-		backgroundColor="primary"
+		backgroundColor="primary600"
 		justifyContent="center"
 	>
 		<SelectOrigin

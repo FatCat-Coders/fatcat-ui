@@ -126,9 +126,9 @@ Ratings.defaultProps = {
 	getRating: undefined,
 	size: '24px',
 	gap: '8px',
-	backgroundColor: 'white',
-	starColor: 'yellow',
-	starBorder: 'grey',
+	backgroundColor: 'neutrals50',
+	starColor: 'yellow700',
+	starBorder: 'neutrals500',
 	styled: undefined,
 };
 

@@ -110,7 +110,7 @@ Banner.parameters = {
 
 Banner.args = {
 	backgroundImage: undefined,
-	backgroundColor: 'primary',
+	backgroundColor: 'primary600',
 	backgroundColorHex: undefined,
 	backgroundColorOpacity: undefined,
 	backgroundRepeat: undefined,

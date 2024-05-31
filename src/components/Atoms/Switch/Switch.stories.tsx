@@ -18,7 +18,7 @@ export default {
 			description: `List of background colors: ${formatObjectKeys(COLOR)}`,
 			table: {
 				type: { summary: null },
-				defaultValue: { summary: 'primary' },
+				defaultValue: { summary: 'primary600' },
 			},
 		},
 		textColor: {
@@ -27,7 +27,7 @@ export default {
 			description: `List of text colors: ${formatObjectKeys(COLOR)}`,
 			table: {
 				type: { summary: null },
-				defaultValue: { summary: 'primary' },
+				defaultValue: { summary: 'primary600' },
 			},
 		},
 		styled: {
@@ -128,7 +128,7 @@ Switch.parameters = {
 
 Switch.args = {
 	afterText: 'on',
-	backgroundColor: 'primary',
+	backgroundColor: 'primary600',
 	textColor: 'neutrals800',
 	beforeText: 'off',
 	styled: undefined,

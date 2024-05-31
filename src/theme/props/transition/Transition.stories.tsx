@@ -27,7 +27,7 @@ export default {
 function Template({ children, ...args }) {
 	return (
 		<Center
-			backgroundColor="primary"
+			backgroundColor="primary600"
 			w="200px"
 			h="200px"
 			hover={[{ backgroundColorHex: '#1D1D1E' }]}

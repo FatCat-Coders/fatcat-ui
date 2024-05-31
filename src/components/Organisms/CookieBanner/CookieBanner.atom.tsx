@@ -48,7 +48,7 @@ export const CookieStyles = createGlobalStyle<TCookieStyle>`
 	}
 
 	.CookieConsent--accept-button {
-		color: ${props => props.theme.color.white} !important;
+		color: ${props => props.theme.color.neutrals50} !important;
 		background-color: ${props => props.theme.color[props.buttonColor]} !important;
 		font-size: 16px !important;
 		padding: 10px 40px !important;

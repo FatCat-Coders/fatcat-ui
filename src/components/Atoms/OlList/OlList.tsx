@@ -38,6 +38,6 @@ export const OlList = styled.ol.withConfig({
 OlList.defaultProps = {
 	variant: 'base',
 	textColor: 'neutrals800',
-	bulletColor: 'black',
+	bulletColor: 'neutrals800',
 	initialDisplay: 'block',
 };
