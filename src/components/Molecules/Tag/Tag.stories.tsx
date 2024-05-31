@@ -4,7 +4,7 @@ import { showToastMsg } from '../../../../stories/helpers';
 
 import { Wrapper } from '../../Atoms/Wrapper';
 import { tagVariant } from './Tag.atoms';
-import { BACKGROUND_COLOR, TEXT_COLOR, COLOR } from '../../../theme/definitions/color/color';
+import { COLOR } from '../../../theme/definitions/color/color';
 
 import TagOrigin from './Tag';
 
@@ -46,7 +46,7 @@ export default {
 		},
 		backgroundColor: {
 			control: 'select',
-			options: Object.keys(BACKGROUND_COLOR),
+			options: Object.keys(COLOR),
 			description: 'Background color of tag',
 			type: { name: 'string' },
 			table: {
@@ -66,7 +66,7 @@ export default {
 		textColor: {
 			control: 'select',
 			defaultValue: 'primary',
-			options: Object.keys(TEXT_COLOR),
+			options: Object.keys(COLOR),
 			description: 'Text color of tag',
 			type: { name: 'string' },
 			table: {
@@ -131,7 +131,7 @@ Tag.args = {
 	content: 'Javascript',
 	onClick,
 	onClose,
-	textColor: 'primary',
+	textColor: 'neutrals800',
 	variant: 'base',
 	buttonColor: 'grey',
 };

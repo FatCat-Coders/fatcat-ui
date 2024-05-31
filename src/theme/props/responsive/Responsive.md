@@ -70,22 +70,22 @@ And this is how we can apply `flex-direction: column;` on flex element and also 
 	<Wrapper
 		h="100px"
 		w="100px"
-		backgroundColor="yellow"
+		backgroundColor="primary"
 	/>
 	<Wrapper
 		h="100px"
 		w="100px"
-		backgroundColor="yellow"
+		backgroundColor="primary"
 	/>
 	<Wrapper
 		h="100px"
 		w="100px"
-		backgroundColor="yellow"
+		backgroundColor="primary"
 	/>
 	<Wrapper
 		h="100px"
 		w="100px"
-		backgroundColor="yellow"
+		backgroundColor="primary"
 	/>
 </Flex>
 ```

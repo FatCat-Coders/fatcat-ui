@@ -127,7 +127,7 @@ This is example how we can use shorthanded `padding` or single sided `$magin` on
 	<Wrapper
 		h="300px"
 		w="300px"
-		backgroundColor="yellow"
+		backgroundColor="primary"
 		backgroundColorOpacity={0.7}
 		padding={['t64', 'r64', 'b64', 'l64']}
 		// padding="s64" we can use it like this if we want same side sizes
@@ -137,7 +137,7 @@ This is example how we can use shorthanded `padding` or single sided `$magin` on
 		marginLeft="s24"
 	>
 		<Wrapper
-			backgroundColor="purple"
+			backgroundColor="primary"
 			h="100%"
 		/>
 	</Wrapper>

@@ -32,13 +32,7 @@ export const COLOR = {
 	disabledDark: '#A0A3AF',
 	warning: '#DE3131',
 	primary600: '#5C62F9',
-};
-
-export const LINK_COLOR = {
-	primary: {
-		default: COLOR.primary,
-		hover: darken(0.1, COLOR.primary),
-	},
+	neutrals800: '#01082D',
 };
 
 export const BUTTON_COLOR = {
@@ -74,30 +68,4 @@ export const BUTTON_COLOR = {
 		default: COLOR.primary,
 		text: COLOR.primary,
 	},
-};
-
-export const TEXT_COLOR = {
-	primary: COLOR.primary,
-	secondary: COLOR.darkerGrey,
-	black: COLOR.blackLighter,
-	yellow: COLOR.yellow,
-	white: COLOR.white,
-	warning: COLOR.warning,
-};
-
-export const BACKGROUND_COLOR = {
-	primary: COLOR.primary,
-	transparent: COLOR.transparent,
-	grey: COLOR.grey,
-	lightGrey: COLOR.lightGrey,
-	backgroundUltraDark: COLOR.blackHigh,
-	backgroundDark: COLOR.dark,
-	background: COLOR.blackLow,
-	backgroundLight: COLOR.blackLight,
-	backgroundLighter: COLOR.blackLighter,
-	purple: COLOR.purple,
-	yellow: COLOR.yellow,
-	white: COLOR.white,
-	green: COLOR.green,
-	wistiaOverlay: 'rgba(130, 130, 130, 0.6)',
 };

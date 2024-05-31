@@ -126,27 +126,29 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<Wrapper
-		border="1px solid black"
-		w="fit-content"
-		backgroundColor="green"
-		backgroundColorOpacity={0.3}
-	>
+function Template({ children, ...args }) {
+	return (
 		<Wrapper
-			h="300px"
-			w="300px"
-			backgroundColor="yellow"
-			backgroundColorOpacity={0.7}
-			{...args}
+			border="1px solid black"
+			w="fit-content"
+			backgroundColor="green"
+			backgroundColorOpacity={0.3}
 		>
 			<Wrapper
-				backgroundColor="purple"
-				h="100%"
-			/>
+				h="300px"
+				w="300px"
+				backgroundColor="primary"
+				backgroundColorOpacity={0.7}
+				{...args}
+			>
+				<Wrapper
+					backgroundColor="purple"
+					h="100%"
+				/>
+			</Wrapper>
 		</Wrapper>
-	</Wrapper>
-);
+	);
+}
 
 export const Space = Template.bind({});
 

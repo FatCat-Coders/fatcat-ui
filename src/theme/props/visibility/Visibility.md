@@ -20,7 +20,7 @@ One important note to follow is that if we use `show` prop, we also need to pass
 <Wrapper
 	h="100px"
 	w="100px"
-	backgroundColor="yellow"
+	backgroundColor="primary"
 	opacity="0.5"
 	hide="mobile"
 />

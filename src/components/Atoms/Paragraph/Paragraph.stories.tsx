@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Paragraph as ParagraphOrigin } from './Paragraph';
 
-import { TEXT_COLOR, TEXT_VARIANT } from '../../../theme/definitions';
+import { COLOR, TEXT_VARIANT } from '../../../theme/definitions';
 
 import readme from './Paragraph.md';
 
@@ -13,7 +13,7 @@ export default {
 	argTypes: {
 		textColor: {
 			control: 'select',
-			options: Object.keys(TEXT_COLOR),
+			options: Object.keys(COLOR),
 			description: 'Just for demo purposes',
 			type: { name: 'string' },
 			table: {
@@ -60,6 +60,6 @@ Paragraph.parameters = {
 };
 
 Paragraph.args = {
-	textColor: 'black',
+	textColor: 'neutrals800',
 	size: 'large',
 };

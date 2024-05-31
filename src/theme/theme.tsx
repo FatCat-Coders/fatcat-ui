@@ -5,7 +5,6 @@ import { isObjectEmpty, deepmerge } from '../utils/object-helpers';
 // Definitions
 import {
 	ANIMATIONS,
-	BACKGROUND_COLOR,
 	BUTTON_COLOR,
 	BUTTON_SIZE,
 	BUTTON_VARIANT,
@@ -16,7 +15,6 @@ import {
 	TEXT_VARIANT,
 	INPUT_VARIANT,
 	LINE_HEIGHT,
-	LINK_COLOR,
 	LINK_VARIANT,
 	MEDIA,
 	OLLIST_VARIANT,
@@ -24,7 +22,6 @@ import {
 	SECTION_WIDTH,
 	SPACE,
 	TABLE_VARIANT,
-	TEXT_COLOR,
 	ULLIST_VARIANT,
 	MEDIA_MOBILE,
 	BORDER_RADIUS,
@@ -38,7 +35,7 @@ import { SideSpacingTypesValue } from './props/space/space';
 export interface FatCatTheme {
 	useMobileFirst: boolean
 	animation: typeof ANIMATIONS
-	backgroundColor: typeof BACKGROUND_COLOR
+	backgroundColor: typeof COLOR
 	buttonColor: typeof BUTTON_COLOR
 	buttonSize: typeof BUTTON_SIZE
 	buttonVariant: typeof BUTTON_VARIANT
@@ -49,7 +46,6 @@ export interface FatCatTheme {
 	textVariant: typeof TEXT_VARIANT
 	hover: typeof HOVER_BEHAVIORS
 	lineHeight: typeof LINE_HEIGHT
-	linkColor: typeof LINK_COLOR
 	linkVariant: typeof LINK_VARIANT
 	media: typeof MEDIA
 	mediaMobile: typeof MEDIA_MOBILE
@@ -59,7 +55,7 @@ export interface FatCatTheme {
 	sideSpace?: SideSpacingTypesValue
 	space: typeof SPACE
 	tableVariant: typeof TABLE_VARIANT
-	textColor: typeof TEXT_COLOR
+	textColor: typeof COLOR
 	textSize: typeof TEXT_SIZE
 	inputVariant: typeof INPUT_VARIANT
 	ollistVariant: typeof OLLIST_VARIANT,
@@ -74,7 +70,7 @@ export interface FatCatTheme {
 const defaultTheme: FatCatTheme = {
 	useMobileFirst: false,
 	animation: ANIMATIONS,
-	backgroundColor: BACKGROUND_COLOR,
+	backgroundColor: COLOR,
 	buttonColor: BUTTON_COLOR,
 	buttonSize: BUTTON_SIZE,
 	buttonVariant: BUTTON_VARIANT,
@@ -85,7 +81,6 @@ const defaultTheme: FatCatTheme = {
 	textVariant: TEXT_VARIANT,
 	hover: HOVER_BEHAVIORS,
 	lineHeight: LINE_HEIGHT,
-	linkColor: LINK_COLOR,
 	linkVariant: LINK_VARIANT,
 	media: MEDIA,
 	mediaMobile: MEDIA_MOBILE,
@@ -94,7 +89,7 @@ const defaultTheme: FatCatTheme = {
 	sectionWidth: SECTION_WIDTH,
 	space: SPACE,
 	tableVariant: TABLE_VARIANT,
-	textColor: TEXT_COLOR,
+	textColor: COLOR,
 	textSize: TEXT_SIZE,
 	inputVariant: INPUT_VARIANT,
 	ollistVariant: OLLIST_VARIANT,

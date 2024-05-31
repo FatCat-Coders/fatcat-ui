@@ -6,7 +6,7 @@ import { formatObjectKeys } from '../../../../stories/helpers';
 import { default as CookieBannerOrigin } from './CookieBanner'; // eslint-disable-line
 import { Wrapper } from '../../Atoms/Wrapper';
 
-import { COLOR, TEXT_COLOR } from '../../../theme/definitions';
+import { COLOR } from '../../../theme/definitions';
 
 import readme from './CookieBanner.md';
 
@@ -68,7 +68,7 @@ export default {
 		cookieTextColor: {
 			control: 'select',
 			options: Object.keys(COLOR),
-			description: `List of colors for cookie text: ${formatObjectKeys(TEXT_COLOR)}`,
+			description: `List of colors for cookie text: ${formatObjectKeys(COLOR)}`,
 			table: {
 				type: { summary: null },
 			},
@@ -127,12 +127,12 @@ CookieBanner.parameters = {
 	},
 };
 CookieBanner.args = {
-	backgroundColor: 'grey',
+	backgroundColor: 'neutrals800',
 	buttonColor: 'primary',
 	buttonText: 'Got it!',
 	cookieName: 'cookie-consent',
 	cookieText: 'This website uses cookies to enhance the user experience.',
-	cookieTextColor: 'primary',
+	cookieTextColor: 'neutrals800',
 	styled: '',
 	declineHoverColor: 'greyLight',
 	useCookieIcon: true,

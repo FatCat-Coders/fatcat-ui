@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { default as SwitchOrigin } from './Switch'; // eslint-disable-line
 import { Flex } from '../Flex';
 import { formatObjectKeys } from '../../../../stories/helpers';
-import { COLOR, TEXT_COLOR } from '../../../theme/definitions';
+import { COLOR } from '../../../theme/definitions';
 
 import readme from './Switch.md';
 
@@ -24,7 +24,7 @@ export default {
 		textColor: {
 			control: 'select',
 			options: Object.keys(COLOR),
-			description: `List of text colors: ${formatObjectKeys(TEXT_COLOR)}`,
+			description: `List of text colors: ${formatObjectKeys(COLOR)}`,
 			table: {
 				type: { summary: null },
 				defaultValue: { summary: 'primary' },
@@ -129,7 +129,7 @@ Switch.parameters = {
 Switch.args = {
 	afterText: 'on',
 	backgroundColor: 'primary',
-	textColor: 'primary',
+	textColor: 'neutrals800',
 	beforeText: 'off',
 	styled: undefined,
 	disabled: false,

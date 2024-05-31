@@ -25,17 +25,17 @@ Property that adds to the component are:
 	<Wrapper
 		h="100px"
 		w="100px"
-		backgroundColor="yellow"
+		backgroundColor="primary"
 	/>
 	<Wrapper
 		h="100px"
 		w="400px"
-		backgroundColor="yellow"
+		backgroundColor="primary"
 	/>
 	<Wrapper
 		h="100px"
 		w="200px"
-		backgroundColor="yellow"
+		backgroundColor="primary"
 	/>
 </Flex>
 ```

@@ -26,33 +26,35 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<Flex
-		gap="10px"
-		{...args}
-	>
-		<Wrapper
-			h="100px"
-			w="100px"
-			backgroundColor="yellow"
-		/>
-		<Wrapper
-			h="100px"
-			w="100px"
-			backgroundColor="yellow"
-		/>
-		<Wrapper
-			h="100px"
-			w="100px"
-			backgroundColor="yellow"
-		/>
-		<Wrapper
-			h="100px"
-			w="100px"
-			backgroundColor="yellow"
-		/>
-	</Flex>
-);
+function Template({ children, ...args }) {
+	return (
+		<Flex
+			gap="10px"
+			{...args}
+		>
+			<Wrapper
+				h="100px"
+				w="100px"
+				backgroundColor="primary"
+			/>
+			<Wrapper
+				h="100px"
+				w="100px"
+				backgroundColor="primary"
+			/>
+			<Wrapper
+				h="100px"
+				w="100px"
+				backgroundColor="primary"
+			/>
+			<Wrapper
+				h="100px"
+				w="100px"
+				backgroundColor="primary"
+			/>
+		</Flex>
+	);
+}
 
 export const Responsive = Template.bind({});
 

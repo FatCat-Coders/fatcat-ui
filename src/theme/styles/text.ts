@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 const base = css`
 	font-family: ${props => props.theme.fontFamily.main};
-	font-weight: ${props => props.theme.fontWeight.medium};
+	font-weight: ${props => props.theme.fontWeight.regular};
 `;
 
 const baseQuote = css`

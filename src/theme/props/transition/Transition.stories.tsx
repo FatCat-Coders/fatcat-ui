@@ -24,17 +24,19 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<Center
-		backgroundColor="yellow"
-		w="200px"
-		h="200px"
-		hover={[{ backgroundColorHex: '#1D1D1E' }]}
-		{...args}
-	>
-		<Text textColor="primary">Hover me!</Text>
-	</Center>
-);
+function Template({ children, ...args }) {
+	return (
+		<Center
+			backgroundColor="primary"
+			w="200px"
+			h="200px"
+			hover={[{ backgroundColorHex: '#1D1D1E' }]}
+			{...args}
+		>
+			<Text textColor="neutrals800">Hover me!</Text>
+		</Center>
+	);
+}
 
 export const Transition = Template.bind({});
 

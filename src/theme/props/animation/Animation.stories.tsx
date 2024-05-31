@@ -35,14 +35,16 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<Wrapper
-		h="100px"
-		w="100px"
-		backgroundColor="yellow"
-		{...args}
-	/>
-);
+function Template({ children, ...args }) {
+	return (
+		<Wrapper
+			h="100px"
+			w="100px"
+			backgroundColor="primary"
+			{...args}
+		/>
+	);
+}
 
 export const Animation = Template.bind({});
 

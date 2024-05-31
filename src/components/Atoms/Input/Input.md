@@ -40,7 +40,7 @@ const INPUT_VARIANT = {
 		appearance: none;
 		border: 1px solid ${props => props.theme.color.white};
         padding: 21px;
-        color: ${props => props.theme.textColor.primary};
+        color: ${props => props.theme.textColor.neutrals800};
 		opacity: 50%;
         font-weight: ${props => props.theme.fontWeight.bold};
 		background: none;
@@ -107,7 +107,7 @@ and then simply use it in your code.
 
 ```jsx
 <Flex
-	backgroundColor="backgroundUltraDark"
+	backgroundColor="primary"
 	padding={['t64', 'b64', 'l24', 'r24']}
 >
 	<Input

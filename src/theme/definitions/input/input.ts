@@ -22,7 +22,7 @@ export const INPUT_VARIANT = {
 		border-radius: 4px;
 		border: 1px solid ${props => props.theme.color.grey200};
 		padding: ${props => props.theme.space.s14} ${props => props.theme.space.s16};
-		color: ${props => props.theme.textColor.black100};
+		color: ${props => props.theme.textColor.neutrals800};
 		background: ${props => props.theme.textColor.white};
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};

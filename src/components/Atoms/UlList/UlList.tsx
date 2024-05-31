@@ -26,6 +26,6 @@ export const UlList = styled.ul.withConfig({
 UlList.defaultProps = {
 	variant: 'base',
 	bulletColor: 'black',
-	textColor: 'primary',
+	textColor: 'neutrals800',
 	initialDisplay: 'block',
 };

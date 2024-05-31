@@ -7,7 +7,7 @@ import readme from './Background.md';
 import colors from '../../../../stories/assets/images/colors.svg';
 
 import { formatObjectKeys } from '../../../../stories/helpers';
-import { BACKGROUND_COLOR } from '../../../theme/definitions';
+import { COLOR } from '../../../theme/definitions';
 
 export default {
 	title: 'Element Props/Background',
@@ -19,8 +19,8 @@ export default {
 		background: { control: 'text', description: 'String with css property or name of background color from theme', type: 'string' },
 		backgroundColor: {
 			control: 'select',
-			options: Object.keys(BACKGROUND_COLOR),
-			description: `List of colors: ${formatObjectKeys(BACKGROUND_COLOR)}`,
+			options: Object.keys(COLOR),
+			description: `List of colors: ${formatObjectKeys(COLOR)}`,
 			type: 'string',
 		},
 		backgroundColorHex: { control: 'color', description: 'String with css property', type: 'string' },
@@ -41,21 +41,23 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<Flex gap="20px">
-		<Wrapper
-			h="100px"
-			w="100px"
-			{...args}
-		/>
-		<Wrapper
-			h="100px"
-			w="100px"
-			{...args}
-			backgroundImage={colors}
-		/>
-	</Flex>
-);
+function Template({ children, ...args }) {
+	return (
+		<Flex gap="20px">
+			<Wrapper
+				h="100px"
+				w="100px"
+				{...args}
+			/>
+			<Wrapper
+				h="100px"
+				w="100px"
+				{...args}
+				backgroundImage={colors}
+			/>
+		</Flex>
+	);
+}
 
 export const Background = Template.bind({});
 
@@ -79,6 +81,6 @@ Background.parameters = {
 	},
 };
 Background.args = {
-	backgroundColor: 'yellow',
+	backgroundColor: 'primary',
 	backgroundSize: 'cover',
 };

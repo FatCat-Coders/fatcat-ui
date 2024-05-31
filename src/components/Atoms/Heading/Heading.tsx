@@ -23,6 +23,6 @@ export const Heading = styled.h1.withConfig({
 Heading.defaultProps = {
 	as: 'h1',
 	textAlign: 'left',
-	textColor: 'primary',
+	textColor: 'neutrals800',
 	initialDisplay: 'inline',
 };

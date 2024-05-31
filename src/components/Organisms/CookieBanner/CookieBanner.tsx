@@ -117,9 +117,9 @@ const CookieBanner: React.FC<TCookieBanner> = (props) => {
 };
 
 CookieBanner.defaultProps = {
-	backgroundColor: 'grey',
+	backgroundColor: 'neutrals800',
 	buttonColor: 'primary',
-	cookieTextColor: 'primary',
+	cookieTextColor: 'neutrals800',
 	declineHoverColor: 'greyLight',
 	useCookieIcon: true,
 	styled: undefined,

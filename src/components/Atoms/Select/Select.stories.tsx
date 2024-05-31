@@ -7,14 +7,16 @@ import { Select as SelectOrigin } from './Select';
 
 import readme from './Select.md';
 
-const StyledOption = ({ children, ...props }) => (
-	<Option
-		padding={['t8', 'b8', 'l16', 'r16']}
-		{...props}
-	>
-		{children}
-	</Option>
-);
+function StyledOption({ children, ...props }) {
+	return (
+		<Option
+			padding={['t8', 'b8', 'l16', 'r16']}
+			{...props}
+		>
+			{children}
+		</Option>
+	);
+}
 
 export default {
 	title: 'Basic Elements/Select',
@@ -33,7 +35,7 @@ export default {
 const Template: ComponentStory<typeof Option> = ({ children, ...args }) => (
 	<Flex
 		padding={['t64', 'b64']}
-		backgroundColor="grey"
+		backgroundColor="primary"
 		justifyContent="center"
 	>
 		<SelectOrigin
