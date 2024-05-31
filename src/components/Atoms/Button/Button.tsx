@@ -6,7 +6,9 @@ import styled, { DefaultTheme, useTheme } from 'styled-components';
 import { PolymorphicComponent } from '../../../utils/polymorphic-component';
 
 // Props
-import { generalProps, GeneralProps } from '../../../theme/props';
+import {
+	flex, FlexProps, generalProps, GeneralProps,
+} from '../../../theme/props';
 
 // Components
 import { Flex } from '../Flex';
@@ -21,7 +23,7 @@ export type TButton = {
 	variant?: keyof DefaultTheme['buttonVariant']
 	trailingIcon?: keyof typeof icons;
 	leadingIcon?: keyof typeof icons;
-} & GeneralProps;
+} & FlexProps & GeneralProps;
 
 export const ButtonBase = styled('button').withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
@@ -30,6 +32,7 @@ export const ButtonBase = styled('button').withConfig({
     display: inline-block;
 	font-weight: bold;
 	${props => props.variant && props.theme.buttonVariant[props.variant]};
+	${flex};
 	${generalProps};
 `;
 
@@ -49,32 +52,33 @@ export const Button: ButtonComponent = (props) => {
 		<ButtonBase
 			{...{
 				size, variant, textAlign, ...buttonProps,
-			}} buttonColor={color}
+			}}
+			buttonColor={color}
+			gap={isTextLink ? '6px' : '4px'}
+			alignItems="center"
 		>
-			<Flex gap={isTextLink ? '6px' : '4px'} alignItems="center" h="100%">
-				{leadingIcon && !isTextLink && (
-					<Flex>
-						<Icon name={leadingIcon} size={calculateIconSize(buttonProps.size)} color={JSON.stringify(color)} />
+			{leadingIcon && !isTextLink && (
+				<Flex>
+					<Icon name={leadingIcon} size={calculateIconSize(buttonProps.size)} color={JSON.stringify(color)} />
+				</Flex>
+			)}
+			<Wrapper paddingX={calculatePaddingX(variant)} paddingBottom={calculatePaddingBottom(variant)}>
+				{children}
+			</Wrapper>
+			{trailingIcon && (
+				isTextLink ? (
+					<Flex w="24px" flexShrink="0">
+						<Icon
+							id="text-link-trailing-icon" name={trailingIcon} size="20"
+							color={JSON.stringify(color)}
+						/>
 					</Flex>
-				)}
-				<Wrapper paddingX={calculatePaddingX(variant)} paddingBottom={calculatePaddingBottom(variant)}>
-					{children}
-				</Wrapper>
-				{trailingIcon && (
-					isTextLink ? (
-						<Flex w="24px" flexShrink="0">
-							<Icon
-								id="text-link-trailing-icon" name={trailingIcon} size="20"
-								color={JSON.stringify(color)}
-							/>
-						</Flex>
-					) : (
-						<Flex>
-							<Icon name={trailingIcon} size={calculateIconSize(buttonProps.size)} color={JSON.stringify(color)} />
-						</Flex>
-					)
-				)}
-			</Flex>
+				) : (
+					<Flex>
+						<Icon name={trailingIcon} size={calculateIconSize(buttonProps.size)} color={JSON.stringify(color)} />
+					</Flex>
+				)
+			)}
 		</ButtonBase>
 	);
 };
