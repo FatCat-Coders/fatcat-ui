@@ -87,13 +87,13 @@ export const BUTTON_COLOR = {
 	primary: {
 		default: COLOR.primary200,
 		text: COLOR.neutrals50,
-		hover: COLOR.primary,
+		hover: COLOR.primary600,
 		hoverText: COLOR.neutrals50,
 	},
 	secondary: {
-		default: COLOR.primary,
-		text: COLOR.primary,
-		hover: COLOR.primary,
+		default: COLOR.primary600,
+		text: COLOR.primary600,
+		hover: COLOR.primary600,
 		hoverText: COLOR.neutrals50,
 	},
 	ghost: {
@@ -104,12 +104,12 @@ export const BUTTON_COLOR = {
 	},
 	white: {
 		default: COLOR.neutrals50,
-		text: COLOR.primary,
+		text: COLOR.primary600,
 		hover: darken(0.1, COLOR.neutrals50),
 		hoverText: COLOR.neutrals50,
 	},
 	underline: {
-		default: COLOR.primary,
-		text: COLOR.primary,
+		default: COLOR.primary600,
+		text: COLOR.primary600,
 	},
 };
