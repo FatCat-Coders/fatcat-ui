@@ -21,12 +21,12 @@ export const INPUT_VARIANT = {
 		outline: none;
 		border-radius: 4px;
 		border: 1px solid ${props => props.theme.color.grey200};
-		padding: ${props => props.theme.space.s14} ${props => props.theme.space.s16};
+		padding: ${props => props.theme.space.s1} ${props => props.theme.space.s4};
 		color: ${props => props.theme.textColor.neutrals800};
 		background: ${props => props.theme.textColor.white};
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
-		margin-bottom: ${props => props.theme.space.s20};
+		margin-bottom: ${props => props.theme.space.s5};
 
 		&:hover,
 		&:focus {
@@ -34,8 +34,8 @@ export const INPUT_VARIANT = {
 		}
 
 		${props => props.customInput && css`
-			padding-top: ${props.theme.space.s16};
-			padding-bottom: ${props.theme.space.s12};
+			padding-top: ${props.theme.space.s4};
+			padding-bottom: ${props.theme.space.s3};
 
 			& ~ label {
 				position: absolute;

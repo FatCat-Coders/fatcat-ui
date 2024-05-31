@@ -26,9 +26,8 @@ We can use theme default setup or we can add some custom spacing like this:
 
 ```jsx
 export const SPACE = {
-	s6: '6px',
-	s10: '10px',
-	s14: '14px',
+	s3: '12px',
+	s10: '40px',
 };
 
 export type SideSpace =

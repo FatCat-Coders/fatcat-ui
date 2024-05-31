@@ -2,16 +2,16 @@ import { css, DefaultTheme } from 'styled-components';
 
 export const BUTTON_SIZE = {
 	large: css`
-		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s40};
+		padding: ${props => props.theme.space.s4} ${props => props.theme.space.s10};
 	`,
 	medium: css`
-		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s24};
+		padding: ${props => props.theme.space.s4} ${props => props.theme.space.s6};
 	`,
 	small: css`
-		padding: ${props => props.theme.space.s8} ${props => props.theme.space.s24};
+		padding: ${props => props.theme.space.s2} ${props => props.theme.space.s6};
 	`,
 	nav: css`
-		padding: ${props => props.theme.space.s4} ${props => props.theme.space.s16};
+		padding: ${props => props.theme.space.s1} ${props => props.theme.space.s4};
 	`,
 };
 

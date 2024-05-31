@@ -13,7 +13,7 @@ export const UlList = styled.ul.withConfig({
 }) <TUlList>`
 	${props => props.variant !== 'noStyle' && css`
 		list-style: none;
-		padding-left: ${props => props.theme.space.s24};
+		padding-left: ${props => props.theme.space.s6};
 		> li {
 			display: flex;
 		}

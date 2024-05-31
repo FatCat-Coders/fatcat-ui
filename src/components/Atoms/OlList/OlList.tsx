@@ -15,7 +15,7 @@ export const OlList = styled.ol.withConfig({
 	${props => props.variant !== 'noStyle' && css`
 		list-style: none;
 		counter-reset: item;
-		padding-left: ${props => props.theme.space.s24};
+		padding-left: ${props => props.theme.space.s6};
 
 		> li {
 			display: flex;

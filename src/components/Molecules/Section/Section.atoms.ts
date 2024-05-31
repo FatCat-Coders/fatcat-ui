@@ -71,15 +71,15 @@ export const SectionOuterWrapper = styled.section.withConfig({
 
 	${props => (props.theme.sectionLayout ? props.theme.sectionLayout
 		: css`
-			padding: 0 ${props => props.theme.space.s40};
+			padding: 0 ${props => props.theme.space.s10};
 
 			${props.theme.media.largeTablet} {
-				padding-left: ${props.theme.space.s32};
-				padding-right: ${props.theme.space.s32};
+				padding-left: ${props.theme.space.s8};
+				padding-right: ${props.theme.space.s8};
 			}
 
 			${props.theme.media.mobile} {
-				padding: 0 ${props.theme.space.s20};
+				padding: 0 ${props.theme.space.s5};
 			}
 		`)}
 

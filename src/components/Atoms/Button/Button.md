@@ -66,10 +66,10 @@ export const BUTTON_COLOR = {
 ```jsx
 export const BUTTON_SIZE = {
 	large: css`
-		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s40};
+		padding: ${props => props.theme.space.s4} ${props => props.theme.space.s10};
 	`,
 	medium: css`
-		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s24};
+		padding: ${props => props.theme.space.s4} ${props => props.theme.space.6};
 	`,
 };
 ```
