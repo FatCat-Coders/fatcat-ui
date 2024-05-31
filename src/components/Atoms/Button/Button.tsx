@@ -54,6 +54,7 @@ export const Button: ButtonComponent = (props) => {
 				size, variant, textAlign, ...buttonProps,
 			}}
 			buttonColor={color}
+			display="flex"
 			gap={isTextLink ? '6px' : '4px'}
 			alignItems="center"
 		>
@@ -69,7 +70,7 @@ export const Button: ButtonComponent = (props) => {
 				isTextLink ? (
 					<Flex w="24px" flexShrink="0">
 						<Icon
-							id="text-link-trailing-icon" name={trailingIcon} size="20"
+							 name={trailingIcon} size="20"
 							color={JSON.stringify(color)}
 						/>
 					</Flex>

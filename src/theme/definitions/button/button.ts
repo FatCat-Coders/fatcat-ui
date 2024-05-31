@@ -63,8 +63,6 @@ export const BUTTON_SIZE = {
 	`,
 };
 
-const underlineHeight = '2px';
-
 const buttonBase = ({ size, theme, buttonColor }: { size: keyof DefaultTheme['buttonSize'], theme: DefaultTheme, buttonColor: keyof DefaultTheme['buttonColor'], }) => css`
  	${props => size && props.theme.buttonSize[size]};
 	padding-left: 20px;
@@ -156,10 +154,11 @@ export const BUTTON_VARIANT = {
             color: ${props => props.theme.buttonColor[props.buttonColor].pressed.text};
         }
        
-        &:hover  #text-link-trailing-icon, &:active  #text-link-trailing-icon, &:focus-visible  #text-link-trailing-icon  {
+		&:hover :last-of-type svg, &:active :last-of-type svg ,&:focus-visible :last-of-type svg {
 			transform: translateX(4px);
   			transition: transform 0.5s ease;
-        } 
+		}
+
 		&:focus-visible{
 			border-radius: 2px;
 		}
@@ -176,7 +175,7 @@ export const BUTTON_VARIANT = {
             content: '';
             display: block;
             width: 0;
-            height: ${underlineHeight};
+            height: 2px;
             background:  ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
             transition: width 0.2s;
         }
