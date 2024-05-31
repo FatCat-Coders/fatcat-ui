@@ -185,20 +185,8 @@ export const BUTTON_VARIANT = {
 			background:  ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
         }
 		&:active::after {
+			width: 100%;
            background:  ${props => props.theme.buttonColor[props.buttonColor].pressed.underLineColor};
-        }
-		&:focus:not(:focus-visible)::after {
-            width: 0;
-        }
-        &:focus-visible {
-            &:before {
-                content: unset;
-            }
-        }
-        &:focus {
-            &:before {
-                content: unset;
-            }
         }
         &:focus-visible {
             box-shadow: none;
