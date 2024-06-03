@@ -10,3 +10,4 @@ export * from './lists/ulList';
 export * from './media';
 export * from './space/space';
 export * from './table/table';
+export * from './section/section';
