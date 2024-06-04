@@ -72,6 +72,6 @@ Flex.parameters = {
 };
 Flex.args = {
 	direction: 'column',
-	gap: 'g20',
+	gap: 's5',
 	alignItems: 'center',
 };

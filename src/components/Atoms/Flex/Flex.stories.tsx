@@ -76,6 +76,6 @@ Flex.parameters = {
 
 Flex.args = {
 	items: '4',
-	gap: 'g8 g12',
+	gap: 's2 s3',
 	wrap: true,
 };
