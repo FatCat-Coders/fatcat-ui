@@ -81,7 +81,7 @@ const Banner: React.FC<TBanner> = (props) => {
 				</Flex>
 				<Button
 					variant={buttonVariant}
-					buttonColor={buttonColor}
+					color={buttonColor}
 				>
 					{buttonContent}
 				</Button>

@@ -84,7 +84,12 @@ export const BUTTON_SIZE = {
 	},
 };
 
-const buttonBase = ({ size, theme, buttonColor }: { size: keyof DefaultTheme['buttonSize'], theme: DefaultTheme, buttonColor: keyof DefaultTheme['buttonColor'], }) => css`
+export type TButtonBase = {
+	color: keyof DefaultTheme['buttonColor'];
+	size: keyof DefaultTheme['buttonSize'];
+}
+
+const buttonBase = ({ size, color }: TButtonBase) => css`
  	${props => size && props.theme.buttonSize[size].styles};
 	padding-left: 20px;
 	padding-right: 20px;
@@ -92,22 +97,22 @@ const buttonBase = ({ size, theme, buttonColor }: { size: keyof DefaultTheme['bu
 	display: flex;
 	gap: 4px;
 	align-items: center;
-	background: ${props => props.theme.buttonColor[buttonColor].default.background};
-	color: ${props => props.theme.buttonColor[buttonColor].default.text};
+	background: ${props => props.theme.buttonColor[color].default.background};
+	color: ${props => props.theme.buttonColor[color].default.text};
 	transition: background 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out;
 
 	&:hover:enabled {
-            background: ${props => props.theme.buttonColor[buttonColor].hover.background};
-            color: ${props => props.theme.buttonColor[buttonColor].hover.text};
+            background: ${props => props.theme.buttonColor[color].hover.background};
+            color: ${props => props.theme.buttonColor[color].hover.text};
     }
 	&:active:enabled {
-		background: ${props => props.theme.buttonColor[buttonColor].pressed.background};
-		color: ${props => props.theme.buttonColor[buttonColor].pressed.text};
+		background: ${props => props.theme.buttonColor[color].pressed.background};
+		color: ${props => props.theme.buttonColor[color].pressed.text};
 	}
 	&:focus-visible {
-		background: ${props => props.theme.buttonColor[buttonColor].focus.background};
-		color: ${props => props.theme.buttonColor[buttonColor].focus.text};
-		box-shadow: 0 0 0 4px ${props => props.theme.buttonColor[buttonColor].focus.ringColor};
+		background: ${props => props.theme.buttonColor[color].focus.background};
+		color: ${props => props.theme.buttonColor[color].focus.text};
+		box-shadow: 0 0 0 4px ${props => props.theme.buttonColor[color].focus.ringColor};
 
 		&:before {
 			display: none;
@@ -124,7 +129,7 @@ const textPaddingBottom = 's2';
 
 export const BUTTON_VARIANT = {
 	primary: {
-		styles: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
+		styles: css<TButtonBase>`
 			${props => buttonBase(props)};
 		`,
 		textPadding: {
@@ -133,7 +138,7 @@ export const BUTTON_VARIANT = {
 		},
 	},
 	secondary: {
-		styles: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`  
+		styles: css<TButtonBase>`  
 			${props => buttonBase(props)};
 		`,
 		textPadding: {
@@ -142,7 +147,7 @@ export const BUTTON_VARIANT = {
 		},
 	},
 	ghost: {
-		styles: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
+		styles: css<TButtonBase>`
 			${props => buttonBase(props)};
 		`,
 		textPadding: {
@@ -151,33 +156,18 @@ export const BUTTON_VARIANT = {
 		},
 	},
 	outline: {
-		styles: css<{
-			buttonColor: keyof DefaultTheme['buttonColor'];
-			size: keyof DefaultTheme['buttonSize'];
-		}>`
+		styles: css<TButtonBase>`
 			${props => buttonBase(props)};
-			border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].default.text};
+			border: 2px solid ${props => props.theme.buttonColor[props.color].default.text};
 			&:hover:enabled {
-				border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].hover.text};
+				border: 2px solid ${props => props.theme.buttonColor[props.color].hover.text};
 			}
 			&:active:enabled {
-				border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].pressed.text};
+				border: 2px solid ${props => props.theme.buttonColor[props.color].pressed.text};
 			}
 			&:focus-visible {
-				border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].focus.text};
+				border: 2px solid ${props => props.theme.buttonColor[props.color].focus.text};
 			}
-		`,
-		textPadding: {
-			x: textPaddingX,
-			bottom: textPaddingBottom,
-		},
-	},
-	feedback: {
-		styles: css<{
-			buttonColor: keyof DefaultTheme['buttonColor'];
-			size: keyof DefaultTheme['buttonSize'];
-		}>`
-			${props => buttonBase(props)};
 		`,
 		textPadding: {
 			x: textPaddingX,
@@ -185,10 +175,7 @@ export const BUTTON_VARIANT = {
 		},
 	},
 	textLink: {
-		styles: css<{
-			buttonColor: keyof DefaultTheme['buttonColor'];
-			size: keyof DefaultTheme['buttonSize'];
-		}>`
+		styles: css<TButtonBase>`
 			${props => buttonBase(props)}; 
 			padding: 0px;
 			padding-left: 2px;
@@ -200,17 +187,17 @@ export const BUTTON_VARIANT = {
 				display: block;
 				width: 0;
 				height: 1px;
-				background: ${props => props.theme.buttonColor[props.buttonColor].default.text};
+				background: ${props => props.theme.buttonColor[props.color].default.text};
 				transition: width 0.2s;
 			}
 			&:hover::after, &:active::after, &:focus-visible::after{
 				width: 100%;
 			}
 			&:hover {
-				color: ${props => props.theme.buttonColor[props.buttonColor].hover.text};
+				color: ${props => props.theme.buttonColor[props.color].hover.text};
 			}
 			&:active {
-				color: ${props => props.theme.buttonColor[props.buttonColor].pressed.text};
+				color: ${props => props.theme.buttonColor[props.color].pressed.text};
 			}
 		
 			&:hover :last-of-type svg, &:active :last-of-type svg ,&:focus-visible :last-of-type svg {
@@ -229,10 +216,7 @@ export const BUTTON_VARIANT = {
 		},
 	},
 	navLink: {
-		styles: css<{
-			buttonColor: keyof DefaultTheme['buttonColor'];
-			size: keyof DefaultTheme['buttonSize'];
-		}>`
+		styles: css<TButtonBase>`
 			${props => buttonBase(props)}; 
 			padding: 0px;
 
@@ -241,23 +225,23 @@ export const BUTTON_VARIANT = {
 				display: block;
 				width: 0;
 				height: 2px;
-				background:  ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
+				background:  ${props => props.theme.buttonColor[props.color].hover.underLineColor};
 				transition: width 0.2s;
 			}
 			&:hover::after {
 				width: 100%;
-				background:  ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
+				background:  ${props => props.theme.buttonColor[props.color].hover.underLineColor};
 			}
 			&:active::after {
 				width: 100%;
-			background:  ${props => props.theme.buttonColor[props.buttonColor].pressed.underLineColor};
+			background:  ${props => props.theme.buttonColor[props.color].pressed.underLineColor};
 			}
 			&:focus-visible {
 				box-shadow: none;
 			}
 			&:focus-visible::after {
 				width: 100%;
-				background: ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
+				background: ${props => props.theme.buttonColor[props.color].hover.underLineColor};
 			}
 		`,
 		textPadding: {

@@ -23,7 +23,7 @@ const meta: Meta<typeof ButtonOrigin> = {
 			description: 'Text inside the button (Just for demo purposes)',
 			type: 'string',
 		},
-		buttonColor: {
+		color: {
 			control: 'radio',
 			options: Object.keys(color),
 			description: `List of button colors: ${formatObjectKeys(color)}`,
@@ -82,9 +82,9 @@ const meta: Meta<typeof ButtonOrigin> = {
 export default meta;
 type Story = StoryObj<typeof ButtonOrigin>;
 
-export const Button:Story = {
+export const Button: Story = {
 	controls:
-		{ include: ['variant', 'Content', 'buttonColor', 'disabled', 'size', 'leadingIcon', 'trailingIcon'] },
+		{ include: ['variant', 'Content', 'color', 'disabled', 'size', 'leadingIcon', 'trailingIcon'] },
 	args: {
 		size: 'large',
 		variant: 'primary',
