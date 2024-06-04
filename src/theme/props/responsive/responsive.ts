@@ -12,7 +12,9 @@ type TResponsiveObj = {
 }
 export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<TResponsiveObj>)[];
 
-export type ResponsiveProps = {[key in (keyof DefaultTheme['media'] | keyof DefaultTheme['mediaMobile'])]?: ResponsiveTypePropCheck};
+export type ResponsiveProps = {
+	[key in (keyof DefaultTheme['media'] | keyof DefaultTheme['mediaMobile'])]?: ResponsiveTypePropCheck
+};
 
 export const responsive = css<ResponsiveProps>`
 	${props => Object.keys(props.theme.media).reduce((acc, key) => {

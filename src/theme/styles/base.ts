@@ -9,7 +9,7 @@ export default css`
 
 	html, body {
 		line-height: 1;
-		color: ${props => props.theme.color.primary};
+		color: ${props => props.theme.color.primary600};
 		font-family: ${props => props.theme.fontFamily.main};
 	}
 

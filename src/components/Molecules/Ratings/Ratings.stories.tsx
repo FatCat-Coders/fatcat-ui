@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Flex } from '../../Atoms/Flex';
 
-import { COLOR, BACKGROUND_COLOR, GAP } from '../../../theme/definitions';
+import { COLOR, GAP } from '../../../theme/definitions';
 import { default as RatingsOrigin } from './Ratings'; // eslint-disable-line
 
 import { showToastMsg } from '../../../../stories/helpers';
@@ -53,7 +53,7 @@ export default {
 		},
 		starColor: {
 			control: 'select',
-			options: Object.keys(BACKGROUND_COLOR),
+			options: Object.keys(COLOR),
 			description: 'Color of star defined in theme background color',
 			type: { name: 'string' },
 			table: {
@@ -62,7 +62,7 @@ export default {
 		},
 		backgroundColor: {
 			control: 'select',
-			options: Object.keys(BACKGROUND_COLOR),
+			options: Object.keys(COLOR),
 			description: 'Background defined in theme background color',
 			type: { name: 'string' },
 			table: {
@@ -121,10 +121,10 @@ Ratings.parameters = {
 };
 
 Ratings.args = {
-	backgroundColor: 'white',
+	backgroundColor: 'neutrals50',
 	maxRating: 5,
 	rating: 1.4,
 	size: '24px',
-	starBorder: 'grey',
-	starColor: 'yellow',
+	starBorder: 'neutrals700',
+	starColor: 'yellow700',
 };

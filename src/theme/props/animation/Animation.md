@@ -70,7 +70,7 @@ For our example we adding `fadeInRight25` animation to animate element from righ
 	animation={['fadeInRight25', '2s linear 2s infinite']}
 	w="200px"
 	h="200px"
-	backgroundColor="yellow"
+	backgroundColor="primary600"
 />
 ```
 

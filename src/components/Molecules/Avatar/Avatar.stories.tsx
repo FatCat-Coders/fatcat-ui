@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Flex } from '../../Atoms/Flex';
 
-import { TEXT_COLOR } from '../../../theme/definitions';
+import { COLOR } from '../../../theme/definitions';
 import { sizes } from './Avatar';
 import { formatObjectKeys } from '../../../../stories/helpers';
 import { default as AvatarOrigin } from './Avatar'; // eslint-disable-line
@@ -65,8 +65,8 @@ export default {
 		},
 		textColor: {
 			control: 'select',
-			options: Object.keys(TEXT_COLOR),
-			description: `List of text colors: ${formatObjectKeys(TEXT_COLOR)}`,
+			options: Object.keys(COLOR),
+			description: `List of text colors: ${formatObjectKeys(COLOR)}`,
 			type: 'string',
 		},
 		size: {

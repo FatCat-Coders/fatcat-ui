@@ -4,11 +4,11 @@ import { Paragraph } from '../../../components/Atoms/Paragraph';
 import { formatObjectKeys } from '../../../../stories/helpers';
 
 import {
-	TEXT_COLOR,
 	LINE_HEIGHT,
 	FONT_SIZE,
 	FONT_WEIGHT,
 	FONT_FAMILY,
+	COLOR,
 } from '../../../theme/definitions';
 
 import {
@@ -23,8 +23,8 @@ export default {
 		textAlign: { control: 'text', description: 'String with css property', type: 'string' },
 		textColor: {
 			control: 'select',
-			options: Object.keys(TEXT_COLOR),
-			description: `List of text colors: ${formatObjectKeys(TEXT_COLOR)}`,
+			options: Object.keys(COLOR),
+			description: `List of text colors: ${formatObjectKeys(COLOR)}`,
 			type: 'string',
 		},
 		textSize: {
@@ -89,14 +89,16 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<Paragraph
-		{...args}
-	>
-		Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.
-		As much mud in the streets as if the waters had but newly retired from the face of the earth.
-	</Paragraph>
-);
+function Template({ children, ...args }) {
+	return (
+		<Paragraph
+			{...args}
+		>
+			Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.
+			As much mud in the streets as if the waters had but newly retired from the face of the earth.
+		</Paragraph>
+	);
+}
 
 export const Text = Template.bind({});
 
@@ -127,7 +129,7 @@ Text.parameters = {
 };
 
 Text.args = {
-	textColor: 'black',
+	textColor: 'neutrals800',
 	textAlign: 'center',
 	fontStyle: 'italic',
 };

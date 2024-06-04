@@ -77,7 +77,7 @@ import { OlList } from 'fatcat-ui-library/components/Atoms/OlList';
 and then simply use it in your code.
 
 ```jsx
-<OlList bulletColor="black">
+<OlList bulletColor="neutrals800">
 	<Text as="li">item 1</Text>
 	<Text as="li">item 2</Text>
 	<Text as="li">item 3</Text>

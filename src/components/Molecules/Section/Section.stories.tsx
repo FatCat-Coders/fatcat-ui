@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { default as SectionOrigin } from './Section'; // eslint-disable-line
+import SectionOrigin from './Section'; // eslint-disable-line
 
-import { SECTION_WIDTH } from '../../../theme/definitions';
+import { SECTION_VARIANT } from '../../../theme/definitions';
 import { formatObjectKeys } from '../../../../stories/helpers';
 
 import readme from './Section.md';
@@ -12,10 +12,10 @@ export default {
 	title: 'Basic Elements/Section',
 	component: SectionOrigin,
 	argTypes: {
-		w: {
+		variant: {
 			control: 'select',
-			options: Object.keys(SECTION_WIDTH),
-			description: `List of section widths: ${formatObjectKeys(SECTION_WIDTH)}`,
+			options: Object.keys(SECTION_VARIANT),
+			description: `List of section variants: ${formatObjectKeys(SECTION_VARIANT)}`,
 			table: {
 				type: { summary: null },
 			},
@@ -30,6 +30,7 @@ export default {
 	},
 } as ComponentMeta<typeof Section>;
 
+// eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof SectionOrigin> = ({ children, ...args }) => (
 	<SectionOrigin {...args}>
 		{children}
@@ -41,13 +42,12 @@ export const Section = Template.bind({});
 Section.parameters = {
 	controls: {
 		include: [
-			'children',
-			'w',
+			'variant',
 		],
 	},
 };
 
 Section.args = {
 	children: 'SectionOrigin',
-	w: 'normal',
+	variant: 'default',
 };

@@ -40,7 +40,7 @@ export const Input = React.forwardRef<HTMLInputElement, TInput>((props, ref) => 
 				<Text
 					role="alert"
 					display="block"
-					textColor="warning"
+					textColor="warningMedium"
 					position="absolute"
 					bottom="0px"
 					lineHeight="s100"

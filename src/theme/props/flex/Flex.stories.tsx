@@ -38,17 +38,17 @@ function Template({ children, ...args }) {
 			<Wrapper
 				h="100px"
 				w="100px"
-				backgroundColor="yellow"
+				backgroundColor="primary600"
 			/>
 			<Wrapper
 				h="100px"
 				w="400px"
-				backgroundColor="yellow"
+				backgroundColor="primary600"
 			/>
 			<Wrapper
 				h="100px"
 				w="200px"
-				backgroundColor="yellow"
+				backgroundColor="primary600"
 			/>
 		</FlexOrigin>
 	);

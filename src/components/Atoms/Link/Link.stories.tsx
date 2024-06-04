@@ -7,7 +7,7 @@ import { formatObjectKeys } from '../../../../stories/helpers';
 import { LINK_VARIANT } from '../../../theme/definitions';
 
 import readme from './Link.md';
-import { COLOR, LINK_COLOR } from '../../../theme/definitions/color/color';
+import { COLOR } from '../../../theme/definitions/color/color';
 
 export default {
 	title: 'Basic Elements/Link',
@@ -55,7 +55,7 @@ export default {
 		},
 		linkColor: {
 			control: 'select',
-			options: Object.keys(LINK_COLOR),
+			options: Object.keys(COLOR),
 			description: 'The link color variant',
 			table: {
 				type: { summary: null },

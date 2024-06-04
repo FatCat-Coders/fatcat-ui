@@ -20,7 +20,7 @@ Property that adds to the component are:
 <Wrapper
 	h="100px"
 	w="100px"
-	backgroundColor="yellow"
+	backgroundColor="primary600"
 	border="4px solid black"
 	borderRadius="50%"
 	boxShadow="0 0 10px black"

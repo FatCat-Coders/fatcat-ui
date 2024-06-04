@@ -31,7 +31,7 @@ const LINK_VARIANT = {
 		text-decoration: underline;
 	`,
 	disabled: css`
-		color: ${props => props.theme.color.grey};
+		color: ${props => props.theme.color.neutrals500};
 		cursor: not-allowed;
 	`,
 }

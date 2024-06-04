@@ -4,7 +4,6 @@ import { Wrapper } from '../../Atoms/Wrapper';
 
 import {
 	COLOR,
-	BACKGROUND_COLOR,
 	GAP,
 } from '../../../theme/definitions';
 import { default as BannerOrigin } from './Banner'; // eslint-disable-line
@@ -37,8 +36,8 @@ export default {
 		backgroundColorHex: { control: 'color', description: 'String with css property', type: 'string' },
 		backgroundColor: {
 			control: 'select',
-			options: Object.keys(BACKGROUND_COLOR),
-			description: `List of colors: ${formatObjectKeys(BACKGROUND_COLOR)}`,
+			options: Object.keys(COLOR),
+			description: `List of colors: ${formatObjectKeys(COLOR)}`,
 			type: 'string',
 		},
 		backgroundColorOpacity: { control: 'number', description: 'The number for RGBA opacity applied on background-color', type: 'number' },
@@ -112,7 +111,7 @@ Banner.parameters = {
 
 Banner.args = {
 	backgroundImage: undefined,
-	backgroundColor: 'primary',
+	backgroundColor: 'primary600',
 	backgroundColorHex: undefined,
 	backgroundColorOpacity: undefined,
 	backgroundRepeat: undefined,

@@ -53,7 +53,7 @@ const Template: ComponentStory<typeof FlexOrigin> = ({ children, items, ...args 
 					key={index} // eslint-disable-line
 					h="100px"
 					w={randomWidth}
-					backgroundColor="yellow"
+					backgroundColor="primary600"
 				>
 					{randomWidth}
 				</Center>
