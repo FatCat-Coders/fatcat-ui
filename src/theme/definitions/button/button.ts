@@ -29,42 +29,63 @@ const ui3Medium = css`
 `;
 
 export const BUTTON_SIZE = {
-	extraLarge: css`
-		height: 56px;
-		border-radius: 8px;
-		${ui1Medium}
-	`,
-	large: css`
-		height: 44px;
-		border-radius: 6px;
-		${ui2Medium}
-	`,
-	medium: css`
-		height: 40px;
-		border-radius: 6px;
-		${ui2Medium}
-	`,
-	small: css`
-		height: 36px;
-		border-radius: 6px;
-		${ui3Medium}
-	`,
-	navLink: css`
-		height: 40px;
-		${ui2Medium}
-	`,
-	textLink: css`
-		height: 24px;
-		${ui1Medium}
-	`,
-	textLinkSmall: css`
-		height: 24px;
-		${ui2Medium}
-	`,
+	extraLarge: {
+		styles: css`
+			height: 56px;
+			border-radius: 8px;
+			${ui1Medium}
+		`,
+		iconSize: 24,
+	},
+	large: {
+		styles: css`
+			height: 44px;
+			border-radius: 6px;
+			${ui2Medium}
+		`,
+		iconSize: 24,
+	},
+	medium: {
+		styles: css`
+			height: 40px;
+			border-radius: 6px;
+			${ui2Medium}
+		`,
+		iconSize: 20,
+	},
+	small: {
+		styles: css`
+			height: 36px;
+			border-radius: 6px;
+			${ui3Medium}
+		`,
+		iconSize: 20,
+	},
+	navLink: {
+		styles: css`
+			height: 40px;
+			${ui2Medium}
+		`,
+		iconSize: 20,
+	},
+	textLink: {
+		styles: css`
+			height: 24px;
+			${ui1Medium}
+		`,
+		iconSize: 20,
+	},
+	textLinkSmall: {
+		styles: css`
+			height: 24px;
+			${ui2Medium}
+		`,
+		iconSize: 20,
+	},
 };
 
 const buttonBase = ({ size, theme, buttonColor }: { size: keyof DefaultTheme['buttonSize'], theme: DefaultTheme, buttonColor: keyof DefaultTheme['buttonColor'], }) => css`
- 	${props => size && props.theme.buttonSize[size]};
+ 	${props => size && props.theme.buttonSize[size].styles};
 	padding-left: 20px;
 	padding-right: 20px;
     border-radius: 6px;
@@ -98,106 +119,150 @@ const buttonBase = ({ size, theme, buttonColor }: { size: keyof DefaultTheme['bu
 	}
 `;
 
+const textPaddingX = 's4';
+const textPaddingBottom = 's2';
+
 export const BUTTON_VARIANT = {
-	primary: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
-		${props => buttonBase(props)};
-	`,
-	secondary: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`  
-		${props => buttonBase(props)};
-	`,
-	ghost: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
-		${props => buttonBase(props)};
-	`,
-	outline: css<{
-		buttonColor: keyof DefaultTheme['buttonColor'];
-		size: keyof DefaultTheme['buttonSize'];
-	}>`
-		${props => buttonBase(props)};
-		border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].default.text};
-		&:hover:enabled {
-			border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].hover.text};
-		}
-		&:active:enabled {
-			border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].pressed.text};
-		}
-		&:focus-visible {
-			border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].focus.text};
-		}
-	`,
-	feedback: css<{
-        buttonColor: keyof DefaultTheme['buttonColor'];
-        size: keyof DefaultTheme['buttonSize'];
-    }>`
-		${props => buttonBase(props)};
-    `,
-	textLink: css<{
-        buttonColor: keyof DefaultTheme['buttonColor'];
-        size: keyof DefaultTheme['buttonSize'];
-    }>`
-		${props => buttonBase(props)}; 
-        padding: 0px;
-		padding-left: 2px;
-		padding-right: 2px;
-		gap: 6px;
+	primary: {
+		styles: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
+			${props => buttonBase(props)};
+		`,
+		textPadding: {
+			x: textPaddingX,
+			bottom: textPaddingBottom,
+		},
+	},
+	secondary: {
+		styles: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`  
+			${props => buttonBase(props)};
+		`,
+		textPadding: {
+			x: textPaddingX,
+			bottom: textPaddingBottom,
+		},
+	},
+	ghost: {
+		styles: css<{ buttonColor: keyof DefaultTheme['buttonColor'], size: keyof DefaultTheme['buttonSize'] }>`
+			${props => buttonBase(props)};
+		`,
+		textPadding: {
+			x: textPaddingX,
+			bottom: textPaddingBottom,
+		},
+	},
+	outline: {
+		styles: css<{
+			buttonColor: keyof DefaultTheme['buttonColor'];
+			size: keyof DefaultTheme['buttonSize'];
+		}>`
+			${props => buttonBase(props)};
+			border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].default.text};
+			&:hover:enabled {
+				border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].hover.text};
+			}
+			&:active:enabled {
+				border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].pressed.text};
+			}
+			&:focus-visible {
+				border: 2px solid ${props => props.theme.buttonColor[props.buttonColor].focus.text};
+			}
+		`,
+		textPadding: {
+			x: textPaddingX,
+			bottom: textPaddingBottom,
+		},
+	},
+	feedback: {
+		styles: css<{
+			buttonColor: keyof DefaultTheme['buttonColor'];
+			size: keyof DefaultTheme['buttonSize'];
+		}>`
+			${props => buttonBase(props)};
+		`,
+		textPadding: {
+			x: textPaddingX,
+			bottom: textPaddingBottom,
+		},
+	},
+	textLink: {
+		styles: css<{
+			buttonColor: keyof DefaultTheme['buttonColor'];
+			size: keyof DefaultTheme['buttonSize'];
+		}>`
+			${props => buttonBase(props)}; 
+			padding: 0px;
+			padding-left: 2px;
+			padding-right: 2px;
+			gap: 6px;
 
-        &::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 1px;
-            background: ${props => props.theme.buttonColor[props.buttonColor].default.text};
-            transition: width 0.2s;
-        }
-		&:hover::after, &:active::after, &:focus-visible::after{
-            width: 100%;
-        }
-        &:hover {
-            color: ${props => props.theme.buttonColor[props.buttonColor].hover.text};
-        }
-        &:active {
-            color: ${props => props.theme.buttonColor[props.buttonColor].pressed.text};
-        }
-       
-		&:hover :last-of-type svg, &:active :last-of-type svg ,&:focus-visible :last-of-type svg {
-			transform: translateX(4px);
-  			transition: transform 0.5s ease;
-		}
+			&::after {
+				content: '';
+				display: block;
+				width: 0;
+				height: 1px;
+				background: ${props => props.theme.buttonColor[props.buttonColor].default.text};
+				transition: width 0.2s;
+			}
+			&:hover::after, &:active::after, &:focus-visible::after{
+				width: 100%;
+			}
+			&:hover {
+				color: ${props => props.theme.buttonColor[props.buttonColor].hover.text};
+			}
+			&:active {
+				color: ${props => props.theme.buttonColor[props.buttonColor].pressed.text};
+			}
+		
+			&:hover :last-of-type svg, &:active :last-of-type svg ,&:focus-visible :last-of-type svg {
+				transform: translateX(4px);
+				transition: transform 0.5s ease;
+			}
 
-		&:focus-visible{
-			border-radius: 2px;
-		}
-  
-    `,
-	navLink: css<{
-        buttonColor: keyof DefaultTheme['buttonColor'];
-        size: keyof DefaultTheme['buttonSize'];
-    }>`
-		${props => buttonBase(props)}; 
-		padding: 0px;
+			&:focus-visible{
+				border-radius: 2px;
+			}
+	
+		`,
+		textPadding: {
+			x: 's0',
+			bottom: 's0',
+		},
+	},
+	navLink: {
+		styles: css<{
+			buttonColor: keyof DefaultTheme['buttonColor'];
+			size: keyof DefaultTheme['buttonSize'];
+		}>`
+			${props => buttonBase(props)}; 
+			padding: 0px;
 
-        &::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background:  ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
-            transition: width 0.2s;
-        }
-        &:hover::after {
-            width: 100%;
-			background:  ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
-        }
-		&:active::after {
-			width: 100%;
-           background:  ${props => props.theme.buttonColor[props.buttonColor].pressed.underLineColor};
-        }
-        &:focus-visible {
-            box-shadow: none;
-        }
-		&:focus-visible::after {
-			width: 100%;
-			background: ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
-        }
-    `,
-	noStyle: css``,
+			&::after {
+				content: '';
+				display: block;
+				width: 0;
+				height: 2px;
+				background:  ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
+				transition: width 0.2s;
+			}
+			&:hover::after {
+				width: 100%;
+				background:  ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
+			}
+			&:active::after {
+				width: 100%;
+			background:  ${props => props.theme.buttonColor[props.buttonColor].pressed.underLineColor};
+			}
+			&:focus-visible {
+				box-shadow: none;
+			}
+			&:focus-visible::after {
+				width: 100%;
+				background: ${props => props.theme.buttonColor[props.buttonColor].hover.underLineColor};
+			}
+		`,
+		textPadding: {
+			x: 's2',
+			bottom: 's0',
+		},
+	},
 };

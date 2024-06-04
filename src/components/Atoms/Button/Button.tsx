@@ -39,7 +39,7 @@ export const ButtonBase = styled('button').withConfig({
 				opacity: 1;
 			}
     `}
-	${props => props.variant && props.theme.buttonVariant[props.variant]};
+	${props => props.variant && props.theme.buttonVariant[props.variant].styles};
 	${flex};
 	${generalProps};
 `;
@@ -77,16 +77,16 @@ export const Button: ButtonComponent = (props) => {
 				<>
 					{leadingIcon && !isTextLink && (
 						<Icon
-							name={leadingIcon} size={calculateIconSize(buttonProps.size)} color={JSON.stringify(color)}
+							name={leadingIcon} size={theme.buttonSize[size].iconSize} color={JSON.stringify(color)}
 						/>
 					)}
-					<Wrapper paddingX={calculatePaddingX(variant)} paddingBottom={calculatePaddingBottom(variant)}>
+					<Wrapper paddingX={theme.buttonVariant[variant].textPadding.x} paddingBottom={theme.buttonVariant[variant].textPadding.bottom}>
 						{children}
 					</Wrapper>
 					{trailingIcon && (
 						<Flex w={isTextLink ? '24px' : 'fit-content'} flexShrink="0">
 							<Icon
-								name={trailingIcon} size={calculateIconSize(buttonProps.size)}
+								name={trailingIcon} size={theme.buttonSize[size].iconSize}
 								color={JSON.stringify(color)}
 							/>
 						</Flex>
