@@ -53,7 +53,7 @@ export const Button: ButtonComponent = (props) => {
 		children, trailingIcon, leadingIcon, isLoading = false, buttonColor = 'primary', variant = 'primary', size = 'large', textAlign = 'center', ...buttonProps
 	} = props;
 	const theme = useTheme();
-	const color = (!buttonColor && theme.buttonColor[buttonProps.variant]) ? buttonProps.variant : buttonColor;
+	const color = (!buttonColor && theme.buttonColor[variant]) ? variant : buttonColor;
 	const isTextLink = variant === 'textLink';
 
 	return (
