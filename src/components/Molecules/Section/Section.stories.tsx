@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import SectionOrigin from './Section'; // eslint-disable-line
+import {Section as SectionOrigin} from './Section'; // eslint-disable-line
 
 import { SECTION_VARIANT } from '../../../theme/definitions';
 import { formatObjectKeys } from '../../../../stories/helpers';

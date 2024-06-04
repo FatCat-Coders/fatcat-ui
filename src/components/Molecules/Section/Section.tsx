@@ -16,7 +16,7 @@ export type TSection = PropsWithChildren<
 	}
 >
 
-function Section(props: TSection) {
+export function Section(props: TSection) {
 	const {
 		contentProps,
 		children,
@@ -40,5 +40,3 @@ function Section(props: TSection) {
 		</Container>
 	);
 }
-
-export default Section;

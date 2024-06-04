@@ -14,9 +14,6 @@
   "bugs": {
     "url": "https://github.com/FatCat-Coders/fatcat-ui/issues"
   },
-  "exports": {
-    ".": "./src/index.ts"
-  },
   "scripts": {
     "update-packages": "ts-node ./tools/src/update-packages.ts",
     "gen-changelog": "npx changeset && npx changeset version",
