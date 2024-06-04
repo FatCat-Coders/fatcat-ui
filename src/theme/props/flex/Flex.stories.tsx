@@ -26,25 +26,27 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<FlexOrigin {...args}>
-		<Wrapper
-			h="100px"
-			w="100px"
-			backgroundColor="yellow"
-		/>
-		<Wrapper
-			h="100px"
-			w="400px"
-			backgroundColor="yellow"
-		/>
-		<Wrapper
-			h="100px"
-			w="200px"
-			backgroundColor="yellow"
-		/>
-	</FlexOrigin>
-);
+function Template({ children, ...args }) {
+	return (
+		<FlexOrigin {...args}>
+			<Wrapper
+				h="100px"
+				w="100px"
+				backgroundColor="primary600"
+			/>
+			<Wrapper
+				h="100px"
+				w="400px"
+				backgroundColor="primary600"
+			/>
+			<Wrapper
+				h="100px"
+				w="200px"
+				backgroundColor="primary600"
+			/>
+		</FlexOrigin>
+	);
+}
 
 export const Flex = Template.bind({});
 

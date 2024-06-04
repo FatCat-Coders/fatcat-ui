@@ -25,7 +25,7 @@ Property that adds to the component are:
 <Wrapper
 	h="200px"
 	w="200px"
-	backgroundColor="yellow"
+	backgroundColor="primary600"
 	position="relative"
 >
 	<Wrapper

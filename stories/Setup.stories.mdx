@@ -1,5 +1,4 @@
-import { Meta } from '@storybook/addon-docs';
-
+import { Meta } from "@storybook/addon-docs";
 
 <Meta title="Setup/Setup" />
 
@@ -8,11 +7,9 @@ import { Meta } from '@storybook/addon-docs';
 Before we start we need to setup our theme inside our project.
 
 ```jsx
-import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
+import { UIThemeProvider } from "fatcat-ui-library/theme/theme";
 
-<UIThemeProvider>
-	{children}
-</UIThemeProvider>
+<UIThemeProvider>{children}</UIThemeProvider>;
 ```
 
 but if we want to add some custom styling, for example for our text elements,
@@ -22,19 +19,20 @@ we can define our text style and breakpoints for text elements
 
 ```jsx
 const TEXT_SIZE = {
-	h1: css`
-		font-size: ${props => props.theme.fontSize.s54};
-		line-height: ${props => props.theme.lineHeight.s125};
-	`,
-	h1LargeTablet: css`
-		font-size: ${props => props.theme.fontSize.s42};
-	`,
-	h1Tablet: css`
-		font-size: ${props => props.theme.fontSize.s30};
-		line-height: ${props => props.theme.lineHeight.s100};
-	`,
-}
+  h1: css`
+    font-size: ${(props) => props.theme.fontSize.s54};
+    line-height: ${(props) => props.theme.lineHeight.s125};
+  `,
+  h1LargeTablet: css`
+    font-size: ${(props) => props.theme.fontSize.s42};
+  `,
+  h1Tablet: css`
+    font-size: ${(props) => props.theme.fontSize.s30};
+    line-height: ${(props) => props.theme.lineHeight.s100};
+  `,
+};
 ```
+
 - and then we define our style and breakpoints for given element in our example only for `Heading` component with `as` value `h1`
 
 ```jsx
@@ -86,30 +84,34 @@ List of all theme properties:
 
 ```jsx
 const defaultTheme: FatCatTheme = {
-	animation: ANIMATIONS,
-	backgroundColor: BACKGROUND_COLOR,
-	buttonColor: BUTTON_COLOR,
-	buttonSize: BUTTON_SIZE,
-	buttonVariant: BUTTON_VARIANT,
-	color: COLOR,
-	fontFamily: FONT_FAMILY,
-	fontSize: FONT_SIZE,
-	fontWeight: FONT_WEIGHT,
-	textVariant: TEXT_VARIANT,
-	hover: HOVER_BEHAVIORS,
-	lineHeight: LINE_HEIGHT,
-	linkColor: LINK_COLOR,
-	linkVariant: LINK_VARIANT,
-	media: MEDIA,
-	responsive: RESPONSIVE_BEHAVIORS,
-	screenRatio: SCREEN_RATIO,
-	sectionWidth: SECTION_WIDTH,
-	space: SPACE,
-	tableVariant: TABLE_VARIANT,
-	textColor: TEXT_COLOR,
-	textSize: TEXT_SIZE,
-	inputVariant: INPUT_VARIANT,
-	ollistVariant: OLLIST_VARIANT,
-	ullistVariant: ULLIST_VARIANT,
+  animation: ANIMATIONS,
+  backgroundColor: COLOR,
+  buttonColor: BUTTON_COLOR,
+  buttonSize: BUTTON_SIZE,
+  buttonVariant: BUTTON_VARIANT,
+  color: COLOR,
+  fontFamily: FONT_FAMILY,
+  fontSize: FONT_SIZE,
+  fontWeight: FONT_WEIGHT,
+  textVariant: TEXT_VARIANT,
+  hover: HOVER_BEHAVIORS,
+  lineHeight: LINE_HEIGHT,
+  linkColor: LINK_COLOR,
+  linkVariant: LINK_VARIANT,
+  media: MEDIA,
+  responsive: RESPONSIVE_BEHAVIORS,
+  screenRatio: SCREEN_RATIO,
+  sectionWidth: SECTION_WIDTH,
+  space: SPACE,
+  tableVariant: TABLE_VARIANT,
+  textColor: COLOR,
+  textSize: TEXT_SIZE,
+  inputVariant: INPUT_VARIANT,
+  ollistVariant: OLLIST_VARIANT,
+  ullistVariant: ULLIST_VARIANT,
+  borderRadius: BORDER_RADIUS,
+  shadow: SHADOW,
+  dropShadow: DROP_SHADOW,
+  focusShadow: FOCUS_SHADOW,
 };
 ```

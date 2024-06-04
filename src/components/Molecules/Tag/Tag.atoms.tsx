@@ -12,15 +12,15 @@ export type TTagWrapper = {
 
 export const tagVariant = {
 	base: css`
-		background-color: ${props => props.theme.backgroundColor.lightGrey};
+		background-color: ${props => props.theme.backgroundColor.neutrals100};
 	`,
 	pill: css`
-		background-color: ${props => props.theme.backgroundColor.lightGrey};
+		background-color: ${props => props.theme.backgroundColor.neutrals100};
 		border-radius: 50px;
 	`,
 	borderPill: css`
 		border-radius: 50px;
-		border: 1px solid ${props => props.theme.color.black};
+		border: 1px solid ${props => props.theme.color.neutrals800};
 	`,
 };
 

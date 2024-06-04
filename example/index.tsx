@@ -46,6 +46,11 @@ declare module 'styled-components' {
 		inputVariant: FatCatTheme['inputVariant']
 		ollistVariant: FatCatTheme['ollistVariant']
 		ullistVariant: FatCatTheme['ullistVariant']
+		borderRadius: FatCatTheme['borderRadius']
+		shadow: FatCatTheme['shadow']
+		dropShadow: FatCatTheme['dropShadow']
+		focusShadow: FatCatTheme['focusShadow']
+		sectionLayout: CSSProp
 		sectionVariant: FatCatTheme['sectionVariant']
 	}
 }

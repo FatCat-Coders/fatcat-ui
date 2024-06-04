@@ -19,7 +19,7 @@ export const Paragraph = styled.p.withConfig({
 
 Paragraph.defaultProps = {
 	textAlign: 'left',
-	textColor: 'primary',
+	textColor: 'neutrals800',
 	size: 'large',
 	initialDisplay: 'block',
 };

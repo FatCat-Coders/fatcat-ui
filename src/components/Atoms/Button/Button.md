@@ -29,7 +29,7 @@ For better reusability, we define our style in the theme provider and then we us
 const BUTTON_VARIANT = {
 	primary: css`
 		/** we can take color from theme */
-		background-color: ${props => props.theme.color.yellow};
+		background-color: ${props => props.theme.color.yellow700};
 		min-width: 140px;
 		border-radius: 12px;
 		padding: 6px 12px;
@@ -48,15 +48,15 @@ const BUTTON_VARIANT = {
 export const BUTTON_COLOR = {
 	// we can style disabled global style for buttons
 	disabled: {
-		default: 'green',
-		text:'dark',
+		default: 'mint700',
+		text:'neutrals700',
 	}
 	//or we can pass new color schema for buttons
 	green: {
-		default: 'green',
-		text:'dark',
-		hover: 'greenLight',
-		hoverText: 'grey',
+		default: 'mint700',
+		text:'neutrals700',
+		hover: 'mint100',
+		hoverText: 'neutrals500',
 	},
 };
 ```
@@ -66,10 +66,10 @@ export const BUTTON_COLOR = {
 ```jsx
 export const BUTTON_SIZE = {
 	large: css`
-		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s40};
+		padding: ${props => props.theme.space.s4} ${props => props.theme.space.s10};
 	`,
 	medium: css`
-		padding: ${props => props.theme.space.s16} ${props => props.theme.space.s24};
+		padding: ${props => props.theme.space.s4} ${props => props.theme.space.6};
 	`,
 };
 ```

@@ -19,7 +19,7 @@ export default {
 			description: `List of background colors: ${formatObjectKeys(COLOR)}`,
 			table: {
 				type: { summary: null },
-				defaultValue: { summary: 'primary' },
+				defaultValue: { summary: 'primary600' },
 			},
 		},
 		styled: {
@@ -171,7 +171,7 @@ Checkbox.parameters = {
 
 Checkbox.args = {
 	afterText: 'Checkbox',
-	backgroundColor: 'primary',
+	backgroundColor: 'primary600',
 	disabled: false,
 	isIndeterminate: false,
 	required: false,

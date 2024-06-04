@@ -10,7 +10,7 @@ export const LINK_BASE = css<{ disabled?: boolean, linkColor: keyof DefaultTheme
 	${props => props.disabled && css`
 		cursor: not-allowed;
 		pointer-events: none;
-		color: ${props => props.theme.color.darkerGrey};
+		color: ${props => props.theme.color.neutrals700};
 	`}
 `;
 

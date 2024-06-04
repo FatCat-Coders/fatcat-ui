@@ -30,23 +30,25 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<Wrapper
-		h="200px"
-		w="200px"
-		backgroundColor="yellow"
-		{...args}
-	>
+function Template({ children, ...args }) {
+	return (
 		<Wrapper
-			h="100px"
-			w="100px"
-			backgroundColor="backgroundLight"
-			position="absolute"
-			top="25%"
-			left="75%"
-		/>
-	</Wrapper>
-);
+			h="200px"
+			w="200px"
+			backgroundColor="primary600"
+			{...args}
+		>
+			<Wrapper
+				h="100px"
+				w="100px"
+				backgroundColor="backgroundLight"
+				position="absolute"
+				top="25%"
+				left="75%"
+			/>
+		</Wrapper>
+	);
+}
 
 export const Position = Template.bind({});
 

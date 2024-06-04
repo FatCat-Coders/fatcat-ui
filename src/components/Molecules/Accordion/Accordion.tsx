@@ -84,8 +84,8 @@ const Accordion: React.FC<TAccordion> = (props) => {
 Accordion.defaultProps = {
 	titleAs: 'h2',
 	useArrow: false,
-	titleColor: 'primary',
-	contentColor: 'primary',
+	titleColor: 'primary600',
+	contentColor: 'primary600',
 	contentSize: 'large',
 	styled: undefined,
 };

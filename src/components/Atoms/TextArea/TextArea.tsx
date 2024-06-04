@@ -38,7 +38,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TTextArea>((props,
 			{errorMsg && (
 				<Text
 					display="block"
-					textColor="warning"
+					textColor="warningMedium"
 					position="absolute"
 					bottom="0px"
 					lineHeight="s100"

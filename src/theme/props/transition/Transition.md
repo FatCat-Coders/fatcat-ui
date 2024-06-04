@@ -20,7 +20,7 @@ Property that adds to the component are:
 	transition="background-color 300ms ease-in-out"
 	w="200px"
 	h="200px"
-	backgroundColor="yellow"
+	backgroundColor="primary600"
 	hover={[{ backgroundColorHex: '#1D1D1E' }]}
 />
 ```

@@ -15,7 +15,7 @@ export const OlList = styled.ol.withConfig({
 	${props => props.variant !== 'noStyle' && css`
 		list-style: none;
 		counter-reset: item;
-		padding-left: ${props => props.theme.space.s24};
+		padding-left: ${props => props.theme.space.s6};
 
 		> li {
 			display: flex;
@@ -37,7 +37,7 @@ export const OlList = styled.ol.withConfig({
 
 OlList.defaultProps = {
 	variant: 'base',
-	textColor: 'primary',
-	bulletColor: 'black',
+	textColor: 'neutrals800',
+	bulletColor: 'neutrals800',
 	initialDisplay: 'block',
 };

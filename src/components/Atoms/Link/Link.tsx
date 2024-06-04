@@ -54,7 +54,7 @@ export const Link: LinkComponent = (props) => {
 };
 
 Link.defaultProps = {
-	variant: 'primary',
+	variant: 'primary600',
 	linkColor: undefined,
 	disabled: false,
 	withArrow: false,
