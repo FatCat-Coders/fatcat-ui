@@ -4,7 +4,7 @@ import { DefaultTheme, CSSProp } from 'styled-components';
 import { SpaceProps } from '../../../theme/props';
 
 // Atoms
-import Section from '../../Molecules/Section';
+import { Section } from '../../Molecules/Section';
 import { Flex } from '../../Atoms/Flex';
 import { Button } from '../../Atoms/Button';
 import { Paragraph } from '../../Atoms/Paragraph';
