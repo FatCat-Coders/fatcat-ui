@@ -1,44 +1,105 @@
 import React from 'react';
 import { UIprops } from '../../../utils/ui-props';
-import styled, { DefaultTheme, useTheme } from 'styled-components';
+import styled, { css, DefaultTheme, useTheme } from 'styled-components';
 
 // Type definitions
 import { PolymorphicComponent } from '../../../utils/polymorphic-component';
 
 // Props
-import { generalProps, GeneralProps } from '../../../theme/props';
+import {
+	flex, FlexProps,
+	generalProps, GeneralProps,
+} from '../../../theme/props';
+
+// Components
+import { Flex } from '../Flex';
+import { Icon } from '../Icon';
+import * as icons from '../Icon/icons';
+import { Wrapper } from '../Wrapper';
+import { Oval } from 'react-loader-spinner';
 
 export type TButton = {
 	buttonColor?: keyof DefaultTheme['buttonColor'] | undefined
 	size?: keyof DefaultTheme['buttonSize']
 	variant?: keyof DefaultTheme['buttonVariant']
-} & GeneralProps;
+	trailingIcon?: keyof typeof icons;
+	leadingIcon?: keyof typeof icons;
+	isLoading?: boolean;
+} & FlexProps & GeneralProps;
 
 export const ButtonBase = styled('button').withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
-}) <TButton>`
+})<TButton>`
     cursor: pointer;
     display: inline-block;
 	font-weight: bold;
-	${props => props.variant && props.theme.buttonVariant[props.variant]};
+	${({ isLoading }) => isLoading &&
+		css`
+			&:disabled {
+				opacity: 1;
+			}
+    `}
+	${props => props.variant && props.theme.buttonVariant[props.variant].styles};
+	${flex};
 	${generalProps};
 `;
 
 export type ButtonProps = Omit<JSX.IntrinsicElements['button'], 'type'> & TButton;
 export type ButtonComponent = PolymorphicComponent<ButtonProps>;
 
+// eslint-disable-next-line react/function-component-definition
 export const Button: ButtonComponent = (props) => {
-	const { children, buttonColor, ...buttonProps } = props;
+	const {
+		children,
+		trailingIcon,
+		leadingIcon,
+		isLoading = false,
+		variant = 'primary',
+		color = variant,
+		size = 'large',
+		textAlign = 'center',
+		...buttonProps
+	} = props;
 	const theme = useTheme();
-	const color = (!buttonColor && theme.buttonColor[buttonProps.variant]) ? buttonProps.variant : buttonColor;
-	return <ButtonBase {...buttonProps} buttonColor={color}>{children}</ButtonBase>;
-};
+	const isTextLink = variant === 'textLink';
 
-Button.defaultProps = {
-	buttonColor: undefined,
-	initialDisplay: 'inline-block',
-	size: 'large',
-	textAlign: 'center',
-	variant: 'primary',
-	whiteSpace: 'nowrap',
+	return (
+		<ButtonBase
+			color={color}
+			disabled={buttonProps.disabled || isLoading}
+			size={size}
+			variant={variant}
+			textAlign={textAlign}
+			{...buttonProps}
+		>
+			{isLoading ? (
+				<Oval
+					color="white"
+					secondaryColor="#FAFAFA3D"
+					strokeWidth={4}
+					width={24}
+					height={24}
+				/>
+			) : (
+				<>
+					{leadingIcon && !isTextLink && (
+						<Icon
+							name={leadingIcon}
+							size={theme.buttonSize[size].iconSize}
+						/>
+					)}
+					<Wrapper paddingX={theme.buttonVariant[variant].textPadding.x} paddingBottom={theme.buttonVariant[variant].textPadding.bottom}>
+						{children}
+					</Wrapper>
+					{trailingIcon && (
+						<Flex w={isTextLink ? '24px' : 'fit-content'} flexShrink="0">
+							<Icon
+								name={trailingIcon} size={theme.buttonSize[size].iconSize}
+							/>
+						</Flex>
+					)}
+				</>
+			)}
+		</ButtonBase>
+	);
 };

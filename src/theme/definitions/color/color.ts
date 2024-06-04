@@ -1,4 +1,4 @@
-import { darken } from 'polished';
+import { transparentize } from 'polished';
 
 export const COLOR = {
 	transparent: 'transparent',
@@ -58,58 +58,244 @@ export const COLOR = {
 	neutrals600: '#343957',
 	neutrals700: '#2E324D',
 	neutrals800: '#01082D',
-	// feedback/semantics
-	// success
 	successDark: '#067647',
 	successMedium: '#079455',
 	successLight: '#ECFDF3',
-	// error
-	errorExtraDark: '#B42318',
-	errorDark: '#D92D20',
-	errorMedium: '#F04438',
-	errorLight: '#FEF3F2',
-	// warning
-	warningDark: '#B54708',
-	warningMedium: '#DC6803',
-	warningLight: '#FEF0C7',
-	// info
-	infoExtraDark: '#0E6BAA',
-	infoDark: '#0F77BD',
-	infoMedium: '#1D99ED',
-	infoLight: '#D9EEFC',
 };
 
 export const BUTTON_COLOR = {
-	disabled: {
-		default: COLOR.primary50,
-		text: COLOR.primary500,
-	},
 	primary: {
-		default: COLOR.primary200,
-		text: COLOR.neutrals50,
-		hover: COLOR.primary600,
-		hoverText: COLOR.neutrals50,
+		default: {
+			background: COLOR.primary600,
+			text: COLOR.neutrals50,
+		},
+		hover: {
+			background: COLOR.primary700,
+			text: COLOR.neutrals50,
+		},
+		pressed: {
+			background: COLOR.primary800,
+			text: COLOR.neutrals50,
+		},
+		focus: {
+			background: COLOR.primary700,
+			text: COLOR.neutrals50,
+			ringColor: transparentize(0.32, COLOR.primary600),
+		},
 	},
 	secondary: {
-		default: COLOR.primary600,
-		text: COLOR.primary600,
-		hover: COLOR.primary600,
-		hoverText: COLOR.neutrals50,
+		default: {
+			background: COLOR.neutrals100,
+			text: COLOR.neutrals600,
+		},
+		hover: {
+			background: COLOR.cream,
+			text: COLOR.neutrals600,
+		},
+		pressed: {
+			background: COLOR.cream,
+			text: COLOR.neutrals600,
+		},
+		focus: {
+			background: COLOR.cream,
+			text: COLOR.neutrals600,
+			ringColor: transparentize(0.32, COLOR.primary600),
+		},
+	},
+	secondaryInvert: {
+		default: {
+			background: COLOR.neutrals600,
+			text: COLOR.neutrals50,
+		},
+		hover: {
+			background: COLOR.neutrals700,
+			text: COLOR.neutrals50,
+		},
+		pressed: {
+			background: transparentize(0.88, COLOR.neutrals700),
+			text: COLOR.neutrals50,
+		},
+		focus: {
+			background: COLOR.neutrals600,
+			text: COLOR.neutrals50,
+			ringColor: transparentize(0.32, COLOR.neutrals50),
+		},
 	},
 	ghost: {
-		default: COLOR.transparent,
-		text: COLOR.neutrals800,
-		hover: COLOR.yellow100,
-		hoverText: COLOR.neutrals50,
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.primary600,
+		},
+		hover: {
+			background: COLOR.primary50,
+			text: COLOR.primary700,
+		},
+		pressed: {
+			background: COLOR.primary100,
+			text: COLOR.primary800,
+		},
+		focus: {
+			background: COLOR.cream,
+			text: COLOR.primary700,
+			ringColor: transparentize(0.32, COLOR.primary600),
+		},
 	},
-	white: {
-		default: COLOR.neutrals50,
-		text: COLOR.primary600,
-		hover: darken(0.1, COLOR.neutrals50),
-		hoverText: COLOR.neutrals50,
+	ghostInvert: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals100,
+		},
+		hover: {
+			background: transparentize(0.06, COLOR.neutrals50),
+			text: COLOR.neutrals50,
+		},
+		pressed: {
+			background: transparentize(0.08, COLOR.neutrals50),
+			text: COLOR.neutrals50,
+		},
+		focus: {
+			background: transparentize(0.06, COLOR.neutrals50),
+			text: COLOR.neutrals50,
+			ringColor: transparentize(0.56, COLOR.neutrals50),
+		},
 	},
-	underline: {
-		default: COLOR.primary600,
-		text: COLOR.primary600,
+	outline: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.primary700,
+		},
+		hover: {
+			background: COLOR.primary50,
+			text: COLOR.primary700,
+		},
+		pressed: {
+			background: COLOR.primary100,
+			text: COLOR.primary800,
+		},
+		focus: {
+			background: transparentize(0.04, COLOR.neutrals50),
+			text: COLOR.primary700,
+			ringColor: transparentize(0.32, COLOR.primary600),
+		},
+	},
+	outlineInvert: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals100,
+		},
+		hover: {
+			background: transparentize(0.04, COLOR.neutrals50),
+			text: COLOR.neutrals50,
+		},
+		pressed: {
+			background: transparentize(0.06, COLOR.neutrals50),
+			text: COLOR.neutrals50,
+		},
+		focus: {
+			background: transparentize(0.04, COLOR.neutrals50),
+			text: COLOR.neutrals50,
+			ringColor: transparentize(0.32, COLOR.neutrals50),
+		},
+	},
+	textLink: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.primary600,
+		},
+		hover: {
+			background: COLOR.transparent,
+			text: COLOR.primary700,
+		},
+		pressed: {
+			background: COLOR.transparent,
+			text: COLOR.primary800,
+		},
+		focus: {
+			background: COLOR.transparent,
+			text: COLOR.primary700,
+			ringColor: transparentize(0.32, COLOR.primary600),
+		},
+	},
+	textLinkInvert: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals50,
+		},
+		hover: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals100,
+		},
+		pressed: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals200,
+		},
+		focus: {
+			background: transparentize(0.02, COLOR.neutrals50),
+			text: COLOR.neutrals200,
+			ringColor: transparentize(0.32, COLOR.neutrals50),
+		},
+	},
+	navLink: { // todo mobile is a bit different
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals500,
+		},
+		hover: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals600,
+			underLineColor: COLOR.primary600,
+		},
+		pressed: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals700,
+			underLineColor: COLOR.primary700,
+		},
+		focus: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals600,
+			ringColor: COLOR.transparent,
+			underLineColor: COLOR.primary600,
+		},
+	},
+	navLinkInvert: {
+		default: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals100,
+		},
+		hover: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals50,
+			underLineColor: COLOR.primary600,
+		},
+		pressed: {
+			background: COLOR.transparent,
+			text: COLOR.neutrals300,
+			underLineColor: COLOR.primary700,
+		},
+		focus: {
+			background: transparentize(0.02, COLOR.neutrals50),
+			text: COLOR.neutrals50,
+			ringColor: COLOR.transparent,
+			underLineColor: COLOR.primary600,
+		},
+	},
+	success: {
+		default: {
+			background: COLOR.successMedium,
+			text: COLOR.successDark,
+		},
+		hover: {
+			background: COLOR.successLight,
+			text: COLOR.successDark,
+		},
+		pressed: {
+			background: COLOR.successLight,
+			text: COLOR.successDark,
+		},
+		focus: {
+			background: COLOR.successLight,
+			text: COLOR.successDark,
+			ringColor: COLOR.transparent,
+		},
 	},
 };

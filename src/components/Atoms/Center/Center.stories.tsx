@@ -74,7 +74,7 @@ Center.parameters = {
 };
 
 Center.args = {
-	gap: '8px 16px',
+	gap: 's2 s4',
 	h: '200px',
 	w: '100%',
 	wrap: true,
