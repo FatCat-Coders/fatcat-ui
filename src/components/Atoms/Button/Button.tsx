@@ -76,9 +76,9 @@ export const Button: ButtonComponent = (props) => {
 			) : (
 				<>
 					{leadingIcon && !isTextLink && (
-						<Flex>
-							<Icon name={leadingIcon} size={calculateIconSize(buttonProps.size)} color={JSON.stringify(color)} />
-						</Flex>
+						<Icon
+							name={leadingIcon} size={calculateIconSize(buttonProps.size)} color={JSON.stringify(color)}
+						/>
 					)}
 					<Wrapper paddingX={calculatePaddingX(variant)} paddingBottom={calculatePaddingBottom(variant)}>
 						{children}
@@ -86,7 +86,7 @@ export const Button: ButtonComponent = (props) => {
 					{trailingIcon && (
 						<Flex w={isTextLink ? '24px' : 'fit-content'} flexShrink="0">
 							<Icon
-								name={trailingIcon} size={isTextLink ? '20' : calculateIconSize(buttonProps.size)}
+								name={trailingIcon} size={calculateIconSize(buttonProps.size)}
 								color={JSON.stringify(color)}
 							/>
 						</Flex>

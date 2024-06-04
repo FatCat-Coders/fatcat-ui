@@ -34,6 +34,7 @@ const IconContainer = styled.svg.attrs<TIconContainerProps>(props => ({
 	shouldForwardProp: (prop, defaultValidatorFn) => !['size', 'color'].includes(prop) && defaultValidatorFn(prop),
 })<TIconContainerProps>`
 	color: ${props => (props.theme.color[props.color])};
+	flex-shrink: 0;
   `;
 
 // eslint-disable-next-line react/function-component-definition
