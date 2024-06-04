@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, CSSProp } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { isObjectEmpty, deepmerge } from '../utils/object-helpers';
 
 // Definitions
@@ -27,9 +27,10 @@ import {
 	TEXT_COLOR,
 	ULLIST_VARIANT,
 	MEDIA_MOBILE,
+	SECTION_VARIANT,
 } from './definitions';
 import { HOVER_BEHAVIORS, RESPONSIVE_BEHAVIORS, TEXT_SIZE } from './styles';
-import { SideSpacingTypesValue } from './props/space/space';
+import { SideSpacingTypesValue } from './props';
 
 export interface FatCatTheme {
 	useMobileFirst: boolean
@@ -60,7 +61,7 @@ export interface FatCatTheme {
 	inputVariant: typeof INPUT_VARIANT
 	ollistVariant: typeof OLLIST_VARIANT,
 	ullistVariant: typeof ULLIST_VARIANT,
-	sectionLayout?: CSSProp,
+	sectionVariant: typeof SECTION_VARIANT,
 }
 
 const defaultTheme: FatCatTheme = {
@@ -91,7 +92,7 @@ const defaultTheme: FatCatTheme = {
 	inputVariant: INPUT_VARIANT,
 	ollistVariant: OLLIST_VARIANT,
 	ullistVariant: ULLIST_VARIANT,
-	sectionLayout: undefined,
+	sectionVariant: SECTION_VARIANT,
 };
 
 interface UIThemeProviderI {
