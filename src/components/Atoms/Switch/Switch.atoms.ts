@@ -13,7 +13,7 @@ export const SwitchButton = styled.span`
 	width: 16px;
 	height: 16px;
 	border-radius: 50%;
-	background-color: white;
+	background-color: ${props => props.theme.color.neutrals50};
 	transition: transform 0.2s ease-in-out;
 	will-change: transform;
 `;
@@ -23,7 +23,7 @@ export const SwitchWrapper = styled.span<TSwitchStyle>`
 	/* position: relative; */
 	display: flex;
 	border: 2px solid transparent;
-	background-color: ${props => (props.backgroundColor ? props.theme.color[props.backgroundColor] : props.theme.color.primary)};
+	background-color: ${props => (props.backgroundColor ? props.theme.color[props.backgroundColor] : props.theme.color.primary600)};
 	width: 36px;
 	height: 20px;
 	border-radius: 36px;
@@ -33,7 +33,7 @@ export const SwitchWrapper = styled.span<TSwitchStyle>`
 		}
 	`}
 	${({ checked, useSameBackgroundColor }) => (!useSameBackgroundColor && !checked) && css`
-		background-color: grey;
+		background-color: ${props => props.theme.color.neutrals500};
 	`}
 	${({ disabled }) => disabled && css`
 		cursor: not-allowed;

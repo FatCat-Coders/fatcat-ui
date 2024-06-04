@@ -86,7 +86,7 @@ const Tag: React.FC<TTag> = (props) => {
 Tag.defaultProps = {
 	onClose: undefined,
 	onClick: undefined,
-	buttonColor: 'grey',
+	white: 'neutrals500',
 	variant: 'base',
 };
 

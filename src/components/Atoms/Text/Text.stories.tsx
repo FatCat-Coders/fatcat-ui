@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Text as TextOrigin } from './Text';
 
-import { TEXT_COLOR } from '../../../theme/definitions';
+import { COLOR } from '../../../theme/definitions';
 
 import readme from './Text.md';
 
@@ -13,7 +13,7 @@ export default {
 	argTypes: {
 		textColor: {
 			control: 'select',
-			options: Object.keys(TEXT_COLOR),
+			options: Object.keys(COLOR),
 			description: 'Just for demo purposes',
 			type: { name: 'string' },
 			table: {
@@ -43,5 +43,5 @@ export const Text = Template.bind({});
 
 Text.parameters = { controls: { include: ['textColor'] } };
 Text.args = {
-	textColor: 'black',
+	textColor: 'neutrals800',
 };

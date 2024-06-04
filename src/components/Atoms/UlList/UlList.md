@@ -76,7 +76,7 @@ import { UlList } from 'fatcat-ui-library/components/Atoms/UlList';
 and then simply use it in your code.
 
 ```jsx
-<UlList  bulletColor="black">
+<UlList  bulletColor="neutrals800">
 	<Text as="li" fontSize="s24">item 1</Text>
 	<Text as="li" fontSize="s24">item 2</Text>
 	<Text as="li" fontSize="s24">item 3</Text>

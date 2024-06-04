@@ -5,6 +5,7 @@ import { Grid as GridOrigin } from './Grid';
 import { Center } from '../Center';
 
 import readme from './Grid.md';
+import { GAP } from '../../../theme/definitions/gap/gap';
 
 const widths = ['200px', '250px', '300px'];
 
@@ -51,8 +52,9 @@ export default {
 			},
 		},
 		gap: {
+			control: 'select',
+			options: Object.keys(GAP),
 			name: 'gap (default: 16px)',
-			control: 'text',
 			description: 'String with css property',
 			type: 'string',
 			table: {
@@ -61,7 +63,8 @@ export default {
 		},
 
 		rowGap: {
-			control: 'text',
+			control: 'select',
+			options: Object.keys(GAP),
 			description: 'String with css property',
 			type: 'string',
 			table: {
@@ -135,7 +138,7 @@ const Template: ComponentStory<typeof GridOrigin> = ({ children, items, ...args 
 					key={index} // eslint-disable-line
 					h="100px"
 					w={randomWidth}
-					backgroundColor="yellow"
+					backgroundColor="primary600"
 				>
 					{randomWidth}
 				</Center>

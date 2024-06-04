@@ -91,7 +91,7 @@ const Banner: React.FC<TBanner> = (props) => {
 };
 
 Banner.defaultProps = {
-	backgroundColor: 'primary',
+	backgroundColor: 'primary600',
 	backgroundColorHex: undefined,
 	backgroundColorOpacity: undefined,
 	backgroundImage: undefined,
@@ -99,7 +99,7 @@ Banner.defaultProps = {
 	backgroundPosition: undefined,
 	backgroundSize: undefined,
 	scale: true,
-	textColor: 'white',
+	textColor: 'neutrals50',
 	padding: ['t80', 'b80'],
 	styled: undefined,
 	buttonColor: 'white',

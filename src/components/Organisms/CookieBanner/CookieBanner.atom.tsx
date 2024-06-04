@@ -48,7 +48,7 @@ export const CookieStyles = createGlobalStyle<TCookieStyle>`
 	}
 
 	.CookieConsent--accept-button {
-		color: ${props => props.theme.color.white} !important;
+		color: ${props => props.theme.color.neutrals50} !important;
 		background-color: ${props => props.theme.color[props.buttonColor]} !important;
 		font-size: 16px !important;
 		padding: 10px 40px !important;
@@ -86,16 +86,16 @@ export const CookieStyles = createGlobalStyle<TCookieStyle>`
 		top: unset !important;
 		height: unset !important;
 		background-color: ${props => props.theme.color[props.backgroundColor]} !important;
-		padding: ${props => `0 ${props.theme.space.s40}`};
+		padding: ${props => `0 ${props.theme.space.s10}`};
 
 		${props => props.theme.media.largeTablet} {
-			padding-left: ${props => props.theme.space.s32};
-			padding-right: ${props => props.theme.space.s32};
+			padding-left: ${props => props.theme.space.s8};
+			padding-right: ${props => props.theme.space.s8};
 		}
 
 		${props => props.theme.media.mobile} {
-			padding-left: ${props => props.theme.space.s20};
-			padding-right: ${props => props.theme.space.s20};
+			padding-left: ${props => props.theme.space.s5};
+			padding-right: ${props => props.theme.space.s5};
 		}
 
 		${props => props.styled}

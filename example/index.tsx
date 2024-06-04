@@ -1,5 +1,4 @@
 import React from 'react';
-import { CSSProp } from 'styled-components';
 
 // Atoms
 import { GlobalStyle } from 'fatcat-ui-library/components/Atoms';
@@ -9,13 +8,6 @@ import '../assets/fonts/silka/stylesheet.css';
 
 // Themes
 import { UIThemeProvider, FatCatTheme } from 'fatcat-ui-library/theme/theme';
-
-const color = {
-	newBlue: '#123456',
-};
-const space = {
-	s10: '10px',
-};
 
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
@@ -47,7 +39,13 @@ declare module 'styled-components' {
 		inputVariant: FatCatTheme['inputVariant']
 		ollistVariant: FatCatTheme['ollistVariant']
 		ullistVariant: FatCatTheme['ullistVariant']
+		borderRadius: FatCatTheme['borderRadius']
+		gap: FatCatTheme['gap']
+		shadow: FatCatTheme['shadow']
+		dropShadow: FatCatTheme['dropShadow']
+		focusShadow: FatCatTheme['focusShadow']
 		sectionLayout: CSSProp
+		sectionVariant: FatCatTheme['sectionVariant']
 	}
 }
 

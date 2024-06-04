@@ -11,18 +11,18 @@ export const Table = styled.table.withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
 }) <TTable>`
 	thead th {
-		border-bottom: 5px solid ${props => props.theme.color.white10};
+		border-bottom: 5px solid ${props => props.theme.color.neutrals50};
 		:nth-child(1) {
-			color: ${props => props.theme.color.white};
+			color: ${props => props.theme.color.neutrals50};
 			text-align: left;
 		}
-		color: ${props => props.theme.color.white50};
+		color: ${props => props.theme.color.neutrals50};
 		text-align: center;
 	}
 
 	tbody td {
 		:nth-child(1) {
-			color: ${props => props.theme.color.white};
+			color: ${props => props.theme.color.neutrals50};
 			text-align: center;
 		}
 		text-align: center;

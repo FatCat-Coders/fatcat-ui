@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { default as CheckboxOrigin } from './Checkbox'; // eslint-disable-line
 import { Flex } from '../Flex';
 import { formatObjectKeys } from '../../../../stories/helpers';
-import { COLOR } from '../../../theme/definitions';
+import { COLOR, GAP } from '../../../theme/definitions';
 import { sizing } from './Checkbox.atoms';
 
 import readme from './Checkbox.md';
@@ -19,7 +19,7 @@ export default {
 			description: `List of background colors: ${formatObjectKeys(COLOR)}`,
 			table: {
 				type: { summary: null },
-				defaultValue: { summary: 'primary' },
+				defaultValue: { summary: 'primary600' },
 			},
 		},
 		styled: {
@@ -95,7 +95,9 @@ export default {
 		icon: {
 			control: 'text',
 		},
-		gap: { control: 'text', description: 'String with css property', type: 'string' },
+		gap: {
+			control: 'select', options: Object.keys(GAP), description: 'String with css property in format g[number]', type: 'string',
+		},
 	},
 	parameters: {
 		docs: {
@@ -106,6 +108,7 @@ export default {
 	},
 } as ComponentMeta<typeof CheckboxOrigin>;
 
+// eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof CheckboxOrigin> = (props) => {
 	const [value, setValue] = useState(props.value); // eslint-disable-line
 	const [star, setStar] = useState(false);
@@ -171,7 +174,7 @@ Checkbox.parameters = {
 
 Checkbox.args = {
 	afterText: 'Checkbox',
-	backgroundColor: 'primary',
+	backgroundColor: 'primary600',
 	disabled: false,
 	isIndeterminate: false,
 	required: false,

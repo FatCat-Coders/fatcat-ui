@@ -90,7 +90,7 @@ Avatar.defaultProps = {
 	subtitle: undefined,
 	size: 'medium',
 	styled: undefined,
-	textColor: 'primary',
+	textColor: 'neutrals800',
 };
 
 export default Avatar;

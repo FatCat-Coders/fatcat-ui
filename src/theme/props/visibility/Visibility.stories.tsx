@@ -43,14 +43,16 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<Wrapper
-		h="100px"
-		w="100px"
-		backgroundColor="yellow"
-		{...args}
-	/>
-);
+function Template({ children, ...args }) {
+	return (
+		<Wrapper
+			h="100px"
+			w="100px"
+			backgroundColor="primary600"
+			{...args}
+		/>
+	);
+}
 
 export const Visibility = Template.bind({});
 

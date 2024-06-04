@@ -5,6 +5,7 @@ import { Flex as FlexOrigin } from './Flex';
 import { Center } from '../Center';
 
 import readme from './Flex.md';
+import { GAP } from '../../../theme/definitions';
 
 const widths = ['200px', '250px', '300px'];
 
@@ -19,12 +20,10 @@ export default {
 			type: 'string',
 		},
 		gap: {
-			control: 'text',
+			control: 'select',
+			options: Object.keys(GAP),
 			description: 'String with css property',
 			type: 'string',
-			table: {
-				type: { summary: null },
-			},
 		},
 		wrap: {
 			control: 'boolean',
@@ -54,7 +53,7 @@ const Template: ComponentStory<typeof FlexOrigin> = ({ children, items, ...args 
 					key={index} // eslint-disable-line
 					h="100px"
 					w={randomWidth}
-					backgroundColor="yellow"
+					backgroundColor="primary600"
 				>
 					{randomWidth}
 				</Center>
@@ -77,6 +76,6 @@ Flex.parameters = {
 
 Flex.args = {
 	items: '4',
-	gap: '8px 16px',
+	gap: 's2 s3',
 	wrap: true,
 };

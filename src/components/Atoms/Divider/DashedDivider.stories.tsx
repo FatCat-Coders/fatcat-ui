@@ -43,4 +43,4 @@ const Template: ComponentStory<typeof Divider> = ({ children, ...args }) => (
 export const DashedDivider = Template.bind({});
 
 DashedDivider.parameters = { controls: { include: ['color'] } };
-DashedDivider.args = { color: 'purple' };
+DashedDivider.args = { color: 'primary900' };

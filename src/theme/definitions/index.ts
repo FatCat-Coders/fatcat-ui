@@ -10,3 +10,7 @@ export * from './lists/ulList';
 export * from './media';
 export * from './space/space';
 export * from './table/table';
+export * from './gap/gap';
+export * from './borderRadius/borderRadius';
+export * from './shadow/shadow';
+export * from './section/section';
