@@ -9,8 +9,8 @@ export * from './Atoms/Icon/Icon';
 export * from './Atoms/Image/Image';
 export * from './Atoms/Input/Input';
 export * from './Atoms/Label/Label';
-export * from './Atoms/Link/Link';
-export * from './Atoms/OlList/OlList';
+// export * from './Atoms/Link/Link';
+// export * from './Atoms/OlList/OlList';
 export * from './Atoms/Paragraph/Paragraph';
 export * from './Atoms/Select/Select';
 export * from './Atoms/Switch/Switch';
@@ -30,4 +30,3 @@ export * from './Molecules/Section/Section';
 export * from './Molecules/Tag/Tag';
 
 export * from './Organisms/Banner/Banner';
-export * from './Organisms/CookieBanner/CookieBanner';

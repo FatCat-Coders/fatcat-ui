@@ -3,6 +3,10 @@
   "author": {
     "name": "Zoran Lazic"
   },
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.mts",
+  "type": "module",
   "version": "2.1.0",
   "license": "UNLICENSED",
   "description": "Build system and ui library for the fatcat related work",

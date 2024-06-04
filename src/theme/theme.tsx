@@ -15,7 +15,7 @@ import {
 	TEXT_VARIANT,
 	INPUT_VARIANT,
 	LINE_HEIGHT,
-	LINK_VARIANT,
+	// LINK_VARIANT,
 	MEDIA,
 	OLLIST_VARIANT,
 	SCREEN_RATIO,
@@ -48,7 +48,7 @@ export interface FatCatTheme {
 	textVariant: typeof TEXT_VARIANT
 	hover: typeof HOVER_BEHAVIORS
 	lineHeight: typeof LINE_HEIGHT
-	linkVariant: typeof LINK_VARIANT
+	// linkVariant: typeof LINK_VARIANT
 	media: typeof MEDIA
 	mediaMobile: typeof MEDIA_MOBILE
 	responsive: typeof RESPONSIVE_BEHAVIORS
@@ -67,7 +67,6 @@ export interface FatCatTheme {
 	shadow: typeof SHADOW,
 	dropShadow: typeof DROP_SHADOW,
 	focusShadow: typeof FOCUS_SHADOW,
-	sectionLayout?: CSSProp,
 	sectionVariant: typeof SECTION_VARIANT,
 }
 
@@ -85,7 +84,7 @@ const defaultTheme: FatCatTheme = {
 	textVariant: TEXT_VARIANT,
 	hover: HOVER_BEHAVIORS,
 	lineHeight: LINE_HEIGHT,
-	linkVariant: LINK_VARIANT,
+	// linkVariant: LINK_VARIANT,
 	media: MEDIA,
 	mediaMobile: MEDIA_MOBILE,
 	responsive: RESPONSIVE_BEHAVIORS,
@@ -98,7 +97,6 @@ const defaultTheme: FatCatTheme = {
 	inputVariant: INPUT_VARIANT,
 	ollistVariant: OLLIST_VARIANT,
 	ullistVariant: ULLIST_VARIANT,
-	sectionLayout: undefined,
 	gap: GAP,
 	borderRadius: BORDER_RADIUS,
 	shadow: SHADOW,

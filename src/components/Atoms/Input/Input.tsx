@@ -13,6 +13,7 @@ export type TInput =
 	& TInputField
 	& React.InputHTMLAttributes<HTMLInputElement>;
 
+// @TODO: fix commented props when types are fixed
 export const Input = React.forwardRef<HTMLInputElement, TInput>((props, ref) => {
 	const {
 		id,
@@ -31,16 +32,16 @@ export const Input = React.forwardRef<HTMLInputElement, TInput>((props, ref) => 
 				ref={ref}
 				id={inputId}
 				placeholder=" "
-				errorMsg={errorMsg}
+				// errorMsg={errorMsg}
 				aria-invalid={errorMsg ? 'true' : 'false'}
-				customInput
+				// customInput
 			/>
 			<Label htmlFor={inputId}>{placeholder}</Label>
 			{errorMsg && (
 				<Text
 					role="alert"
 					display="block"
-					textColor="warningMedium"
+					// textColor="warningMedium"
 					position="absolute"
 					bottom="0px"
 					lineHeight="s100"

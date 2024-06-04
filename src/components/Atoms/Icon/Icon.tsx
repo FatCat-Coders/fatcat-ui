@@ -5,8 +5,10 @@ import styled, { css, DefaultTheme } from 'styled-components';
 // React-icons
 import * as icons from './icons';
 
+type IconSizes = [18, 20, 24, 28, 32];
+
 export type TIconContainerProps = {
-    size?: '18' | '20' | '24' | '28' | '32';
+    size?: IconSizes[number] | `${IconSizes[number]}`
     color?: keyof DefaultTheme['color'];
 };
 
@@ -50,7 +52,7 @@ export const Icon: React.FC<TIcon> = ({
 	return (
 		<IconContainer
 			size={size}
-			color={color as string}
+			color={color}
 		>
 			<SvgIcon />
 		</IconContainer>

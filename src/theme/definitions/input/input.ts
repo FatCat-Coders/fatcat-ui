@@ -26,7 +26,7 @@ export const INPUT_VARIANT = {
 		background: ${props => props.theme.textColor.neutrals50};
 		font-size: ${props => props.theme.fontSize.s16};
 		line-height: ${props => props.theme.lineHeight.s150};
-		margin-bottom: ${props => props.theme.space.s5};
+		margin-bottom: ${props => props.theme.space.s1};
 
 		&:hover,
 		&:focus {
@@ -35,7 +35,7 @@ export const INPUT_VARIANT = {
 
 		${props => props.customInput && css`
 			padding-top: ${props.theme.space.s4};
-			padding-bottom: ${props.theme.space.s3};
+			padding-bottom: ${props.theme.space.s1};
 
 			& ~ label {
 				position: absolute;
@@ -66,9 +66,13 @@ export const INPUT_VARIANT = {
 			}
 
 			${props.errorMsg && css`
-				border-color: ${props.theme.color.warningMedium} !important;
+				border-color: ${
+	// @ts-expect-error TODO: fix this when types are fixed
+	props.theme.color.warningMedium} !important;
 				& ~ label {
-					color: ${props.theme.color.warningMedium} !important;
+					color: ${
+	// @ts-expect-error TODO: fix this when types are fixed
+	props.theme.color.warningMedium} !important;
 				}
 			`}
 		`};

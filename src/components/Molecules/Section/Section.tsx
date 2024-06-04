@@ -25,12 +25,10 @@ export function Section(props: TSection) {
 	} = props;
 
 	return (
-		// @ts-expect-error: This happens because the props are not correctly inferred. Will fix it as part of theme improvements.
 		<Container
 			sectionVariant={variant}
 			{...containerProps}
 		>
-			{/* @ts-expect-error Same as above */}
 			<Content
 				sectionVariant={variant}
 				{...contentProps}

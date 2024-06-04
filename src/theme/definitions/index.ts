@@ -4,7 +4,7 @@ export * from './color/color';
 export * from './font/font';
 export * from './text/text';
 export * from './input/input';
-export * from './link/link';
+// export * from './link/link';
 export * from './lists/olList';
 export * from './lists/ulList';
 export * from './media';

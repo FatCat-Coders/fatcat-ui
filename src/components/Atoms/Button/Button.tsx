@@ -88,6 +88,7 @@ export const Button: ButtonComponent = (props) => {
 							size={theme.buttonSize[size].iconSize}
 						/>
 					)}
+					{/* @ts-expect-error TODO: fix this when types are fixed */}
 					<Wrapper paddingX={theme.buttonVariant[variant].textPadding.x} paddingBottom={theme.buttonVariant[variant].textPadding.bottom}>
 						{children}
 					</Wrapper>

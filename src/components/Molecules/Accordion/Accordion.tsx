@@ -16,12 +16,13 @@ export type TAccordion = {
 	title: string | React.ReactElement
 	titleColor?: keyof DefaultTheme['textColor']
 	content: string | React.ReactElement
-	contentSize?: 'small' | 'large'
+	contentSize?: keyof DefaultTheme['textSize']
 	contentColor?: keyof DefaultTheme['textColor']
 	useArrow?: boolean
 	styled?: CSSProp
 }
 
+// eslint-disable-next-line react/function-component-definition
 const Accordion: React.FC<TAccordion> = (props) => {
 	const {
 		titleAs,
@@ -72,7 +73,7 @@ const Accordion: React.FC<TAccordion> = (props) => {
 				<Paragraph
 					padding={['t16', 'r8', 'b16', 'l8']}
 					textColor={contentColor}
-					size={contentSize}
+					textSize={contentSize}
 				>
 					{content}
 				</Paragraph>
@@ -86,7 +87,7 @@ Accordion.defaultProps = {
 	useArrow: false,
 	titleColor: 'primary600',
 	contentColor: 'primary600',
-	contentSize: 'large',
+	contentSize: 'text1',
 	styled: undefined,
 };
 
