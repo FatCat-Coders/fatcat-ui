@@ -1,8 +1,9 @@
-import { css } from 'styled-components';
+import { DefaultTheme, css } from 'styled-components';
 import { Properties } from 'csstype';
+import { GapDefinition } from 'src/theme/definitions/gap/gap';
 
 export type GridProps = {
-		gap?: Properties['gap']
+		gap?: GapDefinition
 		rowGap?: Properties['rowGap']
 		grid?: Properties['grid']
 		gridTemplateAreas?: Properties['gridTemplateAreas']
@@ -27,6 +28,6 @@ export const grid = css<Partial<GridProps>>`
 	${props => props.gridAutoRows && `grid-auto-rows: ${props.gridAutoRows}`};
 	${props => props.gridTemplateAreas && `grid-template-areas: ${props.gridTemplateAreas}`};
 	${props => props.gridTemplateRows && `grid-template-rows: ${props.gridTemplateRows}`};
-	gap: ${props => props.gap || '16px'};
-	${props => props.rowGap && `row-gap: ${props.rowGap}`};
+	${({ gap }) => gap && css`gap:  ${props => props.theme.gap[gap]}`};
+	${({ rowGap }) => rowGap && css`row-gap:  ${props => props.theme.gap[rowGap]}`};
 `;

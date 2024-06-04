@@ -24,6 +24,7 @@ import {
 	TABLE_VARIANT,
 	ULLIST_VARIANT,
 	MEDIA_MOBILE,
+	GAP,
 	BORDER_RADIUS,
 	SHADOW,
 	DROP_SHADOW,
@@ -61,6 +62,7 @@ export interface FatCatTheme {
 	inputVariant: typeof INPUT_VARIANT
 	ollistVariant: typeof OLLIST_VARIANT,
 	ullistVariant: typeof ULLIST_VARIANT,
+	gap: typeof GAP,
 	borderRadius: typeof BORDER_RADIUS,
 	shadow: typeof SHADOW,
 	dropShadow: typeof DROP_SHADOW,
@@ -97,6 +99,7 @@ const defaultTheme: FatCatTheme = {
 	ollistVariant: OLLIST_VARIANT,
 	ullistVariant: ULLIST_VARIANT,
 	sectionLayout: undefined,
+	gap: GAP,
 	borderRadius: BORDER_RADIUS,
 	shadow: SHADOW,
 	dropShadow: DROP_SHADOW,

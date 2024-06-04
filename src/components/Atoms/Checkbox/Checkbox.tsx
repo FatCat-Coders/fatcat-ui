@@ -1,4 +1,3 @@
-import { Properties } from 'csstype';
 import React, { forwardRef, InputHTMLAttributes, PropsWithChildren } from 'react';
 import { DefaultTheme, CSSProp } from 'styled-components';
 
@@ -9,6 +8,7 @@ import {
 	CheckboxWrapper,
 	CheckboxInput,
 } from './Checkbox.atoms';
+import { GapDefinition } from 'src/theme/definitions/gap/gap';
 
 export interface TCheckbox extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'value'> {
 	backgroundColor?: keyof DefaultTheme['color']
@@ -19,7 +19,7 @@ export interface TCheckbox extends Omit<InputHTMLAttributes<HTMLInputElement>, '
 	isIndeterminate?: boolean
 	size?: 'small' | 'medium' | 'large'
 	icon?: React.ReactNode
-	gap?: Properties['gap']
+	gap?: GapDefinition
 }
 
 const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<TCheckbox>>((props, ref) => {
@@ -92,7 +92,7 @@ Checkbox.defaultProps = {
 	size: 'medium',
 	isIndeterminate: false,
 	icon: null,
-	gap: '8px',
+	gap: undefined,
 };
 
 export default Checkbox;

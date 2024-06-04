@@ -4,6 +4,7 @@ import { Wrapper } from '../../Atoms/Wrapper';
 
 import {
 	COLOR,
+	GAP,
 } from '../../../theme/definitions';
 import { default as BannerOrigin } from './Banner'; // eslint-disable-line
 
@@ -25,8 +26,8 @@ export default {
 			},
 		},
 		gap: {
-			control: 'text',
-			description: 'Gap between icons',
+			control: 'select',
+			options: Object.keys(GAP),
 			table: {
 				type: { summary: null },
 				defaultValue: { summary: '10px' },

@@ -9,13 +9,6 @@ import '../assets/fonts/silka/stylesheet.css';
 // Themes
 import { UIThemeProvider, FatCatTheme } from 'fatcat-ui-library/theme/theme';
 
-const color = {
-	newBlue: '#123456',
-};
-const space = {
-	s10: '10px',
-};
-
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
 		useMobileFirst: FatCatTheme['useMobileFirst']
@@ -47,6 +40,7 @@ declare module 'styled-components' {
 		ollistVariant: FatCatTheme['ollistVariant']
 		ullistVariant: FatCatTheme['ullistVariant']
 		borderRadius: FatCatTheme['borderRadius']
+		gap: FatCatTheme['gap']
 		shadow: FatCatTheme['shadow']
 		dropShadow: FatCatTheme['dropShadow']
 		focusShadow: FatCatTheme['focusShadow']

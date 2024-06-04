@@ -5,6 +5,7 @@ import { Grid as GridOrigin } from '../../../components/Atoms/Grid';
 import { Flex } from '../../../components/Atoms/Flex';
 
 import readme from './Grid.md';
+import { GAP } from '../../../theme/definitions/gap/gap';
 
 const widths = ['200px', '250px', '300px'];
 
@@ -51,8 +52,9 @@ export default {
 			},
 		},
 		gap: {
+			control: 'select',
+			options: Object.keys(GAP),
 			name: 'gap (default: 16px)',
-			control: 'text',
 			description: 'String with css property',
 			type: 'string',
 			table: {
@@ -60,7 +62,8 @@ export default {
 			},
 		},
 		rowGap: {
-			control: 'text',
+			control: 'select',
+			options: Object.keys(GAP),
 			description: 'String with css property',
 			type: 'string',
 			table: {
