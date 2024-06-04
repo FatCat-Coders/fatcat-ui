@@ -7,7 +7,8 @@ import { PolymorphicComponent } from '../../../utils/polymorphic-component';
 
 // Props
 import {
-	flex, FlexProps, generalProps, GeneralProps,
+	flex, FlexProps,
+	generalProps, GeneralProps,
 } from '../../../theme/props';
 
 // Components
@@ -28,7 +29,7 @@ export type TButton = {
 
 export const ButtonBase = styled('button').withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
-}) <TButton>`
+})<TButton>`
     cursor: pointer;
     display: inline-block;
 	font-weight: bold;
@@ -49,15 +50,22 @@ export type ButtonComponent = PolymorphicComponent<ButtonProps>;
 // eslint-disable-next-line react/function-component-definition
 export const Button: ButtonComponent = (props) => {
 	const {
-		children, trailingIcon, leadingIcon, isLoading = false, buttonColor = 'primary', variant = 'primary', size = 'large', textAlign = 'center', ...buttonProps
+		children,
+		trailingIcon,
+		leadingIcon,
+		isLoading = false,
+		variant = 'primary',
+		color = variant,
+		size = 'large',
+		textAlign = 'center',
+		...buttonProps
 	} = props;
 	const theme = useTheme();
-	const color = (!buttonColor && theme.buttonColor[variant]) ? variant : buttonColor;
 	const isTextLink = variant === 'textLink';
 
 	return (
 		<ButtonBase
-			buttonColor={color}
+			color={color}
 			disabled={buttonProps.disabled || isLoading}
 			size={size}
 			variant={variant}
@@ -76,7 +84,8 @@ export const Button: ButtonComponent = (props) => {
 				<>
 					{leadingIcon && !isTextLink && (
 						<Icon
-							name={leadingIcon} size={theme.buttonSize[size].iconSize} color={JSON.stringify(color)}
+							name={leadingIcon}
+							size={theme.buttonSize[size].iconSize}
 						/>
 					)}
 					<Wrapper paddingX={theme.buttonVariant[variant].textPadding.x} paddingBottom={theme.buttonVariant[variant].textPadding.bottom}>
@@ -86,7 +95,6 @@ export const Button: ButtonComponent = (props) => {
 						<Flex w={isTextLink ? '24px' : 'fit-content'} flexShrink="0">
 							<Icon
 								name={trailingIcon} size={theme.buttonSize[size].iconSize}
-								color={JSON.stringify(color)}
 							/>
 						</Flex>
 					)}

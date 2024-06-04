@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
-import styled, { DefaultTheme } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
 // React-icons
 import * as icons from './icons';
@@ -33,13 +33,13 @@ const IconContainer = styled.svg.attrs<TIconContainerProps>(props => ({
 })).withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !['size', 'color'].includes(prop) && defaultValidatorFn(prop),
 })<TIconContainerProps>`
-	color: ${props => (props.theme.color[props.color])};
+	${props => props.color && css`color: ${props.theme.color[props.color]};`}
 	flex-shrink: 0;
   `;
 
 // eslint-disable-next-line react/function-component-definition
 export const Icon: React.FC<TIcon> = ({
-	name, size = '18', color = 'primary600',
+	name, size = '18', color,
 }) => {
 	const SvgIcon = icons[name];
 
