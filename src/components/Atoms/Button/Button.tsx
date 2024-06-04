@@ -33,15 +33,15 @@ export const ButtonBase = styled('button').withConfig({
     cursor: pointer;
     display: inline-block;
 	font-weight: bold;
-	${props => props.variant && props.theme.buttonVariant[props.variant]};
-	${flex};
-	${generalProps};
 	${({ isLoading }) => isLoading &&
 		css`
 			&:disabled {
 				opacity: 1;
 			}
     `}
+	${props => props.variant && props.theme.buttonVariant[props.variant]};
+	${flex};
+	${generalProps};
 `;
 
 export type ButtonProps = Omit<JSX.IntrinsicElements['button'], 'type'> & TButton;
@@ -59,13 +59,11 @@ export const Button: ButtonComponent = (props) => {
 	return (
 		<ButtonBase
 			buttonColor={color}
-			display="flex"
-			gap={isTextLink ? '6px' : '4px'}
-			alignItems="center"
 			disabled={buttonProps.disabled || isLoading}
-			{...{
-				size, variant, textAlign, ...buttonProps,
-			}}
+			size={size}
+			variant={variant}
+			textAlign={textAlign}
+			{...buttonProps}
 		>
 			{isLoading ? (
 				<Oval

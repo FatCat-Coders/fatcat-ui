@@ -68,6 +68,9 @@ const buttonBase = ({ size, theme, buttonColor }: { size: keyof DefaultTheme['bu
 	padding-left: 20px;
 	padding-right: 20px;
     border-radius: 6px;
+	display: flex;
+	gap: 4px;
+	align-items: center;
 	background: ${props => props.theme.buttonColor[buttonColor].default.background};
 	color: ${props => props.theme.buttonColor[buttonColor].default.text};
 	transition: background 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out;
@@ -135,6 +138,7 @@ export const BUTTON_VARIANT = {
         padding: 0px;
 		padding-left: 2px;
 		padding-right: 2px;
+		gap: 6px;
 
         &::after {
             content: '';
