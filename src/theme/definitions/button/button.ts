@@ -1,39 +1,11 @@
 import { css, DefaultTheme } from 'styled-components';
 
-// todo update sizes to UI 1,2,3/Medium-600 in textSize file (task: theme)
-const ui1Medium = css`
-	
-	font-family: Satoshi Variable;
-	font-size: 18px;
-	font-weight: 600;
-	line-height: 18px;
-	letter-spacing: 0.20000000298023224px;
-	text-align: left;
-`;
-
-const ui2Medium = css`
-	font-family: Satoshi Variable;
-	font-size: 18px;
-	font-weight: 600;
-	line-height: 18px;
-	letter-spacing: 0.20000000298023224px;
-	text-align: left;
-`;
-const ui3Medium = css`
-	font-family: Satoshi Variable;
-	font-size: 15px;
-	font-weight: 600;
-	line-height: 16px;
-	letter-spacing: 0.20000000298023224px;
-	text-align: left;
-`;
-
 export const BUTTON_SIZE = {
 	extraLarge: {
 		styles: css`
 			height: 56px;
 			border-radius: 8px;
-			${ui1Medium}
+			${props => props.theme.textSize.ui1}
 		`,
 		iconSize: 24,
 	},
@@ -41,7 +13,7 @@ export const BUTTON_SIZE = {
 		styles: css`
 			height: 44px;
 			border-radius: 6px;
-			${ui2Medium}
+			${props => props.theme.textSize.ui2}
 		`,
 		iconSize: 24,
 	},
@@ -49,7 +21,7 @@ export const BUTTON_SIZE = {
 		styles: css`
 			height: 40px;
 			border-radius: 6px;
-			${ui2Medium}
+			${props => props.theme.textSize.ui2}
 		`,
 		iconSize: 20,
 	},
@@ -57,28 +29,28 @@ export const BUTTON_SIZE = {
 		styles: css`
 			height: 36px;
 			border-radius: 6px;
-			${ui3Medium}
+			${props => props.theme.textSize.ui3}
 		`,
 		iconSize: 20,
 	},
 	navLink: {
 		styles: css`
 			height: 40px;
-			${ui2Medium}
+			${props => props.theme.textSize.ui2}
 		`,
 		iconSize: 20,
 	},
 	textLink: {
 		styles: css`
 			height: 24px;
-			${ui1Medium}
+			${props => props.theme.textSize.ui1}
 		`,
 		iconSize: 20,
 	},
 	textLinkSmall: {
 		styles: css`
 			height: 24px;
-			${ui2Medium}
+			${props => props.theme.textSize.ui2}
 		`,
 		iconSize: 20,
 	},
