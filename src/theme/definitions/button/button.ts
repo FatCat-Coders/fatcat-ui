@@ -40,6 +40,13 @@ export const BUTTON_SIZE = {
 		`,
 		iconSize: 20,
 	},
+	navLinkMobile: {
+		styles: css`
+			height: 50px;
+			${props => props.theme.textSize.ui1}
+		`,
+		iconSize: 20,
+	},
 	textLink: {
 		styles: css`
 			height: 24px;
@@ -192,6 +199,12 @@ export const BUTTON_VARIANT = {
 			${props => buttonBase(props)}; 
 			padding: 0px;
 
+
+			${props => props.theme.media.mobile}{
+				${props => props.theme.buttonSize.navLinkMobile.styles};
+				color: ${props => props.theme.buttonColor[props.color].hover.text};
+			}
+ 	
 			&::after {
 				content: '';
 				display: block;
