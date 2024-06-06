@@ -31,18 +31,20 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TTextArea>((props,
 				ref={ref}
 				id={inputId}
 				placeholder=" "
-				errorMsg={errorMsg}
-				customInput
+				// TODO: fix this when fixing types
+				// errorMsg={errorMsg}
+				// customInput
 			/>
 			<Label htmlFor={inputId}>{placeholder}</Label>
 			{errorMsg && (
 				<Text
 					display="block"
-					textColor="warningMedium"
+					// TODO: fix this when fixing types
+					// textColor="warningMedium"
 					position="absolute"
 					bottom="0px"
 					lineHeight="s100"
-					fontSize="s12"
+					fontSize="s11"
 					styled="padding: 4px 13px;"
 				>
 					{errorMsg}

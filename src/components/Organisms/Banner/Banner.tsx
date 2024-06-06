@@ -13,20 +13,22 @@ export type TBanner = {
 	content: string | React.ReactNode
 	buttonContent: string | React.ReactNode
 	buttonVariant: keyof DefaultTheme['buttonVariant'] | undefined
+	// eslint-disable-next-line react/require-default-props
 	buttonColor?: keyof DefaultTheme['buttonColor'] | undefined
-	backgroundColor?: keyof DefaultTheme['backgroundColor']
-	backgroundColorHex?: Properties['backgroundColor']
+	backgroundColor?: keyof DefaultTheme['color']
+	backgroundColorHex?: Properties['color']
 	backgroundColorOpacity?: number
 	backgroundImage?: string
 	backgroundRepeat?: Properties['backgroundRepeat']
 	backgroundPosition?: Properties['backgroundPosition']
 	backgroundSize?: Properties['backgroundSize']
-	textColor?: keyof DefaultTheme['textColor']
+	textColor?: keyof DefaultTheme['color']
 	scale?: boolean
 	styled?: CSSProp
 	padding?: SpaceProps['padding']
 }
 
+// eslint-disable-next-line react/function-component-definition
 const Banner: React.FC<TBanner> = (props) => {
 	const {
 		backgroundImage,
@@ -48,6 +50,7 @@ const Banner: React.FC<TBanner> = (props) => {
 
 	return (
 		<Section
+			variant="default"
 			backgroundImage={backgroundImage}
 			backgroundColor={backgroundColor}
 			backgroundColorHex={backgroundColorHex}
@@ -61,7 +64,7 @@ const Banner: React.FC<TBanner> = (props) => {
 		>
 			<Flex
 				justifyContent="space-between"
-				gap="40px"
+				gap="s10"
 				alignItems="center"
 				tablet={[
 					'column',
@@ -102,7 +105,6 @@ Banner.defaultProps = {
 	textColor: 'neutrals50',
 	padding: ['t80', 'b80'],
 	styled: undefined,
-	buttonColor: 'white',
 };
 
 export default Banner;

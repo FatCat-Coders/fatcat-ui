@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Properties } from 'csstype';
 import { useTheme, DefaultTheme, CSSProp } from 'styled-components';
 
 // Atoms
@@ -12,13 +11,14 @@ export type TRatings = {
 	getRating?: (value: number) => void
 	maxRating?: number
 	gap?: GapDefinition
-	backgroundColor?: DefaultTheme['backgroundColor']
-	starColor?: DefaultTheme['backgroundColor']
-	starBorder?: DefaultTheme['color']
+	backgroundColor?: keyof DefaultTheme['color']
+	starColor?: keyof DefaultTheme['color']
+	starBorder?: keyof DefaultTheme['color']
 	size?: string
 	styled?: CSSProp
 }
 
+// eslint-disable-next-line react/function-component-definition
 const Ratings: React.FC<TRatings> = (props) => {
 	const {
 		rating,

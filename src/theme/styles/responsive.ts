@@ -2,8 +2,8 @@ import { css, DefaultTheme, CSSProp } from 'styled-components';
 import { Properties } from 'csstype';
 
 // Types
-import { SideSpacingValue } from '../props/space/space';
-import { HoverTypes } from '../props/hover/hover';
+import { SideSpacingValue } from '../props';
+import { HoverTypes } from '../props';
 
 import { GapDefinition, SpaceDefinition } from '../definitions';
 
@@ -502,7 +502,9 @@ export const RESPONSIVE_BEHAVIORS = {
 	// hover
 	hover: (value: HoverTypes) => css`
 		&:hover {
-			${props => pickObjectProperties(props.theme.hover, value)}
+			${props =>
+	// @ts-expect-error TODO: fix this when types are fixed
+		pickObjectProperties(props.theme.hover, value)}
 		}
 	`,
 	// IMPORTANT: leave this props on bottom of the list
