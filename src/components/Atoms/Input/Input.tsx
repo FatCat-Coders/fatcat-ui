@@ -45,7 +45,7 @@ export const Input = React.forwardRef<HTMLInputElement, TInput>((props, ref) => 
 					position="absolute"
 					bottom="0px"
 					lineHeight="s100"
-					fontSize="s12"
+					fontSize="s11"
 					styled="padding: 4px 13px;"
 				>
 					{errorMsg}

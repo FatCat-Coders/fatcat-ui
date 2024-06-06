@@ -44,7 +44,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TTextArea>((props,
 					position="absolute"
 					bottom="0px"
 					lineHeight="s100"
-					fontSize="s12"
+					fontSize="s11"
 					styled="padding: 4px 13px;"
 				>
 					{errorMsg}

@@ -18,13 +18,13 @@ const baseAllCaps = css`
 export const TEXT_SIZE = {
 	display1: css`
 		${base};
-		font-size: ${props => props.theme.fontSize.s74};
+		font-size: ${props => props.theme.fontSize.s72};
 		line-height: 1.2;
 		letter-spacing: -1.4px;
 	`,
 	display2: css`
 		${base};
-		font-size: ${props => props.theme.fontSize.s64};
+		font-size: ${props => props.theme.fontSize.s60};
 		line-height: 1.1;
 		letter-spacing: -1.2px;
 	`,
@@ -36,13 +36,13 @@ export const TEXT_SIZE = {
 	`,
 	display4: css`
 		${base};
-		font-size: ${props => props.theme.fontSize.s42};
+		font-size: ${props => props.theme.fontSize.s40};
 		line-height: 1.2;
 		letter-spacing: -0.6px;
 	`,
 	display5: css`
 		${base};
-		font-size: ${props => props.theme.fontSize.s34};
+		font-size: ${props => props.theme.fontSize.s36};
 		line-height: 1.2;
 		letter-spacing: -0.4px;
 	`,
@@ -66,7 +66,7 @@ export const TEXT_SIZE = {
 	`,
 	text1: css`
 		${base};
-		font-size: ${props => props.theme.fontSize.s24};
+		font-size: ${props => props.theme.fontSize.s22};
 		line-height: 1.4;
 		letter-spacing: 0.2px;
 	`,
@@ -110,7 +110,7 @@ export const TEXT_SIZE = {
 		${baseQuote};
 		font-size: ${props => props.theme.fontSize.s24};
 		line-height: 1.4;
-		letter-spacing: 0px;
+		letter-spacing: 0;
 	`,
 	quote2: css`
 		${baseQuote};
@@ -168,11 +168,8 @@ export const TEXT_SIZE = {
 	`,
 	allCaps5: css`
 		${baseAllCaps};
-		font-size: ${props => props.theme.fontSize.s12};
+		font-size: ${props => props.theme.fontSize.s11};
 		line-height: 12px;
 		letter-spacing: 2px;
 	`,
-
 };
-
-export type TextSize = keyof typeof TEXT_SIZE;
