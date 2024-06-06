@@ -13,7 +13,8 @@ export type TBanner = {
 	content: string | React.ReactNode
 	buttonContent: string | React.ReactNode
 	buttonVariant: keyof DefaultTheme['buttonVariant'] | undefined
-	buttonColor?: keyof DefaultTheme['color'] | undefined
+	// eslint-disable-next-line react/require-default-props
+	buttonColor?: keyof DefaultTheme['buttonColor'] | undefined
 	backgroundColor?: keyof DefaultTheme['color']
 	backgroundColorHex?: Properties['color']
 	backgroundColorOpacity?: number
@@ -104,7 +105,6 @@ Banner.defaultProps = {
 	textColor: 'neutrals50',
 	padding: ['t80', 'b80'],
 	styled: undefined,
-	buttonColor: 'neutrals200',
 };
 
 export default Banner;
