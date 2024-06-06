@@ -1,6 +1,3 @@
-import { transparentize } from 'polished';
-import { COLOR } from '../color/color';
-
 export const SHADOW = {
 	xs: '0px 1px 2px 0px #1018280D',
 	sm: '0px 1px 2px 0px #1018280F, 0px 1px 3px 0px #1018281A',
@@ -17,10 +14,7 @@ export const DROP_SHADOW = {
 	sm: 'drop-shadow(0px 1px 2px #1018280F) drop-shadow(0px 1px 3px #1018281A)',
 };
 
-// TODO add this to the button focus when merged
-// TODO remove button ring color when merged
 export const FOCUS_SHADOW = {
-	'focus-1': `0px 0px 0px 2px ${transparentize(0.32, COLOR.primary600)}`,
-	'focus-2': `0px 0px 0px 4px ${transparentize(0.32, COLOR.primary600)}`,
-	'focus-2-inverted': `0px 0px 0px 4px ${transparentize(0.56, COLOR.neutrals50)}`,
+	'focus-1': '0px 0px 0px 2px',
+	'focus-2': '0px 0px 0px 4px ',
 };

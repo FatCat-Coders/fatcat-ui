@@ -84,7 +84,7 @@ const buttonBase = ({ size, color }: TButtonBase) => css`
 	&:focus-visible {
 		background: ${props => props.theme.buttonColor[color].focus.background};
 		color: ${props => props.theme.buttonColor[color].focus.text};
-		box-shadow: 0 0 0 4px ${props => props.theme.buttonColor[color].focus.ringColor};
+		box-shadow:${props => props.theme.focusShadow['focus-2']} ${props => props.theme.buttonColor[color].focus.ringColor};
 
 		&:before {
 			display: none;
