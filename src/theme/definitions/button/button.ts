@@ -70,6 +70,7 @@ export type TButtonBase = {
 
 const buttonBase = ({ size, color }: TButtonBase) => css`
  	${props => size && props.theme.buttonSize[size].styles};
+	font-weight: ${props => props.theme.fontWeight.medium};
 	padding-left: 20px;
 	padding-right: 20px;
     border-radius: 6px;
