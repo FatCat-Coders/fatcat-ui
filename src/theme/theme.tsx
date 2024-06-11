@@ -23,7 +23,6 @@ import {
 	SPACE,
 	TABLE_VARIANT,
 	ULLIST_VARIANT,
-	MEDIA_MOBILE,
 	GAP,
 	BORDER_RADIUS,
 	SHADOW,
@@ -50,7 +49,6 @@ export interface FatCatTheme {
 	lineHeight: typeof LINE_HEIGHT
 	// linkVariant: typeof LINK_VARIANT
 	media: typeof MEDIA
-	mediaMobile: typeof MEDIA_MOBILE
 	responsive: typeof RESPONSIVE_BEHAVIORS
 	screenRatio: typeof SCREEN_RATIO
 	sectionWidth: typeof SECTION_WIDTH
@@ -86,7 +84,6 @@ const defaultTheme: FatCatTheme = {
 	lineHeight: LINE_HEIGHT,
 	// linkVariant: LINK_VARIANT,
 	media: MEDIA,
-	mediaMobile: MEDIA_MOBILE,
 	responsive: RESPONSIVE_BEHAVIORS,
 	screenRatio: SCREEN_RATIO,
 	sectionWidth: SECTION_WIDTH,
@@ -117,15 +114,9 @@ export function UIThemeProvider({ children, theme }: UIThemeProviderI) {
 		if (theme.media && !isObjectEmpty(theme.media)) {
 			mergedTheme.media = theme.media;
 		}
-		if (theme.mediaMobile && !isObjectEmpty(theme.mediaMobile)) {
-			mergedTheme.mediaMobile = theme.mediaMobile;
-		}
 	}
 	const newTheme = mergedTheme || defaultTheme;
-	// TODO: maybe change locgic for this breakpoint change
-	if (newTheme.useMobileFirst) {
-		newTheme.media = newTheme.mediaMobile;
-	}
+
 	return <ThemeProvider theme={newTheme}>{children}</ThemeProvider>;
 }
 

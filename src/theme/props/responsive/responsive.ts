@@ -1,19 +1,24 @@
-import { css, DefaultTheme, CSSProp } from 'styled-components';
+import {
+	css, DefaultTheme, CSSProp, FlattenSimpleInterpolation,
+} from 'styled-components';
 
 import { SideSpacingValue } from '../space/space';
 
 // Helpers
 import pickObjectProperties from '../../../utils/pick-object-properties';
 
+type TResponsiveObj = {
+    [key in ResponsiveTypes]: ResponsiveStyleValue;
+};
+
 export type ResponsiveTypes = keyof DefaultTheme['responsive'];
 
-type TResponsiveObj = {
-	[key in ResponsiveTypes]: ((args: string | number | SideSpacingValue[]) => CSSProp) | CSSProp;
-}
-export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<TResponsiveObj>)[];
+type ResponsiveStyleValue = CSSProp | FlattenSimpleInterpolation | ((args: string | number | SideSpacingValue[]) => CSSProp | FlattenSimpleInterpolation);
+
+export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<TResponsiveObj>)[]| ResponsiveTypes | Partial<TResponsiveObj>;
 
 export type ResponsiveProps = {
-	[key in (keyof DefaultTheme['media'] | keyof DefaultTheme['mediaMobile'])]?: ResponsiveTypePropCheck
+    [key in keyof DefaultTheme['media']]?: ResponsiveTypePropCheck;
 };
 
 export const responsive = css<ResponsiveProps>`
@@ -21,7 +26,7 @@ export const responsive = css<ResponsiveProps>`
 		if (props[key as keyof ResponsiveProps]) {
 			acc.push(css`
 					${props.theme.media[key as keyof ResponsiveProps]} {
-						${pickObjectProperties(props.theme.responsive as any, props[key as keyof ResponsiveProps])}
+						${pickObjectProperties(props.theme.responsive, props[key as keyof ResponsiveProps])}
 					}
 				`);
 		}

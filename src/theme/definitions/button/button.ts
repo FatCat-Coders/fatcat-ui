@@ -1,4 +1,3 @@
-import { ButtonType } from 'src/utils/types';
 import { css, DefaultTheme } from 'styled-components';
 
 export const BUTTON_SIZE = {

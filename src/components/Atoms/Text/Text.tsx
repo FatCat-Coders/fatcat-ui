@@ -1,15 +1,14 @@
 import styled from 'styled-components';
-import { UIprops } from '../../../utils/ui-props';
 
-import { generalProps, GeneralProps } from '../../../theme/props';
+import {
+	generalProps2, GeneralProps2,
+} from '../../../theme/props';
 
-export type TText = GeneralProps;
+export type TText = GeneralProps2
 
-export const Text = styled.span.withConfig({
-	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
-}) <TText>`
+export const Text = styled.span<TText>`
 	${props => props.theme.textVariant.text}
-	${generalProps};
+	${generalProps2};
 `;
 
 Text.defaultProps = {

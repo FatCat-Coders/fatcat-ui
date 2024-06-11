@@ -1,5 +1,5 @@
 import { transparentize } from 'polished';
-import { ButtonType, TButtonColor } from 'src/utils/types';
+import { TButtonColor } from 'src/utils/types';
 
 export const COLOR = {
 	transparent: 'transparent',
@@ -315,4 +315,4 @@ export const BUTTON_COLOR:TButtonColor = {
 			ringColor: COLOR.transparent,
 		},
 	},
-};// satisfies { [key: string]: ButtonType }; // satisfies Record<string, ButtonType>;
+};

@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, CSSProp } from 'styled-components';
 
 import { animation, AnimationProps } from '../animation/animation';
 import { background, BackgroundProps } from '../background/background';
@@ -43,6 +43,22 @@ export type GeneralProps =
 	& OverflowProps
 	& PositionProps
 	& ResponsiveProps
+	& SizeProps
+	& SpaceProps
+	& TextProps
+	& TransitionsProps
+	& VisibilityProps;
+
+export const generalProps2 = generalProps;
+
+export type GeneralProps2 =
+	AnimationProps
+	& BackgroundProps
+	& BorderProps
+	& CustomCssProps
+	& HoverProps
+	& OverflowProps
+	& PositionProps
 	& SizeProps
 	& SpaceProps
 	& TextProps
