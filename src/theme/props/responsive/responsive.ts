@@ -15,7 +15,7 @@ export type ResponsiveTypes = keyof DefaultTheme['responsive'];
 
 type ResponsiveStyleValue = CSSProp | FlattenSimpleInterpolation | ((args: string | number | SideSpacingValue[]) => CSSProp | FlattenSimpleInterpolation);
 
-export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<TResponsiveObj>)[]| ResponsiveTypes | Partial<TResponsiveObj>;
+export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<TResponsiveObj>)[];
 
 export type ResponsiveProps = {
     [key in keyof DefaultTheme['media']]?: ResponsiveTypePropCheck;
