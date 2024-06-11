@@ -235,7 +235,7 @@ export const BUTTON_COLOR = {
 			ringColor: transparentize(0.32, COLOR.neutrals50),
 		},
 	},
-	navLink: { // todo mobile is a bit different
+	navLink: {
 		default: {
 			background: COLOR.transparent,
 			text: COLOR.neutrals500,
