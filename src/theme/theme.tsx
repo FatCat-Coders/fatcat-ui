@@ -68,6 +68,11 @@ export interface FatCatTheme {
 	sectionVariant: typeof SECTION_VARIANT,
 }
 
+declare module 'styled-components' {
+	// eslint-disable-next-line
+	interface DefaultTheme extends FatCatTheme {}
+}
+
 const defaultTheme: FatCatTheme = {
 	useMobileFirst: false,
 	animation: ANIMATIONS,
@@ -102,12 +107,17 @@ const defaultTheme: FatCatTheme = {
 	sectionVariant: SECTION_VARIANT,
 };
 
-interface UIThemeProviderI {
-	theme?: any
+interface UIThemeProviderProps {
+	theme?: FatCatTheme
 	children: React.ReactNode
 }
 
-export function UIThemeProvider({ children, theme }: UIThemeProviderI) {
+export function UIThemeProvider(props: UIThemeProviderProps) {
+	const {
+		theme,
+		children,
+	} = props;
+
 	let mergedTheme;
 	if (theme && !isObjectEmpty(theme)) {
 		mergedTheme = deepmerge(defaultTheme, theme);

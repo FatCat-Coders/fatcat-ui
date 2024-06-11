@@ -20,6 +20,27 @@ import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
   {children}
 </UIThemeProvider>
 ```
+
+2. Add the global styles to your project:
+
+```ts
+// env.d.ts
+
+import 'fatcat-ui-library';
+
+declare module 'fatcat-ui-library' {
+	interface FatCatTheme {
+            // Add your custom theme properties here 
+	}
+}
+
+declare module "styled-components" {
+	import { FatCatTheme } from 'fatcat-ui-library';
+	interface DefaultTheme extends FatCatTheme {}
+}
+
+```
+
 ## Usage
 To start using the components in your project, follow next steps:
 
