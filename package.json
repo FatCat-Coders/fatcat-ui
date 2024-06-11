@@ -19,6 +19,7 @@
     "url": "https://github.com/FatCat-Coders/fatcat-ui/issues"
   },
   "scripts": {
+    "dev": "tsup --watch",
     "update-packages": "ts-node ./tools/src/update-packages.ts",
     "gen-changelog": "npx changeset && npx changeset version",
     "publish-tag": "git push --follow-tags",
