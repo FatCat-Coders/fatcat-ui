@@ -18,8 +18,7 @@ export type TRatings = {
 	styled?: CSSProp
 }
 
-// eslint-disable-next-line react/function-component-definition
-const Ratings: React.FC<TRatings> = (props) => {
+function Ratings(props: TRatings) {
 	const {
 		rating,
 		getRating,
@@ -119,7 +118,7 @@ const Ratings: React.FC<TRatings> = (props) => {
 			})}
 		</Center>
 	);
-};
+}
 
 Ratings.defaultProps = {
 	rating: null,
