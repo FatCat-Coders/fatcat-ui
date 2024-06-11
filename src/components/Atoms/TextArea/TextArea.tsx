@@ -39,8 +39,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TTextArea>((props,
 			{errorMsg && (
 				<Text
 					display="block"
-					// TODO: fix this when fixing types
-					// textColor="warningMedium"
+					textColor="warningMedium"
 					position="absolute"
 					bottom="0px"
 					lineHeight="s100"

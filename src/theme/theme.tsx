@@ -110,7 +110,7 @@ interface UIThemeProviderI {
 	children: React.ReactNode
 }
 
-export const UIThemeProvider: React.FC<UIThemeProviderI> = ({ children, theme }) => {
+export function UIThemeProvider({ children, theme }: UIThemeProviderI) {
 	let mergedTheme;
 	if (theme && !isObjectEmpty(theme)) {
 		mergedTheme = deepmerge(defaultTheme, theme);
@@ -127,7 +127,7 @@ export const UIThemeProvider: React.FC<UIThemeProviderI> = ({ children, theme })
 		newTheme.media = newTheme.mediaMobile;
 	}
 	return <ThemeProvider theme={newTheme}>{children}</ThemeProvider>;
-};
+}
 
 UIThemeProvider.defaultProps = {
 	theme: undefined,

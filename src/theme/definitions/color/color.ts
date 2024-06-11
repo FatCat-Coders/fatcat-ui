@@ -1,4 +1,5 @@
 import { transparentize } from 'polished';
+import { ButtonType, TButtonColor } from 'src/utils/types';
 
 export const COLOR = {
 	transparent: 'transparent',
@@ -58,12 +59,28 @@ export const COLOR = {
 	neutrals600: '#343957',
 	neutrals700: '#2E324D',
 	neutrals800: '#01082D',
+	// feedback/semantics
+	// success
 	successDark: '#067647',
 	successMedium: '#079455',
 	successLight: '#ECFDF3',
+	// error
+	errorExtraDark: '#B42318',
+	errorDark: '#D92D20',
+	errorMedium: '#F04438',
+	errorLight: '#FEF3F2',
+	// warning
+	warningDark: '#B54708',
+	warningMedium: '#DC6803',
+	warningLight: '#FEF0C7',
+	// info
+	infoExtraDark: '#0E6BAA',
+	infoDark: '#0F77BD',
+	infoMedium: '#1D99ED',
+	infoLight: '#D9EEFC',
 };
 
-export const BUTTON_COLOR = {
+export const BUTTON_COLOR:TButtonColor = {
 	primary: {
 		default: {
 			background: COLOR.primary600,
@@ -298,4 +315,4 @@ export const BUTTON_COLOR = {
 			ringColor: COLOR.transparent,
 		},
 	},
-};
+};// satisfies { [key: string]: ButtonType }; // satisfies Record<string, ButtonType>;

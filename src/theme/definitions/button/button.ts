@@ -1,3 +1,4 @@
+import { ButtonType } from 'src/utils/types';
 import { css, DefaultTheme } from 'styled-components';
 
 export const BUTTON_SIZE = {
@@ -211,35 +212,23 @@ export const BUTTON_VARIANT = {
 				display: block;
 				width: 0;
 				height: 2px;
-				background:  ${props =>
-	// @ts-expect-error TODO: fix this when fixing types
-		props.theme.buttonColor[props.color].hover.underLineColor
-};
+				background:  ${props => props.theme.buttonColor[props.color].hover.underLineColor};
 				transition: width 0.2s;
 			}
 			&:hover::after {
 				width: 100%;
-				background:  ${props =>
-	// @ts-expect-error TODO: fix this when fixing types
-		props.theme.buttonColor[props.color].hover.underLineColor
-};
+				background:  ${props => props.theme.buttonColor[props.color].hover.underLineColor};
 			}
 			&:active::after {
 				width: 100%;
-			background:  ${props =>
-	// @ts-expect-error TODO: fix this when fixing types
-		props.theme.buttonColor[props.color].pressed.underLineColor
-};
+			background:  ${props => props.theme.buttonColor[props.color].pressed.underLineColor};
 			}
 			&:focus-visible {
 				box-shadow: none;
 			}
 			&:focus-visible::after {
 				width: 100%;
-				background: ${props =>
-	// @ts-expect-error TODO: fix this when fixing types
-		props.theme.buttonColor[props.color].hover.underLineColor
-};
+				background: ${props => props.theme.buttonColor[props.color].hover.underLineColor};
 			}
 		`,
 		textPadding: {
