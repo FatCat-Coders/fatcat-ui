@@ -42,6 +42,8 @@ export const ButtonBase = styled('button').withConfig({
 	${
 	// @ts-expect-error @TOOD: fix this
 	props =>
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
 		props.variant && props.theme.buttonVariant[props.variant].styles
 };
 	${flex};
