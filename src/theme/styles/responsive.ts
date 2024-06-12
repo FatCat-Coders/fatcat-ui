@@ -500,11 +500,10 @@ export const RESPONSIVE_BEHAVIORS = {
 		will-change: ${value};
 	`,
 	// hover
+	// @TODO: check if pickObjectProperties is working properly here because it returns FlattenSimpleInterpolation array
 	hover: (value: HoverTypes) => css`
 		&:hover {
-			${props =>
-	// @ts-expect-error TODO: fix this when types are fixed
-		pickObjectProperties(props.theme.hover, value)}
+			${props => pickObjectProperties(props.theme.hover, value)}
 		}
 	`,
 	// IMPORTANT: leave this props on bottom of the list

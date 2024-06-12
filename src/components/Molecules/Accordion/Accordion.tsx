@@ -22,8 +22,7 @@ export type TAccordion = {
 	styled?: CSSProp
 }
 
-// eslint-disable-next-line react/function-component-definition
-const Accordion: React.FC<TAccordion> = (props) => {
+function Accordion(props: TAccordion) {
 	const {
 		titleAs,
 		title,
@@ -80,7 +79,7 @@ const Accordion: React.FC<TAccordion> = (props) => {
 			</AccordionContent>
 		</AccordionWrapper>
 	);
-};
+}
 
 Accordion.defaultProps = {
 	titleAs: 'h2',

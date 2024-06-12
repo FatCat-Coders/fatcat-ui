@@ -28,8 +28,7 @@ export type TBanner = {
 	padding?: SpaceProps['padding']
 }
 
-// eslint-disable-next-line react/function-component-definition
-const Banner: React.FC<TBanner> = (props) => {
+function Banner(props: TBanner) {
 	const {
 		backgroundImage,
 		backgroundColor,
@@ -91,7 +90,7 @@ const Banner: React.FC<TBanner> = (props) => {
 			</Flex>
 		</Section>
 	);
-};
+}
 
 Banner.defaultProps = {
 	backgroundColor: 'primary600',

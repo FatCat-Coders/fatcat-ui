@@ -16,8 +16,7 @@ export type TTag = {
 	variant?: keyof typeof tagVariant
 } & TTagWrapper;
 
-// eslint-disable-next-line react/function-component-definition
-const Tag: React.FC<TTag> = (props) => {
+function Tag(props: TTag) {
 	const theme = useTheme();
 	const {
 		name,
@@ -83,7 +82,7 @@ const Tag: React.FC<TTag> = (props) => {
 			)}
 		</TagWrapper>
 	);
-};
+}
 
 Tag.defaultProps = {
 	onClose: undefined,

@@ -39,10 +39,13 @@ const IconContainer = styled.svg.attrs<TIconContainerProps>(props => ({
 	flex-shrink: 0;
   `;
 
-// eslint-disable-next-line react/function-component-definition
-export const Icon: React.FC<TIcon> = ({
-	name, size = '18', color,
-}) => {
+export function Icon(props: TIcon) {
+	const {
+		name,
+		size = 24,
+		color,
+	} = props;
+
 	const SvgIcon = icons[name];
 
 	if (!SvgIcon) {
@@ -57,4 +60,4 @@ export const Icon: React.FC<TIcon> = ({
 			<SvgIcon />
 		</IconContainer>
 	);
-};
+}

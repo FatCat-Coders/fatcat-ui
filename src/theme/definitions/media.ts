@@ -12,16 +12,3 @@ export const MEDIA = {
 };
 
 export type MediaDefinition = keyof DefaultTheme['media'];
-
-export const MEDIA_MOBILE = {
-	wideDesktop: '@media screen and (min-width: 1921px)',
-	largeDesktop: '@media screen and (min-width: 1401px)',
-	standardDesktop: '@media screen and (min-width: 1201px)',
-	desktop: '@media screen and (min-width: 993px)',
-	largeTablet: '@media screen and (min-width: 769px)',
-	tablet: '@media screen and (min-width: 481px)',
-	mobile: '@media screen and (max-width: 480px)',
-	noHover: '@media (hover: none)',
-};
-
-export type MediaMobileDefinition = keyof DefaultTheme['mediaMobile'];
