@@ -39,7 +39,14 @@ export const ButtonBase = styled('button').withConfig({
 				opacity: 1;
 			}
     `}
-	${props => props.variant && props.theme.buttonVariant[props.variant].styles};
+	${
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
+	props =>
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
+		props.variant && props.theme.buttonVariant[props.variant].styles
+};
 	${flex};
 	${generalProps};
 `;
