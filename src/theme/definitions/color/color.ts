@@ -1,5 +1,5 @@
 import { transparentize } from 'polished';
-import { TButtonColor } from 'src/utils/types';
+import { TButtonColor } from '../../../utils/types';
 
 export const COLOR = {
 	transparent: 'transparent',
@@ -80,7 +80,7 @@ export const COLOR = {
 	infoLight: '#D9EEFC',
 };
 
-export const BUTTON_COLOR:TButtonColor = {
+export const BUTTON_COLOR: TButtonColor = {
 	primary: {
 		default: {
 			background: COLOR.primary600,
