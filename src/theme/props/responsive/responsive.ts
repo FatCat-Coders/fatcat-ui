@@ -2,6 +2,8 @@ import {
 	css, DefaultTheme, CSSProp, FlattenSimpleInterpolation,
 } from 'styled-components';
 
+// @TODO: improve types here
+
 import { SideSpacingValue } from '../space/space';
 
 // Helpers
@@ -15,10 +17,10 @@ export type ResponsiveTypes = keyof DefaultTheme['responsive'];
 
 type ResponsiveStyleValue = CSSProp | FlattenSimpleInterpolation | ((args: string | number | SideSpacingValue[]) => CSSProp | FlattenSimpleInterpolation);
 
-export type ResponsiveTypePropCheck = (ResponsiveTypes | Partial<TResponsiveObj>)[];
+export type MediaQueryValue = (ResponsiveTypes | Partial<TResponsiveObj>)[];
 
 export type ResponsiveProps = {
-    [key in keyof DefaultTheme['media']]?: ResponsiveTypePropCheck;
+    [key in keyof DefaultTheme['media']]?: MediaQueryValue;
 };
 
 export const responsive = css<ResponsiveProps>`

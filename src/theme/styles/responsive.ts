@@ -500,6 +500,7 @@ export const RESPONSIVE_BEHAVIORS = {
 		will-change: ${value};
 	`,
 	// hover
+	// @TODO: check if pickObjectProperties is working properly here because it returns FlattenSimpleInterpolation array
 	hover: (value: HoverTypes) => css`
 		&:hover {
 			${props => pickObjectProperties(props.theme.hover, value)}
