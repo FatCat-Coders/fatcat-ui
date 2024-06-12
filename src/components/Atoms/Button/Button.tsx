@@ -19,7 +19,7 @@ import { Wrapper } from '../Wrapper';
 import { Oval } from 'react-loader-spinner';
 
 export type TButton = {
-	buttonColor?: keyof DefaultTheme['buttonColor'] | undefined
+	color?: keyof DefaultTheme['buttonColor'] | undefined
 	size?: keyof DefaultTheme['buttonSize']
 	variant?: keyof DefaultTheme['buttonVariant']
 	trailingIcon?: keyof typeof icons;
@@ -39,14 +39,7 @@ export const ButtonBase = styled('button').withConfig({
 				opacity: 1;
 			}
     `}
-	${
-	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-	// @ts-ignore
-	props =>
-	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-	// @ts-ignore
-		props.variant && props.theme.buttonVariant[props.variant].styles
-};
+	${props => props.variant && props.theme.buttonVariant[props.variant].styles};
 	${flex};
 	${generalProps};
 `;
@@ -95,7 +88,6 @@ export const Button: ButtonComponent = (props) => {
 							size={theme.buttonSize[size].iconSize}
 						/>
 					)}
-					{/* @ts-expect-error TODO: fix this when types are fixed */}
 					<Wrapper paddingX={theme.buttonVariant[variant].textPadding.x} paddingBottom={theme.buttonVariant[variant].textPadding.bottom}>
 						{children}
 					</Wrapper>

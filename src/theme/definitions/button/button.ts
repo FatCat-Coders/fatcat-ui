@@ -1,4 +1,8 @@
-import { css, DefaultTheme } from 'styled-components';
+import {
+	css, DefaultTheme, FlattenInterpolation, ThemedStyledProps,
+} from 'styled-components';
+import { TButton } from '../../../components';
+import { SpaceDefinition } from '../space/space';
 
 export const BUTTON_SIZE = {
 	extraLarge: {
@@ -63,10 +67,7 @@ export const BUTTON_SIZE = {
 	},
 } as const;
 
-export type TButtonBase = {
-	color: keyof DefaultTheme['buttonColor'];
-	size: keyof DefaultTheme['buttonSize'];
-}
+export type TButtonBase = Pick<TButton, 'color' | 'size'>;
 
 const buttonBase = ({ size, color }: TButtonBase) => css`
  	${props => size && props.theme.buttonSize[size].styles};
@@ -235,4 +236,7 @@ export const BUTTON_VARIANT = {
 			bottom: 's0',
 		},
 	},
-};
+} satisfies Record<string, {
+	styles: FlattenInterpolation<ThemedStyledProps<TButtonBase, DefaultTheme>>;
+	textPadding: { x: SpaceDefinition; bottom: SpaceDefinition };
+}>;
