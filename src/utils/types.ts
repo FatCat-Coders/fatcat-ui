@@ -77,7 +77,7 @@ export type TContentfulLink = {
 	items?: TContentfulLink[]
 }
 
-type ButtonVariants = 'primary' | 'secondary' | 'secondaryInvert' | 'ghost' |
+type ButtonColorVariants = 'primary' | 'secondary' | 'secondaryInvert' | 'ghost' |
 'ghostInvert' | 'outline' | 'outlineInvert' | 'textLink' | 'textLinkInvert' | 'navLink' |
 'navLinkInvert' | 'success';
 interface ButtonState {
@@ -93,4 +93,4 @@ interface ButtonType {
     pressed: ButtonState;
     focus: ButtonState;
 }
-export type TButtonColor=Record<ButtonVariants, ButtonType>
+export type TButtonColor=Record<ButtonColorVariants, ButtonType>
