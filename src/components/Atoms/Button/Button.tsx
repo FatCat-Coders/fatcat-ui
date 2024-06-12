@@ -40,7 +40,8 @@ export const ButtonBase = styled('button').withConfig({
 			}
     `}
 	${
-	// @ts-expect-error @TOOD: fix this
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
 	props =>
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
