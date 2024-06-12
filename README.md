@@ -26,19 +26,10 @@ import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 ```ts
 // env.d.ts
 
-import 'fatcat-ui-library';
-
-declare module 'fatcat-ui-library' {
-	interface FatCatTheme {
-            // Add your custom theme properties here 
-	}
-}
-
 declare module "styled-components" {
 	import { FatCatTheme } from 'fatcat-ui-library';
 	interface DefaultTheme extends FatCatTheme {}
 }
-
 ```
 
 ## Usage

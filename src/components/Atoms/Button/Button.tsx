@@ -39,7 +39,11 @@ export const ButtonBase = styled('button').withConfig({
 				opacity: 1;
 			}
     `}
-	${props => props.variant && props.theme.buttonVariant[props.variant].styles};
+	${
+	// @ts-expect-error @TOOD: fix this
+	props =>
+		props.variant && props.theme.buttonVariant[props.variant].styles
+};
 	${flex};
 	${generalProps};
 `;
