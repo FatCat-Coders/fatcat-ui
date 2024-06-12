@@ -48,19 +48,3 @@ export type GeneralProps =
 	& TextProps
 	& TransitionsProps
 	& VisibilityProps;
-
-export const generalProps2 = generalProps;
-
-export type GeneralProps2 =
-	AnimationProps
-	& BackgroundProps
-	& BorderProps
-	& CustomCssProps
-	& HoverProps
-	& OverflowProps
-	& PositionProps
-	& SizeProps
-	& SpaceProps
-	& TextProps
-	& TransitionsProps
-	& VisibilityProps;

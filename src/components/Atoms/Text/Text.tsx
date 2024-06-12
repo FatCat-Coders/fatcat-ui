@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 import {
-	generalProps2, GeneralProps2,
+	generalProps, GeneralProps,
 } from '../../../theme/props';
 
-export type TText = GeneralProps2
+export type TText = GeneralProps
 
 export const Text = styled.span<TText>`
 	${props => props.theme.textVariant.text}
-	${generalProps2};
+	${generalProps};
 `;
 
 Text.defaultProps = {
