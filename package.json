@@ -24,6 +24,7 @@
     "gen-changelog": "npx changeset && npx changeset version",
     "publish-tag": "git push --follow-tags",
     "publish": "bash ./publish-package.sh",
+    "prepare": "tsup",
     "build": "rm -rf dist && npm run build:transpile && npm run build:declarations",
     "build:tsup": "tsup",
     "build:transpile": "node build.js",
