@@ -4,7 +4,7 @@ import { DefaultTheme, CSSProp } from 'styled-components';
 import { SpaceProps } from '../../../theme/props';
 
 // Atoms
-import Section from '../../Molecules/Section';
+import { Section } from '../../Molecules/Section';
 import { Flex } from '../../Atoms/Flex';
 import { Button } from '../../Atoms/Button';
 import { Paragraph } from '../../Atoms/Paragraph';
@@ -13,20 +13,22 @@ export type TBanner = {
 	content: string | React.ReactNode
 	buttonContent: string | React.ReactNode
 	buttonVariant: keyof DefaultTheme['buttonVariant'] | undefined
+	// eslint-disable-next-line react/require-default-props
 	buttonColor?: keyof DefaultTheme['buttonColor'] | undefined
-	backgroundColor?: keyof DefaultTheme['backgroundColor']
-	backgroundColorHex?: Properties['backgroundColor']
+	backgroundColor?: keyof DefaultTheme['color']
+	backgroundColorHex?: Properties['color']
 	backgroundColorOpacity?: number
 	backgroundImage?: string
 	backgroundRepeat?: Properties['backgroundRepeat']
 	backgroundPosition?: Properties['backgroundPosition']
 	backgroundSize?: Properties['backgroundSize']
-	textColor?: keyof DefaultTheme['textColor']
+	textColor?: keyof DefaultTheme['color']
 	scale?: boolean
 	styled?: CSSProp
 	padding?: SpaceProps['padding']
 }
 
+// eslint-disable-next-line react/function-component-definition
 const Banner: React.FC<TBanner> = (props) => {
 	const {
 		backgroundImage,
@@ -48,6 +50,7 @@ const Banner: React.FC<TBanner> = (props) => {
 
 	return (
 		<Section
+			variant="default"
 			backgroundImage={backgroundImage}
 			backgroundColor={backgroundColor}
 			backgroundColorHex={backgroundColorHex}
@@ -61,7 +64,7 @@ const Banner: React.FC<TBanner> = (props) => {
 		>
 			<Flex
 				justifyContent="space-between"
-				gap="40px"
+				gap="s10"
 				alignItems="center"
 				tablet={[
 					'column',
@@ -81,7 +84,7 @@ const Banner: React.FC<TBanner> = (props) => {
 				</Flex>
 				<Button
 					variant={buttonVariant}
-					buttonColor={buttonColor}
+					color={buttonColor}
 				>
 					{buttonContent}
 				</Button>
@@ -91,7 +94,7 @@ const Banner: React.FC<TBanner> = (props) => {
 };
 
 Banner.defaultProps = {
-	backgroundColor: 'primary',
+	backgroundColor: 'primary600',
 	backgroundColorHex: undefined,
 	backgroundColorOpacity: undefined,
 	backgroundImage: undefined,
@@ -99,10 +102,9 @@ Banner.defaultProps = {
 	backgroundPosition: undefined,
 	backgroundSize: undefined,
 	scale: true,
-	textColor: 'white',
+	textColor: 'neutrals50',
 	padding: ['t80', 'b80'],
 	styled: undefined,
-	buttonColor: 'white',
 };
 
 export default Banner;

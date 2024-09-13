@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import { Properties } from 'csstype';
+import { GapDefinition } from '../../../theme/definitions/gap/gap';
 
 export type FlexProps = {
 	flex?: Properties['flex']
@@ -11,7 +12,7 @@ export type FlexProps = {
 	flexShrink?: Properties['flexShrink']
 	flexWrap?: Properties['flexWrap']
 	wrap?: boolean
-	gap?: Properties['gap']
+	gap?: GapDefinition
 };
 
 export const flex = css<FlexProps>`
@@ -24,5 +25,5 @@ export const flex = css<FlexProps>`
 	${props => props.flexShrink && `flex-shrink: ${props.flexShrink}`};
 	${props => props.flexWrap && `flex-wrap: ${props.flexWrap}`};
 	${props => props.wrap && 'flex-wrap: wrap'};
-	${props => props.gap && `gap: ${props.gap}`};
+	${({ gap }) => gap && css`gap: ${props => props.theme.gap[gap]};`};
 `;

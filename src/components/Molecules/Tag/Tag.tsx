@@ -11,10 +11,12 @@ export type TTag = {
 	content: string | React.ReactElement
 	onClose?: (name: string) => void
 	onClick?: (name: string) => void
+	// eslint-disable-next-line react/require-default-props
 	buttonColor?: keyof DefaultTheme['color']
 	variant?: keyof typeof tagVariant
 } & TTagWrapper;
 
+// eslint-disable-next-line react/function-component-definition
 const Tag: React.FC<TTag> = (props) => {
 	const theme = useTheme();
 	const {
@@ -58,7 +60,7 @@ const Tag: React.FC<TTag> = (props) => {
 					type="button"
 					aria-roledescription="button"
 					onClick={() => onClose(name)}
-					variant="noStyle"
+					variant="primary"
 					display="inline-flex"
 					alignItems="center"
 					hover={['pointer']}
@@ -86,7 +88,7 @@ const Tag: React.FC<TTag> = (props) => {
 Tag.defaultProps = {
 	onClose: undefined,
 	onClick: undefined,
-	buttonColor: 'grey',
+	buttonColor: 'neutrals500',
 	variant: 'base',
 };
 

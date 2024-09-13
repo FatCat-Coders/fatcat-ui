@@ -5,7 +5,7 @@ import { Heading as HeadingOrigin } from './Heading';
 import { Text } from '../Text';
 import { Flex } from '../Flex';
 
-import { TEXT_COLOR } from '../../../theme/definitions';
+import { COLOR } from '../../../theme/definitions';
 
 import readme from './Heading.md';
 
@@ -26,7 +26,7 @@ export default {
 		},
 		textColor: {
 			control: 'select',
-			options: Object.keys(TEXT_COLOR),
+			options: Object.keys(COLOR),
 			description: 'Just for demo purposes',
 			type: { name: 'string' },
 			table: {
@@ -43,6 +43,7 @@ export default {
 	},
 } as ComponentMeta<typeof HeadingOrigin>;
 
+// eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof HeadingOrigin> = ({ ...args }) => {
 	const el = useRef(null);
 	const [style, setStyle] = useState({
@@ -65,7 +66,7 @@ const Template: ComponentStory<typeof HeadingOrigin> = ({ ...args }) => {
 				gap="4px"
 			>
 				<Text>
-					{`Text color: ${TEXT_COLOR[args.textColor].toLowerCase()}`}
+					{`Text color: ${COLOR[args.textColor].toLowerCase()}`}
 				</Text>
 				<Text>
 					{`Font-size: ${style.fontSize}`}
@@ -86,5 +87,5 @@ export const Heading = Template.bind({});
 Heading.parameters = { controls: { include: ['as', 'textColor'] } };
 Heading.args = {
 	as: 'h1',
-	textColor: 'black',
+	textColor: 'neutrals800',
 };

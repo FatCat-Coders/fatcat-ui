@@ -20,15 +20,17 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<Wrapper
-		h="100px"
-		w="100px"
-		backgroundColor="yellow"
-		transition="all 0.3s ease"
-		{...args}
-	/>
-);
+function Template({ children, ...args }) {
+	return (
+		<Wrapper
+			h="100px"
+			w="100px"
+			backgroundColor="primary600"
+			transition="all 0.3s ease"
+			{...args}
+		/>
+	);
+}
 
 export const Hover = Template.bind({});
 

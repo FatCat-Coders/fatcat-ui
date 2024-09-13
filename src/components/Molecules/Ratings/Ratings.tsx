@@ -1,23 +1,24 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Properties } from 'csstype';
 import { useTheme, DefaultTheme, CSSProp } from 'styled-components';
 
 // Atoms
 import { Center } from '../../Atoms/Center';
 import { RatingItem, Star } from './Ratings.atoms';
+import { GapDefinition } from 'src/theme/definitions/gap/gap';
 
 export type TRatings = {
 	rating?: number | null
 	getRating?: (value: number) => void
 	maxRating?: number
-	gap?: Properties['gap']
-	backgroundColor?: DefaultTheme['backgroundColor']
-	starColor?: DefaultTheme['backgroundColor']
-	starBorder?: DefaultTheme['color']
+	gap?: GapDefinition
+	backgroundColor?: keyof DefaultTheme['color']
+	starColor?: keyof DefaultTheme['color']
+	starBorder?: keyof DefaultTheme['color']
 	size?: string
 	styled?: CSSProp
 }
 
+// eslint-disable-next-line react/function-component-definition
 const Ratings: React.FC<TRatings> = (props) => {
 	const {
 		rating,
@@ -125,10 +126,10 @@ Ratings.defaultProps = {
 	maxRating: 5,
 	getRating: undefined,
 	size: '24px',
-	gap: '8px',
-	backgroundColor: 'white',
-	starColor: 'yellow',
-	starBorder: 'grey',
+	gap: 's8',
+	backgroundColor: 'neutrals50',
+	starColor: 'yellow700',
+	starBorder: 'neutrals500',
 	styled: undefined,
 };
 

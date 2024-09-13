@@ -29,7 +29,7 @@ We can use theme default setup or we can add some custom style like this:
 - first we add some styles definitions
 
 ```jsx
-const TEXT_COLOR = {
+const COLOR = {
 	black: '#000000',
 	blackGlass: '#000c',
 }
@@ -61,7 +61,7 @@ const FONT_WEIGHT = {
 import { UIThemeProvider } from 'fatcat-ui-library/theme/theme';
 
 const newTheme = {
-	textColor: TEXT_COLOR
+	textColor: COLOR
 	textSize: TEXT_SIZE
 	fontSize: FONT_SIZE
 	fontFamily: FONT_FAMILY
@@ -81,7 +81,7 @@ import { FatCatTheme } from 'fatcat-ui-library/theme/theme';
 
 declare module 'styled-components' {
 	export interface DefaultTheme extends FatCatTheme {
-		textColor: FatCatTheme['textColor'] & typeof TEXT_COLOR
+		textColor: FatCatTheme['textColor'] & typeof COLOR
 		textSize: FatCatTheme['textSize'] & typeof TEXT_SIZE
 		fontSize: FatCatTheme['fontSize'] & typeof FONT_SIZE
 		fontFamily: typeof FONT_FAMILY
@@ -105,7 +105,7 @@ and then simply use it in your code
 
 ```jsx
 <Paragraph
-	textColor="black"
+	textColor="neutrals800"
 	textAlign="center"
 	fontStyle="italic"
 >

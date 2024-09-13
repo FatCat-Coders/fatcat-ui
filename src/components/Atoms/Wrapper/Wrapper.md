@@ -32,10 +32,10 @@ and then simply use it in your code with dynamic elements.
 <Wrapper
 	maxWidth="50%"
 >
-	<div style={{ width: '200px', backgroundColor: 'orange'}} />
-	<div style={{ width: '100px', backgroundColor: 'purple'}} />
-	<div style={{ width: '200px', backgroundColor: 'orange'}} />
-	<div style={{ width: '300px', backgroundColor: 'purple'}} />
+	<div style={{ width: '200px', backgroundColor: 'yellow700'}} />
+	<div style={{ width: '100px', backgroundColor: 'primary900'}} />
+	<div style={{ width: '200px', backgroundColor: 'yellow700'}} />
+	<div style={{ width: '300px', backgroundColor: 'primary900'}} />
 </Wrapper>
 ```
 

@@ -1,1 +1,1 @@
-export { default, type TSection } from './Section';
+export { Section, type TSection } from './Section';

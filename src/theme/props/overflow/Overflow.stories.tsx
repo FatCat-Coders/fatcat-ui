@@ -22,51 +22,53 @@ export default {
 	},
 };
 
-const Template = ({ children, ...args }) => (
-	<Flex
-		gap="40px"
-	>
-		<Flex gap="20px" direction="column" w="fit-content">
-			<Text fontWeight="bold">{args.overflow ? args.overflow : 'Try it yourself!'}</Text>
-			<Wrapper
-				h="100px"
-				w="100px"
-				padding={['t12', 'r12', 'b12', 'l12']}
-				backgroundColor="yellow"
-				{...args}
-			>
-				Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.
-				As much mud in the streets as if the waters had but newly retired from the face of the earth.
-			</Wrapper>
+function Template({ children, ...args }) {
+	return (
+		<Flex
+			gap="40px"
+		>
+			<Flex gap="20px" direction="column" w="fit-content">
+				<Text fontWeight="bold">{args.overflow ? args.overflow : 'Try it yourself!'}</Text>
+				<Wrapper
+					h="100px"
+					w="100px"
+					padding={['t12', 'r12', 'b12', 'l12']}
+					backgroundColor="primary600"
+					{...args}
+				>
+					Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.
+					As much mud in the streets as if the waters had but newly retired from the face of the earth.
+				</Wrapper>
+			</Flex>
+			<Flex gap="20px" direction="column" w="fit-content">
+				<Text fontWeight="bold">hidden</Text>
+				<Wrapper
+					h="100px"
+					w="100px"
+					padding={['t12', 'r12', 'b12', 'l12']}
+					backgroundColor="primary600"
+					overflow="hidden"
+				>
+					Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.
+					As much mud in the streets as if the waters had but newly retired from the face of the earth.
+				</Wrapper>
+			</Flex>
+			<Flex gap="20px" direction="column" w="fit-content">
+				<Text fontWeight="bold">visible</Text>
+				<Wrapper
+					h="100px"
+					w="100px"
+					padding={['t12', 'r12', 'b12', 'l12']}
+					backgroundColor="primary600"
+					overflow="visible"
+				>
+					Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.
+					As much mud in the streets as if the waters had but newly retired from the face of the earth.
+				</Wrapper>
+			</Flex>
 		</Flex>
-		<Flex gap="20px" direction="column" w="fit-content">
-			<Text fontWeight="bold">hidden</Text>
-			<Wrapper
-				h="100px"
-				w="100px"
-				padding={['t12', 'r12', 'b12', 'l12']}
-				backgroundColor="yellow"
-				overflow="hidden"
-			>
-				Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.
-				As much mud in the streets as if the waters had but newly retired from the face of the earth.
-			</Wrapper>
-		</Flex>
-		<Flex gap="20px" direction="column" w="fit-content">
-			<Text fontWeight="bold">visible</Text>
-			<Wrapper
-				h="100px"
-				w="100px"
-				padding={['t12', 'r12', 'b12', 'l12']}
-				backgroundColor="yellow"
-				overflow="visible"
-			>
-				Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln&apos;s Inn Hall. Implacable November weather.
-				As much mud in the streets as if the waters had but newly retired from the face of the earth.
-			</Wrapper>
-		</Flex>
-	</Flex>
-);
+	);
+}
 
 export const Overflow = Template.bind({});
 

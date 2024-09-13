@@ -1,72 +1,40 @@
-import React from 'react';
-import { DefaultTheme } from 'styled-components';
-
-// Types
-import {
-	BackgroundProps,
-	ResponsiveProps,
-	SpaceProps,
-	VisibilityProps,
-	PositionProps,
-	OverflowProps,
-	CustomCssProps,
-} from '../../../theme/props';
+import React, { ComponentPropsWithRef, PropsWithChildren } from 'react';
 
 // Local atoms
-import { SectionInnerWrapper, SectionOuterWrapper } from './Section.atoms';
+import {
+	Container,
+	Content,
+} from './Section.atoms';
+import { DefaultTheme } from 'styled-components';
 
-export type TSection =
-	{
-		as?: 'section' | 'div' | 'header' | 'footer'
-		children: React.ReactNode
-		edge?: boolean
-		scale?: boolean
-		sticky?: boolean
-		w?: keyof DefaultTheme['sectionWidth']
+export type TSection = PropsWithChildren<
+	Omit<ComponentPropsWithRef<typeof Container>, 'children' | 'sectionVariant'>
+	& {
+		// eslint-disable-next-line react/require-default-props
+		contentProps?: Omit<ComponentPropsWithRef<typeof Content>, 'children' | 'sectionVariant'>;
+		variant: keyof DefaultTheme['sectionVariant'];
 	}
-	& BackgroundProps
-	& CustomCssProps
-	& OverflowProps
-	& PositionProps
-	& ResponsiveProps
-	& SpaceProps
-	& VisibilityProps;
+>
 
-const Section: React.FC<TSection> = (props) => {
+export function Section(props: TSection) {
 	const {
-		as,
+		contentProps,
 		children,
-		edge,
-		scale,
-		sticky,
-		w,
-		...restProps
+		variant,
+		...containerProps
 	} = props;
 
 	return (
-		<SectionOuterWrapper
-			as={as}
-			edge={edge}
-			sticky={sticky}
-			{...restProps}
+		<Container
+			sectionVariant={variant}
+			{...containerProps}
 		>
-			<SectionInnerWrapper
-				scale={scale}
-				w={w}
-				{...restProps}
+			<Content
+				sectionVariant={variant}
+				{...contentProps}
 			>
 				{children}
-			</SectionInnerWrapper>
-		</SectionOuterWrapper>
+			</Content>
+		</Container>
 	);
-};
-
-Section.defaultProps = {
-	as: 'section',
-	w: 'normal',
-	edge: false,
-	scale: false,
-	sticky: false,
-};
-
-export default Section;
+}

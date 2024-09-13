@@ -10,7 +10,7 @@ export const Select = styled.select.withConfig({
 }) <TSelect>`
     appearance:none;
 	&:hover {
-		border-color: ${props => props.theme.color.grey};
+		border-color: ${props => props.theme.color.neutrals500};
 	}
 	${generalProps};
 `;

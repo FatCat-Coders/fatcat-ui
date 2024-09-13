@@ -3,8 +3,8 @@ import styled, {
 	DefaultTheme,
 	CSSProp,
 } from 'styled-components';
-import { Properties } from 'csstype';
 import { darken } from 'polished';
+import { GapDefinition } from 'src/theme/definitions/gap/gap';
 
 export type TCheckboxStyle = {
 	checked?: boolean
@@ -24,7 +24,7 @@ export const CheckIcon = styled.svg`
 export const CheckboxWrapper = styled.span<TCheckboxStyle>`
 	/* position: relative; */
 	display: flex;
-	border: 1px solid ${({ backgroundColor, theme }) => (backgroundColor ? theme.color[backgroundColor] : theme.color.primary)};
+	border: 1px solid ${({ backgroundColor, theme }) => (backgroundColor ? theme.color[backgroundColor] : theme.color.primary600)};
 	padding: ${({ size }) => (size === 'small' ? '2px' : '3px')};
 	align-items: center;
 	justify-content: center;
@@ -37,13 +37,13 @@ export const CheckboxWrapper = styled.span<TCheckboxStyle>`
 		visibility: hidden;
 	}
 	${({ checked, backgroundColor, theme }) => checked && css`
-		background-color: ${(backgroundColor ? theme.color[backgroundColor] : theme.color.primary)};
+		background-color: ${(backgroundColor ? theme.color[backgroundColor] : theme.color.primary600)};
 		svg {
 			visibility: visible;
 		}
 	`}
 	&:hover {
-		border: 1px solid ${({ backgroundColor, theme }) => (backgroundColor ? darken(0.1, theme.color[backgroundColor]) : darken(0.1, theme.color.primary))};
+		border: 1px solid ${({ backgroundColor, theme }) => (backgroundColor ? darken(0.1, theme.color[backgroundColor]) : darken(0.1, theme.color.primary600))};
 	}
 `;
 
@@ -64,12 +64,14 @@ export const CheckboxInput = styled.input`
 	} */
 `;
 
-export const CheckboxContainer = styled.label<{ styled?: CSSProp, disabled?: boolean, gap?: Properties['gap'] }>`
+export const CheckboxContainer = styled.label<{ styled?: CSSProp, disabled?: boolean, gap?: GapDefinition}>`
 	cursor: pointer;
 	height: fit-content;
 	display: flex;
 	align-items: center;
-	${props => props.gap && `gap: ${props.gap}`};
+	${({ gap }) => gap && css`
+		gap: ${props => props.theme.gap[gap]};
+	`}
 	${({ disabled }) => disabled && css`
 		cursor: not-allowed;
 		pointer-events: none;

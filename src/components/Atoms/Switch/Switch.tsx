@@ -68,7 +68,7 @@ const Switch = forwardRef<HTMLInputElement, PropsWithChildren<TSwitch>>((props, 
 
 Switch.defaultProps = {
 	backgroundColor: undefined,
-	textColor: 'primary',
+	textColor: 'neutrals800',
 	disabled: false,
 	id: undefined,
 	required: false,

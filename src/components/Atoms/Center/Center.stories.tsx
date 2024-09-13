@@ -4,13 +4,15 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Center as CenterOrigin } from './Center';
 
 import readme from './Center.md';
+import { GAP } from '../../../theme/definitions/gap/gap';
 
 export default {
 	title: 'Basic Elements/Center',
 	component: CenterOrigin,
 	argTypes: {
 		gap: {
-			control: 'text',
+			control: 'select',
+			options: Object.keys(GAP),
 			description: 'String with css property',
 			type: 'string',
 			table: {
@@ -72,7 +74,7 @@ Center.parameters = {
 };
 
 Center.args = {
-	gap: '8px 16px',
+	gap: 's2 s4',
 	h: '200px',
 	w: '100%',
 	wrap: true,

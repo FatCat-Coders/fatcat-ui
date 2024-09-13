@@ -29,6 +29,7 @@ export const sizes = {
 	xlarge: '200px',
 };
 
+// eslint-disable-next-line react/function-component-definition
 const Avatar: React.FC<TAvatar> = (props) => {
 	const {
 		image,
@@ -62,7 +63,7 @@ const Avatar: React.FC<TAvatar> = (props) => {
 			</AvatarWrapper>
 			{title && (
 				<Paragraph
-					fontWeight="semiBold"
+					fontWeight="medium"
 					margin={['t24']}
 					textColor={textColor}
 				>
@@ -90,7 +91,7 @@ Avatar.defaultProps = {
 	subtitle: undefined,
 	size: 'medium',
 	styled: undefined,
-	textColor: 'primary',
+	textColor: 'neutrals800',
 };
 
 export default Avatar;

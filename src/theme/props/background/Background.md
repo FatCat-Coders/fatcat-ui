@@ -28,7 +28,7 @@ Property that adds to the component are:
 <Wrapper
 	h="100px"
 	w="100px"
-	backgroundColor="yellow"
+	backgroundColor="yellow700"
 />
 ```
 

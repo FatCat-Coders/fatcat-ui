@@ -13,7 +13,7 @@ export const UlList = styled.ul.withConfig({
 }) <TUlList>`
 	${props => props.variant !== 'noStyle' && css`
 		list-style: none;
-		padding-left: ${props => props.theme.space.s24};
+		padding-left: ${props => props.theme.space.s6};
 		> li {
 			display: flex;
 		}
@@ -25,7 +25,7 @@ export const UlList = styled.ul.withConfig({
 
 UlList.defaultProps = {
 	variant: 'base',
-	bulletColor: 'black',
-	textColor: 'primary',
+	bulletColor: 'neutrals800',
+	textColor: 'neutrals800',
 	initialDisplay: 'block',
 };

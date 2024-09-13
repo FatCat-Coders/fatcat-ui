@@ -26,9 +26,8 @@ We can use theme default setup or we can add some custom spacing like this:
 
 ```jsx
 export const SPACE = {
-	s6: '6px',
-	s10: '10px',
-	s14: '14px',
+	s3: '12px',
+	s10: '40px',
 };
 
 export type SideSpace =
@@ -121,13 +120,13 @@ This is example how we can use shorthanded `padding` or single sided `$magin` on
 <Wrapper
 	border="1px solid black"
 	w="fit-content"
-	backgroundColor="green"
+	backgroundColor="mint700"
 	backgroundColorOpacity={0.3}
 >
 	<Wrapper
 		h="300px"
 		w="300px"
-		backgroundColor="yellow"
+		backgroundColor="primary600"
 		backgroundColorOpacity={0.7}
 		padding={['t64', 'r64', 'b64', 'l64']}
 		// padding="s64" we can use it like this if we want same side sizes
@@ -137,7 +136,7 @@ This is example how we can use shorthanded `padding` or single sided `$magin` on
 		marginLeft="s24"
 	>
 		<Wrapper
-			backgroundColor="purple"
+			backgroundColor="primary600"
 			h="100%"
 		/>
 	</Wrapper>

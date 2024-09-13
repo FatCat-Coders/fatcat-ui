@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Wrapper } from '../../Atoms/Wrapper';
 
-import { TEXT_COLOR, TEXT_VARIANT } from '../../../theme/definitions';
+import { COLOR, TEXT_VARIANT } from '../../../theme/definitions';
 import { default as AccordionOrigin } from './Accordion'; // eslint-disable-line
 
 import readme from './Accordion.md';
@@ -37,7 +37,7 @@ export default {
 		},
 		titleColor: {
 			control: 'select',
-			options: Object.keys(TEXT_COLOR),
+			options: Object.keys(COLOR),
 			description: 'Color of text in title',
 			type: { name: 'string' },
 			table: {
@@ -63,7 +63,7 @@ export default {
 		},
 		contentColor: {
 			control: 'select',
-			options: Object.keys(TEXT_COLOR),
+			options: Object.keys(COLOR),
 			description: 'Color of content text',
 			type: { name: 'string' },
 			table: {
@@ -126,9 +126,9 @@ Accordion.parameters = {
 Accordion.args = {
 	titleAs: 'h2',
 	title: 'Accordion title',
-	titleColor: 'primary',
+	titleColor: 'primary600',
 	content: loremText,
 	contentSize: 'large',
 	useArrow: false,
-	contentColor: 'primary',
+	contentColor: 'primary600',
 };

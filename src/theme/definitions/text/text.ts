@@ -1,76 +1,47 @@
 import { css } from 'styled-components';
 
+const base = css`
+	${props => props.theme.textSize.text1};
+	${props => props.theme.media.tablet} {
+		${props => props.theme.textSize.text2};
+	}
+`;
+
+// this is not beeing used at the moment
 export const TEXT_VARIANT = {
 	h1: css`
-		${props => props.theme.textSize.h1};
-		font-weight: ${props => props.theme.fontWeight.bold};
-
-		${props => props.theme.media.tablet} {
-			${props => props.theme.textSize.h1Tablet};
-		}
+		${base}
 	`,
 	h2: css`
-		${props => props.theme.textSize.h2};
-		font-weight: ${props => props.theme.fontWeight.bold};
-
-		${props => props.theme.media.tablet} {
-			${props => props.theme.textSize.h2Tablet};
-		}
+		${base}
 	`,
 	h3: css`
-		${props => props.theme.textSize.h3};
-		font-weight: ${props => props.theme.fontWeight.semiBold};
-
-		${props => props.theme.media.tablet} {
-			${props => props.theme.textSize.h3Tablet};
-		}
+		${base}
 	`,
 	h4: css`
-		${props => props.theme.textSize.h4};
-		font-weight: ${props => props.theme.fontWeight.semiBold};
-
-		${props => props.theme.media.tablet} {
-			${props => props.theme.textSize.h4Tablet};
-		}
+		${base}
 	`,
 	h5: css`
-		${props => props.theme.textSize.h5};
-		font-weight: ${props => props.theme.fontWeight.semiBold};
-
-		${props => props.theme.textSize.h5Tablet && props.theme.media.tablet} {
-			${props => props.theme.textSize.h5Tablet};
-		}
+		${base}
 	`,
 	h6: css`
-		${props => props.theme.textSize.h6};
-		font-weight: ${props => props.theme.fontWeight.semiBold};
-
-		${props => props.theme.textSize.h6Tablet && props.theme.media.tablet} {
-			${props => props.theme.textSize.h6Tablet};
-		}
+		${base}
 	`,
 	paragraph: {
 		small: css`
-			${props => props.theme.textSize.paragraphSmall};
-			font-weight: ${props => props.theme.fontWeight.normal};
+			${base}
 		`,
 		large: css`
-			${props => props.theme.textSize.paragraph};
-			font-weight: ${props => props.theme.fontWeight.normal};
-
-			${props => props.theme.media.tablet} {
-				${props => props.theme.textSize.paragraphTablet};
-			}
+			${base}
 		`,
 	},
 	button: css`
-		${props => props.theme.textSize.button};
-		font-weight: ${props => props.theme.fontWeight.semiBold};
+		${base}
 	`,
 	text: css`
-		${props => props.theme.textSize.text};
+		${base}
 	`,
 	link: css`
-		${props => props.theme.textSize.link};
+		${base}
 	`,
 };

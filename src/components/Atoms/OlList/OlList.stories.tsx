@@ -66,5 +66,5 @@ OlList.parameters = {
 
 OlList.args = {
 	variant: 'base',
-	bulletColor: 'black',
+	bulletColor: 'neutrals800',
 };

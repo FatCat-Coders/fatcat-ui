@@ -12,12 +12,12 @@ export const HOVER_BEHAVIORS = {
 		text-decoration: underline;
 	`,
 	textYellow: css`
-		color: ${props => props.theme.color.yellow};
+		color: ${props => props.theme.color.yellow700};
 	`,
 	textYellowWithChildren: css`
-		color: ${props => props.theme.color.yellow};
+		color: ${props => props.theme.color.yellow700};
 		* {
-			color: ${props => props.theme.color.yellow};
+			color: ${props => props.theme.color.yellow700};
 		}
 	`,
 	fullOpacity: css`
