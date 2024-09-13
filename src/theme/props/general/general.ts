@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, CSSProp } from 'styled-components';
 
 import { animation, AnimationProps } from '../animation/animation';
 import { background, BackgroundProps } from '../background/background';

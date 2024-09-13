@@ -76,3 +76,21 @@ export type TContentfulLink = {
 	openInNewTab: boolean
 	items?: TContentfulLink[]
 }
+
+type ButtonColorVariants = 'primary' | 'secondary' | 'secondaryInvert' | 'ghost' |
+'ghostInvert' | 'outline' | 'outlineInvert' | 'textLink' | 'textLinkInvert' | 'navLink' |
+'navLinkInvert' | 'success';
+interface ButtonState {
+    background: string;
+    text: string;
+    ringColor?: string;
+    underLineColor?: string;
+}
+
+interface ButtonType {
+    default: ButtonState;
+    hover: ButtonState;
+    pressed: ButtonState;
+    focus: ButtonState;
+}
+export type TButtonColor=Record<ButtonColorVariants, ButtonType>

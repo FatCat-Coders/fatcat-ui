@@ -19,7 +19,7 @@ import { Wrapper } from '../Wrapper';
 import { Oval } from 'react-loader-spinner';
 
 export type TButton = {
-	buttonColor?: keyof DefaultTheme['buttonColor'] | undefined
+	color?: keyof DefaultTheme['buttonColor'] | undefined
 	size?: keyof DefaultTheme['buttonSize']
 	variant?: keyof DefaultTheme['buttonVariant']
 	trailingIcon?: keyof typeof icons;
@@ -88,7 +88,6 @@ export const Button: ButtonComponent = (props) => {
 							size={theme.buttonSize[size].iconSize}
 						/>
 					)}
-					{/* @ts-expect-error TODO: fix this when types are fixed */}
 					<Wrapper paddingX={theme.buttonVariant[variant].textPadding.x} paddingBottom={theme.buttonVariant[variant].textPadding.bottom}>
 						{children}
 					</Wrapper>

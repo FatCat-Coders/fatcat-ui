@@ -121,49 +121,49 @@ export const TEXT_SIZE = {
 	ui1: css`
 		${base};
 		font-size: ${props => props.theme.fontSize.s18};
-		line-height: 18;
+		line-height: 1;
 		letter-spacing: 0.2px;
 	`,
 	ui2: css`
 		${base};
 		font-size: ${props => props.theme.fontSize.s16};
-		line-height: 16;
+		line-height: 1;
 		letter-spacing: 0.2px;
 	`,
 	ui3: css`
 		${base};
 		font-size: ${props => props.theme.fontSize.s15};
-		line-height: 16;
+		line-height: 16px;
 		letter-spacing: 0.2px;
 	`,
 	ui4: css`
 		${base};
 		font-size: ${props => props.theme.fontSize.s13};
-		line-height: 14;
+		line-height: 14px;
 		letter-spacing: 0.1px;
 	`,
 	allCaps1: css`
 		${baseAllCaps};
 		font-size: ${props => props.theme.fontSize.s18};
-		line-height: 20;
+		line-height: 20px;
 		letter-spacing: 2px;
 	`,
 	allCaps2: css`
 		${baseAllCaps};
 		font-size: ${props => props.theme.fontSize.s16};
-		line-height: 20;
+		line-height: 1.25;
 		letter-spacing: 2px;
 	`,
 	allCaps3: css`
 		${baseAllCaps};
 		font-size: ${props => props.theme.fontSize.s15};
-		line-height: 16;
+		line-height: 16px;
 		letter-spacing: 2px;
 	`,
 	allCaps4: css`
 		${baseAllCaps};
 		font-size: ${props => props.theme.fontSize.s13};
-		line-height: 16;
+		line-height: 16px;
 		letter-spacing: 2px;
 	`,
 	allCaps5: css`

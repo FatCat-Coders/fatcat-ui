@@ -29,8 +29,7 @@ export const sizes = {
 	xlarge: '200px',
 };
 
-// eslint-disable-next-line react/function-component-definition
-const Avatar: React.FC<TAvatar> = (props) => {
+function Avatar(props: TAvatar) {
 	const {
 		image,
 		imageAlt,
@@ -81,7 +80,7 @@ const Avatar: React.FC<TAvatar> = (props) => {
 			)}
 		</Flex>
 	);
-};
+}
 
 Avatar.defaultProps = {
 	imageAlt: '',

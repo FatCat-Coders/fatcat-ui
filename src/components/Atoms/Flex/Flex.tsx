@@ -10,7 +10,7 @@ export type TFlex = FlexProps & GeneralProps;
 
 export const Flex = styled.div.withConfig({
 	shouldForwardProp: (prop, defaultValidatorFn) => !UIprops.includes(prop) && defaultValidatorFn(prop),
-}) <TFlex>`
+})<TFlex>`
 	${flex};
 	${generalProps};
 `;

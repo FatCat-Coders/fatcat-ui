@@ -1,4 +1,4 @@
-export * from './Atoms/Button/Button';// todo mozda /button jer onda button index nema smisla - ne koristi se
+export * from './Atoms/Button/Button';
 export * from './Atoms/Center/Center';
 export * from './Atoms/Checkbox/Checkbox';
 export * from './Atoms/Divider/Divider';

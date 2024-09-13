@@ -66,13 +66,9 @@ export const INPUT_VARIANT = {
 			}
 
 			${props.errorMsg && css`
-				border-color: ${
-	// @ts-expect-error TODO: fix this when types are fixed
-	props.theme.color.warningMedium} !important;
+				border-color: ${props.theme.color.warningMedium} !important;
 				& ~ label {
-					color: ${
-	// @ts-expect-error TODO: fix this when types are fixed
-	props.theme.color.warningMedium} !important;
+					color: ${props.theme.color.warningMedium} !important;
 				}
 			`}
 		`};

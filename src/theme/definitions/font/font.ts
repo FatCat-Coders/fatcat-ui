@@ -6,7 +6,7 @@
  * Available font families
  * Overwrite main key with your font family
  */
-// todo check if fonts work
+
 export const FONT_FAMILY = {
 	main: 'var(--Satoshi)',
 	secondary: 'var(--Satoshi)',
